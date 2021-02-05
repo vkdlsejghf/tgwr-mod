@@ -1,0 +1,228 @@
+focus_tree = {
+	id = sia_focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = SIA
+		}
+	}
+	#Focus for Mobilize Our Borders!
+	focus = {
+		id = SIA_mobilize_our_borders
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 8
+		y = 4
+		cost = 7
+		available_if_capitulated = yes
+		prerequisite = { focus = SIA_central_powers_influence }
+	}
+
+	#Focus for Seize German Ships
+	focus = {
+		id = SIA_seize_german_ships
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 14
+		y = 4
+		cost = 4
+		available_if_capitulated = yes
+		prerequisite = { focus = SIA_entente_influence }
+	}
+
+	#Focus for Volunteer Expeditionary Force
+	focus = {
+		id = SIA_volunteer_expeditionary_force
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 15
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = SIA_pilot_training 
+		}
+		prerequisite = { 
+			focus = SIA_seize_german_ships 
+		}
+	}
+
+	#Focus for Siamese Labour Volunteer Detachment
+	focus = {
+		id = SIA_siamese_labour_volunteer_detachment
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 15
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SIA_volunteer_expeditionary_force }
+	}
+
+	#Focus for Pilot Training
+	focus = {
+		id = SIA_pilot_training
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 16
+		y = 4
+		cost = 4
+		available_if_capitulated = yes
+		prerequisite = { focus = SIA_entente_influence }
+	}
+
+	#Focus for Entente Influence
+	focus = {
+		id = SIA_entente_influence
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 14
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = SIA_foreign_embassies 
+		}
+		prerequisite = { 
+			focus = SIA_foreign_trade 
+		}
+		mutually_exclusive = { focus = SIA_central_powers_influence }
+	}
+
+	#Focus for Central Powers Influence
+	focus = {
+		id = SIA_central_powers_influence
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 11
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = SIA_foreign_embassies 
+		}
+		prerequisite = { 
+			focus = SIA_foreign_trade 
+		}
+		mutually_exclusive = { focus = SIA_entente_influence }
+	}
+
+	#Focus for On Our Own!
+	focus = {
+		id = SIA_on_our_own
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 25
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SIA_siam_our_homeland }
+		mutually_exclusive = { focus = SIA_foreign_influence }
+	}
+
+	#Focus for Foreign Influence
+	focus = {
+		id = SIA_foreign_influence
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 13
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SIA_siam_our_homeland }
+		mutually_exclusive = { focus = SIA_on_our_own }
+	}
+
+	#Focus for Foreign Trade
+	focus = {
+		id = SIA_foreign_trade
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 14
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SIA_foreign_influence }
+	}
+
+	#Focus for Foreign Embassies
+	focus = {
+		id = SIA_foreign_embassies
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 11
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SIA_foreign_influence }
+	}
+
+	#Focus for Siam! Our Homeland
+	focus = {
+		id = SIA_siam_our_homeland
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 18
+		y = 0
+		cost = 5
+		available_if_capitulated = yes
+		completion_reward = {
+			add_political_power = 150
+		}
+		ai_will_do = { factor = 10 }
+	}
+
+	#Focus for Central Powers Equipment
+	focus = {
+		id = SIA_central_powers_equipment
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 11
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SIA_central_powers_influence }
+	}
+
+	#Focus for Our Rightful Cambodian Land!
+	focus = {
+		id = SIA_our_rightful_cambodian_land
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 8
+		y = 5
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { focus = SIA_mobilize_our_borders }
+	}
+
+	#Focus for Burmese Claims
+	focus = {
+		id = SIA_burmese_claims
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 10
+		y = 5
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { focus = SIA_mobilize_our_borders }
+	}
+
+	#Focus for Malayan Territorial Claims
+	focus = {
+		id = SIA_malayan_territorial_claims
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 6
+		y = 5
+		cost = 8
+		available_if_capitulated = yes
+		prerequisite = { focus = SIA_mobilize_our_borders }
+	}
+
+	#Focus for Revolt in Burma
+	focus = {
+		id = SIA_revolt_in_burma
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 8
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = SIA_burmese_claims 
+		}
+		prerequisite = { 
+			focus = SIA_our_rightful_cambodian_land 
+		}
+		prerequisite = { 
+			focus = SIA_malayan_territorial_claims 
+		}
+	}
+
+#End of focuses 
+ }
