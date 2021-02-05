@@ -181,6 +181,10 @@ focus_tree = {
 		cost = 8
 		available_if_capitulated = yes
 		prerequisite = { focus = SIA_mobilize_our_borders }
+		completion_reward = {
+			add_state_claim = 819
+		}
+		ai_will_do = { factor = 10 }
 	}
 
 	#Focus for Burmese Claims
