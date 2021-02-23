@@ -328,7 +328,7 @@ focus_tree = {
 		}
 		x = 8
 		y = 5
-		available = { NOT = { has_war_with = GER } }
+		available = { is_in_faction_with = GER }
 		completion_reward = {
 			add_ideas = TUR_german_military_command
 			GER = { country_event = ww1_ottoman.50 }
@@ -640,6 +640,16 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = TUR_study_import_aircraft_designs
 		}
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory 
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
 		x = 13
 		y = 4
 
@@ -849,6 +859,13 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = TUR_invoke_the_methods_of_mehmed_ii
 		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = ss_tech
+			}
+		}
 		x = 17
 		y = 4
 
@@ -968,6 +985,7 @@ focus_tree = {
 		y = 3
 		completion_reward = {
 			TUR_reunite_officers_command_level_down = yes
+			remove_ideas = TUR_ismail_enver
 			every_unit_leader = {
 				limit = {
 					has_trait = politically_connected
@@ -1794,7 +1812,7 @@ focus_tree = {
 			}
 			if = {
 				limit = { has_completed_focus = TUR_yildiz_teskilati }
-				
+				remove_ideas = TUR_ismail_enver
 				every_unit_leader = {
 					limit = {
 						has_trait = trait_TUR_ittihadist_sympathies
@@ -1938,7 +1956,6 @@ focus_tree = {
 			add_political_power = 100
 			remove_country_leader_trait = puppet_of_enver_pasha
 			add_country_leader_trait = powerless_sultan
-			remove_ideas = TUR_ismail_enver
 		}
 	}
 	focus = {
@@ -2406,6 +2423,14 @@ focus_tree = {
 		prerequisite = {
 			focus = TUR_ittihadi_muhammedi
 		}
+		completion_reward = {
+			every_unit_leader = {
+				limit = {
+					has_trait = trait_TUR_ittihadist_sympathies
+				}
+				remove_unit_leader = PREV
+			}
+		}
 		x = 47
 		y = 7
 
@@ -2829,9 +2854,11 @@ focus_tree = {
 			focus = TUR_protect_democracy
 			focus = TUR_arrest_pan_nationalist_radicals
 		}
+		completion_reward = {
+			add_ideas = turkish_invest
+		}
 		x = 37
 		y = 8
-
 	}
 	focus = {
 		id = TUR_cure_a_sick_man
@@ -2886,7 +2913,7 @@ focus_tree = {
 		x = 37
 		y = 10
 		completion_reward = {
-
+			country_event = ottoman.187
 		}
 	}
 	focus = {
@@ -2915,9 +2942,127 @@ focus_tree = {
 		prerequisite = {
 			focus = TUR_support_the_east
 		}
+		available = {
+			BUL = {
+				OR = {
+					is_subject_of = TUR
+					exists = no
+				}
+			}
+			SER = {
+				OR = {
+					is_subject_of = TUR
+					exists = no
+				}
+			}
+			GRE = {
+				OR = {
+					is_subject_of = TUR
+					exists = no
+				}
+			}
+		}
 		x = 36
 		y = 9
-
+		bypass = {
+			has_global_flag = kis_firstbalkanwar_victory
+		}
+		completion_reward = {
+			country_event = {
+				id = ottoman.66
+				days = 1
+			}
+			if = {
+				limit = {
+					has_idea = idea_turkey_minor_separatism
+				}
+				remove_ideas = idea_turkey_minor_separatism
+			}
+			if = {
+				limit = {
+					has_idea = idea_turkey_balkan_separatism
+				}
+				remove_ideas = idea_turkey_balkan_separatism
+			}
+			add_ideas = tur_nation_program_puppet_balkan
+			GRE = {
+				set_cosmetic_tag = TUR_GRE
+				hidden_effect = {
+					load_focus_tree = greece_puppet_focus
+					every_state = {
+						limit = {
+							NOT = {
+								OR = {
+									state = 182
+									state = 164
+									state = 187
+									state = 790
+									state = 731
+									state = 803
+									state = 183
+									state = 757
+									state = 184
+								}
+							}
+							is_owned_by = TUR
+							is_core_of = GRE
+						}
+						GRE = {
+							transfer_state = PREV
+						}
+					}
+				}
+			}
+			puppet = GRE
+			BUL = {
+				set_cosmetic_tag = TUR_BUL
+					hidden_effect = {
+						load_focus_tree = bulgaria_puppet_focus
+						every_state = {
+							limit = {
+								NOT = {
+									OR = {
+										state = 756
+										state = 788
+										state = 757
+										state = 184
+										state = 759
+										state = 821
+									}
+								}
+								is_owned_by = TUR
+								is_core_of = BUL
+							}
+							BUL = {
+								transfer_state = PREV
+							}
+						}
+					}
+			}
+			puppet = BUL
+			SER = {
+				set_cosmetic_tag = TUR_SER
+				hidden_effect = {
+					every_state = {
+						limit = {
+							NOT = {
+								OR = {
+									state = 760
+									state = 106
+									state = 759
+								}
+							}
+							is_owned_by = TUR
+							is_core_of = SER
+						}
+						SER = {
+							transfer_state = PREV
+						}
+					}
+				}
+			}
+			puppet = SER
+		}
 	}
 	focus = {
 		id = TUR_support_the_east
@@ -3162,7 +3307,7 @@ focus_tree = {
 		}
 		x = 30
 		y = 11
-		
+	}	
 	focus = {
 		id = TUR_stand_with_entente
 		icon = GFX_goal_unknown
@@ -3297,6 +3442,24 @@ focus_tree = {
 		prerequisite = {
 			focus = TUR_call_first_rome_for_union
 		}
+		completion_reward = {
+			add_ai_strategy = {
+				type = alliance
+				id = "ETH"
+				value = 50
+			}
+			ETH = {
+				add_ai_strategy = {
+					type = alliance
+					id = "TUR"
+					value = 200
+				}
+			}
+			reverse_add_opinion_modifier = {
+				type = large_increase
+				target = ETH
+			}
+		}
 		x = 33
 		y = 14
 
@@ -3311,6 +3474,38 @@ focus_tree = {
 		x = 31
 		y = 14
 
+	}
+		focus = {
+		id = TUR_turn_to_the_east
+		icon = GFX_focus_TUR_treaty_of_saadabad
+		cost = 10 
+		x = 32
+		y = 15
+		prerequisite = {
+			focus = TUR_align_abyssinia
+		}
+		prerequisite = {
+			focus = TUR_restore_order_in_egypt
+		}
+		completion_reward = {
+			AFG = {
+				custom_effect_tooltip = invite_to_faction_tt
+			}
+			PER = {
+				custom_effect_tooltip = invite_to_faction_tt
+			}
+		}
+	}
+	
+	focus = {
+		id = TUR_crush_the_former_third_rome
+		icon = GFX_focus_ger_strike_at_the_source
+		cost = 10 
+		prerequisite = {
+			focus = TUR_turn_to_the_east
+		}
+		x = 32
+		y = 16
 	}
 	focus = {
 		id = TUR_unite_pan_nationalists
