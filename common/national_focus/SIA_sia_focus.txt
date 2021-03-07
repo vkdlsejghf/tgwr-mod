@@ -69,6 +69,8 @@ focus_tree = {
 		cost = 4
 		available_if_capitulated = yes
 		prerequisite = { focus = SIA_entente_influence }
+		ai_will_do = { factor = 10 }
+		completion_reward = { air_experience = 5 }
 	}
 
 	#Focus for Entente Influence
