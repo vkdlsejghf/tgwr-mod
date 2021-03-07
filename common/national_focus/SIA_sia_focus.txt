@@ -176,6 +176,7 @@ focus_tree = {
 		cost = 10
 		available_if_capitulated = yes
 		prerequisite = { focus = SIA_central_powers_influence }
+		ai_will_do = { factor = 10 }
 	}
 
 	#Focus for Our Rightful Cambodian Land!
