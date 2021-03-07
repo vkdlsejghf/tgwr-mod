@@ -43,6 +43,8 @@ focus_tree = {
 		prerequisite = { 
 			focus = SIA_seize_german_ships 
 		}
+		ai_will_do = { factor = 10 }
+		completion_reward = { army_experience = 5 }
 	}
 
 	#Focus for Siamese Labour Volunteer Detachment
@@ -54,6 +56,8 @@ focus_tree = {
 		cost = 10
 		available_if_capitulated = yes
 		prerequisite = { focus = SIA_volunteer_expeditionary_force }
+		ai_will_do = { factor = 10 }
+		completion_reward = { army_experience = 10 }
 	}
 
 	#Focus for Pilot Training
