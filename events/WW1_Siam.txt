@@ -71,3 +71,20 @@ country_event = {
 			}
 		}
 	}
+country_event = {
+	id = ww1_siam.3
+	title = ww1_siam.3.t
+	desc = ww1_siam.3.d 
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = ww1_siam.3.a 
+		SIA = {
+			add_equipment_to_stockpile = {
+    			type = convoy
+				amount = 12
+				producer = GER 
+				}
+			}
+		}
+	}
