@@ -21,7 +21,7 @@ focus_tree = {
 	#Focus for Seize German Ships
 	focus = {
 		id = SIA_seize_german_ships
-		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		icon = GFX_goal_unknown
 		x = 14
 		y = 4
 		cost = 4
@@ -65,7 +65,7 @@ focus_tree = {
 	#Focus for Pilot Training
 	focus = {
 		id = SIA_pilot_training
-		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		icon = GFX_goal_generic_air_fighter
 		x = 16
 		y = 4
 		cost = 4
@@ -95,7 +95,7 @@ focus_tree = {
 	#Focus for Central Powers Influence
 	focus = {
 		id = SIA_central_powers_influence
-		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		icon = GFX_goal_unknown
 		x = 11
 		y = 3
 		cost = 10
