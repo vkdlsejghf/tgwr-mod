@@ -33,7 +33,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = SIA_entente_influence }
 		ai_will_do = { factor = 10 }
-		completion_reward = { GER = { country_event =  ww1_siam.3 } }
+		completion_reward = { GER = { country_event =  ww1_siam.3 } custom_effect_tooltip = SIA_submarine_seize_tt }
 	}
 
 	#Focus for Volunteer Expeditionary Force
