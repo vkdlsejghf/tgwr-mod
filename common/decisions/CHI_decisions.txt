@@ -95,7 +95,14 @@ CHI_warlord_era = {
 		activation = {
 			original_tag = CHI
 			NOT = { has_government = fascism }
-			has_global_flag = national_protection_war
+			OR = {
+				has_global_flag = national_protection_war
+				AND = {
+					has_global_flag = yuan_shikai_dead
+					has_global_flag = chinese_warlord_crisis
+					NOT = { has_completed_focus = CHI_second_empire }
+				}
+			}
 			owns_state = 608
 			NOT = { has_global_flag = manchu_restoration }
 			NOT = { has_completed_focus = CHI_national_protection_war }
@@ -130,6 +137,7 @@ CHI_warlord_era = {
 				has_global_flag = national_protection_war
 				has_country_flag = CHI_national_protection_flag
 			}
+			has_completed_focus = CHI_second_empire
 		}
 		allowed = {
 			OR = {
@@ -487,13 +495,11 @@ CHI_warlord_era = {
 		complete_effect = {
 			SIK = {
 				transfer_state = 618
-				transfer_state = 617
 				transfer_state = 287
 				transfer_state = 619
 				hidden_effect = {
 					add_state_core = 619
 					add_state_core = 618
-					add_state_core = 617
 					add_state_core = 287
 					load_oob = "SIK_1916"
 				}
@@ -1080,65 +1086,6 @@ CHI_chinese_warlords = {
 		}
 		ai_will_do = {
 			factor = 100
-		}
-	}
-	CHI_FNG_form_guominjun = {
-		icon = generic_prepare_civil_war
-		allowed = {
-			original_tag = FNG
-		}
-		visible = {
-			JNC = { owns_state = 598 }
-		}
-		available = {
-			GMJ = { exists = no }
-			has_war_with = CHI
-		}
-		cost = 150	
-		days_remove = 10
-		fire_only_once = yes
-		remove_effect = {
-			GMJ = {
-				transfer_state = 621
-				transfer_state = 612
-				transfer_state = 611
-				hidden_effect = {
-					add_state_core = 621
-					add_state_core = 612
-					add_state_core = 611
-				}
-				load_oob = "GMJ_1919"
-			}
-			puppet = GMJ
-		}
-		ai_will_do = {
-			factor = 100
-		}
-	}
-	CHI_GMJ_leave_FNG = {
-		icon = generic_prepare_civil_war
-		allowed = {
-			original_tag = GMJ
-		}
-		visible = {
-			
-		}
-		available = {
-			is_puppet_of = FNG
-			NOT = { has_war_with = CHI }
-		}
-		cost = 75		
-		days_remove = 10
-		fire_only_once = yes
-		remove_effect = {
-			end_puppet = GMJ
-		}
-		ai_will_do = {
-			factor = 100
-			modifier = {
-				factor = 0
-				CHI = { NOT = { has_completed_focus = CHI_revival_of_kuomntang } }
-			}
 		}
 	}
 	CHI_XSM_take_ningxia = {
