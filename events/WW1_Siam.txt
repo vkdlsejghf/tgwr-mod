@@ -85,7 +85,6 @@ country_event = {
 				amount = 12
 				producer = GER 
 				}
-				country_event = { ww1_siam.4 }
 			}
 		}
 	}
@@ -97,5 +96,5 @@ country_event = {
 	is_triggered_only = yes 
 	option = {
 		name = ww1_siam.4.a
+		}
 	}
-}
