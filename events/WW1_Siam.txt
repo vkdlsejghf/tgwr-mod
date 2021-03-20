@@ -85,6 +85,7 @@ country_event = {
 				amount = 12
 				producer = GER 
 				}
+				country_event = { ww1_siam.4 }
 			}
 		}
 	}
