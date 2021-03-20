@@ -88,3 +88,13 @@ country_event = {
 			}
 		}
 	}
+country_event = {
+	id = ww1_siam.4
+	title = ww1_siam.4.t 
+	desc = ww1_siam.4.d 
+	fire_only_once = yes 
+	is_triggered_only = yes 
+	option = {
+		name = ww1_siam.4.a
+	}
+}
