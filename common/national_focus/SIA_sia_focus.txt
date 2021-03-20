@@ -16,6 +16,11 @@ focus_tree = {
 		cost = 7
 		available_if_capitulated = yes
 		prerequisite = { focus = SIA_central_powers_influence }
+		ai_will_do = { factor = 10 }
+		completion_reward = {
+			remove_ideas=neutrality_idea
+			add_timed_idea = { idea = idea_mobilization days = 360 }
+		}
 	}
 
 	#Focus for Seize German Ships
@@ -92,6 +97,23 @@ focus_tree = {
 			focus = SIA_foreign_trade 
 		}
 		mutually_exclusive = { focus = SIA_central_powers_influence }
+		ai_will_do = { factor = 10 }
+		completion_reward = {
+			every_country = {
+				limit = { is_in_faction_with = FRA }
+				add_opinion_modifier = { 
+					target = ROOT
+					modifier = stand_with_major_faction
+				}
+			}
+			every_country = {
+				limit = { is_in_faction_with = GER }
+				add_opinion_modifier = { 
+					target = ROOT
+					modifier = stand_with_major_faction_opposite
+				}
+			}
+		}
 	}
 
 	#Focus for Central Powers Influence
@@ -109,6 +131,23 @@ focus_tree = {
 			focus = SIA_foreign_trade 
 		}
 		mutually_exclusive = { focus = SIA_entente_influence }
+		ai_will_do = { factor = 10 }
+		completion_reward = {
+			every_country = {
+				limit = { is_in_faction_with = GER }
+				add_opinion_modifier = { 
+					target = ROOT
+					modifier = stand_with_major_faction
+				}
+			}
+			every_country = {
+				limit = { is_in_faction_with = FRA }
+				add_opinion_modifier = { 
+					target = ROOT
+					modifier = stand_with_major_faction_opposite
+				}
+			}						
+		}
 	}
 
 	#Focus for On Our Own!
