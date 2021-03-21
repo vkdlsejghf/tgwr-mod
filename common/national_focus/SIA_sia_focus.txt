@@ -224,6 +224,9 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = SIA_central_powers_influence }
 		ai_will_do = { factor = 10 }
+		completion_reward = {
+			custom_effect_tooltip = SIA_central_powers_equipment_tt
+		}
 	}
 
 	#Focus for Our Rightful Cambodian Land!

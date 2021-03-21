@@ -1577,3 +1577,4 @@
 
  #Siam Tooltips
  SIA_submarine_seize_tt:0 "We can join the Entente once we complete this focus"
+ SIA_central_powers_equipment_tt:0 "Completeing this focus before joining the Central Powers may have bonus benefits"
