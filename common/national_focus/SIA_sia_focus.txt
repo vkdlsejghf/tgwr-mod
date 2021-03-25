@@ -20,6 +20,12 @@ focus_tree = {
 		completion_reward = {
 			remove_ideas=neutrality_idea
 			add_timed_idea = { idea = idea_mobilization days = 360 }
+			if = {
+				limit = {
+					has_completed_focus = SIA_central_powers_equipment
+				}
+				add_manpower = 100000
+			}
 		}
 	}
 
