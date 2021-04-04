@@ -1417,7 +1417,7 @@ focus_tree = {
 			focus = TUR_anglo_ottoman_convention
 		}
 		x = 25
-		y = 7
+		y = 8
 		available = {
 			NOT = { has_war_with = ENG }
 			OR = {
@@ -1621,6 +1621,9 @@ focus_tree = {
 		}
 		x = 23
 		y = 13
+		completion_reward = {
+			add_ideas = TUR_legacy_of_conquerors
+		}
 	}
 	focus = {
 		id = TUR_play_the_war_drums
@@ -2068,7 +2071,7 @@ focus_tree = {
 			focus = TUR_organize_jewish_money_pay_back_debts
 		}
 		x = 26
-		y = 6
+		y = 7
 		available = {
 			any_state = {
 				is_core_of = IRQ
@@ -2095,7 +2098,7 @@ focus_tree = {
 			focus = TUR_organize_jewish_money_pay_back_debts
 		}
 		x = 28
-		y = 6
+		y = 7
 		available = {
 			any_state = {
 				is_core_of = IRQ
@@ -2207,6 +2210,12 @@ focus_tree = {
 				add_idea = TUR_officers_struggle_harbiyeli
 			}
 			unlock_decision_tooltip = TUR_reorganize_officers_harbiyeli
+			hidden_effect = {
+				country_event = {
+					id = ww1_ottoman.66
+					days = 5
+				}
+			}
 		}
 	}
 	focus = {
@@ -2229,9 +2238,7 @@ focus_tree = {
 					limit = {
 						has_trait = trait_TUR_reactionaries_sympathies
 					}
-					hidden_effect = {					
-						retire = yes
-					}
+					retire = yes
 				}
 				custom_effect_tooltip = remove_unit_leader
 				swap_ideas = {
@@ -2247,9 +2254,7 @@ focus_tree = {
 						has_trait = trait_TUR_ittihadist_sympathies
 						has_trait = trait_TUR_ittihadist_radical_sympathies
 					}
-					hidden_effect = {
-						retire = yes
-					}
+					retire = yes
 				}
 				custom_effect_tooltip = remove_unit_leader
 				swap_ideas = {
@@ -2272,42 +2277,15 @@ focus_tree = {
 		x = 31
 		y = 4
 		completion_reward = {
-			add_stability = 0.010
+			add_stability = 0.10
 			add_political_power = 75
 			every_owned_state = {
-				limit = { has_dynamic_modifier = { modifier = minority_war_ex_core_vilayet  }}
-				remove_dynamic_modifier = { modifier = minority_war_ex_core_vilayet }
-				add_dynamic_modifier = { modifier = autonomy_vilayet }
-			}
-			every_owned_state = {
-				limit = { has_dynamic_modifier = { modifier = Famine_war_ex_core_vilayet  }}
-				remove_dynamic_modifier = { modifier = Famine_war_ex_core_vilayet }
-				add_dynamic_modifier = { modifier = autonomy_vilayet }
-			}
-			every_owned_state = {
-				limit = { has_dynamic_modifier = { modifier = tur_disloyal_minorities  }}
-				remove_dynamic_modifier = { modifier = tur_disloyal_minorities }
-				add_dynamic_modifier = { modifier = autonomy_vilayet }
-			}
-		    every_owned_state = {
-				limit = { has_dynamic_modifier = { modifier = tur_placated_administration  }}
-				remove_dynamic_modifier = { modifier = tur_placated_administration }
-				add_dynamic_modifier = { modifier = placated_vilayet }
-			}
-			every_owned_state = {
-				limit = { has_dynamic_modifier = { modifier = placated_vilayet  }}
-				remove_dynamic_modifier = { modifier = placated_vilayet }
-				add_dynamic_modifier = { modifier = loyal_vilayet }
-			}
-			every_owned_state = {
-				limit = { has_dynamic_modifier = { modifier = loyal_vilayet  }}
-				remove_dynamic_modifier = { modifier = loyal_vilayet }
-				add_dynamic_modifier = { modifier = centralized_noncore_vilayet }
-			}
-			every_owned_state = {
-				limit = { has_dynamic_modifier = { modifier = centralized_noncore_vilayet  }}
-				remove_dynamic_modifier = { modifier = centralized_noncore_vilayet }
-				add_core_of = TUR
+				limit = {
+					NOT = {
+						is_core_of = TUR
+					}
+				}
+				add_compliance = 0.2
 			}
 		}
 	}
@@ -3238,6 +3216,9 @@ focus_tree = {
 		prerequisite = {
 			focus = TUR_neutrality_for_recovery
 		}
+		completion_reward = {
+			add_ideas = TUR_idea_military_academy
+		}
 		x = 33
 		y = 8
 	}
@@ -3331,8 +3312,8 @@ focus_tree = {
 
 	}
 	focus = {
-		id = TUR_legacy_of_the_seljuk_turks 
-		icon = GFX_focus_tur_legacy_of_the_seljuk_turks
+		id = TUR_legacy_of_the_sultanate_of_rum 
+		icon = GFX_focus_tur_legacy_of_the_sultanate_of_rum
 		cost = 5
 		prerequisite = {
 			focus = TUR_return_to_greece
@@ -3966,6 +3947,21 @@ focus_tree = {
 		prerequisite = {
 			focus = TUR_return_to_greece
 		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = kis_firstbalkanwar_victory
+				}
+				create_wargoal = {
+					target = SER
+					type = annex_everything
+				}
+				create_wargoal = {
+					target = MNT
+					type = annex_everything
+				}
+			}
+		}
 		x = 30
 		y = 11
 	}	
@@ -4001,7 +3997,7 @@ focus_tree = {
 		completion_reward = {
 			reverse_add_opinion_modifier = {
 				target = GER
-				type = large_increase
+				modifier = large_increase
 			}
 		}
 		x = 28
@@ -4157,11 +4153,6 @@ focus_tree = {
 		x = 41
 		y = 10
 		completion_reward = {
-			custom_effect_tooltip = available_political_advisor
-			show_ideas_tooltip = TUR_nazim_bey
-			custom_effect_tooltip = available_political_advisor
-			show_ideas_tooltip = TUR_ziya_gokalp
-			unlock_decision_category_tooltip = TUR_panturkism_decision
 		}
 	}
 	
