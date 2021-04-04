@@ -208,6 +208,10 @@ focus_tree = {
 		cost = 15
 		available_if_capitulated = yes
 		prerequisite = { focus = SIA_foreign_influence }
+		ai_will_do = { factor = 10 }
+		completion_reward = {
+			country_event = { id = ww1_siam.7 }
+		}
 	}
 
 	#Focus for Siam! Our Homeland
