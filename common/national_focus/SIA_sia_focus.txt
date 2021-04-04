@@ -10,7 +10,7 @@ focus_tree = {
 	#Focus for Mobilize Our Borders!
 	focus = {
 		id = SIA_mobilize_our_borders
-		icon = GFX_goal_generic_allies_build_infantry
+		icon = GFX_focus_the_big_push
 		x = 8
 		y = 4
 		cost = 7
@@ -32,7 +32,7 @@ focus_tree = {
 	#Focus for Seize German Ships
 	focus = {
 		id = SIA_seize_german_ships
-		icon = GFX_focus_generic_navy_battleship2
+		icon = GFX_focus_battlefleet
 		x = 14
 		y = 4
 		cost = 4
@@ -91,7 +91,7 @@ focus_tree = {
 	#Focus for Entente Influence
 	focus = {
 		id = SIA_entente_influence
-		icon = GFX_goal_generic_alliance
+		icon = GFX_focus_consolidate_entente
 		x = 15
 		y = 3
 		cost = 15
@@ -125,7 +125,7 @@ focus_tree = {
 	#Focus for Central Powers Influence
 	focus = {
 		id = SIA_central_powers_influence
-		icon = GFX_goal_generic_alliance
+		icon = GFX_focus_central_powers
 		x = 11
 		y = 3
 		cost = 15
@@ -227,7 +227,7 @@ focus_tree = {
 	#Focus for Central Powers Equipment
 	focus = {
 		id = SIA_central_powers_equipment
-		icon = GFX_goal_generic_military_deal
+		icon = GFX_focus_german_equipment
 		x = 11
 		y = 4
 		cost = 10
