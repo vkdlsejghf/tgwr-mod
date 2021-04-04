@@ -75,7 +75,7 @@ country_event = {
 		}
 	}
 country_event = {
-	id = ww1_siam.3
+	id = ww1_siam.3 #seize german ships 
 	title = ww1_siam.3.t
 	desc = ww1_siam.3.d 
 	fire_only_once = yes
@@ -96,7 +96,7 @@ country_event = {
 		}
 	}
 country_event = {
-	id = ww1_siam.4
+	id = ww1_siam.4 #seize german ships alert
 	title = ww1_siam.4.t 
 	desc = ww1_siam.4.d 
 	fire_only_once = yes 
@@ -109,7 +109,7 @@ country_event = {
 		}
 	}
 country_event = {
-	id = ww1_siam.5
+	id = ww1_siam.5 #foreign trade
 	title = ww1_siam.5.t
 	desc = ww1_siam.5.d 
 	fire_only_once = yes 
@@ -127,5 +127,24 @@ country_event = {
 			factor=100
 			}
 		add_timed_idea = { idea = idea_entente_investments days = 360 }
+	}
+}
+country_event = {
+	id = ww1_siam.6 #foreign influence focus event 
+	title = ww1_siam.6.t
+	desc = ww1_siam.5.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = ww1_siam.6.a #entente
+		ai_chance = {
+			factor=100
+		}
+	}
+	option = {
+		name = ww1_siam.6.b #central powers
+		ai_chance = {
+			factor = 0
+		}
 	}
 }

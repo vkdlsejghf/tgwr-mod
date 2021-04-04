@@ -178,6 +178,10 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = SIA_siam_our_homeland }
 		mutually_exclusive = { focus = SIA_on_our_own }
+		ai_will_do = { factor = 10 }
+		completion_reward = {
+			country_event = { id = ww1_siam.6 }
+		}
 	}
 
 	#Focus for Foreign Trade
