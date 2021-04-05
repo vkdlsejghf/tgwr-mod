@@ -103,7 +103,13 @@ focus_tree = {
 			focus = SIA_foreign_trade 
 		}
 		mutually_exclusive = { focus = SIA_central_powers_influence }
-		ai_will_do = { factor = 10 }
+		ai_will_do = { 
+			factor = 5
+			modifier = {
+				has_country_flag = siam_entente_influence
+				factor = 10
+			}
+			}
 		completion_reward = {
 			every_country = {
 				limit = { is_in_faction_with = FRA }
@@ -137,7 +143,13 @@ focus_tree = {
 			focus = SIA_foreign_trade 
 		}
 		mutually_exclusive = { focus = SIA_entente_influence }
-		ai_will_do = { factor = 10 }
+		ai_will_do = { 
+			factor = 5
+			modifier = {
+				has_country_flag = siam_cp_influence
+				factor = 10
+			} 
+			}
 		completion_reward = {
 			every_country = {
 				limit = { is_in_faction_with = GER }

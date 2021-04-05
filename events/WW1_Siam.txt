@@ -117,14 +117,30 @@ country_event = {
 	option = {
 		name = ww1_siam.5.a 
 		ai_chance={
-			factor=0
+			factor=50
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+			modifier = {
+				has_country_flag = siam_cp_influence
+				factor = 100
+			}
 			}
 		add_timed_idea = { idea = idea_cp_investments days = 360 }
 	}
 	option = {
 		name = ww1_siam.5.b 
 		ai_chance={
-			factor=100
+			factor=50
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 100
+			}
+			modifier = {
+				has_country_flag = siam_entente_influence
+				factor = 100
+			}
 			}
 		add_timed_idea = { idea = idea_entente_investments days = 360 }
 	}
@@ -144,6 +160,7 @@ country_event = {
 				factor = 100
 			}
 		}
+		set_country_flag = siam_entente_influence
 	}
 	option = {
 		name = ww1_siam.6.b #central powers
@@ -154,6 +171,7 @@ country_event = {
 				factor = 0
 			}
 		}
+		set_country_flag = siam_cp_influence
 	}
 }
 country_event = {
@@ -165,7 +183,11 @@ country_event = {
 	option = {
 		name = ww1_siam.7.a #military access  for entente
 		ai_chance = {
-			factor = 100
+			factor = 50
+			modifier = {
+				has_country_flag = siam_entente_influence
+				factor = 100
+			}
 		}
 		give_military_access = FRA
 		give_military_access = ENG
@@ -173,7 +195,11 @@ country_event = {
 	option = {
 		name = ww1_siam.7.b #military access for central powers
 		ai_chance = {
-			factor = 0
+			factor = 50
+			modifier = {
+				has_country_flag = siam_cp_influence
+				factor = 100
+			}
 		}
 		give_military_access = GER
 		give_military_access = AUH
