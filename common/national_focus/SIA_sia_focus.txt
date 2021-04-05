@@ -167,10 +167,10 @@ focus_tree = {
 		prerequisite = { focus = SIA_siam_our_homeland }
 		mutually_exclusive = { focus = SIA_foreign_influence }
 		ai_will_do = {
-			factor = 0
+			factor = 5
 			modifier = {
-				is_historical_focus_on = no
-				factor = 3
+				is_historical_focus_on = yes
+				factor = 0
 			}
 		}
 	}
@@ -186,10 +186,10 @@ focus_tree = {
 		prerequisite = { focus = SIA_siam_our_homeland }
 		mutually_exclusive = { focus = SIA_on_our_own }
 		ai_will_do = {
-			 factor = 10 
+			 factor = 5
 			 modifier = {
-				 is_historical_focus_on = no
-				 factor = 7
+				 is_historical_focus_on = yes
+				 factor = 10
 			 }
 			}
 		completion_reward = {
