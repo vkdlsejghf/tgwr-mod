@@ -139,12 +139,20 @@ country_event = {
 		name = ww1_siam.6.a #entente
 		ai_chance = {
 			factor=100
+			modifier = {
+				is_historical_focus_on = no
+				factor = 50
+			}
 		}
 	}
 	option = {
 		name = ww1_siam.6.b #central powers
 		ai_chance = {
 			factor = 0
+			modifier = {
+				is_historical_focus_on = no
+				factor = 50
+			}
 		}
 	}
 }
