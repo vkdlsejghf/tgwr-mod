@@ -166,6 +166,13 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = SIA_siam_our_homeland }
 		mutually_exclusive = { focus = SIA_foreign_influence }
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				is_historical_focus_on = no
+				factor = 3
+			}
+		}
 	}
 
 	#Focus for Foreign Influence
@@ -178,7 +185,13 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = { focus = SIA_siam_our_homeland }
 		mutually_exclusive = { focus = SIA_on_our_own }
-		ai_will_do = { factor = 10 }
+		ai_will_do = {
+			 factor = 10 
+			 modifier = {
+				 is_historical_focus_on = no
+				 factor = 7
+			 }
+			}
 		completion_reward = {
 			country_event = { id = ww1_siam.6 }
 		}
