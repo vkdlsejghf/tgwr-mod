@@ -159,11 +159,15 @@ country_event = {
 		ai_chance = {
 			factor = 100
 		}
+		give_military_access = FRA
+		give_military_access = ENG
 	}
 	option = {
 		name = ww1_siam.7.b #military access for central powers
 		ai_chance = {
 			factor = 0
 		}
+		give_military_access = GER
+		give_military_access = AUH
 	}
 }
