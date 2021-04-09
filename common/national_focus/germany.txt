@@ -201,7 +201,7 @@ focus_tree = {
 	}
 	focus = {
 		id = GER_romanian_pact
-		icon = GFX_focus_rom_preserve_romania
+		icon = GFX_focus_GER_romanian_pact
 		cost = 10
 		prerequisite = {
 			focus = GER_isolate_adriatic_sea
@@ -409,7 +409,7 @@ focus_tree = {
 	}
 	focus = {
 		id = GER_bruderkrieg
-		icon = GFX_goal_generic_major_war
+		icon = GFX_focus_GER_bruderkrieg
 		cost = 10
 		prerequisite = {
 			focus = GER_non_intervention_treaty
@@ -850,7 +850,7 @@ focus_tree = {
 	}
 	focus = {
 		id = GER_befriend_sweden
-		icon = GFX_focus_hol_united_netherlands
+		icon = GFX_focus_deal_with_sweden
 		cost = 10
 		prerequisite = {
 			focus = GER_scandinavian_focus
@@ -881,7 +881,7 @@ focus_tree = {
 	}
 	focus = {
 		id = GER_military_mission_in_turkey
-		icon = GFX_goal_heal
+		icon = GFX_focus_otto_heal
 		cost = 10
 		prerequisite = {
 			focus = GER_military_advisers
@@ -920,7 +920,7 @@ focus_tree = {
 	}
 	focus = {
 		id = GER_befriend_bulgaria
-		icon = GFX_goal_generic_intelligence_exchange
+		icon = GFX_focus_generic_befriend_bulgaria
 		cost = 10
 		prerequisite = {
 			focus = GER_military_mission_in_turkey
@@ -4812,7 +4812,7 @@ focus_tree = {
 	}
 	focus = {
 		id = GER_establish_finnish_monarchy
-		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		icon = GFX_focus_invite_finland
 		cost = 10
 		prerequisite = {
 			focus = GER_invansion_in_finland

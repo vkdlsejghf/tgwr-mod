@@ -2,7 +2,7 @@ add_namespace = ottoman
 add_namespace = ww1_ottoman
 add_namespace = ww1_ottoman_trial
 add_namespace = ottomanasembly
-
+add_namespace = ottoman_arabia
 # Meclis-i Mebus Elections - CUP prepares coup
 ####
 country_event = {
@@ -522,21 +522,6 @@ country_event = {
 	}
 }
 
-# Ottomans leave Balkan - message
-####
-country_event = {
-	id = ww1_ottoman.23
-	title = ww1_ottoman.23.t
-	desc = ww1_ottoman.23.d
-	picture = GFX_report_event_spr_civil_war_faction_defeated
-	
-	is_triggered_only = yes
-
-	
-	option = {
-		name = ww1_ottoman.23.a
-	}
-}
 # Accord and Freedom 1911
 ####
 country_event = {
@@ -757,9 +742,12 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		tag = TUR
-		has_country_flag = TUR_hareket_ordusu_uprising
 		has_civil_war = no
 		has_completed_focus = TUR_ittihadi_muhammedi
+		OR = {
+			has_country_flag = TUR_hareket_ordusu_uprising
+			has_completed_focus = TUR_compromise_with_ittihadists
+		}
 	}
 	option = {
 		name = ww1_ottoman.31.b
@@ -2136,6 +2124,58 @@ country_event = {
 		set_rule = {
 			can_join_factions = yes
 		}
+	}
+}
+###Sufi leaders consultations
+country_event = {
+	id = ww1_ottoman.72
+	title = ww1_ottoman.72.t
+	desc = ww1_ottoman.72.d
+	is_triggered_only = yes
+	option = {
+		name = ww1_ottoman.72.a
+		add_war_support = 0.05
+		add_stability = -0.1
+		add_political_power = 50
+		add_ideas = TUR_idea_sufi_integrated
+	}
+	option = {
+		name = ww1_ottoman.72.b
+		add_stability = 0.1
+		add_war_support = -0.05
+	}
+}
+###Invitations to caliphate
+country_event = {
+	id = ww1_ottoman.73
+	title = ww1_ottoman.73.t
+	desc = ww1_ottoman.73.d
+	is_triggered_only = yes
+	option = {
+		name = ww1_ottoman.73.a
+		TUR = {
+			add_to_faction = PREV
+		}
+		ai_chance = {
+			factor = 80
+		}
+	}
+	option = {
+		name = ww1_ottoman.73.b
+		ai_chance = {
+			factor = 30
+		}
+	}
+}
+####Army plot
+country_event = {
+	id = ww1_ottoman.75
+	title = ww1_ottoman.75.t
+	desc = ww1_ottoman.75.d
+	is_triggered_only = yes
+	option = {
+		name = ww1_ottoman.75.a
+		activate_mission_tooltip = TUR_revolt_against_islamists_mission
 	}
 }
 ################
