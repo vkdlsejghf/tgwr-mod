@@ -205,3 +205,22 @@ country_event = {
 		give_military_access = AUH
 	}
 }
+country_event = {
+	id = ww1_siam.8 #german equipment 
+	title - ww1_siam.8.t
+	desc = ww1_siam.8.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = ww1_siam.8.a #germany agrees
+		ai_chance = {
+			factor = 80
+		}
+	}
+	option = {
+		name = ww1_siam.8.b #germany doesnt agree
+		ai_chance = {
+			factor = 20
+		}
+	}
+}
