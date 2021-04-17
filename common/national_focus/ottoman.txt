@@ -365,7 +365,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TUR_teskilat_brigades
-		icon = GFX_focus_otto_stormtrooper
+		icon = GFX_focus_chi_army_reform
 		cost = 10
 		prerequisite = {
 			focus = TUR_german_turkish_command
@@ -397,7 +397,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TUR_organization_artillery
-		icon = GFX_focus_otto_stormtrooper
+		icon = GFX_goal_generic_army_artillery2
 		cost = 10
 		prerequisite = {
 			focus = TUR_german_turkish_command
@@ -1121,7 +1121,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TUR_naval_aviation
-		icon = GFX_goal_unknown
+		icon = GFX_goal_generic_build_airforce
 		cost = 10
 		prerequisite = {
 			focus = TUR_coastal_defense_of_marmara_shores
@@ -1571,9 +1571,9 @@ focus_tree = {
 			if = {
 				limit = {
 					country_exists = ASR
-				}
-				ASR = {
-					is_subject_of = TUR
+					ASR = {
+						is_subject_of = TUR
+					}	
 				}
 				annex_country = {
 					target = ASR
@@ -1611,7 +1611,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TUR_restore_eyalet_egypt
-		icon = GFX_goal_unknown
+		icon = GFX_focus_TUR_restore_eyalet_egypt
 		cost = 10
 		prerequisite = {
 			focus = TUR_restore_vilayet_hejaz
@@ -1793,7 +1793,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TUR_come_to_vienna
-		icon = GFX_goal_unknown
+		icon = GFX_goal_generic_territory_or_war
 		cost = 10
 		prerequisite = {
 			focus = TUR_play_the_war_drums
@@ -1894,13 +1894,11 @@ focus_tree = {
 		y = 2
 		available = {
 			has_idea = TUR_ODPA
-			OR = {
-				NOT = {
-					has_completed_focus = TUR_ittihadi_muhammedi
-				}
-				NOT = {
-					has_completed_focus = TUR_istirak_mukavemet
-				}
+			NOT = {
+				has_completed_focus = TUR_istirak_mukavemet
+			}
+			NOT = {
+				has_completed_focus = TUR_ittihadi_muhammedi
 			}
 		}
 		bypass = {
@@ -2743,8 +2741,8 @@ focus_tree = {
 						is_core_of = TUR
 					}
 				}
-				add_resistance = -0.05
-				add_compliance = -0.05
+				add_resistance = -5
+				add_compliance = -5
 			}
 			add_war_support = 0.1
 			add_popularity = {
@@ -2894,6 +2892,7 @@ focus_tree = {
 			NOT = {
 				has_completed_focus = TUR_ODPA
 			}
+			has_civil_war = no
 		}
 		x = 49
 		y = 5
@@ -2918,7 +2917,7 @@ focus_tree = {
 			}
 			create_country_leader = {
 				name = "Meclis-I Islam"
-				picture="gfx/leaders/TUR/meclisislam.dds"
+				picture="gfx/leaders/TUR/TUR_meclis_islam.dds"
 				expire = "1935.1.1"
 				ideology = theocracy
 				traits = { meclis_islam }
@@ -2929,6 +2928,7 @@ focus_tree = {
 				long_name = TUR_islamist_long
 				name = TUR_islamist_party
 			}
+			set_cosmetic_tag = TUR_ISLM
 			country_event = ww1_ottoman.75
 			set_politics = {
 				ruling_party = neutrality
@@ -2938,48 +2938,19 @@ focus_tree = {
 	}
 	focus = {
 		id = TUR_compromise_with_ittihadists
-		icon = GFX_goal_unknown
+		icon = GFX_goal_generic_dangerous_deal
 		cost = 10
 		x = 0
 		y = 1
 		relative_position_id = TUR_ittihadi_muhammedi
 		completion_reward = { 
-			custom_effect_tooltip = TUR_islamist_army_compromise
+			custom_effect_tooltip = TUR_islamist_army_compromise_tt
+		}
+		bypass = {
+			has_civil_war = yes
 		}
 		prerequisite = {
 			focus = TUR_ittihadi_muhammedi
-		}
-	}
-	focus = {
-		id = TUR_secure_egypt
-		icon = GFX_goal_unknown
-		cost = 10
-		x = -1
-		y = 1
-		relative_position_id = TUR_unite_muslims
-		available = {
-			EGY = {
-				has_country_leader = {
-					name = "Abbas II"
-					ruling_only = yes
-				}
-			}
-		}
-		bypass = {
-			NOT = {
-				EGY = {
-					has_country_leader = {
-						name = "Abbas II"
-						ruling_only = yes
-					}
-				}
-			}
-		}
-		prerequisite = {
-			focus = TUR_unite_muslims
-		}
-		completion_reward = { 
-			custom_effect_tooltip = TUR_egypt_secured_tt #Bri'ish coup in Egypt will fail
 		}
 	}
 	focus = {
@@ -3029,7 +3000,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TUR_prepare_population_for_jihad
-		icon = GFX_goal_unknown
+		icon = GFX_focus_generic_commonwealth_build_infantry
 		cost = 10
 		x = 1
 		y = 1
@@ -3043,7 +3014,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TUR_help_poor_people
-		icon = GFX_goal_unknown
+		icon = GFX_focus_tur_red_crescent
 		cost = 10
 		x = 1
 		y = 1
@@ -3063,7 +3034,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TUR_public_school_question
-		icon = GFX_goal_unknown
+		icon = GFX_focus_research2
 		cost = 10
 		x = 0
 		y = 1
@@ -3077,7 +3048,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TUR_hold_talks_with_sufi_leaders
-		icon = GFX_goal_unknown
+		icon = GFX_goal_generic_national_unity
 		cost = 10
 		x = 2
 		y = 1
@@ -3094,7 +3065,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TUR_purge_troublemakers
-		icon = GFX_goal_unknown
+		icon = GFX_hoi4tgw_knifeintheback
 		cost = 10
 		x = 0
 		y = 1
@@ -3117,7 +3088,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TUR_stamp_out_shia_rebels
-		icon = GFX_goal_unknown
+		icon = GFX_goal_generic_major_war
 		cost = 10
 		x = 1
 		y = 1
@@ -3134,7 +3105,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TUR_strike_at_the_shia_base
-		icon = GFX_goal_unknown
+		icon = GFX_focus_tur_iran
 		cost = 10
 		x = 1
 		y = 1
@@ -3152,7 +3123,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TUR_fight_fake_arab_king
-		icon = GFX_goal_unknown
+		icon = GFX_focus_TUR_taking_over_defense_of_the_gulf
 		cost = 10
 		prerequisite = {
 			focus = TUR_stamp_out_shia_rebels
@@ -3177,7 +3148,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TUR_unite_muslims
-		icon = GFX_goal_unknown
+		icon = GFX_hoi4tgw_islam
 		cost = 10
 		x = 0
 		y = 2
@@ -3188,52 +3159,75 @@ focus_tree = {
 			focus = TUR_strike_at_the_shia_base
 		}
 		relative_position_id = TUR_stamp_out_shia_rebels
+		available = {
+			is_subject = no
+		}
 		completion_reward = { 
-			create_faction = ottoman_caliphate
-			ALB = {
-				set_country_flag = muslim_country
-				country_event = ww1_ottoman.73
-			}
-			BOS = {
-				set_country_flag = muslim_country
-				country_event = ww1_ottoman.73
-			}
 			if = {
 				limit = {
-					AFG = {
-						NOT = {
-							is_subject_of = ENG
-						}
-					}
+					is_faction_leader = yes
 				}
-				country_event = ww1_ottoman.73
-				set_country_flag = muslim_country
+				set_faction_name = ottoman_caliphate
+				else = {
+					create_faction = ottoman_caliphate
+				}
 			}
-			JBS = {
-				country_event = ww1_ottoman.73
-				set_country_flag = muslim_country
-			}
-			LBA = {
-				country_event = ww1_ottoman.73
-				set_country_flag = muslim_country
-			}
-			DAR = {
-				country_event = ww1_ottoman.73
-				set_country_flag = muslim_country
-			}
-			QAT = {
-				country_event = ww1_ottoman.73
-				set_country_flag = muslim_country
-			}
-			KUW = {
+			every_other_country = {
+				limit = {
+					OR = {
+						tag = BOS
+						tag = AFG
+						tag = JBS
+						tag = LBA
+						tag = DAR
+						tag = QAT
+						tag = KUW
+						tag = EGY
+					}
+					is_subject = no
+					is_in_faction = no
+					NOT = { has_war_with = ROOT} 
+				}
 				country_event = ww1_ottoman.73
 				set_country_flag = muslim_country
 			}
 		}
 	}
 	focus = {
+		id = TUR_secure_egypt
+		icon = GFX_focus_otto_coup_egypt
+		cost = 10
+		x = -1
+		y = 1
+		relative_position_id = TUR_unite_muslims
+		available = {
+			EGY = {
+				has_country_leader = {
+					name = "Abbas II Helmy"
+					ruling_only = yes
+				}
+			}
+		}
+		bypass = {
+			NOT = {
+				EGY = {
+					has_country_leader = {
+						name = "Abbas II Helmy"
+						ruling_only = yes
+					}
+				}
+			}
+		}
+		prerequisite = {
+			focus = TUR_unite_muslims
+		}
+		completion_reward = { 
+			custom_effect_tooltip = TUR_egypt_secured_tt #Bri'ish coup in Egypt will fail
+		}
+	}
+	focus = {
 		id = TUR_enforce_religious_law
-		icon = GFX_goal_unknown
+		icon = GFX_focus_quran
 		cost = 10
 		x = -1
 		y = 1
@@ -3271,6 +3265,8 @@ focus_tree = {
 					level = 2
 					instant_build = yes
 				}
+				add_extra_state_shared_building_slots = 2
+				add_core_of = TUR
 			}
 			add_stability = 0.05
 			add_war_support = 0.1
@@ -3278,7 +3274,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TUR_restore_caliphate_authority
-		icon = GFX_goal_unknown
+		icon = GFX_focus_sharia_management
 		cost = 10
 		x = 4
 		y = 1
@@ -3298,7 +3294,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TUR_support_oppressed_muslims
-		icon = GFX_goal_unknown
+		icon = GFX_focus_tur_remove_western
 		cost = 10
 		x = 1
 		y = 1
@@ -3353,7 +3349,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TUR_islamic_unity
-		icon = GFX_goal_unknown
+		icon = GFX_focus_generic_islam
 		cost = 10
 		x = -1
 		y = 1
@@ -3390,7 +3386,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TUR_prepare_for_jihad
-		icon = GFX_goal_unknown
+		icon = GFX_focus_jihad
 		cost = 10
 		x = 3
 		y = 1
@@ -3430,7 +3426,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TUR_strike_first
-		icon = GFX_goal_unknown
+		icon = GFX_focus_mex_triumph_over_the_cristeros
 		cost = 10
 		x = 1
 		y = 1
@@ -3475,7 +3471,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TUR_cultivate_fanaticism
-		icon = GFX_goal_unknown
+		icon = GFX_focus_sharia
 		cost = 10
 		x = -1
 		y = 1
@@ -3596,6 +3592,7 @@ focus_tree = {
 					if = {
 						limit = {
 							has_country_flag = islamist_support_1
+							PAK = { exists = no }
 						}
 						release = PAK
 						PAK = {
@@ -3614,6 +3611,7 @@ focus_tree = {
 					if = {
 						limit = {
 							has_country_flag = islamist_support_2
+							PAK = { exists = no }
 						}
 						release = PAK
 						PAK = {
@@ -3632,6 +3630,7 @@ focus_tree = {
 					if = {
 						limit = {
 							has_country_flag = islamist_support_3
+							PAK = { exists = no }
 						}
 						release = PAK
 						PAK = {
@@ -3650,6 +3649,7 @@ focus_tree = {
 					if = {
 						limit = {
 							has_country_flag = islamist_support_4
+							PAK = { exists = no }
 						}
 						release = PAK
 						PAK = {
@@ -3738,7 +3738,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TUR_experience_of_european_conflict
-		icon = GFX_goal_unknown
+		icon = GFX_goal_generic_navy_doctrines_tactics
 		cost = 10
 		prerequisite = {
 			focus = TUR_istanbul_cairo_expedition
@@ -3765,7 +3765,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TUR_experience_of_mediterranean_conflict
-		icon = GFX_goal_herkeshazir
+		icon = GFX_focus_TUR_experience_of_mediterranean_conflict
 		cost = 10
 		prerequisite = {
 			focus = TUR_coastal_defense_of_marmara_shores
@@ -4054,6 +4054,9 @@ focus_tree = {
 		prerequisite = {
 			focus = TUR_return_to_greece
 		}
+		completion_reward = {
+			add_ideas = TUR_idea_rum_legacy
+		}
 		x = 32
 		y = 11
 	}
@@ -4252,7 +4255,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TUR_support_the_east
-		icon = GFX_goal_investotto
+		icon = GFX_goal_generic_construct_infrastructure
 		cost = 10
 		prerequisite = {
 			focus = TUR_arrest_pan_nationalist_radicals
@@ -4438,7 +4441,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TUR_balkan_pact
-		icon = GFX_goal_unknown
+		icon = GFX_focus_generic_little_entente
 		cost = 10
 		prerequisite = {
 			focus = TUR_balkan_economic_sphere
@@ -4552,7 +4555,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TUR_battle_for_the_balkans
-		icon = GFX_goal_unknown
+		icon = GFX_focus_ser_balkan_fist
 		cost = 10
 		prerequisite = {
 			focus = TUR_national_consensus
@@ -4685,7 +4688,7 @@ focus_tree = {
 	}	
 	focus = {
 		id = TUR_stand_with_entente
-		icon = GFX_goal_unknown
+		icon = GFX_focus_consolidate_entente
 		cost = 10
 		prerequisite = {
 			focus = TUR_cure_a_sick_man
@@ -4711,7 +4714,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TUR_stand_with_cp
-		icon = GFX_goal_unknown
+		icon = GFX_focus_central_powers
 		cost = 10
 		prerequisite = {
 			focus = TUR_cure_a_sick_man
@@ -4804,6 +4807,9 @@ focus_tree = {
 		prerequisite = {
 			focus = TUR_return_to_greece
 		}
+		completion_reward = {
+			country_event = ww1_ottoman.77
+		}
 		x = 28
 		y = 11
 
@@ -4823,7 +4829,7 @@ focus_tree = {
 
 	focus = {
 		id = TUR_goeben_and_breslau
-		icon = GFX_goal_unknown
+		icon = GFX_focus_TUR_goeben_breslau
 		cost = 10
 		prerequisite = {
 			focus = TUR_stand_with_cp
@@ -5009,7 +5015,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TUR_road_to_india
-		icon = GFX_goal_unknown
+		icon = GFX_focus_RAJ_british_investors
 		cost = 10
 		prerequisite = {
 			focus = TUR_return_to_egypt
@@ -5216,7 +5222,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TUR_focus_on_south_america
-		icon = GFX_goal_south_america
+		icon = GFX_focus_south_america
 		cost = 10
 		prerequisite = {
 			focus = TUR_sadakat_pact
@@ -5305,7 +5311,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TUR_invite_french_companies
-		icon = GFX_goal_unknown
+		icon = GFX_goal_generic_construct_civ_factory
 		cost = 10
 		prerequisite = {
 			focus = TUR_stand_with_entente
@@ -5316,7 +5322,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TUR_secret_treaty_with_entente
-		icon = GFX_goal_unknown
+		icon = GFX_focus_chi_reach_out_to_france
 		cost = 10
 		prerequisite = {
 			focus = TUR_invite_french_companies
@@ -5327,7 +5333,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TUR_join_entente
-		icon = GFX_goal_unknown
+		icon = GFX_focus_consolidate_entente
 		cost = 10
 		prerequisite = {
 			focus = TUR_secret_treaty_with_entente
@@ -5357,7 +5363,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TUR_secret_treaty_with_ger
-		icon = GFX_goal_unknown
+		icon = GFX_focus_deal_with_german_empire
 		cost = 10
 		prerequisite = {
 			focus = TUR_goeben_and_breslau
@@ -5371,7 +5377,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TUR_join_cp
-		icon = GFX_goal_unknown
+		icon = GFX_focus_central_powers
 		cost = 10
 		prerequisite = {
 			focus = TUR_secret_treaty_with_ger
@@ -5432,7 +5438,7 @@ focus_tree = {
 		completion_reward = {
 			create_country_leader = {
 				name = "Meclis-i Avam"
-				picture="gfx/leaders/TUR/TUR_meclis_mebusan.dds"
+				picture="gfx/leaders/TUR/TUR_meclis_avam.dds"
 				expire = "1935.1.1"
 				ideology = reformist_socialism
 				traits = { meclis_avam }
@@ -5447,7 +5453,7 @@ focus_tree = {
 					name = "Ismail Enver Paşa"
 					picture="gfx/leaders/TUR/TUR_enver_pasha.dds"
 					expire = "1935.1.1"
-					ideology = military_dictatorship
+					ideology = stratocracy
 					traits = { tur_hero_of_freedom }
 				}
 			}
@@ -6117,11 +6123,9 @@ focus_tree = {
 			factor = 100
 		}
 		available = {
-			has_idea = idea_turkey_uniform_reformed
 		}
 		completion_reward = {
 			add_ideas = Red_army_turkish
-			remove_ideas = idea_turkey_uniform_reformed
 		}
 	}
 	focus = {
@@ -6438,6 +6442,9 @@ focus_tree = {
 		y = 1
 		ai_will_do = {
 			factor = 5
+		}
+		prerequisite = {
+			focus = TUR_istirak_mukavemet
 		}
 		completion_reward = {
 			country_event = {

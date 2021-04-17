@@ -28,13 +28,13 @@ news_event = {
 			if = {
 				limit = { has_global_flag = kis_franzferdinand_murdered }
 				AUH = {
-					kill_country_leader = yes
+					kill_ideology_leader = neutrality
 					create_country_leader = {
 						name = "Karl I"
 						picture="gfx/leaders/AUH/AUH_karl_i.dds"
 						expire="1935.1.1" 
 						ideology = autocracy  
-						traits = {  } 
+						traits={ trait_autocracy }
 					}
 					set_country_flag = emperor_franz_dead
 				}
@@ -49,13 +49,13 @@ news_event = {
 						
 					}
 					HUN = {
-						kill_country_leader = yes
+						kill_ideology_leader = neutrality
 						create_country_leader = {
 							name = "IV. Károly"
 							picture="gfx/leaders/AUH/AUH_karl_i.dds"
 							expire="1935.1.1" 
 							ideology = autocracy  
-							traits = {  } 
+							traits={ trait_autocracy }
 						}	
 					}	
 				}
@@ -70,13 +70,13 @@ news_event = {
 						
 					}
 					VNC = {
-						kill_country_leader = yes
+						kill_ideology_leader = neutrality
 						create_country_leader = {
 							name = "Karl I"
 							picture="gfx/leaders/AUH/AUH_karl_i.dds"
 							expire="1935.1.1"
 							ideology = autocracy
-							traits = {  }
+							traits={ trait_autocracy }
 						}
 					}
 				}
@@ -84,13 +84,13 @@ news_event = {
 			if = {
 				limit = { NOT = { has_global_flag = kis_franzferdinand_murdered } }
 				AUH = {
-					kill_country_leader = yes
+					kill_ideology_leader = neutrality
 					create_country_leader = {
 						name = "Franz Ferdinand I"
 						picture="gfx/leaders/AUH/AUH_franz_ferdinand.dds"
 						expire="1935.1.1" 
 						ideology = autocracy  
-						traits = {  } 
+						traits={ trait_autocracy }
 					}
 					set_country_flag = emperor_franz_dead
 					set_country_flag = franz_ferdinand_ruler
@@ -106,13 +106,13 @@ news_event = {
 						
 					}
 					HUN = {
-						kill_country_leader = yes
+						kill_ideology_leader = neutrality
 						create_country_leader = {
 							name = "I. Ferenc Ferdinánd"
 							picture="gfx/leaders/AUH/AUH_franz_ferdinand.dds"
 							expire="1935.1.1" 
 							ideology = autocracy  
-							traits = {  } 
+							traits={ unpopular_monarch trait_autocracy }
 						}
 					}	 
 				}
@@ -127,13 +127,13 @@ news_event = {
 						
 					}
 					VNC = {
-						kill_country_leader = yes
+						kill_ideology_leader = neutrality
 						create_country_leader = {
 							name = "Franz Ferdinand I"
 							picture="gfx/leaders/AUH/AUH_franz_ferdinand.dds"
 							expire="1935.1.1"
 							ideology = autocracy
-							traits = {  }
+							traits={ trait_autocracy }
 						}
 					}
 				}
@@ -475,7 +475,6 @@ country_event = {
 					}
 				}	
 				transfer_state = 163
-				transfer_state = 244
 			}
 			if = {
 				limit = { 
@@ -488,6 +487,19 @@ country_event = {
 					}
 				}	
 				transfer_state = 736
+			}
+			#Fix Fiume
+			if = {
+				limit = { 
+					OR = {
+						AUH = { owns_state = 513 }
+						HUN = { owns_state = 513 }
+					}
+					NOT = {
+						ITA = { has_country_flag = great_war_winner }
+					}
+				}	
+				transfer_state = 513
 			}			
 			every_state = {
 				limit = { is_owned_by = CRO }
@@ -503,6 +515,7 @@ country_event = {
 				picture = "gfx/leaders/SLV/SLV_Anton_Korosec.dds"
 				expire = "1935.1.1"
 				ideology = centrism
+				traits={ trait_centrism }
 				
 			}
 			create_country_leader = {
@@ -510,7 +523,7 @@ country_event = {
 				picture = "gfx/leaders/SLV/SLV_Anton_Korosec.dds"
 				expire = "1935.1.1"
 				ideology = conservatism
-				
+				traits={ trait_conservatism }
 			}
 		}
 		ai_chance = { factor = 100 }
@@ -611,37 +624,35 @@ country_event = {
 						owns_state = 90	
 						owns_state = 92	
 						owns_state = 766
-						owns_state = 93		
-						owns_state = 199							
-					}											
+						owns_state = 93	
+					}
 				}
-				POL = { exists = no}
+				POL = { exists = no }
 				91 = { is_claimed_by = RUS }
 			}
 			every_state = {
 				limit = {
+					is_core_of = GAL
 					OR = {
 						is_owned_by = AUH
 						is_owned_by = AUS
 					}
-					is_core_of = GAL
 					NOT = { state = 72 }
 				}
-				RUS = { transfer_state = PREV }				
+				RUS = { transfer_state = PREV }
 			}
 		}
-		if = {
+		else_if = {
 			limit = {
 				RUS = { 
 					has_country_flag = great_war_winner
 					OR = {
 						owns_state = 766
-						owns_state = 93		
-						owns_state = 199							
-					}											
+						owns_state = 93
+					}
 				}
-				POL = { exists = yes}
-				UKR = { exists = no}
+				POL = { exists = yes }
+				UKR = { exists = no } #it means Russia must be coonected by the border
 				91 = { is_claimed_by = RUS }
 			}	
 			every_state = {
@@ -653,10 +664,43 @@ country_event = {
 					is_claimed_by = RUS
 					is_core_of = UKR
 				}
-				RUS = { transfer_state = PREV }				
+				RUS = { transfer_state = PREV }
+			}
+			POL = {
+				every_state = {
+					limit = {
+						OR = {
+							is_owned_by = AUH
+							is_owned_by = AUS
+						}
+						is_core_of = GAL
+						NOT = { state = 72 }
+						NOT = { state = 80 }
+					}
+					POL = { transfer_state = PREV add_state_core = PREV }
+				}
 			}
 		}
-		POL = {
+		else = {
+			every_state = {
+				limit = {
+					OR = {
+						is_owned_by = AUH
+						is_owned_by = AUS
+					}
+					is_core_of = UKR
+					NOT = {
+						state = 73
+						state = 237
+					}
+				}
+				WUK = {
+					transfer_state = PREV
+					every_owned_state = {
+						add_core_of = WUK
+					}
+				}
+			}
 			every_state = {
 				limit = {
 					OR = {
@@ -664,18 +708,16 @@ country_event = {
 						is_owned_by = AUS
 					}
 					is_core_of = GAL
-					NOT = { state = 72 }
-					NOT = { state = 80 }
 				}
-				POL = { transfer_state = PREV add_state_core = PREV }		
+				GAL = { transfer_state = PREV }
 			}
-		}	
+		}
 		every_country = {
 			limit = {
-				owns_state = 79		
+				owns_state = 79
 			}	
 			transfer_state = 80
-		}	
+		}
 	}
 }
 # AUSTRIA LOST GREAT WAR - HUNGARY LEAVES
@@ -844,6 +886,20 @@ country_event = {
 			add_ideas = idea_army_restrictions			
 			inherit_technology = AUH
 			hidden_effect = { load_oob = AUS_1918 }
+
+			if = {
+				limit = {
+					ITA = {
+						NOT = {
+							has_country_flag = great_war_winner
+							owns_state = 244
+						}
+					}
+				}
+				transfer_state = 244
+			}
+			# German-Austria
+			set_cosmetic_tag = AUS_AUH
 		}
 
 		# Austria is not giving South Tyrol and Zara, so I added this.
@@ -889,6 +945,7 @@ country_event = {
 						ideology = despotism
 						traits = {
 							anti_communist
+							trait_despotism
 						}
 					}
 				}	
@@ -994,6 +1051,12 @@ country_event = {
 			}
 			if = {
 				limit = {
+					AUH = { owns_state = 778 }
+				}
+				transfer_state = 778
+			}
+			if = {
+				limit = {
 					AUH = { owns_state = 80 }
 				}
 				transfer_state = 80
@@ -1015,6 +1078,36 @@ country_event = {
 					AUH = { owns_state = 103 }
 				}
 				transfer_state = 103
+			}
+			if = {
+				limit = {
+					AUH = { owns_state = 163 }
+				}
+				transfer_state = 163
+			}
+			if = {
+				limit = {
+					AUH = { owns_state = 208 }
+				}
+				transfer_state = 208
+			}
+			if = {
+				limit = {
+					AUH = { owns_state = 513 }
+				}
+				transfer_state = 513
+			}
+			if = {
+				limit = {
+					AUH = { owns_state = 575 }
+				}
+				transfer_state = 575
+			}
+			if = {
+				limit = {
+					AUH = { owns_state = 778 }
+				}
+				transfer_state = 778
 			}
 			every_state = {
 				limit = { is_owned_by = HUN }
@@ -1174,81 +1267,75 @@ country_event = {
 	mean_time_to_happen = { days = 14 }
 	trigger = {
 		tag = AUH
-		160 = {
-			is_owned_by = AUH
-		}
+		owns_state = 160
 	}
 	option = {
 		name = ww1_austria.24.a
 		ai_chance = { factor = 100 }
+
 		VNC = {
 			add_state_core = 159
 			add_state_core = 160
 			transfer_state = 160
-		}
-		AUH = {
-			puppet = VNC
-		}
-		VNC = {
 			set_cosmetic_tag = VNC_AUH
+		}
 
-			if = {
-				limit = {
-					NOT = { has_global_flag = emperor_franz_dead }
-				}
-				VNC = {
-					create_country_leader = {
-						name = "Franz Joseph I"
-						picture = "gfx/leaders/AUH/AUH_franz_joseph_i.dds"
-						expire = "1935.1.1"
-						ideology = autocracy
-						
-					}
+		puppet = VNC
+
+		if = {
+			limit = {
+				NOT = { has_country_flag = emperor_franz_dead }
+			}
+			VNC = {
+				create_country_leader = {
+					name = "Franz Joseph I"
+					picture = "gfx/leaders/AUH/AUH_franz_joseph_i.dds"
+					expire = "1935.1.1"
+					ideology = autocracy
+					traits = { trait_autocracy }
 				}
 			}
+		}
 
-			if = {
-				limit = {
-					has_global_flag = emperor_franz_dead
-					NOT = { has_global_flag = franz_ferdinand_ruler }
-				}
-				VNC = {
-					create_country_leader = {
-						name = "Karl I"
-						picture="gfx/leaders/AUH/AUH_karl_i.dds"
-						expire="1935.1.1"
-						ideology = autocracy
-						
-					}
+		if = {
+			limit = {
+				has_country_flag = emperor_franz_dead
+				NOT = { has_country_flag = franz_ferdinand_ruler }
+			}
+			VNC = {
+				create_country_leader = {
+					name = "Karl I"
+					picture="gfx/leaders/AUH/AUH_karl_i.dds"
+					expire="1935.1.1"
+					ideology = autocracy
+					traits = { trait_autocracy }
 				}
 			}
+		}
 
-			if = {
-				limit = {
-					has_global_flag = emperor_franz_dead
-					has_global_flag = franz_ferdinand_ruler
-				}
-				VNC = {
-					create_country_leader = {
-						name = "Franz Ferdinand I"
-						picture="gfx/leaders/AUH/AUH_franz_ferdinand.dds"
-						expire="1935.1.1"
-						ideology = autocracy
-						
-					}
+		if = {
+			limit = {
+				has_country_flag = emperor_franz_dead
+				has_country_flag = franz_ferdinand_ruler
+			}
+			VNC = {
+				create_country_leader = {
+					name = "Franz Ferdinand I"
+					picture="gfx/leaders/AUH/AUH_franz_ferdinand.dds"
+					expire="1935.1.1"
+					ideology = autocracy
+					
 				}
 			}
+		}
 
-			if = {
-				limit = {
-					159 = {
-						is_owned_by = AUH
-					}
-				}
+		if = {
+			limit = {
+				owns_state = 159
+			}
 
-				VNC = {
-					transfer_state = 159
-				}
+			VNC = {
+				transfer_state = 159
 			}
 		}
 	}
@@ -1266,6 +1353,7 @@ country_event = {
 	fire_only_once = yes
 	mean_time_to_happen = { days = 7 }
 	trigger = {
+		has_global_flag = italian_civil_war
 		tag = AUH
 		160 = {
 			OR = {
@@ -1273,7 +1361,9 @@ country_event = {
 				is_owned_by = VNC
 			}
 		}
-		SRI = {
+		any_country = {
+			original_tag = ITA
+			has_country_flag = ITA_socialist_italy_flag
 			has_government = communism
 			has_war_with = ITS
 		}
@@ -1344,21 +1434,420 @@ country_event = {
 	desc = ww1_austria.27.d
 	fire_only_once = yes
 	trigger = {
-	      tag = AUH
-	      has_global_flag = kis_war
-	      AND = {
-	       has_stability < 0.75
-	       casualties > 800000
-	      }
-	      NOT = { country_exists = CZE }
+		tag = AUH
+		has_global_flag = kis_war
+		AND = {
+			has_stability < 0.75
+			casualties > 800000
+		}
+		NOT = { country_exists = CZE }
 	}
 	mean_time_to_happen = { days = 5 }
 	option = {
-	      name = ww1_austria.27.a
-              AUH = {
-	               remove_state_core = 9
-		       remove_state_core = 75
-		       remove_state_core = 72
-		    }
-              add_stability = -0.2
+		name = ww1_austria.27.a
+		AUH = {
+			remove_state_core = 9
+			remove_state_core = 75
+			remove_state_core = 72
+		}
+		add_stability = -0.2
 	}
+}
+# Italy offered the surrender terms in Bruderkrieg
+#############################
+country_event = {
+	id = ww1_austria.28
+	title = ww1_austria.28.t
+	desc = ww1_austria.28.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = ww1_austria.28.a
+		ITA = {
+			leave_faction = yes
+			white_peace = AUH
+
+			if = {
+				limit = {
+					owns_state = 159
+				}
+				AUH = { transfer_state = 159 }
+			}
+			if = {
+				limit = {
+					owns_state = 160
+				}
+				AUH = { transfer_state = 160 }
+			}
+		}
+		ai_chance = {
+			base = 0
+			modifier = {
+				add = 100
+				OR = {
+					has_war_support < 0.5
+					surrender_progress > 0.3
+				}
+			}
+		}
+	}
+	option = {
+		name = ww1_austria.28.b
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 0
+				OR = {
+					has_war_support < 0.5
+					surrender_progress > 0.3
+				}
+			}
+		}
+	}
+}
+# Italy is fully defeated in Bruderkrieg
+#############################
+country_event = {
+	id = ww1_austria.29
+	title = ww1_austria.29.t
+	desc = ww1_austria.29.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	mean_time_to_happen = { days = 3 }
+	option = {
+		name = ww1_austria.29.a
+		ITA = {
+			hidden_effect = {
+				if = {
+					limit = {
+						owns_state = 159
+					}
+					AUH = { transfer_state = 159 }
+				}
+				if = {
+					limit = {
+						owns_state = 160
+					}
+					AUH = { transfer_state = 160 }
+				}
+				SIC = {
+					add_state_core = 115
+					add_state_core = 117
+					add_state_core = 156
+				}
+				TUS = {
+					add_state_core = 162
+				}
+				EMI = {
+					add_state_core = 833
+				}
+				PAP = {
+					add_state_core = 2
+					add_state_core = 157
+					add_state_core = 161
+					add_state_core = 835
+				}
+				SRD = {
+					add_state_core = 114
+					add_state_core = 158
+					add_state_claim = 735
+					add_state_claim = 834
+					set_cosmetic_tag = SRD_PIE
+					set_capital = 158
+				}
+				every_state = {
+					limit = {
+						is_core_of = SRD
+						is_owned_by = ITA
+					}
+					SRD = { transfer_state = PREV }
+				}
+				SRD = { change_tag_from = ITA }
+				every_state = {
+					limit = {
+						is_core_of = SIC
+						is_owned_by = ITA
+					}
+					SIC = { transfer_state = PREV }
+				}
+				transfer_units_fraction= {
+					target = SRD
+					size = 0.5
+					stockpile_ratio = 0.5
+					army_ratio = 0.5
+					navy_ratio = 0.5
+					air_ratio = 0.5
+				}
+				transfer_units_fraction= {
+					target = SIC
+					size = 1
+					stockpile_ratio = 1
+					army_ratio = 1
+					navy_ratio = 1
+					air_ratio = 1
+				}
+				every_state = {
+					limit = {
+						is_core_of = TUS
+						is_owned_by = ITA
+					}
+					TUS = { transfer_state = PREV }
+				}
+				every_state = {
+					limit = {
+						is_core_of = EMI
+						is_owned_by = ITA
+					}
+					EMI = { transfer_state = PREV }
+				}
+				every_state = {
+					limit = {
+						is_core_of = PAP
+						is_owned_by = ITA
+					}
+					PAP = { transfer_state = PREV }
+				}
+				AUH = {
+					if = {
+						limit = { has_dlc = "Together for Victory" }
+						set_autonomy = {
+							target = SRD
+							autonomous_state = autonomy_dominion
+						}
+					}
+					else = {
+						puppet = SRD
+					}
+
+					if = {
+						limit = { has_dlc = "Together for Victory" }
+						set_autonomy = {
+							target = SIC
+							autonomous_state = autonomy_dominion
+						}
+					}
+					else = {
+						puppet = SIC
+					}
+
+					if = {
+						limit = { has_dlc = "Together for Victory" }
+						set_autonomy = {
+							target = PAP
+							autonomous_state = autonomy_tgwr_protectorate
+						}
+					}
+					else = {
+						puppet = PAP
+					}
+
+					puppet = TUS
+					puppet = EMI
+
+					add_ai_strategy = {
+						type = protect
+						id = "SRD"
+						value = 200
+					}
+					add_ai_strategy = {
+						type = consider_weak
+						id = "SRD"
+						value = 200
+					}
+					add_ai_strategy = {
+						type = protect
+						id = "TUS"
+						value = 200
+					}
+					add_ai_strategy = {
+						type = consider_weak
+						id = "TUS"
+						value = 200
+					}
+					add_ai_strategy = {
+						type = protect
+						id = "VNC"
+						value = 200
+					}
+					add_ai_strategy = {
+						type = consider_weak
+						id = "VNC"
+						value = 200
+					}
+					add_ai_strategy = {
+						type = protect
+						id = "EMI"
+						value = 200
+					}
+					add_ai_strategy = {
+						type = consider_weak
+						id = "EMI"
+						value = 200
+					}
+					add_ai_strategy = {
+						type = protect
+						id = "SIC"
+						value = 200
+					}
+					add_ai_strategy = {
+						type = consider_weak
+						id = "SIC"
+						value = 200
+					}
+					add_ai_strategy = {
+						type = protect
+						id = "PAP"
+						value = 200
+					}
+					add_ai_strategy = {
+						type = consider_weak
+						id = "PAP"
+						value = 200
+					}
+				}
+				every_state = {
+					limit = {
+						is_owned_by = ITA
+						NOT = { is_core_of = ITA }
+					}
+					AUH = { transfer_state = PREV }
+				}
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+# Engelbert Dollfuss's Federal State of Austria
+##############################################
+country_event = {
+	id = ww1_austria.30
+	title = ww1_austria.30.t
+	desc = ww1_austria.30.d
+	picture = GFX_report_event_ger_civil_war
+	fire_only_once = yes
+	trigger = {
+		tag = AUS
+		has_country_flag = great_war_loser
+		has_country_leader = {
+			name = "Engelbert Dollfuss"
+			ruling_only = yes
+		}
+		OR = {
+			fascism > 0.5
+			date > 1934.5.1
+		}
+		NOT = { has_government = fascism }
+	}
+	mean_time_to_happen = { days = 0 }
+	option = {
+		name = ww1_austria.30.a
+		ai_chance = { factor = 100 }
+		retire_ideology_leader = democratic
+		remove_ideas = nationalism
+		set_politics = {
+			ruling_party = fascism
+			elections_allowed = no
+		}
+		set_party_name = {
+			ideology = fascism
+			long_name = AUS_vaterland_party
+			name = AUS_vaterland_party
+		}
+		create_country_leader = {
+			name = "Engelbert Dollfuss"
+			picture = "gfx/leaders/AUS/AUS_dollfuss.tga"
+			expire = "1935.1.1"
+			ideology = rexism
+		}
+		create_field_marshal = {
+			name = "Engelbert Dollfuss"  
+			portrait_path = "gfx/leaders/AUS/AUS_dollfuss.tga"
+			traits = { media_personality politically_connected guerilla_fighter trait_mountaineer } 
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 2
+			id = 1934725 # I don't know how to assign the id
+		}
+	}
+}
+# Assassinate of Engelbert Dollfuss
+##############################################
+country_event = {
+	id = ww1_austria.31
+	title = ww1_austria.31.t
+	desc = ww1_austria.31.d
+	picture = GFX_report_event_ger_civil_war
+	trigger = {
+		tag = AUS
+		has_country_leader = {
+			name = "Engelbert Dollfuss"
+			ruling_only = yes
+		}
+		has_government = fascism
+		date > 1934.7.25
+		GER = {
+			has_country_leader = {
+				name = "Adolf Hitler"
+				ruling_only = yes
+			}
+			has_government = fascism
+		}
+		is_subject = no
+	}
+	fire_only_once = yes
+	immediate = {
+		kill_ideology_leader = fascism
+		every_unit_leader = {
+			limit = {
+				has_id = 1934725
+			}
+			retire = yes
+		}
+	}
+	option = {
+		name = ww1_austria.31.a
+		ai_chance = { factor = 100 }
+		hidden_effect = {
+			create_country_leader = {
+				name = "Arthur Seyss-Inquart"
+				picture = "gfx/leaders/Europe/Portrait_Europe_Generic_3.dds"
+				expire = "1935.1.1"
+				ideology = nazism
+				traits = {
+					trait_nazism
+				}
+			}
+			set_party_name = {
+				ideology = fascism
+				long_name = AUS_fascism_party_long
+				name = AUS_fascism_party
+			}
+		}
+		# Just like vanilla setting
+		set_politics = {
+			ruling_party = neutrality
+			last_election = "1930.11.9"
+			election_frequency = 48
+			elections_allowed = no
+		}
+		set_popularities = {
+			neutrality = 48
+			fascism = 50
+			democratic = 1
+			communism = 1
+		}
+		create_country_leader = {
+			name = "Kurt Schuschnigg"
+			picture = "Portrait_Austria_Kurt_Schuschnigg.dds"
+			expire = "1935.1.1"
+			ideology = centrism
+			traits = {
+				trait_centrism
+			}
+		}
+	}
+}

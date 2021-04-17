@@ -23,12 +23,16 @@ spriteTypes = {
 		texturefile = "gfx/interface/ideologies/despotism.dds"
 	}
 	spriteType = {
-		name = "GFX_ideology_military_dictatorship"
+		name = "GFX_ideology_stratocracy"
 		texturefile = "gfx/interface/ideologies/military_dictatorship.dds"
 	}
 	spriteType = {
 		name = "GFX_ideology_conservatism"
 		texturefile = "gfx/interface/ideologies/conservatism.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_classical_liberalism"
+		texturefile = "gfx/interface/ideologies/classical_liberalism.dds"
 	}
 	spriteType = {
 		name = "GFX_ideology_socialism"

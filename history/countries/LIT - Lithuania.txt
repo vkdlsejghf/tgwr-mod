@@ -16,11 +16,9 @@ create_country_leader = {
 	picture = "gfx/leaders/LIT/LIT_antanas_smetona.dds" 
 	expire = "1935.1.1" 
 	ideology = centrism 
-	traits = { } 
+	traits = { trait_centrism } 
 }
 1910.1.1 = {
-	oob = "LIT_1910"
-
 	set_technology = {
 		#infantry
 		infantry_weapons = 1
@@ -70,8 +68,4 @@ create_country_leader = {
 	    communism = 16
 	    neutrality = 80
 	}
-
-	add_ideas = {
-
-	}	
 }

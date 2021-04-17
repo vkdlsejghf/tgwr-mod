@@ -103,11 +103,11 @@ country_event = {
 		}
 		if = {
 			limit = { tag = BUL }			
-			add_state_claim = 184
-			add_state_claim = 757
 			add_state_claim = 756
-			add_state_claim = 731
-			add_state_core = 200
+			add_state_claim = 200
+			hidden_effect = {
+				add_state_core = 200
+			}
 			SER = { country_event = { id = ww1_serbia.4 } }
 		}
 		set_country_flag = join_balkan_league
@@ -640,44 +640,6 @@ country_event = {
 		SER = { puppet = CRO }
 		ai_chance = { factor = 100 }
 	}
-}
-# ANTI TURKISH PORGROMS - NEWS
-##########################
-news_event = {
-	id = ww1_serbia.22
-	title = ww1_serbia.22.t
-	desc = ww1_serbia.22.d
-	picture = GFX_news_event_054
-	is_triggered_only = yes
-	major = yes
-	
-	option = {
-		name = ww1_serbia.22.a
-		trigger = { tag = TUR }
-		ai_chance = { factor = 100 }
-	}
-	option = {
-		name = ww1_serbia.22.b
-		trigger = { NOT = { tag = TUR } }
-		ai_chance = { factor = 100 }
-	}
-}
-country_event = {
-	id = ww1_serbia.23
-	
-	trigger = {
-		tag = SER
-		owns_state = 760
-		owns_state = 106
-		NOT = { has_idea = SER_persecution_of_turks }
-	}
-	fire_only_once = yes
-	immediate = {
-		SER = { add_ideas = SER_persecution_of_turks }
-	}
-	mean_time_to_happen = { days = 0 }
-	hidden = yes
-	
 }
 #Austrija zahteva povlačenje s Jadranske obale
 country_event = {

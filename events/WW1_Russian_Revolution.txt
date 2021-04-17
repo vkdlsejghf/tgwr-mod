@@ -188,7 +188,7 @@ country_event = {
 				name = "Georgiy Lvov"
 				picture = "gfx/leaders/RUS/RUS_georgy_lvov.dds"
 				expire = "1935.1.1"
-				ideology = liberalism
+				ideology = social_liberalism
 			}
 			set_country_flag = georgy_lvov
 		}
@@ -276,7 +276,7 @@ country_event = {
 			name = "Lavr Kornilov"
 			picture = "gfx/leaders/RUS/RUS_lavr_kornilov.dds"
 			expire = "1935.1.1"
-			ideology = military_dictatorship
+			ideology = stratocracy
 		}
 		set_politics = {
 			ruling_party = fascism 
@@ -1094,7 +1094,7 @@ country_event = {
 			ideology = communism
 			size = 0.35
 			states = all
-			only_own_territory = yes
+			
 			states_filter = {
 				has_state_flag = russian_socialist_state
 			}

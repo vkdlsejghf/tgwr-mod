@@ -11,28 +11,28 @@ create_country_leader = {
 	picture = "gfx/leaders/SOV/SOV_vladimir_lenin.dds" 
 	expire = "1935.1.1" 
 	ideology = vanguardism 
-	traits = {} 
+	traits={ trait_vanguardism } 
 }
 create_country_leader = {
 	name = "Victor Chernov"
 	picture = "gfx/leaders/RUS/RUS_viktor_chernov.dds"				
 	expire = "1935.1.1"
 	ideology = socialism
-	traits = {}
+	traits={ trait_socialism } 
 }
 create_country_leader = {
 	name = "Vladimir Purishkevich"
 	picture = "gfx/leaders/SOV/SOV_vladimir_purishkevich.dds"			
 	expire = "1935.1.1"
-	ideology = fascism_ideology
-	traits = {}
+	ideology = fundamentalism
+	traits = {trait_fundamentalism}
 }
 create_country_leader = {
 	name = "People's Council"
 	picture = "gfx/leaders/SOV/SOV_provisional_goverment.tga"
 	expire = "1935.1.1"
 	ideology = centrism
-	
+	traits = {trait_centrism}
 }
 ###############
 create_field_marshal={  
@@ -340,6 +340,8 @@ create_navy_leader={
 	portrait_path="gfx/leaders/SOV/SOV_orlov.tga" 
 	traits={ } 
 	skill=1 
+	attack_skill = 1
+	defense_skill = 1
 }
 create_navy_leader={  
 	name = "Lev Galler" 
@@ -347,6 +349,8 @@ create_navy_leader={
 	portrait_path="gfx/leaders/SOV/SOV_galler.tga" 
 	traits={   } 
 	skill=2 
+	attack_skill = 1
+	defense_skill = 2
 }
 create_navy_leader={  
 	name = "Yakov Ozolin" 
@@ -354,6 +358,8 @@ create_navy_leader={
 	portrait_path="gfx/leaders/SOV/SOV_ozolin.tga" 
 	traits={   } 
 	skill=1 
+	attack_skill = 1
+	defense_skill = 1
 }
 create_navy_leader={  
 	name = "Eduard Pancerjanskiy" 
@@ -361,6 +367,8 @@ create_navy_leader={
 	portrait_path="gfx/leaders/SOV/SOV_pancerjanskiy.tga" 
 	traits={   } 
 	skill=2 
+	attack_skill = 2
+	defense_skill = 1
 }
 create_navy_leader={  
 	name = "Grigoriy Kireev" 
@@ -368,6 +376,8 @@ create_navy_leader={
 	portrait_path="gfx/leaders/SOV/SOV_kireev.tga" 
 	traits={   } 
 	skill=1 
+	attack_skill = 1
+	defense_skill = 1
 }
 
 	set_technology = {
