@@ -266,6 +266,7 @@ focus_tree = {
 		ai_will_do = { factor = 10 }
 		completion_reward = {
 			custom_effect_tooltip = SIA_central_powers_equipment_tt
+			GER = { country_event = ww1_siam.8 }
 		}
 	}
 

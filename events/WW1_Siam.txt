@@ -208,7 +208,7 @@ country_event = {
 }
 country_event = {
 	id = ww1_siam.8 #german equipment 
-	title - ww1_siam.8.t
+	title = ww1_siam.8.t
 	desc = ww1_siam.8.d
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -217,11 +217,46 @@ country_event = {
 		ai_chance = {
 			factor = 80
 		}
+		SIA = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 2000
+				producer = GER
+			}
+			country_event = { id = ww1_siam.9 }
+		}
 	}
 	option = {
 		name = ww1_siam.8.b #germany doesnt agree
 		ai_chance = {
 			factor = 20
+		}
+		SIA = { country_event = { id = ww1_siam.10 } }
+	}
+}
+country_event = {
+	id = ww1_siam.9 #germany agrees to send equipment alert for siam
+	title = ww1_siam.9.t 
+	desc = ww1_siam.9.d 
+	fire_only_once = yes 
+	is_triggered_only = yes
+	option = {
+		name = ww1_siam.9.a 
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = {
+	id = ww1_siam.10 #germany doesnt agree to give equipment to siam alert
+	title = ww1_siam.10.t 
+	desc = ww1_siam.10.d 
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = ww1_siam.10.a
+		ai_chance = {
+			factor = 100
 		}
 	}
 }
