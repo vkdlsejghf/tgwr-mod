@@ -1486,10 +1486,11 @@ focus_tree = {
 					create_country_leader = {
 						name = "Hong Beom-do"
 						picture = "gfx/leaders/KOR/KOR_hong_beom_do.dds"
-						ideology = centrism
+						ideology = authoritarian_democracy
 						expire = "1935.1.1"
 						traits = {
 							generallissimo
+							trait_authoritarian_democracy
 						}
 					}
 					create_country_leader = {
@@ -1499,6 +1500,7 @@ focus_tree = {
 						expire = "1935.1.1"
 						traits = {
 							generallissimo
+							trait_stratocracy
 						}
 					}
 				}
@@ -1702,6 +1704,9 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 200
+		}
+		completion_reward = {
+			
 		}
 	}
 	#Focus for Political Maneuvering
@@ -1972,6 +1977,7 @@ focus_tree = {
 				ideology = conservatism
 				traits = {
 					bookworm
+					trait_conservatism
 				}
 			}
 			hidden_effect = {
@@ -2041,7 +2047,10 @@ focus_tree = {
 					picture = "gfx/leaders/KOR/KOR_scnr.dds"
 					expire = "1935.1.1"
 					ideology = stratocracy
-					traits = { generallissimo }
+					traits = {
+						generallissimo
+						trait_stratocracy
+					}
 				}
 			}
 		}
@@ -2370,11 +2379,31 @@ focus_tree = {
 			}
 		}
 		bypass = {
-			is_subject = yes
-			NOT = {
-				is_subject_of = JAP
+			OR = {
+				AND = {
+					is_subject = yes
+					NOT = {
+						is_subject_of = JAP
+					}
+					has_government = neutrality
+				}
+				has_country_leader = {
+					name = "Yi Hui"
+					ruling_only = yes
+				}
+				has_country_leader = {
+					name = "Yi Cheok"
+					ruling_only = yes
+				}
+				has_country_leader = {
+					name = "Yi Un"
+					ruling_only = yes
+				}
+				has_country_leader = {
+					name = "Yi Kang"
+					ruling_only = yes
+				}
 			}
-			has_government = neutrality
 		}
 		available = {
 			is_subject = no
@@ -2399,6 +2428,7 @@ focus_tree = {
 						traits = {
 							assassination_survivor
 							inexperienced_imperialist
+							trait_autocracy
 						}
 					}
 				}
@@ -2414,6 +2444,7 @@ focus_tree = {
 						traits = {
 							assassination_survivor
 							inexperienced_monarch
+							trait_autocracy
 						}
 					}
 				}
@@ -2455,12 +2486,14 @@ focus_tree = {
 				picture = "gfx/leaders/KOR/KOR_JAP_resident_general.dds"
 				ideology = oligarchism
 				expire = "1935.1.1"
+				traits = { trait_oligarchism }
 			}
 			create_country_leader = {
 				name = "Resident-General of Korea"
 				picture = "gfx/leaders/KOR/KOR_JAP_resident_general.dds"
 				ideology = stratocracy
 				expire = "1935.1.1"
+				traits = { trait_stratocracy }
 			}
 			add_popularity = {
 				ideology = neutrality
