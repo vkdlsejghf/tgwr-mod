@@ -50,17 +50,17 @@ focus_tree = {
 		y = 5
 		cost = 5
 		available_if_capitulated = yes
-		prerequisite = { 
-			focus = SIA_pilot_training 
+		prerequisite = {
+			focus = SIA_pilot_training
 		}
-		prerequisite = { 
-			focus = SIA_seize_german_ships 
+		prerequisite = {
+			focus = SIA_seize_german_ships
 		}
 		ai_will_do = { factor = 10 }
-		completion_reward = { army_experience = 5 
-		SIA = { country_event = ww1_siam.2 }
-		custom_effect_tooltip = SIA_submarine_seize_tt
-		 }
+		completion_reward = { army_experience = 5
+			SIA = { country_event = ww1_siam.2 }
+			custom_effect_tooltip = SIA_submarine_seize_tt
+		}
 	}
 
 	#Focus for Siamese Labour Volunteer Detachment
@@ -97,31 +97,31 @@ focus_tree = {
 		y = 3
 		cost = 15
 		available_if_capitulated = yes
-		prerequisite = { 
-			focus = SIA_foreign_embassies 
+		prerequisite = {
+			focus = SIA_foreign_embassies
 		}
-		prerequisite = { 
-			focus = SIA_foreign_trade 
+		prerequisite = {
+			focus = SIA_foreign_trade
 		}
 		mutually_exclusive = { focus = SIA_central_powers_influence }
-		ai_will_do = { 
+		ai_will_do = {
 			factor = 5
 			modifier = {
 				has_country_flag = siam_entente_influence
 				factor = 10
 			}
-			}
+		}
 		completion_reward = {
 			every_country = {
 				limit = { is_in_faction_with = FRA }
-				add_opinion_modifier = { 
+				add_opinion_modifier = {
 					target = ROOT
 					modifier = stand_with_major_faction
 				}
 			}
 			every_country = {
 				limit = { is_in_faction_with = GER }
-				add_opinion_modifier = { 
+				add_opinion_modifier = {
 					target = ROOT
 					modifier = stand_with_major_faction_opposite
 				}
@@ -137,35 +137,35 @@ focus_tree = {
 		y = 3
 		cost = 15
 		available_if_capitulated = yes
-		prerequisite = { 
-			focus = SIA_foreign_embassies 
+		prerequisite = {
+			focus = SIA_foreign_embassies
 		}
-		prerequisite = { 
-			focus = SIA_foreign_trade 
+		prerequisite = {
+			focus = SIA_foreign_trade
 		}
 		mutually_exclusive = { focus = SIA_entente_influence }
-		ai_will_do = { 
+		ai_will_do = {
 			factor = 5
 			modifier = {
 				has_country_flag = siam_cp_influence
 				factor = 10
-			} 
 			}
+		}
 		completion_reward = {
 			every_country = {
 				limit = { is_in_faction_with = GER }
-				add_opinion_modifier = { 
+				add_opinion_modifier = {
 					target = ROOT
 					modifier = stand_with_major_faction
 				}
 			}
 			every_country = {
 				limit = { is_in_faction_with = FRA }
-				add_opinion_modifier = { 
+				add_opinion_modifier = {
 					target = ROOT
 					modifier = stand_with_major_faction_opposite
 				}
-			}						
+			}
 		}
 	}
 
@@ -199,12 +199,12 @@ focus_tree = {
 		prerequisite = { focus = SIA_siam_our_homeland }
 		mutually_exclusive = { focus = SIA_on_our_own }
 		ai_will_do = {
-			 factor = 5
-			 modifier = {
-				 is_historical_focus_on = yes
-				 factor = 10
-			 }
+			factor = 5
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 10
 			}
+		}
 		completion_reward = {
 			country_event = { id = ww1_siam.6 }
 		}
@@ -320,16 +320,16 @@ focus_tree = {
 		y = 6
 		cost = 10
 		available_if_capitulated = yes
-		prerequisite = { 
-			focus = SIA_burmese_claims 
+		prerequisite = {
+			focus = SIA_burmese_claims
 		}
-		prerequisite = { 
-			focus = SIA_our_rightful_cambodian_land 
+		prerequisite = {
+			focus = SIA_our_rightful_cambodian_land
 		}
-		prerequisite = { 
-			focus = SIA_malayan_territorial_claims 
+		prerequisite = {
+			focus = SIA_malayan_territorial_claims
 		}
 	}
 
-#End of focuses 
- }
+	#End of focuses
+}
