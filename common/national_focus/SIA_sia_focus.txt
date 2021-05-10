@@ -342,5 +342,16 @@ focus_tree = {
 			focus = SIA_on_our_own
 		}
 	}
+	focus = {
+		id = SIA_palace_revolt
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 25
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = SIA_democracy_path
+		}
+	}
 	#End of focuses
 }
