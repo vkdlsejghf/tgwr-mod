@@ -331,6 +331,18 @@ GER_great_war = {
 						}
 						country_lock_all_division_template = yes
 						add_ideas = idea_army_restrictions
+						remove_wargoal = {
+						    type = all
+						    target = ROOT
+						}
+						every_owned_state = {
+							limit = {
+								is_core_of = PER
+							}
+							PER = {
+								transfer_state = PREV
+							}
+						}
 					}
 					every_country = {
 						limit = {
@@ -441,6 +453,19 @@ GER_great_war = {
 						}
 						TUR = {
 							transfer_state = 790
+						}
+					}
+					if = {
+						limit = {
+							KUW = {
+								owns_state = 656
+								656 = {
+									is_claimed_by = TUR
+								}
+							}
+						}
+						TUR = {
+							transfer_state = 656
 						}
 					}
 					if = {
@@ -1206,6 +1231,12 @@ GER_great_war = {
 			}
 			modifier = {
 				factor = 0
+				date < 1918.10.11
+				surrender_progress < 0.2
+				casualties < 3000000
+			}
+			modifier = {
+				factor = 0
 				BEL = {
 					has_capitulated = no
 				}
@@ -1222,11 +1253,22 @@ GER_great_war = {
 			}
 			modifier = {
 				factor = 0
+				FRA = { surrender_progress < 0.2 }
+				casualties < 3000000
+			}
+			modifier = {
+				factor = 0
+				FRA = { surrender_progress < 0.3 }
+				surrender_progress < 0.2
+				casualties < 3500000
+			}
+			modifier = {
+				factor = 0
 				SOV = {
 					exists = yes
 				}
-				surrender_progress < 0.4
-				casualties < 3000000
+				surrender_progress < 0.2
+				casualties < 2500000
 			}
 			modifier = {
 				factor = 0
@@ -1408,45 +1450,45 @@ GER_great_war = {
 							TUR = {
 								has_country_flag = great_war_loser
 							}
-							if = {
-								limit = {
-									AZR = {
-										is_subject_of = TUR
-									}
-								}
-								TUR = {
-									end_puppet = AZR
-								}
+						}
+						if = {
+							limit = {
 								AZR = {
-									every_owned_state = {
-										limit = {
-											is_core_of = ARM
-										}
-										ARM = { transfer_state = PREV }
-									}
-									clr_country_flag = protectorate
+									is_subject_of = TUR
 								}
 							}
-							every_state = {
-								limit = {
-									is_owned_by = TUR
-									is_core_of = ARM
-									NOT = {
-										is_core_of = TUR
-									}
-								}
-								ARM = { transfer_state = PREV }
+							TUR = {
+								end_puppet = AZR
 							}
-							every_state = {
-								limit = {
-									is_owned_by = TUR
-									is_core_of = GEO
-									NOT = {
-										is_core_of = TUR
+							AZR = {
+								every_owned_state = {
+									limit = {
+										is_core_of = ARM
 									}
+									ARM = { transfer_state = PREV }
 								}
-								GEO = { transfer_state = PREV }
+								clr_country_flag = protectorate
 							}
+						}
+						every_state = {
+							limit = {
+								is_owned_by = TUR
+								is_core_of = ARM
+								NOT = {
+									is_core_of = TUR
+								}
+							}
+							ARM = { transfer_state = PREV }
+						}
+						every_state = {
+							limit = {
+								is_owned_by = TUR
+								is_core_of = GEO
+								NOT = {
+									is_core_of = TUR
+								}
+							}
+							GEO = { transfer_state = PREV }
 						}
 					}
 					if = {
@@ -1507,6 +1549,18 @@ GER_great_war = {
 						}
 						country_lock_all_division_template = yes
 						add_ideas = idea_army_restrictions
+						remove_wargoal = {
+						    type = all
+						    target = ROOT
+						}
+						every_owned_state = {
+							limit = {
+								is_core_of = PER
+							}
+							PER = {
+								transfer_state = PREV
+							}
+						}
 					}
 					every_country = {
 						limit = {
@@ -1654,7 +1708,7 @@ GER_great_war = {
 						}
 						every_state = {
 							limit = {
-								is_owned_by = event_target:great_war_loser
+								is_owned_by = GER
 								OR = {
 									state = 86
 									state = 85
@@ -1662,7 +1716,7 @@ GER_great_war = {
 									state = 762
 								}
 							}
-							POL = { transfer_state = PREV }
+							POL = { transfer_state = PREV add_state_core = PREV }
 							GER = { remove_state_core = PREV }
 						}
 					}
