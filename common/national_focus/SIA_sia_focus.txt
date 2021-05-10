@@ -330,6 +330,17 @@ focus_tree = {
 			focus = SIA_malayan_territorial_claims
 		}
 	}
-
+	#Focus for Revolt in Burma
+	focus = {
+		id = SIA_democracy_path
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 25
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = SIA_on_our_own
+		}
+	}
 	#End of focuses
 }
