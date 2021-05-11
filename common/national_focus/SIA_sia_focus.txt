@@ -13,7 +13,7 @@ focus_tree = {
 		icon = GFX_focus_the_big_push
 		x = 8
 		y = 4
-		cost = 7
+		cost = 10
 		available_if_capitulated = yes
 		prerequisite = { focus = SIA_central_powers_influence }
 		ai_will_do = { factor = 10 }
@@ -35,7 +35,7 @@ focus_tree = {
 		icon = GFX_focus_battlefleet
 		x = 14
 		y = 4
-		cost = 4
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { focus = SIA_entente_influence }
 		ai_will_do = { factor = 10 }
@@ -82,7 +82,7 @@ focus_tree = {
 		icon = GFX_goal_generic_air_fighter
 		x = 16
 		y = 4
-		cost = 4
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { focus = SIA_entente_influence }
 		ai_will_do = { factor = 10 }
@@ -95,7 +95,7 @@ focus_tree = {
 		icon = GFX_focus_consolidate_entente
 		x = 15
 		y = 3
-		cost = 15
+		cost = 10
 		available_if_capitulated = yes
 		prerequisite = {
 			focus = SIA_foreign_embassies
@@ -135,7 +135,7 @@ focus_tree = {
 		icon = GFX_focus_central_powers
 		x = 11
 		y = 3
-		cost = 15
+		cost = 10
 		available_if_capitulated = yes
 		prerequisite = {
 			focus = SIA_foreign_embassies
@@ -194,7 +194,7 @@ focus_tree = {
 		icon = GFX_goal_generic_CAS
 		x = 13
 		y = 1
-		cost = 15
+		cost = 10
 		available_if_capitulated = yes
 		prerequisite = { focus = SIA_siam_our_homeland }
 		mutually_exclusive = { focus = SIA_on_our_own }
@@ -216,7 +216,7 @@ focus_tree = {
 		icon = GFX_goal_generic_trade
 		x = 15
 		y = 2
-		cost = 15
+		cost = 10
 		available_if_capitulated = yes
 		prerequisite = { focus = SIA_foreign_influence }
 		ai_will_do = { factor = 10 }
@@ -231,7 +231,7 @@ focus_tree = {
 		icon = GFX_goal_generic_air_production
 		x = 11
 		y = 2
-		cost = 15
+		cost = 10
 		available_if_capitulated = yes
 		prerequisite = { focus = SIA_foreign_influence }
 		ai_will_do = { factor = 10 }
@@ -276,12 +276,14 @@ focus_tree = {
 		icon = GFX_goal_generic_territory_or_war
 		x = 8
 		y = 5
-		cost = 8
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { focus = SIA_mobilize_our_borders }
 		ai_will_do = { factor = 10 }
 		completion_reward = {
 			add_state_claim = 819
+			add_state_claim = 670
+			add_state_claim = 741
 		}
 	}
 
@@ -291,7 +293,7 @@ focus_tree = {
 		icon = GFX_goal_generic_territory_or_war
 		x = 10
 		y = 5
-		cost = 8
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { focus = SIA_mobilize_our_borders }
 		ai_will_do = { factor = 10 }
@@ -307,7 +309,7 @@ focus_tree = {
 		icon = GFX_goal_generic_territory_or_war
 		x = 6
 		y = 5
-		cost = 8
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { focus = SIA_mobilize_our_borders }
 	}
@@ -330,7 +332,7 @@ focus_tree = {
 			focus = SIA_malayan_territorial_claims
 		}
 	}
-	#Focus for Revolt in Burma
+	#Focus for Democracy Path
 	focus = {
 		id = SIA_democracy_path
 		icon = GFX_goal_generic_more_territorial_claims
@@ -341,7 +343,14 @@ focus_tree = {
 		prerequisite = {
 			focus = SIA_on_our_own
 		}
+		completion_reward = {
+			add_popularity = {
+				ideology = democracy
+				popularity = 0.3
+			}
+		}
 	}
+	#Focus for Palace Revolt
 	focus = {
 		id = SIA_palace_revolt
 		icon = GFX_goal_generic_more_territorial_claims
