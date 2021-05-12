@@ -9,6 +9,7 @@
  MAL_UK_democratic_subject:0 "$OVERLORDADJ$ Malaya"
  MAL_UK_democratic_subject_DEF:0 "the Three $OVERLORDADJ$ Malayan Administrations"
  RAJ_UK_subject:0 "$OVERLORDADJ$ Raj"
+ RAJ_UK_subject_DEF:0 "the $OVERLORDADJ$ Raj"
  RAJ_UK_autonomy_dominion:0 "Dominion of India"
  RAJ_UK_autonomy_dominion_DEF:0 "the Dominion of India"
  SAF_COM_communist:0 "Cape Commune"
@@ -1197,3 +1198,8 @@
  SWE_NOR_communism:0 "Northern Socialist Republics"
  SWE_NOR_communism_DEF:0 "Northern Socialist Republics"
  SWE_NOR_communism_ADJ:0 "Northern"
+
+ KMT_NANJING:0 "Nanjing Government"
+ KMT_NANJING_DEF:0 "the Nanjing Government of the Republic of China"
+ KMT_WUHAN:0 "Wuhan Government"
+ KMT_WUHAN_DEF:0 "the Wuhan Government of the Republic of China"
