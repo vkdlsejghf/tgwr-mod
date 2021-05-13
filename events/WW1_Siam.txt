@@ -260,3 +260,16 @@ country_event = {
 		}
 	}
 }
+country_event = {
+	id = ww1_siam.11
+	title = ww1_siam.11.t
+	desc = ww1_siam.11.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = ww1_siam.11.a 
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
