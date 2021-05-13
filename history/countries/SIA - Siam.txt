@@ -22,10 +22,10 @@ set_politics = {
     elections_allowed = no
 }
 set_popularities = {
-    democratic = 0
+    democratic = 10
     fascism = 0
     communism = 0
-    neutrality = 100
+    neutrality = 90
 }
 
 set_stability=0.75
