@@ -271,5 +271,17 @@ country_event = {
 		ai_chance = {
 			factor = 100
 		}
+		set_politics = {
+			ruling_party = democratic
+		}
+		add_popularity = {
+			ideology = democracy
+			popularity = 0.35
+		}
+		create_country_leader = {
+			name = "Khun Thuayhanpitak"
+			expire = "1965.1.1"
+			ideology = conservatism
+		}
 	}
 }
