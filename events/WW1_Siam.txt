@@ -275,7 +275,7 @@ country_event = {
 			ruling_party = democratic
 		}
 		add_popularity = {
-			ideology = democracy
+			ideology = democratic
 			popularity = 0.35
 		}
 		create_country_leader = {
