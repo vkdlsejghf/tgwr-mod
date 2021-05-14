@@ -283,5 +283,15 @@ country_event = {
 			expire = "1965.1.1"
 			ideology = conservatism
 		}
+		start_civil_war = {
+			ruling_party = democratic
+			ideology = neutrality
+			only_own_territory = yes
+			states = {
+				724
+			}
+			capital = 724
+			keep_political_leader = yes 
+		}
 	}
 }
