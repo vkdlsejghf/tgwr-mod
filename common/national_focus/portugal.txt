@@ -1,0 +1,1021 @@
+focus_tree = {
+	id = por_focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = POR
+		}
+	}
+	default = no
+	continuous_focus_position = { x = 50 y = 1050 }
+	
+	
+	focus = {
+		id = por_reforms
+		icon = rere
+		x = 5
+		y = 0
+		cost = 10
+		cancel_if_invalid=yes
+		available = {
+			has_global_flag = por_revolution
+		}
+		mutually_exclusive={
+			focus = por_revolution
+		}
+	}
+	focus = {
+		id = por_civil
+		icon = rere
+		x = -5
+		y = 1
+		cost = 10
+		relative_position_id = por_reforms
+		cancel_if_invalid=yes
+		prerequisite = {
+			focus = por_reforms
+		}
+		mutually_exclusive = {
+			focus = por_liberalize
+		}
+	}
+	focus = {
+		id = por_civilprep
+		icon = rere
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = por_civil
+		cancel_if_invalid=yes
+		prerequisite = {
+			focus = por_civil
+		}
+		bypass = {
+			has_global_flag = por_revolution
+		}
+	}
+	focus = {
+		id = por_startcivil
+		icon = rere
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = por_civilprep
+		cancel_if_invalid=yes
+		prerequisite = {
+			focus = por_civilprep
+		}
+		bypass = {
+			has_global_flag = por_revolution
+		}
+	}
+	focus = {
+		id = por_rebuild
+		icon = rere
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = por_startcivil
+		cancel_if_invalid=yes
+		prerequisite = {
+			focus = por_startcivil
+		}
+	}
+	focus = {
+		id = por_empire
+		icon = rere
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = por_rebuild
+		cancel_if_invalid=yes
+		prerequisite = {
+			focus = por_rebuild
+		}
+	}
+	focus = {
+		id = por_empire2
+		icon = rere
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = por_empire
+		cancel_if_invalid=yes
+		prerequisite = {
+			focus = por_empire
+		}
+	}
+	focus = {
+		id = por_brazilsuicide
+		icon = rere
+		x = 0
+		y = 1
+		relative_position_id = por_empire2
+		cancel_if_invalid=yes
+		prerequisite = {
+			focus = por_empire2
+		}
+	}
+	
+	
+	focus = {
+		id = por_liberalize
+		icon = rere
+		x = 5
+		y = 1
+		cost = 10
+		relative_position_id = por_reforms
+		cancel_if_invalid=yes
+		prerequisite = {
+			focus = por_reforms
+		}
+		mutually_exclusive = {
+			focus = por_civil
+		}
+	}
+	focus = {
+		id = por_firstreform
+		icon = rere
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = por_liberalize
+		cancel_if_invalid=yes
+		prerequisite = {
+			focus = por_liberalize
+		}
+	}
+	focus = {
+		id = por_lastreform
+		icon = rere
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = por_firstreform
+		cancel_if_invalid=yes
+		prerequisite = {
+			focus = por_firstreform
+		}
+	}
+	focus = {
+		id = por_democracy
+		icon = rere
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = por_lastreform
+		prerequisite = {
+			focus = por_lastreform
+			focus = por_fix_country
+		}
+		mutually_exclusive = {
+			focus = por_military_coup_prep
+		}
+	}
+	focus = {
+		id = por_stable_democracy
+		icon = rere
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = por_democracy
+		prerequisite = {
+			focus = por_democracy
+		}
+	}
+	focus = {
+		id = por_more_stable_democracy
+		icon = rere
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = por_stable_democracy
+		prerequisite = {
+			focus = por_stable_democracy
+		}
+	}
+	focus = {
+		id = por_proud_republic
+		icon = rere
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = por_more_stable_democracy
+		prerequisite = {
+			focus = por_more_stable_democracy
+		}
+	}
+	
+	focus = {
+		id = por_challenge_britain
+		icon = rere
+		x = 3
+		y = 1
+		cost = 10
+		relative_position_id = por_rebuild
+		prerequisite = {
+			focus = por_rebuild
+			focus = por_democracy
+		}
+		mutually_exclusive = {
+			focus = por_ally_britain
+		}
+	}
+	focus = {
+		id = por_pink_map
+		icon = rere
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = por_challenge_britain
+		prerequisite = {
+			focus = por_challenge_britain
+		}
+	}
+	focus = {
+		id = por_join_central_power
+		icon = rere
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = por_pink_map
+		prerequisite = {
+			focus = por_pink_map
+		}
+	}
+	
+	focus = {
+		id = por_ally_britain
+		icon = rere
+		x = 7
+		y = 1
+		cost = 10
+		relative_position_id = por_rebuild
+		prerequisite = {
+			focus = por_rebuild
+			focus = por_democracy
+		}
+		mutually_exclusive = {
+			focus = por_challenge_britain
+		}
+	}
+	focus = {
+		id = por_negotiate_pinkmap
+		icon = rere
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = por_ally_britain
+		prerequisite = {
+			focus = por_ally_britain
+		}
+	}
+	focus = {
+		id = por_cursed_marriage
+		icon = rere
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = por_negotiate_pinkmap
+		prerequisite = {
+			focus = por_negotiate_pinkmap
+		}
+	}
+	
+	
+	focus = {
+		id = por_revolution
+		icon = rere
+		x = 10
+		y = 0
+		cost = 10
+		relative_position_id = por_reforms
+		cancel_if_invalid=yes
+		mutually_exclusive={
+			focus = por_reforms
+		}
+		available = {
+			has_global_flag = por_revolution
+		}
+	}
+	focus = {
+		id = por_provisional_junta
+		icon = rere
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = por_revolution
+		prerequisite = {
+			focus = por_revolution
+		}
+	}
+	focus = {
+		id = por_first_government
+		icon = rere
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = por_provisional_junta
+		prerequisite = {
+			focus = por_provisional_junta
+		}
+	}
+	focus = {
+		id = por_fix_country
+		icon = rere
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = por_first_government
+		prerequisite = {
+			focus = por_first_government
+		}
+	}
+	
+	
+	
+	
+	focus = {
+		id = por_military_coup_prep
+		icon = rere
+		x = 5
+		y = 1
+		cost = 10
+		relative_position_id = por_fix_country
+		prerequisite = {
+			focus = por_fix_country
+		}
+		mutually_exclusive = {
+			focus = por_democracy
+		}
+	}
+	focus = {
+		id = por_military_coup
+		icon = rere
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = por_military_coup_prep
+		prerequisite = {
+			focus = por_military_coup_prep
+		}
+	}
+	focus = {
+		id = por_uniao_nacional
+		icon = rere
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = por_military_coup
+		prerequisite = {
+			focus = por_military_coup
+		}
+	}
+	focus = {
+		id = por_carmona
+		icon = rere
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = por_uniao_nacional
+		prerequisite = {
+			focus = por_uniao_nacional
+		}
+	}
+	
+	
+	
+	focus = {
+		id = por_face_spain
+		icon = rere
+		x = 3
+		y = 1
+		cost = 10
+		relative_position_id = por_democracy
+		prerequisite = {
+			focus = por_democracy
+			focus = por_military_coup_prep
+		}
+		mutually_exclusive = {
+			focus = por_ally_spain
+		}
+	}
+	focus = {
+		id = por_luso_spanish_war
+		icon = rere
+		x = -1
+		y = 1
+		cost = 10
+		relative_position_id = por_face_spain
+		prerequisite = {
+			focus = por_face_spain
+		}
+	}
+	focus = {
+		id = por_olivenca_backyard
+		icon = rere
+		x = 1
+		y = 1
+		cost = 10
+		relative_position_id = por_face_spain
+		prerequisite = {
+			focus = por_face_spain
+		}
+	}
+	focus = {
+		id = por_galiza_claim
+		icon = rere
+		x = 1
+		y = 1
+		cost = 10
+		relative_position_id = por_luso_spanish_war
+		prerequisite = {
+			focus = por_luso_spanish_war
+			focus = por_olivenca_backyard
+		}
+		
+	}
+	
+	focus = {
+		id = por_ally_spain
+		icon = rere
+		x = -3
+		y = 1
+		cost = 10
+		relative_position_id = por_military_coup_prep
+		prerequisite = {
+			focus = por_democracy
+			focus = por_military_coup_prep
+		}
+		mutually_exclusive = {
+			focus = por_face_spain
+		}
+	}
+	focus = {
+		id = por_iberian_pact
+		icon = rere
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = por_ally_spain
+		prerequisite = {
+			focus = por_ally_spain
+		}
+	}
+	focus = {
+		id = por_olivenca_negotiation
+		icon = rere
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = por_iberian_pact
+		prerequisite = {
+			focus = por_iberian_pact
+		}
+	}
+	
+	
+	
+	focus = {
+		id = por_foreign_purchase
+		icon = rere
+		x = 23
+		y = 0
+	}
+	focus = {
+		id = por_school_expensive_1
+		icon = rere
+		x = 1
+		y = 1
+		relative_position_id = por_foreign_purchase
+		prerequisite = {
+			focus = por_foreign_purchase
+		}
+		mutually_exclusive = {
+			focus = por_industry_expensive_1
+			focus = por_school_cheap_1
+		}
+	}
+	focus = {
+		id = por_school_cheap_1
+		icon = rere
+		x = -1
+		y = 1
+		relative_position_id = por_foreign_purchase
+		prerequisite = {
+			focus = por_foreign_purchase
+		}
+		mutually_exclusive = {
+			focus = por_school_expensive_1
+		}
+	}
+	
+	focus = {
+		id = por_school_expensive_2
+		icon = rere
+		x = 0
+		y = 1
+		relative_position_id = por_school_expensive_1
+		prerequisite = {
+			focus = por_school_cheap_1
+			focus = por_school_expensive_1
+		}
+		mutually_exclusive = {
+			focus = por_industry_expensive_2
+			focus = por_school_cheap_2
+		}
+	}
+	focus = {
+		id = por_school_cheap_2
+		icon = rere
+		x = 0
+		y = 1
+		relative_position_id = por_school_cheap_1
+		prerequisite = {
+			focus = por_school_cheap_1
+			focus = por_school_expensive_1
+		}
+		mutually_exclusive = {
+			focus = por_school_expensive_2
+		}
+	}
+	
+	focus = {
+		id = por_school_expensive_3
+		icon = rere
+		x = 0
+		y = 1
+		relative_position_id = por_school_expensive_2
+		prerequisite = {
+			focus = por_school_cheap_2
+			focus = por_school_expensive_2
+		}
+		mutually_exclusive = {
+			focus = por_industry_expensive_3
+			focus = por_school_cheap_3
+		}
+	}
+	focus = {
+		id = por_school_cheap_3
+		icon = rere
+		x = 0
+		y = 1
+		relative_position_id = por_school_cheap_2
+		prerequisite = {
+			focus = por_school_cheap_2
+			focus = por_school_expensive_2
+		}
+		mutually_exclusive = {
+			focus = por_school_expensive_3
+		}
+	}
+	
+	focus = {
+		id = por_school_expensive_4
+		icon = rere
+		x = 0
+		y = 1
+		relative_position_id = por_school_expensive_3
+		prerequisite = {
+			focus = por_school_cheap_3
+			focus = por_school_expensive_3
+		}
+		mutually_exclusive = {
+			focus = por_industry_expensive_4
+			focus = por_school_cheap_4
+		}
+	}
+	focus = {
+		id = por_school_cheap_4
+		icon = rere
+		x = 0
+		y = 1
+		relative_position_id = por_school_cheap_3
+		prerequisite = {
+			focus = por_school_cheap_3
+			focus = por_school_expensive_3
+		}
+		mutually_exclusive = {
+			focus = por_school_expensive_4
+		}
+	}
+	
+	focus = {
+		id = por_slot_1
+		icon = rere
+		x = 1
+		y = 1
+		relative_position_id = por_school_cheap_4
+		prerequisite = {
+			focus = por_school_cheap_4
+			focus = por_school_expensive_4
+		}
+	}
+	
+	focus = {
+		id = por_school_expensive_5
+		icon = rere
+		x = 0
+		y = 2
+		relative_position_id = por_school_expensive_4
+		prerequisite = {
+			focus = por_slot_1
+		}
+		mutually_exclusive = {
+			focus = por_school_cheap_5
+			focus = por_resource_extra
+		}
+	}
+	focus = {
+		id = por_school_cheap_5
+		icon = rere
+		x = 0
+		y = 2
+		relative_position_id = por_school_cheap_4
+		prerequisite = {
+			focus = por_slot_1
+		}
+		mutually_exclusive = {
+			focus = por_school_expensive_5
+
+		}
+	}
+	
+	focus = {
+		id = por_slot_2
+		icon = rere
+		x = 1
+		y = 1
+		relative_position_id = por_school_cheap_5
+		prerequisite = {
+			focus = por_school_cheap_5
+			focus = por_school_expensive_5
+		}
+	}
+	
+	
+	
+	
+	
+	
+	focus = {
+		id = por_road
+		icon = rere
+		x = 4
+		y = 0
+		relative_position_id = por_foreign_purchase
+	}
+	
+	focus = {
+		id = por_industry_expensive_1
+		icon = rere
+		x = -1
+		y = 1
+		relative_position_id = por_road
+		prerequisite = {
+			focus = por_road
+		}
+		mutually_exclusive = {
+			focus = por_school_expensive_1
+			focus = por_industry_cheap_1
+		}
+	}
+	focus = {
+		id = por_industry_cheap_1
+		icon = rere
+		x = 1
+		y = 1
+		relative_position_id = por_road
+		prerequisite = {
+			focus = por_road
+		}
+		mutually_exclusive = {
+			focus = por_industry_expensive_1
+		}
+	}
+	
+	focus = {
+		id = por_industry_expensive_2
+		icon = rere
+		x = 0
+		y = 1
+		relative_position_id = por_industry_expensive_1
+		prerequisite = {
+			focus = por_industry_cheap_1
+			focus = por_industry_expensive_1
+		}
+		mutually_exclusive = {
+			focus = por_school_expensive_2
+			focus = por_industry_cheap_2
+		}
+	}
+	focus = {
+		id = por_industry_cheap_2
+		icon = rere
+		x = 0
+		y = 1
+		relative_position_id = por_industry_cheap_1
+		prerequisite = {
+			focus = por_industry_cheap_1
+			focus = por_industry_expensive_1
+		}
+		mutually_exclusive = {
+			focus = por_industry_expensive_2
+		}
+	}
+	
+	focus = {
+		id = por_industry_expensive_3
+		icon = rere
+		x = 0
+		y = 1
+		relative_position_id = por_industry_expensive_2
+		prerequisite = {
+			focus = por_industry_cheap_2
+			focus = por_industry_expensive_2
+		}
+		mutually_exclusive = {
+			focus = por_school_expensive_3
+			focus = por_industry_cheap_3
+		}
+	}
+	focus = {
+		id = por_industry_cheap_3
+		icon = rere
+		x = 0
+		y = 1
+		relative_position_id = por_industry_cheap_2
+		prerequisite = {
+			focus = por_industry_cheap_2
+			focus = por_industry_expensive_2
+		}
+		mutually_exclusive = {
+			focus = por_industry_expensive_3
+		}
+	}
+	
+	focus = {
+		id = por_industry_expensive_4
+		icon = rere
+		x = 0
+		y = 1
+		relative_position_id = por_industry_expensive_3
+		prerequisite = {
+			focus = por_industry_cheap_3
+			focus = por_industry_expensive_3
+		}
+		mutually_exclusive = {
+			focus = por_school_expensive_4
+			focus = por_industry_cheap_4
+		}
+	}
+	focus = {
+		id = por_industry_cheap_4
+		icon = rere
+		x = 0
+		y = 1
+		relative_position_id = por_industry_cheap_3
+		prerequisite = {
+			focus = por_industry_cheap_3
+			focus = por_industry_expensive_3
+		}
+		mutually_exclusive = {
+			focus = por_industry_expensive_4
+		}
+	}
+	
+	focus = {
+		id = por_resource_extra
+		icon = rere
+		x = 1
+		y = 2
+		relative_position_id = por_industry_expensive_4
+		prerequisite = {
+			focus = por_industry_cheap_4
+			focus = por_industry_expensive_4
+		}
+		mutually_exclusive = {
+			focus = por_school_expensive_5
+		}
+	}
+	
+	
+	focus = {
+		id = por_army_innovate
+		icon = rere
+		x = 31
+		y = 0
+	}
+	focus = {
+		id = por_mil_boost
+		icon = rere
+		x = 0
+		y = 1
+		relative_position_id = por_army_innovate
+		prerequisite = {
+			focus = por_army_innovate
+		}
+	}
+	focus = {
+		id = por_mil_boost_2
+		icon = rere
+		x = -1
+		y = 1
+		relative_position_id = por_mil_boost
+		prerequisite = {
+			focus = por_mil_boost
+		}
+		mutually_exclusive = {
+			focus = por_mil_xp
+		}
+	}
+	focus = {
+		id = por_mil_xp
+		icon = rere
+		x = 1
+		y = 1
+		relative_position_id = por_mil_boost
+		prerequisite = {
+			focus = por_mil_boost
+		}
+		mutually_exclusive = {
+			focus = por_mil_boost_2
+		}
+	}
+	
+	focus = {
+		id = por_navy_innovate
+		icon = rere
+		x = 35
+		y = 0
+	}
+	focus = {
+		id = por_navy_boost
+		icon = rere
+		x = 0
+		y = 1
+		relative_position_id = por_navy_innovate
+		prerequisite = {
+			focus = por_navy_innovate
+		}
+	}
+	focus = {
+		id = por_navy_boost_2
+		icon = rere
+		x = -1
+		y = 1
+		relative_position_id = por_navy_boost
+		prerequisite = {
+			focus = por_navy_boost
+		}
+		mutually_exclusive = {
+			focus = por_navy_xp
+		}
+	}
+	focus = {
+		id = por_navy_xp
+		icon = rere
+		x = 1
+		y = 1
+		relative_position_id = por_navy_boost
+		prerequisite = {
+			focus = por_navy_boost
+		}
+		mutually_exclusive = {
+			focus = por_navy_boost_2
+		}
+	}
+	
+	
+	focus = {
+		id = por_army_focus
+		icon = rere
+		x = 1
+		y = 1
+		relative_position_id = por_mil_boost_2
+		prerequisite = {
+			focus = por_navy_boost_2
+			focus = por_navy_xp
+			focus = por_mil_xp
+			focus = por_mil_boost_2
+		}
+		mutually_exclusive = {
+			focus = por_air_focus
+			focus = por_navy_focus
+		}
+	}
+	focus = {
+		id = por_motorized
+		icon = rere
+		x = 0
+		y = 1
+		relative_position_id = por_army_focus
+		prerequisite = {
+			focus = por_army_focus
+		}
+	}
+	focus = {
+		id = por_motorized_cheap
+		icon = rere
+		x = 0
+		y = 1
+		relative_position_id = por_motorized
+		prerequisite = {
+			focus = por_motorized
+		}
+	}
+	
+	
+	focus = {
+		id = por_air_focus
+		icon = rere
+		x = 3
+		y = 1
+		relative_position_id = por_mil_boost_2
+		prerequisite = {
+			focus = por_navy_boost_2
+			focus = por_navy_xp
+			focus = por_mil_xp
+			focus = por_mil_boost_2
+		}
+		mutually_exclusive = {
+			focus = por_army_focus
+			focus = por_navy_focus
+		}
+	}
+	focus = {
+		id = por_airplane_research
+		icon = rere
+		x = 0
+		y = 1
+		relative_position_id = por_air_focus
+		prerequisite = {
+			focus = por_air_focus
+		}
+	}
+	focus = {
+		id = por_fighter_cheap
+		icon = rere
+		x = 0
+		y = 1
+		relative_position_id = por_airplane_research
+		prerequisite = {
+			focus = por_airplane_research
+		}
+	}
+	
+	focus = {
+		id = por_navy_focus
+		icon = rere
+		x = 5
+		y = 1
+		relative_position_id = por_mil_boost_2
+		prerequisite = {
+			focus = por_navy_boost_2
+			focus = por_navy_xp
+			focus = por_mil_xp
+			focus = por_mil_boost_2
+		}
+		mutually_exclusive = {
+			focus = por_army_focus
+			focus = por_air_focus
+		}
+	}
+	focus = {
+		id = por_submarine_research
+		icon = rere
+		x = 0
+		y = 1
+		relative_position_id = por_navy_focus
+		prerequisite = {
+			focus = por_navy_focus
+		}
+	}
+	focus = {
+		id = por_naval_range
+		icon = rere
+		x = 0
+		y = 1
+		relative_position_id = por_submarine_research
+		prerequisite = {
+			focus = por_submarine_research
+		}
+	}
+	
+	
+	
+	
+	focus = {
+		id = por_colonialism
+		icon = rere
+		x = 0
+		y = 1
+		relative_position_id = por_fighter_cheap
+		prerequisite = {
+			focus = por_motorized_cheap
+			focus = por_fighter_cheap
+			focus = por_naval_range
+		}
+	}
+}
