@@ -126,6 +126,7 @@ create_navy_leader = {
 		ww1_Scramble_for_Africa
 		POR_unstable_monarchy_1
 		POR_dying_empire_1
+		POR_bad_schooling_5
 		limited_conscription
 	}
 }
