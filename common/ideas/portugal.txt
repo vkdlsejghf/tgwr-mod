@@ -408,7 +408,16 @@ ideas={
 				naval_morale_factor = 0.1
 			}
 		}
-		
+		POR_monarchy = {
+			picture = por_unstable_monarchy
+			allowed = {
+				original_tag = POR
+			}
+			allowed_civil_war = {
+				tag = POR
+			}
+			removal_cost = -1
+		}
 		
 		
 		
