@@ -124,7 +124,8 @@ create_navy_leader = {
 	}
 	add_ideas = {
 		ww1_Scramble_for_Africa
-		POR_unstable_monarchy
+		POR_unstable_monarchy_1
+		POR_dying_empire_1
 		limited_conscription
 	}
 }
