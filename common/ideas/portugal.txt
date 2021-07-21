@@ -62,7 +62,7 @@ ideas={
 				production_speed_buildings_factor = -0.20	
 			}
 		}
-		POR_unstable_republic_1 = {
+		POR_unstable_republic_2 = {
 			picture = por_unstable_republic
 			allowed = {
 				original_tag = POR
@@ -319,11 +319,8 @@ ideas={
 			removal_cost = -1
 			
 			modifier = {
-				targeted_modifier = {
-				tag = SPR
-				attack_bonus_against = 0.10
-				defense_bonus_against = 0.10
-				}
+				army_core_defence_factor = 0.2
+				army_core_attack_factor = 0.1
 			}
 		}
 		POR_motorized_cheap_1 = {
@@ -338,7 +335,7 @@ ideas={
 			
 			modifier = {
 				army_core_attack_factor = 0.05
-				army_core_defence_factor = 0.15
+				army_core_defence_factor = 0.05
 			}
 		}
 		POR_motorized_cheap_2 = {
@@ -353,16 +350,17 @@ ideas={
 			
 			modifier = {
 				army_core_attack_factor = 0.05
-				army_core_defence_factor = 0.15
-				equipment_bonus = {
-					motorized_equipment = {
-						build_cost_ic = -0.1
-						instant = yes
-					}
+				army_core_defence_factor = 0.10
+				
+			}
+			equipment_bonus = {
+				motorized_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
 				}
 			}
 		}
-		POR_fighter_range = {
+		POR_fighter_range_1 = {
 			picture = por_unstable_monarchy
 			allowed = {
 				original_tag = POR
@@ -372,13 +370,33 @@ ideas={
 			}
 			removal_cost = -1
 			
+			
 			modifier = {
-				equipment_bonus = {
-					air_range_factor = 0.1
+				air_range_factor = 0.1
+			}
+		}
+		POR_fighter_range_2 = {
+			picture = por_unstable_monarchy
+			allowed = {
+				original_tag = POR
+			}
+			allowed_civil_war = {
+				tag = POR
+			}
+			removal_cost = -1
+			
+			
+			modifier = {
+				air_range_factor = 0.1
+			}
+			equipment_bonus = {
+				light_fighter = {
+					build_cost_ic = -0.1
+					instant = yes
 				}
 			}
 		}
-		POR_navy_range_2 = {
+		POR_navy_range_1 = {
 			picture = por_unstable_monarchy
 			allowed = {
 				original_tag = POR
@@ -408,6 +426,22 @@ ideas={
 				naval_morale_factor = 0.1
 			}
 		}
+		POR_colonialism = {
+			picture = por_unstable_monarchy
+			allowed = {
+				original_tag = POR
+			}
+			allowed_civil_war = {
+				tag = POR
+			}
+			removal_cost = -1
+			
+			modifier = {
+				non_core_manpower = 0.10
+				war_support_weekly = 0.001
+				compliance_gain = 0.05
+			}
+		}
 		POR_monarchy = {
 			picture = por_unstable_monarchy
 			allowed = {
@@ -419,7 +453,21 @@ ideas={
 			removal_cost = -1
 		}
 		
-		
+		POR_build_boost = {
+			picture = por_unstable_monarchy
+			allowed = {
+				original_tag = POR
+			}
+			allowed_civil_war = {
+				tag = POR
+			}
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_buildings_factor = 0.1
+			}
+			
+		}
 		
 		
 		
