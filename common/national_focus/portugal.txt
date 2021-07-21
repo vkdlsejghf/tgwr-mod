@@ -18,11 +18,11 @@ focus_tree = {
 		y = 0
 		cost = 10
 		cancel_if_invalid=yes
-		available = {
-			has_global_flag = por_revolution
-		}
 		mutually_exclusive={
 			focus = por_revolution
+		}
+		completion_reward = {
+			add_stability = 0.05
 		}
 	}
 	focus = {
@@ -81,6 +81,9 @@ focus_tree = {
 		prerequisite = {
 			focus = por_startcivil
 		}
+		completion_reward = {
+			add_timed_idea = { idea = POR_rebuild days = 120 }
+		}
 	}
 	focus = {
 		id = por_empire
@@ -92,6 +95,9 @@ focus_tree = {
 		cancel_if_invalid=yes
 		prerequisite = {
 			focus = por_rebuild
+		}
+		completion_reward = {
+			add_ideas = { POR_empire_1 }
 		}
 	}
 	focus = {
@@ -105,12 +111,19 @@ focus_tree = {
 		prerequisite = {
 			focus = por_empire
 		}
+		completion_reward = {
+			swap_ideas = { 
+				remove_idea = POR_empire_1 
+				add_idea = POR_empire_2
+			}
+		}
 	}
 	focus = {
 		id = por_brazilsuicide
 		icon = rere
 		x = 0
 		y = 1
+		cost = 10
 		relative_position_id = por_empire2
 		cancel_if_invalid=yes
 		prerequisite = {
@@ -165,12 +178,18 @@ focus_tree = {
 		y = 1
 		cost = 10
 		relative_position_id = por_lastreform
+		available = {
+			has_stability > 0.15
+		}
 		prerequisite = {
 			focus = por_lastreform
 			focus = por_fix_country
 		}
 		mutually_exclusive = {
 			focus = por_military_coup_prep
+		}
+		completion_reward = {
+			
 		}
 	}
 	focus = {
@@ -183,6 +202,23 @@ focus_tree = {
 		prerequisite = {
 			focus = por_democracy
 		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = POR_unstable_monarchy_1
+				}   
+				swap_ideas = {
+					remove_idea = POR_unstable_monarchy_1
+					add_idea = POR_unstable_monarchy_2
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = POR_unstable_republic_1
+					add_idea = POR_unstable_republic_2
+				}
+			}
+		}
 	}
 	focus = {
 		id = por_more_stable_democracy
@@ -193,6 +229,9 @@ focus_tree = {
 		relative_position_id = por_stable_democracy
 		prerequisite = {
 			focus = por_stable_democracy
+		}
+		completion_reward = {
+			remove_ideas = { POR_unstable_monarchy_2 POR_unstable_republic_2 }
 		}
 	}
 	focus = {
@@ -298,6 +337,23 @@ focus_tree = {
 		available = {
 			has_global_flag = por_revolution
 		}
+		completion_reward = {
+			remove_ideas = { POR_monarchy }
+			set_cosmetic_tag = POR_republic
+			swap_ideas = {
+				remove_idea = POR_unstable_monarchy_1
+				add_idea = POR_unstable_republic_1
+			}
+			add_stability = -0.20
+			add_popularity = {
+				ideology = democracy
+				popularity = 0.2
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.05
+			}
+		}
 	}
 	focus = {
 		id = por_provisional_junta
@@ -308,6 +364,14 @@ focus_tree = {
 		relative_position_id = por_revolution
 		prerequisite = {
 			focus = por_revolution
+		}
+		completion_reward = {
+			add_stability = 0.05
+			add_political_power = 25
+			add_popularity = {
+				ideology = democracy
+				popularity = 0.05
+			}
 		}
 	}
 	focus = {
@@ -320,6 +384,14 @@ focus_tree = {
 		prerequisite = {
 			focus = por_provisional_junta
 		}
+		completion_reward = {
+			add_stability = 0.10
+			add_political_power = 100
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.1
+			}
+		}
 	}
 	focus = {
 		id = por_fix_country
@@ -330,6 +402,18 @@ focus_tree = {
 		relative_position_id = por_first_government
 		prerequisite = {
 			focus = por_first_government
+		}
+		completion_reward = {
+			add_stability = 0.10
+			add_political_power = 50
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.05
+			}
+			add_popularity = {
+				ideology = democracy
+				popularity = 0.1
+			}
 		}
 	}
 	
@@ -343,11 +427,21 @@ focus_tree = {
 		y = 1
 		cost = 10
 		relative_position_id = por_fix_country
+		available = {
+			has_stability < 0.3
+		}
 		prerequisite = {
 			focus = por_fix_country
 		}
 		mutually_exclusive = {
 			focus = por_democracy
+		}
+		completion_reward = {
+			add_ideas = { POR_idea_military_plot }
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.05
+			}
 		}
 	}
 	focus = {
@@ -360,16 +454,9 @@ focus_tree = {
 		prerequisite = {
 			focus = por_military_coup_prep
 		}
-	}
-	focus = {
-		id = por_uniao_nacional
-		icon = rere
-		x = 0
-		y = 1
-		cost = 10
-		relative_position_id = por_military_coup
-		prerequisite = {
-			focus = por_military_coup
+		completion_reward = {
+			remove_ideas = { POR_idea_military_plot POR_unstable_republic_1 POR_unstable_republic_2 }
+			add_stability = -0.15
 		}
 	}
 	focus = {
@@ -378,9 +465,34 @@ focus_tree = {
 		x = 0
 		y = 1
 		cost = 10
-		relative_position_id = por_uniao_nacional
+		relative_position_id = por_military_coup
 		prerequisite = {
-			focus = por_uniao_nacional
+			focus = por_military_coup
+		}
+		completion_reward = {
+			add_stability = 0.20
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.05
+			}
+		}
+	}
+	focus = {
+		id = por_uniao_nacional
+		icon = rere
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = por_carmona
+		prerequisite = {
+			focus = por_carmona
+		}
+		completion_reward = {
+			add_stability = 0.30
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.2
+			}
 		}
 	}
 	
@@ -411,6 +523,9 @@ focus_tree = {
 		prerequisite = {
 			focus = por_face_spain
 		}
+		completion_reward = {
+			add_timed_idea = { idea = POR_spanish_war days = 120 }
+		}
 	}
 	focus = {
 		id = por_olivenca_backyard
@@ -430,11 +545,17 @@ focus_tree = {
 		y = 1
 		cost = 10
 		relative_position_id = por_luso_spanish_war
+		available = { 
+			owns_state = 171
+		}
 		prerequisite = {
 			focus = por_luso_spanish_war
 			focus = por_olivenca_backyard
 		}
-		
+		completion_reward = {
+			add_state_core = 171
+			set_cosmetic_tag = POR_portugaliza
+		}
 	}
 	
 	focus = {
@@ -482,12 +603,14 @@ focus_tree = {
 		icon = rere
 		x = 23
 		y = 0
+		cost = 10
 	}
 	focus = {
 		id = por_school_expensive_1
 		icon = rere
 		x = 1
 		y = 1
+		cost = 10
 		relative_position_id = por_foreign_purchase
 		prerequisite = {
 			focus = por_foreign_purchase
@@ -496,18 +619,33 @@ focus_tree = {
 			focus = por_industry_expensive_1
 			focus = por_school_cheap_1
 		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = POR_bad_schooling_5
+				add_idea = POR_bad_schooling_4
+			}
+			add_timed_idea = { idea = POR_investment days = 60 }
+		}
 	}
 	focus = {
 		id = por_school_cheap_1
 		icon = rere
 		x = -1
 		y = 1
+		cost = 10
 		relative_position_id = por_foreign_purchase
 		prerequisite = {
 			focus = por_foreign_purchase
 		}
 		mutually_exclusive = {
 			focus = por_school_expensive_1
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = POR_bad_schooling_5
+				add_idea = POR_bad_schooling_4
+			}
+			add_timed_idea = { idea = POR_low_school_investment days = 180 }
 		}
 	}
 	
@@ -516,6 +654,15 @@ focus_tree = {
 		icon = rere
 		x = 0
 		y = 1
+		cost = 10
+		available = {
+			NOT = {
+				OR = {
+					has_idea = POR_investment
+					has_idea = POR_low_school_investment
+				}
+			}
+		}
 		relative_position_id = por_school_expensive_1
 		prerequisite = {
 			focus = por_school_cheap_1
@@ -525,12 +672,28 @@ focus_tree = {
 			focus = por_industry_expensive_2
 			focus = por_school_cheap_2
 		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = POR_bad_schooling_4
+				add_idea = POR_bad_schooling_3
+			}
+			add_timed_idea = { idea = POR_investment days = 60 }
+		}
 	}
 	focus = {
 		id = por_school_cheap_2
 		icon = rere
 		x = 0
 		y = 1
+		cost = 10
+		available = {
+			NOT = {
+				OR = {
+					has_idea = POR_investment
+					has_idea = POR_low_school_investment
+				}
+			}
+		}
 		relative_position_id = por_school_cheap_1
 		prerequisite = {
 			focus = por_school_cheap_1
@@ -539,6 +702,13 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = por_school_expensive_2
 		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = POR_bad_schooling_5
+				add_idea = POR_bad_schooling_4
+			}
+			add_timed_idea = { idea = POR_low_school_investment days = 180 }
+		}
 	}
 	
 	focus = {
@@ -546,6 +716,15 @@ focus_tree = {
 		icon = rere
 		x = 0
 		y = 1
+		cost = 10
+		available = {
+			NOT = {
+				OR = {
+					has_idea = POR_investment
+					has_idea = POR_low_school_investment
+				}
+			}
+		}
 		relative_position_id = por_school_expensive_2
 		prerequisite = {
 			focus = por_school_cheap_2
@@ -555,12 +734,28 @@ focus_tree = {
 			focus = por_industry_expensive_3
 			focus = por_school_cheap_3
 		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = POR_bad_schooling_3
+				add_idea = POR_bad_schooling_2
+			}
+			add_timed_idea = { idea = POR_investment days = 60 }
+		}
 	}
 	focus = {
 		id = por_school_cheap_3
 		icon = rere
 		x = 0
 		y = 1
+		cost = 10
+		available = {
+			NOT = {
+				OR = {
+					has_idea = POR_investment
+					has_idea = POR_low_school_investment
+				}
+			}
+		}
 		relative_position_id = por_school_cheap_2
 		prerequisite = {
 			focus = por_school_cheap_2
@@ -569,6 +764,13 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = por_school_expensive_3
 		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = POR_bad_schooling_5
+				add_idea = POR_bad_schooling_4
+			}
+			add_timed_idea = { idea = POR_low_school_investment days = 180 }
+		}
 	}
 	
 	focus = {
@@ -576,6 +778,15 @@ focus_tree = {
 		icon = rere
 		x = 0
 		y = 1
+		cost = 10
+		available = {
+			NOT = {
+				OR = {
+					has_idea = POR_investment
+					has_idea = POR_low_school_investment
+				}
+			}
+		}
 		relative_position_id = por_school_expensive_3
 		prerequisite = {
 			focus = por_school_cheap_3
@@ -585,12 +796,28 @@ focus_tree = {
 			focus = por_industry_expensive_4
 			focus = por_school_cheap_4
 		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = POR_bad_schooling_2
+				add_idea = POR_bad_schooling_1
+			}
+			add_timed_idea = { idea = POR_investment days = 60 }
+		}
 	}
 	focus = {
 		id = por_school_cheap_4
 		icon = rere
 		x = 0
 		y = 1
+		cost = 10
+		available = {
+			NOT = {
+				OR = {
+					has_idea = POR_investment
+					has_idea = POR_low_school_investment
+				}
+			}
+		}
 		relative_position_id = por_school_cheap_3
 		prerequisite = {
 			focus = por_school_cheap_3
@@ -599,6 +826,13 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = por_school_expensive_4
 		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = POR_bad_schooling_5
+				add_idea = POR_bad_schooling_4
+			}
+			add_timed_idea = { idea = POR_low_school_investment days = 180 }
+		}
 	}
 	
 	focus = {
@@ -606,10 +840,23 @@ focus_tree = {
 		icon = rere
 		x = 1
 		y = 1
+		cost = 10
+		available = {
+			NOT = {
+				OR = {
+					has_idea = POR_investment
+					has_idea = POR_low_school_investment
+				}
+			}
+		}
 		relative_position_id = por_school_cheap_4
 		prerequisite = {
 			focus = por_school_cheap_4
 			focus = por_school_expensive_4
+		}
+		completion_reward = {
+			add_research_slot = 1
+			add_timed_idea = { idea = POR_investment days = 90 }
 		}
 	}
 	
@@ -618,6 +865,15 @@ focus_tree = {
 		icon = rere
 		x = 0
 		y = 2
+		cost = 10
+		available = {
+			NOT = {
+				OR = {
+					has_idea = POR_investment
+					has_idea = POR_low_school_investment
+				}
+			}
+		}
 		relative_position_id = por_school_expensive_4
 		prerequisite = {
 			focus = por_slot_1
@@ -626,19 +882,39 @@ focus_tree = {
 			focus = por_school_cheap_5
 			focus = por_resource_extra
 		}
+		completion_reward = {
+				remove_ideas = { POR_bad_schooling_1 }
+				add_ideas = { POR_good_schooling }
+			add_timed_idea = { idea = POR_investment days = 120 }
+		}
 	}
 	focus = {
 		id = por_school_cheap_5
 		icon = rere
 		x = 0
 		y = 2
+		cost = 10
+		available = {
+			NOT = {
+				OR = {
+					has_idea = POR_investment
+					has_idea = POR_low_school_investment
+				}
+			}
+		}
 		relative_position_id = por_school_cheap_4
 		prerequisite = {
 			focus = por_slot_1
 		}
 		mutually_exclusive = {
 			focus = por_school_expensive_5
-
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = POR_bad_schooling_5
+				add_idea = POR_bad_schooling_4
+			}
+			add_timed_idea = { idea = POR_low_school_investment days = 180 }
 		}
 	}
 	
@@ -647,10 +923,23 @@ focus_tree = {
 		icon = rere
 		x = 1
 		y = 1
+		cost = 10
+		available = {
+			NOT = {
+				OR = {
+					has_idea = POR_investment
+					has_idea = POR_low_school_investment
+				}
+			}
+		}
 		relative_position_id = por_school_cheap_5
 		prerequisite = {
 			focus = por_school_cheap_5
 			focus = por_school_expensive_5
+		}
+		completion_reward = {
+			add_research_slot = 1
+			add_timed_idea = { idea = POR_investment days = 90 }
 		}
 	}
 	
@@ -664,7 +953,17 @@ focus_tree = {
 		icon = rere
 		x = 4
 		y = 0
+		cost = 10
 		relative_position_id = por_foreign_purchase
+		completion_reward = {
+			every_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
 	}
 	
 	focus = {
@@ -672,7 +971,13 @@ focus_tree = {
 		icon = rere
 		x = -1
 		y = 1
+		cost = 10
 		relative_position_id = por_road
+		available = {
+			NOT = {
+					has_idea = POR_investment
+			}
+		}
 		prerequisite = {
 			focus = por_road
 		}
@@ -680,18 +985,45 @@ focus_tree = {
 			focus = por_school_expensive_1
 			focus = por_industry_cheap_1
 		}
+		completion_reward = {
+			add_timed_idea = { idea = POR_investment days = 45 }
+			112 = {
+				add_building_construction = {
+					type = naval_base
+					province=11805
+					level = 4
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
 	}
 	focus = {
 		id = por_industry_cheap_1
 		icon = rere
 		x = 1
 		y = 1
+		cost = 10
 		relative_position_id = por_road
 		prerequisite = {
 			focus = por_road
 		}
 		mutually_exclusive = {
 			focus = por_industry_expensive_1
+		}
+		completion_reward = {
+			every_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 	
@@ -700,7 +1032,13 @@ focus_tree = {
 		icon = rere
 		x = 0
 		y = 1
+		cost = 10
 		relative_position_id = por_industry_expensive_1
+		available = {
+			NOT = {
+					has_idea = POR_investment
+			}
+		}
 		prerequisite = {
 			focus = por_industry_cheap_1
 			focus = por_industry_expensive_1
@@ -709,12 +1047,29 @@ focus_tree = {
 			focus = por_school_expensive_2
 			focus = por_industry_cheap_2
 		}
+		completion_reward = {
+			add_timed_idea = { idea = POR_investment days = 45 }
+			179 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
 	}
 	focus = {
 		id = por_industry_cheap_2
 		icon = rere
 		x = 0
 		y = 1
+		cost = 10
 		relative_position_id = por_industry_cheap_1
 		prerequisite = {
 			focus = por_industry_cheap_1
@@ -723,6 +1078,16 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = por_industry_expensive_2
 		}
+		completion_reward = {
+			179 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
 	}
 	
 	focus = {
@@ -730,7 +1095,13 @@ focus_tree = {
 		icon = rere
 		x = 0
 		y = 1
+		cost = 10
 		relative_position_id = por_industry_expensive_2
+		available = {
+			NOT = {
+					has_idea = POR_investment
+			}
+		}
 		prerequisite = {
 			focus = por_industry_cheap_2
 			focus = por_industry_expensive_2
@@ -739,12 +1110,29 @@ focus_tree = {
 			focus = por_school_expensive_3
 			focus = por_industry_cheap_3
 		}
+		completion_reward = {
+			add_timed_idea = { idea = POR_investment days = 45 }
+			180 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
 	}
 	focus = {
 		id = por_industry_cheap_3
 		icon = rere
 		x = 0
 		y = 1
+		cost = 10
 		relative_position_id = por_industry_cheap_2
 		prerequisite = {
 			focus = por_industry_cheap_2
@@ -753,6 +1141,17 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = por_industry_expensive_3
 		}
+		completion_reward = {
+			180 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				
+			}
+		}
 	}
 	
 	focus = {
@@ -760,7 +1159,13 @@ focus_tree = {
 		icon = rere
 		x = 0
 		y = 1
+		cost = 10
 		relative_position_id = por_industry_expensive_3
+		available = {
+			NOT = {
+					has_idea = POR_investment
+			}
+		}
 		prerequisite = {
 			focus = por_industry_cheap_3
 			focus = por_industry_expensive_3
@@ -769,12 +1174,25 @@ focus_tree = {
 			focus = por_school_expensive_4
 			focus = por_industry_cheap_4
 		}
+		completion_reward = {
+			add_timed_idea = { idea = POR_investment days = 45 }
+			181 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_ideas = { POR_build_boost }
+		}
 	}
 	focus = {
 		id = por_industry_cheap_4
 		icon = rere
 		x = 0
 		y = 1
+		cost = 10
 		relative_position_id = por_industry_cheap_3
 		prerequisite = {
 			focus = por_industry_cheap_3
@@ -783,6 +1201,16 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = por_industry_expensive_4
 		}
+		completion_reward = {
+			181 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
 	}
 	
 	focus = {
@@ -790,13 +1218,23 @@ focus_tree = {
 		icon = rere
 		x = 1
 		y = 2
+		cost = 10
 		relative_position_id = por_industry_expensive_4
+		available = {
+			NOT = {
+					has_idea = POR_investment
+			}
+		}
 		prerequisite = {
 			focus = por_industry_cheap_4
 			focus = por_industry_expensive_4
 		}
 		mutually_exclusive = {
 			focus = por_school_expensive_5
+		}
+		completion_reward = {
+			add_timed_idea = { idea = POR_investment days = 75 }
+			add_ideas = { POR_good_industry }
 		}
 	}
 	
@@ -806,15 +1244,40 @@ focus_tree = {
 		icon = rere
 		x = 31
 		y = 0
+		cost = 10
+		completion_reward = { 
+			army_experience = 10
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
 	}
 	focus = {
 		id = por_mil_boost
 		icon = rere
 		x = 0
 		y = 1
+		cost = 10
 		relative_position_id = por_army_innovate
 		prerequisite = {
 			focus = por_army_innovate
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				bonus = 0.5
+				uses = 1
+				category = infantry_weapons
+			}
 		}
 	}
 	focus = {
@@ -822,6 +1285,7 @@ focus_tree = {
 		icon = rere
 		x = -1
 		y = 1
+		cost = 10
 		relative_position_id = por_mil_boost
 		prerequisite = {
 			focus = por_mil_boost
@@ -829,18 +1293,44 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = por_mil_xp
 		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = ww1_trenchwarfare
+				bonus = 0.5
+				uses = 1
+				category = support_tech
+			}
+			112 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
 	}
 	focus = {
 		id = por_mil_xp
 		icon = rere
 		x = 1
 		y = 1
+		cost = 10
 		relative_position_id = por_mil_boost
 		prerequisite = {
 			focus = por_mil_boost
 		}
 		mutually_exclusive = {
 			focus = por_mil_boost_2
+		}
+		completion_reward = {
+			army_experience = 20
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1
+				uses = 1
+				category = land_doctrine
+			}
 		}
 	}
 	
@@ -849,15 +1339,35 @@ focus_tree = {
 		icon = rere
 		x = 35
 		y = 0
+		cost = 10
+		completion_reward = { 
+			navy_experience = 10
+			add_tech_bonus = {
+				name = naval_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = naval_doctrine
+			}
+		}
 	}
 	focus = {
 		id = por_navy_boost
 		icon = rere
 		x = 0
 		y = 1
+		cost = 10
 		relative_position_id = por_navy_innovate
 		prerequisite = {
 			focus = por_navy_innovate
+		}
+		completion_reward = { 
+			navy_experience = 10
+			add_tech_bonus = {
+				name = naval_doc_bonus
+				bonus = 1
+				uses = 1
+				category = naval_doctrine
+			}
 		}
 	}
 	focus = {
@@ -865,6 +1375,7 @@ focus_tree = {
 		icon = rere
 		x = -1
 		y = 1
+		cost = 10
 		relative_position_id = por_navy_boost
 		prerequisite = {
 			focus = por_navy_boost
@@ -872,18 +1383,45 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = por_navy_xp
 		}
+		completion_reward = { 
+			180 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				name = capital_ships_bonus
+				bonus = 0.5
+				ahead_reduction = 0.5
+				uses = 1
+				category = dd_tech
+			}
+		}
 	}
 	focus = {
 		id = por_navy_xp
 		icon = rere
 		x = 1
 		y = 1
+		cost = 10
 		relative_position_id = por_navy_boost
 		prerequisite = {
 			focus = por_navy_boost
 		}
 		mutually_exclusive = {
 			focus = por_navy_boost_2
+		}
+		completion_reward = {
+			navy_experience = 20
+			add_tech_bonus = {
+				name = naval_doc_bonus
+				bonus = 1
+				uses = 2
+				category = naval_doctrine
+			}
 		}
 	}
 	
@@ -893,6 +1431,7 @@ focus_tree = {
 		icon = rere
 		x = 1
 		y = 1
+		cost = 10
 		relative_position_id = por_mil_boost_2
 		prerequisite = {
 			focus = por_navy_boost_2
@@ -904,15 +1443,27 @@ focus_tree = {
 			focus = por_air_focus
 			focus = por_navy_focus
 		}
+		completion_reward = {
+			add_ideas = { POR_motorized_cheap_1 }
+		}
 	}
 	focus = {
 		id = por_motorized
 		icon = rere
 		x = 0
 		y = 1
+		cost = 10
 		relative_position_id = por_army_focus
 		prerequisite = {
 			focus = por_army_focus
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = mech_army_bonus
+				bonus = 0.5
+				uses = 1
+				category = motorized_equipment
+			}
 		}
 	}
 	focus = {
@@ -920,9 +1471,16 @@ focus_tree = {
 		icon = rere
 		x = 0
 		y = 1
+		cost = 10
 		relative_position_id = por_motorized
 		prerequisite = {
 			focus = por_motorized
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = POR_motorized_cheap_1
+				add_idea = POR_motorized_cheap_2
+			}
 		}
 	}
 	
@@ -932,6 +1490,7 @@ focus_tree = {
 		icon = rere
 		x = 3
 		y = 1
+		cost = 10
 		relative_position_id = por_mil_boost_2
 		prerequisite = {
 			focus = por_navy_boost_2
@@ -943,15 +1502,27 @@ focus_tree = {
 			focus = por_army_focus
 			focus = por_navy_focus
 		}
+		completion_reward = {
+			add_ideas = { POR_fighter_range_1 }
+		}
 	}
 	focus = {
 		id = por_airplane_research
 		icon = rere
 		x = 0
 		y = 1
+		cost = 10
 		relative_position_id = por_air_focus
 		prerequisite = {
 			focus = por_air_focus
+		}
+		completion_reward = {
+			add_tech_bonus = { 
+				name = fighter_bonus 
+				bonus = 1 
+				uses = 1 
+				category = light_fighter 
+			}
 		}
 	}
 	focus = {
@@ -959,9 +1530,16 @@ focus_tree = {
 		icon = rere
 		x = 0
 		y = 1
+		cost = 10
 		relative_position_id = por_airplane_research
 		prerequisite = {
 			focus = por_airplane_research
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = POR_fighter_range_1
+				add_idea = POR_fighter_range_2
+			}
 		}
 	}
 	
@@ -970,6 +1548,7 @@ focus_tree = {
 		icon = rere
 		x = 5
 		y = 1
+		cost = 10
 		relative_position_id = por_mil_boost_2
 		prerequisite = {
 			focus = por_navy_boost_2
@@ -981,15 +1560,27 @@ focus_tree = {
 			focus = por_army_focus
 			focus = por_air_focus
 		}
+		completion_reward = {
+			add_ideas = { POR_navy_range_1 }
+		}
 	}
 	focus = {
 		id = por_submarine_research
 		icon = rere
 		x = 0
 		y = 1
+		cost = 10
 		relative_position_id = por_navy_focus
 		prerequisite = {
 			focus = por_navy_focus
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = ss_bonus
+				bonus = 0.5
+				uses = 1
+				category = ss_tech
+			}
 		}
 	}
 	focus = {
@@ -997,9 +1588,16 @@ focus_tree = {
 		icon = rere
 		x = 0
 		y = 1
+		cost = 10
 		relative_position_id = por_submarine_research
 		prerequisite = {
 			focus = por_submarine_research
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = POR_navy_range_1
+				add_idea = POR_navy_range_2
+			}
 		}
 	}
 	
@@ -1011,11 +1609,15 @@ focus_tree = {
 		icon = rere
 		x = 0
 		y = 1
+		cost = 10
 		relative_position_id = por_fighter_cheap
 		prerequisite = {
 			focus = por_motorized_cheap
 			focus = por_fighter_cheap
 			focus = por_naval_range
+		}
+		completion_reward = {
+			add_ideas = { POR_colonialism }
 		}
 	}
 }
