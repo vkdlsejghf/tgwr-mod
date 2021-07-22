@@ -4688,7 +4688,7 @@ focus_tree = {
 			if = {
 				limit = {
 					POR = {
-						has_government = democratic
+						NOT = { has_idea = POR_monarchy }
 					}
 				}
 				create_wargoal = {
@@ -4696,14 +4696,7 @@ focus_tree = {
 					target = POR
 				}
 			}
-			else_if = {
-				limit = {
-					NOT = {
-						POR = {
-							has_government = democratic
-						}
-					}
-				}
+			else = {
 				POR = {
 					country_event = {
 						id = ww1_england.28
