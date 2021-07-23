@@ -1,0 +1,13 @@
+POR_looming_revolution_category = {
+    icon = generic_prospect_for_resources
+	available = {
+		original_tag = POR
+	}
+	visible_when_empty = no
+	priority = 10
+}
+POR_foreign_investment_category = {
+	icon = generic_research
+	visible_when_empty = no
+	priority = 1
+}
