@@ -260,6 +260,21 @@ bookmarks = {
 				BRA_congressos_de_trabalhadores
 			}
 		}
+		"POR"={
+			minor = yes
+			history = "POR_POWDERKEG_DESC"
+			ideology = neutrality
+			ideas = {
+				POR_unstable_monarchy_1
+				POR_dying_empire_1
+				POR_bad_schooling_5
+			}
+			focuses = {
+				por_brazilsuicide
+				por_galiza_claim
+				por_uniao_nacional
+			}
+		}
 
 		effect = {
 			randomize_weather = 22345 # <- Obligatory in every bookmark !
