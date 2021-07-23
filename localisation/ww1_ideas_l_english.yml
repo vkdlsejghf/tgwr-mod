@@ -1654,6 +1654,7 @@
  POR_empire_1:0 "Memories of the Empire"
  POR_empire_2:0 "Memories of the Empire"
  POR_dying_empire_1:0 "Dying Empire"
+ POR_dying_empire_1_desc:0 "If we retook either Galiza or the territories from the Pink Map, our international standing would improve."
  POR_dying_empire_2:0 "A Stable Future"
  POR_revived_empire:0 "The Empire, Reborn!"
  POR_spanish_war:0 "Fight the Spaniards!"
