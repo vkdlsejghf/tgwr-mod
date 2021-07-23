@@ -526,6 +526,22 @@ focus_tree = {
 		y = 1
 		cost = 10
 		relative_position_id = por_ally_britain
+		available = {
+			available = {
+			NOT = {
+				POR = {
+					owns_state = 711
+					owns_state = 545
+					owns_state = 770
+				}
+			}
+			ENG = {
+				owns_state = 711
+				owns_state = 545
+				owns_state = 770
+			}
+		}
+		}
 		prerequisite = {
 			focus = por_ally_britain
 		}
