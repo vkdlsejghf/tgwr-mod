@@ -95,9 +95,17 @@ FRA_proto_fascism = {
 	color = rgb { 30 84 183 }
 	color_ui = rgb { 35 101 222 }
 }
-POR_REP = {
+POR_republic = {
 	color = rgb { 39 116 70 }
 	color_ui = rgb { 51 151 91 }
+}
+POR_portugaliza = {
+	color = rgb { 20 33 158 }
+	color_ui = rgb { 20 33 158 }
+}
+POR_cursed = {
+	color = rgb { 201 56 93 }
+	color_ui = rgb { 255 73 121 }
 }
 POL_republic = {
 	color = rgb { 197 92 106 }
