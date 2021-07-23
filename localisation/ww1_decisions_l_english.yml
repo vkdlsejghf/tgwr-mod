@@ -942,3 +942,8 @@
 
  debug_decisions:0 "Debug" #hate this _ line
  
+ POR_foreign_investment_category:0 "Foreign Research"
+ POR_looming_revolution_category:0 "The Looming Revolution"
+ POR_looming_revolution_category_desc:0 "It is obvious the republicans are plotting a revolution. What happens next remains to be seen."
+ POR_looming_revolution_mission:0 "The Looming Revolution"
+ por_revolution_tag:0 "The Portuguese Revolution has happened"
