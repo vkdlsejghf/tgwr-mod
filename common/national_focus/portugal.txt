@@ -18,12 +18,20 @@ focus_tree = {
 		y = 0
 		cost = 10
 		cancel_if_invalid=yes
+		available = {
+			has_active_mission = POR_looming_revolution_mission
+		}
 		mutually_exclusive={
 			focus = por_revolution
 		}
 		completion_reward = {
-			add_stability = 0.05
+			add_days_mission_timeout = {
+				mission = POR_looming_revolution_mission
+				days = 1
+			}
+			custom_effect_tooltip = POR_promise_reforms
 		}
+		
 	}
 	focus = {
 		id = por_civil
@@ -39,6 +47,9 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = por_liberalize
 		}
+		completion_reward = {
+			custom_effect_tooltip = POR_prepare_for_civil_war_1
+		}
 	}
 	focus = {
 		id = por_civilprep
@@ -52,7 +63,10 @@ focus_tree = {
 			focus = por_civil
 		}
 		bypass = {
-			has_global_flag = por_revolution
+			has_global_flag = por_revolution_tag
+		}
+		completion_reward = {
+			custom_effect_tooltip = POR_prepare_for_civil_war_2
 		}
 	}
 	focus = {
@@ -67,7 +81,81 @@ focus_tree = {
 			focus = por_civilprep
 		}
 		bypass = {
-			has_global_flag = por_revolution
+			has_global_flag = por_revolution_tag
+		}
+		completion_reward = {
+			custom_effect_tooltip = POR_start_civil_war
+			start_civil_war = {
+				ruling_party = neutrality
+				ideology = democratic
+				size = 0.75
+				capital = 180
+				states = { 
+					180 181
+				}
+				keep_unit_leaders_trigger = {
+					always = yes
+				}
+				keep_political_leader = yes
+			}
+			random_other_country = {
+				limit = {
+					original_tag = POR
+					has_government = democratic
+				}		
+				set_cosmetic_tag = POR_republic
+				division_template = {
+					name = "Milícia Republicana"
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+					}
+				}
+				180 = {
+					create_unit = {
+						division = "name = \"I Brigada\" division_template = \"Milícia Republicana\" start_experience_factor = 0.1" 
+						owner = PREV
+					}
+				}
+			}
+			POR = {
+				division_template = {
+					name = "Milícia Monárquica"
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+					}
+				}
+				112 = {
+					create_unit = {
+						division = "name = \"I Brigada\" division_template = \"Milícia Monárquica\" start_experience_factor = 0.1" 
+						owner = POR
+					}
+					create_unit = {
+						division = "name = \"II Brigada\" division_template = \"Milícia Monárquica\" start_experience_factor = 0.1" 
+						owner = POR
+					}
+					create_unit = {
+						division = "name = \"III Brigada\" division_template = \"Milícia Monárquica\" start_experience_factor = 0.1" 
+						owner = POR
+					}
+					create_unit = {
+						division = "name = \"IV Brigada\" division_template = \"Milícia Monárquica\" start_experience_factor = 0.1" 
+						owner = POR
+					}
+					create_unit = {
+						division = "name = \"V Brigada\" division_template = \"Milícia Monárquica\" start_experience_factor = 0.1" 
+						owner = POR
+					}
+					create_unit = {
+						division = "name = \"VI Brigada\" division_template = \"Milícia Monárquica\" start_experience_factor = 0.1" 
+						owner = POR
+					}
+				}
+			}
+			set_global_flag = por_revolution_tag
 		}
 	}
 	focus = {
@@ -97,6 +185,7 @@ focus_tree = {
 			focus = por_rebuild
 		}
 		completion_reward = {
+			add_war_support = 0.1
 			add_ideas = { POR_empire_1 }
 		}
 	}
@@ -112,6 +201,7 @@ focus_tree = {
 			focus = por_empire
 		}
 		completion_reward = {
+			add_war_support = 0.25
 			swap_ideas = { 
 				remove_idea = POR_empire_1 
 				add_idea = POR_empire_2
@@ -128,6 +218,13 @@ focus_tree = {
 		cancel_if_invalid=yes
 		prerequisite = {
 			focus = por_empire2
+		}
+		completion_reward = {
+			every_state = {
+				limit = { is_core_of = BRA }
+				POR = { add_state_claim = PREV }
+			}
+			create_wargoal = { type = annex_everything target = BRA }
 		}
 	}
 	
@@ -146,6 +243,12 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = por_civil
 		}
+		completion_reward = {
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.05
+			}
+		}
 	}
 	focus = {
 		id = por_firstreform
@@ -157,6 +260,14 @@ focus_tree = {
 		cancel_if_invalid=yes
 		prerequisite = {
 			focus = por_liberalize
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.05
+			}
+			add_stability = 0.1
+			add_political_power = -75
 		}
 	}
 	focus = {
@@ -170,6 +281,14 @@ focus_tree = {
 		prerequisite = {
 			focus = por_firstreform
 		}
+		completion_reward = {
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.15
+			}
+			add_stability = 0.15
+			add_political_power = -150
+		}
 	}
 	focus = {
 		id = por_democracy
@@ -179,7 +298,7 @@ focus_tree = {
 		cost = 10
 		relative_position_id = por_lastreform
 		available = {
-			has_stability > 0.15
+			has_stability > 0.10
 		}
 		prerequisite = {
 			focus = por_lastreform
@@ -189,7 +308,16 @@ focus_tree = {
 			focus = por_military_coup_prep
 		}
 		completion_reward = {
-			
+			add_stability = 0.20
+			add_popularity = {
+				ideology = neutrality
+				popularity = -0.05
+			}
+			set_politics = {
+				ruling_party = democratic
+				elections_allowed = yes
+			}
+			set_global_flag = por_revolution_tag
 		}
 	}
 	focus = {
@@ -218,6 +346,10 @@ focus_tree = {
 					add_idea = POR_unstable_republic_2
 				}
 			}
+			add_popularity = {
+				ideology = neutrality
+				popularity = -0.05
+			}
 		}
 	}
 	focus = {
@@ -232,6 +364,10 @@ focus_tree = {
 		}
 		completion_reward = {
 			remove_ideas = { POR_unstable_monarchy_2 POR_unstable_republic_2 }
+			add_popularity = {
+				ideology = communism
+				popularity = -0.05
+			}
 		}
 	}
 	focus = {
@@ -244,6 +380,23 @@ focus_tree = {
 		prerequisite = {
 			focus = por_more_stable_democracy
 		}
+		completion_reward = {
+			add_political_power = 25
+			add_stability = 0.1
+			add_war_support = 0.3
+			add_popularity = {
+				ideology = neutrality
+				popularity = -0.05
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = -0.05
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = -0.05
+			}
+		}
 	}
 	
 	focus = {
@@ -253,12 +406,38 @@ focus_tree = {
 		y = 1
 		cost = 10
 		relative_position_id = por_rebuild
+		available = {
+			NOT = {
+				POR = {
+					owns_state = 711
+					owns_state = 545
+					owns_state = 770
+				}
+			}
+			ENG = {
+				owns_state = 711
+				owns_state = 545
+				owns_state = 770
+			}
+		}
 		prerequisite = {
 			focus = por_rebuild
 			focus = por_democracy
 		}
+		select_effect = {
+			ENG = {
+				country_event = ww1_portugal.15
+			}
+		}
 		mutually_exclusive = {
 			focus = por_ally_britain
+		}
+		completion_reward = {
+			POR = {
+				add_state_claim = 545
+				add_state_claim = 770
+				add_state_claim = 771
+			}
 		}
 	}
 	focus = {
@@ -271,6 +450,36 @@ focus_tree = {
 		prerequisite = {
 			focus = por_challenge_britain
 		}
+		completion_reward = {
+			540 = {
+				add_building_construction = {
+					type = naval_base
+					province=8248
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			544 = {
+				add_building_construction = {
+					type = naval_base
+					province=8245
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			
+			
+			}
+		}
 	}
 	focus = {
 		id = por_join_central_power
@@ -281,6 +490,9 @@ focus_tree = {
 		relative_position_id = por_pink_map
 		prerequisite = {
 			focus = por_pink_map
+		}
+		completion_reward = {
+			GER = { country_event = ww1_portugal.18 }
 		}
 	}
 	
@@ -298,6 +510,9 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = por_challenge_britain
 		}
+		completion_reward = {
+			ENG = { country_event = ww1_portugal.19 }
+		}
 	}
 	focus = {
 		id = por_negotiate_pinkmap
@@ -309,6 +524,11 @@ focus_tree = {
 		prerequisite = {
 			focus = por_ally_britain
 		}
+		completion_reward = {
+			ENG = {
+				country_event = ww1_portugal.17
+			}
+		}
 	}
 	focus = {
 		id = por_cursed_marriage
@@ -317,8 +537,28 @@ focus_tree = {
 		y = 1
 		cost = 10
 		relative_position_id = por_negotiate_pinkmap
+		available = {
+			AND = {
+				POR = {
+					has_war = no
+					has_idea = POR_monarchy
+					has_idea = POR_revived_empire
+				}
+				ENG = {
+					has_completed_focus = ENG_Condolences_For_Condolences
+				}
+				ENG = {
+					has_completed_focus = ENG_Imperial_Federation
+				}
+			}
+		}
 		prerequisite = {
 			focus = por_negotiate_pinkmap
+		}
+		completion_reward = {
+			ENG = {
+				country_event = ww1_portugal.20
+			}
 		}
 	}
 	
@@ -335,7 +575,7 @@ focus_tree = {
 			focus = por_reforms
 		}
 		available = {
-			has_global_flag = por_revolution
+			has_global_flag = por_revolution_tag
 		}
 		completion_reward = {
 			remove_ideas = { POR_monarchy }
@@ -346,12 +586,31 @@ focus_tree = {
 			}
 			add_stability = -0.20
 			add_popularity = {
-				ideology = democracy
+				ideology = democratic
 				popularity = 0.2
 			}
 			add_popularity = {
 				ideology = fascism
 				popularity = 0.05
+			}
+			set_politics = {
+				ruling_party = democratic
+				elections_allowed = yes
+			}
+			set_party_name = { 
+				ideology = neutrality 
+				long_name = "União Nacional"
+				name = UN
+			}
+			hidden_effect = {
+				kill_ideology_leader = neutrality
+				create_country_leader = { 
+				name = "Antonio de Oliveira Salazar" 
+				picture = "gfx/leaders/POR/portrait_por_antonio_de_oliveira_salazar.dds" 
+				expire = "1935.1.1" 
+				ideology = despotism
+				traits = { conservative_nationalist military_dictator trait_despotism } 
+				}
 			}
 		}
 	}
@@ -369,8 +628,8 @@ focus_tree = {
 			add_stability = 0.05
 			add_political_power = 25
 			add_popularity = {
-				ideology = democracy
-				popularity = 0.05
+				ideology = neutrality
+				popularity = -0.05
 			}
 		}
 	}
@@ -411,8 +670,8 @@ focus_tree = {
 				popularity = 0.05
 			}
 			add_popularity = {
-				ideology = democracy
-				popularity = 0.1
+				ideology = neutrality
+				popularity = -0.1
 			}
 		}
 	}
@@ -455,8 +714,12 @@ focus_tree = {
 			focus = por_military_coup_prep
 		}
 		completion_reward = {
-			remove_ideas = { POR_idea_military_plot POR_unstable_republic_1 POR_unstable_republic_2 }
+			remove_ideas = { POR_idea_military_plot }
 			add_stability = -0.15
+			set_politics = {
+				ruling_party = fascism
+				elections_allowed = no
+			}
 		}
 	}
 	focus = {
@@ -471,9 +734,18 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_stability = 0.20
+			remove_ideas = { POR_unstable_republic_1 POR_unstable_republic_2 }
 			add_popularity = {
 				ideology = neutrality
 				popularity = 0.05
+			}
+			retire_ideology_leader = fascism
+			create_country_leader = { 
+				name = "Óscar Carmona" 
+				picture = "gfx/leaders/POR/POR_oscar_carmona.dds" 
+				expire = "1935.1.1" 
+				ideology = stratocracy
+				traits = { military_dictator } 
 			}
 		}
 	}
@@ -493,6 +765,10 @@ focus_tree = {
 				ideology = neutrality
 				popularity = 0.2
 			}
+			set_politics = {
+				ruling_party = neutrality
+				elections_allowed = no
+			}
 		}
 	}
 	
@@ -505,12 +781,35 @@ focus_tree = {
 		y = 1
 		cost = 10
 		relative_position_id = por_democracy
+		bypass = {
+			POR = {
+				owns_state = 171
+			}
+		}
+		available = {
+			POR = {
+				NOT = { owns_state = 171 }
+			}
+		}
+		select_effect = {
+			SPR = {
+				country_event = {
+					id = ww1_portugal.9
+					days = 0
+					random = 2
+					random_days = 0
+				}
+			}
+		}
 		prerequisite = {
 			focus = por_democracy
 			focus = por_military_coup_prep
 		}
 		mutually_exclusive = {
 			focus = por_ally_spain
+		}
+		completion_reward = {
+			POR = { add_state_claim = 171 } 
 		}
 	}
 	focus = {
@@ -520,11 +819,20 @@ focus_tree = {
 		y = 1
 		cost = 10
 		relative_position_id = por_face_spain
+		bypass = {
+			POR = {
+				owns_state = 171
+			}
+		}
 		prerequisite = {
 			focus = por_face_spain
 		}
+		mutually_exclusive = {
+			focus = por_olivenca_backyard
+		}
 		completion_reward = {
 			add_timed_idea = { idea = POR_spanish_war days = 120 }
+			declare_war_on = { type = take_claimed_state target = SPR }
 		}
 	}
 	focus = {
@@ -534,8 +842,41 @@ focus_tree = {
 		y = 1
 		cost = 10
 		relative_position_id = por_face_spain
+		bypass = {
+			POR = {
+				owns_state = 171
+			}
+		}
+		available = {
+			POR = {
+				owns_state = 180
+			}
+		}
 		prerequisite = {
 			focus = por_face_spain
+		}
+		mutually_exclusive = {
+			focus = por_luso_spanish_war
+		}
+		completion_reward = {
+			start_border_war = {
+				change_state_after_war = no
+				attacker = {
+					state = 180
+					num_provinces = 4
+					on_win = ww1_portugal.3
+					on_lose = ww1_portugal.6
+					on_cancel = ww1_portugal.7
+				}
+							
+				defender = {
+					state = 171
+					num_provinces = 4
+					on_win = ww1_portugal.5
+					on_lose = ww1_portugal.4
+					on_cancel = ww1_portugal.7
+				}
+			}
 		}
 	}
 	focus = {
@@ -554,7 +895,14 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_state_core = 171
-			set_cosmetic_tag = POR_portugaliza
+			if = {
+				limit = {
+					NOT = {
+						has_cosmetic_tag = POR_cursed
+					}
+				}
+				set_cosmetic_tag = POR_portugaliza
+			}
 		}
 	}
 	
@@ -572,6 +920,9 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = por_face_spain
 		}
+		completion_reward = {
+			SPR = { country_event = ww1_portugal.14 }
+		}
 	}
 	focus = {
 		id = por_iberian_pact
@@ -582,6 +933,9 @@ focus_tree = {
 		relative_position_id = por_ally_spain
 		prerequisite = {
 			focus = por_ally_spain
+		}
+		completion_reward = {
+			SPR = { country_event = ww1_portugal.13 }
 		}
 	}
 	focus = {
@@ -594,6 +948,11 @@ focus_tree = {
 		prerequisite = {
 			focus = por_iberian_pact
 		}
+		completion_reward = {
+			SPR = {
+				country_event = ww1_portugal.11
+			}
+		}
 	}
 	
 	
@@ -603,14 +962,17 @@ focus_tree = {
 		icon = rere
 		x = 23
 		y = 0
-		cost = 10
+		cost = 5
+		completion_reward = {
+			custom_effect_tooltip = POR_foreign_decisions_unlocked
+		}
 	}
 	focus = {
 		id = por_school_expensive_1
 		icon = rere
 		x = 1
 		y = 1
-		cost = 10
+		cost = 5
 		relative_position_id = por_foreign_purchase
 		prerequisite = {
 			focus = por_foreign_purchase
@@ -632,7 +994,7 @@ focus_tree = {
 		icon = rere
 		x = -1
 		y = 1
-		cost = 10
+		cost = 5
 		relative_position_id = por_foreign_purchase
 		prerequisite = {
 			focus = por_foreign_purchase
@@ -654,7 +1016,7 @@ focus_tree = {
 		icon = rere
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 		available = {
 			NOT = {
 				OR = {
@@ -685,7 +1047,7 @@ focus_tree = {
 		icon = rere
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 		available = {
 			NOT = {
 				OR = {
@@ -716,7 +1078,7 @@ focus_tree = {
 		icon = rere
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 		available = {
 			NOT = {
 				OR = {
@@ -747,7 +1109,7 @@ focus_tree = {
 		icon = rere
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 		available = {
 			NOT = {
 				OR = {
@@ -778,7 +1140,7 @@ focus_tree = {
 		icon = rere
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 		available = {
 			NOT = {
 				OR = {
@@ -809,7 +1171,7 @@ focus_tree = {
 		icon = rere
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 		available = {
 			NOT = {
 				OR = {
