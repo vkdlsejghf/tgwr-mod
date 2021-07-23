@@ -166,6 +166,11 @@ focus_tree = {
 		cost = 10
 		relative_position_id = por_startcivil
 		cancel_if_invalid=yes
+		available = {
+			POR = {
+				has_civil_war = no
+			}
+		}
 		prerequisite = {
 			focus = por_startcivil
 		}
