@@ -774,6 +774,7 @@ focus_tree = {
 				ruling_party = neutrality
 				elections_allowed = no
 			}
+			add_ideas = { neutrality_idea }
 		}
 	}
 	
