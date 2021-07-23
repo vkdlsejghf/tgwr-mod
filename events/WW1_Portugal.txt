@@ -407,11 +407,21 @@ country_event = {
 				relation = non_aggression_pact
 				active = yes
 			}
+			diplomatic_relation = {
+				country = SPR
+				relation = guarantee
+				active = yes
+			}
 		}
 		SPR = {
 			diplomatic_relation = {
 				country = POR
 				relation = non_aggression_pact
+				active = yes
+			}
+			diplomatic_relation = {
+				country = POR
+				relation = guarantee
 				active = yes
 			}
 		}
