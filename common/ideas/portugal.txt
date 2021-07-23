@@ -273,7 +273,7 @@ ideas={
 			removal_cost = -1
 			
 			modifier = {
-				democratic_drift = 0.1
+				democratic_drift = 0.01
 				war_support_factor = 0.05
 			}
 		}
@@ -304,6 +304,7 @@ ideas={
 			modifier = {
 				stability_factor = 0.15
 				war_support_factor = 0.10
+				required_garrison_factor = -0.5
 			}
 		}
 		
@@ -468,9 +469,54 @@ ideas={
 			}
 			
 		}
-		
-		
-		
+		POR_payment_olivenca = {
+			picture = por_unstable_monarchy
+			allowed = {
+				original_tag = POR
+			}
+			allowed_civil_war = {
+				tag = POR
+			}
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.1
+			}
+		}
+		POR_payment_pink_map = {
+			picture = por_unstable_monarchy
+			allowed = {
+				original_tag = POR
+			}
+			allowed_civil_war = {
+				tag = POR
+			}
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = 0.1
+			}
+		}
+		POR_payment_receive = {
+			picture = por_unstable_monarchy
+			allowed = {
+				OR = {
+					tag = SPR
+					tag = ENG
+				}
+			}
+			allowed_civil_war = {
+				OR = {
+					tag = SPR
+					tag = ENG
+				}
+			}
+			removal_cost = -1
+			
+			modifier = {
+				consumer_goods_factor = -0.1
+			}
+		}
 	}
 	political_advisor={
 			POR_antonio_caetano_macieira_junior={ allowed={ tag=POR } traits={ ideological_crusader } ai_will_do={ factor=1 } }
