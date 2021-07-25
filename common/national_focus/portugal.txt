@@ -180,7 +180,7 @@ focus_tree = {
 	}
 	focus = {
 		id = por_empire
-		icon = rere
+		icon = GFX_focus_por_the_fifth_empire
 		x = 0
 		y = 1
 		cost = 10
@@ -196,7 +196,7 @@ focus_tree = {
 	}
 	focus = {
 		id = por_empire2
-		icon = rere
+		icon = GFX_focus_por_the_kingdom_reunited
 		x = 0
 		y = 1
 		cost = 10
@@ -215,7 +215,7 @@ focus_tree = {
 	}
 	focus = {
 		id = por_brazilsuicide
-		icon = rere
+		icon = GFX_focus_por_recover_brazil
 		x = 0
 		y = 1
 		cost = 10
@@ -406,7 +406,7 @@ focus_tree = {
 	
 	focus = {
 		id = por_challenge_britain
-		icon = rere
+		icon = GFX_focus_ger_break_anglo_french_colonial_hegemony
 		x = 3
 		y = 1
 		cost = 10
@@ -447,7 +447,7 @@ focus_tree = {
 	}
 	focus = {
 		id = por_pink_map
-		icon = rere
+		icon = GFX_focus_por_the_pink_map
 		x = 0
 		y = 1
 		cost = 10
@@ -488,7 +488,7 @@ focus_tree = {
 	}
 	focus = {
 		id = por_join_central_power
-		icon = rere
+		icon = GFX_focus_central_powers
 		x = 0
 		y = 1
 		cost = 10
@@ -503,7 +503,7 @@ focus_tree = {
 	
 	focus = {
 		id = por_ally_britain
-		icon = rere
+		icon = GFX_focus_chi_british_cooperation
 		x = 7
 		y = 1
 		cost = 10
@@ -521,26 +521,26 @@ focus_tree = {
 	}
 	focus = {
 		id = por_negotiate_pinkmap
-		icon = rere
+		icon = GFX_focus_por_the_pink_map
 		x = 0
 		y = 1
 		cost = 10
 		relative_position_id = por_ally_britain
 		available = {
 			available = {
-			NOT = {
-				POR = {
+				NOT = {
+					POR = {
+						owns_state = 711
+						owns_state = 545
+						owns_state = 770
+					}
+				}
+				ENG = {
 					owns_state = 711
 					owns_state = 545
 					owns_state = 770
 				}
 			}
-			ENG = {
-				owns_state = 711
-				owns_state = 545
-				owns_state = 770
-			}
-		}
 		}
 		prerequisite = {
 			focus = por_ally_britain
@@ -553,7 +553,7 @@ focus_tree = {
 	}
 	focus = {
 		id = por_cursed_marriage
-		icon = rere
+		icon = GFX_focus_generic_royal_wedding
 		x = 0
 		y = 1
 		cost = 10
@@ -726,7 +726,7 @@ focus_tree = {
 	}
 	focus = {
 		id = por_military_coup
-		icon = rere
+		icon = GFX_focus_por_portuguese_legion
 		x = 0
 		y = 1
 		cost = 10
@@ -772,7 +772,7 @@ focus_tree = {
 	}
 	focus = {
 		id = por_uniao_nacional
-		icon = rere
+		icon = GFX_focus_por_salazar
 		x = 0
 		y = 1
 		cost = 10
@@ -836,7 +836,7 @@ focus_tree = {
 	}
 	focus = {
 		id = por_luso_spanish_war
-		icon = rere
+		icon = GFX_focus_focus_fra_intervention_spain
 		x = -1
 		y = 1
 		cost = 10
@@ -859,7 +859,7 @@ focus_tree = {
 	}
 	focus = {
 		id = por_olivenca_backyard
-		icon = rere
+		icon = GFX_focus_generic_provoke_border_clashes
 		x = 1
 		y = 1
 		cost = 10
@@ -930,7 +930,7 @@ focus_tree = {
 	
 	focus = {
 		id = por_ally_spain
-		icon = rere
+		icon = GFX_focus_por_iberian_summit
 		x = -3
 		y = 1
 		cost = 10
@@ -1221,7 +1221,7 @@ focus_tree = {
 	
 	focus = {
 		id = por_slot_1
-		icon = rere
+		icon = GFX_focus_research
 		x = 1
 		y = 1
 		cost = 10
@@ -1304,7 +1304,7 @@ focus_tree = {
 	
 	focus = {
 		id = por_slot_2
-		icon = rere
+		icon = GFX_focus_research2
 		x = 1
 		y = 1
 		cost = 10
