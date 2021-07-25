@@ -1,6 +1,6 @@
 ﻿add_namespace = ww1_portugal
 
-
+####################### This first event might be used by something else?????????? I have no clue. It was here before and I'd rather keep it as not to break anything.
 # When Portugal is asked to join the Central Powers
 country_event = {
 	id = ww1_portugal.1
@@ -21,6 +21,8 @@ country_event = {
 		ai_chance = { factor = 0 }
 	}
 }
+
+## This second event also was here before, though maybe we could just have portugal start the game with a claim on angola and mozambique? idk
 # ANGOLA IS LOST
 ###########################
 country_event = {
@@ -507,7 +509,7 @@ country_event = {
 	}
 	## NO
 	option = {
-		name = ww1_portugal.16.a
+		name = ww1_portugal.16.b
 		ai_chance = {
 			factor = 0
 		}
