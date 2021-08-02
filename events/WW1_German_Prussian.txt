@@ -8,12 +8,20 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		tag = RUS
+		has_country_flag = great_war_winner
+		has_country_leader = {
+			name = "Nicholas II"
+			ruling_only = no
+		}
+		OR = {
+			has_cosmetic_tag = RUS_absolutism
+			NOT = {
+				has_government = communism
+			}
+		}
 		GER = {
 			has_country_flag = great_war_loser
 			owns_state = 188
-		}
-		RUS = {
-			has_country_flag = great_war_winner
 		}
 		FRA = {
 			owns_state = 28
@@ -67,6 +75,7 @@ country_event = {
 	trigger = {
 		tag = RUS
 		has_global_flag = prussian_blue
+		has_global_flag = versallies_treaty
 		NOT = {
 			has_global_flag = support_spartacists
 		}
@@ -407,6 +416,18 @@ news_event = {
 				release = BAY
 				release = SAX
 				release = WUR
+				every_unit_leader = {
+					limit = {
+						has_id = 34317
+					}
+					set_nationality = SAX
+				}
+				every_unit_leader = {
+					limit = {
+						has_id = 34316
+					}
+					set_nationality = BAY
+				}
 				set_cosmetic_tag = PRE
 				load_focus_tree = {
 					tree = generic_focus
@@ -707,19 +728,18 @@ news_event = {
 					ITA = {
 						exists = yes
 						owns_state = 163
-						NOT = {
-							owns_state = 103
-						}
+						has_country_flag = great_war_winner
 					}
 				}
 				ITA = {
 					transfer_state = 103
+					transfer_state = 513
 				}
 			}
 			GER = {
 				transfer_units_fraction = {
 					target = BAY
-					size = 0.3
+					size = 0.25
 					stockpile_ratio = 0.4
 					army_ratio = 0.3
 					navy_ratio = 0
@@ -734,7 +754,7 @@ news_event = {
 					air_ratio = 0.1
 				}
 				transfer_units_fraction = {
-					target = WUR
+					target = SAX
 					size = 0.1
 					stockpile_ratio = 0.1
 					army_ratio = 0.1
@@ -743,7 +763,7 @@ news_event = {
 				}
 				transfer_units_fraction = {
 					target = HAN
-					size = 0.2
+					size = 0.25
 					stockpile_ratio = 0.5
 					army_ratio = 0.4
 					navy_ratio = 0.4
@@ -767,7 +787,7 @@ news_event = {
 			}
 			RUS = {
 				add_named_threat = {
-					threat = 5
+					threat = 1
 					name = prussian.4.t
 				}
 			}
@@ -982,7 +1002,7 @@ news_event = {
 				}
 				set_cosmetic_tag = BAY_socialism
 				add_named_threat = {
-					threat = 10
+					threat = 2
 					name = prussian.5.t
 				}
 				create_faction = komintern
@@ -1114,7 +1134,7 @@ country_event = {
 		}
 		set_cosmetic_tag = HUN_socialism
 		add_named_threat = {
-			threat = 10
+			threat = 5
 			name = prussian.7.t
 		}
 		hidden_effect = {
@@ -1149,6 +1169,14 @@ country_event = {
 			ideology = communism
 			size = 0.55
 			set_cosmetic_tag = HUN_socialism
+			keep_unit_leaders_trigger = {
+				OR = {
+					has_trait = trait_royal
+					has_trait = ENG_royalist
+					has_trait = old_guard
+					has_trait = politically_connected
+				}
+			}
 		}
 	}
 }
@@ -1253,7 +1281,7 @@ country_event = {
 			RUS = {
 				give_guarantee = SLO
 				add_named_threat = {
-					threat = 10
+					threat = 5
 					name = prussian.10.t
 				}
 				if = {
@@ -1442,7 +1470,7 @@ country_event = {
 			RUS = {
 				transfer_state = PREV
 				add_named_threat = {
-					threat = 10
+					threat = 5
 					name = prussian.4.t
 				}
 			}
@@ -1684,7 +1712,7 @@ country_event = {
 			type = topple_government
 		}
 		add_named_threat = {
-			threat = 50
+			threat = 25
 			name = prussian.14.t
 		}
 		hidden_effect = {

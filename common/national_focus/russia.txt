@@ -646,15 +646,9 @@ focus_tree = {
 		y = 0
 		available_if_capitulated = yes
 		available = {
-			OR = {
-				has_country_leader = {
-					name = "Nicholas II"
-					ruling_only = yes
-				}
-				has_country_leader = {
-					name = "Mikhail II"
-					ruling_only = yes
-				}
+			has_country_leader = {
+				name = "Nicholas II"
+				ruling_only = yes
 			}
 		}
 		completion_reward = {
@@ -680,6 +674,7 @@ focus_tree = {
 		y = 1
 		available_if_capitulated = yes
 		available = {
+			has_government = neutrality
 		}
 		completion_reward = {
 			add_stability = 0.05
@@ -694,8 +689,8 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = RUS_league_of_slavic_peoples
-		icon = GFX_focus_balkan_puppet
+		id = RUS_abandon_the_french
+		icon = GFX_focus_renounce_the_treaty_of_trianon
 		cost = 10
 		prerequisite = {
 			focus = RUS_union_of_russian_people
@@ -704,324 +699,119 @@ focus_tree = {
 		y = 2
 		available = {
 			is_subject = no
-			has_war = no
+			is_in_faction_with = FRA
+			is_faction_leader = no
 		}
 		bypass = {
+			OR = {
+				NOT = {
+					is_in_faction_with = FRA
+				}	
+				is_faction_leader = yes
+			}
 		}
 		completion_reward = {
 			add_named_threat = {
-				threat = 5
-				name = RUS_league_of_slavic_peoples
+				threat = 2
+				name = RUS_abandon_the_french
 			}
 			leave_faction = yes
-			create_faction = slavic_league
-			set_global_flag = slavic_league
-			add_state_claim = 91
-			add_state_claim = 88
-			add_state_claim = 89
 			news_event = {
 				id = ww1_russia.43
 			}
-			if = {
+			every_state = {
 				limit = {
-					OR = {
-						SER = {
-							is_in_faction = yes
-						}
-						has_global_flag = kis_firstbalkan_war
+					is_core_of = UKR
+					NOT = {
+						is_owned_by = ROOT
 					}
 				}
-				if = {
-					limit = {
-						SER = {
-							is_subject = no
-						}
-					}
-					give_guarantee = SER
-					SER = {
-						add_opinion_modifier = {
-							target = RUS
-							modifier = large_increase
-						}
+				ROOT = {
+					add_state_core = PREV
+				}			
+			}
+			every_state = {
+				limit = {
+					is_core_of = GAL
+					NOT = {
+						is_core_of = UKR					
+						is_owned_by = ROOT
 					}
 				}
-				if = {
-					limit = {
-						BUL = {
-							is_subject = no
-						}
-					}
-					give_guarantee = BUL
-					BUL = {
-						add_opinion_modifier = {
-							target = RUS
-							modifier = large_increase
-						}
-					}
-				}
-				if = {
-					limit = {
-						MNT = {
-							is_subject = no
-						}
-					}
-					give_guarantee = MNT
-					MNT = {
-						add_opinion_modifier = {
-							target = RUS
-							modifier = large_increase
-						}
-					}
-				}
-				if = {
-					limit = {
-						GRE = {
-							is_subject = no
-						}
-					}
-					give_guarantee = GRE
-					GRE = {
-						add_opinion_modifier = {
-							target = RUS
-							modifier = large_increase
-						}
-					}
-				}
-				if = {
-					limit = {
-						ROM = {
-							is_subject = no
-						}
-					}
-					give_guarantee = ROM
-					ROM = {
-						add_opinion_modifier = {
-							target = RUS
-							modifier = large_increase
-						}
-					}
+				ROOT = {
+					add_state_claim = PREV
 				}
 			}
-			if = {
+			every_state = {
 				limit = {
-					SER = {
-						is_subject = no
-					}
-					SER = {
-						is_in_faction = no
-					}
-					NOT = {
-						has_global_flag = kis_firstbalkan_war
+					is_core_of = ARM
+					NOT = {				
+						is_owned_by = ROOT
 					}
 				}
-				SER = {
-					add_opinion_modifier = {
-						target = RUS
-						modifier = large_increase
-					}
-					add_ai_strategy = {
-						type = befriend
-						id = "RUS"
-						value = 50
-					}
-					add_ai_strategy = {
-						type = alliance
-						id = "RUS"
-						value = 500
-					}
+				ROOT = {
+					add_state_claim = PREV
 				}
-				if = {
-					limit = {
-						SER = { 
-							is_ai = yes 
-							is_in_faction = no
-						}
+			}
+		}
+		select_effect = {
+			hidden_effect = {
+				FRA = {
+					country_event = {
+						id = ww1_russia.44
+						days = 35
 					}
-					RUS = {
-						add_to_faction = SER 
-					}
-					else = {
-						SER = {
-							country_event = {
-								id = generic.5
-								days = 1
-								hours = 1 
-							}
-						}
-					}
-				}
-				if = {
-					limit = {
-						BUL = {
-							exists = yes
-							is_subject = no
-						}
-					}
-					BUL = {
-						add_opinion_modifier = {
-							target = RUS
-							modifier = large_increase
-						}
-						add_ai_strategy = {
-							type = befriend
-							id = "RUS"
-							value = 50
-						}
-						add_ai_strategy = {
-							type = alliance
-							id = "RUS"
-							value = 200
-						}
-					}
-					if = {
-						limit = {
-							BUL = { 
-								is_ai = yes 
-								is_in_faction = no
-							}
-						}
-						BUL = { 
-							add_to_faction = SER 
-						}
-						else = {
-							BUL = {
-								country_event = {
-									id = generic.5
-									days = 1
-									hours = 10
-								}
-							}
-						
-						}
-					}
-				}
-				if = {
-					limit = {
-						MNT = {
-							exists = yes
-							is_subject = no
-						}
-					}
-					MNT = {
-						add_opinion_modifier = {
-							target = RUS
-							modifier = large_increase
-						}
-						add_ai_strategy = {
-							type = befriend
-							id = "RUS"
-							value = 50
-						}
-						add_ai_strategy = {
-							type = alliance
-							id = "RUS"
-							value = 200
-						}
-						country_event = {
-							id = generic.5
-							days = 2
-						}
-					}
-				}
-				if = {
-					limit = {
-						GRE = {
-							exists = yes
-							is_subject = no
-						}
-					}
-					GRE = {
-						add_opinion_modifier = {
-							target = RUS
-							modifier = large_increase
-						}
-						add_ai_strategy = {
-							type = befriend
-							id = "RUS"
-							value = 50
-						}
-						add_ai_strategy = {
-							type = alliance
-							id = "RUS"
-							value = 200
-						}
-						country_event = {
-							id = generic.5
-							days = 2
-							hours = 10 
-						}
-					}
-				}
-				if = {
-					limit = {
-						ROM = {
-							exists = yes
-							is_subject = no
-						}
-					}
-					ROM = {
-						add_opinion_modifier = {
-							target = RUS
-							modifier = large_increase
-						}
-						add_ai_strategy = {
-							type = befriend
-							id = "RUS"
-							value = 50
-						}
-						country_event = {
-							id = generic.5
-							days = 3							
-						}
-					}
-				}
+				}			
 			}
 		}
 		ai_will_do = {
 			base = 1
-			modifier = {
-				factor = 0
-				TUR = {
-					is_ai = no
-				}
-			}
 		}
 	}
 	focus = {
-		id = RUS_liberation_of_the_balkans
-		icon = GFX_focus_remove_turk
+		id = RUS_the_second_rome
+		icon = GFX_focus_TUR_the_montreux_convention
 		cost = 10
 		prerequisite = {
-			focus = RUS_league_of_slavic_peoples
+			focus = RUS_abandon_the_french
 		}
 		x = 15
 		y = 4
 		available = {
 			is_subject = no
-			has_civil_war = no
-			is_in_faction_with = SER
+			is_in_faction = yes
+			NOT = {
+				is_in_faction_with = TUR
+			}
 			TUR = {
 				exists = yes
 				NOT = {
 					is_subject_of = RUS
 				}
 			}
+			OR = {
+				has_global_flag = kis_firstbalkanwar_lose
+				has_global_flag = kis_firstbalkanwar_victory
+			}
+		}
+		bypass = {
+			owns_state = 347
 		}
 		completion_reward = {
 			add_state_claim = 347
-			add_state_claim = 356
-			add_state_claim = 353
-			add_state_claim = 354
-			if = {
+			add_state_claim = 341
+			add_state_claim = 825
+			every_other_country = {
 				limit = {
-					NOT = {
-						has_global_flag = kis_firstbalkan_war
-					}
+					owns_state = 347
 				}
-				TUR = {
-					country_event = {
-						id = ww1_russia.44
-						days = 3
+				ROOT = {
+					create_wargoal = {
+						type = take_state_focus
+						target = PREV
+						generator = {
+							347
+						}
 					}
 				}
 			}
@@ -1045,6 +835,10 @@ focus_tree = {
 					is_ai = no
 				}
 				num_of_civilian_factories > 50
+			}
+			OR = {
+				has_government = neutrality
+				has_government = fascism
 			}
 		}
 		completion_reward = {
@@ -1073,7 +867,7 @@ focus_tree = {
 			focus = RUS_ban_trade_unions
 		}
 		prerequisite = {
-			focus = RUS_league_of_slavic_peoples
+			focus = RUS_abandon_the_french
 		}
 		x = 16
 		y = 3
@@ -1082,11 +876,49 @@ focus_tree = {
 			is_subject = no
 			has_capitulated = no
 			has_civil_war = no
+			has_country_leader = {
+				name = "Nicholas II"
+				ruling_only = yes
+			}
+			NOT = {
+				has_active_mission = RUS_resist_the_duma
+			}
 		}
 		completion_reward = {
+			if = {
+				limit = {
+					is_faction_leader = no
+					is_in_faction = yes
+					has_war = no
+				}
+				leave_faction = yes
+			}
 			custom_effect_tooltip = RUS_orthodoxy_autocracy_nationality_tt
 			hidden_effect = {
 				set_cosmetic_tag = RUS_absolutism
+				every_state = {
+					limit = {
+						is_core_of = UKR
+						NOT = {
+							is_owned_by = ROOT
+						}
+					}
+					ROOT = {
+						add_state_core = PREV
+					}			
+				}
+				every_state = {
+					limit = {
+						is_core_of = GAL
+						NOT = {
+							is_core_of = UKR					
+							is_owned_by = ROOT
+						}
+					}
+					ROOT = {
+						add_state_claim = PREV
+					}
+				}
 			}
 			if = {
 				limit = {
@@ -1123,10 +955,7 @@ focus_tree = {
 			base = 3
 			modifier = {
 				factor = 0
-				OR = {
-					has_war = yes
-					has_active_mission = RUS_resist_the_duma
-				}
+				has_war = yes
 			}
 		}
 	}
@@ -1142,8 +971,25 @@ focus_tree = {
 		available = {
 			is_subject = no
 			has_capitulated = no
-			has_government = neutrality
+			has_country_leader = {
+				name = "Nicholas II"
+				ruling_only = yes
+			}
 			has_civil_war = no
+		}
+		bypass = {
+			ENG = {
+				OR = {
+					is_subject = yes
+					exists = no
+				}
+			}
+			GER = {
+				OR = {
+					is_subject = yes
+					exists = no
+				}
+			}
 		}
 		completion_reward = {
 			add_popularity = {
@@ -1214,8 +1060,27 @@ focus_tree = {
 			is_subject = no
 			has_war = no
 			neutrality > 0.85
+			has_country_leader = {
+				name = "Nicholas II"
+				ruling_only = yes
+			}
+			NOT = {
+				has_country_flag = great_war_loser
+			}
 		}
 		bypass = {
+			ENG = {
+				OR = {
+					is_subject = yes
+					exists = no
+				}
+			}
+			GER = {
+				OR = {
+					is_subject = yes
+					exists = no
+				}
+			}
 		}
 		completion_reward = {
 			set_faction_name = brotherly_alliance
@@ -1244,6 +1109,7 @@ focus_tree = {
 					GER = {
 						NOT = {
 							has_completed_focus = GER_constitutional_compromise
+							has_war_with = ENG
 						}
 					}
 				}
@@ -1264,6 +1130,16 @@ focus_tree = {
 		}
 		x = 17
 		y = 6
+		available = {
+			is_subject = no
+			has_country_leader = {
+				name = "Nicholas II"
+				ruling_only = yes
+			}
+			NOT = {
+				has_country_flag = great_war_loser
+			}
+		}
 		completion_reward = {
 			add_state_claim = 463
 			add_state_claim = 650
@@ -1306,6 +1182,7 @@ focus_tree = {
 		x = 18
 		y = 4
 		available = {
+			is_subject = no
 			has_civil_war = no
 		}
 		completion_reward = {
@@ -2492,10 +2369,6 @@ focus_tree = {
 						ruling_only = no
 					}
 				}
-			}			
-			OR = {
-				has_completed_focus = RUS_force_tsar_abdtication
-				has_global_flag = nicholas_ii_abdication
 			}
 		}
 		completion_reward = {			
@@ -2656,14 +2529,14 @@ focus_tree = {
 				hidden_effect = {
 					KBN = {
 						set_politics = {
-							ruling_party = democratic
-							elections_allowed = yes
+							ruling_party = neutrality
+							elections_allowed = no
 						}
 						set_popularities = {
+							fascism = 9
+							communism = 17
 							democratic = 37
-							neutrality = 46
-							fascism = 17
-							communism = 0
+							neutrality = 37
 						}
 					}
 				}
@@ -2749,9 +2622,9 @@ focus_tree = {
 						is_subject_of = RUS
 					}
 				}
-				set_autonomy = {
+				annex_country = {
 					target = KAZ
-					autonomy_state = autonomy_free
+					transfer_troops = yes
 				}
 			}
 		}
@@ -2920,7 +2793,7 @@ focus_tree = {
 			set_politics = {
 				ruling_party = democratic
 			}
-			set_global_flag = nicholas_ii_abdication
+			set_global_flag = russian_revolution
 			add_popularity = {
 				ideology = democratic
 				popularity = 0.1
@@ -2939,7 +2812,23 @@ focus_tree = {
 					long_name = RUS_democratic_party_long
 					name = RUS_democratic_party
 				}
-			}	
+				create_corps_commander = {
+					name = "Alexander Dutov"
+					picture = "RUS_alexander_dutov.dds"
+					traits = { trickster cavalry_officer inflexible_strategist media_personality } 
+					skill = 3
+					attack_skill = 2
+					defense_skill = 3
+					planning_skill = 3
+					logistics_skill = 2
+				}
+				every_unit_leader = {
+					limit = {
+						has_trait = trait_royal
+					}		
+					remove_unit_leader = PREV
+				}
+			}
 			news_event = {
 				id = rusrevolt.5
 			}
@@ -3199,17 +3088,36 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			add_state_claim = 91
-			add_state_claim = 88
-			add_state_claim = 89
-			add_state_claim = 562
-			add_state_core = 73
-			add_state_core = 237
+			every_state = {
+				limit = {
+					is_core_of = UKR
+					NOT = {
+						is_owned_by = ROOT
+					}
+				}
+				ROOT = {
+					add_state_core = PREV
+				}			
+			}
+			every_state = {
+				limit = {
+					is_core_of = GAL
+					NOT = {
+						is_core_of = UKR					
+						is_owned_by = ROOT
+					}
+				}
+				ROOT = {
+					add_state_claim = PREV
+				}
+			}
 			if = {
 				limit = {
 					NOT = {
 						has_war_with = AUH
 					}
+					country_exists = AUH
+
 				}
 				add_named_threat = {
 					threat = 5
@@ -3231,6 +3139,45 @@ focus_tree = {
 						threat = 2
 						name = RUS_reunion_ruthenia
 					}
+				}
+			}
+			if = {
+				limit = {
+					WUK = {
+						exists = yes
+						is_subject = no
+						is_in_faction = no
+					}
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = WUK
+				}
+			}
+			if = {
+				limit = {
+					POL = {
+						exists = yes
+						is_subject = no
+						is_in_faction = no
+					}
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = POL
+				}
+			}
+			if = {
+				limit = {
+					UKR = {
+						exists = yes
+						is_subject = no
+						is_in_faction = no
+					}
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = UKR
 				}
 			}
 		}
@@ -3959,6 +3906,13 @@ focus_tree = {
 		y = 7
 		available = {
 			is_subject = no
+			has_country_leader = {
+				name = "Nicholas II"
+				ruling_only = yes
+			}
+			NOT = {
+				has_country_flag = great_war_loser
+			}	
 		}
 		will_lead_to_war_with = USA
 		completion_reward = {
@@ -3998,6 +3952,9 @@ focus_tree = {
 					value = 100
 				}
 			}
+		}
+		ai_will_do = {
+			base = 0
 		}
 	}
 	focus = {

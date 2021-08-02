@@ -3,6 +3,11 @@ peace_deals = {
 		allowed = {
 			tag = TUR
 		}
+		target_trigger = {
+			FROM = {
+				tag = ITA
+			}
+		}
 		available = {
 			has_war_with = ITA
 			OR = {
@@ -21,7 +26,9 @@ peace_deals = {
 			NOT = {
 				has_global_flag = italo_turkish_war_ends
 			}
-			NOT = { has_country_flag = ITA_lybian_war_mission_timeout }
+			NOT = {
+				has_country_flag = ITA_lybian_war_mission_timeout
+			}
 			owns_state = 448
 			owns_state = 450
 			owns_state = 661
@@ -54,19 +61,17 @@ peace_deals = {
 			}
 			modifier = {
 				add = 500
-				has_war_with = BUL
-				has_war_with = SER
+				OR = {
+					has_war_with = BUL
+					has_war_with = SER
+				}
 				ITA = {
 					OR = {
 						controls_state = 448
 						controls_state = 450
 						controls_state = 661
 					}
-					any_owned_state = {
-						NOT = {
-							is_fully_controlled_by = TUR
-						}
-					}
+					surrender_progress < 0.05
 				}
 			}
 		}
@@ -121,10 +126,7 @@ peace_deals = {
 		}
 		visible = {
 			has_war_with = SER
-			OR = {
-				has_global_flag = kis_firstbalkan_war
-				has_global_flag = kis_firstbalkan_war_slavic
-			}
+			has_global_flag = kis_firstbalkan_war
 			NOT = {
 				has_global_flag = kis_war
 				has_global_flag = kis_firstbalkanwar_victory
@@ -141,39 +143,26 @@ peace_deals = {
 			}
 		}
 		complete_effect = {
-			if = {
-				limit = {
-					RUS = {
-						is_in_faction_with = SER
-						is_faction_leader = yes
-						has_war_with = ROOT
-					}
-					has_global_flag = kis_firstbalkan_war_slavic
+			SER = {
+				country_event = {
+					id = ww1_firstbalkan.6
+					hours = 1
 				}
-				RUS = {
-					country_event = {
-						id = ww1_firstbalkan.6
-						hours = 1
-					}
-				}
-				else = {
-					SER = {
-						country_event = {
-							id = ww1_firstbalkan.6
-							hours = 1
-						}
-					}
-				}
-			}		
+			}
 			set_global_flag = TUR_peace_SER
 		}
 	}
 }
 
-foreign_politics = {
+operations = {
 	TUR_balkan_war_intervention_decision = {
 		allowed = {
 			original_tag = TUR
+		}
+		target_trigger = {
+			FROM = {
+				tag = BUL
+			}
 		}
 		available = {
 			is_subject = no
@@ -183,6 +172,9 @@ foreign_politics = {
 			}
 			TUR = {
 				is_in_faction = no
+			}
+			ROM = {
+				has_war_with = BUL
 			}
 		}
 		visible = {
@@ -224,13 +216,32 @@ foreign_politics = {
 			factor = 100
 			modifier = {
 				factor = 0
-				GRE = {
-					NOT = {
-						is_in_faction_with = SER
+				OR = {
+					ROM = {
+						OR = {
+							has_capitulated = yes
+							surrender_progress > 0.1
+						}
+					}
+					SER = {
+						OR = {
+							has_capitulated = yes
+							surrender_progress > 0.1
+						}
+					}
+					AND = {
+						GRE = {
+							has_war_with = BUL
+							OR = {
+								has_capitulated = yes
+								surrender_progress > 0.1
+							}
+						}
 					}
 				}
 			}
 		}
+		war_with_on_remove = BUL
 		remove_effect = {
 			country_event = {
 				id = ww1_secondbalkan.9
@@ -421,7 +432,8 @@ crisis = {
 		allowed = {
 			original_tag = TUR
 		}
-		days_mission_timeout = 90
+		icon = tur_unifying_the_country
+		days_mission_timeout = 80
 		fire_only_once = yes
 		is_good = no
 		available = {
@@ -443,7 +455,8 @@ crisis = {
 			}
 		}
 		activation = {
-			always = no
+			has_country_flag = elections_1912
+			has_completed_focus = TUR_harbiyeli
 		}
 		timeout_effect = {
 			complete_national_focus = TUR_coup_of_savior_officers
@@ -451,6 +464,7 @@ crisis = {
 				ideology = democratic
 				popularity = 0.05
 			}
+			country_event = generic.27
 			if = {
 				limit = {
 					NOT = {
@@ -459,34 +473,8 @@ crisis = {
 				}
 				unlock_national_focus = TUR_weaken_the_sultans_power
 			}
-			if = {
-				limit = {
-					NOT = {
-						has_completed_focus = TUR_legacy_of_31_march
-					}
-				}
-				unlock_national_focus = TUR_legacy_of_31_march
-			}
-			if = {
-				limit = {
-					NOT = {
-						has_completed_focus = TUR_harbiyeli
-					}
-				}
-				unlock_national_focus = TUR_harbiyeli
-			}
-			if = {
-				limit = {
-					NOT = {
-						has_completed_focus = TUR_hurriyet_musavat_uhuvvet
-					}
-				}
-				unlock_national_focus = TUR_hurriyet_musavat_uhuvvet
-			}
-			country_event = generic.27
 		}
 		complete_effect = {
-			
 		}
 	}
 	TUR_revolt_against_islamists_mission = {
@@ -580,7 +568,7 @@ political_actions = {
 			original_tag = TUR
 		}
 		available = {
-		    is_subject = no
+			is_subject = no
 		}
 		visible = {
 			has_country_flag = daan_treaty_signed
@@ -588,8 +576,8 @@ political_actions = {
 				exists = no
 			}
 			any_owned_state = {
-				is_core_of = YEM			
-			}	
+				is_core_of = YEM
+			}
 		}
 		cost = 20
 		fire_only_once = yes
@@ -609,19 +597,25 @@ political_actions = {
 				YEM = {
 					transfer_state = 293
 				}
-				add_state_claim = PREV
+				hidden_effect = {
+					add_state_claim = PREV
+				}
 				else = {
 					random_owned_state = {
 						limit = {
 							is_core_of = YEM
 						}
-						YEM = { transfer_state = PREV }
-						ROOT = {
-							add_state_claim = PREV
+						YEM = {
+							transfer_state = PREV
+						}
+						hidden_effect = {
+							ROOT = {
+								add_state_claim = PREV
+							}
 						}
 					}
 				}
-			}	
+			}
 			puppet = YEM
 			hidden_effect = {
 				YEM = {
@@ -791,7 +785,7 @@ political_actions = {
 			tag = TUR
 		}
 		icon = generic_military
-		cost = 15
+		cost = 20
 		fire_only_once = no
 		days_remove = 30
 		days_re_enable = 30
@@ -860,7 +854,8 @@ political_actions = {
 		icon = generic_military
 		cost = 50
 		fire_only_once = no
-		days_re_enable = 30
+		days_remove = 60
+		days_re_enable = 120
 		visible = {
 			has_completed_focus = TUR_yildiz_teskilati
 			OR = {
@@ -870,6 +865,7 @@ political_actions = {
 				has_idea = TUR_officers_struggle_yildiz_2_org_2
 				has_idea = TUR_officers_struggle_yildiz_2_org
 				has_idea = TUR_officers_struggle_yildiz_2
+				has_idea = TUR_officers_struggle_yildiz
 			}
 		}
 		complete_effect = {
@@ -884,7 +880,7 @@ political_actions = {
 			tag = TUR
 		}
 		icon = generic_military
-		cost = 15
+		cost = 20
 		fire_only_once = no
 		days_remove = 30
 		days_re_enable = 60
@@ -3065,6 +3061,7 @@ economy_decisions = {
 		}
 	}
 }
+
 propaganda_efforts = {
 	TUR_rename_kostantiniyye = {
 		allowed = {
@@ -3076,7 +3073,9 @@ propaganda_efforts = {
 			owns_state = 347
 			has_full_control_of_state = 347
 			hidden_trigger = {
-				NOT = { has_global_flag = kostantiniyye_is_constantinople }
+				NOT = {
+					has_global_flag = kostantiniyye_is_constantinople
+				}
 			}
 		}
 		ai_will_do = {
@@ -3087,14 +3086,23 @@ propaganda_efforts = {
 			owns_state = 347
 			has_full_control_of_state = 347
 			hidden_trigger = {
-				NOT = { has_global_flag = kostantiniyye_is_constantinople }
+				NOT = {
+					has_global_flag = kostantiniyye_is_constantinople
+				}
 			}
 		}
 		fire_only_once = no
 		complete_effect = {
-			set_province_name = { id = 9833 name = CONSTANTINOPLE_PROV }
-			347 = { set_state_name = CONSTANTINOPLE_STATE }
-			hidden_effect = { set_global_flag = kostantiniyye_is_constantinople }
+			set_province_name = {
+				id = 9833
+				name = CONSTANTINOPLE_PROV
+			}
+			347 = {
+				set_state_name = CONSTANTINOPLE_STATE
+			}
+			hidden_effect = {
+				set_global_flag = kostantiniyye_is_constantinople
+			}
 		}
 	}
 	TUR_rename_constantinople = {
@@ -3122,8 +3130,12 @@ propaganda_efforts = {
 		fire_only_once = no
 		complete_effect = {
 			reset_province_name = 9833
-			347 = { reset_state_name = yes }
-			hidden_effect = { clr_global_flag = kostantiniyye_is_constantinople }
+			347 = {
+				reset_state_name = yes
+			}
+			hidden_effect = {
+				clr_global_flag = kostantiniyye_is_constantinople
+			}
 		}
 	}
 }
