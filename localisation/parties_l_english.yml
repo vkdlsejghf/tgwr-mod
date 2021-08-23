@@ -423,8 +423,10 @@
  POR_communism_party_long:0 "Partido Socialista Português"
  POR_democratic_party:0 "PRP"
  POR_democratic_party_long:0 "Partido Republicano Português"
- POR_fascism_party:0 "Integralismo Lusitano"
- POR_estado_novo:0 "Ditadura Nacional"
+ POR_fascism_party:0 "Exército de Portugal"
+ POR_estado_novo:0 "União Nacional"
+ POR_BRAGANZA_WINDSOR_LONG:0 "House of Braganza-Windsor"
+ POR_BRAGANZA_WINDSOR_SHORT:0 "Braganza-Windsor"
  
  GRE_neutrality_party:0 "House of Glücksburg"
  GRE_communism_party:0 "SEKE"
