@@ -947,4 +947,6 @@
  POR_foreign_decisions_unlocked:0 "You will have the ability to hire foreign scientists"
  POR_5october_1910:0 "A relatively peaceful revolution will take place in Portugal"
  POR_5october_1911:0 "This one won't be pretty"
- 
+ POR_prepare_for_civil_war_1:0 "We will begin preparations for the inevitable civil war"
+ POR_prepare_for_civil_war_2:0 "The south will join us when the civil war starts"
+ POR_start_civil_war:0 "Let's start this civil war on our own terms!"
