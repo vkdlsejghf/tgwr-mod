@@ -160,7 +160,7 @@ focus_tree = {
 	}
 	focus = {
 		id = por_rebuild
-		icon = rere
+		icon = GFX_goal_generic_construct_civilian
 		x = 0
 		y = 1
 		cost = 10
@@ -797,7 +797,7 @@ focus_tree = {
 	
 	focus = {
 		id = por_face_spain
-		icon = rere
+		icon = GFX_focus_focus_fra_intervention_spain
 		x = 3
 		y = 1
 		cost = 10
@@ -929,7 +929,7 @@ focus_tree = {
 	
 	focus = {
 		id = por_ally_spain
-		icon = GFX_focus_por_iberian_summit
+		icon = GFX_focus_intervention_spain_nationalists
 		x = -3
 		y = 1
 		cost = 10
@@ -947,7 +947,7 @@ focus_tree = {
 	}
 	focus = {
 		id = por_iberian_pact
-		icon = rere
+		icon = GFX_focus_por_iberian_summit
 		x = 0
 		y = 1
 		cost = 10
@@ -961,7 +961,7 @@ focus_tree = {
 	}
 	focus = {
 		id = por_olivenca_negotiation
-		icon = rere
+		icon = GFX_focus_por_galiza_negotiation
 		x = 0
 		y = 1
 		cost = 10
@@ -1333,7 +1333,7 @@ focus_tree = {
 	
 	focus = {
 		id = por_road
-		icon = rere
+		icon = GFX_goal_generic_construct_infrastructure
 		x = 4
 		y = 0
 		cost = 10
@@ -1351,7 +1351,7 @@ focus_tree = {
 	
 	focus = {
 		id = por_industry_expensive_1
-		icon = rere
+		icon = GFX_focus_generic_industry_1
 		x = -1
 		y = 1
 		cost = 10
@@ -1388,7 +1388,7 @@ focus_tree = {
 	}
 	focus = {
 		id = por_industry_cheap_1
-		icon = rere
+		icon = GFX_goal_generic_construct_civilian
 		x = 1
 		y = 1
 		cost = 10
@@ -1412,7 +1412,7 @@ focus_tree = {
 	
 	focus = {
 		id = por_industry_expensive_2
-		icon = rere
+		icon = GFX_focus_generic_industry_2
 		x = 0
 		y = 1
 		cost = 10
@@ -1449,7 +1449,7 @@ focus_tree = {
 	}
 	focus = {
 		id = por_industry_cheap_2
-		icon = rere
+		icon = GFX_goal_generic_construct_civ_factory
 		x = 0
 		y = 1
 		cost = 10
@@ -1475,7 +1475,7 @@ focus_tree = {
 	
 	focus = {
 		id = por_industry_expensive_3
-		icon = rere
+		icon = GFX_goal_generic_construct_mil_factory
 		x = 0
 		y = 1
 		cost = 10
@@ -1512,7 +1512,7 @@ focus_tree = {
 	}
 	focus = {
 		id = por_industry_cheap_3
-		icon = rere
+		icon = GFX_goal_generic_army_artillery
 		x = 0
 		y = 1
 		cost = 10
@@ -1539,7 +1539,7 @@ focus_tree = {
 	
 	focus = {
 		id = por_industry_expensive_4
-		icon = rere
+		icon = GFX_focus_generic_industry_3
 		x = 0
 		y = 1
 		cost = 10
@@ -1572,7 +1572,7 @@ focus_tree = {
 	}
 	focus = {
 		id = por_industry_cheap_4
-		icon = rere
+		icon = GFX_goal_generic_army_artillery2
 		x = 0
 		y = 1
 		cost = 10
@@ -1598,7 +1598,7 @@ focus_tree = {
 	
 	focus = {
 		id = por_resource_extra
-		icon = rere
+		icon = GFX_goal_generic_construction2
 		x = 1
 		y = 2
 		cost = 10
@@ -1624,7 +1624,7 @@ focus_tree = {
 	
 	focus = {
 		id = por_army_innovate
-		icon = rere
+		icon = GFX_goal_rhineland
 		x = 31
 		y = 0
 		cost = 10
@@ -1640,7 +1640,7 @@ focus_tree = {
 	}
 	focus = {
 		id = por_mil_boost
-		icon = rere
+		icon = GFX_goal_generic_axis_build_infantry
 		x = 0
 		y = 1
 		cost = 10
@@ -1665,7 +1665,7 @@ focus_tree = {
 	}
 	focus = {
 		id = por_mil_boost_2
-		icon = rere
+		icon = GFX_focus_control_economy
 		x = -1
 		y = 1
 		cost = 10
@@ -1695,7 +1695,7 @@ focus_tree = {
 	}
 	focus = {
 		id = por_mil_xp
-		icon = rere
+		icon = GFX_focus_german_equipment
 		x = 1
 		y = 1
 		cost = 10
@@ -1719,7 +1719,7 @@ focus_tree = {
 	
 	focus = {
 		id = por_navy_innovate
-		icon = rere
+		icon = GFX_goal_generic_navy_cruiser
 		x = 35
 		y = 0
 		cost = 10
@@ -1735,7 +1735,7 @@ focus_tree = {
 	}
 	focus = {
 		id = por_navy_boost
-		icon = rere
+		icon = GFX_focus_generic_navy_battleship2
 		x = 0
 		y = 1
 		cost = 10
@@ -1755,7 +1755,7 @@ focus_tree = {
 	}
 	focus = {
 		id = por_navy_boost_2
-		icon = rere
+		icon = GFX_focus_generic_destroyer
 		x = -1
 		y = 1
 		cost = 10
@@ -1786,7 +1786,7 @@ focus_tree = {
 	}
 	focus = {
 		id = por_navy_xp
-		icon = rere
+		icon = GFX_goal_generic_navy_doctrines_tactics
 		x = 1
 		y = 1
 		cost = 10
@@ -1811,7 +1811,7 @@ focus_tree = {
 	
 	focus = {
 		id = por_army_focus
-		icon = rere
+		icon = GFX_focus_chi_army_reform
 		x = 1
 		y = 1
 		cost = 10
@@ -1832,7 +1832,7 @@ focus_tree = {
 	}
 	focus = {
 		id = por_motorized
-		icon = rere
+		icon = GFX_goal_generic_army_motorized
 		x = 0
 		y = 1
 		cost = 10
@@ -1851,7 +1851,7 @@ focus_tree = {
 	}
 	focus = {
 		id = por_motorized_cheap
-		icon = rere
+		icon = GFX_focus_army_is_ready
 		x = 0
 		y = 1
 		cost = 10
@@ -1870,7 +1870,7 @@ focus_tree = {
 	
 	focus = {
 		id = por_air_focus
-		icon = rere
+		icon = GFX_goal_generic_build_airforce
 		x = 3
 		y = 1
 		cost = 10
@@ -1891,7 +1891,7 @@ focus_tree = {
 	}
 	focus = {
 		id = por_airplane_research
-		icon = rere
+		icon = GFX_goal_generic_air_bomber
 		x = 0
 		y = 1
 		cost = 10
@@ -1910,7 +1910,7 @@ focus_tree = {
 	}
 	focus = {
 		id = por_fighter_cheap
-		icon = rere
+		icon = GFX_goal_generic_air_fighter
 		x = 0
 		y = 1
 		cost = 10
@@ -1928,7 +1928,7 @@ focus_tree = {
 	
 	focus = {
 		id = por_navy_focus
-		icon = rere
+		icon = GFX_goal_generic_amphibious_assault
 		x = 5
 		y = 1
 		cost = 10
@@ -1949,7 +1949,7 @@ focus_tree = {
 	}
 	focus = {
 		id = por_submarine_research
-		icon = rere
+		icon = GFX_goal_generic_navy_submarine
 		x = 0
 		y = 1
 		cost = 10
@@ -1968,7 +1968,7 @@ focus_tree = {
 	}
 	focus = {
 		id = por_naval_range
-		icon = rere
+		icon = GFX_goal_generic_navy_battleship
 		x = 0
 		y = 1
 		cost = 10
@@ -1989,7 +1989,7 @@ focus_tree = {
 	
 	focus = {
 		id = por_colonialism
-		icon = rere
+		icon = GFX_focus_por_luso_tropicalism
 		x = 0
 		y = 1
 		cost = 10
