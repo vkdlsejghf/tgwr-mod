@@ -755,7 +755,6 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_stability = 0.20
-			remove_ideas = { POR_unstable_republic_1 POR_unstable_republic_2 }
 			add_popularity = {
 				ideology = neutrality
 				popularity = 0.05
