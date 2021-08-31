@@ -430,9 +430,6 @@
  ww1_belgium.8.d:0 "Following the 10th of June the lease of Lado Enclave ended, what should we do now?"
  ww1_belgium.8.a:0 "Pay to continue the lease"
  ww1_belgium.8.b:0 "Transfer Lado to bri'ish"
- ww1_belgium.9.t:0 "The Fall of Schollaert"
- ww1_belgium.9.d:0 "Following protest of the Education Law drafted by Frans Schollaert, he has fallen from favour of the Catholic Party and must now resign."
- ww1_belgium.9.a:0 "De Broqueville shall form a new government."
  
  #BRAZIL
  ww1_brazil.1.t:0 "Election of 1910: Hermes da Fonseca vs Rui Barbosa"
@@ -3817,7 +3814,7 @@
  ww1_raj.6.d:0 "We are all ready to move our capital to Delhi. It could hinder the Indian independence movement because Calcutta, the current capital, is center of their movement."
  ww1_raj.6.a:0 "Good to go."
  # PORTUGAL
-  ww1_portugal.1.t:0 "Join the Entente"
+ ww1_portugal.1.t:0 "Join the Entente"
  ww1_portugal.1.d:0 "The British have asked us to impound German and Austrian ships currently harbored in Portugal. If we accept, we will inevitably be drawn into the war. Should we do so?"
  ww1_portugal.1.a:0 "Together for victory."
  ww1_portugal.1.b:0 "Not now."
@@ -3896,6 +3893,10 @@
  ww1_portugal.22.t:0 "The Pink Map"
  ww1_portugal.22.d:0 "The United Kingdom has decided to give the territories of the pink map back to us!"
  ww1_portugal.22.a:0 "A wrong has been righted"
+ ww1_portugal.23.t:0 "The Pink Map"
+ ww1_portugal.23.d:0 "Portugal joined the Central Powers in order to get the British territories they claimed. We have claimed some of the same territories as them, and the Portuguese have asked us that we back down from it."
+ ww1_portugal.23.a:0 "Yes, it's what we agreed to."
+ ww1_portugal.23.b:0 "Uhh, about that..."
 
  # ITALY
  ww1_italy.1.t:0 "Giolitti IV Cabinet"
