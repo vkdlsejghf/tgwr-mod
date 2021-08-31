@@ -527,22 +527,24 @@ focus_tree = {
 		cost = 10
 		relative_position_id = por_pink_map
 		available = {
-			771 = {
-				OR = {
-					is_owned_by = GER
-					is_claimed_by = GER
+			OR = {
+				771 = {
+					OR = {
+						is_owned_by = GER
+						is_claimed_by = GER
+					}
 				}
-			}
-			545 = {
-				OR = {
-					is_owned_by = GER
-					is_claimed_by = GER
+				545 = {
+					OR = {
+						is_owned_by = GER
+						is_claimed_by = GER
+					}
 				}
-			}
-			770 = {
-				OR = {
-					is_owned_by = GER
-					is_claimed_by = GER
+				770 = {
+					OR = {
+						is_owned_by = GER
+						is_claimed_by = GER
+					}
 				}
 			}
 		}
