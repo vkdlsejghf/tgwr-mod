@@ -709,6 +709,9 @@ country_event = {
 	##GERMAN ACCEPTS
 	option = {
 		name = ww1_portugal.23.a
+		ai_chance = {
+			factor = 100
+		}
 		if = {
 			limit = {
 				771 = {
@@ -771,9 +774,6 @@ country_event = {
 				transfer_state = 545
 			}
 		}
-		ai_chance = {
-			factor = 100
-		}
 	}
 	##GERMAN DENIES
 	option = {
@@ -783,3 +783,27 @@ country_event = {
 		}
 	}
 }
+##FIRST ELECTIONS!
+country_event = {
+	id = ww1_portugal.24
+	title = ww1_portugal.24.t
+	desc = ww1_portugal.24.d
+	picture = GFX_report_event_generic_read_write
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = ww1_portugal.24.a
+		hidden_effect = {
+			retire_ideology_leader = democratic
+		}
+		create_country_leader = {
+				name = "Manuel de Arriaga"
+				picture = "gfx/leaders/POR/POR_manuel_de_arriaga.dds" 
+				expire = "1935.1.1"
+				ideology = social_liberalism 
+				traits = { trait_social_liberalism } 
+		}
+	}
+}
+##POLITICAL CHAOS!!!!!! YAHOO!!
