@@ -798,12 +798,404 @@ country_event = {
 			retire_ideology_leader = democratic
 		}
 		create_country_leader = {
-				name = "Manuel de Arriaga"
-				picture = "gfx/leaders/POR/POR_manuel_de_arriaga.dds" 
-				expire = "1935.1.1"
-				ideology = social_liberalism 
-				traits = { trait_social_liberalism } 
+			name = "Manuel de Arriaga"
+			picture = "gfx/leaders/POR/POR_manuel_de_arriaga.dds" 
+			expire = "1935.1.1"
+			ideology = social_liberalism 
+			traits = { trait_social_liberalism } 
 		}
 	}
 }
+
+##PRESIDENT DIES :(
+country_event = {
+	id = ww1_portugal.25
+	title = ww1_portugal.25.t
+	desc = ww1_portugal.25.d
+	picture = GFX_report_event_generic_read_write
+	trigger = {
+		date > 1917.3.5
+		has_country_leader = {
+			name = "Manuel de Arriaga"
+			ruling_only = yes
+		}
+	}
+	fire_only_once = yes
+	option = {
+		name = ww1_portugal.25.a
+		hidden_effect = {
+			retire_ideology_leader = democratic
+		}
+		create_country_leader = {
+			name = "Teófilo Braga"
+			picture = "gfx/leaders/POR/POR_teofilo_braga.dds" 
+			expire = "1935.1.1"
+			ideology = social_liberalism 
+			traits = { trait_social_liberalism } 
+		}
+	}
+}
+
+
+
+
+
 ##POLITICAL CHAOS!!!!!! YAHOO!!
+country_event = {
+	id = ww1_portugal.26
+	title = ww1_portugal.26.t
+	desc = ww1_portugal.26.d
+	picture = GFX_report_event_generic_read_write
+	trigger = {
+		AND = {
+			POR = {
+				has_idea = { POR_unstable_republic_2 }
+			}
+			date > 1915.5.29
+		}
+	}
+	fire_only_once = yes
+	option = {
+		name = ww1_portugal.26.a
+		hidden_effect = {
+			retire_ideology_leader = democratic
+		}
+		create_country_leader = {
+			name = "Teófilo Braga"
+			picture = "gfx/leaders/POR/POR_teofilo_braga.dds" 
+			expire = "1935.1.1"
+			ideology = social_liberalism 
+			traits = { trait_social_liberalism } 
+		}
+		add_stability = -0.1
+	}
+}
+
+country_event = {
+	id = ww1_portugal.27
+	title = ww1_portugal.27.t
+	desc = ww1_portugal.27.d
+	picture = GFX_report_event_generic_read_write
+	trigger = {
+		AND = {
+			POR = {
+				has_idea = { POR_unstable_republic_2 }
+			}
+			date > 1915.10.5
+		}
+	}
+	fire_only_once = yes
+	option = {
+		name = ww1_portugal.27.a
+		hidden_effect = {
+			retire_ideology_leader = democratic
+		}
+		create_country_leader = {
+			name = "Bernardino Machado"
+			picture = "gfx/leaders/POR/POR_manuel_de_arriaga.dds" 
+			expire = "1935.1.1"
+			ideology = social_liberalism 
+			traits = { trait_social_liberalism } 
+		}
+		add_stability = 0.05
+	}
+}
+
+country_event = {
+	id = ww1_portugal.28
+	title = ww1_portugal.28.t
+	desc = ww1_portugal.28.d
+	picture = GFX_report_event_generic_read_write
+	trigger = {
+		AND = {
+			POR = {
+				has_idea = { POR_unstable_republic_2 }
+			}
+			date > 1917.12.27
+		}
+	}
+	fire_only_once = yes
+	option = {
+		name = ww1_portugal.28.a
+		hidden_effect = {
+			retire_ideology_leader = democratic
+		}
+		create_country_leader = {
+			name = "Sidónio Pais"
+			picture = "gfx/leaders/POR/POR_manuel_de_arriaga.dds" 
+			expire = "1935.1.1"
+			ideology = conservatism
+			traits = {  } 
+		}
+		#THIS WAS BASICALLY A COUP
+		add_stability = -0.15
+	}
+}
+
+#PRESIDENTICIDE
+country_event = {
+	id = ww1_portugal.29
+	title = ww1_portugal.29.t
+	desc = ww1_portugal.29.d
+	picture = GFX_report_event_generic_read_write
+	trigger = {
+		AND = {
+			POR = {
+				has_idea = { POR_unstable_republic_2 }
+			}
+			date > 1918.12.14
+		}
+	}
+	fire_only_once = yes
+	option = {
+		name = ww1_portugal.29.a
+		hidden_effect = {
+			retire_ideology_leader = democratic
+		}
+		create_country_leader = {
+			name = "João do Canto e Castro"
+			picture = "gfx/leaders/POR/POR_manuel_de_arriaga.dds" 
+			expire = "1935.1.1"
+			ideology = conservatism
+			traits = {  } 
+		}
+		add_stability = -0.1
+	}
+}
+
+#THE ONLY PRESIDENT THAT DID ONE FULL MANDATE LOL
+country_event = {
+	id = ww1_portugal.30
+	title = ww1_portugal.30.t
+	desc = ww1_portugal.30.d
+	picture = GFX_report_event_generic_read_write
+	trigger = {
+		AND = {
+			POR = {
+				has_idea = { POR_unstable_republic_2 }
+			}
+			date > 1919.10.5
+		}
+	}
+	fire_only_once = yes
+	option = {
+		name = ww1_portugal.30.a
+		hidden_effect = {
+			retire_ideology_leader = democratic
+		}
+		create_country_leader = {
+			name = "António José de Almeida"
+			picture = "gfx/leaders/POR/POR_manuel_de_arriaga.dds" 
+			expire = "1935.1.1"
+			ideology = social_liberalism
+			traits = {  } 
+		}
+		add_stability = 0.05 #A NORMALLY ELECTED PRESIDENT 
+	}
+}
+
+
+
+
+country_event = {
+	id = ww1_portugal.31
+	title = ww1_portugal.31.t
+	desc = ww1_portugal.31.d
+	picture = GFX_report_event_generic_read_write
+	trigger = {
+		AND = {
+			POR = {
+				has_idea = { POR_unstable_republic_2 }
+			}
+			date > 1923.10.5
+		}
+	}
+	fire_only_once = yes
+	option = {
+		name = ww1_portugal.31.a
+		hidden_effect = {
+			retire_ideology_leader = democratic
+		}
+		create_country_leader = {
+			name = "Manuel Teixeira Gomes"
+			picture = "gfx/leaders/POR/POR_manuel_de_arriaga.dds" 
+			expire = "1935.1.1"
+			ideology = social_liberalism
+			traits = {  } 
+		}
+		add_stability = 0.2 #WOW, A FULL MANDATE? EVERYTHING WILL BE GOOD FROM NOW ON!
+	}
+}
+
+
+
+country_event = {
+	id = ww1_portugal.32
+	title = ww1_portugal.32.t
+	desc = ww1_portugal.32.d
+	picture = GFX_report_event_generic_read_write
+	trigger = {
+		AND = {
+			POR = {
+				has_idea = { POR_unstable_republic_2 }
+			}
+			date > 1923.10.5
+		}
+	}
+	fire_only_once = yes
+	option = {
+		name = ww1_portugal.32.a
+		hidden_effect = {
+			retire_ideology_leader = democratic
+		}
+		create_country_leader = {
+			name = "Bernardino Machado" #Yes him again lol
+			picture = "gfx/leaders/POR/POR_manuel_de_arriaga.dds" 
+			expire = "1935.1.1"
+			ideology = social_liberalism
+			traits = {  } 
+		}
+		add_stability = -0.05 #LOL NO
+	}
+}
+
+
+
+#SOME ALTHIST FOR WHEN MONARCHY IS KEPT
+
+#KING DIES WITH NO HEIRS (LIKE OTL)
+country_event = {
+	id = ww1_portugal.33
+	title = ww1_portugal.33.t
+	desc = ww1_portugal.33.d
+	picture = GFX_report_event_generic_read_write
+	trigger = {
+		AND = {
+			POR = {
+				has_idea = POR_monarchy
+				NOT = {
+					has_completed_focus = por_royal_marriage
+				}
+			}
+			date > 1932.7.2
+		}
+	}
+	fire_only_once = yes
+	option = {
+		name = ww1_portugal.33.a
+		hidden_effect = {
+			kill_ideology_leader = neutrality
+			kill_ideology_leader = fascism
+		}
+		create_country_leader = {
+			name = "Duarte Nuno"
+			picture = "gfx/leaders/POR/portrait_por_duarte_nuno.dds" 
+			expire = "1935.1.1"
+			ideology = autocracy
+			traits = {  } 
+		}
+		create_country_leader = {
+			name = "Duarte Nuno"
+			picture = "gfx/leaders/POR/portrait_por_duarte_nuno.dds" 
+			expire = "1935.1.1"
+			ideology = rexism
+			traits = {  } 
+		}
+		swap_ideas = {
+			remove_idea = POR_monarchy
+			add_idea = POR_traitor
+		}
+		start_civil_war = {
+			ruling_party = ROOT
+			ideology = democratic
+			size = 0.1
+			keep_unit_leaders_trigger = {
+				always = no
+			}
+			keep_political_leader = yes
+		}
+		random_other_country = {
+			limit = {
+				original_tag = POR
+				has_government = democratic
+			}		
+			set_cosmetic_tag = POR_republic
+			add_ideas = { POR_no_traitors }
+			division_template = {
+				name = "Milícia Republicana"
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 0 y = 3 }
+					infantry = { x = 0 y = 4 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 1 y = 3 }
+					infantry = { x = 1 y = 4 }
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+					infantry = { x = 2 y = 2 }
+					infantry = { x = 2 y = 3 }
+					infantry = { x = 2 y = 4 }
+					infantry = { x = 3 y = 0 }
+					infantry = { x = 3 y = 1 }
+					infantry = { x = 3 y = 2 }
+					infantry = { x = 3 y = 3 }
+					infantry = { x = 3 y = 4 }
+				}
+			} ## WOW IT REALLY LOOKS LIKE I WANT YOU TO LOSE THIS WAR
+			180 = {
+				create_unit = {
+					division = "name = \"I Brigada\" division_template = \"Milícia Republicana\" start_experience_factor = 0.1" 
+					owner = PREV
+				}
+				create_unit = {
+					division = "name = \"II Brigada\" division_template = \"Milícia Republicana\" start_experience_factor = 0.1" 
+					owner = PREV
+				}
+				create_unit = {
+					division = "name = \"III Brigada\" division_template = \"Milícia Republicana\" start_experience_factor = 0.1" 
+					owner = PREV
+				}
+				create_unit = {
+					division = "name = \"IV Brigada\" division_template = \"Milícia Republicana\" start_experience_factor = 0.1" 
+					owner = PREV
+				}
+				create_unit = {
+					division = "name = \"V Brigada\" division_template = \"Milícia Republicana\" start_experience_factor = 0.1" 
+					owner = PREV
+				}
+				create_unit = {
+					division = "name = \"VI Brigada\" division_template = \"Milícia Republicana\" start_experience_factor = 0.1" 
+					owner = PREV
+				}
+				create_unit = {
+					division = "name = \"VII Brigada\" division_template = \"Milícia Republicana\" start_experience_factor = 0.1" 
+					owner = PREV
+				}
+				create_unit = {
+					division = "name = \"VIII Brigada\" division_template = \"Milícia Republicana\" start_experience_factor = 0.1" 
+					owner = PREV
+				}
+				create_unit = {
+					division = "name = \"IX Brigada\" division_template = \"Milícia Republicana\" start_experience_factor = 0.1" 
+					owner = PREV
+				}
+				create_unit = {
+					division = "name = \"X Brigada\" division_template = \"Milícia Republicana\" start_experience_factor = 0.1" 
+					owner = PREV
+				}
+			}
+		}
+	}
+	option = {
+		name = ww1_portugal.33.b
+		remove_idea = POR_monarchy
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = yes
+		}
+	}
+}
