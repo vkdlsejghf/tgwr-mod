@@ -192,7 +192,12 @@ focus_tree = {
 		completion_reward = {
 			add_war_support = 0.1
 			add_ideas = { POR_empire_1 }
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.05
+			}
 		}
+		
 	}
 	focus = {
 		id = por_empire2
@@ -211,11 +216,15 @@ focus_tree = {
 				remove_idea = POR_empire_1 
 				add_idea = POR_empire_2
 			}
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.1
+			}
 		}
 	}
 	focus = {
-		id = por_brazilsuicide
-		icon = GFX_focus_por_recover_brazil
+		id = por_king_fascist
+		icon = rere
 		x = 0
 		y = 1
 		cost = 10
@@ -225,11 +234,28 @@ focus_tree = {
 			focus = por_empire2
 		}
 		completion_reward = {
-			every_state = {
-				limit = { is_core_of = BRA }
-				POR = { add_state_claim = PREV }
+			remove_ideas = { POR_unstable_monarchy_1 }
+			hidden_effect = {
+				retire_ideology_leader = fascism
 			}
-			create_wargoal = { type = annex_everything target = BRA }
+			set_party_name = { 
+				ideology = fascism 
+				long_name = POR_neutrality_party
+				name = POR_neutrality_party
+			}
+			create_country_leader = { 
+				name = "Manuel II" 
+				desc=POR_manuel_ii_DESC 
+				picture="gfx/leaders/POR/POR_manuel_ii.dds" 
+				expire="1935.1.1" 
+				ideology=rexism
+				traits={ patriota trait_autocracy } 
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.25
+			}
+			
 		}
 	}
 	
@@ -297,13 +323,18 @@ focus_tree = {
 	}
 	focus = {
 		id = por_democracy
-		icon = rere
+		icon = GFX_focus_generic_voting
 		x = 0
 		y = 1
 		cost = 10
 		relative_position_id = por_lastreform
 		available = {
-			has_stability > 0.10
+			NOT = {
+				has_country_leader = {
+					name = "Teófilo Braga"
+					ruling_only = yes
+				}
+			}
 		}
 		prerequisite = {
 			focus = por_lastreform
@@ -369,23 +400,6 @@ focus_tree = {
 		}
 		completion_reward = {
 			remove_ideas = { POR_unstable_monarchy_2 POR_unstable_republic_2 }
-			add_popularity = {
-				ideology = communism
-				popularity = -0.05
-			}
-		}
-	}
-	focus = {
-		id = por_proud_republic
-		icon = rere
-		x = 0
-		y = 1
-		cost = 10
-		relative_position_id = por_more_stable_democracy
-		prerequisite = {
-			focus = por_more_stable_democracy
-		}
-		completion_reward = {
 			add_political_power = 25
 			add_stability = 0.1
 			add_war_support = 0.3
@@ -399,8 +413,28 @@ focus_tree = {
 			}
 			add_popularity = {
 				ideology = communism
-				popularity = -0.05
+				popularity = -0.1
 			}
+		}
+	}
+	focus = {
+		id = por_brazilsuicide
+		icon = GFX_focus_por_recover_brazil
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = por_more_stable_democracy
+		prerequisite = {
+			focus = por_more_stable_democracy
+		}
+		completion_reward = {
+			
+			every_state = {
+				limit = { is_core_of = BRA }
+				POR = { add_state_claim = PREV }
+			}
+			create_wargoal = { type = annex_everything target = BRA }
+			
 		}
 	}
 	
@@ -414,13 +448,13 @@ focus_tree = {
 		available = {
 			NOT = {
 				POR = {
-					owns_state = 711
+					owns_state = 771
 					owns_state = 545
 					owns_state = 770
 				}
 			}
 			ENG = {
-				owns_state = 711
+				owns_state = 771
 				owns_state = 545
 				owns_state = 770
 			}
@@ -447,7 +481,7 @@ focus_tree = {
 	}
 	focus = {
 		id = por_pink_map
-		icon = GFX_focus_por_the_pink_map
+		icon = GFX_focus_central_powers
 		x = 0
 		y = 1
 		cost = 10
@@ -481,23 +515,42 @@ focus_tree = {
 					level = 1
 					instant_build = yes
 				}
-			
-			
+				GER = { country_event = ww1_portugal.18 }
 			}
 		}
 	}
 	focus = {
-		id = por_join_central_power
-		icon = GFX_focus_central_powers
+		id = por_german_claims
+		icon = rere
 		x = 0
 		y = 1
 		cost = 10
 		relative_position_id = por_pink_map
+		available = {
+			771 = {
+				OR = {
+					is_owned_by = GER
+					is_claimed_by = GER
+				}
+			}
+			545 = {
+				OR = {
+					is_owned_by = GER
+					is_claimed_by = GER
+				}
+			}
+			770 = {
+				OR = {
+					is_owned_by = GER
+					is_claimed_by = GER
+				}
+			}
+		}
 		prerequisite = {
 			focus = por_pink_map
 		}
 		completion_reward = {
-			GER = { country_event = ww1_portugal.18 }
+			GER = { country_event = ww1_portugal.23 }
 		}
 	}
 	
@@ -508,6 +561,11 @@ focus_tree = {
 		y = 1
 		cost = 10
 		relative_position_id = por_rebuild
+		available = {
+			ENG = {
+				is_in_faction = yes
+			}
+		}
 		prerequisite = {
 			focus = por_rebuild
 			focus = por_democracy
@@ -527,19 +585,17 @@ focus_tree = {
 		cost = 10
 		relative_position_id = por_ally_britain
 		available = {
-			available = {
-				NOT = {
-					POR = {
-						owns_state = 711
-						owns_state = 545
-						owns_state = 770
-					}
-				}
-				ENG = {
+			NOT = {
+				POR = {
 					owns_state = 711
 					owns_state = 545
 					owns_state = 770
 				}
+			}
+			ENG = {
+				owns_state = 711
+				owns_state = 545
+				owns_state = 770
 			}
 		}
 		prerequisite = {
@@ -623,15 +679,24 @@ focus_tree = {
 				long_name = "União Nacional"
 				name = UN
 			}
+			
 			hidden_effect = {
-				kill_ideology_leader = neutrality
+				retire_ideology_leader = neutrality
+				retire_ideology_leader = democratic
 				create_country_leader = { 
-				name = "Antonio de Oliveira Salazar" 
-				picture = "gfx/leaders/POR/portrait_por_antonio_de_oliveira_salazar.dds" 
-				expire = "1935.1.1" 
-				ideology = despotism
-				traits = { conservative_nationalist military_dictator trait_despotism } 
+					name = "Antonio de Oliveira Salazar" 
+					picture = "gfx/leaders/POR/portrait_por_antonio_de_oliveira_salazar.dds" 
+					expire = "1935.1.1" 
+					ideology = despotism
+					traits = { conservative_nationalist military_dictator trait_despotism } 
 				}
+			}
+			create_country_leader = {
+				name = "Teófilo Braga"
+				picture = "gfx/leaders/POR/POR_teofilo_braga.dds" 
+				expire = "1935.1.1"
+				ideology = social_liberalism 
+				traits = { trait_social_liberalism } 
 			}
 		}
 	}
@@ -853,7 +918,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_timed_idea = { idea = POR_spanish_war days = 120 }
-			declare_war_on = { type = take_claimed_state target = SPR }
+			create_wargoal = { type = take_claimed_state target = SPR }
 		}
 	}
 	focus = {
@@ -1087,8 +1152,8 @@ focus_tree = {
 		}
 		completion_reward = {
 			swap_ideas = {
-				remove_idea = POR_bad_schooling_5
-				add_idea = POR_bad_schooling_4
+				remove_idea = POR_bad_schooling_4
+				add_idea = POR_bad_schooling_3
 			}
 			add_timed_idea = { idea = POR_low_school_investment days = 180 }
 		}
@@ -1149,8 +1214,8 @@ focus_tree = {
 		}
 		completion_reward = {
 			swap_ideas = {
-				remove_idea = POR_bad_schooling_5
-				add_idea = POR_bad_schooling_4
+				remove_idea = POR_bad_schooling_3
+				add_idea = POR_bad_schooling_2
 			}
 			add_timed_idea = { idea = POR_low_school_investment days = 180 }
 		}
@@ -1211,8 +1276,8 @@ focus_tree = {
 		}
 		completion_reward = {
 			swap_ideas = {
-				remove_idea = POR_bad_schooling_5
-				add_idea = POR_bad_schooling_4
+				remove_idea = POR_bad_schooling_2
+				add_idea = POR_bad_schooling_1
 			}
 			add_timed_idea = { idea = POR_low_school_investment days = 180 }
 		}
@@ -1266,8 +1331,7 @@ focus_tree = {
 			focus = por_resource_extra
 		}
 		completion_reward = {
-				remove_ideas = { POR_bad_schooling_1 }
-				add_ideas = { POR_good_schooling }
+			remove_ideas = { POR_bad_schooling_1 }
 			add_timed_idea = { idea = POR_investment days = 120 }
 		}
 	}
@@ -1294,8 +1358,8 @@ focus_tree = {
 		}
 		completion_reward = {
 			swap_ideas = {
-				remove_idea = POR_bad_schooling_5
-				add_idea = POR_bad_schooling_4
+				remove_idea = POR_bad_schooling_1
+				add_idea = POR_bad_schooling_0
 			}
 			add_timed_idea = { idea = POR_low_school_investment days = 180 }
 		}
@@ -1377,10 +1441,10 @@ focus_tree = {
 					level = 4
 					instant_build = yes
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -1436,7 +1500,7 @@ focus_tree = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 				add_building_construction = {
