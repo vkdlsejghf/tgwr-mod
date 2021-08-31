@@ -275,6 +275,13 @@ focus_tree = {
 			focus = por_civil
 		}
 		completion_reward = {
+			create_country_leader = {
+				name = "Manuel de Arriaga"
+				picture = "gfx/leaders/POR/POR_manuel_de_arriaga.dds" 
+				expire = "1935.1.1"
+				ideology = social_liberalism 
+				traits = { trait_social_liberalism } 
+			}
 			add_popularity = {
 				ideology = democratic
 				popularity = 0.05
