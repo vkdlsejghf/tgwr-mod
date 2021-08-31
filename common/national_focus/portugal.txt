@@ -275,6 +275,9 @@ focus_tree = {
 			focus = por_civil
 		}
 		completion_reward = {
+			hidden_effect = {
+			
+			}
 			create_country_leader = {
 				name = "Manuel de Arriaga"
 				picture = "gfx/leaders/POR/POR_manuel_de_arriaga.dds" 
@@ -733,6 +736,7 @@ focus_tree = {
 		completion_reward = {
 			add_stability = 0.10
 			add_political_power = 100
+			country_event = ww1_portugal.24
 			add_popularity = {
 				ideology = fascism
 				popularity = 0.1
