@@ -187,15 +187,121 @@ POR_looming_revolution_category = {
 }
 
 POR_foreign_investment_category = {
-	POR_hire_foreign_researchers_decision = {
+	POR_hire_foreign_researchers_decision_5 = {
 		icon = generic_research
-		cost = 30
+		cost = 100
 		days_remove = 90
 		visible = {
 			original_tag = POR
 			POR = {
 				has_completed_focus = por_foreign_purchase
 			}
+			has_idea = POR_bad_schooling_5
+		}
+		available = {
+			original_tag = POR
+			POR = {
+				has_completed_focus = por_foreign_purchase
+			}
+		}
+		modifier = {
+			research_speed_factor = 0.30
+		}
+	}
+	POR_hire_foreign_researchers_decision_4 = {
+		icon = generic_research
+		cost = 100
+		days_remove = 90
+		visible = {
+			original_tag = POR
+			POR = {
+				has_completed_focus = por_foreign_purchase
+			}
+			has_idea = POR_bad_schooling_4
+		}
+		available = {
+			original_tag = POR
+			POR = {
+				has_completed_focus = por_foreign_purchase
+			}
+		}
+		modifier = {
+			research_speed_factor = 0.25
+		}
+	}
+	POR_hire_foreign_researchers_decision_3 = {
+		icon = generic_research
+		cost = 100
+		days_remove = 90
+		visible = {
+			original_tag = POR
+			POR = {
+				has_completed_focus = por_foreign_purchase
+			}
+			has_idea = POR_bad_schooling_3
+		}
+		available = {
+			original_tag = POR
+			POR = {
+				has_completed_focus = por_foreign_purchase
+			}
+		}
+		modifier = {
+			research_speed_factor = 0.30
+		}
+	}
+	POR_hire_foreign_researchers_decision_2 = {
+		icon = generic_research
+		cost = 100
+		days_remove = 90
+		visible = {
+			original_tag = POR
+			POR = {
+				has_completed_focus = por_foreign_purchase
+			}
+			has_idea = POR_bad_schooling_2
+		}
+		available = {
+			original_tag = POR
+			POR = {
+				has_completed_focus = por_foreign_purchase
+			}
+		}
+		modifier = {
+			research_speed_factor = 0.25
+		}
+	}
+	POR_hire_foreign_researchers_decision_1 = {
+		icon = generic_research
+		cost = 100
+		days_remove = 90
+		visible = {
+			original_tag = POR
+			POR = {
+				has_completed_focus = por_foreign_purchase
+			}
+			has_idea = POR_bad_schooling_1
+		}
+		available = {
+			original_tag = POR
+			POR = {
+				has_completed_focus = por_foreign_purchase
+			}
+		}
+		modifier = {
+			research_speed_factor = 0.30
+		}
+	}
+	POR_hire_foreign_researchers_decision_0 = {
+		icon = generic_research
+		cost = 100
+		days_remove = 90
+		visible = {
+			original_tag = POR
+			POR = {
+				has_completed_focus = por_foreign_purchase
+			}
+			has_idea = POR_bad_schooling_0
 		}
 		available = {
 			original_tag = POR
@@ -217,6 +323,7 @@ POR_foreign_investment_category = {
 			POR = {
 				has_completed_focus = por_foreign_purchase
 			}
+			has_completed_focus = por_school_expensive_5
 		}
 		available = {
 			original_tag = POR
@@ -225,13 +332,13 @@ POR_foreign_investment_category = {
 			}
 		}
 		modifier = {
-			research_speed_factor = -0.1
+			research_speed_factor = -0.5
 		}
 		complete_effect = {
 			POR = {
 				add_tech_bonus = {
 					name = industrial_bonus
-					bonus = 1
+					bonus = 1.5
 					uses = 3
 					category = industry
 				}
