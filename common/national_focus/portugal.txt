@@ -691,7 +691,6 @@ focus_tree = {
 			
 			hidden_effect = {
 				retire_ideology_leader = neutrality
-				retire_ideology_leader = democratic
 				create_country_leader = { 
 					name = "Antonio de Oliveira Salazar" 
 					picture = "gfx/leaders/POR/portrait_por_antonio_de_oliveira_salazar.dds" 
@@ -699,13 +698,6 @@ focus_tree = {
 					ideology = despotism
 					traits = { conservative_nationalist military_dictator trait_despotism } 
 				}
-			}
-			create_country_leader = {
-				name = "Teófilo Braga"
-				picture = "gfx/leaders/POR/POR_teofilo_braga.dds" 
-				expire = "1935.1.1"
-				ideology = social_liberalism 
-				traits = { trait_social_liberalism } 
 			}
 		}
 	}
