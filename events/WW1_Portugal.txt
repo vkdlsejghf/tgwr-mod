@@ -22,7 +22,7 @@ country_event = {
 	}
 }
 
-## This second event also was here before, though maybe we could just have portugal start the game with a claim on angola and mozambique? idk
+## This second event also was here before
 # ANGOLA IS LOST
 ###########################
 country_event = {
@@ -695,5 +695,91 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = ww1_portugal.22.a
+	}
+}
+##NEGOTIATING PINK MAP CLAIMS WITH GERMANY (GERMAN EVENT)
+country_event = {
+	id = ww1_portugal.23
+	title = ww1_portugal.23.t
+	desc = ww1_portugal.23.d
+	picture = GFX_report_event_generic_read_write
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	##GERMAN ACCEPTS
+	option = {
+		name = ww1_portugal.23.a
+		if = {
+			limit = {
+				771 = {
+					is_claimed_by = GER
+				}
+			}
+			771 = {
+				remove_claim_by = GER
+			}
+		}
+		if = {
+			limit = {
+				770 = {
+					is_claimed_by = GER
+				}
+			}
+			770 = {
+				remove_claim_by = GER
+			}
+		}
+		if = {
+			limit = {
+				545 = {
+					is_claimed_by = GER
+				}
+			}
+			545 = {
+				remove_claim_by = GER
+			}
+		}
+		
+		
+		if = {
+			limit = {
+				771 = {
+					is_owned_by = GER
+				}
+			}
+			POR = {
+				transfer_state = 771
+			}
+		}
+		if = {
+			limit = {
+				770 = {
+					is_owned_by = GER
+				}
+			}
+			POR = {
+				transfer_state = 770
+			}
+		}
+		if = {
+			limit = {
+				545 = {
+					is_owned_by = GER
+				}
+			}
+			POR = {
+				transfer_state = 545
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	##GERMAN DENIES
+	option = {
+		name = ww1_portugal.23.b
+		ai_chance = {
+			factor = 0
+		}
 	}
 }
