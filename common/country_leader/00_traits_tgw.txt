@@ -2,7 +2,7 @@ leader_traits = {
 	military_dictator = {
 		random = no
 		party_popularity_stability_factor = -0.5
-		stability_weekly = 0.5
+		stability_weekly = 0.005 #lmao this was 0.5
 		
 	}
 	patriota = {
