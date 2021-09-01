@@ -833,6 +833,7 @@ country_event = {
 			ideology = social_liberalism 
 			traits = { trait_social_liberalism } 
 		}
+		add_stability = -0.02
 	}
 }
 
@@ -868,6 +869,10 @@ country_event = {
 			traits = { trait_social_liberalism } 
 		}
 		add_stability = -0.1
+		add_popularity = {
+			ideology = democratic
+			popularity = -0.05
+		}
 	}
 }
 
@@ -887,9 +892,7 @@ country_event = {
 	fire_only_once = yes
 	option = {
 		name = ww1_portugal.27.a
-		hidden_effect = {
-			retire_ideology_leader = democratic
-		}
+		retire_ideology_leader = democratic
 		create_country_leader = {
 			name = "Bernardino Machado"
 			picture = "gfx/leaders/POR/POR_manuel_de_arriaga.dds" 
@@ -920,14 +923,19 @@ country_event = {
 		hidden_effect = {
 			retire_ideology_leader = democratic
 		}
-		create_country_leader = {
-			name = "Sidónio Pais"
-			picture = "gfx/leaders/POR/POR_manuel_de_arriaga.dds" 
-			expire = "1935.1.1"
-			ideology = conservatism
-			traits = {  } 
+		set_politics = {
+			ruling_party = neutrality
+			elections_allowed = no
 		}
-		#THIS WAS BASICALLY A COUP
+		#THIS WAS A COUP
+		add_popularity = {
+			ideology = democratic
+			popularity = -0.1
+		}
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.2
+		}
 		add_stability = -0.15
 	}
 }
@@ -952,6 +960,10 @@ country_event = {
 		hidden_effect = {
 			retire_ideology_leader = democratic
 		}
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = yes
+		}
 		create_country_leader = {
 			name = "João do Canto e Castro"
 			picture = "gfx/leaders/POR/POR_manuel_de_arriaga.dds" 
@@ -959,7 +971,11 @@ country_event = {
 			ideology = conservatism
 			traits = {  } 
 		}
-		add_stability = -0.1
+		add_popularity = {
+			ideology = neutrality
+			popularity = -0.1
+		}
+		add_stability = -0.2
 	}
 }
 
@@ -1024,6 +1040,10 @@ country_event = {
 			traits = {  } 
 		}
 		add_stability = 0.2 #WOW, A FULL MANDATE? EVERYTHING WILL BE GOOD FROM NOW ON!
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.1
+		}
 	}
 }
 
@@ -1056,6 +1076,10 @@ country_event = {
 			traits = {  } 
 		}
 		add_stability = -0.05 #LOL NO
+		add_popularity = {
+			ideology = democratic
+			popularity = -0.1
+		}
 	}
 }
 
@@ -1192,10 +1216,15 @@ country_event = {
 	}
 	option = {
 		name = ww1_portugal.33.b
-		remove_idea = POR_monarchy
+		remove_ideas = { POR_monarchy }
 		set_politics = {
 			ruling_party = democratic
 			elections_allowed = yes
+		}
+		set_cosmetic_tag = POR_republic
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.5
 		}
 	}
 }
