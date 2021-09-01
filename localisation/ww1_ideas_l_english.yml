@@ -1670,6 +1670,9 @@
  POR_payment_olivenca:0 "Paying for Galiza"
  POR_payment_pink_map:0 "Paying for the Pink Map"
  POR_payment_receive:0 "Receiving Payment from the Portuguese"
+ POR_traitor:0 "Traitor"
+ POR_traitor_desc:0 "The king is a descendent of a line of traitors."
+ POR_no_traitors:0 "No Traitors in the Throne of Portugal!"
  
  #NORWAY
  NOR_unionsopplosningen:0 "Unionsoppløsningen"
