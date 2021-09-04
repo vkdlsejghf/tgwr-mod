@@ -481,8 +481,8 @@
  FIN_democratic_party_long:0 "Kansallinen Kokoomus"
  FIN_democratic_liberal_party:0 "KE"
  FIN_democratic_partyl_liberal_long:0 "Kansallinen Edistyspuolue"
- FIN_communism_party:0 "SKP"
- FIN_communism_party_long:0 "Suomen Kommunistinen Puolue"
+ FIN_communism_party:0 "SDP"
+ FIN_communism_party_long:0 "Suomen Sosialidemokraattinen Puolue"
  FIN_fascism_party:0 "Jääkäriliike"
  
  DEN_democratic_party:0 "Radikale Venstre"
@@ -730,9 +730,10 @@
 
  ETH_neutrality_party:0 "House of Solomon"
  
- ALB_neutrality_party:0 "Royalists"
- ALB_democratic_party:0 "Progressive Party"
- ALB_democratic_party_long:0 "Progressive Party of Albania"
+ ALB_neutrality_party:0 "Qeveria Toptanit"
+ ALB_neutrality_party_long:0 "Qeveria e Esat pashë Toptanit"
+ ALB_neutrality_prince_party:0 "House of Wied-Neuwied"
+ ALB_democratic_party:0 "Kuvendi i Vlorës"
  
  BOL_democratic_party:0 "Partido Republicano"
  BOL_neutrality_party:0 "Partido Liberal"
