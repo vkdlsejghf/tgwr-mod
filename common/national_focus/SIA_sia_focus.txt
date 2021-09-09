@@ -349,6 +349,7 @@ focus_tree = {
 				popularity = 0.3
 			}
 		}
+		ai_will_do = { factor = 10 }
 	}
 	#Focus for Palace Revolt
 	focus = {
@@ -364,6 +365,62 @@ focus_tree = {
 		completion_reward = {
 			country_event = { id = ww1_siam.11 }
 		}
+		ai_will_do = { factor = 10 }
+	}
+	focus = {
+		id = SIA_estalish_republic
+		x = 26
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		available = {
+			has_civil_war = no
+		}
+		mutually_exclusive = { focus = SIA_establish_constitutional_monarchy }
+		prerequisite = {
+			focus = SIA_palace_revolt
+		}
+		ai_will_do = { factor = 5 }
+	}
+	focus = {
+		id = SIA_establish_constitutional_monarchy
+		x = 24
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		available = {
+			has_civil_war = no
+		}
+		mutually_exclusive = { focus = SIA_estalish_republic }
+		prerequisite = {
+			focus = SIA_palace_revolt
+		}
+		ai_will_do = { factor = 5 }
+	}
+	focus = {
+		id = SIA_create_a_constitution
+		x = 25
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = {
+			SIA_estalish_republic
+		}
+		prerequisite = {
+			SIA_establish_constitutional_monarchy
+		}
+		ai_will_do = { factor = 5 }
+	}
+	focus = {
+		id = SIA_improve_education
+		x = 25
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = {
+			SIA_create_a_constitution
+		}
+		ai_will_do = { factor = 5 }
 	}
 	#End of focuses
 }

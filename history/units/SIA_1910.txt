@@ -26,4 +26,28 @@ units = {
 		division_template="Infantry Division"
 		start_experience_factor=0.1
 		}
+	division = { 
+		name = "3. Thai Infantry Div."
+		location = 12122 # Phet Buri
+		division_template="Infantry Division"
+		start_experience_factor=0.1
+		}
+	division = { 
+		name = "4. Thai Infantry Div."
+		location = 10411
+		division_template="Infantry Division"
+		start_experience_factor=0.1
+		}
+	division = { 
+		name = "5. Thai Infantry Div."
+		location = 10411
+		division_template="Infantry Division"
+		start_experience_factor=0.1
+		}
+	division = { 
+		name = "6. Thai Infantry Div."
+		location = 10411 
+		division_template="Infantry Division"
+		start_experience_factor=0.1
+		}
 }
