@@ -404,10 +404,10 @@ focus_tree = {
 		cost = 10
 		available_if_capitulated = yes
 		prerequisite = {
-			SIA_estalish_republic
+			focus = SIA_estalish_republic
 		}
 		prerequisite = {
-			SIA_establish_constitutional_monarchy
+			focus = SIA_establish_constitutional_monarchy
 		}
 		ai_will_do = { factor = 5 }
 	}
@@ -418,7 +418,7 @@ focus_tree = {
 		cost = 10
 		available_if_capitulated = yes
 		prerequisite = {
-			SIA_create_a_constitution
+			focus = SIA_create_a_constitution
 		}
 		ai_will_do = { factor = 5 }
 	}
