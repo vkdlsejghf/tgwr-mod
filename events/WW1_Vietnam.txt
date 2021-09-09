@@ -174,23 +174,6 @@ country_event = {
 		ai_chance = {
 			factor = 100
 		}
-		if = {
-			limit = {
-				country_exists = SIA
-				any_country = {
-					has_country_flag = FRA_nationalist_france_flag
-					owns_state = 822
-				}
-				SIA = {
-					NOT = {
-						has_country_flag = great_war_loser
-					}
-				}
-			}
-			SIA = {
-				transfer_state = 822
-			}
-		}
 		every_state = {
 			limit = {
 				OR = {
@@ -227,17 +210,31 @@ country_event = {
 		}
 		if = {
 			limit = {
-				GER = {
-					owns_state = 336
-					owns_state = 333
-					owns_state = 334
+				MAL = {
+					exists = yes
+					is_subject = no
 				}
 			}
 			OST = {
-				transfer_state = 336
-				transfer_state = 333
-				transfer_state = 334
+				annex_country = {
+					target = MAL
+					transfer_troops = no
+				}
+				add_state_core = 333
+				add_state_core = 336
+				set_capital = 336
 			}
+		}
+		every_state = {
+			limit = {
+				is_owned_by = GER
+				OR = {
+					state = 336
+					state = 333
+					state = 334
+				}
+			}
+			OST= { transfer_state = PREV }
 		}
 		GER = {
 			if = {
@@ -258,6 +255,36 @@ country_event = {
 				}
 				set_nationality = OST
 			}
+		}
+		if = {
+			limit = {
+				SIA = {
+					exists = yes
+					OR = {
+						NOT = {
+							has_country_flag = great_war_loser
+							GER = { has_completed_focus = GER_ostasien }
+						}
+						has_country_flag = great_war_winner
+					}
+				}
+			}
+			every_state = {
+				limit = {
+					is_owned_by = OST
+					OR = {
+						state = 819
+						state = 822
+					}
+				}
+				SIA = {
+					transfer_state = PREV
+				}
+			}
+		}
+		OST = {
+			add_ideas = GER_idea_colonial_exploitation_interwar
+			add_ideas = GER_dysfunctional_government
 		}
 	}
 	option = {

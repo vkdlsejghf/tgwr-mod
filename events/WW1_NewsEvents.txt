@@ -25,10 +25,32 @@ news_event = {
 	immediate = {
 		set_global_flag = kis_war
 		hidden_effect = {
-			add_named_threat = { 
-   				threat = 10
-   				name = kis_news.1.t
-			}
+			random_country = {
+				limit = {
+					OR = {
+						AND = {
+							OR = {
+								tag = FRA
+								tag = ENG
+								tag = RUS
+							}
+							has_offensive_war_with = GER
+						}
+						AND = {
+							tag = GER
+							OR = {
+								has_offensive_war_with = FRA
+								has_offensive_war_with = ENG
+								has_offensive_war_with = RUS								
+							}							
+						}
+					}
+				}
+				add_named_threat = { 
+   					threat = 10
+   					name = kis_news.1.t
+				}				
+			}					
 		}
 	}
 	
@@ -44,7 +66,7 @@ news_event = {
 			}
 			hidden_effect = {
 				play_song = "SE_great_war"
-            	set_country_flag = se_great_war
+				set_country_flag = se_great_war
 			}
 		}
 		ai_chance = { factor = 100 }
@@ -148,7 +170,7 @@ news_event = {
 			10 = { is_owned_by = RUS }
 			AND = {
 				10 = { is_owned_by = POL }
-				POL = { is_puppet_of = RUS }
+				POL = { is_subject_of = RUS }
 			}
 		}
 		NOT = { has_global_flag = fall_of_warsaw }
@@ -665,6 +687,19 @@ news_event = {
 			any_country = {
 				owns_state = 6
 				has_war = no
+			}
+			has_global_flag = kis_war
+		}
+	}
+	desc = {
+		text = kis_news.120.d_olympic_no_great_war
+		trigger = {
+			any_country = {
+				owns_state = 6
+				has_war = no
+			}
+			NOT = {
+				has_global_flag = kis_war
 			}
 		}
 	}

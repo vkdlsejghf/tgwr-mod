@@ -10,7 +10,7 @@ focus_tree = {
 	country = {
 		factor = 0
 		modifier = {
-			add = 1000
+			add = 1000 
 			tag = CAN
 		}
 	}
@@ -33,6 +33,9 @@ focus_tree = {
 		
 		completion_reward = {
 			country_event = canada.2
+		}
+		search_filters = {
+			FOCUS_FILTER_HISTORICAL
 		}
 
 	}
@@ -191,6 +194,9 @@ focus_tree = {
 			}
 			country_event = canada.3
 		}
+		search_filters = {
+			FOCUS_FILTER_HISTORICAL
+		}
 
 	}
 	
@@ -213,7 +219,7 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-			hidden_effect = {set_cosmetic_tag = CAN_democratic_republic}
+			hidden_effect = {set_cosmetic_tag = CAN_republic}
 
 			swap_ideas = {
 				remove_idea = CAN_republic_americanism
@@ -453,6 +459,9 @@ focus_tree = {
 				category = electronics
 				category  = industry
 			}
+		}
+		search_filters = {
+			FOCUS_FILTER_HISTORICAL
 		}
 
 	}
@@ -1369,7 +1378,9 @@ focus_tree = {
 						picture = "gfx/leaders/CAN/CAN_albert_grey.dds"
 						expire = "1935.1.1"
 						ideology = autocracy
-						traits = {}
+						traits = {
+							trait_autocracy
+						}
 					}
 					
 					set_cosmetic_tag = CUB_CAN
@@ -1916,7 +1927,7 @@ focus_tree = {
 		
 		completion_reward = {
 			add_tech_bonus = {
-				
+				name = CAN_assembly_line
 				bonus = 0.75
 				uses = 3
 				technology = machine_tools2
@@ -2115,6 +2126,7 @@ focus_tree = {
 		
 		completion_reward = {
 			add_tech_bonus = {
+				name = CAN_ross_company
 				bonus = 0.9
 				uses = 1
 				category = infantry_weapons

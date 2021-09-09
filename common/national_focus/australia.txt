@@ -7,104 +7,118 @@ focus_tree = {
 			tag = AST
 		}
 	}
+
+	####################################
+	#####	LEGALBEAGLE'S FOCUSES 	####
+	####################################
 	#Focus for Advisory Council on Science and Industry
 	focus = {
 		id = Australia_advisory_council_on_science_and_industry
 		icon = GFX_goal_generic_scientific_exchange
-		x = 27
+		x = 45
 		y = 9
 		cost = 10
-		
-		prerequisite = { focus = Australia_open_the_university_of_queensland }
-		search_filters = { FOCUS_FILTER_RESEARCH } 
+		prerequisite = {
+			focus = Australia_open_the_university_of_queensland
+		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
-			add_research_slot= 1
+			add_research_slot = 1
 		}
 	}
-
 	#Focus for 1915 Imperial Loans
 	focus = {
 		id = Australia_1915_imperial_loans
 		icon = GFX_focus_hol_the_foundations_of_defense
-		x = 21
+		x = 39
 		y = 10
 		cost = 10
-		
-		prerequisite = { focus = Australia_1914_imperial_loans }
-		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		prerequisite = {
+			focus = Australia_1914_imperial_loans
+		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
-			add_offsite_building= { type = industrial_complex level = 2 }
+			add_offsite_building = {
+				type = industrial_complex
+				level = 2
+			}
 		}
 	}
-
 	#Focus for War Precautions Act 1914
 	focus = {
 		id = Australia_war_precautions_act_1914
 		icon = GFX_focus_hol_the_foundations_of_defense
-		x = 23
+		x = 41
 		y = 9
 		cost = 10
-		
-		prerequisite = { focus = Australia_imperial_security }
-		search_filters = { FOCUS_FILTER_POLITICAL } 
+		prerequisite = {
+			focus = Australia_imperial_security
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
-			add_stability = -0.10
+			add_stability = -0.1
 			add_political_power = 100
 			if = {
-				limit = { has_dlc = "La Resistance" }
+				limit = {
+					has_dlc = "La Resistance"
+				}
 				create_intelligence_agency = yes
 				else = {
-					add_tech_bonus= {
-						bonus = 1.0
-						uses = 1 
+					add_tech_bonus = {
+						bonus = 1
+						uses = 1
 						category = encryption_tech
 					}
 				}
 			}
 		}
 	}
-
 	#Focus for Developing The Federal Territory
 	focus = {
 		id = Australia_developing_the_federal_territory
 		icon = GFX_focus_generic_self_management
-		x = 26
+		x = 44
 		y = 1
 		cost = 10
-		
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
-			add_political_power= 150
-				285 = {
-				 add_building_construction = {
-					 type = industrial_complex
-					 level = 1
-					 instant_build = yes
-				 }
+			add_political_power = 150
+			285 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
-}
-
 	#Focus for Cockatoo Island Dockyard
 	focus = {
 		id = Australia_cockatoo_island_dockyard
 		icon = GFX_goal_generic_construct_naval_dockyard
-		x = 1
+		x = 19
 		y = 3
 		cost = 10
-		
-		prerequisite = { focus = Australia_the_royal_australian_navy }
+		prerequisite = {
+			focus = Australia_the_royal_australian_navy
+		}
 		ai_will_do = {
 			factor = 1
 		}
@@ -121,22 +135,22 @@ focus_tree = {
 			}
 		}
 	}
-
 	#Focus for AIF Inventions Research Section
 	focus = {
 		id = Australia_aif_inventions_research_section
 		icon = GFX_goal_tfv_generic_tech_sharing
-		x = 29
+		x = 47
 		y = 10
 		cost = 10
-		
-		prerequisite = { 
-			focus = Australia_amalgamated_wireless_australasia_limited 
+		prerequisite = {
+			focus = Australia_amalgamated_wireless_australasia_limited
 		}
-		prerequisite = { 
-			focus = Australia_advisory_council_on_science_and_industry 
+		prerequisite = {
+			focus = Australia_advisory_council_on_science_and_industry
 		}
-		search_filters = { FOCUS_FILTER_RESEARCH } 
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
 		ai_will_do = {
 			factor = 1
 		}
@@ -144,40 +158,42 @@ focus_tree = {
 			add_research_slot = 1
 		}
 	}
-
 	#Focus for Lithgow Arms
 	focus = {
 		id = Australia_lithgow_arms
 		icon = GFX_goal_continuous_reduce_training_time
-		x = 30
+		x = 48
 		y = 7
 		cost = 10
-		
-		prerequisite = { focus = Australia_broken_hill_propriety_steelworks }
+		prerequisite = {
+			focus = Australia_broken_hill_propriety_steelworks
+		}
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
 			285 = {
-			  add_building_construction = {
-				  type = arms_factory
-				  level = 2
-				  instant_build = yes
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
 				}
-			  }
+			}
 		}
 	}
-
 	#Focus for Imperial Security
 	focus = {
 		id = Australia_imperial_security
 		icon = GFX_focus_eng_imperial_federation
-		x = 23
+		x = 41
 		y = 8
 		cost = 10
-		
-		prerequisite = { focus = Australia_declaring_our_new_capital }
-		search_filters = { FOCUS_FILTER_ANNEXATION } 
+		prerequisite = {
+			focus = Australia_declaring_our_new_capital
+		}
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
 		ai_will_do = {
 			factor = 1
 		}
@@ -187,297 +203,357 @@ focus_tree = {
 			add_manpower = 20000
 		}
 	}
-
 	#Focus for Broken Hill Propriety steelworks
 	focus = {
 		id = Australia_broken_hill_propriety_steelworks
 		icon = GFX_focus_generic_steel
-		x = 30
+		x = 48
 		y = 6
 		cost = 10
-		
-		prerequisite = { focus = Australia_open_the_marburg_railway_line }
+		prerequisite = {
+			focus = Australia_open_the_marburg_railway_line
+		}
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
-			add_resource= { 
-			 type = steel 
-			 amount = 3 
-			 state = 285
-			 }
-
-			 random_owned_controlled_state = {
-			  limit = {
-			   free_building_slots = {
-				building = industrial_complex
-				 size > 0
-				  include_locked = yes
-			   }
-			  } 
-				   add_extra_state_shared_building_slots = 1
-					add_building_construction = {
-					 type = industrial_complex
-					  level = 1
-					   instant_build = yes
+			add_resource = {
+				type = steel
+				amount = 3
+				state = 285
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
 					}
-						set_state_flag = AST
-			 }
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = AST
+			}
 		}
 	}
-
 	#Focus for Hold The Conscription Plebiscite - should be fixed
 	focus = {
 		id = Australia_hold_the_conscription_plebiscite
 		icon = GFX_focus_usa_voter_registration_act
-		x = 25
+		x = 43
 		y = 11
 		cost = 15
-		
-		prerequisite = { focus = Australia_imperial_security }
-		search_filters = { FOCUS_FILTER_POLITICAL } 
+		prerequisite = {
+			focus = Australia_imperial_security
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
 		ai_will_do = {
 			factor = 1
 		}
 		available = {
-			date > 1916.08.28 
+			date > 1916.08.28
 			AND = {
 				original_tag = AST
-				has_war_with= GER
+				has_war_with = GER
 			}
 		}
 		completion_reward = {
-		custom_effect_tooltip = Australia_conscription_plebiscite_tt
-		}		
+			custom_effect_tooltip = Australia_conscription_plebiscite_tt
+		}
 	}
-
 	#Focus for Naval and Military Expeditionary Force - fixed
 	focus = {
 		id = Australia_naval_and_military_expeditionary_force
 		icon = GFX_goal_generic_amphibious_assault
-		x = 6
+		x = 24
 		y = 3
 		cost = 10
-		
-		prerequisite = { 
-			focus = Australia_the_naval_defence_act 
+		prerequisite = {
+			focus = Australia_the_naval_defence_act
 		}
-		prerequisite = { 
-			focus = Australia_compulsory_military_training 
+		prerequisite = {
+			focus = Australia_compulsory_military_training
 		}
 		available = {
-			has_war_with= GER
+			has_war_with = GER
 		}
-		search_filters = { FOCUS_FILTER_RESEARCH } 
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
-			add_ideas= AST_idea_Military_Naval_Force
+			add_ideas = AST_idea_Military_Naval_Force
 			division_template = {
-			 name = "Military Naval Force"
-			  regiments = {
-			   infantry = { x = 0 y = 0 }
-				marine = { x = 0 y = 1 }
+				name = "Military Naval Force"
+				regiments = {
+					infantry = {
+						x = 0
+						y = 0
+					}
+					marine = {
+						x = 0
+						y = 1
+					}
 				}
-
 			}
-
-			 random_state = {
-				limit = { ROOT = { has_full_control_of_state = PREV } }
-				prioritize = { 521 }
+			random_state = {
+				limit = {
+					ROOT = {
+						has_full_control_of_state = PREV
+					}
+				}
+				prioritize = {
+					521
+				}
 				create_unit = {
-					division = "name = \"Naval and Military Expeditionary Force\" division_template = \"Military Naval Force\" start_experience_factor = 0.5" 
+					division = "name = \"Naval and Military Expeditionary Force\" division_template = \"Military Naval Force\" start_experience_factor = 0.5"
 					owner = AST
 				}
 			}
 		}
 	}
-
 	#Focus for Workers Educational Association
 	focus = {
 		id = Australia_workers_educational_association
 		icon = GFX_focus_generic_military_academy
-		x = 27
+		x = 45
 		y = 5
 		cost = 10
-		
-		prerequisite = { focus = Australia_open_the_commonwealth_bank }
-		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		prerequisite = {
+			focus = Australia_open_the_commonwealth_bank
+		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
-			add_tech_bonus= {
-			 bonus = 0.5 
-			 uses = 2 
-			 category = industry
-		}
-
-		 add_ideas= AST_idea_Workers_Education_Association
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = industry
+			}
+			add_ideas = AST_idea_Workers_Education_Association
 		}
 	}
-
 	#Focus for The Golden Fleece Company
 	focus = {
 		id = Australia_the_golden_fleece_company
 		icon = GFX_goal_generic_improve_relations
-		x = 31
+		x = 49
 		y = 8
 		cost = 10
-		
-		prerequisite = { 
-			focus = Australia_vulcan_engineering_works 
+		prerequisite = {
+			focus = Australia_vulcan_engineering_works
 		}
-		prerequisite = { 
-			focus = Australia_lithgow_arms 
+		prerequisite = {
+			focus = Australia_lithgow_arms
 		}
-		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
 			random_owned_controlled_state = {
-			 limit = {
-			  free_building_slots = {
-			   building = industrial_complex
-				size > 0
-				 include_locked = yes
-			  }
-			 }
-				  add_extra_state_shared_building_slots = 1
-				   add_building_construction = {
-				   type = fuel_silo
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = fuel_silo
 					level = 2
-					 instant_build = yes
-				   }
-					  set_state_flag = AST
+					instant_build = yes
+				}
+				set_state_flag = AST
 			}
 		}
 	}
-
 	#Focus for The First AIF - need to add tool tip that articulates complete effects
 	focus = {
 		id = Australia_the_first_aif
 		icon = GFX_focus_generic_commonwealth_build_infantry
-		x = 10
+		x = 28
 		y = 4
 		cost = 10
-		
-		prerequisite = { focus = Australia_duntroon_military_college }
-		mutually_exclusive = { focus = Australia_federal_army }
-		available = {
-
-		is_in_faction_with= ENG
-
-		AND = {
-		  ENG = {
-		   has_war_with= GER
-		  }
-		 }
+		prerequisite = {
+			focus = Australia_duntroon_military_college
 		}
-		completion_reward = {
-		   custom_effect_tooltip = lessons_war_tt
-			unlock_decision_tooltip = AST_thewesternfront
-			unlock_decision_tooltip = AST_thesinaicampaign
-			unlock_decision_tooltip = AST_baptismatgallipoli
-
-		division_template = {
-			name = "Infantry Division-AIF"
-			 regiments = {
-				 infantry = { x = 0 y = 0 }
-				 infantry = { x = 0 y = 1 }
-				 infantry = { x = 0 y = 2 }
-				 infantry = { x = 1 y = 0 }
-				 infantry = { x = 1 y = 1 }
-				 infantry = { x = 1 y = 2 }
-				 infantry = { x = 2 y = 0 }
-				 infantry = { x = 2 y = 1 }
-				 infantry = { x = 2 y = 2 }
-				 infantry = { x = 2 y = 3 }
-				 }
-				 support = { 
-					 engineer = { x = 0 y = 0 }
-					 artillery = { x = 0 y = 1 }
-					 field_hospital = { x = 0 y = 2 }
-					 } 
-				 }
-			random_state = {
-				limit = { ROOT = { has_full_control_of_state = PREV } }
-				prioritize = { 285 }
-				create_unit = {
-					division = "name = \"1st Division\" division_template = \"Infantry Division-AIF\" start_experience_factor = 0.5" 
-					owner = AST
+		mutually_exclusive = {
+			focus = Australia_federal_army
+		}
+		available = {
+			is_in_faction_with = ENG
+			AND = {
+				ENG = {
+					has_war_with = GER
 				}
 			}
 		}
+		completion_reward = {
+			custom_effect_tooltip = lessons_war_tt
+			unlock_decision_tooltip = AST_thewesternfront
+			unlock_decision_tooltip = AST_thesinaicampaign
+			unlock_decision_tooltip = AST_baptismatgallipoli
+			division_template = {
+				name = "Infantry Division-AIF"
+				regiments = {
+					infantry = {
+						x = 0
+						y = 0
+					}
+					infantry = {
+						x = 0
+						y = 1
+					}
+					infantry = {
+						x = 0
+						y = 2
+					}
+					infantry = {
+						x = 1
+						y = 0
+					}
+					infantry = {
+						x = 1
+						y = 1
+					}
+					infantry = {
+						x = 1
+						y = 2
+					}
+					infantry = {
+						x = 2
+						y = 0
+					}
+					infantry = {
+						x = 2
+						y = 1
+					}
+					infantry = {
+						x = 2
+						y = 2
+					}
+					infantry = {
+						x = 2
+						y = 3
+					}
+				}
+				support = {
+					engineer = {
+						x = 0
+						y = 0
+					}
+					artillery = {
+						x = 0
+						y = 1
+					}
+					field_hospital = {
+						x = 0
+						y = 2
+					}
+				}
+			}
+			random_state = {
+				limit = {
+					ROOT = {
+						has_full_control_of_state = PREV
+					}
+				}
+				prioritize = {
+					285
+				}
+				create_unit = {
+					division = "name = \"1st Division\" division_template = \"Infantry Division-AIF\" start_experience_factor = 0.5"
+					owner = AST
+				}
+			}
+			set_technology = {
+				bicycle_infantry = 1
+			}
+		}
 	}
-
 	#Focus for Open the Commonwealth Bank
 	focus = {
 		id = Australia_open_the_commonwealth_bank
 		icon = GFX_focus_eng_concessions_to_the_trade_unions
-		x = 31
+		x = 49
 		y = 4
 		cost = 10
-		
-		prerequisite = { focus = Australia_the_commonwealth_bank_act }
+		prerequisite = {
+			focus = Australia_the_commonwealth_bank_act
+		}
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
-			add_tech_bonus= {
-			 bonus = 0.5 
-			  uses = 1 
-			   category = industry 
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = industry
 			}
-				random_owned_controlled_state = {
-				 limit = {
-				  free_building_slots = {
-				   building = industrial_complex
-					size > 0
-					 include_locked = yes
-				  }
-				 }
-					  add_extra_state_shared_building_slots = 1
-					   add_building_construction = {
-						type = industrial_complex
-						 level = 1
-						  instant_build = yes
-					   }
-						   set_state_flag = AST
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = AST
 			}
 		}
 	}
-
 	#Focus for The Maternity Allowance Act
 	focus = {
 		id = Australia_the_maternity_allowance_act
 		icon = GFX_goal_generic_improve_relations
-		x = 21
+		x = 39
 		y = 4
 		cost = 10
-		
-		prerequisite = { focus = Australia_declaring_our_new_capital }
-		search_filters = { FOCUS_FILTER_MANPOWER } 
+		prerequisite = {
+			focus = Australia_declaring_our_new_capital
+		}
+		search_filters = {
+			FOCUS_FILTER_MANPOWER
+		}
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
-			add_ideas= AST_idea_Maternity_Allowance
+			add_ideas = AST_idea_Maternity_Allowance
 		}
 	}
-
-
 	#Focus for Declaring Our New Capital
 	focus = {
 		id = Australia_declaring_our_new_capital
 		icon = GFX_focus_generic_the_giant_wakes
-		x = 21
+		x = 39
 		y = 3
 		cost = 10
-		
-		prerequisite = { focus = Australia_begin_laying_the_ground_work }
+		prerequisite = {
+			focus = Australia_begin_laying_the_ground_work
+		}
 		ai_will_do = {
 			factor = 100
 			modifier = {
@@ -489,84 +565,94 @@ focus_tree = {
 		available = {
 		}
 		completion_reward = {
-			add_political_power= 150
+			add_political_power = 150
 			set_capital = 285
-
 		}
 	}
-
 	#Focus for Amalgamated Wireless Australasia Limited
 	focus = {
 		id = Australia_amalgamated_wireless_australasia_limited
 		icon = GFX_goal_generic_radar
-		x = 31
+		x = 49
 		y = 9
 		cost = 10
-		
-		prerequisite = { focus = Australia_the_golden_fleece_company }
-		search_filters = { FOCUS_FILTER_RESEARCH } 
+		prerequisite = {
+			focus = Australia_the_golden_fleece_company
+		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
-			add_tech_bonus= {
-			 bonus = 0.5 
-			  uses = 2 
-			   category = electronics
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = electronics
 			}
 		}
 	}
-
 	#Focus for The Royal Australian Navy
 	focus = {
 		id = Australia_the_royal_australian_navy
 		icon = GFX_focus_generic_destroyer
-		x = 3
+		x = 21
 		y = 2
 		cost = 10
-		
-		prerequisite = { focus = Australia_the_naval_defence_act }
+		prerequisite = {
+			focus = Australia_the_naval_defence_act
+		}
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
-			navy_experience= 25
-
-			hidden_effect = { add_manpower = 650 }
-					
-					ENG = {
-						create_equipment_variant = {
-							name = "River Class"	
-							type = ship_hull_light_1
-							name_group = AST_DD_HISTORICAL
-							parent_version = 0
-							modules = {
-								fixed_ship_battery_slot = ship_light_battery_1
-								fixed_ship_anti_air_slot = ship_anti_air_1
-								fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-								fixed_ship_radar_slot = empty
-								fixed_ship_engine_slot = light_ship_engine_2
-								fixed_ship_torpedo_slot = ship_torpedo_1
-								mid_1_custom_slot = ship_mine_layer_1
-								rear_1_custom_slot = ship_depth_charge_1
-							}
-						}
+			navy_experience = 25
+			hidden_effect = {
+				add_manpower = 650
+			}
+			ENG = {
+				create_equipment_variant = {
+					name = "River Class"
+					type = ship_hull_light_1
+					name_group = AST_DD_HISTORICAL
+					parent_version = 0
+					modules = {
+						fixed_ship_battery_slot = ship_light_battery_1
+						fixed_ship_anti_air_slot = ship_anti_air_1
+						fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+						fixed_ship_radar_slot = empty
+						fixed_ship_engine_slot = light_ship_engine_2
+						fixed_ship_torpedo_slot = ship_torpedo_1
+						mid_1_custom_slot = ship_mine_layer_1
+						rear_1_custom_slot = ship_depth_charge_1
 					}
-					create_ship = { type = ship_hull_light_1 equipment_variant = "River Class" creator = ENG name = "HMAS Parramatta" }
-					create_ship = { type = ship_hull_light_1 equipment_variant = "River Class" creator = ENG name = "HMAS Yarra" }
-				
+				}
+			}
+			create_ship = {
+				type = ship_hull_light_1
+				equipment_variant = "River Class"
+				creator = ENG
+				name = "HMAS Parramatta"
+			}
+			create_ship = {
+				type = ship_hull_light_1
+				equipment_variant = "River Class"
+				creator = ENG
+				name = "HMAS Yarra"
+			}
 		}
 	}
-
 	#Focus for Duntroon Military College
 	focus = {
 		id = Australia_duntroon_military_college
 		icon = GFX_focus_generic_military_mission
-		x = 14
+		x = 32
 		y = 3
 		cost = 10
-		
-		prerequisite = { focus = Australia_compulsory_military_training }
+		prerequisite = {
+			focus = Australia_compulsory_military_training
+		}
 		ai_will_do = {
 			factor = 1
 		}
@@ -574,139 +660,141 @@ focus_tree = {
 			add_ideas = AST_idea_Duntroon
 		}
 	}
-
 	#Focus for Begin Laying The Ground Work
 	focus = {
 		id = Australia_begin_laying_the_ground_work
 		icon = GFX_goal_generic_position_armies
-		x = 21
+		x = 39
 		y = 2
 		cost = 10
-		
-		prerequisite = { focus = Australia_developing_the_federal_territory }
+		prerequisite = {
+			focus = Australia_developing_the_federal_territory
+		}
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
 			AST = {
-			 285 = { 
-			  add_building_construction = {
-			   type = infrastructure
-			   level = 1
-			   instant_build = yes
-			  }
-			 }
+				285 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
 			}
 		}
 	}
-
 	#Focus for The Commonwealth Bank Act
 	focus = {
 		id = Australia_the_commonwealth_bank_act
 		icon = GFX_goal_tripartite_pact
-		x = 31
+		x = 49
 		y = 3
 		cost = 10
-		
-		prerequisite = { focus = Australia_the_australian_dollar }
+		prerequisite = {
+			focus = Australia_the_australian_dollar
+		}
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
-			add_tech_bonus= {
-			 bonus = 0.5 
-			  uses = 1 
-			   category = industry 
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = industry
 			}
 		}
 	}
-
 	#Focus for The Australian Dollar
 	focus = {
 		id = Australia_the_australian_dollar
 		icon = GFX_focus_usa_reestablish_the_gold_standard
-		x = 31
+		x = 49
 		y = 2
 		cost = 10
-		
-		prerequisite = { focus = Australia_developing_the_federal_territory }
+		prerequisite = {
+			focus = Australia_developing_the_federal_territory
+		}
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
-			add_ideas= AST_idea_Australian_Dollar
+			add_ideas = AST_idea_Australian_Dollar
 		}
 	}
-
 	#Focus for Open the University of Queensland
 	focus = {
 		id = Australia_open_the_university_of_queensland
 		icon = GFX_focus_generic_military_academy
-		x = 27
+		x = 45
 		y = 6
 		cost = 10
-		
-		prerequisite = { focus = Australia_workers_educational_association }
-		search_filters = { FOCUS_FILTER_RESEARCH } 
+		prerequisite = {
+			focus = Australia_workers_educational_association
+		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
-			add_ideas= AST_idea_Sandstone_Universities 
+			add_ideas = AST_idea_Sandstone_Universities
 		}
 	}
-
 	#Focus for Open the Marburg railway line
 	focus = {
 		id = Australia_open_the_marburg_railway_line
 		icon = GFX_goal_generic_construct_infrastructure
-		x = 31
+		x = 49
 		y = 5
 		cost = 10
-		
-		prerequisite = { focus = Australia_open_the_commonwealth_bank }
+		prerequisite = {
+			focus = Australia_open_the_commonwealth_bank
+		}
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
 			AST = {
-			 521 = { 
-			  add_building_construction = {
-			   type = infrastructure
-				level = 3
-				 instant_build = yes
-			  }
-			 }
+				521 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 3
+						instant_build = yes
+					}
+				}
 			}
 		}
 	}
-
 	#Focus for Compulsory Military Training
 	focus = {
 		id = Australia_compulsory_military_training
 		icon = GFX_focus_generic_little_entente
-		x = 14
+		x = 32
 		y = 2
 		cost = 10
-		
-		prerequisite = { focus = Australia_the_defense_act }
+		prerequisite = {
+			focus = Australia_the_defense_act
+		}
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
-		  add_ideas = AST_idea_Compulsory_Training
+			add_ideas = AST_idea_Compulsory_Training
 		}
 	}
-
 	#Focus for The HMS Melbourne
 	focus = {
 		id = Australia_the_hms_melbourne
 		icon = GFX_focus_generic_cruiser2
-		x = 3
+		x = 21
 		y = 3
 		cost = 10
-		
-		prerequisite = { focus = Australia_the_royal_australian_navy }
+		prerequisite = {
+			focus = Australia_the_royal_australian_navy
+		}
 		ai_will_do = {
 			factor = 1
 		}
@@ -714,42 +802,48 @@ focus_tree = {
 			date > 1912.1.1
 		}
 		completion_reward = {
-			navy_experience= 20
-
-		 hidden_effect = { add_manpower = 1200 }
-					ENG = {
-						create_equipment_variant = {
-							name = "Town Class"	
-							type = ship_hull_cruiser_1
-							name_group = AST_CL_HISTORICAL
-							parent_version = 0
-							modules = {
-								fixed_ship_battery_slot = ship_light_medium_battery_2
-								fixed_ship_anti_air_slot = ship_anti_air_2
-								fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-								fixed_ship_radar_slot = empty
-								fixed_ship_engine_slot = cruiser_ship_engine_2
-								fixed_ship_armor_slot = empty
-								front_1_custom_slot = ship_anti_air_1
-								mid_1_custom_slot = ship_torpedo_1
-								mid_2_custom_slot = empty
-								rear_1_custom_slot = ship_light_medium_battery_2
-							}
-						}
+			navy_experience = 20
+			hidden_effect = {
+				add_manpower = 1200
+			}
+			ENG = {
+				create_equipment_variant = {
+					name = "Town Class"
+					type = ship_hull_cruiser_1
+					name_group = AST_CL_HISTORICAL
+					parent_version = 0
+					modules = {
+						fixed_ship_battery_slot = ship_light_medium_battery_2
+						fixed_ship_anti_air_slot = ship_anti_air_2
+						fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+						fixed_ship_radar_slot = empty
+						fixed_ship_engine_slot = cruiser_ship_engine_2
+						fixed_ship_armor_slot = empty
+						front_1_custom_slot = ship_anti_air_1
+						mid_1_custom_slot = ship_torpedo_1
+						mid_2_custom_slot = empty
+						rear_1_custom_slot = ship_light_medium_battery_2
 					}
-					create_ship = { type = ship_hull_cruiser_1 equipment_variant = "Town Class" creator = ENG name = "HMAS Melbourne" }
+				}
+			}
+			create_ship = {
+				type = ship_hull_cruiser_1
+				equipment_variant = "Town Class"
+				creator = ENG
+				name = "HMAS Melbourne"
+			}
 		}
 	}
-
 	#Focus for HMAS Australia
 	focus = {
 		id = Australia_hmas_australia
 		icon = GFX_focus_generic_navy_battleship2
-		x = 3
+		x = 21
 		y = 4
 		cost = 10
-		
-		prerequisite = { focus = Australia_the_hms_melbourne }
+		prerequisite = {
+			focus = Australia_the_hms_melbourne
+		}
 		ai_will_do = {
 			factor = 1
 		}
@@ -757,745 +851,746 @@ focus_tree = {
 			date > 1913.1.1
 		}
 		completion_reward = {
-			navy_experience= 20
-		 
-		 hidden_effect = { add_manpower = 1200 }
-					ENG = {
-						create_equipment_variant = {
-							name = "Indefatigable Class"	
-							type = ship_hull_heavy_1
-							name_group = AST_BC_HISTORICAL
-							parent_version = 0
-							modules = {
-									fixed_ship_battery_slot = ship_heavy_battery_1
-									fixed_ship_anti_air_slot = ship_anti_air_1
-									fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-									fixed_ship_radar_slot = empty
-									fixed_ship_engine_slot = heavy_ship_engine_1
-									fixed_ship_secondaries_slot = empty
-									fixed_ship_armor_slot = ship_armor_bc_1
-									front_1_custom_slot = ship_anti_air_1
-									mid_1_custom_slot = empty
-									mid_2_custom_slot = empty
-									rear_1_custom_slot = ship_heavy_battery_1
-							}
-						}
+			navy_experience = 20
+			hidden_effect = {
+				add_manpower = 1200
+			}
+			ENG = {
+				create_equipment_variant = {
+					name = "Indefatigable Class"
+					type = ship_hull_heavy_1
+					name_group = AST_BC_HISTORICAL
+					parent_version = 0
+					modules = {
+						fixed_ship_battery_slot = ship_heavy_battery_1
+						fixed_ship_anti_air_slot = ship_anti_air_1
+						fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+						fixed_ship_radar_slot = empty
+						fixed_ship_engine_slot = heavy_ship_engine_1
+						fixed_ship_secondaries_slot = empty
+						fixed_ship_armor_slot = ship_armor_bc_1
+						front_1_custom_slot = ship_anti_air_1
+						mid_1_custom_slot = empty
+						mid_2_custom_slot = empty
+						rear_1_custom_slot = ship_heavy_battery_1
 					}
-					create_ship = { type = ship_hull_heavy_1 equipment_variant = "Indefatigable Class" creator = ENG  name = "HMAS Australia" }
+				}
+			}
+			create_ship = {
+				type = ship_hull_heavy_1
+				equipment_variant = "Indefatigable Class"
+				creator = ENG
+				name = "HMAS Australia"
+			}
 		}
 	}
-
 	#Focus for 1914 Imperial Loans
 	focus = {
 		id = Australia_1914_imperial_loans
 		icon = GFX_focus_hol_the_foundations_of_defense
-		x = 21
+		x = 39
 		y = 9
 		cost = 10
-		
-		prerequisite = { focus = Australia_imperial_security }
-		search_filters = { FOCUS_FILTER_INDUSTRY } 
+		prerequisite = {
+			focus = Australia_imperial_security
+		}
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
-			add_offsite_building= { type = industrial_complex level = 2 }
+			add_offsite_building = {
+				type = industrial_complex
+				level = 2
+			}
 		}
 	}
-
 	#Focus for Vulcan Engineering Works
 	focus = {
 		id = Australia_vulcan_engineering_works
 		icon = GFX_goal_generic_construct_civ_factory
-		x = 32
+		x = 50
 		y = 7
 		cost = 10
-		
-		prerequisite = { focus = Australia_develop_papua }
+		prerequisite = {
+			focus = Australia_develop_papua
+		}
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
-			add_tech_bonus= {
-			 bonus = 0.5 
-			  uses = 1 
-			   category = industry 
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = industry
 			}
-				random_owned_controlled_state = {
-				 limit = {
-				  free_building_slots = {
-				   building = industrial_complex
-					size > 0
-					 include_locked = yes
-				  }
-				 }
-					  add_extra_state_shared_building_slots = 1
-					   add_building_construction = {
-						type = industrial_complex
-						 level = 1
-						  instant_build = yes
-					   }
-						   set_state_flag = AST
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
 				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = AST
+			}
 		}
 	}
-
 	#Focus for The Defense Act
 	focus = {
 		id = Australia_the_defense_act
 		icon = GFX_focus_generic_home_defense
-		x = 14
+		x = 32
 		y = 1
 		cost = 10
-		
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
-			add_tech_bonus= {
-			 bonus = 0.5 
-			  uses = 2 
-			  category = land_doctrine
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = land_doctrine
 			}
-			   army_experience= 15
+			army_experience = 15
 		}
 	}
-
 	#Focus for 1st Light Car Patrol
 	focus = {
 		id = Australia_1st_light_car_patrol
 		icon = GFX_goal_continuous_armor_production
-		x = 9
+		x = 27
 		y = 8
 		cost = 10
-		
-		prerequisite = { focus = Australia_the_automobile }
+		prerequisite = {
+			focus = Australia_the_automobile
+		}
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
-			add_tech_bonus= {
-			 bonus = 0.5 
-			  uses = 1 
-			   category = cat_light_armor 
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = cat_light_armor
 			}
-
 			division_template = {
 				name = "Light Car Patrol"
-				 regiments = {
-					 armored_car = { x = 0 y = 0 }
-					 }
-
+				regiments = {
+					armored_car = {
+						x = 0
+						y = 0
+					}
+				}
 			}
-
 			random_owned_controlled_state = {
-				limit = { ROOT = { has_full_control_of_state = PREV } }
-				prioritize = { 285 }
+				limit = {
+					ROOT = {
+						has_full_control_of_state = PREV
+					}
+				}
+				prioritize = {
+					285
+				}
 				create_unit = {
-					division = "name = \"1st Light Car Patrol\" division_template = \"Light Car Patrol\" start_experience_factor = 0.5" 
+					division = "name = \"1st Light Car Patrol\" division_template = \"Light Car Patrol\" start_experience_factor = 0.5"
 					owner = AST
 				}
 			}
 		}
 	}
-
-		#Focus for Further Officer Training
+	#Focus for Further Officer Training
 	focus = {
 		id = Australia_further_officer_training
 		icon = GFX_focus_generic_military_mission
-		x = 13
+		x = 31
 		y = 10
 		cost = 10
-		
-		prerequisite = { focus = Australia_staff_officer_courses }
+		prerequisite = {
+			focus = Australia_staff_officer_courses
+		}
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
-			add_tech_bonus= {
-			 bonus = 0.5 
-			  uses = 1 
-			   category = cat_grand_battle_plan
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = cat_grand_battle_plan
 			}
 		}
 	}
-
 	#Focus for The Naval Defence Act
 	focus = {
 		id = Australia_the_naval_defence_act
 		icon = GFX_focus_generic_treaty
-		x = 3
+		x = 21
 		y = 1
 		cost = 10
-		
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
-			add_tech_bonus= {
-			 bonus = 0.5 
-			  uses = 2 
-			   category = naval_doctrine 
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = naval_doctrine
 			}
-
-			navy_experience= 15
+			navy_experience = 15
 		}
 	}
-
 	#Focus for Methodical Battle Planning
 	focus = {
 		id = Australia_methodical_battle_planning
 		icon = GFX_goal_generic_construct_military
-		x = 13
+		x = 31
 		y = 5
 		cost = 10
-		
-		prerequisite = { focus = Australia_the_first_aif }
-		mutually_exclusive = { focus = Australia_war_of_manouver }
+		prerequisite = {
+			focus = Australia_the_first_aif
+		}
+		mutually_exclusive = {
+			focus = Australia_war_of_manouver
+		}
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
-			add_tech_bonus= {
-			 bonus = 0.5 
-			  uses = 2 
-			   category = cat_grand_battle_plan
-		   }	
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = cat_grand_battle_plan
+			}
 		}
 	}
-
 	#Focus for War of Manouver
 	focus = {
 		id = Australia_war_of_manouver
 		icon = GFX_goal_generic_cavalry
-		x = 7
+		x = 25
 		y = 5
 		cost = 10
-		
-		prerequisite = { focus = Australia_the_first_aif }
-		mutually_exclusive = { focus = Australia_methodical_battle_planning }
+		prerequisite = {
+			focus = Australia_the_first_aif
+		}
+		mutually_exclusive = {
+			focus = Australia_methodical_battle_planning
+		}
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
-			add_tech_bonus= {
-			 bonus = 0.5 
-			  uses = 2 
-			   category = cat_mobile_warfare
-}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = cat_mobile_warfare
+			}
 		}
 	}
-
 	#Focus for Large Unit Manouvers
 	focus = {
 		id = Australia_large_unit_manouvers
 		icon = GFX_goal_generic_army_doctrines
-		x = 5
+		x = 23
 		y = 7
 		cost = 10
-		
-		prerequisite = { focus = Australia_technical_innovations }
+		prerequisite = {
+			focus = Australia_technical_innovations
+		}
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
-			add_tech_bonus= {
-			 bonus = 0.5 
-			  uses = 1 
-			   category = cat_mobile_warfare
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = cat_mobile_warfare
 			}
 		}
 	}
-
 	#Focus for Technical Innovations
 	focus = {
 		id = Australia_technical_innovations
 		icon = GFX_goal_continuous_repairments
-		x = 7
+		x = 25
 		y = 6
 		cost = 10
-		
-		prerequisite = { focus = Australia_war_of_manouver }
+		prerequisite = {
+			focus = Australia_war_of_manouver
+		}
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
-			add_tech_bonus= {
-			 bonus = 0.5 
-			  uses = 2 
-			   category = cat_light_armor
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = cat_light_armor
 			}
 		}
 	}
-
 	#Focus for Mobile Artillery
 	focus = {
 		id = Australia_mobile_artillery
 		icon = GFX_goal_generic_army_artillery2
-		x = 7
+		x = 25
 		y = 9
 		cost = 10
-		
-		prerequisite = { 
-			focus = Australia_1st_light_car_patrol 
+		prerequisite = {
+			focus = Australia_1st_light_car_patrol
 		}
-		prerequisite = { 
-			focus = Australia_the_modern_cavalryman 
+		prerequisite = {
+			focus = Australia_the_modern_cavalryman
 		}
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
-		  add_tech_bonus= {
-			 bonus = 0.5 
-			  uses = 1 
-			   category = artillery
-		  }
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = artillery
+			}
 		}
 	}
-
 	#Focus for The Automobile
 	focus = {
 		id = Australia_the_automobile
 		icon = GFX_goal_generic_army_motorized
-		x = 9
+		x = 27
 		y = 7
 		cost = 10
-		
-		prerequisite = { focus = Australia_technical_innovations }
+		prerequisite = {
+			focus = Australia_technical_innovations
+		}
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
-		   add_tech_bonus= {
-			  bonus = 0.5 
-			   uses = 1 
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
 				category = motorized_equipment
 				name = Australia_the_automobile
-		  }
+			}
 		}
 	}
-
 	#Focus for The Modern Cavalryman
 	focus = {
 		id = Australia_the_modern_cavalryman
 		icon = GFX_focus_generic_commonwealth_build_infantry
-		x = 5
+		x = 23
 		y = 8
 		cost = 10
-		
-		prerequisite = { focus = Australia_large_unit_manouvers }
+		prerequisite = {
+			focus = Australia_large_unit_manouvers
+		}
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
-			add_tech_bonus= {
-			  bonus = 0.5 
-			   uses = 1 
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
 				category = infantry_weapons
-		  }
+			}
 		}
 	}
-
 	#Focus for The Tank
 	focus = {
 		id = Australia_the_tank
 		icon = GFX_focus_NZL_bob_semple_tank
-		x = 7
+		x = 25
 		y = 10
 		cost = 10
-		
-		prerequisite = { focus = Australia_mobile_artillery }
+		prerequisite = {
+			focus = Australia_mobile_artillery
+		}
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
-			add_tech_bonus= {
-			  bonus = 0.5 
-			   uses = 2 
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
 				category = armor
-		  }
+			}
 		}
 	}
-
 	#Focus for Modern Arms
 	focus = {
 		id = Australia_modern_arms
 		icon = GFX_goal_continuous_reduce_training_time
-		x = 11
+		x = 29
 		y = 6
 		cost = 10
-		
-		prerequisite = { focus = Australia_methodical_battle_planning }
+		prerequisite = {
+			focus = Australia_methodical_battle_planning
+		}
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
-			add_tech_bonus= {
-			  bonus = 0.5 
-			   uses = 1 
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
 				category = infantry_weapons
-		  }
-
+			}
 		}
 	}
-
 	#Focus for Staff Officer Courses
 	focus = {
 		id = Australia_staff_officer_courses
 		icon = GFX_goal_generic_position_armies
-		x = 13
+		x = 31
 		y = 8
 		cost = 10
-		
-		prerequisite = { 
-			focus = Australia_modern_engineers 
+		prerequisite = {
+			focus = Australia_modern_engineers
 		}
-		prerequisite = { 
-			focus = Australia_modern_artillery 
+		prerequisite = {
+			focus = Australia_modern_artillery
 		}
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
-			add_tech_bonus= {
-			 bonus = 0.5 
-			  uses = 1 
-			   category = cat_grand_battle_plan
-		   }
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = cat_grand_battle_plan
+			}
 		}
 	}
-
 	#Focus for Gunnery Schools
 	focus = {
 		id = Australia_gunnery_schools
 		icon = GFX_goal_generic_army_artillery2
-		x = 15
+		x = 33
 		y = 6
 		cost = 10
-		
-		prerequisite = { focus = Australia_methodical_battle_planning }
+		prerequisite = {
+			focus = Australia_methodical_battle_planning
+		}
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
-		  add_tech_bonus= {
-			 bonus = 0.5 
-			  uses = 1 
-			   category = artillery
-		  }
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = artillery
+			}
 		}
 	}
-
 	#Focus for Modern Engineers
 	focus = {
 		id = Australia_modern_engineers
 		icon = GFX_goal_continuous_repairments
-		x = 11
+		x = 29
 		y = 7
 		cost = 10
-		
-		prerequisite = { focus = Australia_modern_arms }
+		prerequisite = {
+			focus = Australia_modern_arms
+		}
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
-			add_tech_bonus= {
-			 bonus = 0.5 
-			  uses = 2 
-			   category = engineers_tech
-		  }
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = engineers_tech
+			}
 		}
 	}
-
 	#Focus for Modern Artillery
 	focus = {
 		id = Australia_modern_artillery
 		icon = GFX_goal_generic_army_artillery2
-		x = 15
+		x = 33
 		y = 7
 		cost = 10
-		
-		prerequisite = { focus = Australia_gunnery_schools }
+		prerequisite = {
+			focus = Australia_gunnery_schools
+		}
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
-			add_tech_bonus= {
-			 bonus = 0.5 
-			  uses = 1 
-			   category = artillery
-		  }
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = artillery
+			}
 		}
 	}
-
 	#Focus for The Beginnings of a Modern Army
 	focus = {
 		id = Australia_the_beginnings_of_a_modern_army
 		icon = GFX_focus_generic_little_entente
-		x = 10
+		x = 28
 		y = 12
 		cost = 10
-		
-		prerequisite = { 
-			focus = Australia_the_tank 
-			focus = Australia_further_officer_training 
+		prerequisite = {
+			focus = Australia_the_tank
+			focus = Australia_further_officer_training
 		}
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
 			remove_ideas = {
-			 AST_idea_West_Front
-			 AST_idea_Sinai
-			 AST_idea_gallipoli
-		  }
-		  add_ideas = {
-		  	 AST_idea_Vet_Army
-		  }
+				AST_idea_West_Front
+				AST_idea_Sinai
+				AST_idea_gallipoli
+			}
+			add_ideas = {
+				AST_idea_Vet_Army
+			}
 		}
 	}
-
 	#Focus for Expand the Royal Australian Engineers
 	focus = {
 		id = Australia_expand_the_royal_australian_engineers
 		icon = GFX_goal_generic_production2
-		x = 17
+		x = 35
 		y = 6
 		cost = 10
-		
-		prerequisite = { focus = Australia_bolster_the_department_of_defence }
+		prerequisite = {
+			focus = Australia_bolster_the_department_of_defence
+		}
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
-
-			add_tech_bonus= {
-						bonus = 0.5
-						uses = 3 
-						category = engineers_tech
-						name = Australia_expand_the_royal_australian_engineers
-					} 
-				}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 3
+				category = engineers_tech
+				name = Australia_expand_the_royal_australian_engineers
+			}
+		}
 	}
-
 	#Focus for Expand Foreign Military Missions
 	focus = {
 		id = Australia_expand_foreign_military_missions
 		icon = GFX_focus_eng_global_defense
-		x = 19
+		x = 37
 		y = 9
 		cost = 10
-		
-		prerequisite = { focus = Australia_standing_infantry_brigades }
+		prerequisite = {
+			focus = Australia_standing_infantry_brigades
+		}
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
-
-			add_ideas = { AST_idea_overseas_vol }
-
-		 }
+			add_ideas = {
+				AST_idea_overseas_vol
+			}
+		}
 	}
-
 	#Focus for Bolster the Department of Defence
 	focus = {
 		id = Australia_bolster_the_department_of_defence
 		icon = GFX_focus_generic_commonwealth_build_infantry
-		x = 19
+		x = 37
 		y = 5
 		cost = 10
-		
-		prerequisite = { focus = Australia_federal_army }
-		ai_will_do = {
-			factor = 1
+		prerequisite = {
+			focus = Australia_federal_army
 		}
-		completion_reward = { add_ideas = AST_idea_1st_dep_defense }
-	}
-
-	#Focus for Expand the Australian Army Intelligence Corps
-	focus = {
-		id = Australia_expand_the_australian_army_intelligence_corps
-		icon = GFX_goal_generic_intelligence_exchange
-		x = 21
-		y = 6
-		cost = 10
-		
-		prerequisite = { focus = Australia_bolster_the_department_of_defence }
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
-					add_tech_bonus= {
-						bonus = 0.5
-						uses = 3 
-						category = recon_tech
-						name = Australia_expand_the_australian_army_intelligence_corps
-					} 
-		 }
+			add_ideas = AST_idea_1st_dep_defense
+		}
 	}
-
-
+	#Focus for Expand the Australian Army Intelligence Corps
+	focus = {
+		id = Australia_expand_the_australian_army_intelligence_corps
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 39
+		y = 6
+		cost = 10
+		prerequisite = {
+			focus = Australia_bolster_the_department_of_defence
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 3
+				category = recon_tech
+				name = Australia_expand_the_australian_army_intelligence_corps
+			}
+		}
+	}
 	#Focus for Return Serviceman's League
-#	focus = {
-#		id = Australia_return_servicemans_league
-#		icon = GFX_goal_tripartite_pact
-#		x = 24
-#		y = 14
-#		cost = 10
-#		
-#		prerequisite = { focus = Australia_lest_we_forget }
-#		ai_will_do = {
-#			factor = 1
-#		}
-#	}
-
+	#	focus = {
+	#		id = Australia_return_servicemans_league
+	#		icon = GFX_goal_tripartite_pact
+	#		x = 24
+	#		y = 14
+	#		cost = 10
+	#		
+	#		prerequisite = { focus = Australia_lest_we_forget }
+	#		ai_will_do = {
+	#			factor = 1
+	#		}
+	#	}
 	#Focus for Veteran Settlement Scheme
-#	focus = {
-#		id = Australia_veteran_settlement_scheme
-#		icon = GFX_focus_hol_the_foundations_of_defense
-#		x = 21
-#		y = 13
-#		cost = 10
-#		
-#		prerequisite = { focus = Australia_establish_the_australian_federal_police }
-#		ai_will_do = {
-#			factor = 1
-#		}
-#	}
-
-#	#Focus for Infiltrate The Labor Party
-#	focus = {
-#		id = Australia_infiltrate_the_labor_party
-#		icon = GFX_goal_tripartite_pact
-#		x = 30
-#		y = 13
-#		cost = 10
-#		
-#		prerequisite = { focus = Australia_reinvigorate_national_strikes }
-#		ai_will_do = {
-#			factor = 1
-#		}
-#	}
-#
-#	#Focus for Establish Relations With The Soviet Republic
-#	focus = {
-#		id = Australia_establish_relations_with_the_soviet_republic
-#		icon = GFX_focus_chi_mission_to_the_soviet_union
-#		x = 29
-#		y = 16
-#		cost = 10
-#		
-#		prerequisite = { focus = Australia_revolution_under_siege }
-#		ai_will_do = {
-#			factor = 1
-#		}
-#	}
-
+	#	focus = {
+	#		id = Australia_veteran_settlement_scheme
+	#		icon = GFX_focus_hol_the_foundations_of_defense
+	#		x = 21
+	#		y = 13
+	#		cost = 10
+	#		
+	#		prerequisite = { focus = Australia_establish_the_australian_federal_police }
+	#		ai_will_do = {
+	#			factor = 1
+	#		}
+	#	}
+	#	#Focus for Infiltrate The Labor Party
+	#	focus = {
+	#		id = Australia_infiltrate_the_labor_party
+	#		icon = GFX_goal_tripartite_pact
+	#		x = 30
+	#		y = 13
+	#		cost = 10
+	#		
+	#		prerequisite = { focus = Australia_reinvigorate_national_strikes }
+	#		ai_will_do = {
+	#			factor = 1
+	#		}
+	#	}
+	#
+	#	#Focus for Establish Relations With The Soviet Republic
+	#	focus = {
+	#		id = Australia_establish_relations_with_the_soviet_republic
+	#		icon = GFX_focus_chi_mission_to_the_soviet_union
+	#		x = 29
+	#		y = 16
+	#		cost = 10
+	#		
+	#		prerequisite = { focus = Australia_revolution_under_siege }
+	#		ai_will_do = {
+	#			factor = 1
+	#		}
+	#	}
 	#Focus for Establish Underground Cadres
-#	focus = {
-#		id = Australia_establish_underground_cadres
-#		icon = GFX_focus_generic_join_comintern
-#		x = 26
-#		y = 13
-#		cost = 10
-#		
-#		prerequisite = { focus = Australia_reinvigorate_national_strikes }
-#		ai_will_do = {
-#			factor = 1
-#		}
-#	}
-#
+	#	focus = {
+	#		id = Australia_establish_underground_cadres
+	#		icon = GFX_focus_generic_join_comintern
+	#		x = 26
+	#		y = 13
+	#		cost = 10
+	#		
+	#		prerequisite = { focus = Australia_reinvigorate_national_strikes }
+	#		ai_will_do = {
+	#			factor = 1
+	#		}
+	#	}
+	#
 	#Focus for Establish A Socialist Republic
-#	focus = {
-#		id = Australia_establish_a_socialist_republic
-#		icon = GFX_focus_generic_soviet_politics
-#		x = 28
-#		y = 14
-#		cost = 10
-#		
-#		prerequisite = { 
-#			focus = Australia_establish_underground_cadres 
-#		}
-#		prerequisite = { 
-#			focus = Australia_infiltrate_the_labor_party 
-#		}
-#		ai_will_do = {
-#			factor = 1
-#		}
-#	}
-
+	#	focus = {
+	#		id = Australia_establish_a_socialist_republic
+	#		icon = GFX_focus_generic_soviet_politics
+	#		x = 28
+	#		y = 14
+	#		cost = 10
+	#		
+	#		prerequisite = { 
+	#			focus = Australia_establish_underground_cadres 
+	#		}
+	#		prerequisite = { 
+	#			focus = Australia_infiltrate_the_labor_party 
+	#		}
+	#		ai_will_do = {
+	#			factor = 1
+	#		}
+	#	}
 	#Focus for Revolution Under Siege
-#	focus = {
-#		id = Australia_revolution_under_siege
-#		icon = GFX_goal_generic_war_with_comintern
-#		x = 28
-#		y = 15
-#		cost = 10
-#		
-#		prerequisite = { focus = Australia_establish_a_socialist_republic }
-#		ai_will_do = {
-#			factor = 1
-#		}
-#	}
-
+	#	focus = {
+	#		id = Australia_revolution_under_siege
+	#		icon = GFX_goal_generic_war_with_comintern
+	#		x = 28
+	#		y = 15
+	#		cost = 10
+	#		
+	#		prerequisite = { focus = Australia_establish_a_socialist_republic }
+	#		ai_will_do = {
+	#			factor = 1
+	#		}
+	#	}
 	#Focus for Liberate The Workers of New Zealand
-#	focus = {
-#		id = Australia_liberate_the_workers_of_new_zealand
-#		icon = GFX_focus_por_workers_of_iberia
-#		x = 27
-#		y = 16
-#		cost = 10
-#		
-#		prerequisite = { focus = Australia_revolution_under_siege }
-#		ai_will_do = {
-#			factor = 1
-#		}
-#	}
-
+	#	focus = {
+	#		id = Australia_liberate_the_workers_of_new_zealand
+	#		icon = GFX_focus_por_workers_of_iberia
+	#		x = 27
+	#		y = 16
+	#		cost = 10
+	#		
+	#		prerequisite = { focus = Australia_revolution_under_siege }
+	#		ai_will_do = {
+	#			factor = 1
+	#		}
+	#	}
 	#Focus for Reinvigorate National Strikes
-#	focus = {
-#		id = Australia_reinvigorate_national_strikes
-#		icon = GFX_focus_prc_agrarian_socialism
-#		x = 28
-#		y = 12
-#		cost = 10
-#		
-##		prerequisite = { focus = Australia_hold_the_conscription_plebiscite }
-##		mutually_exclusive = { focus = Australia_establish_the_australian_federal_police }
-##		ai_will_do = {
-##			factor = 1
-##		}
-#	}
-
+	#	focus = {
+	#		id = Australia_reinvigorate_national_strikes
+	#		icon = GFX_focus_prc_agrarian_socialism
+	#		x = 28
+	#		y = 12
+	#		cost = 10
+	#		
+	##		prerequisite = { focus = Australia_hold_the_conscription_plebiscite }
+	##		mutually_exclusive = { focus = Australia_establish_the_australian_federal_police }
+	##		ai_will_do = {
+	##			factor = 1
+	##		}
+	#	}
 	#Focus for Reactivate Prewar Spy Rings
-#	focus = {
-#		id = Australia_reactivate_prewar_spy_rings
-#		icon = GFX_focus_hol_the_foundations_of_defense
-#		x = 23
-#		y = 10
-#		cost = 10
-# 		 
-# 		 prerequisite = { focus = Australia_war_precautions_act_1914 }
-# 		 ai_will_do = {
-# 		factor = 1
-# 	 }
-# 	 completion_reward = { }
-#  }
-
+	#	focus = {
+	#		id = Australia_reactivate_prewar_spy_rings
+	#		icon = GFX_focus_hol_the_foundations_of_defense
+	#		x = 23
+	#		y = 10
+	#		cost = 10
+	# 		 
+	# 		 prerequisite = { focus = Australia_war_precautions_act_1914 }
+	# 		 ai_will_do = {
+	# 		factor = 1
+	# 	 }
+	# 	 completion_reward = { }
+	#  }
 	#Focus for Develop Papua
 	focus = {
 		id = Australia_develop_papua
 		icon = GFX_goal_generic_construct_infrastructure
-		x = 32
+		x = 51
 		y = 6
 		cost = 10
-		
-		prerequisite = { focus = Australia_open_the_marburg_railway_line }
+		prerequisite = {
+			focus = Australia_open_the_marburg_railway_line
+		}
 		ai_will_do = {
 			factor = 1
 		}
-		completion_reward = { 
+		completion_reward = {
 			753 = {
 				add_building_construction = {
 					type = infrastructure
@@ -1509,7 +1604,6 @@ focus_tree = {
 					province = 4329
 				}
 			}
-
 			add_resource = {
 				type = aluminium
 				amount = 5
@@ -1517,32 +1611,29 @@ focus_tree = {
 			}
 		}
 	}
-
 	#Focus for Establish The Australian Federal Police
-#	focus = {
-#		id = Australia_establish_the_australian_federal_police
-#		icon = GFX_goal_generic_forceful_treaty
-#		x = 21
-#		y = 12
-#		cost = 10
-#		
-##		prerequisite = { focus = Australia_hold_the_conscription_plebiscite }
-##		mutually_exclusive = { focus = Australia_reinvigorate_national_strikes }
-##		ai_will_do = {
-##			factor = 1
-##		}
-#	}
-
+	#	focus = {
+	#		id = Australia_establish_the_australian_federal_police
+	#		icon = GFX_goal_generic_forceful_treaty
+	#		x = 21
+	#		y = 12
+	#		cost = 10
+	#		
+	##		prerequisite = { focus = Australia_hold_the_conscription_plebiscite }
+	##		mutually_exclusive = { focus = Australia_reinvigorate_national_strikes }
+	##		ai_will_do = {
+	##			factor = 1
+	##		}
+	#	}
 	#Focus for Promote Monash
 	focus = {
 		id = Australia_promote_monash
 		icon = GFX_focus_generic_military_mission
-		x = 13
+		x = 31
 		y = 12
 		cost = 10
-		
-		prerequisite = { 
-			focus = Australia_further_officer_training 
+		prerequisite = {
+			focus = Australia_further_officer_training
 		}
 		ai_will_do = {
 			factor = 1
@@ -1550,91 +1641,870 @@ focus_tree = {
 		completion_reward = {
 			add_stability = -0.05
 			create_field_marshal = {
-			 name = "John Monash"
-			 picture = ""
-			 traits = { thorough_planner organisational_leader organizer trait_engineer}
-			 skill = 4
-			 attack_skill = 3
-			 defense_skill = 3
-			 planning_skill = 5
-			 logistics_skill = 4
-		   }
-		 }
+				name = "John Monash"
+				picture = ""
+				traits = {
+					thorough_planner
+					organisational_leader
+					organizer
+					trait_engineer
+				}
+				skill = 4
+				attack_skill = 3
+				defense_skill = 3
+				planning_skill = 5
+				logistics_skill = 4
+			}
+		}
 	}
-
 	#Focus for Disestablish the C.M.F
 	focus = {
 		id = Australia_disestablish_the_cmf
 		icon = GFX_focus_focus_fra_maquis
-		x = 19
+		x = 37
 		y = 10
 		cost = 10
-		
-		prerequisite = { focus = Australia_expand_foreign_military_missions }
+		prerequisite = {
+			focus = Australia_expand_foreign_military_missions
+		}
 		ai_will_do = {
 			factor = 1
 		}
-		completion_reward = { remove_ideas = { AST_idea_Citizen_Army } }
+		completion_reward = {
+			remove_ideas = {
+				AST_idea_Citizen_Army
+			}
+		}
 	}
-	
 	#Focus for Standing Infantry Brigades
 	focus = {
 		id = Australia_standing_infantry_brigades
 		icon = GFX_focus_focus_fra_maquis
-		x = 19
+		x = 37
 		y = 8
 		cost = 10
-		
-		prerequisite = { 
-			focus = Australia_expand_the_royal_australian_engineers 
+		prerequisite = {
+			focus = Australia_expand_the_royal_australian_engineers
 		}
-		prerequisite = { 
-			focus = Australia_expand_the_australian_army_intelligence_corps 
+		prerequisite = {
+			focus = Australia_expand_the_australian_army_intelligence_corps
 		}
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
-					add_tech_bonus= {
-						bonus = 0.5
-						uses = 3 
-						category = infantry_weapons
-						name = Australia_standing_infantry_brigades
-					} 
-
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 3
+				category = infantry_weapons
+				name = Australia_standing_infantry_brigades
+			}
 		}
 	}
-
 	#Focus for Federal Army
 	focus = {
 		id = Australia_federal_army
 		icon = GFX_focus_AST_rats_tobruk
-		x = 19
+		x = 37
 		y = 4
 		cost = 10
-		
-		prerequisite = { 
-			focus = Australia_declaring_our_new_capital 
+		prerequisite = {
+			focus = Australia_declaring_our_new_capital
 		}
-		prerequisite = { 
-			focus = Australia_duntroon_military_college 
+		prerequisite = {
+			focus = Australia_duntroon_military_college
 		}
-		mutually_exclusive = { focus = Australia_the_first_aif }
+		mutually_exclusive = {
+			focus = Australia_the_first_aif
+		}
 		ai_will_do = {
 			factor = 1
 		}
 		available = {
-			original_tag = AST  
-
-			OR ={ 
-				AST = { NOT = { is_in_faction_with= ENG } }
-				ENG = { has_civil_war= yes} 
+			original_tag = AST
+			OR = {
+				AST = {
+					NOT = {
+						is_in_faction_with = ENG
+					}
+				}
+				ENG = {
+					has_civil_war = yes
+				}
 			}
 		}
 		completion_reward = {
-		   add_ideas = { AST_idea_fed_army }
+			add_ideas = {
+				AST_idea_fed_army
+			}
+			set_technology = {
+				bicycle_infantry = 1
+			}
+		}
+	}
+
+	########################################
+	#####	UNDEAD UNICORN'S FOCUSES	####
+	########################################
+
+
+	focus = {
+		id = AST_future_of_labour_party
+		icon = GFX_goal_unknown
+		cost = 4.40
+		x = 7
+		y = 0
+		completion_reward = {
+			add_stability = 0.05
+		}
+
+	}
+	focus = {
+		id = AST_expand_white_australia
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = AST_future_of_labour_party
+		}
+		mutually_exclusive = {
+			focus = AST_toe_democratic_line
+			focus = AST_down_with_the_crown
+		}
+		x = 2
+		y = 1
+		completion_reward = {
+			swap_ideas = {
+			    remove_idea = AST_white_australia_1
+			    add_idea = AST_white_australia_2
+			}
+			add_popularity = {
+			    ideology = fascism
+			    popularity = 0.02
+			}
+			create_country_leader = { 
+				name = "John Verran" 
+				picture = "gfx/leaders/AST/AST_john_verran.dds" 
+				expire = "1935.1.1" 
+				ideology = national_syndicalism
+				traits = { labour_man trait_national_syndicalism }
+			}
+			set_party_name = { 
+			    ideology = fascism 
+			    long_name = AST_democratic_party_long 
+			    name = AST_democratic_party
+			}
+		}
+
+	}
+	focus = {
+		id = AST_party_for_patriots
+		icon = GFX_goal_unknown
+		cost = 5.00
+		prerequisite = {
+			focus = AST_expand_white_australia
+		}
+		x = 1
+		y = 2
+		bypass = {
+			OR = {
+				has_government = fascism
+				fascism > 0.5
+			}
+		}
+		completion_reward = {
+			add_popularity = {
+			    ideology = fascism
+			    popularity = 0.15
+			}
+		}
+
+	}
+	focus = {
+		id = AST_party_for_empire
+		icon = GFX_goal_unknown
+		cost = 5.00
+		prerequisite = {
+			focus = AST_expand_white_australia
+		}
+		x = 3
+		y = 2
+		bypass = {
+			OR = {
+				has_government = fascism
+				fascism > 0.5
+			}
+		}
+		completion_reward = {
+			add_popularity = {
+			    ideology = fascism
+			    popularity = 0.20
+			}
+			add_popularity = {
+			    ideology = neutrality
+			    popularity = 0.10
+			}
+			ENG = {
+				add_opinion_modifier = {
+				    target = AST
+				    modifier = HOI4TGW_Opinion_diplomats_bonus
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = AST_no_confidence
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = AST_party_for_empire
+		}
+		prerequisite = {
+			focus = AST_party_for_patriots
+		}
+		x = 2
+		y = 3
+		bypass = {
+			has_government = fascism
+		}
+		available = {
+			democratic < 0.5
+		}
+		completion_reward = {
+			set_politics = {
+				ruling_party = fascism
+		        elections_allowed = yes
+			}
+		}
+
+	}
+	focus = {
+		id = AST_expand_aboriginies_bill
+		icon = GFX_goal_unknown
+		cost = 5.00
+		prerequisite = {
+			focus = AST_no_confidence
+		}
+		x = 1
+		y = 4
+		completion_reward = {
+			swap_ideas = {
+			    remove_idea = AST_white_australia_2
+			    add_idea = AST_white_australia_3
+			}
+		}
+
+	}
+	focus = {
+		id = AST_state_germanophobia
+		icon = GFX_goal_unknown
+		cost = 3.00
+		prerequisite = {
+			focus = AST_no_confidence
+		}
+		x = 3
+		y = 4
+		completion_reward = {
+			add_war_support = 0.10
+			GER = {
+				add_opinion_modifier = {
+				    target = AST
+				    modifier = HOI4TGW_Opinion_anti_ger_policy_malus
+				}
+			}
+			add_opinion_modifier = {
+			    target = GER
+			    modifier = HOI4TGW_Opinion_anti_ger_policy_malus
+			}
+		}
+
+	}
+	focus = {
+		id = AST_close_lutheran_schools
+		icon = GFX_goal_unknown
+		cost = 5.00
+		prerequisite = {
+			focus = AST_state_germanophobia
+		}
+		x = 2
+		y = 5
+		completion_reward = {
+			add_stability = -0.05
+			add_war_support = 0.05
+		}
+
+	}
+	focus = {
+		id = AST_mass_deportations
+		icon = GFX_goal_unknown
+		cost = 4.40
+		prerequisite = {
+			focus = AST_expand_aboriginies_bill
+		}
+		x = 1
+		y = 6
+		completion_reward = {
+			swap_ideas = {
+			    remove_idea = AST_white_australia_3
+			    add_idea = AST_white_australia_4
+			}
+		}
+
+	}
+	focus = {
+		id = AST_strip_voting_rights_for_germans
+		icon = GFX_goal_unknown
+		cost = 5.00
+		prerequisite = {
+			focus = AST_state_germanophobia
+		}
+		x = 4
+		y = 5
+		completion_reward = {
+			add_popularity = {
+			    ideology = fascism
+			    popularity = 0.05
+			}
+			add_ideas = AST_angloification_1
+		}
+
+	}
+	focus = {
+		id = AST_teach_them_to_be_british
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = AST_strip_voting_rights_for_germans
+		}
+		prerequisite = {
+			focus = AST_close_lutheran_schools
+		}
+		x = 3
+		y = 6
+		completion_reward = {
+			swap_ideas = {
+			    remove_idea = AST_angloification_1
+			    add_idea = AST_angloification_2
+			}
+		}
+
+	}
+	focus = {
+		id = AST_conscription_it_is
+		icon = GFX_goal_unknown
+		cost = 5.00
+		prerequisite = {
+			focus = AST_teach_them_to_be_british
+		}
+		prerequisite = {
+			focus = AST_mass_deportations
+		}
+		x = 2
+		y = 7
+		bypass = {
+			NOT = {
+				has_idea = AST_idea_Citizen_Army
+			}
+		}
+		completion_reward = {
+			remove_ideas = AST_idea_Citizen_Army
+		}
+
+	}
+	focus = {
+		id = AST_assume_stewardship
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = AST_party_for_empire
+		}
+		x = 4
+		y = 3
+		available = {
+			is_subject_of = ENG
+		}
+		completion_reward = {
+			ENG = {
+				country_event = {
+					id = ww1_australia.12
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = AST_toe_democratic_line
+		icon = GFX_goal_unknown
+		cost = 4.40
+		prerequisite = {
+			focus = AST_future_of_labour_party
+		}
+		mutually_exclusive = {
+			focus = AST_expand_white_australia
+			focus = AST_down_with_the_crown
+		}
+		x = 7
+		y = 1
+		available = {
+			has_government = democratic
+		}
+		completion_reward = {
+			add_popularity = {
+			    ideology = democratic
+			    popularity = 0.10
+			}
+		}
+
+	}
+	focus = {
+		id = AST_down_with_the_crown
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = AST_future_of_labour_party
+		}
+		mutually_exclusive = {
+			focus = AST_toe_democratic_line
+			focus = AST_expand_white_australia
+		}
+		x = 12
+		y = 1
+		completion_reward = {
+			add_popularity = {
+			    ideology = communism
+			    popularity = 0.17
+			}
+			add_ideas = {
+				AST_republican_labor
+				AST_radicalised_conservatives
+			}
+		}
+
+	}
+	focus = {
+		id = AST_pensions_for_the_old
+		icon = GFX_goal_unknown
+		cost = 4.40
+		prerequisite = {
+			focus = AST_toe_democratic_line
+			focus = AST_down_with_the_crown
+		}
+		x = 6
+		y = 2
+		completion_reward = {
+			add_ideas = AST_pensions_1
+		}
+
+	}
+	focus = {
+		id = AST_pensions_for_the_crippled
+		icon = GFX_goal_unknown
+		cost = 4.40
+		prerequisite = {
+			focus = AST_pensions_for_the_old
+		}
+		x = 6
+		y = 3
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = AST_toe_democratic_line
+				}
+				swap_ideas = {
+				    remove_idea = AST_pensions_1
+				    add_idea = AST_pensions_2
+				}
+				else_if = {
+					limit = {
+						has_completed_focus = AST_down_with_the_crown
+					}
+					swap_ideas = {
+					    remove_idea = AST_pensions_1
+					    add_idea = AST_pensions_3
+					}
+				}
+				else_if = {
+					limit = {
+						NOT = {
+							OR = {
+								has_completed_focus = AST_down_with_the_crown
+								has_completed_focus = AST_toe_democratic_line
+							}
+						}
+					}
+					effect_tooltip = {
+						swap_ideas = {
+						    remove_idea = AST_pensions_1
+						    add_idea = AST_pensions_2
+						}
+					}
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = AST_maternity_allowance
+		icon = GFX_goal_unknown
+		cost = 5.00
+		prerequisite = {
+			focus = AST_down_with_the_crown
+			focus = AST_toe_democratic_line
+		}
+		x = 8
+		y = 2
+		completion_reward = {
+			add_ideas = AST_maternity_leave
+		}
+
+	}
+	focus = {
+		id = AST_implement_land_tax
+		icon = GFX_goal_unknown
+		cost = 4.40
+		prerequisite = {
+			focus = AST_maternity_allowance
+		}
+		x = 8
+		y = 3
+		completion_reward = {
+			add_ideas = AST_land_tax
+		}
+
+	}
+	focus = {
+		id = AST_referendum_on_nationalising_monopolies
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = AST_pensions_for_the_crippled
+		}
+		prerequisite = {
+			focus = AST_implement_land_tax
+		}
+		x = 9
+		y = 4
+		completion_reward = {
+			country_event = { id = ww1_australia.13 }
+		}
+
+	}
+	focus = {
+		id = AST_referendum_failure
+		icon = GFX_goal_unknown
+		cost = 3.00
+		prerequisite = {
+			focus = AST_referendum_on_nationalising_monopolies
+		}
+		mutually_exclusive = {
+			focus = AST_referendum_success
+		}
+		x = 7
+		y = 5
+		available = {
+			has_country_flag = first_referendum_failed
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = AST_failed_government_campaign
+				days = 730
+			}
+			add_political_power = 20
+		}
+
+	}
+	focus = {
+		id = AST_referendum_success
+		icon = GFX_goal_unknown
+		cost = 3.00
+		prerequisite = {
+			focus = AST_referendum_on_nationalising_monopolies
+		}
+		mutually_exclusive = {
+			focus = AST_referendum_failure
+		}
+		x = 12
+		y = 5
+		available = {
+			has_country_flag = first_referendum_success
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = AST_down_with_the_crown
+				}
+				add_popularity = {
+				    ideology = communism
+				    popularity = 0.10
+				}
+				else = {
+					add_popularity = {
+					    ideology = democratic
+					    popularity = 0.10
+					}
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = AST_nationalise_monopolies
+		icon = GFX_goal_unknown
+		cost = 5.00
+		prerequisite = {
+			focus = AST_referendum_success
+		}
+		x = 9
+		y = 6
+		completion_reward = {
+			add_ideas = AST_nationalised_monopolies
+		}
+
+	}
+	focus = {
+		id = AST_economy_for_the_people
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = AST_referendum_success
+		}
+		x = 11
+		y = 6
+		completion_reward = {
+			every_state = {
+				limit = {
+					is_owned_by = ROOT
+					is_core_of = ROOT
+					is_coastal = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+		}
+
+	}
+	focus = {
+		id = AST_anti_monarchy_sentiment
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = AST_down_with_the_crown
+		}
+		x = 13
+		y = 3
+		completion_reward = {
+			add_popularity = {
+				ideology = democratic
+				popularity = -0.15
+			}
+		}
+
+	}
+	focus = {
+		id = AST_referendum_on_the_monarchy
+		icon = GFX_goal_unknown
+		cost = 6.00
+		prerequisite = {
+			focus = AST_referendum_success
+		}
+		prerequisite = {
+			focus = AST_anti_monarchy_sentiment
+		}
+		x = 13
+		y = 6
+		completion_reward = {
+			country_event = { id = ww1_australia.16 }
+		}
+
+	}
+	focus = {
+		id = AST_bush_warfare
+		icon = GFX_goal_unknown
+		cost = 2.00
+		prerequisite = {
+			focus = AST_referendum_on_the_monarchy
+		}
+		x = 10
+		y = 7
+		available = {
+			has_civil_war = yes
+		}
+		completion_reward = {
+			add_ideas = AST_bush_warfare
+		}
+
+	}
+	focus = {
+		id = AST_strike_the_imperialists
+		icon = GFX_goal_unknown
+		cost = 1.00
+		prerequisite = {
+			focus = AST_referendum_on_the_monarchy
+		}
+		x = 12
+		y = 7
+		available = {
+			has_civil_war = yes
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = AST_big_push
+				days = 70
+			}
+		}
+
+	}
+	focus = {
+		id = AST_sweeping_social_reform
+		icon = GFX_goal_unknown
+		cost = 4.40
+		prerequisite = {
+			focus = AST_referendum_on_the_monarchy
+		}
+		x = 14
+		y = 7
+		available = {
+			has_civil_war = no
+		}
+		completion_reward = {
+			add_ideas = AST_true_socialism
+		}
+
+	}
+	focus = {
+		id = AST_second_times_the_charm
+		icon = GFX_goal_unknown
+		cost = 5.00
+		prerequisite = {
+			focus = AST_referendum_failure
+		}
+		x = 7
+		y = 6
+		available = {
+			NOT = {
+				has_idea = AST_failed_government_campaign
+			}
+		}
+		completion_reward = {
+			country_event = { id = ww1_australia.20 days = 1 }
+		}
+
+	}
+	focus = {
+		id = AST_slink_into_the_shadows
+		icon = GFX_goal_unknown
+		cost = 1.00
+		prerequisite = {
+			focus = AST_second_times_the_charm
+		}
+		mutually_exclusive = {
+			focus = AST_glorious_victory
+		}
+		x = 6
+		y = 7
+		available = {
+			always = no
+		}
+
+	}
+	focus = {
+		id = AST_war_pensions
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = AST_slink_into_the_shadows
+		}
+		x = 5
+		y = 8
+		available = {
+			has_war = yes
+		}
+		completion_reward = {
+			add_ideas = AST_war_pensions
+		}
+
+	}
+	focus = {
+		id = AST_glorious_victory
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = AST_second_times_the_charm
+		}
+		mutually_exclusive = {
+			focus = AST_slink_into_the_shadows
+		}
+		x = 8
+		y = 7
+		completion_reward = {
+			add_ideas = AST_nationalised_monopolies
+		}
+
+	}
+	focus = {
+		id = AST_friends_in_high_places
+		icon = GFX_goal_unknown
+		cost = 5.00
+		prerequisite = {
+			focus = AST_referendum_on_the_monarchy
+		}
+		x = 16
+		y = 7
+		available = {
+			has_civil_war = no
+			is_in_faction = no
+			GER = {
+				is_faction_leader = yes
+				NOT = { has_country_flag = great_war_loser }
+			}
+			NOT = {
+				OR  = {
+					has_war_with = GER
+					has_global_flag = great_war_ends
+				}
+			}
+		}
+		will_lead_to_war_with = ENG
+		will_lead_to_war_with = FRA
+		will_lead_to_war_with = RUS
+		completion_reward = {
+			GER = {
+				country_event = {
+					id = ww1_australia.21
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = AST_join_red_movement
+		icon = GFX_goal_unknown
+		cost = 5.00
+		prerequisite = {
+			focus = AST_referendum_on_the_monarchy
+		}
+		x = 18
+		y = 7
+		available = {
+			has_civil_war = no
+			has_government = communism
+			SOV = {
+				is_faction_leader = yes
+			}
+			NOT = {
+				has_war_with = SOV
+			}
+			is_in_faction = no
+		}
+		will_lead_to_war_with = RUS
+		completion_reward = {
+			set_country_leader_ideology = marxism
+			swap_ruler_traits = { remove = trait_market_socialism add = trait_marxism }
+			SOV = {
+				country_event = {
+					id = ww1_australia.22
+				}
+			}
+		}
+
 	}
 }
-
-
-} #End of Focus Tree

@@ -70,12 +70,57 @@ GER_decision_puppet_kingdoms = {
 			NOT = { has_country_flag = great_war_loser }
 			has_government = neutrality
 			POL = { exists = no }
-			has_full_control_of_state = 10
-			has_full_control_of_state = 87
-			has_full_control_of_state = 90
-			has_full_control_of_state = 92
-			has_full_control_of_state = 98
-			has_full_control_of_state = 766
+			if = {
+				limit = {
+					NOT = {
+						is_in_faction_with = AUH
+					}
+				}
+				has_full_control_of_state = 10
+				has_full_control_of_state = 87
+				has_full_control_of_state = 90
+				has_full_control_of_state = 92
+				has_full_control_of_state = 98
+				has_full_control_of_state = 766
+				else = {
+					OR = {
+						has_full_control_of_state = 10
+						AUH = {
+							has_full_control_of_state = 10
+						}	
+					}	
+					OR = {
+						has_full_control_of_state = 87
+						AUH = {
+							has_full_control_of_state = 87
+						}	
+					}
+					OR = {
+						has_full_control_of_state = 90
+						AUH = {
+							has_full_control_of_state = 90
+						}	
+					}
+					OR = {
+						has_full_control_of_state = 92
+						AUH = {
+							has_full_control_of_state = 92
+						}	
+					}
+					OR = {
+						has_full_control_of_state = 98
+						AUH = {
+							has_full_control_of_state = 98
+						}	
+					}
+					OR = {
+						has_full_control_of_state = 766
+						AUH = {
+							has_full_control_of_state = 766
+						}	
+					}
+				}	
+			}
 		}
 		highlight_states = {
 			state = 10
@@ -155,8 +200,11 @@ GER_decision_puppet_kingdoms = {
 					create_country_leader = {
 						name = "Mindaugas II"
 						picture = "gfx/leaders/LIT/LIT_mindaugas_ii.dds"
-						expire="1928.3.4"
+						expire = "1935.1.1"
 						ideology = autocracy
+						traits = {
+							trait_autocracy
+						}
 					}
 					set_party_name = {
 						ideology = neutrality 
@@ -271,15 +319,6 @@ GER_decision_puppet_kingdoms = {
 					remove_state_core = 191
 					remove_state_core = 12
 				}
-				TOG = {
-					retire_ideology_leader = neutrality
-					create_country_leader = {
-						name = "Hans Georg von Doering"
-						picture = "gfx/leaders/Europe/portrait_europe_generic_land_9.dds"			
-						expire = "1935.1.1"
-						ideology = autocracy
-					}
-				}
 			}					
 			UBD = {
 				transfer_state = 13
@@ -339,11 +378,6 @@ GER_decision_puppet_kingdoms = {
 					transfer_troops = yes
 				}	
 				add_state_core = 190
-			}
-			hidden_effect = {
-				COU = {
-					remove_state_core = 190	
-				}
 			}
 		}
 		cancel_trigger = {
@@ -903,7 +937,7 @@ GER_decison_colonial_exploitation = {
 			CMR = { 
 				arms_factory > 0
 				has_stability > 0.25
-				is_puppet_of = GER 
+				is_subject_of = GER 
 			}
 			NOT = { has_country_flag = has_request_to_colonies }
 		}
@@ -956,7 +990,7 @@ GER_decison_colonial_exploitation = {
 			TZN = {
 				arms_factory > 0
 				has_stability > 0.25
-				is_puppet_of = GER 
+				is_subject_of = GER 
 			}
 			NOT = { has_country_flag = has_request_to_colonies }
 		}
@@ -1007,7 +1041,7 @@ GER_decison_colonial_exploitation = {
 			NMB = { 
 				arms_factory > 0
 				has_stability > 0.25
-				is_puppet_of = GER 
+				is_subject_of = GER 
 			}
 			NOT = { has_country_flag = has_request_to_colonies }
 		}
@@ -1058,7 +1092,7 @@ GER_decison_colonial_exploitation = {
 			TOG = { 
 				arms_factory > 0
 				has_stability > 0.25
-				is_puppet_of = GER 
+				is_subject_of = GER 
 			}
 			NOT = { has_country_flag = has_request_to_colonies }
 		}
@@ -1110,7 +1144,7 @@ GER_decison_colonial_exploitation = {
 			PNG = { 
 				arms_factory > 0
 				has_stability > 0.25
-				is_puppet_of = GER 
+				is_subject_of = GER 
 			}
 			NOT = { has_country_flag = has_request_to_colonies }
 		}
@@ -1227,6 +1261,10 @@ foreign_politics = {
 					target = SOV
 					type = topple_government
 				}
+				declare_war_on = {
+					target = BLR
+					type = topple_government
+				}
 				add_named_threat = {
 					threat = 10
 					name = GER_help_white_russia
@@ -1246,8 +1284,12 @@ foreign_politics = {
 			original_tag = GER
 		}
 		available = {
-			FRC = {
-				has_war_with = NFA
+			any_country = {
+				has_country_flag = FRA_socialist_france_flag
+				any_country = {
+					has_country_flag = FRA_nationalist_france_flag
+					has_war_with = PREV
+				}
 			}
 			has_war = no
 			has_war_support > 0.5
@@ -1256,8 +1298,12 @@ foreign_politics = {
 			has_completed_focus = GER_reichspakt
 		}
 		visible = {
-			FRC = {
-				has_war_with = NFA
+			any_country = {
+				has_country_flag = FRA_socialist_france_flag
+				any_country = {
+					has_country_flag = FRA_nationalist_france_flag
+					has_war_with = PREV
+				}
 			}
 			has_country_flag = great_war_winner
 		}
@@ -1266,7 +1312,8 @@ foreign_politics = {
 		days_remove = 10
 		target_trigger = {
 			FROM = {
-				tag = FRC
+				original_tag = FRA
+				has_country_flag = FRA_socialist_france_flag
 			}
 		}
 		war_with_on_remove = FRC
@@ -1850,6 +1897,11 @@ GER_decision_abwehr_operations = {
 			}
 			RUS = { has_full_control_of_state = 10 }
 			POL = { exists = no }
+			NOT = {
+				10 = {
+					is_core_of = RUS
+				}
+			}
 		}
 		visible = {
 			has_completed_focus = GER_the_great_game_begins
@@ -1889,6 +1941,11 @@ GER_decision_abwehr_operations = {
 			}
 			RUS = { has_full_control_of_state = 111 }
 			FIN = { exists = no }
+			NOT = {
+				111 = {
+					is_core_of = RUS
+				}
+			}
 		}
 		visible = {
 			has_completed_focus = GER_the_great_game_begins
@@ -1928,6 +1985,11 @@ GER_decision_abwehr_operations = {
 			}
 			RUS = { has_full_control_of_state = 11 }
 			LIT = { exists = no }
+			NOT = {
+				11 = {
+					is_core_of = RUS
+				}
+			}
 		}
 		visible = {
 			has_completed_focus = GER_the_great_game_begins
@@ -1967,6 +2029,11 @@ GER_decision_abwehr_operations = {
 			}
 			RUS = { has_full_control_of_state = 12 }
 			LAT = { exists = no }
+			NOT = {
+				12 = {
+					is_core_of = RUS
+				}
+			}
 		}
 		visible = {
 			has_completed_focus = GER_the_great_game_begins
@@ -2004,7 +2071,14 @@ GER_decision_abwehr_operations = {
 			has_equipment = {
 				infantry_equipment > 999
 			}
-			RUS = { has_full_control_of_state = 13 }
+			RUS = {
+				has_full_control_of_state = 13
+			}
+			NOT = {
+				13 = {
+					is_core_of = RUS
+				}
+			}
 			EST = { exists = no }
 		}
 		visible = {
@@ -2422,7 +2496,6 @@ political_actions = {
 			NOT = { has_government = communism }
 			NOT = { has_country_flag = great_war_loser }
 		}
-		fire_only_once = yes
 		cost = 100
 		days_remove = 50
 		ai_will_do = {
@@ -2433,19 +2506,26 @@ political_actions = {
 				OR = {
 					has_war = yes
 					is_subject = yes
-					any_owned_state = {
+					all_owned_state = {
 						NOT = {
 							state = 752
 							state = 772
 							state = 295
 							state = 538
 							state = 718
-							state = 771
-							state = 770
-							state = 789
-							state = 548
 							state = 779
-							state = 274
+							if = {
+								limit = {
+									ENG = {
+										has_country_flag = great_war_loser
+									}
+								}
+								state = 771
+								state = 770
+								state = 548
+								state = 274
+								state = 789
+							}
 						}
 					}
 					has_government = communism
@@ -2520,6 +2600,7 @@ political_actions = {
 				has_subject = NMB
 				has_subject = TZN
 				has_subject = CMR
+				has_subject = KEN #Kenya Revolt :(
 			}
 		}
 		visible = {
@@ -2576,6 +2657,7 @@ political_actions = {
 				has_subject = NMB
 				has_subject = TZN
 				has_subject = CMR
+				has_subject = KEN #Kenya Revolt :(
 			}
 			has_completed_focus = GER_claim_mittelafrika
 			NOT = {
@@ -2595,7 +2677,6 @@ political_actions = {
 		cancel_effect = {
 			add_political_power = 25
 		}
-		fire_only_once = yes
 		cost = 30
 		days_remove = 20
 		days_re_enable = 50
@@ -2663,6 +2744,7 @@ political_actions = {
 						tag = NMB
 						tag = TZN
 						tag = CMR
+						tag = KEN
 					}
 				}
 				hidden_effect = {
@@ -2731,6 +2813,7 @@ GER_afghan_expeditions = {
 		icon = generic_operation
 		cost = 30
 		allowed = { tag = GER }
+		fire_only_once = yes
 		available = {
 			is_in_faction_with = TUR
 			has_war_with = ENG
@@ -2788,6 +2871,7 @@ GER_afghan_expeditions = {
 	GER_begin_afghan_expedition = {
 		icon = generic_operation
 		allowed = { tag = GER }
+		fire_only_once = yes
 		visible = {
 			NOT = { is_in_faction_with = AFG }
 			has_war_with = ENG
@@ -3320,313 +3404,106 @@ GER_third_franco_german_war = {
 			}
 		}
 	}
-	NFA_sue_for_peace_GER = {
+}
+GER_decision_paying_reparations = {
+	GER_decision_reparations = {
 		allowed = {
-			original_tag = FRA
+			original_tag = GER
 		}
 		available = {
-			NOT = {
-				any_country = {
-					exists = yes
-					has_country_flag = FRA_socialist_france_flag
-				}
-			}
-			has_country_flag = FRA_nationalist_france_flag
-			has_war_with = GER
-			surrender_progress > 0.7
+			has_idea = GER_idea_reparations
 		}
 		visible = {
-			NOT = {
-				any_country = {
-					exists = yes
-					has_country_flag = FRA_socialist_france_flag
-				}
-			}
-			has_country_flag = FRA_nationalist_france_flag
-			has_war_with = GER
+			has_global_flag = versallies_treaty
+			has_idea = GER_idea_reparations
 		}
 		fire_only_once = yes
-		ai_will_do = {
-			base = 0
+		cost = 200
+		days_remove = 1200
+		modifier = {
+			civilian_factory_use = 10
+		}
+		remove_effect = {
+			swap_ideas = {
+				remove_idea = GER_idea_reparations
+				add_idea = GER_idea_reparations_dawes
+			}
+		}
+		ai_will_do = { 
+			base = 100
 			modifier = {
-				add = 10000
-				surrender_progress > 0.85
+				factor = 0
+				OR = {
+					has_government = fascism
+					has_government = communism
+					has_war = yes
+				}
 			}
 		}
-		target_trigger = {
-			FROM = {
-				tag = GER
+	}
+	GER_decision_reparations_2 = {
+		allowed = {
+			original_tag = GER
+		}
+		available = {
+			has_idea = GER_idea_reparations_dawes
+		}
+		visible = {
+			has_global_flag = versallies_treaty
+			has_idea = GER_idea_reparations_dawes
+		}
+		fire_only_once = yes
+		cost = 200
+		days_remove = 2000
+		modifier = {
+			civilian_factory_use = 7
+		}
+		remove_effect = {
+			swap_ideas = {
+				remove_idea = GER_idea_reparations_dawes
+				add_idea = GER_idea_reparations_young
 			}
 		}
-		complete_effect = {
-			custom_effect_tooltip = NFA_third_franco_german_war_tt
-			white_peace = GER
-			create_dynamic_country = {
-				original_tag = FRA
-		
-				set_politics = {
-					ruling_party = neutrality
-					elections_allowed = no
-				}
-		
-				set_popularities = {
-					democratic = 14
-					neutrality = 52
-					fascism = 34
-					communism = 10
-				}
-		
-				set_capital = 16
-		
-				set_country_flag = FRA_puppet_france_flag
-				set_cosmetic_tag = FRP
-				reserve_dynamic_country = yes
-			}
-			FRA = {
-				if = {
-					limit = {
-						owns_state = 272
-					}
-					GER = { transfer_state = 272 }
-				}
-				if = {
-					limit = {
-						owns_state = 701
-					}
-					GER = { transfer_state = 701 }
-				}
-				if = {
-					limit = {
-						owns_state = 780
-					}
-					GER = { transfer_state = 780 }
-				}
-				if = {
-					limit = {
-						owns_state = 700
-					}
-					GER = { transfer_state = 700 }
-				}
-				transfer_navy = {
-					target = FRP
+		ai_will_do = { 
+			base = 100
+			modifier = {
+				factor = 0
+				OR = {
+					has_government = fascism
+					has_government = communism
+					has_war = yes
 				}
 			}
-			FRP = {
-				annex_country = {
-					target = NFA
-					transfer_troops = no
-				}
-			}
-			every_state = {
-				limit = {
-					is_core_of = NFA
-				}
-				remove_core_of = NFA
-			}
-			if = {
-				limit = {
-					GER = {
-						owns_state = 735
-						owns_state = 834
-					}
-				}
-				if = {
-					limit = {
-						SRD = {
-							has_cosmetic_tag = SRD_PIE
-						}
-					}
-					SRD = {
-						add_state_core = 735
-						add_state_core = 834
-						transfer_state = 735
-						transfer_state = 834
-					}
-				}
-				else = {
-					FRP = {
-						add_state_core = 735
-						add_state_core = 834
-						transfer_state = 735
-						transfer_state = 834
-					}
-				}
-			}
-			if = {
-				limit = {
-					GER = {
-						owns_state = 1
-					}
-				}
-				if = {
-					limit = {
-						SRD = {
-							has_cosmetic_tag = SRD_PIE
-						}
-					}
-					SRD = {
-						transfer_state = 1
-					}
-				}
-				else = {
-					FRP = {
-						add_state_core = 1
-						transfer_state = 1
-					}
-				}
-			}
-			FRP = {
-				create_country_leader = {
-					name = "Gouvernement Provisoire"
-					picture = "gfx/leaders/FRA/FRA_provisional_government.dds"
-					expire = "1935.1.1"
-					ideology = conservatism
-					traits = { trait_conservatism }
-				}
-		
-				create_country_leader = {
-					name = "Victoire I"
-					picture = "gfx/leaders/GER/GER_Victoria_Louise.dds"
-					expire = "1935.1.1"
-					ideology = autocracy
-					female = yes
-					traits = {
-						victoria_iii
-						trait_autocracy
-					}
-				}
-				set_party_name = { 
-					ideology = neutrality
-					long_name = GER_neutrality_party
-					name = GER_neutrality_party
-				}
-				set_party_name = { 
-					ideology = fascism 
-					long_name = NFA_fascism_party_long
-					name = NFA_fascism_party
-				}
-			}
-			GER = {
-				if = {
-					limit = {
-						has_dlc = "Together for Victory"
-					}
-					set_autonomy = {
-						target = FRP
-						autonomous_state = autonomy_dominion
-					}
-				}
-				else = {
-					puppet = FRP
-				}
-			}
-			# TRUE BURGUND ))))))
-			BEL = {
-				if = {
-					limit = {
-						is_subject_of = GER
-						has_cosmetic_tag = BEL_burgundy
-					}
-					if = {
-						limit = {
-							17 = {
-								OR = {
-									is_owned_by = GER
-									is_owned_by = FRP
-								}
-							}
-						}
-						add_state_core = 17
-						transfer_state = 17
-					}
-					if = {
-						limit = {
-							18 = {
-								OR = {
-									is_owned_by = GER
-									is_owned_by = FRP
-								}
-							}
-						}
-						add_state_core = 18
-						transfer_state = 18
-					}
-					if = {
-						limit = {
-							20 = {
-								OR = {
-									is_owned_by = GER
-									is_owned_by = FRP
-								}
-							}
-						}
-						add_state_core = 20
-						transfer_state = 20
-					}
-					if = {
-						limit = {
-							27 = {
-								OR = {
-									is_owned_by = GER
-									is_owned_by = FRP
-								}
-							}
-						}
-						add_state_core = 27
-						transfer_state = 27
-					}
-					if = {
-						limit = {
-							32 = {
-								OR = {
-									is_owned_by = GER
-									is_owned_by = FRP
-								}
-							}
-						}
-						add_state_core = 32
-						transfer_state = 32
-					}
-					if = {
-						limit = {
-							785 = {
-								OR = {
-									is_owned_by = GER
-									is_owned_by = FRP
-								}
-							}
-						}
-						add_state_core = 785
-						transfer_state = 785
-					}
-					if = {
-						limit = {
-							34 = {
-								is_owned_by = GER
-							}
-						}
-						transfer_state = 34
-					}
-					remove_ideas = BEL_belgian_resistance
-				}
-				else = {
-					if = {
-						limit = {
-							GER = {
-								owns_state = 17
-							}
-						}
-						FRP = { transfer_state = 17 }
-					}
-					if = {
-						limit = {
-							BEL = {
-								is_subject_of = GER
-								owns_state = 29
-							}
-						}
-						FRP = { transfer_state = 29 }
-					}
+		}
+	}
+	GER_decision_reparations_3 = {
+		allowed = {
+			original_tag = GER
+		}
+		available = {
+			has_idea = GER_idea_reparations_young
+		}
+		visible = {
+			has_global_flag = versallies_treaty
+			has_idea = GER_idea_reparations_young
+		}
+		fire_only_once = yes
+		cost = 200
+		days_remove = 2000
+		modifier = {
+			civilian_factory_use = 5
+		}
+		remove_effect = {
+			remove_ideas = GER_idea_reparations_young
+		}
+		ai_will_do = { 
+			base = 100
+			modifier = {
+				factor = 0
+				OR = {
+					has_government = fascism
+					has_government = communism
+					has_war = yes
 				}
 			}
 		}

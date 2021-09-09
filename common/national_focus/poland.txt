@@ -33,6 +33,14 @@ focus_tree = {
 				}
 				has_cosmetic_tag = POL_republic
 			}
+			if = {
+				limit = {
+					has_country_flag = released_by_russia
+				}
+				NOT = {
+					is_subject_of = RUS
+				}
+			}
 		}
 		completion_reward = {
 			create_country_leader = {
@@ -163,7 +171,14 @@ focus_tree = {
 			base = 50
 			modifier = {
 				factor = 0
-				is_historical_focus_on = yes
+				AND = {
+					is_historical_focus_on = yes
+					GER = {
+						NOT = {
+							has_country_flag = great_war_winner
+						}
+					}	
+				}				
 			}
 		}
 		available = {
@@ -195,6 +210,15 @@ focus_tree = {
 		}
 		x = 1
 		y = 1
+		available = {
+			OR = {
+				has_government = communism
+				has_country_leader = {
+					name = "Józef Piłsudski"
+					ruling_only = yes
+				}
+			}
+		}
 		completion_reward = {
 			random_owned_controlled_state = {
 				prioritize = {
@@ -339,9 +363,6 @@ focus_tree = {
 		}
 		x = 1
 		y = 3
-		available = {
-			has_government = fascism
-		}
 		completion_reward = {
 			random_owned_controlled_state = {
 				prioritize = {
@@ -1045,38 +1066,32 @@ focus_tree = {
 			owns_state = 10
 			is_subject = no
 		}
+		bypass = {
+			OR = {
+				has_war_with = BLR
+				has_war_with = UKR
+				owns_state = 95
+				owns_state = 808
+			}		
+		}	
 		completion_reward = {
 			add_state_claim = 784
 			add_state_claim = 95
 			add_state_claim = 808
 			add_state_claim = 94
 			add_state_claim = 93
+			add_state_claim = 773
 			create_wargoal = {
 				target = UKR
-				type = annex_everything
+				type = take_state_focus
 			}
 			create_wargoal = {
 				target = BLR
-				type = annex_everything
+				type = take_state_focus
 			}
 		}
 		ai_will_do = {
-			base = 1
-			modifier = {
-				factor = 0
-				UKR = {
-					OR = {
-						is_in_faction = yes
-						is_subject = yes
-					}
-				}
-				BLR = {
-					OR = {
-						is_in_faction = yes
-						is_subject = yes
-					}
-				}		
-			}
+			base = 0
 		}
 	}
 	focus = {
@@ -1092,6 +1107,13 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = POL_promote_free_elections
 			focus = POL_red_tram_goes_on
+		}
+		available = {
+			has_country_leader = {
+				name = "Józef Piłsudski"
+				ruling_only = yes
+			}
+			is_subject = no
 		}
 		x = 19
 		y = 3
@@ -1140,7 +1162,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			transfer_state = 67
+			add_political_power = 100
 		}
 	}
 	focus = {

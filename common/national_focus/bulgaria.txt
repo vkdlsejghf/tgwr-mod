@@ -26,6 +26,7 @@ focus_tree = {
 			add_political_power = 100
 		}
 		search_filters = {
+			FOCUS_FILTER_HISTORICAL
 			FOCUS_FILTER_POLITICAL
 			FOCUS_FILTER_WAR_SUPPORT
 		}
@@ -195,7 +196,7 @@ focus_tree = {
 			}
 		}
 		search_filters = {
-			FOCUS_FILTER_POLITICAL
+			FOCUS_FILTER_HISTORICAL FOCUS_FILTER_POLITICAL
 		}
 	}
 	focus = {
@@ -243,7 +244,7 @@ focus_tree = {
 			}
 		}
 		search_filters = {
-			FOCUS_FILTER_POLITICAL
+			FOCUS_FILTER_HISTORICAL FOCUS_FILTER_POLITICAL
 		}
 	}
 	focus = {
@@ -342,6 +343,9 @@ focus_tree = {
 					}
 				}
 			}
+		}
+		search_filters = {
+			FOCUS_FILTER_HISTORICAL
 		}
 	}
 	focus = {
@@ -479,10 +483,13 @@ focus_tree = {
 				has_global_flag = kis_secondbalkan_war
 			}
 		}
+		search_filters = {
+			FOCUS_FILTER_HISTORICAL
+		}
 	}
 	focus = {
 		id = BUL_intervene_in_serbian_ottoman_war
-		icon = GFX_goal_generic_attack_allies
+		icon = GFX_focus_remove_turk
 		cost = 5
 		prerequisite = {
 			focus = BUL_confront_great_serbia
@@ -581,6 +588,11 @@ focus_tree = {
 		y = 4
 		available = {
 			is_subject = no
+			NOT = {
+				has_war_with = TUR
+				is_in_faction_with = SER
+			}
+			has_global_flag = kis_firstbalkanwar_victory
 		}
 		ai_will_do = {
 			factor = 5
@@ -593,17 +605,12 @@ focus_tree = {
 				is_subject = yes
 				has_war_with = SER
 				has_global_flag = kis_secondbalkan_war
+				has_global_flag =kis_firstbalkanwar_lose
 				has_idea = BUL_idea_first_national_catastrophe
 				SER = {
 					exists = no
 				}
 				is_subject = yes
-			}
-		}
-		available = {
-			NOT = {
-				has_war_with = TUR
-				is_in_faction_with = SER
 			}
 		}
 		completion_reward = {
@@ -629,7 +636,7 @@ focus_tree = {
 		}
 		will_lead_to_war_with = SER
 		search_filters = {
-			FOCUS_FILTER_ANNEXATION
+			FOCUS_FILTER_HISTORICAL FOCUS_FILTER_ANNEXATION
 		}
 	}
 	focus = {
@@ -683,6 +690,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 100
 		}
+		search_filters = {
+			FOCUS_FILTER_HISTORICAL
+		}
 	}
 	focus = {
 		id = BUL_ferdinands_abdication
@@ -712,6 +722,7 @@ focus_tree = {
 				ideology = autocracy
 				traits = {
 					popular_figurehead
+					trait_autocracy
 				}
 			}
 			hidden_effect = {
@@ -1025,6 +1036,20 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = available_military_high_command
 			show_ideas_tooltip = BUL_ivan_kolev
+			create_corps_commander = {
+				name = "Ivan Kolev"
+				portrait_path = "gfx/leaders/BUL/BUL_Ivan_Kolev.dds"
+				traits = {
+					cavalry_officer
+					cavalry_leader
+					brilliant_strategist
+				}
+				skill = 4
+				attack_skill = 4
+				defense_skill = 3
+				planning_skill = 4
+				logistics_skill = 3
+			}
 		}
 	}
 	focus = {
@@ -1408,7 +1433,7 @@ focus_tree = {
 	}
 	focus = {
 		id = BUL_expand_the_BDZ
-		icon = GFX_goal_generic_construct_infrastructure
+		icon = GFX_focus_train_railroads
 		cost = 10
 		prerequisite = {
 			focus = BUL_land_distribution
@@ -2042,6 +2067,9 @@ focus_tree = {
 		completion_reward = {
 			add_country_leader_trait = foxy_ferdinand
 		}
+		search_filters = {
+			FOCUS_FILTER_HISTORICAL
+		}
 	}
 	focus = {
 		id = BUL_balkan_hegemon
@@ -2327,6 +2355,9 @@ focus_tree = {
 				add_state_core = 731
 			}
 		}
+		search_filters = {
+			FOCUS_FILTER_HISTORICAL
+		}
 	}
 	focus = {
 		id = BUL_adopt_land_reforms
@@ -2388,12 +2419,7 @@ focus_tree = {
 				add_ai_strategy = {
 					type = alliance
 					id = "BUL"
-					value = 100
-				}
-				add_ai_strategy = {
-					type = befriend
-					id = "BUL"
-					value = 100
+					value = 50
 				}
 				hidden_effect = {
 					add_opinion_modifier = {
@@ -2677,6 +2703,8 @@ focus_tree = {
 					media_personality
 					inspirational_leader
 					trickster
+					trait_cautious 
+					trait_royal
 				}
 				skill = 2
 				attack_skill = 2
@@ -2739,8 +2767,13 @@ focus_tree = {
 		y = 11
 		available = {
 			is_subject = no
-			NOT = { has_country_flag = great_war_loser }
-			has_country_leader = { ruling_only = yes name = "Ferdinand I" }	
+			NOT = {
+				has_country_flag = great_war_loser
+			}
+			has_country_leader = {
+				ruling_only = yes
+				name = "Ferdinand I"
+			}
 		}
 		bypass = {
 			owns_state = 347
@@ -2752,7 +2785,7 @@ focus_tree = {
 			factor = 3
 		}
 		completion_reward = {
-		    add_country_leader_trait = dreams_of_a_new_byzantium
+			add_country_leader_trait = dreams_of_a_new_byzantium
 			add_state_claim = 347
 			add_state_claim = 341
 			add_state_claim = 756
@@ -2790,8 +2823,13 @@ focus_tree = {
 		}
 		available = {
 			is_subject = no
-			NOT = { has_country_flag = great_war_loser }
-			has_country_leader = { ruling_only = yes name = "Ferdinand I" }	
+			NOT = {
+				has_country_flag = great_war_loser
+			}
+			has_country_leader = {
+				ruling_only = yes
+				name = "Ferdinand I"
+			}
 		}
 		completion_reward = {
 			unlock_decision_category_tooltip = form_byzantine_empire_category
@@ -2821,6 +2859,9 @@ focus_tree = {
 				add_idea = BUL_idea_first_national_catastrophe_2
 			}
 		}
+		search_filters = {
+			FOCUS_FILTER_HISTORICAL
+		}
 	}
 	focus = {
 		id = BUL_suppress_opposition
@@ -2847,6 +2888,7 @@ focus_tree = {
 			}
 		}
 		search_filters = {
+			FOCUS_FILTER_HISTORICAL
 			FOCUS_FILTER_POLITICAL
 			FOCUS_FILTER_STABILITY
 		}
@@ -2901,7 +2943,7 @@ focus_tree = {
 			add_ai_strategy = {
 				type = alliance
 				id = "FRA"
-				value = 200
+				value = 50
 			}
 			add_ai_strategy = {
 				type = alliance
@@ -2972,7 +3014,7 @@ focus_tree = {
 			add_ai_strategy = {
 				type = alliance
 				id = "GER"
-				value = 100
+				value = 50
 			}
 			add_ai_strategy = {
 				type = alliance
@@ -2992,6 +3034,9 @@ focus_tree = {
 				modifier = HOI4TGW_Opinion_improved_diplomatic_relations
 			}
 		}
+		search_filters = {
+			FOCUS_FILTER_HISTORICAL
+		}
 	}
 	focus = {
 		id = BUL_stabilize_our_economy
@@ -3008,6 +3053,9 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_ideas = BUL_idea_stabilized_economy
+		}
+		search_filters = {
+			FOCUS_FILTER_HISTORICAL
 		}
 	}
 	focus = {
@@ -3039,6 +3087,9 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 4
+		}
+		search_filters = {
+			FOCUS_FILTER_HISTORICAL
 		}
 	}
 	focus = {
@@ -3186,6 +3237,7 @@ focus_tree = {
 				ideology = classical_liberalism
 				traits = {
 					dislikes_russia
+					trait_classical_liberalism
 				}
 			}
 			set_party_name = {
@@ -3292,13 +3344,13 @@ focus_tree = {
 				level = 1
 			}
 			add_ai_strategy = {
-				type = befriend
+				type = alliance
 				id = "AUH"
 				value = 70
 			}
 			AUH = {
 				add_ai_strategy = {
-					type = befriend
+					type = alliance
 					id = "BUL"
 					value = 70
 				}
@@ -3442,6 +3494,7 @@ focus_tree = {
 				ideology = agrarianism
 				traits = {
 					dislikes_germany
+					trait_agrarianism
 				}
 			}
 			set_party_name = {
@@ -3456,7 +3509,7 @@ focus_tree = {
 			add_ai_strategy = {
 				type = alliance
 				id = "FRA"
-				value = 200
+				value = 50
 			}
 			add_ai_strategy = {
 				type = alliance
@@ -3858,6 +3911,9 @@ focus_tree = {
 		y = 12
 		available = {
 			has_global_flag = kis_war
+			NOT = {
+				has_global_flag = great_war_ends
+			}
 			is_subject = no
 			GER = {
 				exists = yes
@@ -3878,7 +3934,11 @@ focus_tree = {
 			factor = 3
 			modifier = {
 				factor = 0
-				date < 1915.2.2
+				date < 1915.2.1
+			}
+			modifier = {
+				factor = 100
+				date > 1915.6.1
 			}
 		}
 		bypass = {
@@ -3896,6 +3956,9 @@ focus_tree = {
 					value = 200
 				}
 			}
+		}
+		search_filters = {
+			FOCUS_FILTER_HISTORICAL
 		}
 	}
 	focus = {
@@ -3917,6 +3980,9 @@ focus_tree = {
 		y = 12
 		available = {
 			has_global_flag = kis_war
+			NOT = {
+				has_global_flag = great_war_ends
+			}
 			is_subject = no
 			FRA = {
 				exists = yes
@@ -4042,6 +4108,9 @@ focus_tree = {
 			add_state_core = 846
 			add_state_core = 805
 		}
+		search_filters = {
+			FOCUS_FILTER_HISTORICAL
+		}
 	}
 	focus = {
 		id = BUL_claim_nis
@@ -4094,6 +4163,9 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_state_claim = 809
+		}
+		search_filters = {
+			FOCUS_FILTER_HISTORICAL
 		}
 	}
 }

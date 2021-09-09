@@ -3,8 +3,9 @@ focus_tree = {
 	country = {
 		factor = 0
 		modifier = {
-			add = 1
-			tag = NFA
+			add = 10
+			original_tag = FRA
+			has_country_flag = FRA_nationalist_france_flag
 		}
 	}
 	default = no
@@ -25,40 +26,42 @@ focus_tree = {
 		bypass = {
 			OR = {
 				ENG = {
-					is_in_faction_with = NFA
+					is_in_faction_with = ROOT
 				}
 				CAN = {
-					is_in_faction_with = NFA
+					is_in_faction_with = ROOT
 					has_country_flag = canada_is_britain
 				}
 				AST = {
-					is_in_faction_with = NFA
+					is_in_faction_with = ROOT
 					has_country_flag = australia_is_britain
-				}
-				AND = {
-					BRE = {
-						exists = no
-					}
-					UOB = {
-						exists = yes
-					}
 				}
 			}
 		}
 		available = {
-			NOT = {
+			is_in_faction = yes
+			is_subject = no
+			OR = {
 				ENG = {
-					is_in_faction_with = NFA
+					is_in_faction = no
+					NOT = {
+						has_country_flag = great_war_winner
+						has_country_flag = ENG_socialist_britain_flag
+					}
 				}
-			}
-			NOT = {
 				CAN = {
-					is_in_faction_with = NFA
+					has_country_flag = canada_is_britain
+					is_in_faction = no
+					NOT = {
+						has_government = communism
+					}
 				}
-			}
-			NOT = {
 				AST = {
-					is_in_faction_with = NFA
+					has_country_flag = australia_is_britain
+					is_in_faction = no
+					NOT = {
+						has_government = communism
+					}
 				}
 			}
 		}
@@ -68,7 +71,8 @@ focus_tree = {
 					ENG = {
 						exists = yes
 						NOT = {
-							has_government = communism
+							has_country_flag = great_war_winner
+							has_country_flag = ENG_socialist_britain_flag
 						}
 					}
 				}
@@ -93,7 +97,7 @@ focus_tree = {
 					}
 				}
 			}
-			if = {
+			else_if = {
 				limit = {
 					CAN = {
 						exists = yes
@@ -121,7 +125,7 @@ focus_tree = {
 					}
 				}
 			}
-			if = {
+			else_if = {
 				limit = {
 					AST = {
 						exists = yes
@@ -921,6 +925,7 @@ focus_tree = {
 			add_state_claim = 820
 			add_state_claim = 822
 			add_state_claim = 831
+			add_state_core = 851
 		}
 	}
 	#Focus for A True Democracy
@@ -999,6 +1004,7 @@ focus_tree = {
 			is_in_faction = yes
 		}
 		available = {
+			is_subject = no
 			is_in_faction = no
 		}
 		completion_reward = {

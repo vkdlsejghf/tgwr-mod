@@ -136,6 +136,7 @@ invading_france_through_benelux = {
 	abort = {
 		OR = {
 			date > 1915.8.1
+			surrender_progress > 0.07
 			AND = {
 				BEL = { has_capitulated = yes }
 				34 = { is_fully_controlled_by = GER }
@@ -147,11 +148,6 @@ invading_france_through_benelux = {
 				}
 			}
 		}
-	}
-	ai_strategy = {
-		type = conquer
-		id = FRA
-		value = 200
 	}
 	ai_strategy = {
 		type = invade
@@ -1084,5 +1080,56 @@ ingore_russian_civil_war = {
 		type = ignore
 		id = GEO
 		value = 100
+	}
+}
+dont_help_bulgaria_in_balkan_war = {
+	enable = {
+		is_faction_leader = yes
+		NOT = {
+			tag = RUS
+		}
+	}	
+	abort = {
+		OR = {
+			threat > 0.7
+			has_global_flag = kis_war
+			has_global_flag = kis_franzferdinand_murdered
+			has_global_flag = kis_secondbalkanwar_victory
+			has_global_flag = kis_secondbalkanwar_lose
+			has_global_flag = kis_firstbalkanwar_lose
+			is_in_faction_with = BUL
+		}
+	}
+	ai_strategy = {
+		type = alliance
+		id = "BUL"
+		value = -200
+	}
+}
+dont_help_serbia_in_balkan_war = {
+	enable = {
+		is_faction_leader = yes
+		NOT = {
+			tag = RUS
+		}
+	}
+	abort = {
+		OR = {
+			threat > 0.7
+			has_global_flag = kis_war
+			has_global_flag = kis_franzferdinand_murdered
+			has_global_flag = kis_secondbalkanwar_victory
+			has_global_flag = kis_secondbalkanwar_lose
+			has_global_flag = kis_firstbalkanwar_lose
+			SER = {
+				has_war_with = AUH
+			}
+			is_in_faction_with = SER
+		}
+	}
+	ai_strategy = {
+		type = alliance
+		id = "SER"
+		value = -200
 	}
 }

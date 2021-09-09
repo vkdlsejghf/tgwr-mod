@@ -9,7 +9,7 @@ focus_tree = {
 	}
 	continuous_focus_position = { x = 2070 y = 1000 }
 	default = no
-	focus = {
+	focus = { 
 		id = BRA_1910_elections
 		icon = GFX_focus_generic_voting
 		cost = 10
@@ -21,9 +21,12 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 100
 		}
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		bypass = {
+			has_country_flag = BRA_1914_election
+		}
+		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_POLITICAL }
 		ai_will_do = {
-			factor = 5
+			factor = 10
 		}
 	}
 	focus = {
@@ -100,6 +103,7 @@ focus_tree = {
 					ideology = autocracy
 					traits = {
 						inexperienced_monarch
+						trait_autocracy
 					}					
 				}
 				else = {
@@ -108,7 +112,9 @@ focus_tree = {
 						picture="gfx/leaders/BRA/BRA_luis.dds" 
 						expire= "1945.1.1"
 						ideology = autocracy
-						traits = {}
+						traits = {
+							trait_autocracy
+						}
 					}		
 				}
 			}	
@@ -140,7 +146,10 @@ focus_tree = {
 								picture = "gfx/leaders/BRA/BRA_pinheiro_machado.dds" 
 								expire = "1935.1.1"
 								ideology = conservatism
-								traits = {constable_of_the_republic}
+								traits = {
+									constable_of_the_republic
+									trait_conservatism
+								}
 							}
 						}
 						ideology = democratic
@@ -152,12 +161,10 @@ focus_tree = {
  						}
 						keep_unit_leaders_trigger = {
 							NOT = { 
-								OR = { 
-									has_id = 55662 
-									has_id = 55654
-									has_id = 55656
-									has_id = 55661
-								}
+								has_id = 55662 
+								has_id = 55654
+								has_id = 55656
+								has_id = 55661
 							} 
 						}
 					}
@@ -175,7 +182,10 @@ focus_tree = {
 							picture = "gfx/leaders/BRA/BRA_ruy_barbosa.dds" 
 							expire = "1923.1.1"
 							ideology = classical_liberalism
-							traits = {eagle_of_the_hague}
+							traits = {
+								eagle_of_the_hague
+								trait_classical_liberalism
+							}
 						}
 					}	
 				}
@@ -188,7 +198,10 @@ focus_tree = {
 							picture = "gfx/leaders/BRA/BRA_pinheiro_machado.dds" 
 							expire = "1935.1.1"
 							ideology = conservatism
-							traits = {constable_of_the_republic}
+							traits = {
+								constable_of_the_republic
+								trait_conservatism
+							}
 						}
 						news_event = {
 							id = ww1_brazil.102
@@ -699,6 +712,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 4
 		}
+		search_filters = {
+			FOCUS_FILTER_HISTORICAL
+		}
 	}
 	focus = {
 		id = BRA_renegotiation_of_the_external_debt
@@ -717,6 +733,9 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 4
+		}
+		search_filters = {
+			FOCUS_FILTER_HISTORICAL
 		}
 	}
 	focus = {
@@ -740,7 +759,7 @@ focus_tree = {
 				days = 600
 			}
 		}
-		search_filters = { FOCUS_FILTER_RESEARCH }
+		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_RESEARCH }
 		ai_will_do = {
 			factor = 3
 		}
@@ -767,7 +786,7 @@ focus_tree = {
 		bypass = {
 			has_country_flag = BRA_1914_election
 		}	
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_POLITICAL }
 		ai_will_do = {
 			factor = 3
 		}
@@ -808,7 +827,9 @@ focus_tree = {
 				picture = "gfx/leaders/BRA/BRA_hermes_fonseca.dds"
 				expire = "1925.1.1"
 				ideology = stratocracy
-				traits = {}
+				traits = {
+					trait_stratocracy
+				}
 			}
 			add_popularity = {
 				ideology = fascism
@@ -825,7 +846,10 @@ focus_tree = {
 					picture = "gfx/leaders/BRA/BRA_pinheiro_machado.dds" 
 					expire = "1935.1.1"
 					ideology = conservatism
-					traits = {constable_of_the_republic}
+					traits = {
+						constable_of_the_republic
+						trait_conservatism
+					}
 				}
 			}
 		}
@@ -928,7 +952,7 @@ focus_tree = {
 			add_stability = -0.01
 			add_political_power = 75
 		}
-		search_filters = { FOCUS_FILTER_POLITICAL  FOCUS_FILTER_STABILITY }
+		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_POLITICAL  FOCUS_FILTER_STABILITY }
 		ai_will_do = {
 			factor = 4
 		}
@@ -1013,7 +1037,7 @@ focus_tree = {
 			add_political_power = 100
 			custom_effect_tooltip = BRA_pact_of_ouro_fino_tt
 		}
-		search_filters = { FOCUS_FILTER_POLITICAL }
+		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_POLITICAL }
 		ai_will_do = {
 			factor = 4
 		}
@@ -1028,26 +1052,39 @@ focus_tree = {
 		x = 8
 		y = 4
 		available = {
+			has_war = no
 			is_subject = no
 			is_in_faction = no
-			NOT = {has_war_with = ARG}
-			NOT = {has_war_with = CHL}
+			has_government = democratic
 			ARG = {
 				is_subject = no
 				is_in_faction = no
+				NOT = {
+					has_government = fascism
+					has_government = communism
+				}
+				has_civil_war = no
 			}
 			CHL = {
 				is_subject = no
 				is_in_faction = no
-				NOT = {has_war_with = ARG}
-			}
-			
-			
+				NOT = { has_war_with = ARG }
+				NOT = {
+					has_government = fascism
+					has_government = communism
+				}
+				has_civil_war = no
+			}	
 		}	
 		completion_reward = {
-			
-		}	
-
+			country_event = ww1_brazil.32			
+		}
+		ai_will_do = {
+			factor = 3	
+		}
+		search_filters = {
+			FOCUS_FILTER_HISTORICAL
+		}
 	}
 	focus = {
 		id = BRA_governo_da_pacificacao_dos_espiritos
@@ -1087,10 +1124,13 @@ focus_tree = {
 		completion_reward = {
 			add_stability = 0.1	
 		}
+		search_filters = {
+			FOCUS_FILTER_HISTORICAL
+		}
 	}
 	focus = {
 		id = BRA_public_education_program
-		icon = GFX_goal_generic_scientific_exchange
+		icon = GFX_focus_tur_socialist_education
 		cost = 10
 		prerequisite = {
 			focus = BRA_reform_the_rebublic
@@ -1347,7 +1387,9 @@ focus_tree = {
 					picture="gfx/leaders/BRA/BRA_luis.dds" 
 					expire= "1935.1.1"
 					ideology = autocracy
-					traits = {}
+					traits = {
+						trait_autocracy
+					}
 				}
 			}
 		}
@@ -2059,6 +2101,9 @@ focus_tree = {
 				picture = "gfx/leaders/BRA/BRA_edgard_leuenroth.dds" 
 				expire = "1935.1.1" 
 				ideology = anarcho_syndicalism 
+				traits = {
+					trait_anarcho_syndicalism
+				}
 			}
 			hidden_effect = {
 				set_politics = {
@@ -2137,7 +2182,9 @@ focus_tree = {
 				picture = "gfx/leaders/BRA/BRA_Abilio_de_Nequete.dds"
 				expire = "1935.1.1"
 				ideology = vanguardism
-				traits = {}
+				traits = {
+					trait_vanguardism
+				}
 			}
 			hidden_effect = {
 				RGS = {retire_ideology_leader = communism}
@@ -2333,7 +2380,7 @@ focus_tree = {
 	}
 	focus = {
 		id = BRA_centralize_the_government
-		icon = GFX_focus_eng_move_to_secure_the_dominions
+		icon = GFX_focus_destroy_parliament
 		cost = 10
 		prerequisite = {
 			focus = BRA_suppress_riograndense_federalists
@@ -2673,6 +2720,9 @@ focus_tree = {
 				}
 			}	
 		}
+		search_filters = {
+			FOCUS_FILTER_HISTORICAL
+		}
 	}
 	focus = {
 		id = BRA_new_civil_code
@@ -2694,7 +2744,7 @@ focus_tree = {
 			}			
 			add_political_power = 50	
 		}
-		search_filters = {FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY}
+		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY}
 		ai_will_do = {
 			factor = 3	
 		}	
@@ -2739,7 +2789,7 @@ focus_tree = {
 	}
 	focus = {
 		id = BRA_national_industrialisation
-		icon = GFX_goal_generic_construct_civ_factory
+		icon = GFX_focus_industry_profit
 		cost = 10
 		prerequisite = {
 			focus = BRA_declare_war_on_the_central_powers
@@ -2850,7 +2900,7 @@ focus_tree = {
 			}
 			custom_effect_tooltip = BRA_industrialisation_strikes_tt
 		}
-		search_filters = { FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY}
+		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_STABILITY}
 	}
 	focus = {
 		id = BRA_communal_farming
@@ -3003,7 +3053,7 @@ focus_tree = {
 			}
 			add_stability = 0.05
 		}
-		search_filters = { FOCUS_FILTER_STABILITY }
+		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_STABILITY }
 		ai_will_do = {
 			factor = 3
 		}
@@ -3045,7 +3095,7 @@ focus_tree = {
 			}
 			add_war_support = 0.1
 		}
-		search_filters = {FOCUS_FILTER_WAR_SUPPORT}
+		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_WAR_SUPPORT}
 		ai_will_do = {
 			factor = 1
 			modifier = {

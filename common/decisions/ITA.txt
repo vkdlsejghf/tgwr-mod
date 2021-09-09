@@ -13,6 +13,7 @@ peace_deals = {
 		}
 		visible = {
 			has_global_flag = italo_turkish_war
+			NOT = { has_country_flag = ITA_lybian_war_mission_timeout }
 			NOT = { has_global_flag = kis_war }
 			NOT = { has_global_flag = italo_turkish_war_ends }
 		}
@@ -25,7 +26,7 @@ peace_deals = {
 					surrender_progress > 0.1	
 					any_owned_state = {
 						is_fully_controlled_by = TUR
-				    }	
+					}
 				}
 			}
 			modifier = {
@@ -39,17 +40,23 @@ peace_deals = {
 						tag = TUR
 					}
 					has_war_with = ROOT
-				}	
+				}
 			}
+			# They give up too quick
 			modifier = {
 				add = 500
-				any_state = {
-					is_core_of = LBA
-					is_owned_by = TUR
-					NOT = {
-						is_controlled_by = ITA
+				NOT = {
+					AND = {
+						controls_state = 448
+						controls_state = 450
+						controls_state = 661
 					}
-				}	
+					TUR = {
+						any_owned_state = {
+							is_controlled_by = ITA
+						}
+					}
+				}
 				casualties > 30000
 			}
 		}
@@ -73,10 +80,10 @@ peace_deals = {
 					TUR = { is_in_faction = yes }
 					ITA = { is_in_faction = yes }
 				}
-				ITA = {
-					controls_state = 450
-					controls_state = 448
-					controls_state = 661
+				AND = {
+					has_full_control_of_state = 448
+					has_full_control_of_state = 450
+					has_full_control_of_state = 661
 				}
 			}
 		}
@@ -87,13 +94,15 @@ peace_deals = {
 			NOT = { has_global_flag = kis_war }
 		}
 		timeout_effect = {
+			set_country_flag = ITA_lybian_war_mission_timeout
 			ITA = { country_event = { id = ww1_italianturkish.2 } }
-			set_global_flag = italo_turkish_war_ends
 		}
 		fire_only_once = yes
-		days_mission_timeout = 600
+		days_mission_timeout = 450
 		is_good = no
 	}
+}
+foreign_politics = {
 	ITA_claim_corsica = {
 		icon = GFX_decision_generic_operation
 		allowed = {
@@ -116,8 +125,6 @@ peace_deals = {
 			add_state_claim = 1
 		}
 	}
-}
-foreign_politics = {
 	ITA_occupy_malta = {
 		icon = GFX_decision_generic_operation
 		allowed = {
@@ -302,14 +309,14 @@ ITA_italian_civil_war_decisions = {
 					has_country_flag = ITA_socialist_italy_flag
 					has_country_flag = ITA_monarchist_italy_flag
 				}
-				has_war_with = ITA
+				has_war_with = ROOT
 			}
 			controls_state = 114
 			NOT = {
 				any_state = {
 					NOT = { state = 114 }
-					is_core_of = ROI
-					is_controlled_by = ROI
+					is_core_of = ROOT
+					is_controlled_by = ROOT
 				}
 			}
 		}
@@ -321,24 +328,21 @@ ITA_italian_civil_war_decisions = {
 					has_country_flag = ITA_socialist_italy_flag
 					has_country_flag = ITA_monarchist_italy_flag
 				}
-				has_war_with = ROI
+				has_war_with = ROOT
 			}
 			controls_state = 114
 		}
-		cost = 0
 		fire_only_once = yes
 		ai_will_do = {
 			base = 0
 
 			modifier = {
 				add = 1000
-				surrender_progress > 0.4
+				surrender_progress > 0.8
 			}
 		}
 		complete_effect = {
-			ITA = {
-				country_event = { id = garibaldi.9 }
-			}
+			country_event = garibaldi.9
 		}
 	}
 	ITS_coronation = {
@@ -346,7 +350,6 @@ ITA_italian_civil_war_decisions = {
 			original_tag = ITA
 		}
 		available = {
-			has_country_flag = ITA_monarchist_italy_flag
 			has_country_leader = {
 				name = "Provisional Government of Naples"
 				ruling_only = yes
@@ -397,38 +400,45 @@ ITA_italian_civil_war_decisions = {
 		activation = {
 			has_global_flag = italian_civil_war
 			OR = {
-				#has_country_flag = ITA_republican_italy_flag
+				has_country_flag = ITA_republican_italy_flag
 				has_country_flag = ITA_monarchist_italy_flag
 				has_country_flag = ITA_socialist_italy_flag
 			}
 			any_country = {
-				has_country_flag = ITA_monarchist_italy_flag
-				has_war = yes
-			}
-			any_country = {
-				has_country_flag = ITA_socialist_italy_flag
-				has_war = yes
+				OR = {
+					has_country_flag = ITA_republican_italy_flag
+					has_country_flag = ITA_monarchist_italy_flag
+					has_country_flag = ITA_socialist_italy_flag
+				}
+				has_war_with = ROOT
 			}
 			OR = {
-				has_stability < 0.1
-				has_war_support < 0.1
-				has_manpower < 0
+				has_stability < 0.11
+				has_war_support < 0.11
 				surrender_progress > 0.5
+				AND = {
+					has_manpower < 1
+					casualties > 110000
+				}						
+			}
+			if = {
+				limit = {
+					has_country_flag = ITA_republican_italy_flag
+				}
+				has_country_flag = ROI_exiled_to_sardinia
+				NOT = {
+					is_in_faction_with = ITS
+				}
 			}
 		}
 		allowed = {
 			original_tag = ITA
 		}
 		available = {
-			NOT = {
-				has_war_with = ROI
-				has_war_with = ITS
-				has_war_with = SRI
-			}
 			has_stability > 0.1
 			has_war_support > 0.1
 			has_manpower > 0
-			surrender_progress < 0.5
+			surrender_progress < 0.51	
 		}
 		visible = {
 			has_global_flag = italian_civil_war
@@ -707,7 +717,7 @@ ITA_italian_civil_war_decisions = {
 			}
 		}
 		fire_only_once = yes
-		cost = 100
+		cost = 50
 		days_remove = 15
 		target_trigger = {
 			FROM = {
@@ -766,6 +776,19 @@ ITA_italian_civil_war_decisions = {
 				if = {
 					limit = {
 						any_country = {
+							exists = yes
+							has_country_flag = ITA_socialist_italy_flag
+						}
+					}
+					give_guarantee = SRI
+					SRI = {
+						give_guarantee = ROOT
+						give_military_access = ROOT
+					}
+				}
+				if = {
+					limit = {
+						any_country = {
 							original_tag = ITA
 							has_country_flag = ITA_monarchist_italy_flag
 							has_war_with = SRI
@@ -791,6 +814,19 @@ ITA_italian_civil_war_decisions = {
 				}
 			}
 			else = {
+				if = {
+					limit = {
+						any_country = {
+							exists = yes
+							has_country_flag = ITA_monarchist_italy_flag
+						}
+					}
+					give_guarantee = ITS
+					ITS = {
+						give_guarantee = ROOT
+						give_military_access = ROOT
+					}
+				}
 				declare_war_on = {
 					target = SRI
 					type = topple_government
@@ -801,11 +837,24 @@ ITA_italian_civil_war_decisions = {
 				name = ITA_FRA_intervene_in_civil_war
 			}
 			set_country_flag = intervened_in_italian_civil_war
+			every_other_country = {
+				limit = {
+					is_in_faction_with = ROOT
+					is_subject_of = ROOT
+				}
+				set_country_flag = intervened_in_italian_civil_war
+			}
 		}
 		ai_will_do = {
 			base = 0
 			modifier = {
 				add = 100
+				has_war = no
+				has_government = communism
+			}
+			modifier = {
+				add = 100
+				has_war = no
 				has_war_support > 0.5
 				has_manpower > 10000
 			}

@@ -18,7 +18,7 @@ autonomy_state = {
 		extra_trade_to_overlord_factor = 0.5
 		overlord_trade_cost_factor = -0.5
 		mic_to_overlord_factor = 0.3
-		ai_join_ally_desire_factor = -2000
+		ai_join_ally_desire_factor = -4000
 	}
 	
 	ai_subject_wants_higher = {
@@ -48,8 +48,12 @@ autonomy_state = {
 				original_tag = UKR
 				original_tag = DKB
 				original_tag = KBN
-				original_tag = GEO					
-			}				
+				original_tag = GEO
+				original_tag = NOR
+				original_tag = SWE
+				original_tag = FIN
+				original_tag = DEN
+			}
 		}
 		if = {
 			limit = {
@@ -57,7 +61,7 @@ autonomy_state = {
 					original_tag = FRA
 				}
 			}
-			original_tag = GEO				
+			original_tag = GEO
 		}
 		if = {
 			limit = {
