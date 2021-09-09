@@ -405,8 +405,6 @@ focus_tree = {
 		available_if_capitulated = yes
 		prerequisite = {
 			focus = SIA_estalish_republic
-		}
-		prerequisite = {
 			focus = SIA_establish_constitutional_monarchy
 		}
 		ai_will_do = { factor = 5 }
