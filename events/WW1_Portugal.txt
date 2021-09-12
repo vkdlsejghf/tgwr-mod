@@ -895,7 +895,7 @@ country_event = {
 		retire_ideology_leader = democratic
 		create_country_leader = {
 			name = "Bernardino Machado"
-			picture = "gfx/leaders/POR/POR_manuel_de_arriaga.dds" 
+			picture = "gfx/leaders/POR/POR_bernardino_machado.dds" 
 			expire = "1935.1.1"
 			ideology = social_liberalism 
 			traits = { trait_social_liberalism } 
@@ -966,7 +966,7 @@ country_event = {
 		}
 		create_country_leader = {
 			name = "João do Canto e Castro"
-			picture = "gfx/leaders/POR/POR_manuel_de_arriaga.dds" 
+			picture = "gfx/leaders/POR/POR_joao_do_canto_e_castro.png" 
 			expire = "1935.1.1"
 			ideology = conservatism
 			traits = {  } 
@@ -1001,7 +1001,7 @@ country_event = {
 		}
 		create_country_leader = {
 			name = "António José de Almeida"
-			picture = "gfx/leaders/POR/POR_manuel_de_arriaga.dds" 
+			picture = "gfx/leaders/POR/POR_antonio_jose_de_almeida.dds" 
 			expire = "1935.1.1"
 			ideology = social_liberalism
 			traits = {  } 
@@ -1034,7 +1034,7 @@ country_event = {
 		}
 		create_country_leader = {
 			name = "Manuel Teixeira Gomes"
-			picture = "gfx/leaders/POR/POR_manuel_de_arriaga.dds" 
+			picture = "gfx/leaders/POR/POR_manuel_teixeira_gomes.dds" 
 			expire = "1935.1.1"
 			ideology = social_liberalism
 			traits = {  } 
@@ -1070,7 +1070,7 @@ country_event = {
 		}
 		create_country_leader = {
 			name = "Bernardino Machado" #Yes him again lol
-			picture = "gfx/leaders/POR/POR_manuel_de_arriaga.dds" 
+			picture = "gfx/leaders/POR/POR_bernardino_machado.dds" 
 			expire = "1935.1.1"
 			ideology = social_liberalism
 			traits = {  } 
