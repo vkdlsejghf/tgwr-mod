@@ -960,6 +960,7 @@ country_event = {
 		hidden_effect = {
 			retire_ideology_leader = democratic
 		}
+		retire_ideology_leader = neutrality
 		set_politics = {
 			ruling_party = democratic
 			elections_allowed = yes
