@@ -688,18 +688,18 @@ focus_tree = {
 			}
 			set_party_name = { 
 				ideology = neutrality 
-				long_name = "União Nacional"
-				name = UN
+				long_name = "Nova República"
+				name = NR
 			}
 			
 			hidden_effect = {
 				retire_ideology_leader = neutrality
 				create_country_leader = { 
-					name = "Antonio de Oliveira Salazar" 
-					picture = "gfx/leaders/POR/portrait_por_antonio_de_oliveira_salazar.dds" 
+					name = "Sidónio Pais" 
+					picture = "gfx/leaders/POR/POR_sidonio_pais.dds" 
 					expire = "1935.1.1" 
 					ideology = despotism
-					traits = { conservative_nationalist military_dictator trait_despotism } 
+					traits = { trait_despotism } 
 				}
 			}
 		}
@@ -860,6 +860,19 @@ focus_tree = {
 				elections_allowed = no
 			}
 			add_ideas = { neutrality_idea }
+			retire_ideology_leader = neutrality
+			create_country_leader = { 
+				name = "Antonio de Oliveira Salazar" 
+				picture = "gfx/leaders/POR/portrait_por_antonio_de_oliveira_salazar.dds" 
+				expire = "1935.1.1" 
+				ideology = despotism
+				traits = { conservative_nationalist military_dictator trait_despotism } 
+			}
+			set_party_name = { 
+				ideology = neutrality 
+				long_name = "União Nacional"
+				name = UN
+			}
 		}
 	}
 	
