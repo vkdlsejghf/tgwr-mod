@@ -396,6 +396,9 @@ focus_tree = {
 			focus = SIA_palace_revolt
 		}
 		ai_will_do = { factor = 5 }
+		completion_reward = {
+			add_ideas = rama_IV
+		}
 	}
 	focus = {
 		id = SIA_create_a_constitution
