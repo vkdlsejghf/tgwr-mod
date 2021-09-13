@@ -118,8 +118,11 @@ focus_tree = {
 						owner = PREV
 					}
 				}
+				remove_ideas = { POR_unstable_monarchy_2 POR_unstable_monarchy_1}
+				add_ideas = { POR_unstable_republic_1 }
 			}
 			POR = {
+				
 				division_template = {
 					name = "Milícia Monárquica"
 					regiments = {
@@ -779,6 +782,10 @@ focus_tree = {
 		relative_position_id = por_fix_country
 		available = {
 			has_stability < 0.3
+			OR = {
+				is_ai = no
+				date > 1920.1.1
+			}
 		}
 		prerequisite = {
 			focus = por_fix_country
@@ -801,6 +808,12 @@ focus_tree = {
 		y = 1
 		cost = 10
 		relative_position_id = por_military_coup_prep
+		available = {
+			OR = {
+				is_ai = no
+				date > 1924.1.1
+			}
+		}
 		prerequisite = {
 			focus = por_military_coup_prep
 		}
@@ -846,6 +859,15 @@ focus_tree = {
 		y = 1
 		cost = 10
 		relative_position_id = por_carmona
+		available = {
+			OR = {
+				AND = { 
+					is_ai = no
+					date > 1930.1.1
+				}
+				date > 1932.1.1
+			}
+		}
 		prerequisite = {
 			focus = por_carmona
 		}
