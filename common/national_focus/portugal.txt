@@ -617,6 +617,13 @@ focus_tree = {
 				owns_state = 770
 			}
 		}
+		bypass = {
+			POR = {
+				owns_state = 711
+				owns_state = 545
+				owns_state = 770
+			}
+		}
 		prerequisite = {
 			focus = por_ally_britain
 		}
