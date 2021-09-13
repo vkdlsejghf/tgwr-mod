@@ -72,6 +72,8 @@ POR_looming_revolution_category = {
 						}
 					}
 					random_other_country = {
+						remove_ideas = { POR_unstable_monarchy_1 POR_unstable_monarchy_2 }
+						add_ideas = { POR_unstable_republic_1 }
 						limit = {
 							original_tag = POR
 							has_government = democratic
@@ -152,6 +154,8 @@ POR_looming_revolution_category = {
 						}
 					}
 					random_other_country = {
+						remove_ideas = { POR_unstable_monarchy_1 POR_unstable_monarchy_2 }
+						add_ideas = { POR_unstable_republic_1 }
 						limit = {
 							original_tag = POR
 							has_government = democratic
