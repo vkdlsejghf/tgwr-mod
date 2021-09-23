@@ -1515,10 +1515,10 @@ focus_tree = {
 			focus = por_industry_expensive_1
 		}
 		completion_reward = {
-			every_owned_state = {
+			179 = {
 				add_building_construction = {
 					type = infrastructure
-					level = 1
+					level = 3
 					instant_build = yes
 				}
 			}
@@ -1547,8 +1547,11 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_timed_idea = { idea = POR_investment days = 45 }
-			179 = {
-				add_extra_state_shared_building_slots = 1
+			random_owned_state = {
+				limit = {
+					is_core_of = POR
+				}
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
 					level = 2
@@ -1577,8 +1580,7 @@ focus_tree = {
 			focus = por_industry_expensive_2
 		}
 		completion_reward = {
-			179 = {
-				add_extra_state_shared_building_slots = 1
+			112 = {
 				add_building_construction = {
 					type = industrial_complex
 					level = 1
@@ -1623,6 +1625,40 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			if = {
+				limit = {
+					112 = {
+						NOT = {
+							free_building_slots = {
+								building = air_base
+								size > 0
+							}
+						}
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = air_base
+							size > 0
+						}
+					}
+					add_building_construction = {
+						type = air_base
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			else = {
+				112 = {
+					add_building_construction = {
+						type = air_base
+						level = 3
+						instant_build = yes
+					}
+				}
+			}
 		}
 	}
 	focus = {
@@ -1644,7 +1680,7 @@ focus_tree = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = arms_factory
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 				
@@ -1673,16 +1709,14 @@ focus_tree = {
 			focus = por_industry_cheap_4
 		}
 		completion_reward = {
-			add_timed_idea = { idea = POR_investment days = 45 }
-			181 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1.5
+				uses = 1
+				category = industry
 			}
 			add_ideas = { POR_build_boost }
+			add_timed_idea = { idea = POR_investment days = 45 }
 		}
 	}
 	focus = {
@@ -1701,9 +1735,14 @@ focus_tree = {
 		}
 		completion_reward = {
 			181 = {
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
 					level = 1
 					instant_build = yes
 				}
