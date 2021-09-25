@@ -2109,7 +2109,7 @@ country_event = {
 		date > 1914.1.1
 		date < 1915.1.1
 		NOT = {
-			has_completed_focus = SER_contain_Pasic
+			has_completed_focus = SER_marginalize_independent_radicals
 		}
 		NOT = {
 			has_completed_focus = SER_defeated_nation
