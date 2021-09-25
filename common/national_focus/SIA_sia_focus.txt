@@ -381,6 +381,9 @@ focus_tree = {
 			focus = SIA_palace_revolt
 		}
 		ai_will_do = { factor = 5 }
+		completion_reward = {
+			add_ideas = SIA_republic
+		}
 	}
 	focus = {
 		id = SIA_establish_constitutional_monarchy
@@ -422,6 +425,9 @@ focus_tree = {
 			focus = SIA_create_a_constitution
 		}
 		ai_will_do = { factor = 10 }
+		completion_reward = {
+			add_research_slot = 1
+		}
 	}
 	#End of focuses
 }
