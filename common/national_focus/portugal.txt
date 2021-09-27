@@ -227,7 +227,7 @@ focus_tree = {
 	}
 	focus = {
 		id = por_king_fascist
-		icon = rere
+		icon = GFX_focus_generic_ultranationalist_monarchy
 		x = 0
 		y = 1
 		cost = 10
@@ -254,15 +254,14 @@ focus_tree = {
 				ideology=rexism
 				traits={ patriota trait_autocracy } 
 			}
-			add_popularity = {
-				ideology = fascism
-				popularity = 0.25
-			}
 			set_politics = {
 				ruling_party = fascism
 				elections_allowed = no
 			}
-			
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.25
+			}
 		}
 	}
 	
@@ -282,9 +281,7 @@ focus_tree = {
 			focus = por_civil
 		}
 		completion_reward = {
-			hidden_effect = {
-			
-			}
+			remove_country_leader_trait = trait_autocracy
 			create_country_leader = {
 				name = "Manuel de Arriaga"
 				picture = "gfx/leaders/POR/POR_manuel_de_arriaga.dds" 
