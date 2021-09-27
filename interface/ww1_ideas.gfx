@@ -1166,11 +1166,28 @@ spriteType = { name = "GFX_idea_ITA_achille_starace" texturefile = "gfx/interfac
 		texturefile = "gfx/interface/ideas/DEN/idea_DEN_christian_x.dds" 
 	}
 
-#Portugal idea
+#Portugal ideas
 SpriteType = {
 	name = "GFX_idea_por_unstable_monarchy"
 	texturefile = "gfx/interface/ideas/POR/idea_por_unstable_monarchy.dds"
 }
+SpriteType = {
+	name = "GFX_idea_por_no_traitors"
+	texturefile = "gfx/interface/ideas/POR/idea_por_no_traitors.dds"
+}
+SpriteType = {
+	name = "GFX_idea_por_traitor"
+	texturefile = "gfx/interface/ideas/POR/idea_por_traitor.dds"
+}
+SpriteType = {
+	name = "GFX_idea_por_illiteracy"
+	texturefile = "gfx/interface/ideas/POR/idea_por_illiteracy.dds"
+}
+SpriteType = {
+	name = "GFX_idea_por_provisional_junta_icon"
+	texturefile = "gfx/interface/ideas/POR/idea_por_provisional_junta_icon.dds"
+}
+
 spriteType = { name = "GFX_idea_POR_jose_norton_de_matos" texturefile = "gfx/interface/ideas/idea_POR_jose_norton_de_matos.dds" }
 
 spriteType = { name = "GFX_idea_tula_arsenal" texturefile = "gfx/interface/ideas/idea_tula_arsenal.dds" }
