@@ -328,7 +328,7 @@ ideas={
 			}
 		}
 		POR_motorized_cheap_1 = {
-			picture = mex_revolutionary_army
+			picture = AST_idea_Duntroon
 			allowed = {
 				original_tag = POR
 			}
@@ -343,7 +343,7 @@ ideas={
 			}
 		}
 		POR_motorized_cheap_2 = {
-			picture = mex_revolutionary_army
+			picture = AST_idea_Duntroon
 			allowed = {
 				original_tag = POR
 			}

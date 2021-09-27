@@ -1283,4 +1283,45 @@ spriteTypes = {
 		name = "GFX_focus_generic_mountain_warfare"
 		texturefile = "gfx/interface/goals/generic_mountain_warfare.png"
 	}
+	##PORTUGAL
+	spriteType = {
+		name = "GFX_focus_por_civil"
+		texturefile = "gfx/interface/goals/POR/por_civil.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_por_civilprep"
+		texturefile = "gfx/interface/goals/POR/por_civilprep.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_por_first_government"
+		texturefile = "gfx/interface/goals/POR/por_first_government.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_por_galiza_claim"
+		texturefile = "gfx/interface/goals/POR/por_galiza_claim.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_por_german_claims"
+		texturefile = "gfx/interface/goals/POR/por_german_claims.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_por_liberalize"
+		texturefile = "gfx/interface/goals/POR/por_liberalize.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_por_provisional_junta"
+		texturefile = "gfx/interface/goals/POR/por_provisional_junta.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_por_reforms"
+		texturefile = "gfx/interface/goals/POR/por_reforms.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_por_revolution"
+		texturefile = "gfx/interface/goals/POR/por_revolution.dds"
+	}
+	spriteType = {
+		name = "GFX_focus_por_start_civil"
+		texturefile = "gfx/interface/goals/POR/por_start_civil.dds"
+	}
 }

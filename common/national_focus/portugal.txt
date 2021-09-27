@@ -13,7 +13,7 @@ focus_tree = {
 	
 	focus = {
 		id = por_reforms
-		icon = rere
+		icon = GFX_focus_por_reforms
 		x = 5
 		y = 0
 		cost = 10
@@ -35,7 +35,7 @@ focus_tree = {
 	}
 	focus = {
 		id = por_civil
-		icon = rere
+		icon = GFX_focus_por_civil
 		x = -5
 		y = 1
 		cost = 10
@@ -53,7 +53,7 @@ focus_tree = {
 	}
 	focus = {
 		id = por_civilprep
-		icon = rere
+		icon = GFX_focus_por_civilprep
 		x = 0
 		y = 1
 		cost = 10
@@ -71,7 +71,7 @@ focus_tree = {
 	}
 	focus = {
 		id = por_startcivil
-		icon = rere
+		icon = GFX_focus_por_start_civil
 		x = 0
 		y = 1
 		cost = 10
@@ -268,7 +268,7 @@ focus_tree = {
 	
 	focus = {
 		id = por_liberalize
-		icon = rere
+		icon = GFX_focus_por_liberalize
 		x = 5
 		y = 1
 		cost = 10
@@ -535,7 +535,7 @@ focus_tree = {
 	}
 	focus = {
 		id = por_german_claims
-		icon = rere
+		icon = GFX_focus_por_german_claims
 		x = 0
 		y = 1
 		cost = 10
@@ -665,7 +665,7 @@ focus_tree = {
 	
 	focus = {
 		id = por_revolution
-		icon = rere
+		icon = GFX_focus_por_revolution
 		x = 10
 		y = 0
 		cost = 10
@@ -717,7 +717,7 @@ focus_tree = {
 	}
 	focus = {
 		id = por_provisional_junta
-		icon = rere
+		icon = GFX_focus_por_provisional_junta
 		x = 0
 		y = 1
 		cost = 10
@@ -736,7 +736,7 @@ focus_tree = {
 	}
 	focus = {
 		id = por_first_government
-		icon = rere
+		icon = GFX_focus_por_first_government
 		x = 0
 		y = 1
 		cost = 10
@@ -1015,7 +1015,7 @@ focus_tree = {
 	}
 	focus = {
 		id = por_galiza_claim
-		icon = rere
+		icon = GFX_focus_por_galiza_claim
 		x = 1
 		y = 1
 		cost = 10
@@ -1968,8 +1968,6 @@ focus_tree = {
 		cost = 10
 		relative_position_id = por_mil_boost_2
 		prerequisite = {
-			focus = por_navy_boost_2
-			focus = por_navy_xp
 			focus = por_mil_xp
 			focus = por_mil_boost_2
 		}
@@ -1994,7 +1992,7 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = mech_army_bonus
-				bonus = 0.5
+				bonus = 1
 				uses = 1
 				category = motorized_equipment
 			}
@@ -2029,6 +2027,8 @@ focus_tree = {
 		prerequisite = {
 			focus = por_navy_boost_2
 			focus = por_navy_xp
+		}
+		prerequisite = {
 			focus = por_mil_xp
 			focus = por_mil_boost_2
 		}
@@ -2087,8 +2087,6 @@ focus_tree = {
 		prerequisite = {
 			focus = por_navy_boost_2
 			focus = por_navy_xp
-			focus = por_mil_xp
-			focus = por_mil_boost_2
 		}
 		mutually_exclusive = {
 			focus = por_army_focus
