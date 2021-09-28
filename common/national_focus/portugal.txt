@@ -1093,7 +1093,7 @@ focus_tree = {
 	
 	focus = {
 		id = por_foreign_purchase
-		icon = rere
+		icon = GFX_focus_por_foreign_purchase
 		x = 23
 		y = 0
 		cost = 5
@@ -1103,7 +1103,7 @@ focus_tree = {
 	}
 	focus = {
 		id = por_school_expensive_1
-		icon = rere
+		icon = GFX_focus_por_high_school
 		x = 1
 		y = 1
 		cost = 5
@@ -1125,7 +1125,7 @@ focus_tree = {
 	}
 	focus = {
 		id = por_school_cheap_1
-		icon = rere
+		icon = GFX_focus_por_low_school
 		x = -1
 		y = 1
 		cost = 5
@@ -1141,13 +1141,13 @@ focus_tree = {
 				remove_idea = POR_bad_schooling_5
 				add_idea = POR_bad_schooling_4
 			}
-			add_timed_idea = { idea = POR_low_school_investment days = 180 }
+			add_timed_idea = { idea = POR_low_school_investment days = 270 }
 		}
 	}
 	
 	focus = {
 		id = por_school_expensive_2
-		icon = rere
+		icon = GFX_focus_por_high_school
 		x = 0
 		y = 1
 		cost = 5
@@ -1178,7 +1178,7 @@ focus_tree = {
 	}
 	focus = {
 		id = por_school_cheap_2
-		icon = rere
+		icon = GFX_focus_por_low_school
 		x = 0
 		y = 1
 		cost = 5
@@ -1203,13 +1203,13 @@ focus_tree = {
 				remove_idea = POR_bad_schooling_4
 				add_idea = POR_bad_schooling_3
 			}
-			add_timed_idea = { idea = POR_low_school_investment days = 180 }
+			add_timed_idea = { idea = POR_low_school_investment days = 270 }
 		}
 	}
 	
 	focus = {
 		id = por_school_expensive_3
-		icon = rere
+		icon = GFX_focus_por_high_school
 		x = 0
 		y = 1
 		cost = 5
@@ -1240,7 +1240,7 @@ focus_tree = {
 	}
 	focus = {
 		id = por_school_cheap_3
-		icon = rere
+		icon = GFX_focus_por_low_school
 		x = 0
 		y = 1
 		cost = 5
@@ -1265,13 +1265,13 @@ focus_tree = {
 				remove_idea = POR_bad_schooling_3
 				add_idea = POR_bad_schooling_2
 			}
-			add_timed_idea = { idea = POR_low_school_investment days = 180 }
+			add_timed_idea = { idea = POR_low_school_investment days = 270 }
 		}
 	}
 	
 	focus = {
 		id = por_school_expensive_4
-		icon = rere
+		icon = GFX_focus_por_high_school
 		x = 0
 		y = 1
 		cost = 5
@@ -1302,7 +1302,7 @@ focus_tree = {
 	}
 	focus = {
 		id = por_school_cheap_4
-		icon = rere
+		icon = GFX_focus_por_low_school
 		x = 0
 		y = 1
 		cost = 5
@@ -1327,7 +1327,7 @@ focus_tree = {
 				remove_idea = POR_bad_schooling_2
 				add_idea = POR_bad_schooling_1
 			}
-			add_timed_idea = { idea = POR_low_school_investment days = 180 }
+			add_timed_idea = { idea = POR_low_school_investment days = 270 }
 		}
 	}
 	
@@ -1358,7 +1358,7 @@ focus_tree = {
 	
 	focus = {
 		id = por_school_expensive_5
-		icon = rere
+		icon = GFX_focus_por_high_school
 		x = 0
 		y = 2
 		cost = 10
@@ -1380,12 +1380,12 @@ focus_tree = {
 		}
 		completion_reward = {
 			remove_ideas = { POR_bad_schooling_1 }
-			add_timed_idea = { idea = POR_investment days = 120 }
+			add_timed_idea = { idea = POR_investment days = 270 }
 		}
 	}
 	focus = {
 		id = por_school_cheap_5
-		icon = rere
+		icon = GFX_focus_por_low_school
 		x = 0
 		y = 2
 		cost = 10
@@ -1409,7 +1409,7 @@ focus_tree = {
 				remove_idea = POR_bad_schooling_1
 				add_idea = POR_bad_schooling_0
 			}
-			add_timed_idea = { idea = POR_low_school_investment days = 180 }
+			add_timed_idea = { idea = POR_low_school_investment days = 365 }
 		}
 	}
 	
