@@ -297,7 +297,7 @@ focus_tree = {
 	}
 	focus = {
 		id = por_firstreform
-		icon = rere
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
 		x = 0
 		y = 1
 		cost = 10
@@ -317,7 +317,7 @@ focus_tree = {
 	}
 	focus = {
 		id = por_lastreform
-		icon = rere
+		icon = GFX_focus_generic_concessions
 		x = 0
 		y = 1
 		cost = 10
@@ -372,7 +372,7 @@ focus_tree = {
 	}
 	focus = {
 		id = por_stable_democracy
-		icon = rere
+		icon = GFX_focus_rom_handle_king
 		x = 0
 		y = 1
 		cost = 10
@@ -404,7 +404,7 @@ focus_tree = {
 	}
 	focus = {
 		id = por_more_stable_democracy
-		icon = rere
+		icon = GFX_focus_por_workers_of_iberia
 		x = 0
 		y = 1
 		cost = 10
@@ -756,7 +756,7 @@ focus_tree = {
 	}
 	focus = {
 		id = por_fix_country
-		icon = rere
+		icon = GFX_goal_generic_neutrality_focus
 		x = 0
 		y = 1
 		cost = 10
@@ -783,7 +783,7 @@ focus_tree = {
 	
 	focus = {
 		id = por_military_coup_prep
-		icon = rere
+		icon = GFX_goal_generic_dangerous_deal
 		x = 5
 		y = 1
 		cost = 10
@@ -836,7 +836,7 @@ focus_tree = {
 	}
 	focus = {
 		id = por_carmona
-		icon = rere
+		icon = GFX_focus_por_estado_novo
 		x = 0
 		y = 1
 		cost = 10
@@ -910,7 +910,7 @@ focus_tree = {
 	
 	focus = {
 		id = por_face_spain
-		icon = GFX_focus_focus_fra_intervention_spain
+		icon = GFX_focus_por_remember_olivenca
 		x = 3
 		y = 1
 		cost = 10
@@ -1074,7 +1074,7 @@ focus_tree = {
 	}
 	focus = {
 		id = por_olivenca_negotiation
-		icon = GFX_focus_por_galiza_negotiation
+		icon = GFX_focus_por_olivenca_negotiation
 		x = 0
 		y = 1
 		cost = 10

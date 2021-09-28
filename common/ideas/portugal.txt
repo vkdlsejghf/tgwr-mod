@@ -569,6 +569,11 @@ ideas={
 			POR_joaquim_pimenta_de_castro={ allowed={ original_tag=POR } traits={ prince_of_terror } ai_will_do={ factor=1 } }
 			POR_antonio_maria_baptista={ allowed={ original_tag=POR } traits={ quartermaster_general } ai_will_do={ factor=1 } }
 			POR_antonio_teixeira_de_sousa={ allowed={ original_tag=POR } traits={ compassionate_gentleman } ai_will_do={ factor=1 } }
+			POR_joao_chagas={ allowed = {  original_tag=POR } available = { OR = { has_completed_focus = por_revolution has_completed_focus = por_liberalize } }  traits = { resolute_social_democrat } ai_will_do = { factor = 1 } }
+			POR_silva_bastos={ allowed = {  original_tag = POR } available = { OR = { NOT = { has_completed_focus = por_revolution } NOT = { has_completed_focus = por_liberalize } } } traits = { staunch_monarchist } ai_will_do = { factor = 1 } }
+			POR_alberto_monsaraz={ allowed = {  original_tag = POR  } available = { OR = { has_completed_focus = por_civil has_completed_focus = por_military_coup_prep } } traits = { fascist_demagogue } ai_will_do = { factor = 1 } }
+			POR_marcello_caetano = { allowed = {  original_tag = POR } available = { has_completed_focus = por_uniao_nacional } traits = { traditionalist_theorist } ai_will_do = { factor = 1 } }
+			POR_rolao_preto = { allowed = { original_tag = POR  } available = { NOT = { has_completed_focus = por_uniao_nacional } } traits = { indecisive_trait } ai_will_do = { factor = 1 } }
 			}
 	theorist={
 			POR_jose_norton_de_matos={ allowed={ original_tag=POR } ledger = army traits={ military_theorist } ai_will_do={ factor=1 } }

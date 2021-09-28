@@ -1324,4 +1324,8 @@ spriteTypes = {
 		name = "GFX_focus_por_start_civil"
 		texturefile = "gfx/interface/goals/POR/por_start_civil.dds"
 	}
+	spriteType = {
+		name = "GFX_focus_por_olivenca_negotiation"
+		texturefile = "gfx/interface/goals/POR/por_olivenca_negotiation.dds"
+	}
 }

@@ -967,4 +967,12 @@ leader_traits = {
 		army_core_defence_factor = 0.1
 		high_command_cost_factor = -0.5
 	}
+	#PORTUGAL
+	#lol
+	indecisive_trait = {
+		communism_drift = 0.01
+		fascism_drift = 0.01
+		democratic_drift = 0.01
+		neutrality_drift = 0.01
+	}
 }
