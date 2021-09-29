@@ -184,3 +184,12 @@
  RULE_OPTION_REPUBLICAN_DESC:0 "The Canadian AI will attempt to become free while pursuing policy of friendship with United States by going down the relevant path in the national focus tree."
  RULE_OPTION_MONARCHIST:0 "Monarchist"
  RULE_OPTION_MONARCHIST_CAN_DESC:0 "The Canadian AI will attempt to become free while forming it's own monarchy by going down the relevant path in the national focus tree."
+ #Portugal
+ POR_ai_behavior:0 "@POR Portugal"
+ RULE_OPTION_HISTORICAL_POR_AI_DESC:0 "Portugal will attempt to become a democracy and later be overthrown by a military coup."
+ RULE_OPTION_DEMOCRATIC_REPUBLIC_POR:0 "Democratic Republic"
+ RULE_OPTION_DEMOCRATIC_REPUBLIC_POR_AI_DESC:0 "Portugal will attempt to overthrow the monarchy and become a democratic republic and stand up to both Spain and England."
+ RULE_OPTION_CONSTITUTIONAL_MONARCHY_POR:0 "Constitutional Monarchy"
+ RULE_OPTION_CONSTITUTIONAL_MONARCHY_POR_AI_DESC:0 "Portugal will attempt to reform the monarchy and be friendly to both the United Kingdom and France."
+ RULE_OPTION_BAD_MONARCHY_POR:0 "Monarchy"
+ RULE_OPTION_BAD_MONARCHY_POR_AI_DESC:0 "Portugal will attempt to increase the king's authority by fighting the republicans in a civil war."

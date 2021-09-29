@@ -94,7 +94,7 @@ ideas={
 			}
 		}
 		POR_bad_schooling_4 = {
-			picture = por_unstable_monarchy
+			picture = por_illiteracy
 			allowed = {
 				original_tag = POR
 			}
@@ -108,7 +108,7 @@ ideas={
 			}
 		}
 		POR_bad_schooling_3 = {
-			picture = por_unstable_monarchy
+			picture = por_illiteracy
 			allowed = {
 				original_tag = POR
 			}
@@ -122,7 +122,7 @@ ideas={
 			}
 		}
 		POR_bad_schooling_2 = {
-			picture = por_unstable_monarchy
+			picture = por_illiteracy
 			allowed = {
 				original_tag = POR
 			}
@@ -136,7 +136,7 @@ ideas={
 			}
 		}
 		POR_bad_schooling_1 = {
-			picture = por_unstable_monarchy
+			picture = por_illiteracy
 			allowed = {
 				original_tag = POR
 			}
@@ -150,7 +150,7 @@ ideas={
 			}
 		}
 		POR_bad_schooling_0 = {
-			picture = por_unstable_monarchy
+			picture = por_illiteracy
 			allowed = {
 				original_tag = POR
 			}
@@ -164,7 +164,7 @@ ideas={
 			}
 		}
 		POR_low_school_investment = {
-			picture = por_unstable_monarchy
+			picture = por_illiteracy
 			allowed = {
 				original_tag = POR
 			}

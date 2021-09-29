@@ -470,6 +470,40 @@ RUS_ai_behavior = {
 		allow_achievements = yes
 	}
 }
+POR_ai_behavior = {
+	name = "POR_AI_BEHAVIOR"
+	group = "RULE_GROUP_AI_BEHAVIOR"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "RULE_OPTION_DEFAULT_AI_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = HISTORICAL
+		text = "RULE_OPTION_HISTORICAL"
+		desc = "RULE_OPTION_HISTORICAL_POR_AI_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = DEMOCRATIC
+		text = "RULE_OPTION_DEMOCRATIC_REPUBLIC_POR"
+		desc = "RULE_OPTION_DEMOCRATIC_REPUBLIC_POR_AI_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = CONSTITUTIONAL_MONARCHY
+		text = "RULE_OPTION_CONSTITUTIONAL_MONARCHY_POR"
+		desc = "RULE_OPTION_CONSTITUTIONAL_MONARCHY_POR_AI_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = BAD_MONARCHY
+		text = "RULE_OPTION_BAD_MONARCHY_POR"
+		desc = "RULE_OPTION_BAD_MONARCHY_POR_AI_DESC"
+		allow_achievements = yes
+	}
+}
  ##   ##  #   # ###      ## ### ### #  # ###  
 #    #  # ## ## #       #   #    #  #  # #  # 
 # ## #### # # # ##       #  ##   #  #  # ###  

@@ -50,6 +50,9 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = POR_prepare_for_civil_war_1
 		}
+		ai_will_do = {
+			factor = 4000
+		}
 	}
 	focus = {
 		id = por_civilprep
@@ -67,6 +70,9 @@ focus_tree = {
 		}
 		completion_reward = {
 			custom_effect_tooltip = POR_prepare_for_civil_war_2
+		}
+		ai_will_do = {
+			factor = 4000
 		}
 	}
 	focus = {
@@ -159,6 +165,9 @@ focus_tree = {
 				}
 			}
 			set_global_flag = por_revolution_tag
+		}
+		ai_will_do = {
+			factor = 4000
 		}
 	}
 	focus = {
@@ -294,6 +303,9 @@ focus_tree = {
 				popularity = 0.05
 			}
 		}
+		ai_will_do = {
+			factor = 4000
+		}
 	}
 	focus = {
 		id = por_firstreform
@@ -314,6 +326,9 @@ focus_tree = {
 			add_stability = 0.1
 			add_political_power = -75
 		}
+		ai_will_do = {
+			factor = 4000
+		}
 	}
 	focus = {
 		id = por_lastreform
@@ -333,6 +348,9 @@ focus_tree = {
 			}
 			add_stability = 0.15
 			add_political_power = -150
+		}
+		ai_will_do = {
+			factor = 4000
 		}
 	}
 	focus = {
@@ -368,6 +386,13 @@ focus_tree = {
 				elections_allowed = yes
 			}
 			set_global_flag = por_revolution_tag
+		}
+		ai_will_do = {
+			factor = 4000
+			modifier = {
+				factor = -4000
+				is_historical_focus_on = yes
+			}
 		}
 	}
 	focus = {
@@ -448,7 +473,18 @@ focus_tree = {
 				POR = { add_state_claim = PREV }
 			}
 			create_wargoal = { type = annex_everything target = BRA }
-			
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 1
+				faction_leader = {
+					strength_ratio = {
+						tag = SPR
+						ratio > 1.5
+					}
+				}
+			}
 		}
 	}
 	
@@ -500,6 +536,9 @@ focus_tree = {
 		y = 1
 		cost = 10
 		relative_position_id = por_challenge_britain
+		available = {
+			is_in_faction = no
+		}
 		prerequisite = {
 			focus = por_challenge_britain
 		}
@@ -578,6 +617,7 @@ focus_tree = {
 		cost = 10
 		relative_position_id = por_rebuild
 		available = {
+			is_in_faction = no
 			ENG = {
 				is_in_faction = yes
 			}
@@ -792,7 +832,7 @@ focus_tree = {
 			has_stability < 0.3
 			OR = {
 				is_ai = no
-				date > 1920.1.1
+				date > 1924.1.1
 			}
 		}
 		prerequisite = {
@@ -967,6 +1007,24 @@ focus_tree = {
 		completion_reward = {
 			add_timed_idea = { idea = POR_spanish_war days = 120 }
 			create_wargoal = { type = take_claimed_state target = SPR }
+			if = {
+				limit = {
+					country_exists = GLC
+				}
+				create_wargoal = { type = take_claimed_state target = GLC }
+			}
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 1
+				faction_leader = {
+					strength_ratio = {
+						tag = SPR
+						ratio > 1.2
+					}
+				}
+			}
 		}
 	}
 	focus = {
@@ -984,6 +1042,14 @@ focus_tree = {
 		available = {
 			POR = {
 				owns_state = 180
+			}
+			OR = {
+				SPR = {
+					owns_state = 171
+				}
+				GLC = {
+					owns_state = 171
+				}
 			}
 		}
 		prerequisite = {
@@ -1010,6 +1076,22 @@ focus_tree = {
 					on_lose = ww1_portugal.4
 					on_cancel = ww1_portugal.7
 				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 1
+				faction_leader = {
+					strength_ratio = {
+						tag = SPR
+						ratio > 1.2
+					}
+				}
+			}
+			modifier = {
+				factor = 1
+				country_exists = GLC
 			}
 		}
 	}
@@ -1065,11 +1147,28 @@ focus_tree = {
 		y = 1
 		cost = 10
 		relative_position_id = por_ally_spain
+		available = {
+			is_in_faction = no
+			SPR = {
+				is_in_faction = no
+			}
+		}
 		prerequisite = {
 			focus = por_ally_spain
 		}
 		completion_reward = {
 			SPR = { country_event = ww1_portugal.13 }
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 1
+				is_historical_focus_on = no
+			}
+			modifier = {
+				factor = 1
+				date > 1939.1.1
+			}
 		}
 	}
 	focus = {
@@ -1085,6 +1184,13 @@ focus_tree = {
 		completion_reward = {
 			SPR = {
 				country_event = ww1_portugal.11
+			}
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 1
+				is_historical_focus_on = no
 			}
 		}
 	}

@@ -1,0 +1,159 @@
+POR_alternate_democratic_republic = {
+	name = "Portugal Democratic Republic"
+	desc = "The monarchy will be overthrown and the government will become a democracy"
+
+	enable = {
+		original_tag = POR
+		OR = {
+			has_country_flag = POR_AI_RANDOM_DEMOCRATIC
+			has_game_rule = {
+				rule = POR_ai_behavior
+				option = DEMOCRATIC
+			}
+			has_completed_focus = por_democracy
+		}
+	}
+	abort = {
+		
+	}
+
+	ai_national_focuses = {
+		por_revolution
+		por_provisional_junta
+		por_first_government
+		por_fix_country
+		por_stable_democracy
+		por_more_stable_democracy
+		por_challenge_britain
+		por_pink_map
+		por_german_claims
+		por_foreign_purchase
+		por_school_expensive_1
+		por_school_expensive_2
+		por_school_expensive_3
+		por_school_expensive_4
+		por_slot_1
+		por_school_cheap_5
+		por_slot_2
+		por_road
+		por_industry_cheap_1
+		por_industry_cheap_2
+		por_industry_cheap_3
+		por_industry_cheap_4
+		por_resource_extra
+		por_army_innovate
+		por_navy_innovate
+		por_mil_boost
+		por_navy_boost
+		por_mil_xp
+		por_navy_boost_2
+		por_navy_focus
+		por_submarine_research
+		por_naval_range
+		por_colonialism
+		por_olivenca_backyard
+		por_galiza_claim
+	}
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+	}
+}
+POR_constitutional_monarchy = {
+	name = "Portugal Constitutional Monarchy"
+	desc = "Portugal will reform its monarchy into a democratic regime"
+
+	enable = {
+		original_tag = POR
+		OR = {
+			has_country_flag = POR_AI_RANDOM_CONSTITUTIONAL_MONARCHY
+			has_game_rule = {
+				rule = POR_ai_behavior
+				option = CONSTITUTIONAL_MONARCHY
+			}
+		}
+	}
+	abort = {
+		
+	}
+
+	ai_national_focuses = {
+		por_reform
+		por_liberalize
+		por_firstreform
+		por_lastreform
+		por_democracy
+		por_stable_democracy
+		por_more_stable_democracy
+		por_ally_britain
+		por_negotiate_pinkmap
+		por_cursed_marriage
+		por_brazilsuicide
+		por_ally_spain
+		por_iberian_pact
+		por_olivenca_negotiation
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+	}
+}
+POR_bad_monarchy = {
+	name = "Portugal Monarchy"
+	desc = "Portugal will have a civil war in order to give the monarchy more powers"
+
+	enable = {
+		original_tag = POR
+		OR = {
+			has_country_flag = POR_AI_RANDOM_BAD_MONARCHY
+			has_game_rule = {
+				rule = POR_ai_behavior
+				option = BAD_MONARCHY
+			}
+		}
+	}
+	abort = {
+		
+	}
+
+	ai_national_focuses = {
+		por_reform
+		por_civil
+		por_civilprep
+		por_startcivil
+		por_rebuild
+		por_empire
+		por_empire2
+		por_king_fascist
+		por_ally_britain
+		por_negotiate_pinkmap
+		por_cursed_marriage
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	focus_factors = {
+	}
+}
