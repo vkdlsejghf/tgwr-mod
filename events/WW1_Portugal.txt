@@ -850,7 +850,10 @@ country_event = {
 	trigger = {
 		AND = {
 			POR = {
-				has_idea = { POR_unstable_republic_2 }
+				OR = {
+					has_idea = { POR_unstable_republic_1 }
+					has_idea = { POR_unstable_republic_2 }
+				}
 			}
 			date > 1915.5.29
 		}

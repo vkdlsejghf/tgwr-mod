@@ -632,6 +632,13 @@ focus_tree = {
 		completion_reward = {
 			ENG = { country_event = ww1_portugal.19 }
 		}
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 1
+				is_historical_focus_on = no
+			}
+		}
 	}
 	focus = {
 		id = por_negotiate_pinkmap
