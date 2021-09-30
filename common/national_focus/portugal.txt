@@ -51,7 +51,7 @@ focus_tree = {
 			custom_effect_tooltip = POR_prepare_for_civil_war_1
 		}
 		ai_will_do = {
-			factor = 4000
+			base = 4000
 		}
 	}
 	focus = {
@@ -72,7 +72,7 @@ focus_tree = {
 			custom_effect_tooltip = POR_prepare_for_civil_war_2
 		}
 		ai_will_do = {
-			factor = 4000
+			base = 4000
 		}
 	}
 	focus = {
@@ -167,7 +167,7 @@ focus_tree = {
 			set_global_flag = por_revolution_tag
 		}
 		ai_will_do = {
-			factor = 4000
+			base = 4000
 		}
 	}
 	focus = {
@@ -304,7 +304,7 @@ focus_tree = {
 			}
 		}
 		ai_will_do = {
-			factor = 4000
+			nase = 4000
 		}
 	}
 	focus = {
@@ -327,7 +327,7 @@ focus_tree = {
 			add_political_power = -75
 		}
 		ai_will_do = {
-			factor = 4000
+			base = 4000
 		}
 	}
 	focus = {
@@ -350,7 +350,7 @@ focus_tree = {
 			add_political_power = -150
 		}
 		ai_will_do = {
-			factor = 4000
+			base = 4000
 		}
 	}
 	focus = {
@@ -388,10 +388,13 @@ focus_tree = {
 			set_global_flag = por_revolution_tag
 		}
 		ai_will_do = {
-			factor = 4000
+			base = 4000
 			modifier = {
-				factor = -4000
-				is_historical_focus_on = yes
+				factor = 0
+				OR = {
+					has_game_rule = { rule = RULE_OPTION_CONSTITUTIONAL_MONARCHY_POR option = yes }
+					has_game_rule = { rule = RULE_OPTION_DEMOCRATIC_REPUBLIC_POR option = yes }
+				}
 			}
 		}
 	}
@@ -475,9 +478,9 @@ focus_tree = {
 			create_wargoal = { type = annex_everything target = BRA }
 		}
 		ai_will_do = {
-			factor = 0
+			base = 0
 			modifier = {
-				factor = 1
+				add = 1
 				faction_leader = {
 					strength_ratio = {
 						tag = SPR
@@ -633,9 +636,9 @@ focus_tree = {
 			ENG = { country_event = ww1_portugal.19 }
 		}
 		ai_will_do = {
-			factor = 0
+			base = 0
 			modifier = {
-				factor = 1
+				add = 1
 				is_historical_focus_on = no
 			}
 		}
@@ -1022,9 +1025,9 @@ focus_tree = {
 			}
 		}
 		ai_will_do = {
-			factor = 0
+			base = 0
 			modifier = {
-				factor = 1
+				add = 1
 				faction_leader = {
 					strength_ratio = {
 						tag = SPR
@@ -1086,9 +1089,9 @@ focus_tree = {
 			}
 		}
 		ai_will_do = {
-			factor = 0
+			base = 0
 			modifier = {
-				factor = 1
+				add = 1
 				faction_leader = {
 					strength_ratio = {
 						tag = SPR
@@ -1097,7 +1100,7 @@ focus_tree = {
 				}
 			}
 			modifier = {
-				factor = 1
+				add = 1
 				country_exists = GLC
 			}
 		}
@@ -1167,13 +1170,13 @@ focus_tree = {
 			SPR = { country_event = ww1_portugal.13 }
 		}
 		ai_will_do = {
-			factor = 0
+			base = 0
 			modifier = {
-				factor = 1
+				add = 1
 				is_historical_focus_on = no
 			}
 			modifier = {
-				factor = 1
+				add = 1
 				date > 1939.1.1
 			}
 		}
@@ -1194,9 +1197,9 @@ focus_tree = {
 			}
 		}
 		ai_will_do = {
-			factor = 0
+			base = 0
 			modifier = {
-				factor = 1
+				add = 1
 				is_historical_focus_on = no
 			}
 		}
