@@ -2668,6 +2668,10 @@ focus_tree = {
 			create_corps_commander = {
 				name = "Živko Pavlović"
 				skill = 2
+				traits = {
+
+				}
+				portrait_path = "gfx/leaders/SER/SER_zivko_pavlovic.tga"
 				attack_skill = 2
 				defense_skill = 2
 				planning_skill = 2
