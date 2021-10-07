@@ -2665,6 +2665,14 @@ focus_tree = {
 				remove_idea = SER_idea_black_hand
 				add_idea = SER_idea_black_hand_3
 			}
+			create_corps_commander = {
+				name = "Živko Pavlović"
+				skill = 2
+				attack_skill = 2
+				defense_skill = 2
+				planning_skill = 2
+				logistics_skill = 1
+			}
 		}
 		relative_position_id = SER_promotenationalism
 		ai_will_do = {
