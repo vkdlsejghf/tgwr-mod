@@ -2842,6 +2842,7 @@ political_actions = {
 			}
 		}
 		available = {
+			has_global_flag = prussian_blue
 			NOT = { country_exists = GER }
 			has_government = communism
 			all_state = {
@@ -2858,6 +2859,7 @@ political_actions = {
 			}
 		}
 		visible = {
+			has_global_flag = prussian_blue
 			NOT = { country_exists = GER }
 			has_government = communism
 		}
