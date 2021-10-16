@@ -49,12 +49,12 @@ ITA_historical = {
 		ITA_war_for_libya #29 September 1911
 		ITA_regio_esercito #Jul 30, 1911
 		ITA_training_improvements 
-		# Iflexible_foreign_policy
+		ITA_rise_of_italian_nationalism
 		ITA_istituto_nazionale_delle_assicurazioni
 		ITA_Ferrovie_dello_Stato #1912
 		ITA_railroad_modernisation
 		ITA_Breda
-		# ITA_friend_with_entente
+		ITA_gentiloni_pact
 		ITA_protect_albania
 		ITA_foreign_planes
 		ITA_artillery_modernisation #1913
@@ -62,18 +62,19 @@ ITA_historical = {
 		ITA_more_incrociatori
 		ITA_servizio_aeronautico
 		ITA_civitavecchias_port
+		ITA_full_male_suffrage
 		ITA_liberal_union
 		ITA_askari_troops #1914
 		ITA_Ilva
 		ITA_expand_alpini
-		# ITA_claim_on_austria
+		ITA_conservative_pm
 		ITA_italian_patriotism
-		# ITA_denouncing_triple_alliance
-		# ITA_join_entente #1915
+		ITA_sacred_egoism
+		ITA_kings_intervention #1915
 		ITA_avia_doctrine
 		ITA_invest_in_submarines
 		ITA_bersaglieri
-		# ITA_Vickers_Terni
+		ITA_Vickers_Terni
 	}
 	weight = {
 		factor = 1.0

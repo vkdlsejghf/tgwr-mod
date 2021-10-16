@@ -2166,6 +2166,11 @@ focus_tree = {
 		completion_reward = {
 			country_event = ww1_italy.1
 		}
+		allow_branch = {
+			NOT = {
+				has_country_flag = ITA_interwar_focuses
+			}
+		}
 	}
 	
 	focus = {
@@ -2330,7 +2335,7 @@ focus_tree = {
 			focus = ITA_suppress_socialist_activities
 		}
 		mutually_exclusive = {
-			focus = ITA_Bissolati_pact
+			focus = ITA_Nitti_pact
 		}
 		x = 31
 		y = 2
@@ -2341,10 +2346,11 @@ focus_tree = {
 			ITA_conservative_medium_loyalty_increase_effect = yes
 			ITA_conservative_medium_popularity_increase_effect = yes
 			ITA_socialist_medium_loyalty_decrease_effect = yes
+			country_event = ww1_italy.16
 		}
 	}
 	focus = {
-		id = ITA_Bissolati_pact
+		id = ITA_Nitti_pact
 		icon = GFX_focus_por_workers_of_iberia
 		cost = 10
 		prerequisite = {
@@ -2366,6 +2372,7 @@ focus_tree = {
 			ITA_socialist_low_loyalty_increase_effect = yes
 			ITA_radical_low_popularity_increase_effect = yes
 			ITA_radical_medium_loyalty_increase_effect = yes
+			country_event = ww1_italy.17
 		}
 	}
 	focus = {
@@ -2373,7 +2380,7 @@ focus_tree = {
 		icon = GFX_focus_generic_voting
 		cost = 10
 		prerequisite = {
-			focus = ITA_Bissolati_pact
+			focus = ITA_Nitti_pact
 			focus = ITA_gentiloni_pact
 		}
 		mutually_exclusive = {
@@ -2383,6 +2390,8 @@ focus_tree = {
 		y = 3
 		available = {
 			has_government = democratic
+			has_active_mission = ITA_1913_election_timer
+
 		}
 		bypass = {
 			has_government = communism
@@ -2460,7 +2469,7 @@ focus_tree = {
 		y = 5
 	}
 	focus = {
-		id = ITA_supress_socialists
+		id = ITA_social_reforms
 		icon = GFX_focus_broken_red_star
 		cost = 10
 		prerequisite = {
@@ -2496,6 +2505,7 @@ focus_tree = {
 		x = 30
 		y = 4
 		available = {
+			has_global_flag = ITA_1913_elections
 			has_government = democratic
 		}
 	}
@@ -2509,7 +2519,7 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = ITA_last_ded_focus
 		}
-		x = 30
+		x = 31
 		y = 5
 		available = {
 			has_government = democratic
@@ -2523,7 +2533,7 @@ focus_tree = {
 			focus = ITA_full_male_suffrage
 		}
 		prerequisite = {
-			focus = ITA_Bissolati_pact
+			focus = ITA_Nitti_pact
 		}
 		mutually_exclusive = {
 			focus = ITA_liberal_union
@@ -2531,6 +2541,7 @@ focus_tree = {
 		x = 34
 		y = 4
 		available = {
+			has_global_flag = ITA_1913_elections
 			has_government = democratic
 		}
 		bypass = {
@@ -2549,7 +2560,7 @@ focus_tree = {
 			focus = ITA_radical_pm
 			focus = ITA_conservative_pm
 		}
-		x = 32
+		x = 29
 		y = 5
 		available = {
 			has_government = democratic
@@ -2566,7 +2577,25 @@ focus_tree = {
 			focus = ITA_last_ded_focus
 			focus = ITA_conservative_pm
 		}
-		x = 34
+		x = 33
+		y = 5
+		available = {
+			has_government = democratic
+		}
+	}
+	focus = {
+		id = ITA_reformist_pm
+		icon = GFX_focus_stabilize_democracy
+		cost = 10
+		prerequisite = {
+			focus = ITA_radical_union
+		}
+		mutually_exclusive = {
+			focus = ITA_last_ded_focus
+			focus = ITA_conservative_pm
+			focus = ITA_radical_pm
+		}
+		x = 35
 		y = 5
 		available = {
 			has_government = democratic
@@ -2577,7 +2606,7 @@ focus_tree = {
 		icon = GFX_focus_eng_concessions_to_the_trade_unions
 		cost = 10
 		prerequisite = {
-			focus = ITA_radical_union
+			focus = ITA_reformist_pm
 		}
 		x = 35
 		y = 6
@@ -2598,12 +2627,13 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = ITA_sacred_egoism
 		}
-		x = 32
+		available = {
+			has_global_flag = kis_war
+		}
+		x = 30
 		y = 6
 		completion_reward = {
-			remove_ideas = {
-				idea_italy_triple_alliance
-			}
+			remove_ideas = idea_italy_triple_alliance
 			ITA_nationalist_medium_loyalty_decrease_effect = yes
 			ITA_conservative_low_loyalty_decrease_effect = yes
 			ITA_radical_low_loyalty_decrease_effect = yes
@@ -2640,9 +2670,8 @@ focus_tree = {
 		cost = 10
 		prerequisite = {
 			focus = ITA_neutrality_goal
-			focus = ITA_expand_the_coalition
 		}
-		x = 33
+		x = 29
 		y = 7
 	}
 	focus = {
@@ -2652,7 +2681,7 @@ focus_tree = {
 		prerequisite = {
 			focus = ITA_neutrality_goal
 		}
-		x = 32
+		x = 30
 		y = 8
 	}
 	focus = {
@@ -3185,12 +3214,28 @@ focus_tree = {
 		prerequisite = {
 			focus = ITA_conservative_pm
 			focus = ITA_radical_pm
+			focus = ITA_reformist_pm
 		}
 		mutually_exclusive = {
 			focus = ITA_neutrality_goal
+			focus = ITA_expand_the_coalition
 		}
-		x = 30
+		x = 32
 		y = 6
+		available = {
+			has_global_flag = kis_war
+			is_subject = no
+		}
+		bypass = {
+			is_in_faction = yes
+			OR = {
+				has_war_with = GER
+				has_war_with = FRA
+			}
+		}
+		completion_reward = {
+			unlock_decision_category_tooltip = ITA_bidding_war
+		}
 	}
 	focus = {
 		id = ITA_even_Mussolini_is_with_us
@@ -3283,7 +3328,7 @@ focus_tree = {
 		icon = GFX_goal_unknown
 		cost = 10
 		prerequisite = {
-			focus = ITA_clerical_support
+			focus = ITA_end_papacy
 		}
 		x = 26
 		y = 8
@@ -3293,7 +3338,7 @@ focus_tree = {
 		icon = GFX_goal_unknown
 		cost = 10
 		prerequisite = {
-			focus = ITA_clerical_support
+			focus = ITA_end_papacy
 		}
 		x = 28
 		y = 8
@@ -3305,7 +3350,7 @@ focus_tree = {
 		prerequisite = {
 			focus = ITA_kings_intervention
 		}
-		x = 30
+		x = 32
 		y = 8
 	}
 	focus = {
@@ -4216,9 +4261,6 @@ focus_tree = {
 			focus = ITA_working_class_culture
 		}
 		prerequisite = {
-			focus = ITA_he_who_has_iron_has_bread
-		}
-		prerequisite = {
 			focus = ITA_working_class_culture
 		}
 		x = 48
@@ -4253,8 +4295,9 @@ focus_tree = {
 		}
 		prerequisite = {
 			focus = ITA_rip_reformists
+			focus = ITA_maximalist_sympathizers
 		}
-		x = 44
+		x = 45
 		y = 11
 	}
 	focus = {
@@ -4369,6 +4412,16 @@ focus_tree = {
 		y = 9
 	}
 	focus = {
+		id = ITA_end_the_masquerade
+		icon = GFX_goal_unknown
+		cost = 10
+		prerequisite = {
+			focus = ITA_christian_trade_unions
+		}
+		x = 34
+		y = 10
+	}
+	focus = {
 		id = ITA_vertical_economy
 		icon = GFX_goal_unknown
 		cost = 10
@@ -4393,11 +4446,11 @@ focus_tree = {
 		y = 7
 	}
 	focus = {
-		id = ITA_clerical_support
+		id = ITA_end_papacy
 		icon = GFX_focus_por_concordat
 		cost = 10
 		prerequisite = {
-			focus = ITA_supress_socialists
+			focus = ITA_social_reforms
 		}
 		prerequisite = {
 			focus = ITA_use_ani
@@ -4478,7 +4531,7 @@ focus_tree = {
 		prerequisite = {
 			focus = ITA_sacred_egoism
 		}
-		x = 30
+		x = 32
 		y = 7
 	}
 	focus = {
@@ -4494,6 +4547,16 @@ focus_tree = {
 	}
 	focus = {
 		id = ITA_maximalist_sympathizers
+		icon = GFX_goal_generic_dangerous_deal
+		cost = 10
+		prerequisite = {
+			focus = ITA_working_class_culture
+		}
+		x = 47
+		y = 10
+	}
+	focus = {
+		id = ITA_maximalist_
 		icon = GFX_goal_generic_dangerous_deal
 		cost = 10
 		prerequisite = {

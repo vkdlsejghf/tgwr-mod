@@ -805,7 +805,8 @@ ideas = {
 				production_factory_efficiency_gain_factor = -0.05
 				stability_factor = -0.1
 				communism_drift = 0.03
-			}	
+			}
+		}		
 		ITA_poorly_organized_armed_forces = {
 			picture = tfv_can_conscription_crisis
 			allowed = {

@@ -216,6 +216,8 @@ create_navy_leader = {
 }
 
 1910.1.1 = {
+	activate_mission = ITA_1913_election_timer
+	
 	oob = "ITA_1910"
 
 	set_technology = {
