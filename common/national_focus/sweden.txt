@@ -10,7 +10,7 @@ focus_tree = {
 	default = no
 	focus = {
 		id = SWE_recovering_from_strike
-		icon = GFX_goal_unknown
+		icon = GFX_focus_worker_culture
 		cost = 4.40
 		x = 4
 		y = 0
@@ -28,9 +28,9 @@ focus_tree = {
 	}
 	focus = {
 		id = SWE_staaff
-		icon = GFX_goal_unknown
+		icon = GFX_focus_dead_economy
 		cost = 1.00
-		x = 12
+		x = 14
 		y = 0
 		available = {
 			always = no
@@ -286,7 +286,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SWE_allying_socialists
-		icon = GFX_goal_unknown
+		icon = GFX_focus_red_rose
 		cost = 10.00
 		prerequisite = {
 			focus = SWE_staaff
@@ -310,7 +310,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SWE_shun_socialism
-		icon = GFX_goal_unknown
+		icon = GFX_focus_generic_suppress_socdems
 		cost = 10.00
 		prerequisite = {
 			focus = SWE_staaff
@@ -330,7 +330,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SWE_slash_military_spending
-		icon = GFX_goal_unknown
+		icon = GFX_focus_split_helmet
 		cost = 10.00
 		prerequisite = {
 			focus = SWE_shun_socialism
@@ -355,7 +355,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SWE_sverige_embarrassment
-		icon = GFX_goal_unknown
+		icon = GFX_focus_battleship_investment
 		cost = 12.00
 		prerequisite = {
 			focus = SWE_slash_military_spending
@@ -384,7 +384,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SWE_put_funds_elsewhere
-		icon = GFX_goal_unknown
+		icon = GFX_focus_industry_profit
 		cost = 10.00
 		prerequisite = {
 			focus = SWE_slash_military_spending
@@ -418,7 +418,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SWE_disarm_nation
-		icon = GFX_goal_unknown
+		icon = GFX_focus_focus_fra_maquis
 		cost = 10.00
 		prerequisite = {
 			focus = SWE_slash_military_spending
@@ -437,7 +437,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SWE_social_funding
-		icon = GFX_goal_unknown
+		icon = GFX_focus_generic_concessions
 		cost = 10.00
 		prerequisite = {
 			focus = SWE_sverige_embarrassment
@@ -475,7 +475,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SWE_attack_the_monarchy
-		icon = GFX_goal_unknown
+		icon = GFX_focus_rom_handle_king
 		cost = 10.00
 		prerequisite = {
 			focus = SWE_sverige_embarrassment
@@ -506,7 +506,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SWE_infrastructure_project
-		icon = GFX_goal_unknown
+		icon = GFX_focus_generic_the_giant_wakes
 		cost = 10.00
 		prerequisite = {
 			focus = SWE_disarm_nation
@@ -532,7 +532,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SWE_liberal_effort
-		icon = GFX_goal_unknown
+		icon = GFX_focus_stabilize_democracy
 		cost = 10.00
 		prerequisite = {
 			focus = SWE_attack_the_monarchy
@@ -558,7 +558,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SWE_peoples_state
-		icon = GFX_goal_unknown
+		icon = GFX_goal_generic_national_unity
 		cost = 10.00
 		prerequisite = {
 			focus = SWE_attack_the_monarchy
@@ -585,7 +585,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SWE_farmers_into_workers
-		icon = GFX_goal_unknown
+		icon = GFX_focus_socialist_worker
 		cost = 10.00
 		prerequisite = {
 			focus = SWE_infrastructure_project
@@ -611,7 +611,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SWE_staaf_hegemony
-		icon = GFX_goal_unknown
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
 		cost = 10.00
 		prerequisite = {
 			focus = SWE_peoples_state
@@ -634,7 +634,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SWE_courtyard_speech
-		icon = GFX_goal_unknown
+		icon = GFX_focus_generic_treaty
 		cost = 1.00
 		prerequisite = {
 			focus = SWE_staaff
@@ -648,7 +648,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SWE_moderate_candidate
-		icon = GFX_goal_unknown
+		icon = GFX_goal_generic_neutrality_focus
 		cost = 2.00
 		prerequisite = {
 			focus = SWE_courtyard_speech
@@ -680,7 +680,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SWE_strong_willed_government
-		icon = GFX_goal_unknown
+		icon = GFX_focus_generic_support_the_left_right
 		cost = 5.00
 		prerequisite = {
 			focus = SWE_moderate_candidate
@@ -694,7 +694,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SWE_apolitical_government
-		icon = GFX_goal_unknown
+		icon = GFX_focus_generic_self_management
 		cost = 5.00
 		prerequisite = {
 			focus = SWE_strong_willed_government
@@ -712,7 +712,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SWE_strengthen_borggardsregering
-		icon = GFX_goal_unknown
+		icon = GFX_focus_generic_home_defense
 		cost = 5.00
 		prerequisite = {
 			focus = SWE_strong_willed_government
@@ -726,7 +726,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SWE_radical_candidate
-		icon = GFX_goal_unknown
+		icon = GFX_focus_generic_strike_at_democracy2
 		cost = 2.00
 		prerequisite = {
 			focus = SWE_courtyard_speech
@@ -776,7 +776,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SWE_royal_dictatorship
-		icon = GFX_goal_unknown
+		icon = GFX_focus_generic_monarchy_1
 		cost = 5.00
 		prerequisite = {
 			focus = SWE_radical_candidate
@@ -806,7 +806,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SWE_clerical_dictatorship
-		icon = GFX_goal_unknown
+		icon = GFX_focus_generic_strike_at_democracy1
 		cost = 10.00
 		prerequisite = {
 			focus = SWE_radical_candidate
@@ -845,7 +845,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SWE_lutheran_nation
-		icon = GFX_goal_unknown
+		icon = GFX_focus_por_concordat
 		cost = 5.00
 		prerequisite = {
 			focus = SWE_clerical_dictatorship
@@ -880,7 +880,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SWE_memories_of_empire
-		icon = GFX_goal_unknown
+		icon = GFX_focus_generic_ultranationalist_monarchy
 		cost = 4.40
 		prerequisite = {
 			focus = SWE_royal_dictatorship
@@ -901,7 +901,6 @@ focus_tree = {
 				}
 				add_claim_by = ROOT
 			}
-			add_state_claim = 195
 			add_state_claim = 13
 			add_state_claim = 63
 			add_state_claim = 62
@@ -1099,7 +1098,7 @@ focus_tree = {
 			focus = SWE_clerical_dictatorship
 			focus = SWE_royal_dictatorship
 		}
-		x = 30
+		x = 28
 		y = 3
 		available = {
 			always = no
@@ -1113,7 +1112,7 @@ focus_tree = {
 		prerequisite = {
 			focus = SWE_folkhemmet
 		}
-		x = 28
+		x = 26
 		y = 4
 		completion_reward = {
 			random_state = {
@@ -1175,7 +1174,7 @@ focus_tree = {
 		prerequisite = {
 			focus = SWE_folkhemmet
 		}
-		x = 30
+		x = 28
 		y = 4
 		completion_reward = {
 			add_ideas = tot_economic_mobilisation
@@ -1194,7 +1193,7 @@ focus_tree = {
 		prerequisite = {
 			focus = SWE_folkhemmet
 		}
-		x = 32
+		x = 30
 		y = 4
 		completion_reward = {
 			random_state = {
@@ -1224,7 +1223,7 @@ focus_tree = {
 		prerequisite = {
 			focus = SWE_workers_of_sweden
 		}
-		x = 30
+		x = 28
 		y = 5
 		completion_reward = {
 			remove_ideas = SWE_gustaf_v_evil
@@ -1242,7 +1241,7 @@ focus_tree = {
 		prerequisite = {
 			focus = SWE_exile_monarchy
 		}
-		x = 28
+		x = 26
 		y = 6
 		completion_reward = {
 			army_experience = 10
@@ -1257,7 +1256,7 @@ focus_tree = {
 		prerequisite = {
 			focus = SWE_exile_monarchy
 		}
-		x = 30
+		x = 28
 		y = 6
 		completion_reward = {
 			every_state = {
@@ -1280,7 +1279,7 @@ focus_tree = {
 		prerequisite = {
 			focus = SWE_mother_of_scandinavia
 		}
-		x = 30
+		x = 28
 		y = 7
 		will_lead_to_war_with = NOR
 		completion_reward = {
@@ -1340,12 +1339,13 @@ focus_tree = {
 		prerequisite = {
 			focus = SWE_doctrine_effort
 		}
-		x = 32
+		x = 31
 		y = 3
 		completion_reward = {
 			add_tech_bonus = {
 			    bonus = 1.00
 			    uses = 2
+				name = SWE_en_svensk_tiger
 			    category = armor
 			}
 			random_state = {
@@ -1370,7 +1370,7 @@ focus_tree = {
 		prerequisite = {
 			focus = SWE_exile_monarchy
 		}
-		x = 32
+		x = 30
 		y = 6
 		completion_reward = {
 			random_state = {
@@ -1418,7 +1418,7 @@ focus_tree = {
 		prerequisite = {
 			focus = SWE_prepare_for_worldwide_revoluition
 		}
-		x = 32
+		x = 30
 		y = 7
 		completion_reward = {
 			add_war_support = 0.05
@@ -1504,7 +1504,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SWE_swedish_domination
-		icon = GFX_goal_unknown
+		icon = GFX_focus_hol_united_netherlands
 		cost = 10.00
 		prerequisite = {
 			focus = SWE_restore_the_union
@@ -1540,7 +1540,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SWE_occupy_aland
-		icon = GFX_goal_unknown
+		icon = GFX_focus_the_big_push
 		cost = 4.40
 		prerequisite = {
 			focus = SWE_strengthen_borggardsregering
@@ -1594,7 +1594,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SWE_hungerskjold
-		icon = GFX_goal_unknown
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
 		cost = 10.00
 		prerequisite = {
 			focus = SWE_fund_military_projects
@@ -1615,7 +1615,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SWE_call_of_the_king
-		icon = GFX_goal_unknown
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
 		cost = 9.00
 		prerequisite = {
 			focus = SWE_hungerskjold
@@ -1659,7 +1659,7 @@ focus_tree = {
 		prerequisite = {
 			focus = SWE_true_equality
 		}
-		x = 28
+		x = 26
 		y = 7
 		completion_reward = {
 			add_ideas = SWE_anarchism
@@ -1673,7 +1673,7 @@ focus_tree = {
 		prerequisite = {
 			focus = SWE_exile_monarchy
 		}
-		x = 34
+		x = 32
 		y = 6
 		available = {
 			country_exists = SOV
@@ -1701,7 +1701,7 @@ focus_tree = {
 		prerequisite = {
 			focus = SWE_anarchist_dream
 		}
-		x = 30
+		x = 28
 		y = 8
 		will_lead_to_war_with = DEN
 		completion_reward = {
