@@ -10,7 +10,7 @@ focus_tree = {
 	default = no
 	focus = {
 		id = SWE_recovering_from_strike
-		icon = GFX_focus_worker_culture
+		icon = GFX_focus_dead_economy
 		cost = 4.40
 		x = 4
 		y = 0
@@ -969,6 +969,19 @@ focus_tree = {
 		bypass  = {
 			has_government = communism
 		}
+		available = {
+			FRA = {
+				is_subject = no
+				is_faction_leader = yes
+				NOT = {
+					has_government = communism
+					has_war_with = ROOT
+				}
+			}
+			NOT = {
+				has_global_flag = great_war_ends
+			}
+		}
 		completion_reward = {
 			custom_effect_tooltip = swe_flirting_allies_tt
 			FRA = {
@@ -995,11 +1008,16 @@ focus_tree = {
 		y = 2
 		available = {
 			has_country_flag = pact_with_france
-			NOT = {
-				has_government = communism
-			}
 			FRA = {
+				is_subject = no
 				is_faction_leader = yes
+				NOT = {
+					has_government = communism
+					has_war_with = ROOT
+				}
+			}
+			NOT = {
+				has_global_flag = great_war_ends
 			}
 		}
 		completion_reward = {
@@ -1033,6 +1051,19 @@ focus_tree = {
 		bypass = {
 			has_government = communism
 		}
+		available = {
+			GER = {
+				is_subject = no
+				is_faction_leader = yes
+				NOT = {
+					has_government = communism
+					has_war_with = ROOT
+				}
+			}
+			NOT = {
+				has_global_flag = great_war_ends
+			}
+		}
 		completion_reward = {
 			custom_effect_tooltip = swe_flirting_germans_tt
 			GER = {
@@ -1063,26 +1094,31 @@ focus_tree = {
 				has_government = communism
 			}
 			GER = {
+				is_subject = no
 				is_faction_leader = yes
+				NOT = {
+					has_government = communism
+					has_war_with = ROOT
+				}
+			}
+			NOT = {
+				has_global_flag = great_war_ends
 			}
 		}
 		completion_reward = {
 			GER = {
 				add_to_faction = ROOT
 			}
-			add_state_core = 148
-			add_state_core = 722
-			add_state_core = 149
 			add_state_core = 145
 			every_state = {
 				limit = {
 					is_core_of = FIN
+					NOT  = {
+						state = 145
+					}
 				}
 				add_claim_by = ROOT
 			}
-			add_state_claim = 216
-			add_state_claim = 215
-			add_state_claim = 213
 		}
 
 	}
@@ -1102,6 +1138,9 @@ focus_tree = {
 		available = {
 			always = no
 		}
+		bypass = {
+			has_government = communism
+		}
 
 	}
 	focus = {
@@ -1113,6 +1152,9 @@ focus_tree = {
 		}
 		x = 26
 		y = 4
+		available = {
+			has_government = communism
+		}
 		completion_reward = {
 			random_state = {
 				limit = {
@@ -1175,6 +1217,9 @@ focus_tree = {
 		}
 		x = 28
 		y = 4
+		available = {
+			has_government = communism
+		}
 		completion_reward = {
 			add_ideas = tot_economic_mobilisation
 			add_popularity = {
@@ -1194,6 +1239,9 @@ focus_tree = {
 		}
 		x = 30
 		y = 4
+		available = {
+			has_government = communism
+		}
 		completion_reward = {
 			random_state = {
 				limit = {
@@ -1224,6 +1272,9 @@ focus_tree = {
 		}
 		x = 28
 		y = 5
+		available = {
+			has_government = communism
+		}
 		completion_reward = {
 			remove_ideas = SWE_gustaf_v_evil
 			add_timed_idea = {
@@ -1242,6 +1293,9 @@ focus_tree = {
 		}
 		x = 26
 		y = 6
+		available = {
+			has_government = communism
+		}
 		completion_reward = {
 			army_experience = 10
 			add_ideas = SWE_women_in_army
@@ -1257,6 +1311,9 @@ focus_tree = {
 		}
 		x = 28
 		y = 6
+		available = {
+			has_government = communism
+		}
 		completion_reward = {
 			every_state = {
 				limit = {
@@ -1280,6 +1337,19 @@ focus_tree = {
 		}
 		x = 28
 		y = 7
+		available = {
+			has_government = communism
+			is_subject = no
+		}
+		bypass = {
+			OR = {
+				has_war_with = NOR
+				has_subject = NOR
+				NOR = {
+					exists = no
+				}
+			}
+		}
 		will_lead_to_war_with = NOR
 		completion_reward = {
 			add_threat = 5
@@ -1371,6 +1441,9 @@ focus_tree = {
 		}
 		x = 30
 		y = 6
+		available = {
+			has_government = communism
+		}
 		completion_reward = {
 			random_state = {
 				limit = {
@@ -1419,6 +1492,9 @@ focus_tree = {
 		}
 		x = 30
 		y = 7
+		available = {
+			has_government = communism
+		}
 		completion_reward = {
 			add_war_support = 0.05
 			add_stability = 0.05
@@ -1487,13 +1563,16 @@ focus_tree = {
 		x = 20
 		y = 5
 		will_lead_to_war_with = NOR
-		completion_reward = {
-			every_state = {
-				limit = {
-					is_core_of = NOR
+		bypass = {
+			OR = {
+				has_war_with = NOR
+				has_subject = NOR
+				NOR = {
+					exists = no
 				}
-				add_core_of = ROOT
 			}
+		}
+		completion_reward = {
 			create_wargoal = {
 				type = annex_everything
 				target = NOR
@@ -1513,9 +1592,48 @@ focus_tree = {
 		}
 		x = 19
 		y = 6
+		available = {
+			is_subject = no
+			NOT = {
+				has_country_flag = great_war_loser
+			}
+			OR = {
+				AND = {
+					any_owned_state = {
+						is_core_of = NOR
+						NOT = {
+							is_core_of = SWE
+						}
+					}
+					NOR = {
+						OR = {
+							exists = no
+							is_subject_of = SWE
+						}
+					}
+				}
+				has_subject = NOR
+			}
+		}
 		completion_reward = {
+			if = {
+				limit = {
+					has_subject = NOR
+				}
+				annex_country = {
+					target = NOR
+					transfer_troops = yes
+				}
+			}
 			set_cosmetic_tag = SWE_swedish_empire
-			add_war_support = 0.20
+			every_state = {
+				limit = {
+					is_core_of = NOR
+				}
+				add_core_of = ROOT
+			}
+			add_war_support = 0.1
+			add_stability = -0.25
 		}
 
 	}
@@ -1531,9 +1649,42 @@ focus_tree = {
 		}
 		x = 21
 		y = 6
+		available = {
+			OR = {
+				AND = {
+					any_owned_state = {
+						is_core_of = NOR
+						NOT = {
+							is_core_of = SWE
+						}
+					}
+					NOR = {
+						OR = {
+							exists = no
+							is_subject_of = SWE
+						}
+					}
+				}
+				has_subject = NOR
+			}
+		}
 		completion_reward = {
+			if = {
+				limit = {
+					has_subject = NOR
+				}
+				annex_country = {
+					target = NOR
+					transfer_troops = yes
+				}
+			}
 			set_cosmetic_tag = SWE_NOR
-			add_stability = 0.10
+			every_state = {
+				limit = {
+					is_core_of = NOR
+				}
+				add_core_of = ROOT
+			}
 		}
 
 	}
@@ -1551,8 +1702,10 @@ focus_tree = {
 		y = 5
 		available = {
 			has_war = no
-			GER = {
-				has_war_with = RUS
+			is_subject = no
+			RUS = {
+				has_war_with = GER
+				owns_state = 145
 			}
 		}
 		completion_reward = {
@@ -1660,6 +1813,9 @@ focus_tree = {
 		}
 		x = 26
 		y = 7
+		available = {
+			has_government = communism
+		}
 		completion_reward = {
 			add_ideas = SWE_anarchism
 		}
@@ -1680,8 +1836,38 @@ focus_tree = {
 		}
 		x = 28
 		y = 8
+		available = {
+			has_government = communism
+			is_subject = no
+			OR = {
+				AND = {
+					any_owned_state = {
+						is_core_of = NOR
+						NOT = {
+							is_core_of = SWE
+						}
+					}
+					NOR = {
+						OR = {
+							exists = no
+							is_subject_of = SWE
+						}
+					}
+				}
+				has_subject = NOR
+			}
+		}
 		will_lead_to_war_with = DEN
 		completion_reward = {
+			every_state = {
+				limit = {
+					is_core_of = NOR
+					NOT = {
+						is_core_of = ROOT
+					}
+				}
+				add_core_of = ROOT
+			}
 			create_wargoal = {
 				type = annex_everything
 				target = DEN
@@ -1689,8 +1875,8 @@ focus_tree = {
 			every_state = {
 				limit = {
 					OR = {
+						is_core_of = DEN
 						is_core_of = FIN
-						is_core_of = EST
 					}
 				}
 				add_claim_by = ROOT
