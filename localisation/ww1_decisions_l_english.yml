@@ -107,6 +107,9 @@
  BAY_reunite_germany_desc:0 "The German people is reunited under the red flag once again! Finally the German revolutions of 1848 is completed by our firm hands!"
  GER_prussia_reunite_germany:0 "Reunite Germany"
  GER_prussia_reunite_germany_desc:0 "The fatherland is under our control and ready to be reunited as the one German nation once again!"
+ prussian_blue:0 "Prussian Blue"
+ GER_prussian_russian_withdrawal:0 "Entente Withdrawal on German Occupations"
+ prussian_withdrawal:0 "Entente has withdrew from German occupations"
 
 
  FRA_capitulation:0" France surrenders "
@@ -616,6 +619,7 @@
  CHI_XSM_take_ningxia:0 "Annex Ningxia"
  CHI_SHX_take_suiyuan:0 "Annex Suiyuan"
  CHI_ANC_conquer_mongolia:0 "Annex Mongolia"
+ CHI_conquer_tibet:0 "Annex Tibet"
  CHI_unite_china_XSM:0 "Fate of [XSM.GetName]"
  CHI_unite_china_SHX:0 "Fate of [SHX.GetName]"
  CHI_unite_china_SIK:0 "Fate of [SIK.GetName]"

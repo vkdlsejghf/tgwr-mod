@@ -27,6 +27,12 @@ leader_traits = {
 		justify_war_goal_time = -0.1
 		generate_wargoal_tension = -0.1
 	}
+	big_bill = {
+		random = no
+		industrial_capacity_factory = 0.1
+		political_power_factor = 0.05
+		drift_defence_factor = 0.1
+	}
 	lunatic = {
 		random = no
 		stability_factor = -0.1
@@ -849,14 +855,12 @@ leader_traits = {
 		random = no
 		political_power_factor = 0.1
 		war_support_factor = 0.05
-		stability_factor = -0.05
+		stability_factor = -0.15
 		army_core_attack_factor = 0.1
 		ai_focus_aggressive_factor = 0.5
 		non_core_manpower = 0.02
 		communism_acceptance = -100
 		democratic_acceptance = -50
-		fascism_acceptance = 25
-		neutrality_acceptance = 50
 	}
 	#AUSTRIA
 	oldschool_kaiser = {
@@ -1059,7 +1063,7 @@ leader_traits = {
 		democratic_drift = 0.02
 		war_support_factor = 0.05
 	}
-    #AZERBAIJAN
+	#AZERBAIJAN
 	national_founder = {
 		random = no
 		political_power_factor = 0.05
@@ -1069,7 +1073,6 @@ leader_traits = {
 		resistance_growth_on_our_occupied_states = 0.3
 		resistance_damage_to_garrison = 0.15
 	}
-	
 	foreign_leader = {
 		random = no
 		political_power_factor = -0.1
@@ -1090,16 +1093,17 @@ leader_traits = {
 		army_core_attack_factor = 0.1
 	}
 	#SWEDEN
-	SWE_liberal_hegemon = { #I know the values on this trait seems wacky, but trust me you can't keep it for long
+	SWE_liberal_hegemon = {
+		#I know the values on this trait seems wacky, but trust me you can't keep it for long
 		random = no
-		stability_factor = 0.40
+		stability_factor = 0.4
 		consumer_goods_factor = -0.05
-		political_power_factor = 0.20
-		experience_gain_army_factor = -1.0
+		political_power_factor = 0.2
+		experience_gain_army_factor = -1
 	}
 	SWE_principalled = {
 		random = no
-		stability_factor = 0.10
+		stability_factor = 0.1
 	}
 	SWE_ottar = {
 		random = no
