@@ -1,5 +1,41 @@
 ideas = {
 	political_advisor = {
+		TUR_mahmud_sevket = {
+			allowed = {
+				original_tag = TUR
+			}
+			traits = {
+				voice_of_restraint
+			}
+			picture = TUR_sevket_pasha
+			visible = {
+				NOT = {
+					has_global_flag = shevket_pasha_dead
+					has_country_flag = TUR_purge_radical_ittihadists
+				}
+			}
+			available = {
+				NOT = {
+					has_country_leader = {
+						name = "Mahmud Şevket Paşa"
+						ruling_only = yes
+					}
+					has_completed_focus = TUR_yildiz_teskilati
+					has_completed_focus = TUR_arrest_faction_leaders
+					has_completed_focus = TUR_istirak_mukavemet
+
+				}
+				available = {
+					OR = {
+						has_government = democratic
+						has_government = neutrality
+					}
+				}
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
 		TUR_ismail_enver = {
 			allowed = {
 				original_tag = TUR
@@ -18,60 +54,27 @@ ideas = {
 						name = "Ismail Enver Paşa"
 						ruling_only = yes
 					}
-				}
-				NOT = {
 					has_completed_focus = TUR_yildiz_teskilati
-				}
-				NOT = {
 					has_completed_focus = TUR_arrest_faction_leaders
+				}
+				OR = {
+					has_government = fascism
+					has_government = neutrality
 				}
 			}
 			allowed_to_remove = {
 				custom_trigger_tooltip = {
 					tooltip = "Has not formed the Young Turk Government"
 					NOT = {
-						has_country_flag = talat_enver_cemal
+						AND = {
+							has_country_flag = talat_enver_cemal
+							has_country_leader = {
+								name = "Mehmed Talat Paşa"
+								ruling_only = yes
+							}
+						}
+						
 					}
-				}
-			}
-			ai_will_do = {
-				factor = 1
-			}
-		}
-		TUR_mahmud_sevket = {
-			allowed = {
-				original_tag = TUR
-			}
-			traits = {
-				voice_of_restraint
-			}
-			picture = TUR_sevket_pasha
-			visible = {
-				NOT = {
-					has_global_flag = shevket_pasha_dead
-				}
-				NOT = {
-					has_country_flag = TUR_purge_radical_ittihadists
-				}
-			}
-			available = {
-				NOT = {
-					has_country_leader = {
-						name = "Mahmud Şevket Paşa"
-						ruling_only = yes
-					}
-				}
-				NOT = {
-					has_completed_focus = TUR_yildiz_teskilati
-				}
-				NOT = {
-					has_completed_focus = TUR_arrest_faction_leaders
-				}
-				NOT = {
-					has_global_flag = shevket_pasha_dead
-				}
-				NOT = {
-					has_completed_focus = TUR_istirak_mukavemet
 				}
 			}
 			ai_will_do = {
@@ -94,6 +97,10 @@ ideas = {
 						ruling_only = yes
 					}
 				}
+				OR = {
+					has_government = fascism
+					has_government = neutrality
+				}
 			}
 			traits = {
 				backroom_backstabber
@@ -112,12 +119,28 @@ ideas = {
 				}
 			}
 			available = {
+				OR = {
+					has_government = fascism
+					has_government = neutrality
+				}
 			}
 			allowed_to_remove = {
 				custom_trigger_tooltip = {
 					tooltip = "Has not formed the Young Turk Government"
 					NOT = {
-						has_country_flag = talat_enver_cemal
+						AND = {
+							has_country_flag = talat_enver_cemal
+							OR = {
+								has_country_leader = {
+									name = "Mehmed Talat Paşa"
+									ruling_only = yes
+								}
+								has_country_leader = {
+									name = "Ismail Enver Paşa"
+									ruling_only = yes
+								}
+							}						
+						}
 					}
 				}
 			}
@@ -144,8 +167,6 @@ ideas = {
 						name = "Mustafa Kemal Paşa"
 						ruling_only = yes
 					}
-				}
-				NOT = {
 					has_idea = TUR_mustafa_kemal
 				}
 			}
@@ -169,21 +190,28 @@ ideas = {
 				erudite_ideologue
 			}
 			available = {
+				NOT = {
+					has_government = communism
+				}
 			}
 			ai_will_do = {
 				factor = 1
 			}
 		}
 		TUR_ahmed_nessimy = {
-			picture = generic_political_advisor_europe_4
 			allowed = {
 				original_tag = TUR
 			}
 			traits = {
 				diplomatic_minister
 			}
+			available = {
+				NOT = {
+					has_government = communism
+				}
+			}
 			ai_will_do = {
-				factor = 25
+				factor = 2
 			}
 		}
 		TUR_damad_ferid_advisor = {
@@ -193,13 +221,19 @@ ideas = {
 			traits = {
 				sharp_tongued_lawyer
 			}
+			available = {
+				OR = {
+					has_government = democratic
+					has_country_leader_with_trait = trait_authoritarian_democracy
+				}				
+			}
 			visible = {
 				NOT = {
 					has_country_flag = TUR_purge_hurriyetveitifak
 				}
 			}
 			ai_will_do = {
-				factor = 25
+				factor = 1
 			}
 		}
 		TUR_prens_sabahattin_advisor = {
@@ -209,20 +243,28 @@ ideas = {
 			traits = {
 				decentralist_liberal
 			}
+			available = {
+				has_government = democratic
+				NOT = {
+					has_country_leader = {
+						name = "Prens Sabahattin"
+						ruling_only = yes
+					}
+				}
+			}
 			visible = {
 				NOT = {
 					has_country_flag = TUR_purge_hurriyetveitifak
 				}
 			}
 			ai_will_do = {
-				factor = 25
+				factor = 2
 			}
 		}
 		TUR_said_halim = {
 			allowed = {
 				original_tag = TUR
 			}
-			picture = generic_political_advisor_europe_5
 			traits = {
 				puppet_grand_vizier
 			}
@@ -233,9 +275,20 @@ ideas = {
 			}
 			available = {
 				has_completed_focus = TUR_three_pashas
+				has_country_flag = talat_enver_cemal
+				OR = {
+					has_country_leader = {
+						name = "Mehmed Talat Paşa"
+						ruling_only = yes
+					}
+					has_country_leader = {
+						name = "Ismail Enver Paşa"
+						ruling_only = yes
+					}
+				}
 			}
 			ai_will_do = {
-				factor = 10
+				factor = 25
 			}
 		}
 		TUR_ahmed_tevfik = {
@@ -257,9 +310,34 @@ ideas = {
 						ruling_only = yes
 					}
 				}
+				OR = {
+					has_government = democratic
+					has_government = neutrality
+				}
 			}
 			ai_will_do = {
 				factor = 1
+			}
+		}
+		TUR_tevfik_fikret = {
+			allowed = {
+				original_tag = TUR
+			}
+			traits = {
+				freedom_poet
+			}
+			available = {
+			    date < 1915.8.19
+				NOT = {
+					has_government = fascism
+				}
+			}
+			ai_will_do = {
+				base = 0
+				modifier = {
+					add = 1 
+					has_government = democratic
+				}
 			}
 		}
 		TUR_bahattin_bey = {
@@ -284,6 +362,10 @@ ideas = {
 				economist
 			}
 			available = {
+				OR = {
+					has_government = democratic
+					has_country_leader_with_trait = trait_authoritarian_democracy
+				}
 			}
 			visible = {
 				NOT = {
@@ -294,17 +376,6 @@ ideas = {
 				factor = 10
 			}
 		}
-		TUR_kazim_ozalp = {
-			allowed = {
-				original_tag = TUR
-			}
-			traits = {
-				war_industrialist
-			}
-			ai_will_do = {
-				factor = 1
-			}
-		}
 		TUR_mehmet_emin_yurdakul = {
 			allowed = {
 				original_tag = TUR
@@ -312,13 +383,14 @@ ideas = {
 			available = {
 				OR = {
 					has_country_leader = {
-						name = "Mustafa Kemal"
+						name = "Mustafa Kemal Paşa"
 						ruling_only = yes
 					}
 					has_country_leader = {
 						name = "Mehmed Talat Paşa"
 						ruling_only = yes
 					}
+					has_completed_focus = TUR_pan_turkism
 				}
 			}
 			traits = {
@@ -329,6 +401,9 @@ ideas = {
 			}
 		}
 		TUR_celal_bayar = {
+		
+			picture = tur_celal_bayar
+			
 			allowed = {
 				original_tag = TUR
 			}
@@ -336,21 +411,9 @@ ideas = {
 				captain_of_industry
 			}
 			available = {
-			}
-			ai_will_do = {
-				factor = 1
-			}
-		}
-		TUR_hasan_saka = {
-			allowed = {
-				original_tag = TUR
-			}
-			picture = generic_political_advisor_europe_3
-			traits = {
-				financial_expert
-			}
-			available = {
-				has_completed_focus = TUR_support_agrarians_or_industry_focus
+				NOT = {
+					has_government = communism
+				}
 			}
 			ai_will_do = {
 				factor = 1
@@ -360,7 +423,6 @@ ideas = {
 			allowed = {
 				original_tag = TUR
 			}
-			picture = generic_political_advisor_europe_1
 			traits = {
 				smooth_talking_charmer
 			}
@@ -373,7 +435,12 @@ ideas = {
 			allowed = {
 				original_tag = TUR
 			}
-			picture = generic_political_advisor_europe_2
+			available = {
+				NOT = {
+					has_government = fascism
+					has_government = communism
+				}
+			}
 			traits = {
 				compassionate_gentleman
 			}
@@ -395,6 +462,8 @@ ideas = {
 				}
 				NOT = {
 					has_idea = TUR_said_halim
+					has_government = democratic
+					has_government = communism
 				}
 			}
 			ai_will_do = {
@@ -402,30 +471,21 @@ ideas = {
 			}
 		}
 		#COMMUNIST ADVISORS
-		TUR_nazim_hikmet = {
-			allowed = {
-				original_tag = TUR
-			}
-			traits = {
-				socialist_novelist
-			}
-			visible = {
-				has_government = communism
-				date > 1920.1.15 #very young
-			}
-			ai_will_do = {
-				factor = 10
-			}
-		}
 		TUR_mustafa_suphi = {
 			allowed = {
 				original_tag = TUR
 			}
 			traits = {
-				marxist_philosopher
+				marxist_academic
 			}
-			visible = {
+			available = {
 				has_government = communism
+				NOT = {
+					has_country_leader = {
+						name = "Mustafa Suphi Bey"
+						ruling_only = yes
+					}
+				}				
 			}
 			ai_will_do = {
 				factor = 1
@@ -440,6 +500,12 @@ ideas = {
 			}
 			available = {
 				has_completed_focus = TUR_istirak_mukavemet
+				NOT = {
+					has_country_leader = {
+						name = "Ethem Bey"
+						ruling_only = yes
+					}
+				}
 			}
 			traits = {
 				revolutionary_author
@@ -448,7 +514,24 @@ ideas = {
 				factor = 10
 			}
 		}
-		# FASCIST ADVISORS
+		TUR_Avraam_Benaroya = {
+			allowed = {
+				original_tag = TUR
+			}
+			available = {
+				has_government = communism
+				NOT = {
+				    country_exists = ISR
+				}	
+			}
+			traits = {
+				communist_revolutionary
+			}
+			ai_will_do = {
+				factor = 10
+			}
+		}
+		# FASCIST ADVISOR
 		TUR_nazim_bey = {
 			#evil doctor-pan-turkist
 			allowed = {
@@ -462,6 +545,7 @@ ideas = {
 					has_completed_focus = TUR_pan_turkism
 					has_completed_focus = TUR_unite_pan_nationalists
 				}
+				has_government = fascism
 			}
 			ai_will_do = {
 				factor = 10
@@ -472,13 +556,19 @@ ideas = {
 				original_tag = TUR
 			}
 			traits = {
-				avid_turanist
+				pan_turkic_sociologist
 			}
 			available = {
-				has_completed_focus = TUR_pan_turkism
+				OR = {
+					has_completed_focus = TUR_pan_turkism
+					has_country_leader = {
+						name = "Mustafa Kemal Paşa"
+						ruling_only = yes
+					}
+				}				
 			}
 			ai_will_do = {
-				factor = 10
+				factor = 2
 			}
 		}
 		TUR_Esref_Kuscu_Basi = {
@@ -538,6 +628,7 @@ ideas = {
 			}
 		}
 		TUR_ahmed_djemal = {
+		    name = TUR_ahmed_cemal_advisor
 			allowed = {
 				original_tag = TUR
 			}
@@ -645,10 +736,9 @@ ideas = {
 			allowed = {
 				original_tag = TUR
 			}
-			picture = generic_army_europe_3
 			ledger = army
 			traits = {
-				army_logistics_2
+				army_logistics_1
 			}
 			ai_will_do = {
 				factor = 1
@@ -1413,9 +1503,27 @@ ideas = {
 			}
 			modifier = {
 				conscription_factor = -0.1
-				stability_weekly_factor = -0.005
+				stability_weekly = -0.002
 				industrial_capacity_factory = -0.05
 				industrial_capacity_dockyard = -0.05
+				fascism_drift = 0.01
+			}
+		}
+		TUR_idea_liberal_revenge = {
+			picture = MEX_revolutionary_army
+			allowed = {
+				original_tag = TUR
+			}
+			removal_cost = -1
+			allowed_civil_war = {
+				always = no
+			}
+			modifier = {
+				stability_weekly = -0.002
+				consumer_goods_factor = 0.02
+				democratic_drift = 0.01
+				improve_relations_maintain_cost_factor = 0.1
+				custom_modifier_tooltip = "Liberals might carry out some action of retribution"
 			}
 		}
 		TUR_caliphate_crisis = {
@@ -3020,8 +3128,8 @@ ideas = {
 			}
 			removal_cost = -1
 			modifier = {
-				conscription_factor = 0.5
-				conscription = -0.02
+				conscription_factor = -0.25
+				global_building_slots_factor = -0.15
 			}
 		}
 		TUR_reformed_millet_system = {
@@ -3035,8 +3143,8 @@ ideas = {
 			}
 			removal_cost = -1
 			modifier = {
-				conscription_factor = 0.1
-				global_building_slots_factor = 0.1
+				conscription_factor = -0.15
+				global_building_slots_factor = -0.05
 			}
 		}
 		turkish_invest2 = {

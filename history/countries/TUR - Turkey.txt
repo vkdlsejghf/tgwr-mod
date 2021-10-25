@@ -239,7 +239,6 @@ create_corps_commander = {
 	traits = {
 		harsh_leader
 		trait_reckless
-		trait_TUR_ittihadist_sympathies
 	}
 	skill = 3
 	attack_skill = 1
@@ -345,7 +344,6 @@ create_corps_commander = {
 	traits = {
 		trait_engineer
 		infantry_officer
-		trait_TUR_ittihadist_sympathies
 	}
 	skill = 3
 	attack_skill = 4
@@ -424,7 +422,6 @@ create_corps_commander = {
 		desert_fox
 		harsh_leader
 		commando
-		trait_TUR_ittihadist_sympathies
 	}
 	skill = 2
 	attack_skill = 2
@@ -795,7 +792,7 @@ if = {
 
 818 = {
 	set_state_flag = TUR_armenian_state
-	set_state_flag = TUR_armenian_uprising_state
+	set_state_flag = TUR_armenian_state_nocontrol
 }
 
 748 = {
