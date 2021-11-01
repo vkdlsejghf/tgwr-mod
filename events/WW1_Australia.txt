@@ -6,9 +6,10 @@ country_event = {
 	desc = ww1_australia.1.d
 	id = ww1_australia.1
 	picture = GFX_report_event_election_vote
-	
 	fire_only_once = yes
-	mean_time_to_happen = { days = 27 }
+	mean_time_to_happen = {
+		days = 27
+	}
 	trigger = {
 		original_tag = AST
 		date > 1915.10.1
@@ -21,9 +22,9 @@ country_event = {
 		name = ww1_australia.1.a
 		retire_country_leader = yes
 		create_country_leader = {
-			name = "Billy Hughes" 
-			picture = "gfx/leaders/AST/AST_william_hughes.dds" 
-			expire = "1923.2.9" 
+			name = "Billy Hughes"
+			picture = "gfx/leaders/AST/AST_william_hughes.dds"
+			expire = "1923.2.9"
 			ideology = socialism
 			traits = {
 				little_digger
@@ -32,6 +33,7 @@ country_event = {
 		}
 	}
 }
+
 # Hughes expelled from the Labour party!
 ####################
 country_event = {
@@ -39,9 +41,10 @@ country_event = {
 	desc = ww1_australia.2.d
 	id = ww1_australia.2
 	picture = GFX_report_event_election_vote
-	
 	fire_only_once = yes
-	mean_time_to_happen = { days = 14 }
+	mean_time_to_happen = {
+		days = 14
+	}
 	trigger = {
 		original_tag = AST
 		has_country_leader = {
@@ -51,7 +54,6 @@ country_event = {
 		has_government = democratic
 		date > 1916.11.1
 	}
-	
 	option = {
 		name = ww1_australia.2.a
 		add_stability = -0.05
@@ -65,34 +67,30 @@ country_event = {
 	}
 }
 
-
 # Australian Conscription Debate 1916
 #####################################
-
 ##Event: The 1916 Conscription Plebiscite - The Campaign Begins
 country_event = {
 	id = ww1_australia.3
 	title = ww1_australia.3.title
 	desc = ww1_australia.3.desc
 	picture = GFX_conscription_plebiscite__the_campaign_begins
-	
 	fire_only_once = yes
-	
 	trigger = {
 		original_tag = AST
 		focus_progress = {
 			focus = Australia_hold_the_conscription_plebiscite
 			progress > 0.1
-        }
+		}
 	}
-
 	mean_time_to_happen = {
 		days = 1
 	}
-
 	option = {
 		name = ww1_australia.3.a
-		ai_chance = { factor = 1 }
+		ai_chance = {
+			factor = 1
+		}
 		add_political_power = -100
 		set_variable = {
 			var = yes_support
@@ -101,7 +99,9 @@ country_event = {
 	}
 	option = {
 		name = ww1_australia.3.b
-		ai_chance = { factor = 1}
+		ai_chance = {
+			factor = 1
+		}
 		set_variable = {
 			var = no_Support
 			value = 1
@@ -115,24 +115,22 @@ country_event = {
 	title = ww1_australia.4.title
 	desc = ww1_australia.4.desc
 	picture = GFX_conscription_plebiscite__mid_campaign
-	
 	fire_only_once = yes
-	
 	trigger = {
-		original_tag = AST 
+		original_tag = AST
 		focus_progress = {
 			focus = Australia_hold_the_conscription_plebiscite
-            progress > 0.5
+			progress > 0.5
 		}
 	}
-
 	mean_time_to_happen = {
 		days = 1
 	}
-
 	option = {
 		name = ww1_australia.4.a
-		ai_chance = { factor = 1}
+		ai_chance = {
+			factor = 1
+		}
 		add_political_power = -100
 		add_to_variable = {
 			var = yes_support
@@ -141,7 +139,9 @@ country_event = {
 	}
 	option = {
 		name = ww1_australia.4.b
-		ai_chance = { factor = 1}
+		ai_chance = {
+			factor = 1
+		}
 		add_to_variable = {
 			var = no_Support
 			value = 1
@@ -155,9 +155,7 @@ country_event = {
 	title = ww1_australia.5.title
 	desc = ww1_australia.5.desc
 	picture = GFX_conscription_plebiscite__campaign_closing
-	
 	fire_only_once = yes
-	
 	trigger = {
 		original_tag = AST
 		focus_progress = {
@@ -165,15 +163,15 @@ country_event = {
 			progress > 0.8
 		}
 	}
-
 	mean_time_to_happen = {
 		days = 1
 	}
-
 	option = {
 		name = ww1_australia.5.a
-		ai_chance = { factor = 1}
-		add_political_power= -100
+		ai_chance = {
+			factor = 1
+		}
+		add_political_power = -100
 		add_to_variable = {
 			var = yes_support
 			value = 1
@@ -181,7 +179,9 @@ country_event = {
 	}
 	option = {
 		name = ww1_australia.5.b
-		ai_chance = { factor = 1}
+		ai_chance = {
+			factor = 1
+		}
 		add_to_variable = {
 			var = no_Support
 			value = 1
@@ -195,9 +195,7 @@ country_event = {
 	title = ww1_australia.6.title
 	desc = ww1_australia.6.desc
 	picture = GFX_conscription_plebiscite__results
-	
 	fire_only_once = yes
-	
 	trigger = {
 		original_tag = AST
 		has_completed_focus = Australia_hold_the_conscription_plebiscite
@@ -207,17 +205,17 @@ country_event = {
 			compare = greater_than
 		}
 	}
-
 	mean_time_to_happen = {
 		days = 1
 	}
-
 	option = {
 		name = ww1_australia.6.a
-		ai_chance = { factor = 1}
+		ai_chance = {
+			factor = 1
+		}
 		swap_ideas = {
 			remove_idea = volunteer_only
-			add_idea = limited_conscription 
+			add_idea = limited_conscription
 		}
 	}
 }
@@ -228,27 +226,25 @@ country_event = {
 	title = ww1_australia.7.title
 	desc = ww1_australia.7.desc
 	picture = GFX_conscription_plebiscite__results
-	
 	fire_only_once = yes
-
 	trigger = {
 		original_tag = AST
 		has_completed_focus = Australia_hold_the_conscription_plebiscite
-        check_variable = {
+		check_variable = {
 			var = no_support
 			value = yes_support
 			compare = greater_than
 		}
 	}
-	
 	mean_time_to_happen = {
 		days = 1
 	}
-	
 	option = {
 		name = ww1_australia.7.a
-		ai_chance = { factor = 1}
-		add_stability = 0.10
+		ai_chance = {
+			factor = 1
+		}
+		add_stability = 0.1
 	}
 }
 
@@ -264,10 +260,9 @@ country_event = {
 		ai_chance = {
 			factor = 100
 		}
-
 		if = {
 			limit = {
-                has_global_flag = king_edward_viii	
+				has_global_flag = king_edward_viii
 			}
 			set_party_name = {
 				ideology = neutrality
@@ -343,7 +338,7 @@ country_event = {
 				}
 				else = {
 					puppet = JAM
-				}	
+				}
 			}
 			JAM = {
 				set_politics = {
@@ -378,7 +373,7 @@ country_event = {
 				}
 				else = {
 					puppet = NZL
-				}	
+				}
 			}
 			NZL = {
 				set_politics = {
@@ -412,7 +407,7 @@ country_event = {
 				}
 				else = {
 					puppet = SAF
-				}	
+				}
 			}
 			hidden_effect = {
 				SAF = {
@@ -427,7 +422,7 @@ country_event = {
 						neutrality = 26
 					}
 				}
-			}			
+			}
 		}
 		if = {
 			limit = {
@@ -447,7 +442,7 @@ country_event = {
 				}
 				else = {
 					puppet = HKG
-				}	
+				}
 			}
 			hidden_effect = {
 				HKG = {
@@ -459,45 +454,36 @@ country_event = {
 						neutrality = 100
 					}
 				}
-			}			
+			}
 		}
-
 		if = {
 			limit = {
 				has_idea = AST_idea_Dominion_Army
 			}
-
 			remove_ideas = AST_idea_Dominion_Army
 		}
-
 		if = {
 			limit = {
 				has_idea = AST_idea_Citizen_Army
 			}
-
 			remove_ideas = AST_idea_Citizen_Army
 		}
-
 		if = {
 			limit = {
 				ENG = {
 					has_idea = ENG_Staff
 				}
 			}
-
 			add_ideas = ENG_Staff
 		}
-
 		add_popularity = {
 			ideology = neutrality
 			popularity = 0.2
 		}
-
 		add_stability = -0.07
-
 		hidden_effect = {
 			517 = {
-				add_building_construction= {
+				add_building_construction = {
 					type = air_base
 					level = 1
 					instant_build = yes
@@ -518,9 +504,9 @@ country_event = {
 			}
 			BRE = {
 				every_unit_leader = {
-				    set_nationality = AST
+					set_nationality = AST
 				}
-				transfer_units_fraction= {
+				transfer_units_fraction = {
 					target = AST
 					size = 1
 					stockpile_ratio = 0.45
@@ -530,11 +516,8 @@ country_event = {
 				}
 			}
 		}
-
 		add_ideas = ENG_imperial_refuge
-
 		set_country_flag = australia_is_britain
-
 		every_state = {
 			limit = {
 				is_core_of = ENG
@@ -547,15 +530,14 @@ country_event = {
 		ai_chance = {
 			factor = 0
 		}
-
 		add_popularity = {
 			ideology = neutrality
 			popularity = 0.07
 		}
-
 		add_stability = -0.05
 	}
 }
+
 # The Great Escape of The British Royals (After the Referendum)
 country_event = {
 	id = ww1_australia.9
@@ -575,7 +557,7 @@ country_event = {
 		}
 		create_country_leader = {
 			name = "George V"
-			picture = "gfx/leaders/ENG/ENG_george_v.dds" 
+			picture = "gfx/leaders/ENG/ENG_george_v.dds"
 			expire = "1935.1.1"
 			ideology = autocracy
 			traits = {
@@ -589,7 +571,6 @@ country_event = {
 			}
 			remove_ideas = AST_idea_Dominion_Army
 		}
-
 		if = {
 			limit = {
 				has_idea = AST_idea_Citizen_Army
@@ -604,17 +585,14 @@ country_event = {
 			}
 			add_ideas = ENG_Staff
 		}
-
 		add_popularity = {
 			ideology = neutrality
 			popularity = 0.1
 		}
-
 		add_stability = -0.03
-
 		hidden_effect = {
 			517 = {
-				add_building_construction= {
+				add_building_construction = {
 					type = air_base
 					level = 1
 					instant_build = yes
@@ -623,7 +601,6 @@ country_event = {
 		}
 		add_ideas = ENG_imperial_refuge
 		set_country_flag = australia_is_britain
-
 		if = {
 			limit = {
 				NZL = {
@@ -635,7 +612,6 @@ country_event = {
 				limit = {
 					has_dlc = "Together for Victory"
 				}
-
 				set_autonomy = {
 					target = NZL
 					autonomous_state = autonomy_dominion
@@ -645,7 +621,6 @@ country_event = {
 					puppet = NZL
 				}
 			}
-
 			NZL = {
 				set_politics = {
 					ruling_party = democratic
@@ -665,15 +640,14 @@ country_event = {
 		ai_chance = {
 			base = 25
 		}
-
 		add_popularity = {
 			ideology = neutrality
 			popularity = 0.03
 		}
-
 		add_stability = -0.05
 	}
 }
+
 # Formation of the Nationalist Party
 ####################
 country_event = {
@@ -681,9 +655,10 @@ country_event = {
 	desc = ww1_australia.10.d
 	id = ww1_australia.10
 	picture = GFX_report_event_election_vote
-	
 	fire_only_once = yes
-	mean_time_to_happen = { days = 17 }
+	mean_time_to_happen = {
+		days = 17
+	}
 	trigger = {
 		original_tag = AST
 		has_country_flag = ww1_australia.2.t
@@ -694,11 +669,13 @@ country_event = {
 		has_government = democratic
 		date > 1917.2.1
 	}
-	
 	option = {
-		name = ww1_australia.10.a		
+		name = ww1_australia.10.a
 		set_country_leader_ideology = social_liberalism
-		swap_ruler_traits = { remove = trait_socialism add = trait_social_liberalism }
+		swap_ruler_traits = {
+			remove = trait_socialism
+			add = trait_social_liberalism
+		}
 		add_political_power = 50
 		add_stability = -0.01
 		set_party_name = {
@@ -709,6 +686,7 @@ country_event = {
 		set_country_flag = ww1_australia.10.t
 	}
 }
+
 # Hughes forced to resign
 ####################
 country_event = {
@@ -716,12 +694,13 @@ country_event = {
 	title = ww1_australia.11.t
 	desc = ww1_australia.11.d
 	picture = GFX_report_event_election_vote
-	
 	fire_only_once = yes
-	mean_time_to_happen = { days = 9 }
+	mean_time_to_happen = {
+		days = 9
+	}
 	trigger = {
 		original_tag = AST
-		has_country_flag =  ww1_australia.10.t
+		has_country_flag = ww1_australia.10.t
 		has_country_leader = {
 			name = "Billy Hughes"
 			ruling_only = yes
@@ -729,14 +708,13 @@ country_event = {
 		has_government = democratic
 		date > 1923.2.1
 	}
-	
 	option = {
 		name = ww1_australia.11.a
 		add_political_power = -20
 		create_country_leader = {
-			name = "Stanley Bruce" 
-			picture = "gfx/leaders/AST/AST_stanley_bruce.dds" 
-			expire = "1935.1.1" 
+			name = "Stanley Bruce"
+			picture = "gfx/leaders/AST/AST_stanley_bruce.dds"
+			expire = "1935.1.1"
 			ideology = conservatism
 			traits = {
 				trait_conservatism
@@ -749,6 +727,7 @@ country_event = {
 		}
 	}
 }
+
 #Australia requests Pacific Islands!
 country_event = {
 	id = ww1_australia.12
@@ -767,31 +746,41 @@ country_event = {
 			limit = {
 				owns_state = 634
 			}
-			AST = { transfer_state = 634 }
+			AST = {
+				transfer_state = 634
+			}
 		}
 		if = {
 			limit = {
 				owns_state = 636
 			}
-			AST = { transfer_state = 636 }
+			AST = {
+				transfer_state = 636
+			}
 		}
 		if = {
 			limit = {
 				owns_state = 643
 			}
-			AST = { transfer_state = 643 }
+			AST = {
+				transfer_state = 643
+			}
 		}
 		if = {
 			limit = {
 				owns_state = 639
 			}
-			AST = { transfer_state = 639 }
+			AST = {
+				transfer_state = 639
+			}
 		}
 		if = {
 			limit = {
 				owns_state = 270
 			}
-			AST = { transfer_state = 270 }
+			AST = {
+				transfer_state = 270
+			}
 		}
 	}
 	#no!
@@ -801,9 +790,12 @@ country_event = {
 			factor = 0
 		}
 		add_political_power = -50
-		AST = { add_political_power = -200 }
+		AST = {
+			add_political_power = -200
+		}
 	}
 }
+
 #referendum on nationalisation of monopolies
 country_event = {
 	id = ww1_australia.13
@@ -815,40 +807,49 @@ country_event = {
 	#the referendum will go ahead legitimately
 	option = {
 		name = ww1_australia.13.a
-		trigger = { has_completed_focus = AST_toe_democratic_line }
+		trigger = {
+			has_completed_focus = AST_toe_democratic_line
+		}
 		if = {
 			limit = {
 				is_historical_focus_on = yes
 			}
 			effect_tooltip = {
 				random_list = {
-				    61 = {
-				        country_event = {
-						id = ww1_australia.14 days = 1
+					61 = {
+						country_event = {
+							id = ww1_australia.14
+							days = 1
+						}
 					}
-				    }
-				    39 = {
-					country_event = {
-						id = ww1_australia.15 days = 1
+					39 = {
+						country_event = {
+							id = ww1_australia.15
+							days = 1
+						}
 					}
-				    }
 				}
 			}
 			hidden_effect = {
-				country_event = { id = ww1_australia.14 days = 1 }
+				country_event = {
+					id = ww1_australia.14
+					days = 1
+				}
 			}
 			else = {
 				random_list = {
-				    61 = {
-				        country_event = {
-						id = ww1_australia.14 days = 1
+					61 = {
+						country_event = {
+							id = ww1_australia.14
+							days = 1
+						}
 					}
-				    }
-				    39 = {
-					country_event = {
-						id = ww1_australia.15 days = 1
+					39 = {
+						country_event = {
+							id = ww1_australia.15
+							days = 1
+						}
 					}
-				    }
 				}
 			}
 		}
@@ -856,11 +857,17 @@ country_event = {
 	#rig the referendum
 	option = {
 		name = ww1_australia.13.b
-		trigger = { has_completed_focus = AST_down_with_the_crown }
+		trigger = {
+			has_completed_focus = AST_down_with_the_crown
+		}
 		add_political_power = -50
-		country_event = { id = ww1_australia.15 days = 1 }
+		country_event = {
+			id = ww1_australia.15
+			days = 1
+		}
 	}
 }
+
 #referendum fails
 country_event = {
 	id = ww1_australia.14
@@ -874,6 +881,7 @@ country_event = {
 		set_country_flag = first_referendum_failed
 	}
 }
+
 #referendum success!
 country_event = {
 	id = ww1_australia.15
@@ -887,6 +895,7 @@ country_event = {
 		set_country_flag = first_referendum_success
 	}
 }
+
 #Monarchy referendum
 country_event = {
 	id = ww1_australia.16
@@ -901,14 +910,22 @@ country_event = {
 		set_cosmetic_tag = AST_republic
 		set_politics = {
 			ruling_party = communism
-		    elections_allowed = yes
+			elections_allowed = yes
 		}
-		news_event = { id = ww1_australia.19 hours = 2 } 
-		hidden_effect = { country_event = { id = ww1_australia.17 days = 4 } }
+		news_event = {
+			id = ww1_australia.19
+			hours = 2
+		}
+		hidden_effect = {
+			country_event = {
+				id = ww1_australia.17
+				days = 4
+			}
+		}
 		OVERLORD = {
 			set_autonomy = {
-			    target = ROOT
-			    autonomy_state = autonomy_free
+				target = ROOT
+				autonomy_state = autonomy_free
 			}
 		}
 		leave_faction = yes
@@ -918,8 +935,9 @@ country_event = {
 			}
 			white_peace = ROOT
 		}
-	}	
+	}
 }
+
 #Details of the Rigging are leaked!
 country_event = {
 	id = ww1_australia.17
@@ -930,10 +948,16 @@ country_event = {
 	fire_only_once = yes
 	option = {
 		name = ww1_australia.17.a
-		add_stability = -0.20
-		hidden_effect = { country_event = { id = ww1_australia.18 days = 2 } }
+		add_stability = -0.2
+		hidden_effect = {
+			country_event = {
+				id = ww1_australia.18
+				days = 2
+			}
+		}
 	}
 }
+
 #The Australian Civil War!
 country_event = {
 	id = ww1_australia.18
@@ -945,15 +969,20 @@ country_event = {
 	option = {
 		name = ww1_australia.18.a
 		hidden_effect = {
-			NZL = { transfer_state = 753 }
+			NZL = {
+				transfer_state = 753
+			}
 		}
 		start_civil_war = {
-		    ideology = neutrality
-		    size = 0.4
-		    capital = 522
-		    states = { 
-		        519 520 522 674
-		    }
+			ideology = neutrality
+			size = 0.4
+			capital = 522
+			states = {
+				519
+				520
+				522
+				674
+			}
 		}
 		hidden_effect = {
 			division_template = {
@@ -1225,6 +1254,7 @@ country_event = {
 		}
 	}
 }
+
 #Australian Monarchy Referendum news event
 news_event = {
 	id = ww1_australia.19
@@ -1237,6 +1267,7 @@ news_event = {
 		name = ww1_australia.19.a
 	}
 }
+
 #second referendum on monopolies
 country_event = {
 	id = ww1_australia.20
@@ -1253,12 +1284,12 @@ country_event = {
 			}
 			effect_tooltip = {
 				random_list = {
-				    51 = {
-				        unlock_focus = AST_slink_into_the_shadows
-				    }
-				    49 = {
-					complete_national_focus = AST_glorious_victory
-				    }
+					51 = {
+						unlock_focus = AST_slink_into_the_shadows
+					}
+					49 = {
+						complete_national_focus = AST_glorious_victory
+					}
 				}
 			}
 			hidden_effect = {
@@ -1266,19 +1297,20 @@ country_event = {
 			}
 			else = {
 				random_list = {
-				    51 = {
-				        unlock_focus = AST_slink_into_the_shadows
-				    }
-				    49 = {
-					complete_national_focus = AST_glorious_victory
-				    }
+					51 = {
+						unlock_focus = AST_slink_into_the_shadows
+					}
+					49 = {
+						complete_national_focus = AST_glorious_victory
+					}
 				}
 			}
 		}
 	}
 }
+
 #Australia wants to join Central Powers
-country_event = { 
+country_event = {
 	id = ww1_australia.21
 	title = ww1_australia.21.t
 	desc = ww1_australia.21.d
@@ -1300,8 +1332,9 @@ country_event = {
 		}
 	}
 }
+
 #Australia wants to join Red Movement
-country_event = { 
+country_event = {
 	id = ww1_australia.22
 	title = ww1_australia.22.t
 	desc = ww1_australia.22.d

@@ -1424,6 +1424,21 @@ country_event = {
 		}
 	}
 }
+# SECOND BALKAN WAR STARTS - NEWS
+############################
+news_event = {
+	id = ww1_secondbalkan.100
+	title = ww1_secondbalkan.100.t
+	desc = ww1_secondbalkan.100.d
+	picture = EVENT_hoi4tgw_second_balkan_war
+
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = ww1_secondbalkan.100.a
+	}
+}
 
 ###Turke joins
 country_event = {

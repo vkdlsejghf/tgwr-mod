@@ -1,4 +1,4 @@
-focus_tree = {
+﻿focus_tree = {
 	id = ottoman_focus_tree
 	country = {
 		factor = 0
@@ -5035,7 +5035,7 @@ focus_tree = {
 			}
 			create_country_leader = {
 				name = "Şeyh Said"
-				picture = "gfx/leaders/TUR/.dds"
+				picture = "gfx/leaders/TUR/TUR_seyh_said.png"
 				expire = "1935.1.1"
 				ideology = fundamentalism
 				traits = {
@@ -5233,7 +5233,7 @@ focus_tree = {
 		}
 		available = {
 			has_cosmetic_tag = TUR_ISLM
-			has_government = neutrality
+			has_government = fascism
 		}
 		relative_position_id = TUR_compromise_with_ittihadists
 		completion_reward = {
@@ -5549,7 +5549,7 @@ focus_tree = {
 			NOT = {
 				has_country_flag = great_war_loser
 			}
-			has_government = neutrality
+			has_government = fascism
 			ETH = {
 				has_country_leader = {
 					name = "Iyasu V"
@@ -5995,7 +5995,7 @@ focus_tree = {
 				has_country_flag = great_war_loser
 			}
 			is_subject = no
-			has_government = neutrality
+			has_government = fascism
 		}
 		completion_reward = {
 			ENG = {
@@ -6921,7 +6921,6 @@ focus_tree = {
 		x = 0
 		y = 4
 		completion_reward = {
-			custom_effect_tooltip = TUR_unlock_reconciliation_occupation_law_tt
 			custom_effect_tooltip = TUR_national_association_program_reward
 		}
 		ai_will_do = {
@@ -8897,7 +8896,6 @@ focus_tree = {
 			NOT = {
 				has_completed_focus = TUR_OPDA
 			}
-			has_civil_war = no
 		}
 		select_effect = {
 			create_country_leader = {
