@@ -113,6 +113,7 @@ focus_tree = {
 					traits = {
 						aggressive_assaulter
 						politically_connected
+						trait_royal
 					}
 					skill = 2
 					attack_skill = 3
@@ -138,6 +139,7 @@ focus_tree = {
 					portrait_path = "gfx/leaders/SER/SER_alexander_i.dds"
 					traits = {
 						politically_connected
+						trait_royal
 						inspirational_leader
 					}
 					skill = 2
@@ -1068,8 +1070,8 @@ focus_tree = {
 			focus = SER_royal_prerogative
 		}
 		available = {
-			NOT = {
-				has_completed_focus = SER_solunski_proces
+			check_variable = {
+				black_hand_strength >50
 			}
 		}
 		completion_reward = {
@@ -1507,6 +1509,11 @@ focus_tree = {
 		}
 		mutually_exclusive = {
 			focus = SER_ultranationalist_option
+		}
+		available = {
+			check_variable = {
+				black_hand_strength < 50
+			}
 		}
 		relative_position_id = SER_revanchism
 		completion_reward = {
@@ -2583,176 +2590,6 @@ focus_tree = {
 			}
 		}
 	}
-	focus = {
-		id = SER_whitehand
-		icon = GFX_goal_unknown
-		cost = 5
-		prerequisite = {
-			focus = SER_promotenationalism
-		}
-		mutually_exclusive = {
-			focus = SER_blackhand
-		}
-		available = {
-			has_country_flag = white_hand_formed
-		}
-		completion_reward = {
-			add_popularity = {
-				ideology = fascism
-				popularity = -0.1
-			}
-			add_popularity = {
-				ideology = neutrality
-				popularity = 0.05
-			}
-			swap_ideas = {
-				remove_idea = SER_idea_black_hand
-				add_idea = SER_idea_black_hand_2
-			}
-			create_corps_commander = {
-				name = "Petar Živković"
-				picture = "gfx/leaders/SER/SER_petar_zivkovic.tga"
-				id = 82061
-				skill = 2
-				attack_skill = 2
-				defense_skill = 3
-				planning_skill = 2
-				logistics_skill = 1
-				traits = {
-					politically_connected
-					ENG_royalist
-				}
-			}
-			create_corps_commander = {
-				name = "Petar Mišić"
-				picture = "gfx/leader/SER/SER_petar_misic.dds"
-				skill = 2
-				attack_skill = 2
-				defense_skill = 1
-				planning_skill = 2
-				logistics_skill = 1
-				traits = {
-					old_guard
-				}
-			}
-		}
-		relative_position_id = SER_promotenationalism
-		x = 2
-		y = 1
-		ai_will_do = {
-			base = 50
-			modifier = {
-				factor = 0
-				is_historical_focus_on = yes
-			}
-		}
-	}
-	focus = {
-		id = SER_blackhand
-		icon = GFX_goal_unknown
-		cost = 5
-		prerequisite = {
-			focus = SER_promotenationalism
-		}
-		mutually_exclusive = {
-			focus = SER_whitehand
-		}
-		available = {
-			has_idea = SER_idea_black_hand
-		}
-		completion_reward = {
-			swap_ideas = {
-				remove_idea = SER_idea_black_hand
-				add_idea = SER_idea_black_hand_3
-			}
-			create_corps_commander = {
-				name = "Živko Pavlović"
-				skill = 2
-				traits = {
-
-				}
-				portrait_path = "gfx/leaders/SER/SER_zivko_pavlovic.tga"
-				attack_skill = 2
-				defense_skill = 2
-				planning_skill = 2
-				logistics_skill = 1
-			}
-		}
-		relative_position_id = SER_promotenationalism
-		ai_will_do = {
-			base = 50
-		}
-		x = 4
-		y = 1
-	}
-	focus = {
-		id = SER_solunski_proces
-		icon = GFX_focus_focus_fra_fascist_threat
-		cost = 10
-		prerequisite = {
-			focus = SER_blackhand
-			focus = SER_whitehand
-		}
-		available = {
-			if = {
-				limit = {
-					has_completed_focus = SER_blackhand
-				}
-				OR = {
-					has_government = communism
-					has_capitulated = yes
-				}
-			}
-			NOT = {
-				has_completed_focus = SER_ultranationalist_option
-			}
-		}
-		completion_reward = {
-			add_popularity = {
-				ideology = fascism
-				popularity = -1
-			}
-			kill_ideology_leader = fascism
-			create_country_leader = {
-				name = "Petar Živković"
-				ideology = stratocracy
-				picture = "gfx/leaders/SER/SER_petar_zivkovic.dds"
-				expire = "1935.1.1"
-				traits = {
-					hardened_officer
-					trait_stratocracy
-				}
-			}
-			remove_ideas = {
-				SER_idea_black_hand
-				SER_idea_black_hand_2
-				SER_idea_black_hand_3
-				SER_idea_black_hand_empowered
-			}
-			hidden_effect = {
-				country_event = ww1_serbia.37
-				set_party_name = {
-					ideology = fascism
-					long_name = "Bela Ruka- oficiri"
-					name = "Bela Ruka"
-				}
-			}
-			every_owned_state = {
-				remove_dynamic_modifier = {
-					modifier = SER_disloyal_military_governors
-				}
-			}
-			hidden_effect = {
-				country_event = {
-					id = ww1_serbia.110
-					days = 20
-				}
-			}
-		}
-		relative_position_id = SER_blackhand
-		x = -1
-		y = 1
-	}
 	###military
 	focus = {
 		#officer staff training
@@ -2802,6 +2639,9 @@ focus_tree = {
 				uses = 2
 				category = cat_superior_firepower
 				category = cat_mobile_warfare
+			}
+			add_to_variable = {
+				black_hand_strength = -10
 			}
 		}
 		x = 41
@@ -2860,6 +2700,9 @@ focus_tree = {
 				uses = 2
 				category = cat_grand_battle_plan
 				category = cat_mass_assault
+			}
+			add_to_variable = {
+				black_hand_strength = 10
 			}
 		}
 		x = 45

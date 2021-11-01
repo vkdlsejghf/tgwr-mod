@@ -377,7 +377,7 @@ foreign_politics = {
 					type = invade
 					id = TUR
 					value = 1000
-				}	
+				}
 			}
 		}
 		remove_effect = {
@@ -621,7 +621,6 @@ crisis = {
 		available = {
 			OR = {
 				has_completed_focus = SER_crack_down_on_black_hand
-				has_completed_focus = SER_Solunski_proces
 				NOT = {
 					is_subject_of = AUH
 				}
@@ -800,7 +799,7 @@ SER_black_hand_category = {
 		fire_only_once = no
 		visible = {
 			tag = SER
-			has_completed_focus = SER_blackhand
+			has_country_flag = black_hand_formed
 			AUH = {
 				exists = yes
 			}
@@ -834,7 +833,7 @@ SER_black_hand_category = {
 		fire_only_once = no
 		visible = {
 			tag = SER
-			has_completed_focus = SER_blackhand
+			has_country_flag = black_hand_formed
 			AUH = {
 				exists = yes
 			}
@@ -866,7 +865,7 @@ SER_black_hand_category = {
 		fire_only_once = no
 		visible = {
 			tag = SER
-			has_completed_focus = SER_blackhand
+			has_country_flag = black_hand_formed
 			AUH = {
 				exists = yes
 			}
@@ -911,7 +910,7 @@ SER_black_hand_category = {
 		fire_only_once = no
 		visible = {
 			tag = SER
-			has_completed_focus = SER_blackhand
+			has_country_flag = black_hand_formed
 			AUH = {
 				exists = yes
 			}
@@ -951,7 +950,7 @@ SER_black_hand_category = {
 		fire_only_once = no
 		visible = {
 			tag = SER
-			has_completed_focus = SER_blackhand
+			has_country_flag = black_hand_formed
 			AUH = {
 				exists = yes
 			}
@@ -992,7 +991,7 @@ SER_black_hand_category = {
 		fire_only_once = no
 		visible = {
 			tag = SER
-			has_completed_focus = SER_blackhand
+			has_country_flag = black_hand_formed
 			AUH = {
 				exists = yes
 				has_stability < 0.25
@@ -1712,9 +1711,8 @@ SER_parlament_mechanics = {
 						}
 					}
 					80 = {
-						
 					}
-				}	
+				}
 			}
 		}
 		visible = {
@@ -2104,9 +2102,8 @@ SER_parlament_mechanics = {
 						}
 					}
 					80 = {
-						
 					}
-				}	
+				}
 			}
 		}
 		cancel_trigger = {
@@ -2231,9 +2228,8 @@ SER_parlament_mechanics = {
 						}
 					}
 					80 = {
-						
 					}
-				}	
+				}
 			}
 		}
 		remove_effect = {
@@ -2315,9 +2311,8 @@ SER_parlament_mechanics = {
 						}
 					}
 					80 = {
-						
 					}
-				}	
+				}
 			}
 		}
 		days_remove = 20
@@ -2397,9 +2392,8 @@ SER_parlament_mechanics = {
 						}
 					}
 					80 = {
-						
 					}
-				}	
+				}
 			}
 		}
 		remove_effect = {
@@ -2470,9 +2464,8 @@ SER_parlament_mechanics = {
 						}
 					}
 					80 = {
-						
 					}
-				}	
+				}
 			}
 		}
 		cancel_trigger = {
@@ -2563,9 +2556,8 @@ SER_parlament_mechanics = {
 						}
 					}
 					80 = {
-						
 					}
-				}	
+				}
 			}
 		}
 		remove_effect = {
@@ -2644,9 +2636,8 @@ SER_parlament_mechanics = {
 						}
 					}
 					80 = {
-						
 					}
-				}	
+				}
 			}
 		}
 		cancel_trigger = {
@@ -2727,9 +2718,8 @@ SER_parlament_mechanics = {
 						}
 					}
 					80 = {
-						
 					}
-				}	
+				}
 			}
 		}
 		cancel_trigger = {
@@ -2808,9 +2798,8 @@ SER_parlament_mechanics = {
 						}
 					}
 					80 = {
-						
 					}
-				}	
+				}
 			}
 		}
 		cancel_trigger = {
@@ -2891,9 +2880,8 @@ SER_parlament_mechanics = {
 						}
 					}
 					80 = {
-						
 					}
-				}	
+				}
 			}
 		}
 		cancel_trigger = {
@@ -2966,9 +2954,8 @@ SER_parlament_mechanics = {
 						}
 					}
 					80 = {
-						
 					}
-				}	
+				}
 			}
 		}
 		cancel_trigger = {
@@ -3063,9 +3050,8 @@ SER_parlament_mechanics = {
 						}
 					}
 					80 = {
-						
 					}
-				}	
+				}
 			}
 		}
 		cancel_trigger = {
@@ -3138,9 +3124,8 @@ SER_parlament_mechanics = {
 						}
 					}
 					80 = {
-						
 					}
-				}	
+				}
 			}
 		}
 		cancel_trigger = {
@@ -3221,9 +3206,8 @@ SER_parlament_mechanics = {
 						}
 					}
 					80 = {
-						
 					}
-				}	
+				}
 			}
 		}
 		cancel_trigger = {
@@ -3310,9 +3294,8 @@ SER_parlament_mechanics = {
 						}
 					}
 					80 = {
-						
 					}
-				}	
+				}
 			}
 		}
 		cancel_trigger = {
@@ -3389,9 +3372,8 @@ SER_parlament_mechanics = {
 						}
 					}
 					80 = {
-						
 					}
-				}	
+				}
 			}
 		}
 		cancel_trigger = {
@@ -3474,9 +3456,8 @@ SER_parlament_mechanics = {
 						}
 					}
 					80 = {
-						
 					}
-				}	
+				}
 			}
 		}
 		cancel_trigger = {
@@ -3577,9 +3558,8 @@ SER_parlament_mechanics = {
 						}
 					}
 					80 = {
-						
 					}
-				}	
+				}
 			}
 		}
 		cancel_trigger = {
@@ -3652,9 +3632,8 @@ SER_parlament_mechanics = {
 						}
 					}
 					80 = {
-						
 					}
-				}	
+				}
 			}
 		}
 		cancel_trigger = {
@@ -3739,9 +3718,8 @@ SER_parlament_mechanics = {
 						}
 					}
 					80 = {
-						
 					}
-				}	
+				}
 			}
 		}
 		cancel_trigger = {
@@ -3827,9 +3805,8 @@ SER_parlament_mechanics = {
 						}
 					}
 					80 = {
-						
 					}
-				}	
+				}
 			}
 		}
 		cancel_trigger = {
@@ -3909,9 +3886,8 @@ SER_parlament_mechanics = {
 						}
 					}
 					80 = {
-						
 					}
-				}	
+				}
 			}
 		}
 		cancel_trigger = {
@@ -4004,9 +3980,8 @@ SER_parlament_mechanics = {
 						}
 					}
 					80 = {
-						
 					}
-				}	
+				}
 			}
 		}
 		remove_effect = {

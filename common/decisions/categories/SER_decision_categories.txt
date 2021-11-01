@@ -17,10 +17,7 @@ SER_black_hand_category = {
 	}
 	visible = {
 		tag = SER
-		has_completed_focus = SER_blackhand
-		NOT = {
-			has_completed_focus = SER_Solunski_proces
-		}
+		has_country_flag = black_hand_formed
 	}
 }
 SER_austrian_investitions_category = {
