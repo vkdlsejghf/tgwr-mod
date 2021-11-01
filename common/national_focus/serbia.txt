@@ -661,6 +661,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		completion_reward = {
 			add_war_support = 0.1
+			add_ideas = extensive_conscription
 			add_ideas = SER_idea_preparation_for_libartion
 		}
 		prerequisite = {
