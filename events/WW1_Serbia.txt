@@ -5289,3 +5289,38 @@ country_event = {
 		}
 	}
 }
+
+country_event = {
+	id = ww1_serbia.139
+	title = ww1_serbia.139.t
+	desc = ww1_serbia.139.d
+	is_triggered_only = yes
+	trigger = {
+		NOT = {
+			has_war_with = MNT
+		}
+	}
+	option = {
+		name = ww1_serbia.139.a
+		every_unit_leader = {
+			limit = {
+				OR = {
+					has_id = 82011
+					has_id = 82031
+				}
+			}
+			set_nationality = MNT
+		}
+	}
+	option = {
+		every_unit_leader = {
+			limit = {
+				OR = {
+					has_id = 82006
+					has_id = 82049
+				}
+			}
+			set_nationality = MNT
+		}
+	}
+}

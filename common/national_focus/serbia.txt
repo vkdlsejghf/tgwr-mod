@@ -3245,18 +3245,9 @@ focus_tree = {
 			country_exists = MNT
 		}
 		completion_reward = {
-			every_unit_leader = {
-				limit = {
-					OR = {
-						has_id = 82011
-						has_id = 82031
-					}
-				}
-				set_nationality = MNT
-			}
 			MNT = {
 				add_ideas = YUG_idea_serbian_general_staff
-			}
+			}	
 		}
 		x = 48
 		y = 1

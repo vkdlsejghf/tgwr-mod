@@ -57,6 +57,7 @@ create_field_marshal = {
 	traits = {
 		inspirational_leader
 		politically_connected
+		trait_royal
 	}
 	skill = 3
 	attack_skill = 2
