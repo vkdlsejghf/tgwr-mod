@@ -1219,7 +1219,6 @@ country_event = {
 # 		custom_effect_tooltip = Peter_I_opposition_tt
 # 	}
 #}
-
 #Radical plot succeedes
 country_event = {
 	id = ww1_serbia.35
@@ -2476,7 +2475,7 @@ country_event = {
 	}
 	option = {
 		name = ww1_serbia.60.a
-#		load_focus_tree = serbia_ww1_lost
+		#		load_focus_tree = serbia_ww1_lost
 		remove_ideas = {
 			SER_idea_Peter_I_2
 			SER_idea_Peter_I_3
@@ -2494,7 +2493,6 @@ country_event = {
 		}
 	}
 }
-
 
 #Tifus epidemics in Serbia
 country_event = {
@@ -3089,6 +3087,7 @@ country_event = {
 			factor = 60
 		}
 	}
+}
 
 ###Negotiation with Greece
 country_event = {
@@ -3338,7 +3337,6 @@ country_event = {
 	}
 }
 
-
 ###Socijalisti ne daju glas na ratni budžet za prvi svetski rat-njihov kraj
 country_event = {
 	id = ww1_serbia.97
@@ -3427,7 +3425,7 @@ country_event = {
 			traits = {
 				trait_stratocracy
 				head_of_underground
-			}		
+			}
 		}
 		add_stability = -0.05
 	}
@@ -4354,7 +4352,7 @@ country_event = {
 			set_politics = {
 				ruling_party = neutrality
 				elections_allowed = no
-			}	
+			}
 		}
 		if = {
 			limit = {
@@ -4392,7 +4390,6 @@ country_event = {
 						}
 					}
 				}
-	
 			}
 		}
 		remove_ideas = SER_idea_failed_parlamentarism
@@ -5050,8 +5047,8 @@ country_event = {
 	is_triggered_only = yes
 	trigger = {
 		original_tag = SER
-		date >1914.1.1
-		date <1915.1.1
+		date > 1914.1.1
+		date < 1915.1.1
 		has_country_flag = radical_party_merged
 	}
 	immediate = {
@@ -5071,7 +5068,7 @@ country_event = {
 			progressives_seats = 30
 		}
 		set_variable = {
-			dissident_seats = 2 #Pašićevci pukli)
+			dissident_seats = 2			#Pašićevci pukli)
 		}
 		set_variable = {
 			socdem_seats = 3
@@ -5274,6 +5271,7 @@ country_event = {
 		}
 	}
 }
+
 country_event = {
 	id = ww1_serbia.138
 	title = ww1_serbia.138.t
