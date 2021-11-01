@@ -1200,6 +1200,9 @@ ideas = {
 			allowed = {
 				original_tag = SER
 			}
+			available = {
+				has_country_flag = radicals_coalition
+			}
 			ai_will_do = {
 				factor = 1
 			}
@@ -1221,6 +1224,9 @@ ideas = {
 		SER_stojan_protic = {
 			allowed = {
 				original_tag = SER
+			}
+			available = {
+				has_country_flag = radicals_coalition
 			}
 			traits = {
 				fortification_engineer
@@ -1252,6 +1258,9 @@ ideas = {
 			traits = {
 				voice_of_restraint
 			}
+			available = {
+				has_country_flag = radicals_coalition
+			}
 			ai_will_do = {
 				factor = 1
 			}
@@ -1264,9 +1273,8 @@ ideas = {
 				prince_of_terror
 			}
 			available = {
-				OR = {
-					has_completed_focus = SER_whitehand
-					has_completed_focus = SER_solunski_proces
+				check_variable = {
+					black_hand_strength < 30
 				}
 			}
 			ai_will_do = {
@@ -1281,9 +1289,8 @@ ideas = {
 				prince_of_terror
 			}
 			available = {
-				has_completed_focus = SER_blackhand
-				NOT = {
-					has_completed_focus = SER_solunski_proces
+				check_variable = {
+					black_hand_strength > 70
 				}
 			}
 			ai_will_do = {
@@ -1297,6 +1304,9 @@ ideas = {
 			traits = {
 				backroom_backstabber
 			}
+			available = {
+				has_country_flag = radicals_coalition
+			}
 			ai_will_do = {
 				factor = 1
 			}
@@ -1309,6 +1319,7 @@ ideas = {
 				NOT = {
 					has_country_flag = stojan_novakovic_dead
 				}
+				has_country_flag = progressives_coalition
 			}
 			traits = {
 				compassionate_gentleman
@@ -1323,6 +1334,11 @@ ideas = {
 			}
 			traits = {
 				editor
+			}
+			available = {
+				check_variable = {
+					black_hand_strength > 30
+				}
 			}
 			ai_will_do = {
 				factor = 1
@@ -1358,10 +1374,7 @@ ideas = {
 				tgwr_inventive_genius
 			}
 			available = {
-				has_country_leader = {
-					name = "Ljubomir Davidović"
-					ruling_only = yes
-				}
+				has_country_flag = samostalska_vlada
 			}
 			ai_will_do = {
 				factor = 1
@@ -1378,6 +1391,7 @@ ideas = {
 				NOT = {
 					has_country_flag = Pacu_dead
 				}
+				has_country_flag = radicals_coalition
 			}
 			ai_will_do = {
 				factor = 1
@@ -1392,6 +1406,17 @@ ideas = {
 			}
 			ai_will_do = {
 				factor = 1
+			}
+		}
+		SER_jasa_prodanovic = {
+			allowed = {
+				original_tag = SER
+			}
+			traits = {
+				social_reformer
+			}
+			available = {
+				has_country_flag = independent_radical_coalition
 			}
 		}
 	}
