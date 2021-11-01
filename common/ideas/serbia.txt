@@ -112,7 +112,6 @@ ideas = {
 				always = no
 			}
 			allowed_civil_war = {
-				
 			}
 			removal_cost = -1
 			modifier = {
@@ -129,7 +128,6 @@ ideas = {
 				always = no
 			}
 			allowed_civil_war = {
-				
 			}
 			removal_cost = -1
 			modifier = {
@@ -619,9 +617,9 @@ ideas = {
 				}
 			}
 			modifier = {
-				conscription = 0.075
+				conscription = 0.05
 				training_time_army_factor = -0.25
-				mobilization_speed = 0.5
+				mobilization_speed = 0.3
 			}
 		}
 		SER_idea_balkan_liberation = {
@@ -721,10 +719,10 @@ ideas = {
 				consumer_goods_factor = 0.02
 				industrial_capacity_factory = 0.02
 				drift_defence_factor = 0.1
-
 			}
 		}
-		SER_idea_constitution_1869 = { #Enacted constitution
+		SER_idea_constitution_1869 = {
+			#Enacted constitution
 			allowed = {
 				always = no
 			}
@@ -867,7 +865,7 @@ ideas = {
 				opinion_gain_monthly_factor = -0.2
 				resistance_damage_to_garrison = -0.1
 				mobilization_speed = 0.2
-				experience_gain_army_factor	= 0.1
+				experience_gain_army_factor = 0.1
 				war_support_factor = 0.1
 			}
 			targeted_modifier = {
@@ -1095,7 +1093,8 @@ ideas = {
 				always = no
 			}
 			removal_cost = -1
-			allowed_civil_war = {}
+			allowed_civil_war = {
+			}
 			modifier = {
 				consumer_goods_factor = 0.2
 				industrial_capacity_factory = -0.4
