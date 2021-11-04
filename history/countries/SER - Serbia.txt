@@ -51,7 +51,7 @@ create_country_leader = {
 
 #ARMY
 create_field_marshal = {
-	name = "Petar Karađorđević"
+	name = "Petar I Кarađorđević"
 	id = 82052
 	portrait_path = "gfx/leaders/SER/SER_peter_i.dds"
 	traits = {
