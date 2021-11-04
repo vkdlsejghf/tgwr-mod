@@ -827,18 +827,9 @@ on_actions = {
 				country_event = ww1_argentina.3
 			}
 			if = {
-				limit = {
-					original_tag = SER
-				}
-				country_event = ww1_serbia.49
-				country_event = ww1_serbia.52
-				country_event = ww1_serbia.125
-				country_event = ww1_serbia.117
-			}
-			if = {
 				limit = { original_tag = TUR }
 				country_event = ww1_ottoman.120
-				country_event = ww1_ottoman.126
+				country_event = ww1_ottoman.127
 			}
 		}
 # USA EVENTS	
