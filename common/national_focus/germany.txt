@@ -6414,6 +6414,7 @@ focus_tree = {
 				}
 			}
 		}
+
 		ai_will_do = {
 			factor = 10
 		}
@@ -6485,6 +6486,11 @@ focus_tree = {
 				create_faction = reichspakt
 				else = {
 					set_faction_name = reichspakt
+				}
+			}
+			hidden_effect = {
+				AUH = {
+					create_faction = danube_adriabund
 				}
 			}
 		}

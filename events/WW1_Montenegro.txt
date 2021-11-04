@@ -236,10 +236,7 @@ country_event = {
 			set_cosmetic_tag = MNT_SER
 			every_country = {
 				limit = {
-					has_war_with = MNT
-					NOT = {
-						has_war_with = AUH
-					}
+					is_in_faction_with = AUH
 				}
 				white_peace = PREV
 			}
@@ -252,15 +249,9 @@ country_event = {
 		}
 		every_state = {
 			limit = {
-				is_core_of = SER
+				is_owned_by = SER
 			}
 			add_core_of = MNT
-		}
-		every_state = {
-			limit = {
-				is_owned_by = SER
-				is_controlled_by = AUH
-			}
 			MNT = {
 				set_state_controller = PREV
 			}

@@ -429,7 +429,6 @@ ideas = {
 			}
 		}
 		SWE_gustaf_v_2 = {
-			name = SWE_gustaf_v
 			picture = SWE_gustaf_v
 			allowed = {
 				original_tag = SWE
@@ -452,7 +451,6 @@ ideas = {
 			}
 		}
 		SWE_gustaf_v_evil = {
-			name = SWE_gustaf_v
 			picture = SWE_gustaf_v
 			allowed = {
 				original_tag = SWE
@@ -469,7 +467,6 @@ ideas = {
 			}
 		}
 		SWE_economic_turbulence_1 = {
-			name = SWE_economic_turbulence
 			#picture =
 			allowed = {
 				original_tag = SWE
@@ -496,7 +493,6 @@ ideas = {
 			}
 		}
 		SWE_economic_turbulence_3 = {
-			name = SWE_economic_turbulence
 			#picture =
 			allowed = {
 				original_tag = SWE
@@ -520,7 +516,6 @@ ideas = {
 			}
 		}
 		SWE_economic_turbulence_5 = {
-			name = SWE_economic_turbulence_4
 			#picture =
 			allowed = {
 				original_tag = SWE
@@ -547,7 +542,6 @@ ideas = {
 			}
 		}
 		SWE_high_emigration_1 = {
-			name = SWE_high_emigration
 			#picture =
 			allowed = {
 				original_tag = SWE
@@ -557,7 +551,6 @@ ideas = {
 			}
 		}
 		SWE_high_emigration_2 = {
-			name = SWE_high_emigration
 			#picture =
 			allowed = {
 				original_tag = SWE
@@ -579,7 +572,6 @@ ideas = {
 			}
 		}
 		SWE_hated_by_conservatives_1 = {
-			name = SWE_hated_by_conservatives
 			#picture =
 			allowed = {
 				original_tag = SWE
@@ -597,7 +589,6 @@ ideas = {
 			}
 		}
 		SWE_hated_by_conservatives_2 = {
-			name = SWE_hated_by_conservatives
 			#picture =
 			allowed = {
 				original_tag = SWE
@@ -615,7 +606,6 @@ ideas = {
 			}
 		}
 		SWE_hated_by_conservatives_3 = {
-			name = SWE_hated_by_conservatives
 			#picture =
 			allowed = {
 				original_tag = SWE
@@ -633,7 +623,6 @@ ideas = {
 			}
 		}
 		SWE_hated_by_conservatives_4 = {
-			name = SWE_hated_by_conservatives
 			#picture =
 			allowed = {
 				original_tag = SWE
@@ -651,7 +640,6 @@ ideas = {
 			}
 		}
 		SWE_hated_by_conservatives_5 = {
-			name = SWE_hated_by_conservatives
 			#picture =
 			allowed = {
 				original_tag = SWE
