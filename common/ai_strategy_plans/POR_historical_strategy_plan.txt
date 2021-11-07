@@ -60,6 +60,11 @@ POR_historical = {
 		por_iberian_pact
 		
 	}
+	focus_factors = {
+		por_reforms = {
+			factor = 0
+		}
+	}
 	weight = {
 		factor = 1.0
 		modifier = {

@@ -64,6 +64,9 @@ POR_alternate_democratic_republic = {
 	}
 
 	focus_factors = {
+		por_reforms = {
+			factor = 0
+		}
 	}
 }
 POR_constitutional_monarchy = {
@@ -85,7 +88,7 @@ POR_constitutional_monarchy = {
 	}
 
 	ai_national_focuses = {
-		por_reform
+		por_reforms
 		por_liberalize
 		por_firstreform
 		por_lastreform
@@ -111,7 +114,23 @@ POR_constitutional_monarchy = {
 	}
 
 	focus_factors = {
+		por_reforms = {
+			factor = 1000
+		}
+		por_liberalize = {
+			factor = 1000
+		}
+		por_firstreform = {
+			factor = 1000
+		}
+		por_lastreform = {
+			factor = 1000
+		}
+		por_democracy = {
+			factor = 1000
+		}
 	}
+	
 }
 POR_bad_monarchy = {
 	name = "Portugal Monarchy"
@@ -132,7 +151,7 @@ POR_bad_monarchy = {
 	}
 
 	ai_national_focuses = {
-		por_reform
+		por_reforms
 		por_civil
 		por_civilprep
 		por_startcivil
@@ -155,5 +174,17 @@ POR_bad_monarchy = {
 	}
 
 	focus_factors = {
+		por_reforms = {
+			factor = 1000
+		}
+		por_civil = {
+			factor = 1000
+		}
+		por_civilprep= {
+			factor = 1000
+		}
+		por_startcivil = {
+			factor = 1000
+		}
 	}
 }
