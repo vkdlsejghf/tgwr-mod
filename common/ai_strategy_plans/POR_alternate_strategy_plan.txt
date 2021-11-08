@@ -67,6 +67,9 @@ POR_alternate_democratic_republic = {
 		por_reforms = {
 			factor = 0
 		}
+		por_democracy = {
+			factor = 1000
+		}
 	}
 }
 POR_constitutional_monarchy = {

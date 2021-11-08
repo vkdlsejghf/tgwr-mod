@@ -840,10 +840,6 @@ focus_tree = {
 		relative_position_id = por_fix_country
 		available = {
 			has_stability < 0.3
-			OR = {
-				is_ai = no
-				date > 1924.1.1
-			}
 		}
 		prerequisite = {
 			focus = por_fix_country
@@ -852,7 +848,6 @@ focus_tree = {
 			focus = por_democracy
 		}
 		completion_reward = {
-			add_ideas = { POR_idea_military_plot }
 			add_popularity = {
 				ideology = fascism
 				popularity = 0.05
@@ -876,7 +871,6 @@ focus_tree = {
 			focus = por_military_coup_prep
 		}
 		completion_reward = {
-			remove_ideas = { POR_idea_military_plot }
 			add_stability = -0.15
 			set_politics = {
 				ruling_party = fascism

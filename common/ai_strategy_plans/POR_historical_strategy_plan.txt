@@ -64,6 +64,9 @@ POR_historical = {
 		por_reforms = {
 			factor = 0
 		}
+		por_democracy = {
+			factor = 0
+		}
 	}
 	weight = {
 		factor = 1.0
