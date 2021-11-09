@@ -144,7 +144,6 @@ TUR_armenia_minority = {
 	recruitable_population_factor = -0.15
 	attrition_for_controller = 0.25
 }
-
 TUR_arab_minority = {
     enable = { always = yes }
 	icon = GFX_modifiers_TUR_arab_minority
@@ -152,7 +151,6 @@ TUR_arab_minority = {
 	recruitable_population_factor = -0.15
 	local_supplies_for_controller = -0.25
 }
-
 TUR_greek_minority = {
     enable = { always = yes }
 
@@ -162,7 +160,6 @@ TUR_greek_minority = {
 	army_speed_factor_for_controller = -0.15
 	state_production_speed_buildings_factor = 0.03
 }
-
 TUR_southslav_minority = {
     enable = { always = yes }
 
@@ -171,7 +168,6 @@ TUR_southslav_minority = {
 	recruitable_population_factor = -0.15
 	required_garrison_factor = 0.15
 }
-
 TUR_albanian_minority = {
     enable = { always = yes }
 
@@ -180,7 +176,6 @@ TUR_albanian_minority = {
 	recruitable_population_factor = -0.15
 	resistance_growth = 0.15
 }
-
 TUR_kurd_minority = {
 	enable = { always = yes }
 
@@ -189,7 +184,6 @@ TUR_kurd_minority = {
 	recruitable_population_factor = -0.15
 	local_resources_factor = -0.15
 }
-
 TUR_minority_industry = {
 	enable = { always = yes }
 
@@ -198,7 +192,6 @@ TUR_minority_industry = {
 	local_resources_factor = -0.15
 	state_production_speed_buildings_factor = -0.15
 }
-
 TUR_OPDA = {
     enable = {  original_tag = TUR  }
 	
@@ -214,4 +207,24 @@ bel_integrating_congo = {
 	non_core_manpower = 0.1
 	compliance_growth = 0.05
 	resistance_growth = -0.1
+}
+TUR_turkish_revolts = {
+	enable = { always = yes }
+
+	icon = GFX_modifiers_TUR_turkish_revolts
+
+	resistance_growth = 0.15
+	resistance_decay = -0.15
+	required_garrison_factor = 0.15
+	compliance_growth = -0.15
+	local_resources_factor = -0.15
+}
+TUR_turkish_support = {
+	enable = { always = yes }
+
+	icon = GFX_modifiers_TUR_turkish_revolts
+
+	recruitable_population_factor = 0.15
+	state_production_speed_buildings_factor = 0.15
+	local_resources_factor = 0.15
 }
