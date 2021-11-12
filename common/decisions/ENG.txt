@@ -647,3 +647,79 @@ operations = {
 		}
 	}	
 }
+
+ENG_interwar_entente_category = {
+	ENG_interwar_invite_in_entente = {
+		icon = spr_the_seeds_of_revolution
+		allowed = {
+			OR = {
+				original_tag = FRA
+				original_tag = ENG
+				original_tag = CAN
+				original_tag = AST
+			}
+			
+		}
+		available = {
+			has_war = no
+			is_faction_leader = yes
+			FROM = {
+				has_war = no				
+			}
+		}
+		visible = {
+			OR = {
+				AND = {
+					original_tag = ENG
+					has_country_flag = ENG_nationalist_britain_flag
+					has_country_flag = imperial_entente_formed
+
+				}
+				AND = {
+					original_tag = AST
+					has_country_flag = australia_is_britain
+				}
+				AND = {
+					original_tag = CAN
+					has_country_flag = canada_is_britain
+				}
+				AND = {
+					original_tag = FRA
+					has_country_flag = FRA_nationalist_france_flag
+				}
+			}
+		}
+		target_trigger = {
+			FROM = {
+				OR = {
+					tag = CAN
+					tag = SRD
+					tag = AST
+					tag = FRA
+					tag = SAF
+					tag = SAF
+					tag = NZL
+					tag = KEN
+					tag = ZIM
+					tag = NIR					
+					original_tag = ITA
+					tag = SIC
+				}
+				is_subject = no
+				is_in_faction = no		
+				NOT = {
+					tag = ROOT
+					has_government = communism
+				}
+			}
+		}
+		fire_only_once = yes
+		cost = 25
+		complete_effect = {
+			FROM = {
+				country_event = generic.5
+			}
+		}
+		ai_will_do = { factor = 100 }
+	}
+}

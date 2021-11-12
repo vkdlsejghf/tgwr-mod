@@ -1466,6 +1466,7 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		original_tag = ENG
+		is_subject = no
 		NOT = {
 			has_government = communism
 		}
@@ -1496,12 +1497,7 @@ country_event = {
 				ideology = communism
 				long_name = ENG_tuc_long
 				name = ENG_tuc
-			}
-			set_party_name = {
-				ideology = fascism
-				long_name = ENG_white_army_long
-				name = ENG_white_army
-			}
+			}			
 			create_country_leader = {
 				name = "Ellen Wilkinson"
 				picture = "ENG_Ellen_Wilkinson.dds"
@@ -1513,16 +1509,32 @@ country_event = {
 					trait_syndicalism
 				}
 			}
-			create_country_leader = {
-				name = "Sir Edmund Allenby"
-				picture = "ENG_edmund_allenby.dds"
-				expire = "1965.1.1"
-				ideology = stratocracy
-				traits = {
-					eng_civil_war_trait
-					trait_stratocracy
+			if = {
+				limit = {
+					NOT = {
+						has_government = fascism
+					}
+				}
+				create_country_leader = {
+					name = "Sir Edmund Allenby"
+					picture = "ENG_edmund_allenby.dds"
+					expire = "1965.1.1"
+					ideology = stratocracy
+					traits = {
+						eng_civil_war_trait
+						trait_stratocracy
+					}
+				}
+				set_party_name = {
+					ideology = fascism
+					long_name = ENG_white_army_long
+					name = ENG_white_army
+				}
+				else = {
+					add_country_leader_trait = eng_civil_war_trait					
 				}
 			}
+			
 			set_rule = {
 				can_join_factions = no
 				can_create_factions = no
@@ -1542,7 +1554,12 @@ country_event = {
 	option = {
 		name = ww1_england.37.a
 		ai_chance = {
-			factor = 1
+			factor = 10
+		}
+		trigger = {
+			NOT = {
+				has_government = fascism
+			}
 		}
 		add_popularity = {
 			ideology = communism
@@ -1592,6 +1609,8 @@ country_event = {
 			remove_unit_leader = 817
 			remove_unit_leader = 818
 			remove_unit_leader = 823
+			remove_unit_leader = 826
+			retire_ideology_leader = fascism
 			create_country_leader = {
 				name = "Sir Edmund Allenby"
 				picture = "ENG_edmund_allenby.dds"
@@ -1710,7 +1729,7 @@ country_event = {
 	option = {
 		name = ww1_england.37.b
 		ai_chance = {
-			factor = 99
+			factor = 90
 		}
 		add_popularity = {
 			ideology = fascism
@@ -1751,6 +1770,7 @@ country_event = {
 			expire = "1965.1.1"
 			ideology = anarcho_syndicalism
 			traits = {
+				lunatic
 				trait_anarcho_syndicalism
 			}
 		}
@@ -1760,6 +1780,7 @@ country_event = {
 			expire = "1965.1.1"
 			ideology = nazism
 			traits = {
+				warmonger
 				trait_nazism
 			}
 		}
@@ -1769,6 +1790,7 @@ country_event = {
 			expire = "1965.1.1"
 			ideology = libertarianism
 			traits = {
+				face_licker
 				trait_libertarianism
 			}
 		}
@@ -2041,7 +2063,7 @@ country_event = {
 	}
 }
 
-#T. E. Nicholas elections
+#Ellen Wilkinson elections
 country_event = {
 	id = ww1_england.40
 	title = ww1_england.40.t
@@ -2130,6 +2152,7 @@ country_event = {
 	picture = GFX_report_event_royal_parade
 	fire_only_once = yes
 	trigger = {
+		is_subject = no
 		has_country_leader = {
 			name = "Oswald Mosley"
 			ruling_only = yes
@@ -2755,11 +2778,14 @@ country_event = {
 			has_war_with = SCO
 		}
 		NOT = {
-			has_global_flag = ENG_became_england
+			has_cosmetic_tag = ENG_england
 		}
-		NOT = {
-			has_completed_focus = ENG_Lord_Protector_England #prevents clashes with Kitchener assassination chain
-		}
+		OR = {
+			NOT = {
+				has_completed_focus = ENG_Lord_Protector_England #prevents clashes with Kitchener assassination chain
+			}
+			is_subject = yes
+		}		
 	}
 	mean_time_to_happen = {
 		days = 2
@@ -2790,7 +2816,7 @@ country_event = {
 		owns_state = 136
 		owns_state = 133
 		owns_state = 121
-		has_global_flag = ENG_became_england
+		has_cosmetic_tag = ENG_england
 	}
 	mean_time_to_happen = {
 		days = 2
@@ -3040,7 +3066,7 @@ country_event = {
 			}
 			every_other_country = {
 				limit = {
-					owns_state = 273
+					owns_state = 272
 				}
 				transfer_state = 701
 			}
@@ -3419,7 +3445,12 @@ country_event = {
 	trigger = {
 		tag = ENG
 		has_country_flag = great_war_loser
-		has_subject = SAF
+		OR = {
+			has_subject = SAF
+			owns_state = 542
+			owns_state = 789
+			owns_state = 545
+		}		
 		OR = {
 			has_global_flag = frankfurt_treaty
 			has_global_flag = versallies_treaty
@@ -4620,6 +4651,7 @@ country_event = {
 		add_to_faction = NZL
 		add_to_faction = SAF
 		hidden_effect = {
+set_country_flag = imperial_entente_formed
 			news_event = {
 				id = eng_news.7
 			}
@@ -5073,6 +5105,12 @@ country_event = {
 		ai_chance = {
 			factor = 100
 		}
+		every_unit_leader = {
+			limit = {
+				has_id = 826
+			}
+			set_nationality = RUS
+		}
 		if = {
 			limit = {
 				has_war_with = GER
@@ -5253,7 +5291,10 @@ country_event = {
 		name = ww1_england.117.a
 		every_unit_leader = {
 			limit = {
-				has_id = 899
+				OR = {					
+					has_id = 899
+					has_id = 826
+				}	
 			}
 			set_nationality = ENG
 		}
@@ -5289,7 +5330,7 @@ country_event = {
 	picture = GFX_report_event_british_inspect_troops
 	trigger = {
 		original_tag = RUS
-		has_unit_leader = 899
+		has_unit_leader = 899	
 		ENG = {
 			OR = {
 				has_country_flag = great_war_winner
@@ -5297,12 +5338,15 @@ country_event = {
 			}
 		}
 	}
-	fire_only_once = yes
+	fire_only_once = yes	
 	option = {
 		name = ww1_england.118.a
 		every_unit_leader = {
 			limit = {
-				has_id = 899
+				OR = {				
+					has_id = 899
+					has_id = 826
+				}	
 			}
 			set_nationality = ENG
 		}
@@ -8701,6 +8745,7 @@ country_event = {
 		has_government = fascism
 		is_subject = no
 		NOT = { country_exists = WLS country_exists = SCO }
+		NOT = { has_cosmetic_tag = ENG_england }
 		has_country_leader = { name = "Herbert Kitchener" ruling_only = yes }
 		has_war = no
 	}

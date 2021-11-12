@@ -95,17 +95,9 @@ FRA_proto_fascism = {
 	color = rgb { 30 84 183 }
 	color_ui = rgb { 35 101 222 }
 }
-POR_republic = {
+POR_REP = {
 	color = rgb { 39 116 70 }
 	color_ui = rgb { 51 151 91 }
-}
-POR_portugaliza = {
-	color = rgb { 20 33 158 }
-	color_ui = rgb { 20 33 158 }
-}
-POR_cursed = {
-	color = rgb { 201 56 93 }
-	color_ui = rgb { 255 73 121 }
 }
 POL_republic = {
 	color = rgb { 197 92 106 }
@@ -116,8 +108,8 @@ POL_SOVIET = {
 	color_ui = rgb { 197 31 44 }
 }
 TUR_REP = {
-	color = rgb { 153 0 0 }
-	color_ui = rgb { 153 0 0 }
+	color = rgb { 193 99 99 }
+	color_ui = rgb { 193 99 99 }
 }
 TUR_TRN = {
 	color = rgb { 16 148 188 }
@@ -673,4 +665,20 @@ BUL_radomir = {
 BUL_zveno_bulgaria = {
 	color = rgb { 215  210  204 }
 	color_ui = rgb { 215  210  204 }
+}
+COG_belgium_in_exile = {
+	color = rgb { 148 132 15  }
+	color_ui = rgb { 231 202 10 }
+}
+BEL_empire_cosmetic_tag = {
+	color = rgb { 148 132 15  }
+	color_ui = rgb { 231 202 10 }
+}
+BEL_netherlands_cosmetic_tag = {
+	color = rgb { 196 160 30  }
+	color_ui = rgb { 255 179 96 }
+}
+BEL_benelux_cosmetic_tag = {
+	color = rgb { 255 128 0 }
+	color_ui = rgb { 255 128 0 }
 }
