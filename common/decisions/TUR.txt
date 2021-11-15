@@ -1,3 +1,34 @@
+debug_decisions = {
+	TUR_load_interwar_focus_tree = {
+		allowed = {
+			original_tag = TUR
+		}
+		available = {
+		}
+		fire_only_once = no
+		complete_effect = {
+			load_focus_tree = turkey_focus_tree
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	TUR_load_original_focus_tree = {
+		allowed = {
+			original_tag = TUR
+		}
+		available = {
+		}
+		fire_only_once = no
+		complete_effect = {
+			load_focus_tree = ottoman_focus_tree
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}
+
 TUR_minority_decision = {
 	TUR_armenian_uprising = {
 		icon = generic_nationalism
@@ -33,15 +64,15 @@ TUR_minority_decision = {
 						has_war_with = RUS
 					}
 					NOT = {
-						has_global_flag = kis_war	
+						has_global_flag = kis_war
 					}
 					RUS = {
 						is_subject = yes
 					}
 					has_global_flag = great_war_ends
-				}					
+				}
 				tooltip = "All the Armenian Minorities within our borders are pacified"
-			}		
+			}
 		}
 		is_good = no
 		days_mission_timeout = 270
@@ -51,8 +82,8 @@ TUR_minority_decision = {
 				if = {
 					limit = {
 						ARM = {
-							exists = no #to prevent Russia from annexing Armenia if they realesed ot before 
-						}						
+							exists = no							#to prevent Russia from annexing Armenia if they realesed ot before 
+						}
 					}
 					set_global_flag = TUR_armenian_uprising_happened
 				}
@@ -66,7 +97,7 @@ TUR_minority_decision = {
 						set_state_controller = PREV
 						add_state_claim = PREV
 					}
-				}	
+				}
 				ARM = {
 					division_template = {
 						name = "Milits’ia"
@@ -285,7 +316,7 @@ TUR_minority_decision = {
 					target = ARM
 					type = annex_everything
 				}
-			}		
+			}
 			effect_tooltip = {
 				ARM = {
 					declare_war_on = {
@@ -296,12 +327,12 @@ TUR_minority_decision = {
 			}
 			if = {
 				limit = {
-					has_global_flag = TUR_armenian_uprising_happened #to prevent Russia from puppeting Armenia if they were already independent 
+					has_global_flag = TUR_armenian_uprising_happened					#to prevent Russia from puppeting Armenia if they were already independent 
 				}
 				RUS = {
 					puppet = ARM
 				}
-			}		
+			}
 		}
 	}
 	TUR_trade_pp_for_cp = {
@@ -336,6 +367,10 @@ TUR_minority_decision = {
 						has_completed_focus = TUR_return_millet_system
 						has_completed_focus = TUR_enforce_religious_law
 						has_completed_focus = TUR_solvetheidentityproblem
+						AND = {
+							has_completed_focus = TUR_question_of_the_minorities
+							has_country_flag = TUR_assimilate_minorities
+						}
 					}
 				}
 				has_political_power > 14.99
@@ -345,6 +380,10 @@ TUR_minority_decision = {
 					OR = {
 						has_completed_focus = TUR_national_association_program
 						has_completed_focus = TUR_ease_ethnic_tensions
+						AND = {
+						has_completed_focus = TUR_question_of_the_minorities
+						has_country_flag = TUR_integrate_minorities
+						}
 					}
 				}
 				has_political_power > 29.99
@@ -376,14 +415,19 @@ TUR_minority_decision = {
 		}
 		on_map_mode = map_only
 		days_remove = 30
-		modifier = {
-			political_power_cost = -0.05
-		}
+
 		available = {
 		}
 		visible = {
 			OR = {
 				has_completed_focus = TUR_solve_minority_itf
+				AND = {
+					has_completed_focus = TUR_question_of_the_minorities
+					OR = {
+						has_country_flag = TUR_assimilate_minorities
+						has_country_flag = TUR_integrate_minorities
+					}
+				}
 				has_completed_focus = TUR_konstantiniyye_agreement
 				has_completed_focus = TUR_return_millet_system
 				has_completed_focus = TUR_reform_millet_system
@@ -403,7 +447,13 @@ TUR_minority_decision = {
 		complete_effect = {
 			if = {
 				limit = {
-					has_completed_focus = TUR_anti_imperialism
+					OR = {
+						has_completed_focus = TUR_anti_imperialism
+						AND = {
+							has_completed_focus = TUR_question_of_the_minorities
+							has_country_flag = TUR_assimilate_minorities
+						}
+					}
 				}
 				add_stability = -0.005
 				hidden_effect = {
@@ -415,6 +465,10 @@ TUR_minority_decision = {
 					OR = {
 						has_completed_focus = TUR_national_association_program
 						has_completed_focus = TUR_ease_ethnic_tensions
+						AND = {
+							has_completed_focus = TUR_question_of_the_minorities
+							has_country_flag = TUR_integrate_minorities
+						}
 					}
 				}
 				add_stability = 0.002
@@ -526,7 +580,7 @@ TUR_minority_decision = {
 						has_completed_focus = TUR_ease_ethnic_tensions
 						AND = {
 							has_completed_focus = TUR_solve_minority_itf
-							has_completed_focus = TUR_road_to_turan
+							has_completed_focus = TUR_claim_caucasian_turan
 						}
 						AND = {
 							has_completed_focus = TUR_enforce_religious_law
@@ -546,7 +600,14 @@ TUR_minority_decision = {
 						AND = {
 							OR = {
 								has_completed_focus = TUR_national_association_program
-								has_completed_focus = TUR_claim_caucasian_turan
+								has_completed_focus = TUR_solve_minority_itf
+								AND = {
+									has_completed_focus = TUR_question_of_the_minorities
+									OR = {
+										has_country_flag = TUR_assimilate_minorities
+										has_country_flag = TUR_integrate_minorities
+									}
+								}
 							}
 							FROM = {
 								OR = {
@@ -593,20 +654,20 @@ TUR_minority_decision = {
 			}
 			modifier = {
 				factor = 5
-                OR = {
-                    has_game_rule = {
-                        rule = TUR_ai_behavior
-                        option = HISTORICAL_TRIUMVIRATE
-                    }
-                    has_country_flag = TUR_AI_HISTORICAL_TRIUMVIRATE
-                    AND = {
-                        has_game_rule = {
-                            rule = TUR_ai_behavior
-                            option = DEFAULT
-                        }
-                        is_historical_focus_on = yes
-                    }
-                }
+				OR = {
+					has_game_rule = {
+						rule = TUR_ai_behavior
+						option = HISTORICAL_TRIUMVIRATE
+					}
+					has_country_flag = TUR_AI_HISTORICAL_TRIUMVIRATE
+					AND = {
+						has_game_rule = {
+							rule = TUR_ai_behavior
+							option = DEFAULT
+						}
+						is_historical_focus_on = yes
+					}
+				}
 			}
 		}
 	}
@@ -626,6 +687,10 @@ TUR_minority_decision = {
 						has_completed_focus = TUR_return_millet_system
 						has_completed_focus = TUR_enforce_religious_law
 						has_completed_focus = TUR_solvetheidentityproblem
+						AND = {
+							has_completed_focus = TUR_question_of_the_minorities
+							has_country_flag = TUR_assimilate_minorities
+						}
 					}
 				}
 				has_political_power > 14.99
@@ -635,6 +700,10 @@ TUR_minority_decision = {
 					OR = {
 						has_completed_focus = TUR_national_association_program
 						has_completed_focus = TUR_ease_ethnic_tensions
+						AND = {
+						has_completed_focus = TUR_question_of_the_minorities
+						has_country_flag = TUR_integrate_minorities
+						}
 					}
 				}
 				has_political_power > 29.99
@@ -662,14 +731,19 @@ TUR_minority_decision = {
 		}
 		on_map_mode = map_only
 		days_remove = 30
-		modifier = {
-			political_power_cost = -0.05
-		}
+
 		available = {
 		}
 		visible = {
 			OR = {
 				has_completed_focus = TUR_solve_minority_itf
+				AND = {
+					has_completed_focus = TUR_question_of_the_minorities
+					OR = {
+						has_country_flag = TUR_assimilate_minorities
+						has_country_flag = TUR_integrate_minorities
+					}
+				}
 				has_completed_focus = TUR_konstantiniyye_agreement
 				has_completed_focus = TUR_return_millet_system
 				has_completed_focus = TUR_reform_millet_system
@@ -689,7 +763,13 @@ TUR_minority_decision = {
 		complete_effect = {
 			if = {
 				limit = {
-					has_completed_focus = TUR_anti_imperialism
+					OR = {
+						has_completed_focus = TUR_anti_imperialism
+						AND = {
+							has_completed_focus = TUR_question_of_the_minorities
+							has_country_flag = TUR_assimilate_minorities
+						}
+					}
 				}
 				add_stability = -0.005
 				hidden_effect = {
@@ -701,6 +781,10 @@ TUR_minority_decision = {
 					OR = {
 						has_completed_focus = TUR_national_association_program
 						has_completed_focus = TUR_ease_ethnic_tensions
+						AND = {
+							has_completed_focus = TUR_question_of_the_minorities
+							has_country_flag = TUR_integrate_minorities
+						}
 					}
 				}
 				add_stability = 0.002
@@ -818,6 +902,13 @@ TUR_minority_decision = {
 							OR = {
 								has_completed_focus = TUR_national_association_program
 								has_completed_focus = TUR_solve_minority_itf
+								AND = {
+									has_completed_focus = TUR_question_of_the_minorities
+									OR = {
+										has_country_flag = TUR_assimilate_minorities
+										has_country_flag = TUR_integrate_minorities
+									}
+								}
 							}
 							FROM = {
 								OR = {
@@ -859,20 +950,20 @@ TUR_minority_decision = {
 			}
 			modifier = {
 				factor = 0
-                OR = {
-                    has_game_rule = {
-                        rule = TUR_ai_behavior
-                        option = HISTORICAL_TRIUMVIRATE
-                    }
-                    has_country_flag = TUR_AI_HISTORICAL_TRIUMVIRATE
-                    AND = {
-                        has_game_rule = {
-                            rule = TUR_ai_behavior
-                            option = DEFAULT
-                        }
-                        is_historical_focus_on = yes
-                    }
-                }
+				OR = {
+					has_game_rule = {
+						rule = TUR_ai_behavior
+						option = HISTORICAL_TRIUMVIRATE
+					}
+					has_country_flag = TUR_AI_HISTORICAL_TRIUMVIRATE
+					AND = {
+						has_game_rule = {
+							rule = TUR_ai_behavior
+							option = DEFAULT
+						}
+						is_historical_focus_on = yes
+					}
+				}
 			}
 		}
 	}
@@ -892,6 +983,10 @@ TUR_minority_decision = {
 						has_completed_focus = TUR_return_millet_system
 						has_completed_focus = TUR_enforce_religious_law
 						has_completed_focus = TUR_solvetheidentityproblem
+						AND = {
+							has_completed_focus = TUR_question_of_the_minorities
+							has_country_flag = TUR_assimilate_minorities
+						}
 					}
 				}
 				has_political_power > 14.99
@@ -901,6 +996,10 @@ TUR_minority_decision = {
 					OR = {
 						has_completed_focus = TUR_national_association_program
 						has_completed_focus = TUR_ease_ethnic_tensions
+						AND = {
+						has_completed_focus = TUR_question_of_the_minorities
+						has_country_flag = TUR_integrate_minorities
+						}
 					}
 				}
 				has_political_power > 29.99
@@ -969,14 +1068,19 @@ TUR_minority_decision = {
 		}
 		on_map_mode = map_only
 		days_remove = 30
-		modifier = {
-			political_power_cost = -0.05
-		}
+
 		available = {
 		}
 		visible = {
 			OR = {
 				has_completed_focus = TUR_solve_minority_itf
+				AND = {
+					has_completed_focus = TUR_question_of_the_minorities
+					OR = {
+						has_country_flag = TUR_assimilate_minorities
+						has_country_flag = TUR_integrate_minorities
+					}
+				}
 				has_completed_focus = TUR_konstantiniyye_agreement
 				has_completed_focus = TUR_return_millet_system
 				has_completed_focus = TUR_reform_millet_system
@@ -996,7 +1100,13 @@ TUR_minority_decision = {
 		complete_effect = {
 			if = {
 				limit = {
-					has_completed_focus = TUR_anti_imperialism
+					OR = {
+						has_completed_focus = TUR_anti_imperialism
+						AND = {
+							has_completed_focus = TUR_question_of_the_minorities
+							has_country_flag = TUR_assimilate_minorities
+						}
+					}
 				}
 				add_stability = -0.005
 				hidden_effect = {
@@ -1008,6 +1118,10 @@ TUR_minority_decision = {
 					OR = {
 						has_completed_focus = TUR_national_association_program
 						has_completed_focus = TUR_ease_ethnic_tensions
+						AND = {
+							has_completed_focus = TUR_question_of_the_minorities
+							has_country_flag = TUR_integrate_minorities
+						}
 					}
 				}
 				add_stability = 0.002
@@ -1138,6 +1252,13 @@ TUR_minority_decision = {
 							OR = {
 								has_completed_focus = TUR_national_association_program
 								has_completed_focus = TUR_solve_minority_itf
+								AND = {
+									has_completed_focus = TUR_question_of_the_minorities
+									OR = {
+										has_country_flag = TUR_assimilate_minorities
+										has_country_flag = TUR_integrate_minorities
+									}
+								}
 							}
 							FROM = {
 								OR = {
@@ -1198,20 +1319,20 @@ TUR_minority_decision = {
 			}
 			modifier = {
 				factor = 0
-                OR = {
-                    has_game_rule = {
-                        rule = TUR_ai_behavior
-                        option = HISTORICAL_TRIUMVIRATE
-                    }
-                    has_country_flag = TUR_AI_HISTORICAL_TRIUMVIRATE
-                    AND = {
-                        has_game_rule = {
-                            rule = TUR_ai_behavior
-                            option = DEFAULT
-                        }
-                        is_historical_focus_on = yes
-                    }
-                }
+				OR = {
+					has_game_rule = {
+						rule = TUR_ai_behavior
+						option = HISTORICAL_TRIUMVIRATE
+					}
+					has_country_flag = TUR_AI_HISTORICAL_TRIUMVIRATE
+					AND = {
+						has_game_rule = {
+							rule = TUR_ai_behavior
+							option = DEFAULT
+						}
+						is_historical_focus_on = yes
+					}
+				}
 			}
 		}
 	}
@@ -1231,6 +1352,10 @@ TUR_minority_decision = {
 						has_completed_focus = TUR_return_millet_system
 						has_completed_focus = TUR_enforce_religious_law
 						has_completed_focus = TUR_solvetheidentityproblem
+						AND = {
+							has_completed_focus = TUR_question_of_the_minorities
+							has_country_flag = TUR_assimilate_minorities
+						}
 					}
 				}
 				has_political_power > 14.99
@@ -1240,6 +1365,10 @@ TUR_minority_decision = {
 					OR = {
 						has_completed_focus = TUR_national_association_program
 						has_completed_focus = TUR_ease_ethnic_tensions
+						AND = {
+						has_completed_focus = TUR_question_of_the_minorities
+						has_country_flag = TUR_integrate_minorities
+						}
 					}
 				}
 				has_political_power > 29.99
@@ -1263,14 +1392,19 @@ TUR_minority_decision = {
 		}
 		on_map_mode = map_only
 		days_remove = 30
-		modifier = {
-			political_power_cost = -0.05
-		}
+
 		available = {
 		}
 		visible = {
 			OR = {
 				has_completed_focus = TUR_solve_minority_itf
+				AND = {
+					has_completed_focus = TUR_question_of_the_minorities
+					OR = {
+						has_country_flag = TUR_assimilate_minorities
+						has_country_flag = TUR_integrate_minorities
+					}
+				}
 				has_completed_focus = TUR_konstantiniyye_agreement
 				has_completed_focus = TUR_return_millet_system
 				has_completed_focus = TUR_reform_millet_system
@@ -1290,7 +1424,13 @@ TUR_minority_decision = {
 		complete_effect = {
 			if = {
 				limit = {
-					has_completed_focus = TUR_anti_imperialism
+					OR = {
+						has_completed_focus = TUR_anti_imperialism
+						AND = {
+							has_completed_focus = TUR_question_of_the_minorities
+							has_country_flag = TUR_assimilate_minorities
+						}
+					}
 				}
 				add_stability = -0.005
 				hidden_effect = {
@@ -1302,6 +1442,10 @@ TUR_minority_decision = {
 					OR = {
 						has_completed_focus = TUR_national_association_program
 						has_completed_focus = TUR_ease_ethnic_tensions
+						AND = {
+							has_completed_focus = TUR_question_of_the_minorities
+							has_country_flag = TUR_integrate_minorities
+						}
 					}
 				}
 				add_stability = 0.002
@@ -1415,6 +1559,13 @@ TUR_minority_decision = {
 							OR = {
 								has_completed_focus = TUR_national_association_program
 								has_completed_focus = TUR_solve_minority_itf
+								AND = {
+									has_completed_focus = TUR_question_of_the_minorities
+									OR = {
+										has_country_flag = TUR_assimilate_minorities
+										has_country_flag = TUR_integrate_minorities
+									}
+								}
 							}
 							FROM = {
 								OR = {
@@ -1454,20 +1605,20 @@ TUR_minority_decision = {
 			}
 			modifier = {
 				factor = 0
-                OR = {
-                    has_game_rule = {
-                        rule = TUR_ai_behavior
-                        option = HISTORICAL_TRIUMVIRATE
-                    }
-                    has_country_flag = TUR_AI_HISTORICAL_TRIUMVIRATE
-                    AND = {
-                        has_game_rule = {
-                            rule = TUR_ai_behavior
-                            option = DEFAULT
-                        }
-                        is_historical_focus_on = yes
-                    }
-                }
+				OR = {
+					has_game_rule = {
+						rule = TUR_ai_behavior
+						option = HISTORICAL_TRIUMVIRATE
+					}
+					has_country_flag = TUR_AI_HISTORICAL_TRIUMVIRATE
+					AND = {
+						has_game_rule = {
+							rule = TUR_ai_behavior
+							option = DEFAULT
+						}
+						is_historical_focus_on = yes
+					}
+				}
 			}
 		}
 	}
@@ -1487,6 +1638,10 @@ TUR_minority_decision = {
 						has_completed_focus = TUR_return_millet_system
 						has_completed_focus = TUR_enforce_religious_law
 						has_completed_focus = TUR_solvetheidentityproblem
+						AND = {
+							has_completed_focus = TUR_question_of_the_minorities
+							has_country_flag = TUR_assimilate_minorities
+						}
 					}
 				}
 				has_political_power > 14.99
@@ -1496,6 +1651,10 @@ TUR_minority_decision = {
 					OR = {
 						has_completed_focus = TUR_national_association_program
 						has_completed_focus = TUR_ease_ethnic_tensions
+						AND = {
+						has_completed_focus = TUR_question_of_the_minorities
+						has_country_flag = TUR_integrate_minorities
+						}
 					}
 				}
 				has_political_power > 29.99
@@ -1543,14 +1702,19 @@ TUR_minority_decision = {
 		}
 		on_map_mode = map_only
 		days_remove = 30
-		modifier = {
-			political_power_cost = -0.05
-		}
+
 		available = {
 		}
 		visible = {
 			OR = {
 				has_completed_focus = TUR_solve_minority_itf
+				AND = {
+					has_completed_focus = TUR_question_of_the_minorities
+					OR = {
+						has_country_flag = TUR_assimilate_minorities
+						has_country_flag = TUR_integrate_minorities
+					}
+				}
 				has_completed_focus = TUR_konstantiniyye_agreement
 				has_completed_focus = TUR_return_millet_system
 				has_completed_focus = TUR_reform_millet_system
@@ -1570,7 +1734,13 @@ TUR_minority_decision = {
 		complete_effect = {
 			if = {
 				limit = {
-					has_completed_focus = TUR_anti_imperialism
+					OR = {
+						has_completed_focus = TUR_anti_imperialism
+						AND = {
+							has_completed_focus = TUR_question_of_the_minorities
+							has_country_flag = TUR_assimilate_minorities
+						}
+					}
 				}
 				add_stability = -0.005
 				hidden_effect = {
@@ -1582,6 +1752,10 @@ TUR_minority_decision = {
 					OR = {
 						has_completed_focus = TUR_national_association_program
 						has_completed_focus = TUR_ease_ethnic_tensions
+						AND = {
+							has_completed_focus = TUR_question_of_the_minorities
+							has_country_flag = TUR_integrate_minorities
+						}
 					}
 				}
 				add_stability = 0.002
@@ -1719,6 +1893,13 @@ TUR_minority_decision = {
 							OR = {
 								has_completed_focus = TUR_national_association_program
 								has_completed_focus = TUR_solve_minority_itf
+								AND = {
+									has_completed_focus = TUR_question_of_the_minorities
+									OR = {
+										has_country_flag = TUR_assimilate_minorities
+										has_country_flag = TUR_integrate_minorities
+									}
+								}
 							}
 							FROM = {
 								OR = {
@@ -1780,20 +1961,20 @@ TUR_minority_decision = {
 			}
 			modifier = {
 				factor = 0
-                OR = {
-                    has_game_rule = {
-                        rule = TUR_ai_behavior
-                        option = HISTORICAL_TRIUMVIRATE
-                    }
-                    has_country_flag = TUR_AI_HISTORICAL_TRIUMVIRATE
-                    AND = {
-                        has_game_rule = {
-                            rule = TUR_ai_behavior
-                            option = DEFAULT
-                        }
-                        is_historical_focus_on = yes
-                    }
-                }
+				OR = {
+					has_game_rule = {
+						rule = TUR_ai_behavior
+						option = HISTORICAL_TRIUMVIRATE
+					}
+					has_country_flag = TUR_AI_HISTORICAL_TRIUMVIRATE
+					AND = {
+						has_game_rule = {
+							rule = TUR_ai_behavior
+							option = DEFAULT
+						}
+						is_historical_focus_on = yes
+					}
+				}
 			}
 		}
 	}
@@ -1813,6 +1994,10 @@ TUR_minority_decision = {
 						has_completed_focus = TUR_return_millet_system
 						has_completed_focus = TUR_enforce_religious_law
 						has_completed_focus = TUR_solvetheidentityproblem
+						AND = {
+							has_completed_focus = TUR_question_of_the_minorities
+							has_country_flag = TUR_assimilate_minorities
+						}
 					}
 				}
 				has_political_power > 14.99
@@ -1822,6 +2007,10 @@ TUR_minority_decision = {
 					OR = {
 						has_completed_focus = TUR_national_association_program
 						has_completed_focus = TUR_ease_ethnic_tensions
+						AND = {
+						has_completed_focus = TUR_question_of_the_minorities
+						has_country_flag = TUR_integrate_minorities
+						}
 					}
 				}
 				has_political_power > 29.99
@@ -1862,14 +2051,19 @@ TUR_minority_decision = {
 		}
 		on_map_mode = map_only
 		days_remove = 30
-		modifier = {
-			political_power_cost = -0.05
-		}
+
 		available = {
 		}
 		visible = {
 			OR = {
 				has_completed_focus = TUR_solve_minority_itf
+				AND = {
+					has_completed_focus = TUR_question_of_the_minorities
+					OR = {
+						has_country_flag = TUR_assimilate_minorities
+						has_country_flag = TUR_integrate_minorities
+					}
+				}
 				has_completed_focus = TUR_konstantiniyye_agreement
 				has_completed_focus = TUR_return_millet_system
 				has_completed_focus = TUR_reform_millet_system
@@ -1889,7 +2083,13 @@ TUR_minority_decision = {
 		complete_effect = {
 			if = {
 				limit = {
-					has_completed_focus = TUR_anti_imperialism
+					OR = {
+						has_completed_focus = TUR_anti_imperialism
+						AND = {
+							has_completed_focus = TUR_question_of_the_minorities
+							has_country_flag = TUR_assimilate_minorities
+						}
+					}
 				}
 				add_stability = -0.005
 				hidden_effect = {
@@ -1901,6 +2101,10 @@ TUR_minority_decision = {
 					OR = {
 						has_completed_focus = TUR_national_association_program
 						has_completed_focus = TUR_ease_ethnic_tensions
+						AND = {
+							has_completed_focus = TUR_question_of_the_minorities
+							has_country_flag = TUR_integrate_minorities
+						}
 					}
 				}
 				add_stability = 0.002
@@ -2030,6 +2234,13 @@ TUR_minority_decision = {
 							OR = {
 								has_completed_focus = TUR_national_association_program
 								has_completed_focus = TUR_solve_minority_itf
+								AND = {
+									has_completed_focus = TUR_question_of_the_minorities
+									OR = {
+										has_country_flag = TUR_assimilate_minorities
+										has_country_flag = TUR_integrate_minorities
+									}
+								}
 							}
 							FROM = {
 								OR = {
@@ -2064,6 +2275,7 @@ TUR_minority_decision = {
 						}
 						AND = {
 							has_completed_focus = TUR_road_to_turan
+							has_completed_focus = TUR_solve_minority_itf
 							FROM = {
 								OR = {
 									state = 211
@@ -2115,20 +2327,20 @@ TUR_minority_decision = {
 			}
 			modifier = {
 				factor = 0
-                OR = {
-                    has_game_rule = {
-                        rule = TUR_ai_behavior
-                        option = HISTORICAL_TRIUMVIRATE
-                    }
-                    has_country_flag = TUR_AI_HISTORICAL_TRIUMVIRATE
-                    AND = {
-                        has_game_rule = {
-                            rule = TUR_ai_behavior
-                            option = DEFAULT
-                        }
-                        is_historical_focus_on = yes
-                    }
-                }
+				OR = {
+					has_game_rule = {
+						rule = TUR_ai_behavior
+						option = HISTORICAL_TRIUMVIRATE
+					}
+					has_country_flag = TUR_AI_HISTORICAL_TRIUMVIRATE
+					AND = {
+						has_game_rule = {
+							rule = TUR_ai_behavior
+							option = DEFAULT
+						}
+						is_historical_focus_on = yes
+					}
+				}
 			}
 		}
 	}
@@ -2566,14 +2778,14 @@ TUR_ittihadist_coup_decisions = {
 			}
 			custom_effect_tooltip = TUR_CUP_prepares_coup_mission_tooltip
 			complete_national_focus = TUR_raid_on_the_sublime_porte
-		    every_unit_leader = {
-			    limit = {
-				    OR = {
-					    has_trait = trait_TUR_halaskar_zabitan_member
-				    }
-			    }
-			    retire = yes
-		    }
+			every_unit_leader = {
+				limit = {
+					OR = {
+						has_trait = trait_TUR_halaskar_zabitan_member
+					}
+				}
+				retire = yes
+			}
 		}
 		complete_effect = {
 			#SUCCESS
@@ -2606,6 +2818,8 @@ TUR_ittihadist_coup_decisions = {
 		timeout_effect = {
 			remove_mission = TUR_CUP_prepares_coup_mission
 			remove_ideas = TUR_ittihadist_plot
+			complete_national_focus = TUR_ittihadists_destroyed
+			country_event = ww1_ottoman_trial.30
 			set_country_flag = TUR_CUP_coup_fails
 			custom_effect_tooltip = TUR_CUP_coup_fails_tooltip
 			complete_national_focus = TUR_ittihadists_destroyed
@@ -2827,12 +3041,8 @@ TUR_ittihadist_coup_decisions = {
 			army_experience = 10
 			add_war_support = 0.1
 			add_popularity = {
-				ideology = democratic
-				popularity = 0.05
-			}
-			add_popularity = {
 				ideology = neutrality
-				popularity = 0.05
+				popularity = 0.03
 			}
 			add_stability = -0.05
 			add_days_mission_timeout = {
@@ -3108,6 +3318,7 @@ political_actions = {
 		visible = {
 			NOT = {
 				has_completed_focus = TUR_istirak_mukavemet
+				has_country_flag = TUR_abolished_caliph
 			}
 		}
 		cost = 50
@@ -3156,43 +3367,43 @@ political_actions = {
 			factor = 1000
 		}
 	}
-#	TUR_dissolve_meclis_saviour_officers = {
-#		allowed = {
-#			original_tag = TUR
-#		}
-#		fire_only_once = yes
-#		cost = 100
-#		days_remove = 20
-#		visible = {
-#			NOT = {
-#				has_country_flag = meclis_dissolved
-#			}
-#			OR = {
-#				has_country_leader = {
-#					name = "Ahmed Muhtar Paşa"
-#					ruling_only = yes
-#				}
-#				has_country_leader = {
-#					name = "Mehmed Kamil Paşa"
-#					ruling_only = yes
-#				}
-#			}
-#			has_idea = TUR_government_without_majority
-#		}
-#		remove_effect = {
-#			custom_effect_tooltip = "Meclis will be dissolved."
-#			set_country_flag = meclis_dissolved
-#			add_stability = -0.05
-#			add_popularity = {
-#				ideology = democratic
-#				popularity = -0.02
-#			}
-#			remove_ideas = TUR_government_without_majority
-#		}
-#		ai_will_do = {
-#			factor = 1000
-#		}
-#	}
+	#	TUR_dissolve_meclis_saviour_officers = {
+	#		allowed = {
+	#			original_tag = TUR
+	#		}
+	#		fire_only_once = yes
+	#		cost = 100
+	#		days_remove = 20
+	#		visible = {
+	#			NOT = {
+	#				has_country_flag = meclis_dissolved
+	#			}
+	#			OR = {
+	#				has_country_leader = {
+	#					name = "Ahmed Muhtar Paşa"
+	#					ruling_only = yes
+	#				}
+	#				has_country_leader = {
+	#					name = "Mehmed Kamil Paşa"
+	#					ruling_only = yes
+	#				}
+	#			}
+	#			has_idea = TUR_government_without_majority
+	#		}
+	#		remove_effect = {
+	#			custom_effect_tooltip = "Meclis will be dissolved."
+	#			set_country_flag = meclis_dissolved
+	#			add_stability = -0.05
+	#			add_popularity = {
+	#				ideology = democratic
+	#				popularity = -0.02
+	#			}
+	#			remove_ideas = TUR_government_without_majority
+	#		}
+	#		ai_will_do = {
+	#			factor = 1000
+	#		}
+	#	}
 	TUR_reorganize_officers = {
 		#just for focus icon
 		allowed = {
@@ -3461,13 +3672,13 @@ TUR_libyanwar_decision = {
 			factor = 200
 			modifier = {
 				factor = 10000
-					AND = {
-						has_game_rule = {
-							rule = TUR_ai_behavior
-							option = DEFAULT
-						}
-						is_historical_focus_on = yes
+				AND = {
+					has_game_rule = {
+						rule = TUR_ai_behavior
+						option = DEFAULT
 					}
+					is_historical_focus_on = yes
+				}
 			}
 		}
 	}
@@ -3789,13 +4000,13 @@ TUR_libyanwar_decision = {
 			factor = 200
 			modifier = {
 				factor = 1000
-					AND = {
-						has_game_rule = {
-							rule = TUR_ai_behavior
-							option = DEFAULT
-						}
-						is_historical_focus_on = yes
+				AND = {
+					has_game_rule = {
+						rule = TUR_ai_behavior
+						option = DEFAULT
 					}
+					is_historical_focus_on = yes
+				}
 			}
 		}
 	}
@@ -3872,13 +4083,13 @@ TUR_libyanwar_decision = {
 			factor = 100
 			modifier = {
 				factor = 1000
-					AND = {
-						has_game_rule = {
-							rule = TUR_ai_behavior
-							option = DEFAULT
-						}
-						is_historical_focus_on = yes
+				AND = {
+					has_game_rule = {
+						rule = TUR_ai_behavior
+						option = DEFAULT
 					}
+					is_historical_focus_on = yes
+				}
 			}
 		}
 	}
@@ -3955,13 +4166,13 @@ TUR_libyanwar_decision = {
 			factor = 35
 			modifier = {
 				factor = 1000
-					AND = {
-						has_game_rule = {
-							rule = TUR_ai_behavior
-							option = DEFAULT
-						}
-						is_historical_focus_on = yes
+				AND = {
+					has_game_rule = {
+						rule = TUR_ai_behavior
+						option = DEFAULT
 					}
+					is_historical_focus_on = yes
+				}
 			}
 		}
 	}
@@ -4038,13 +4249,13 @@ TUR_libyanwar_decision = {
 			factor = 35
 			modifier = {
 				factor = 1000
-					AND = {
-						has_game_rule = {
-							rule = TUR_ai_behavior
-							option = DEFAULT
-						}
-						is_historical_focus_on = yes
+				AND = {
+					has_game_rule = {
+						rule = TUR_ai_behavior
+						option = DEFAULT
 					}
+					is_historical_focus_on = yes
+				}
 			}
 		}
 	}
@@ -4121,13 +4332,13 @@ TUR_libyanwar_decision = {
 			factor = 35
 			modifier = {
 				factor = 1000
-					AND = {
-						has_game_rule = {
-							rule = TUR_ai_behavior
-							option = DEFAULT
-						}
-						is_historical_focus_on = yes
+				AND = {
+					has_game_rule = {
+						rule = TUR_ai_behavior
+						option = DEFAULT
 					}
+					is_historical_focus_on = yes
+				}
 			}
 		}
 	}
@@ -5364,7 +5575,14 @@ TUR_economy_decision = {
 			}
 		}
 		available = {
-			has_completed_focus = TUR_reset_debt_obligations
+			if = {
+				limit = {
+					NOT = {
+						tag = TRK
+					}
+				}
+				has_completed_focus = TUR_reset_debt_obligations
+			}
 			custom_trigger_tooltip = {
 				tooltip = TUR_pay_our_debt_tooltip
 				check_variable = {
@@ -5463,14 +5681,12 @@ TUR_economy_decision = {
 		}
 		available = {
 			has_completed_focus = TUR_OPDA
-			NOT = {
-				custom_trigger_tooltip = {
-					tooltip = debt_less_than_0
-					check_variable = {
-						var = opda_lira
-						value = 0
-						compare = less_than_or_equals
-					}
+			custom_trigger_tooltip = {
+				tooltip = TUR_pay_our_debt_tooltip
+				check_variable = {
+					var = opda_lira
+					value = 0
+					compare = less_than_or_equals
 				}
 			}
 		}
@@ -5510,14 +5726,12 @@ TUR_economy_decision = {
 		}
 		available = {
 			num_of_civilian_factories > 15
-			NOT = {
-				custom_trigger_tooltip = {
-					tooltip = debt_less_than_0
-					check_variable = {
-						var = opda_lira
-						value = 0
-						compare = less_than_or_equals
-					}
+			custom_trigger_tooltip = {
+				tooltip = TUR_pay_our_debt_tooltip
+				check_variable = {
+					var = opda_lira
+					value = 0
+					compare = less_than_or_equals
 				}
 			}
 		}
@@ -5549,26 +5763,26 @@ TUR_economy_decision = {
 			modifier = {
 				add = 50
 				check_variable = {
-	                var = opda_consumer_goods
-	                value = 0.5
-	                compare = greater_than_or_equals
-                }
+					var = opda_consumer_goods
+					value = 0.5
+					compare = greater_than_or_equals
+				}
 			}
 			modifier = {
 				add = 150
 				check_variable = {
-	                var = opda_consumer_goods
-	                value = 0.75
-	                compare = greater_than_or_equals
-                }
+					var = opda_consumer_goods
+					value = 0.75
+					compare = greater_than_or_equals
+				}
 			}
 			modifier = {
 				add = 10000
 				check_variable = {
-	                var = opda_consumer_goods
-	                value = 1
-	                compare = greater_than_or_equals
-                }
+					var = opda_consumer_goods
+					value = 1
+					compare = greater_than_or_equals
+				}
 			}
 		}
 	}
@@ -5606,14 +5820,12 @@ TUR_economy_decision = {
 					has_war_with = ITA
 				}
 			}
-			NOT = {
-				custom_trigger_tooltip = {
-					tooltip = debt_less_than_0
-					check_variable = {
-						var = opda_lira
-						value = 0
-						compare = less_than_or_equals
-					}
+			custom_trigger_tooltip = {
+				tooltip = TUR_pay_our_debt_tooltip
+				check_variable = {
+					var = opda_lira
+					value = 0
+					compare = less_than_or_equals
 				}
 			}
 		}
@@ -5763,26 +5975,26 @@ TUR_economy_decision = {
 			modifier = {
 				add = 50
 				check_variable = {
-	                var = opda_consumer_goods
-	                value = 0.5
-	                compare = greater_than_or_equals
-                }
+					var = opda_consumer_goods
+					value = 0.5
+					compare = greater_than_or_equals
+				}
 			}
 			modifier = {
 				add = 150
 				check_variable = {
-	                var = opda_consumer_goods
-	                value = 0.75
-	                compare = greater_than_or_equals
-                }
+					var = opda_consumer_goods
+					value = 0.75
+					compare = greater_than_or_equals
+				}
 			}
 			modifier = {
 				add = 10000
 				check_variable = {
-	                var = opda_consumer_goods
-	                value = 1
-	                compare = greater_than_or_equals
-                }
+					var = opda_consumer_goods
+					value = 1
+					compare = greater_than_or_equals
+				}
 			}
 		}
 	}
@@ -5807,14 +6019,12 @@ TUR_economy_decision = {
 			has_completed_focus = TUR_anglo_ottoman_convention
 			owns_state = 853
 			has_variable = opda_lira
-			NOT = {
-				custom_trigger_tooltip = {
-					tooltip = debt_less_than_0
-					check_variable = {
-						var = opda_lira
-						value = 0
-						compare = less_than_or_equals
-					}
+			custom_trigger_tooltip = {
+				tooltip = TUR_pay_our_debt_tooltip
+				check_variable = {
+					var = opda_lira
+					value = 0
+					compare = less_than_or_equals
 				}
 			}
 		}
@@ -5977,26 +6187,26 @@ TUR_economy_decision = {
 			modifier = {
 				add = 50
 				check_variable = {
-	                var = opda_consumer_goods
-	                value = 0.5
-	                compare = greater_than_or_equals
-                }
+					var = opda_consumer_goods
+					value = 0.5
+					compare = greater_than_or_equals
+				}
 			}
 			modifier = {
 				add = 150
 				check_variable = {
-	                var = opda_consumer_goods
-	                value = 0.75
-	                compare = greater_than_or_equals
-                }
+					var = opda_consumer_goods
+					value = 0.75
+					compare = greater_than_or_equals
+				}
 			}
 			modifier = {
 				add = 10000
 				check_variable = {
-	                var = opda_consumer_goods
-	                value = 1
-	                compare = greater_than_or_equals
-                }
+					var = opda_consumer_goods
+					value = 1
+					compare = greater_than_or_equals
+				}
 			}
 		}
 	}
@@ -6034,14 +6244,12 @@ TUR_economy_decision = {
 					has_war_with = ITA
 				}
 			}
-			NOT = {
-				custom_trigger_tooltip = {
-					tooltip = debt_less_than_0
-					check_variable = {
-						var = opda_lira
-						value = 0
-						compare = less_than_or_equals
-					}
+			custom_trigger_tooltip = {
+				tooltip = TUR_pay_our_debt_tooltip
+				check_variable = {
+					var = opda_lira
+					value = 0
+					compare = less_than_or_equals
 				}
 			}
 		}
@@ -6167,26 +6375,26 @@ TUR_economy_decision = {
 			modifier = {
 				add = 50
 				check_variable = {
-	                var = opda_consumer_goods
-	                value = 0.5
-	                compare = greater_than_or_equals
-                }
+					var = opda_consumer_goods
+					value = 0.5
+					compare = greater_than_or_equals
+				}
 			}
 			modifier = {
 				add = 150
 				check_variable = {
-	                var = opda_consumer_goods
-	                value = 0.75
-	                compare = greater_than_or_equals
-                }
+					var = opda_consumer_goods
+					value = 0.75
+					compare = greater_than_or_equals
+				}
 			}
 			modifier = {
 				add = 10000
 				check_variable = {
-	                var = opda_consumer_goods
-	                value = 1
-	                compare = greater_than_or_equals
-                }
+					var = opda_consumer_goods
+					value = 1
+					compare = greater_than_or_equals
+				}
 			}
 		}
 	}
@@ -6207,7 +6415,7 @@ TUR_economy_decision = {
 				has_war_with = GER
 				NOT = {
 					has_decision = TUR_stop_berlin_baghdad_railway_mission
-				}			
+				}
 				hidden_trigger = {
 					OR = {
 						AND = {
@@ -6233,7 +6441,7 @@ TUR_economy_decision = {
 										size < 5
 										include_locked = yes
 									}
-								}							
+								}
 							}
 						}
 						AND = {
@@ -6255,7 +6463,7 @@ TUR_economy_decision = {
 										size < 5
 										include_locked = yes
 									}
-								}							
+								}
 							}
 						}
 					}
@@ -9067,338 +9275,457 @@ propaganda_efforts = {
 	}
 }
 
-TUR_ittihadist_coup_decisions = {
-	TUR_CUP_prepares_coup_mission = {
+TUR_war_of_independence_support_OTT = {
+	TUR_erzurum_congress = {
 		allowed = {
-			original_tag = TUR
+			tag = TUR
 		}
-		icon = tur_unifying_the_country
-		available = {
-			#GOAL
-			OR = {
-				has_civil_war = yes
-				has_completed_focus = TUR_raid_on_the_sublime_porte
-				has_global_flag = kis_firstbalkanwar_lose
-				NOT = {
-					country_exists = SER
-				}
-				has_subject = SER
-			}
-		}
+		priority = 100
+		icon = GFX_decision_generic_prepare_civil_war
 		activation = {
 			always = no
 		}
 		timeout_effect = {
-			#FAIL
-			add_stability = -0.1
-			add_popularity = {
-				ideology = fascism
-				popularity = 0.15
+			add_war_support = -0.15
+			set_country_flag = TUR_purge_radical_ittihadists
+			set_country_flag = TUR_purge_ittihadists
+			set_country_flag = TUR_no_celal_bayar
+			TRK = {
+				clr_country_flag = TUR_TRK_yet_invite_ittihadists
 			}
-			add_popularity = {
-				ideology = neutrality
-				popularity = 0.2
+			hidden_effect = {
+				every_unit_leader = {
+					limit = {
+						OR = {
+							has_trait = trait_TUR_ittihadist_radical_sympathies
+							has_trait = trait_TUR_ittihadist_sympathies
+						}
+					}
+					set_nationality = TRK
+				}
 			}
-			complete_national_focus = TUR_raid_on_the_sublime_porte
+			every_unit_leader = {
+				limit = {
+					OR = {
+						has_trait = trait_TUR_ittihadist_radical_sympathies
+						has_trait = trait_TUR_ittihadist_sympathies
+					}
+				}
+				retire = yes
+			}
+			activate_mission = TUR_sivas_congress
 		}
 		complete_effect = {
 			#SUCCESS
 		}
 		fire_only_once = yes
-		days_mission_timeout = 110
+		days_mission_timeout = 42
 		is_good = no
 	}
-	TUR_CUP_coup_averted = {
+	TUR_sivas_congress = {
 		allowed = {
-			original_tag = TUR
+			tag = TUR
 		}
-		available = {
-			has_completed_focus = TUR_raid_on_the_sublime_porte
-		}
-		complete_effect = {
-		}
+		priority = 100
+		icon = GFX_decision_generic_prepare_civil_war
 		activation = {
 			always = no
 		}
 		timeout_effect = {
-			remove_mission = TUR_CUP_prepares_coup_mission
-			remove_ideas = TUR_ittihadist_plot
-			complete_national_focus = TUR_ittihadists_destroyed
-		}
-		days_mission_timeout = 140
-		fire_only_once = yes
-		is_good = yes
-	}
-	TUR_ban_CUP = {
-		allowed = {
-			original_tag = TUR
-		}
-		visible = {
-			has_country_leader = {
-				name = "Mehmed Kamil Paşa"
-				ruling_only = yes
-			}
-			NOT = {
-				has_country_flag = CUP_banned
-			}
-			NOT = {
-				has_country_flag = liberal_victory
-			}
-			has_active_mission = TUR_CUP_prepares_coup_mission
-			has_active_mission = TUR_CUP_coup_averted
-		}
-		available = {
-			hidden_trigger = {
-				NOT = {
-					has_country_flag = attacking_cup
-				}
-			}
-		}
-		fire_only_once = yes
-		cost = 20
-		days_remove = 5
-		complete_effect = {
-			set_country_flag = attacking_cup
-		}
-		remove_effect = {
-			clr_country_flag = attacking_cup
-			add_popularity = {
-				ideology = neutrality
-				popularity = -0.1
-			}
-			add_popularity = {
-				ideology = fascism
-				popularity = 0.05
-			}
-			add_stability = 0.05
-			modify_timed_idea = {
-				idea = TUR_idea_chaos_balkans
-				days = 10
-			}
-			add_political_power = 50
-			add_days_mission_timeout = {
-				mission = TUR_CUP_coup_averted
-				days = -30
-			}
-			add_days_mission_timeout = {
-				mission = TUR_CUP_prepares_coup_mission
-				days = -20
-			}
-			set_country_flag = CUP_banned
-		}
-		ai_will_do = {
-			factor = 200
-		}
-	}
-	TUR_arrest_ittihadist_officer = {
-		allowed = {
-			original_tag = TUR
-		}
-		visible = {
-			has_country_leader = {
-				name = "Mehmed Kamil Paşa"
-				ruling_only = yes
-			}
-			NOT = {
-				has_country_flag = liberal_victory
-			}
-			has_active_mission = TUR_CUP_prepares_coup_mission
-			has_active_mission = TUR_CUP_coup_averted
-		}
-		available = {
-			hidden_trigger = {
-				NOT = {
-					has_country_flag = attacking_cup
-				}
-			}
-		}
-		fire_only_once = no
-		cost = 20
-		days_remove = 5
-		days_re_enable = 10
-		complete_effect = {
-			set_country_flag = attacking_cup
-		}
-		remove_effect = {
-			clr_country_flag = attacking_cup
-			random_list = {
-				50 = {
-					random_unit_leader = {
-						limit = {
-							has_trait = trait_TUR_ittihadist_sympathies
+			add_stability = -0.1
+			TRK = {
+				load_focus_tree = turkey_focus_tree
+				if = {
+					limit = {
+						has_country_flag = no_enver_nationalmovement
+					}
+					create_country_leader = {
+						name = "Mustafa Kemal Paşa"
+						picture = "gfx/leaders/TUR/TUR_mustafa_kemal.dds"
+						expire = "1935.1.1"
+						ideology = authoritarian_democracy
+						traits = {
+							ataturk
+							trait_authoritarian_democracy
 						}
-						retire = yes
 					}
 				}
-				50 = {
-					army_experience = -5
+				if = {
+					limit = {
+						NOT = {
+							has_country_flag = no_enver_nationalmovement
+						}
+					}
+					create_country_leader = {
+						name = "Ismail Enver Paşa"
+						picture = "gfx/leaders/TUR/TUR_enver_pasha.dds"
+						expire = "1935.1.1"
+						ideology = despotism
+						traits = {
+							tur_national_hero
+							trait_despotism
+						}
+					}
+				}
+				division_template = {
+					name = "Kuvâ-yi Milliye Force"
+					division_names_group = TUR_INF_01
+					is_locked = yes
+					regiments = {
+						infantry = {
+							x = 0
+							y = 0
+						}
+						infantry = {
+							x = 0
+							y = 1
+						}
+						infantry = {
+							x = 0
+							y = 2
+						}
+						infantry = {
+							x = 0
+							y = 3
+						}
+						infantry = {
+							x = 0
+							y = 4
+						}
+					}
+				}
+				change_tag_from = ROOT
+			}
+			country_event = {
+				id = ww1_turkey.15
+				days = 7
+			}
+			custom_effect_tooltip = TUR_spark_the_war_of_independence_start
+			hidden_effect = {
+				TRK = {
+					add_ideas = TUR_unorganized_kuvayimilliye
+					every_state = {
+						limit = {
+							is_core_of = OTT
+						}
+						add_core_of = PREV
+					}
+					transfer_state = 49
+					transfer_state = 355
+					transfer_state = 349
+					transfer_state = 348
+					transfer_state = 353
+					transfer_state = 352
+					transfer_state = 356
+					transfer_state = 350
+					transfer_state = 828
+					if = {
+						limit = {
+							OTT = {
+								owns_state = 354
+							}
+						}
+						transfer_state = 354
+					}
+					if = {
+						limit = {
+							OTT = {
+								owns_state = 353
+							}
+						}
+						transfer_state = 353
+					}
+					if = {
+						limit = {
+							OTT = {
+								owns_state = 352
+							}
+						}
+						transfer_state = 352
+					}
+					load_focus_tree = {
+						tree = turkey_focus_tree
+						keep_completed = yes
+					}
+					unlock_national_focus = TUR_amasya_decleration
+					unlock_national_focus = TUR_erzurum_congress
+					unlock_national_focus = TUR_sivas_congress
+				}
+				49 = {
+					create_unit = {
+						division = "name = \"Kuvâ-yi Milliye Milis Kuvveti\" division_template = \"Kuvâ-yi Milliye Force\" start_experience_factor = 0.2"
+						owner = TRK
+					}
+					create_unit = {
+						division = "name = \"Kuvâ-yi Milliye Milis Kuvveti\" division_template = \"Kuvâ-yi Milliye Force\" start_experience_factor = 0.2"
+						owner = TRK
+					}
+				}
+				356 = {
+					create_unit = {
+						division = "name = \"Kuvâ-yi Milliye Milis Kuvveti\" division_template = \"Kuvâ-yi Milliye Force\" start_experience_factor = 0.2"
+						owner = TRK
+					}
+				}
+				355 = {
+					create_unit = {
+						division = "name = \"Kuvâ-yi Milliye Milis Kuvveti\" division_template = \"Kuvâ-yi Milliye Force\" start_experience_factor = 0.2"
+						owner = TRK
+					}
+				}
+				349 = {
+					create_unit = {
+						division = "name = \"Kuvâ-yi Milliye Milis Kuvveti\" division_template = \"Kuvâ-yi Milliye Force\" start_experience_factor = 0.2"
+						owner = TRK
+					}
+				}
+				348 = {
+					create_unit = {
+						division = "name = \"Kuvâ-yi Milliye Milis Kuvveti\" division_template = \"Kuvâ-yi Milliye Force\" start_experience_factor = 0.2"
+						owner = TRK
+					}
+				}
+				350 = {
+					create_unit = {
+						division = "name = \"Kuvâ-yi Milliye Milis Kuvveti\" division_template = \"Kuvâ-yi Milliye Force\" start_experience_factor = 0.2"
+						owner = TRK
+					}
+				}
+				828 = {
+					create_unit = {
+						division = "name = \"Kuvâ-yi Milliye Milis Kuvveti\" division_template = \"Kuvâ-yi Milliye Force\" start_experience_factor = 0.2"
+						owner = TRK
+					}
+				}
+				352 = {
+					create_unit = {
+						division = "name = \"Kuvâ-yi Milliye Milis Kuvveti\" division_template = \"Kuvâ-yi Milliye Force\" start_experience_factor = 0.2"
+						owner = TRK
+					}
+					create_unit = {
+						division = "name = \"15. Kafkas Kolordusu\" division_template = \"Takviyeli Piyade Tümeni\" start_experience_factor = 0.2"
+						owner = TRK
+					}
+				}
+				353 = {
+					create_unit = {
+						division = "name = \"Kuvâ-yi Milliye Milis Kuvveti\" division_template = \"Kuvâ-yi Milliye Force\" start_experience_factor = 0.2"
+						owner = TRK
+					}
+				}
+				354 = {
+					create_unit = {
+						division = "name = \"Kuvâ-yi Milliye Milis Kuvveti\" division_template = \"Kuvâ-yi Milliye Force\" start_experience_factor = 0.2"
+						owner = TRK
+					}
+				}
+				country_event = {
+					id = ww1_turkey.15
+					days = 7
 				}
 			}
-			add_popularity = {
-				ideology = fascism
-				popularity = 0.05
-			}
-			add_days_mission_timeout = {
-				mission = TUR_CUP_coup_averted
-				days = -30
-			}
-			add_days_mission_timeout = {
-				mission = TUR_CUP_prepares_coup_mission
-				days = -20
+		}
+		complete_effect = {
+			#SUCCESS
+		}
+		fire_only_once = yes
+		days_mission_timeout = 42
+		is_good = no
+	}
+}
+
+TUR_war_of_independence_support_TRK = {
+	TUR_soviet_support = {
+		allowed = {
+			tag = TUR
+		}
+		priority = 100
+		icon = generic_nationalism
+		activation = {
+			always = no
+		}
+		available = {
+			NOT = {
+				has_decision = TUR_end_soviet_support
 			}
 		}
+		timeout_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 250
+				producer = SOV
+			}
+		}
+		complete_effect = {
+			add_popularity = {
+				ideology = communism
+				popularity = 0.02
+			}
+		}
+		days_mission_timeout = 7
+		is_good = yes
+	}
+	TUR_end_soviet_support = {
+		allowed = {
+			tag = TUR
+		}
+		icon = generic_civil_support
+		visible = {
+			has_active_mission = TUR_soviet_support
+		}
+		complete_effect = {
+			add_popularity = {
+				ideology = communism
+				popularity = -0.05
+			}
+			custom_effect_tooltip = TUR_stop_soviet_aid
+		}
+	}
+}
+
+TUR_reclaiming_ahd_i_milli = {
+	TUR_border_skirmishes = {
+		icon = border_war
+
+		target_array = neighbors
+
+		available = {
+			FROM = {
+				any_owned_state = {
+					is_controlled_by = FROM
+					any_neighbor_state = {
+						is_fully_controlled_by = ROOT
+						set_temp_variable = { var:attacker_state_temp = id }
+						has_ROOT_at_least_1_div_in_current_state_scope = yes
+						hidden_trigger = { NOT = { has_state_flag = border_incident_active } }
+					}
+					NOT = { has_state_flag = border_incident_active }
+					set_temp_variable = { var:defender_state_temp = id }
+				}
+			}
+			NOT = { has_non_aggression_pact_with = FROM }
+		}
+
+		visible = {
+            has_completed_focus = TUR_disobey_the_treaties
+			FROM = { exists = yes }
+			NOT = { has_war_with = FROM }
+			FROM = { has_not_initiated_border_incident_with_ROOT = yes }
+			FROM = {
+				NOT = {
+					is_subject_of = ROOT
+				}
+				NOT = {
+					is_in_faction_with = ROOT
+				}
+			}
+			NOT = {
+				is_subject_of = FROM
+			}
+
+			NOT = { has_border_war_with = FROM }
+			FROM = {
+				any_owned_state = {
+					is_claimed_by = ROOT
+					hidden_trigger = { NOT = { has_state_flag = border_incident_active } }
+					any_neighbor_state = {
+						hidden_trigger = { NOT = { has_state_flag = border_incident_active } }
+						is_fully_controlled_by = ROOT
+					}
+				}
+			}
+		}
+
 		ai_will_do = {
 			base = 0
-		}
-	}
-	TUR_shut_down_CUP_hq = {
-		allowed = {
-			original_tag = TUR
-		}
-		visible = {
-			has_country_leader = {
-				name = "Mehmed Kamil Paşa"
-				ruling_only = yes
-			}
-			NOT = {
-				has_country_flag = liberal_victory
-			}
-			has_active_mission = TUR_CUP_prepares_coup_mission
-			has_active_mission = TUR_CUP_coup_averted
-		}
-		available = {
-			hidden_trigger = {
-				NOT = {
-					has_country_flag = attacking_cup
-				}
-			}
-			NOT = {
-				controls_state = 345
+			modifier = {
+				
 			}
 		}
+
+		cost = 50
+
 		fire_only_once = no
-		cost = 20
-		days_remove = 5
-		days_re_enable = 10
+
+		days_remove = 7
+		days_re_enable = 15
+
 		complete_effect = {
-			set_country_flag = attacking_cup
-		}
-		remove_effect = {
-			clr_country_flag = attacking_cup
-			add_stability = 0.05
-			army_experience = -5
-			add_popularity = {
-				ideology = fascism
-				popularity = 0.05
-			}
-			add_days_mission_timeout = {
-				mission = TUR_CUP_prepares_coup_mission
-				days = -20
-			}
-			add_days_mission_timeout = {
-				mission = TUR_CUP_coup_averted
-				days = -30
-			}
-		}
-		ai_will_do = {
-			factor = 0
-		}
-	}
-	TUR_placate_the_army = {
-		allowed = {
-			original_tag = TUR
-		}
-		visible = {
-			has_country_leader = {
-				name = "Mehmed Kamil Paşa"
-				ruling_only = yes
-			}
-			NOT = {
-				has_country_flag = liberal_victory
-			}
-			has_active_mission = TUR_CUP_prepares_coup_mission
-			has_active_mission = TUR_CUP_coup_averted
-		}
-		available = {
-			hidden_trigger = {
-				NOT = {
-					has_country_flag = attacking_cup
+			hidden_effect = {
+				FROM = {
+					random_owned_controlled_state = {
+						limit = {
+							is_claimed_by = ROOT
+							hidden_trigger = { NOT = { has_state_flag = border_incident_active } }
+							any_neighbor_state = {
+								hidden_trigger = { NOT = { has_state_flag = border_incident_active } }
+								has_ROOT_at_least_1_div_in_current_state_scope = yes
+								is_fully_controlled_by = ROOT
+							}
+						}
+						save_event_target_as = defender_state
+						set_variable = { FROM.defender_state_vs_@ROOT = id }
+						set_temp_variable = { defender_state_temp = id }
+						set_state_flag = border_incident_active
+					}
+				}
+				random_state = {
+					limit = {
+						is_fully_controlled_by = ROOT
+						hidden_trigger = { NOT = { has_state_flag = border_incident_active } }
+						has_ROOT_at_least_1_div_in_current_state_scope = yes
+						any_neighbor_state = {
+							state = var:FROM.defender_state_vs_@ROOT
+						}
+					}
+					save_event_target_as = attacker_state
+					set_variable = { FROM.attacker_state_vs_@ROOT = id }
+					set_temp_variable = { attacker_state_temp = id }
+					set_state_flag = border_incident_active
 				}
 			}
 		}
-		fire_only_once = no
-		cost = 20
-		days_remove = 5
-		days_re_enable = 10
-		complete_effect = {
-			set_country_flag = attacking_cup
-		}
 		remove_effect = {
-			clr_country_flag = attacking_cup
-			army_experience = 10
-			add_war_support = 0.1
-			add_popularity = {
-				ideology = democratic
-				popularity = 0.05
-			}
-			add_popularity = {
-				ideology = neutrality
-				popularity = 0.05
-			}
-			add_stability = -0.05
-			add_days_mission_timeout = {
-				mission = TUR_CUP_prepares_coup_mission
-				days = 40
-			}
-			add_days_mission_timeout = {
-				mission = TUR_CUP_coup_averted
-				days = 45
-			}
-		}
-		ai_will_do = {
-			factor = 0
-		}
-	}
-	TUR_negotiate_with_moderate_ittihadists = {
-		allowed = {
-			original_tag = TUR
-		}
-		visible = {
-			has_country_leader = {
-				name = "Mehmed Kamil Paşa"
-				ruling_only = yes
-			}
-			NOT = {
-				has_country_flag = liberal_victory
-			}
-			has_active_mission = TUR_CUP_prepares_coup_mission
-			has_active_mission = TUR_CUP_coup_averted
-		}
-		available = {
-			hidden_trigger = {
-				NOT = {
-					has_country_flag = attacking_cup
+			start_border_war = {
+				change_state_after_war = yes
+				attacker = {
+					state = var:FROM.attacker_state_vs_@ROOT
+					num_provinces = 4
+					on_win = wtt_border_conflict_won_attacker.1
+					on_lose = wtt_border_conflict_lost_attacker.1
+					on_cancel = wtt_border_conflict_canceled_attacker.1
+				}
+				
+				defender = {
+					state = var:FROM.defender_state_vs_@ROOT
+					num_provinces = 4
+					on_win = wtt_border_conflict_won_defender.1
+					on_lose = wtt_border_conflict_lost_defender.1
+					on_cancel = wtt_border_conflict_canceled_defender.1
 				}
 			}
-		}
-		fire_only_once = no
-		cost = 20
-		days_remove = 5
-		days_re_enable = 10
-		complete_effect = {
-			set_country_flag = attacking_cup
-		}
-		remove_effect = {
-			clr_country_flag = attacking_cup
-			add_war_support = 0.05
-			add_stability = -0.05
-			add_days_mission_timeout = {
-				mission = TUR_CUP_prepares_coup_mission
-				days = 40
+			if = {
+				limit = { is_border_conflict_defender_vs_FROM = yes }
+				var:attacker_state_vs_@FROM = {
+					clr_state_flag = border_incident_active
+				}
+				var:defender_state_vs_@FROM = {
+					clr_state_flag = border_incident_active
+				}
+				clear_variable = attacker_state_vs_@FROM
+				clear_variable = defender_state_vs_@FROM
 			}
-			add_days_mission_timeout = {
-				mission = TUR_CUP_coup_averted
-				days = 45
+			else = {
+				FROM = {
+					var:attacker_state_vs_@ROOT = {
+						clr_state_flag = border_incident_active
+					}
+					var:defender_state_vs_@ROOT = {
+						clr_state_flag = border_incident_active
+					}
+					clear_variable = attacker_state_vs_@ROOT
+					clear_variable = defender_state_vs_@ROOT
+				}
 			}
 		}
 	}

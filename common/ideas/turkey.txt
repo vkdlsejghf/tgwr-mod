@@ -10,8 +10,17 @@ ideas = {
 			picture = TUR_sevket_pasha
 			visible = {
 				NOT = {
+				    AND = {
+					    tag = TRK
+					    has_country_flag = TUR_TRK_yet_invite_ittihadists
+				    }
 					has_global_flag = shevket_pasha_dead
 					has_country_flag = TUR_purge_radical_ittihadists
+					has_country_flag = TUR_purge_ittihadists
+					AND = {
+					    has_country_flag = great_war_loser
+					    has_country_flag = had_ittihadist_government					
+					}
 				}
 			}
 			available = {
@@ -20,7 +29,10 @@ ideas = {
 						name = "Mahmud Şevket Paşa"
 						ruling_only = yes
 					}
-					has_completed_focus = TUR_yildiz_teskilati
+					OR = {
+						tag = TRK
+					    has_completed_focus = TUR_yildiz_teskilati
+					}
 					has_completed_focus = TUR_arrest_faction_leaders
 					has_completed_focus = TUR_istirak_mukavemet
 
@@ -43,8 +55,31 @@ ideas = {
 			}
 			visible = {
 				NOT = {
+					AND = {
+						has_country_flag = TUR_communist_purge
+					}
+					AND = {
+					    tag = TRK
+				    }
+					AND = {
+					    has_country_flag = amasya_decleration
+				    }
+					AND = {
+						has_country_flag = no_enver_nationalmovement
+					    tag = TRK
+					    has_country_flag = TUR_TRK_yet_invite_ittihadists
+					}
+					AND = {
+					    tag = TRK
+					    has_country_flag = TUR_TRK_yet_invite_ittihadists
+				    }
 					has_country_flag = TUR_purge_radical_ittihadists
-				}
+					has_country_flag = TUR_purge_ittihadists
+					AND = {
+					    has_country_flag = great_war_loser
+					    has_country_flag = had_ittihadist_government					
+					}
+				}		
 			}
 			available = {
 				NOT = {
@@ -52,7 +87,10 @@ ideas = {
 						name = "Ismail Enver Paşa"
 						ruling_only = yes
 					}
-					has_completed_focus = TUR_yildiz_teskilati
+					OR = {
+						tag = TRK
+					    has_completed_focus = TUR_yildiz_teskilati
+					}
 					has_completed_focus = TUR_arrest_faction_leaders
 				}
 				OR = {
@@ -85,7 +123,16 @@ ideas = {
 			}
 			visible = {
 				NOT = {
+					AND = {
+					    tag = TRK
+					    has_country_flag = TUR_TRK_yet_invite_ittihadists
+				    }
 					has_country_flag = TUR_purge_radical_ittihadists
+					has_country_flag = TUR_purge_ittihadists
+					AND = {
+					    has_country_flag = great_war_loser
+					    has_country_flag = had_ittihadist_government					
+					}
 				}
 			}
 			available = {
@@ -113,7 +160,16 @@ ideas = {
 			}
 			visible = {
 				NOT = {
+					AND = {
+					    tag = TRK
+					    has_country_flag = TUR_TRK_yet_invite_ittihadists
+				    }
 					has_country_flag = TUR_purge_radical_ittihadists
+					has_country_flag = TUR_purge_ittihadists
+					AND = {
+					    has_country_flag = great_war_loser
+					    has_country_flag = had_ittihadist_government					
+					}
 				}
 			}
 			available = {
@@ -156,7 +212,29 @@ ideas = {
 			}
 			visible = {
 				NOT = {
+					AND = {
+						has_country_flag = TUR_communist_purge
+						has_country_flag = no_enver_nationalmovement
+					}
+					AND = {
+					    tag = TRK
+						has_country_flag = no_enver_nationalmovement
+				    }
+					AND = {
+					    has_country_flag = amasya_decleration
+						has_country_flag = no_enver_nationalmovement
+				    }
+					AND = {
+					    tag = TRK
+					    has_country_flag = TUR_TRK_yet_invite_ittihadists
+					}
 					has_country_flag = TUR_purge_ittihadists
+					has_country_flag = amasya_decleration
+					has_country_flag = TUR_communist_purge
+					AND = {
+					    has_country_flag = great_war_loser
+					    has_country_flag = had_ittihadist_government				
+					}
 				}
 			}
 			available = {
@@ -181,6 +259,10 @@ ideas = {
 			}
 			visible = {
 				NOT = {
+					AND = {
+					    tag = TRK
+					    has_country_flag = TUR_TRK_yet_invite_ittihadists
+				    }
 					has_country_flag = TUR_purge_ittihadists
 				}
 			}
@@ -202,6 +284,20 @@ ideas = {
 			}
 			traits = {
 				diplomatic_minister
+			}
+			visible = {
+				NOT = {
+					AND = {
+					    tag = TRK
+					    has_country_flag = TUR_TRK_yet_invite_diplomat
+				    }
+					AND = {
+						country_exists = TRK
+						TRK = {
+						    has_completed_focus = TUR_open_foreign_relations
+						}
+					}
+				}
 			}
 			available = {
 				NOT = {
@@ -226,6 +322,9 @@ ideas = {
 				}				
 			}
 			visible = {
+				NOT = {
+					tag = TRK
+				}
 				NOT = {
 					has_country_flag = TUR_purge_hurriyetveitifak
 				}
@@ -252,6 +351,9 @@ ideas = {
 			}
 			visible = {
 				NOT = {
+					tag = TRK
+				}
+				NOT = {
 					has_country_flag = TUR_purge_hurriyetveitifak
 				}
 			}
@@ -269,6 +371,14 @@ ideas = {
 			visible = {
 				NOT = {
 					has_country_flag = TUR_purge_ittihadists
+					AND = {
+					    has_country_flag = great_war_loser
+					    has_country_flag = had_ittihadist_government					
+					}
+					AND = {
+					    tag = TRK
+					    has_country_flag = TUR_TRK_yet_invite_ittihadists
+				    }
 				}
 			}
 			available = {
@@ -298,6 +408,10 @@ ideas = {
 			}
 			visible = {
 				NOT = {
+					AND = {
+					    tag = TRK
+					    has_country_flag = TUR_TRK_yet_invite_ittihadists
+				    }
 					has_country_flag = TUR_purge_ittihadists
 				}
 			}
@@ -324,8 +438,10 @@ ideas = {
 			traits = {
 				freedom_poet
 			}
+			visible = {
+				date < 1915.8.19
+			}
 			available = {
-			    date < 1915.8.19
 				NOT = {
 					has_government = fascism
 				}
@@ -368,6 +484,10 @@ ideas = {
 			}
 			visible = {
 				NOT = {
+					AND = {
+					    tag = TRK
+					    has_country_flag = TUR_TRK_yet_invite_ittihadists
+				    }
 					has_country_flag = TUR_purge_ittihadists
 				}
 			}
@@ -409,6 +529,15 @@ ideas = {
 			traits = {
 				captain_of_industry
 			}
+			visible = {
+				NOT = {
+					AND = {
+					    tag = TRK
+					    has_country_flag = TUR_TRK_yet_invite_ittihadists
+				    }
+					has_country_flag = TUR_no_celal_bayar
+				}
+			}
 			available = {
 				NOT = {
 					has_government = communism
@@ -440,6 +569,11 @@ ideas = {
 					has_government = communism
 				}
 			}
+			visible = {
+				NOT = {
+					tag = TRK
+				}
+			}
 			traits = {
 				compassionate_gentleman
 			}
@@ -453,6 +587,11 @@ ideas = {
 			}
 			traits = {
 				islamist_modern
+			}
+			visible = {
+				NOT = {
+					tag = TRK
+				}
 			}
 			available = {
 				OR = {
@@ -478,13 +617,28 @@ ideas = {
 				marxist_academic
 			}
 			available = {
-				has_government = communism
 				NOT = {
 					has_country_leader = {
 						name = "Mustafa Suphi Bey"
 						ruling_only = yes
 					}
 				}				
+			}
+			visible = {
+				if = {
+					limit = {
+						tag = TRK
+					}
+					has_completed_focus = TUR_approach_to_soviets
+				}
+				if = {
+					limit = {
+						tag = OTT
+					}
+					NOT = {
+						has_country_flag = TUR_suphi_gone
+					}
+				}
 			}
 			ai_will_do = {
 				factor = 1
@@ -495,10 +649,22 @@ ideas = {
 				original_tag = TUR
 			}
 			visible = {
-				has_government = communism
+				if = {
+					limit = {
+						tag = TRK
+					}
+					has_completed_focus = TUR_approach_to_soviets
+				}
+				if = {
+					limit = {
+						tag = OTT
+					}
+					NOT = {
+						has_country_flag = TUR_suphi_gone
+					}
+				}
 			}
 			available = {
-				has_completed_focus = TUR_istirak_mukavemet
 				NOT = {
 					has_country_leader = {
 						name = "Ethem Bey"
@@ -522,6 +688,11 @@ ideas = {
 				NOT = {
 				    country_exists = ISR
 				}	
+			}
+			visible = {
+				NOT = {
+					tag = TRK
+				}
 			}
 			traits = {
 				communist_revolutionary
@@ -588,6 +759,11 @@ ideas = {
 			allowed = {
 				original_tag = TUR
 			}
+			visible = {
+				NOT = {
+					has_country_flag = amasya_decleration	
+				}
+			}
 			ledger = army
 			traits = {
 				military_theorist
@@ -616,10 +792,39 @@ ideas = {
 					}
 				}
 				NOT = {
-					has_completed_focus = TUR_yildiz_teskilati
+					OR = {
+						tag = TRK
+					    has_completed_focus = TUR_yildiz_teskilati
+					}
 				}
 				NOT = {
 					has_idea = TUR_mustafa_kemal_advisor
+				}
+			}
+			visible = {
+				NOT = {
+					AND = {
+						has_country_flag = TUR_communist_purge
+						has_country_flag = no_enver_nationalmovement
+					}
+					AND = {
+					    tag = TRK
+						has_country_flag = no_enver_nationalmovement
+				    }
+					AND = {
+					    has_country_flag = amasya_decleration
+						has_country_flag = no_enver_nationalmovement
+				    }
+					AND = {
+					    tag = TRK
+					    has_country_flag = TUR_TRK_yet_invite_ittihadists
+					}
+					has_country_flag = TUR_purge_ittihadists
+					has_country_flag = amasya_decleration	
+					AND = {
+					    has_country_flag = great_war_loser
+					    has_country_flag = had_ittihadist_government					
+					}
 				}
 			}
 			ai_will_do = {
@@ -635,6 +840,20 @@ ideas = {
 			available = {
 				has_completed_focus = TUR_three_pashas
 			}
+			visible = {
+				NOT = {
+					AND = {
+					    tag = TRK
+					    has_country_flag = TUR_TRK_yet_invite_ittihadists
+				    }
+					has_country_flag = TUR_purge_radical_ittihadists
+					has_country_flag = TUR_purge_ittihadists
+					AND = {
+					    has_country_flag = great_war_loser
+					    has_country_flag = had_ittihadist_government					
+					}
+				}
+			}
 			traits = {
 				army_chief_defensive_2
 			}
@@ -649,7 +868,10 @@ ideas = {
 			}
 			available = {
 				NOT = {
-					has_completed_focus = TUR_yildiz_teskilati
+					OR = {
+						tag = TRK
+					    has_completed_focus = TUR_yildiz_teskilati
+					}
 				}
 			}
 			traits = {
@@ -764,7 +986,10 @@ ideas = {
 			}
 			available = {
 				NOT = {
-					has_completed_focus = TUR_yildiz_teskilati
+					OR = {
+						tag = TRK
+					    has_completed_focus = TUR_yildiz_teskilati
+					}
 				}
 			}
 			traits = {
@@ -801,7 +1026,10 @@ ideas = {
 					has_completed_focus = TUR_arrest_faction_leaders
 				}
 				NOT = {
-					has_completed_focus = TUR_yildiz_teskilati
+					OR = {
+						tag = TRK
+					    has_completed_focus = TUR_yildiz_teskilati
+					}
 				}
 			}
 			ai_will_do = {
@@ -817,7 +1045,10 @@ ideas = {
 			}
 			available = {
 				NOT = {
-					has_completed_focus = TUR_yildiz_teskilati
+					OR = {
+						tag = TRK
+					    has_completed_focus = TUR_yildiz_teskilati
+					}
 				}
 			}
 			traits = {
@@ -1355,6 +1586,217 @@ ideas = {
 				consumer_goods_factor = 0.05
 			}
 		}
+		TUR_aid_from_the_islamic_world = {
+			picture = SPR_relocate_the_gold_reserves
+			allowed = {
+				original_tag = TUR
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = -0.05
+			}
+		}
+		TUR_azerbaijani_aid = {
+			picture = SPR_relocate_the_gold_reserves
+			allowed = {
+				original_tag = TUR
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = -0.05
+			}
+		}
+		TUR_mosul_concession = {
+			picture = SPR_relocate_the_gold_reserves
+			allowed = {
+				original_tag = TUR
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = -0.15
+			}
+		}
+		ENG_mosul_concession = {
+			picture = SPR_seize_the_gold_reserves
+			allowed = {
+				original_tag = TUR
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = -0.05
+			}
+		}
+		TUR_forced_conscription = {
+			picture = generic_manpower_bonus
+			allowed = {
+				original_tag = TUR
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				conscription = 0.02
+				stability_factor = -0.05
+			}
+		}
+		TUR_war_time_tax = {
+			picture = SPR_seize_the_gold_reserves
+			allowed = {
+				original_tag = TUR
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = -0.1
+				stability_factor = -0.1
+			}
+		}
+		TUR_unorganized_kuvayimilliye = {
+			picture = TUR_unorganized_kuvayimilliye
+			allowed = {
+				original_tag = TUR
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				conscription_factor = 0.15
+				army_org_factor = -0.3
+				attrition = -0.15
+				experience_gain_army_unit_factor = -0.5
+				max_planning_factor = -0.25
+				recon_factor = 0.1
+				terrain_penalty_reduction = 0.05
+				out_of_supply_factor = -0.15
+			}
+		}
+		TUR_unorganized_kuvayimilliye2 = {
+			picture = TUR_unorganized_kuvayimilliye
+			allowed = {
+				original_tag = TUR
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				conscription_factor = 0.15
+				army_org_factor = -0.5
+				experience_gain_army_unit_factor = -0.5
+				max_planning_factor = -0.25
+				recon_factor = 0.1
+				terrain_penalty_reduction = 0.05
+				resistance_growth_on_our_occupied_states = 0.1
+			}
+		}
+		TUR_unorganized_kuvayimilliye3 = {
+			picture = TUR_unorganized_kuvayimilliye
+			allowed = {
+				original_tag = TUR
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				conscription_factor = 0.15
+				army_org_factor = -0.3
+				attrition = -0.05
+				experience_gain_army_unit_factor = -0.3
+				max_planning_factor = -0.15
+				recon_factor = 0.1
+				terrain_penalty_reduction = 0.1
+				out_of_supply_factor = -0.05
+				resistance_growth_on_our_occupied_states = 0.1
+			}
+		}
+		TUR_organized_kuvayimilliye = {
+			picture = TUR_organized_kuvayimilliye
+			allowed = {
+				original_tag = TUR
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				conscription_factor = 0.08
+				army_org_factor = -0.05
+				attrition = -0.05
+				experience_gain_army_unit_factor = -0.1
+				max_planning_factor = -0.05
+				recon_factor = 0.15
+				terrain_penalty_reduction = 0.1
+				out_of_supply_factor = -0.05
+				resistance_growth_on_our_occupied_states = 0.1
+			}
+		}
+		TUR_buyuk_taarruz = {
+			picture = TUR_buyuk_taarruz
+			allowed = {
+				original_tag = TUR
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				army_core_attack_factor = 0.3
+				army_core_defence_factor = 0.3
+				army_speed_factor = 0.5
+				army_morale_factor = 0.5
+				army_org_factor = 0.3
+				attrition = -0.3
+				breakthrough_factor = 0.5
+				land_night_attack = 0.3
+				planning_speed = 0.3
+				org_loss_when_moving = -0.5
+			}
+		}
+		TUR_caliphate = {
+			picture = TUR_caliphate
+			allowed = {
+				original_tag = TUR
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_factor = -0.35
+				stability_factor = 0.1
+			}
+		}
+		TUR_secular = {
+			picture = TUR_secular
+			allowed = {
+				original_tag = TUR
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_factor = 0.15
+				stability_factor = -0.15
+			}
+		}
 		TUR_sick_man = {
 			#ottoman has bad prestige
 			picture = sickman
@@ -1430,8 +1872,44 @@ ideas = {
 			allowed = {
 				original_tag = TUR
 			}
-			allowed_civil_war = {
-				original_tag = TUR
+			available = {
+				NOT = {
+					has_idea = TUR_sultan_mehmed_v_puppet
+					has_idea = TUR_yusuf_izzettin
+					has_idea = TUR_sultan_mehmed_vi
+					has_country_leader = {
+						name = "Osman IV"
+						ruling_only = yes
+					}
+					has_country_leader = {
+						name = "Osman Fuad"
+						ruling_only = yes
+					}
+					has_country_leader = {
+						name = "Abdülmecid Efendi"
+						ruling_only = yes
+					}
+					has_country_leader = {
+						name = "Abdülmecid II"
+						ruling_only = yes
+					}
+					has_country_leader = {
+						name = "Yusuf I"
+						ruling_only = yes
+					}
+					has_country_leader = {
+						name = "Mehmed V"
+						ruling_only = yes
+					}
+					has_country_leader = {
+						name = "Mehmed VI"
+						ruling_only = yes
+					}
+					has_country_leader = {
+						name = "Ahmed Nihad Efendi"
+						ruling_only = yes
+					}				
+				}		
 			}
 			removal_cost = -1
 			modifier = {
@@ -1442,12 +1920,45 @@ ideas = {
 			}
 		}
 		TUR_yusuf_izzettin = {
-			#picture = 
 			allowed = {
 				original_tag = TUR
 			}
-			allowed_civil_war = {
-				original_tag = TUR
+			available = {
+				has_idea = TUR_sultan_mehmed_vi
+				NOT = {
+					has_country_leader = {
+						name = "Osman IV"
+						ruling_only = yes
+					}
+					has_country_leader = {
+						name = "Osman Fuad"
+						ruling_only = yes
+					}
+					has_country_leader = {
+						name = "Abdülmecid Efendi"
+						ruling_only = yes
+					}
+					has_country_leader = {
+						name = "Abdülmecid II"
+						ruling_only = yes
+					}
+					has_country_leader = {
+						name = "Yusuf I"
+						ruling_only = yes
+					}
+					has_country_leader = {
+						name = "Mehmed V"
+						ruling_only = yes
+					}
+					has_country_leader = {
+						name = "Mehmed VI"
+						ruling_only = yes
+					}
+					has_country_leader = {
+						name = "Ahmed Nihad Efendi"
+						ruling_only = yes
+					}				
+				}		
 			}
 			removal_cost = -1
 			modifier = {
@@ -1462,8 +1973,43 @@ ideas = {
 			allowed = {
 				original_tag = TUR
 			}
-			allowed_civil_war = {
-				original_tag = TUR
+			available = {
+				NOT = {
+					has_idea = TUR_yusuf_izzettin
+					has_idea = TUR_sultan_mehmed_vi
+					has_country_leader = {
+						name = "Osman IV"
+						ruling_only = yes
+					}
+					has_country_leader = {
+						name = "Osman Fuad"
+						ruling_only = yes
+					}
+					has_country_leader = {
+						name = "Abdülmecid Efendi"
+						ruling_only = yes
+					}
+					has_country_leader = {
+						name = "Abdülmecid II"
+						ruling_only = yes
+					}
+					has_country_leader = {
+						name = "Yusuf I"
+						ruling_only = yes
+					}
+					has_country_leader = {
+						name = "Mehmed V"
+						ruling_only = yes
+					}
+					has_country_leader = {
+						name = "Mehmed VI"
+						ruling_only = yes
+					}
+					has_country_leader = {
+						name = "Ahmed Nihad Efendi"
+						ruling_only = yes
+					}				
+				}		
 			}
 			removal_cost = -1
 			modifier = {
@@ -1477,8 +2023,6 @@ ideas = {
 				always = no
 			}
 			picture = tur_sufi_integrated
-			allowed_civil_war = {
-			}
 			removal_cost = -1
 			modifier = {
 				conscription_factor = 0.08
@@ -1491,8 +2035,41 @@ ideas = {
 			allowed = {
 				original_tag = TUR
 			}
-			allowed_civil_war = {
-				original_tag = TUR
+			available = {
+				NOT = {
+					has_country_leader = {
+						name = "Osman IV"
+						ruling_only = yes
+					}
+					has_country_leader = {
+						name = "Osman Fuad"
+						ruling_only = yes
+					}
+					has_country_leader = {
+						name = "Abdülmecid Efendi"
+						ruling_only = yes
+					}
+					has_country_leader = {
+						name = "Abdülmecid II"
+						ruling_only = yes
+					}
+					has_country_leader = {
+						name = "Yusuf I"
+						ruling_only = yes
+					}
+					has_country_leader = {
+						name = "Mehmed V"
+						ruling_only = yes
+					}
+					has_country_leader = {
+						name = "Mehmed VI"
+						ruling_only = yes
+					}
+					has_country_leader = {
+						name = "Ahmed Nihad Efendi"
+						ruling_only = yes
+					}				
+				}		
 			}
 			removal_cost = -1
 			modifier = {

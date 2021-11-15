@@ -1069,14 +1069,12 @@
 					compare = less_than
 				}
 			}
-		}
-		x = 15
-		y = 4
-		available = {
 			NOT = {
 				has_country_flag = great_war_loser
 			}
 		}
+		x = 15
+		y = 4
 		completion_reward = {
 			add_ideas = idea_turkey_mavi_vatan
 			add_political_power = 25
@@ -1628,21 +1626,6 @@
 			}
 			activate_mission = TUR_conspiracy_against_the_sultan
 			TUR_reunite_officers_command_level_down = yes
-			if = {
-				limit = {
-					OR = {
-						any_owned_state = {
-							is_core_of = YEM
-						}
-						any_owned_state = {
-							is_core_of = HJZ
-						}
-						any_owned_state = {
-							is_core_of = ASR
-						}
-					}
-				}
-			}
 		}
 		ai_will_do = {
 			base = 35
@@ -4072,7 +4055,7 @@
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = TUR_ittihadists_destroyed_tooltip
-				always = no
+				has_country_flag = TUR_CUP_coup_fails
 			}
 		}
 		completion_reward = {
@@ -4107,6 +4090,10 @@
 					has_trait = trait_TUR_ittihadist_radical_sympathies
 				}
 				retire = yes
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = -0.25
 			}
 			add_stability = 0.1
 			remove_ideas = TUR_ittihadist_plot
@@ -4395,6 +4382,7 @@
 				elections_allowed = no
 			}
 			news_event = ww1_ottoman.29
+			set_country_flag = turan_enver
 		}
 		ai_will_do = {
 			base = 10
@@ -4599,7 +4587,7 @@
 		prerequisite = {
 			focus = TUR_road_to_turan
 		}
-		x = 0
+		x = 1
 		y = 1
 		relative_position_id = TUR_road_to_turan
 		available = {
@@ -5056,7 +5044,7 @@
 				can_join_factions = no
 			}
 			create_country_leader = {
-				name = "Şeyh Said"
+				name = "Şeyh Said Efendi"
 				picture = "gfx/leaders/TUR/TUR_seyh_said.png"
 				expire = "1935.1.1"
 				ideology = fundamentalism
@@ -6542,11 +6530,9 @@
 				limit = {
 					is_core_of = GRE
 					NOT = {
-						OR = {
-							is_owned_by = TUR
-							is_controlled_by = TUR
-							is_core_of = TUR
-						}
+						is_owned_by = TUR
+						is_controlled_by = TUR
+						is_core_of = TUR
 					}
 				}
 				add_claim_by = PREV
@@ -8122,7 +8108,7 @@
 			focus = TUR_cure_a_sick_man
 		}
 		x = 1
-		y = 3
+		y = 2
 		relative_position_id = TUR_enternal_revanchism
 		available = {
 			is_subject = no
@@ -8432,8 +8418,8 @@
 		prerequisite = {
 			focus = TUR_cure_a_sick_man
 		}
-		x = 0
-		y = 3
+		x = -1
+		y = 2
 		relative_position_id = TUR_anti_imperialism
 		available = {
 			is_subject = no

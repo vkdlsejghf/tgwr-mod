@@ -1280,6 +1280,9 @@ focus_tree = {
 						}
 					}
 				}
+				prioritize = {
+					11
+				}
 				add_building_construction = {
 					type = infrastructure
 					level = 1
@@ -1306,6 +1309,9 @@ focus_tree = {
 							}
 						}
 					}
+				}
+				prioritize = {
+					48
 				}
 				add_building_construction = {
 					type = infrastructure
