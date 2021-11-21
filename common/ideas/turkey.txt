@@ -11,7 +11,7 @@ ideas = {
 			visible = {
 				NOT = {
 				    AND = {
-					    tag = TRK
+						has_country_flag = TUR_national_movement_tag
 					    has_country_flag = TUR_TRK_yet_invite_ittihadists
 				    }
 					has_global_flag = shevket_pasha_dead
@@ -30,7 +30,7 @@ ideas = {
 						ruling_only = yes
 					}
 					OR = {
-						tag = TRK
+						has_country_flag = TUR_national_movement_tag
 					    has_completed_focus = TUR_yildiz_teskilati
 					}
 					has_completed_focus = TUR_arrest_faction_leaders
@@ -55,27 +55,24 @@ ideas = {
 			}
 			visible = {
 				NOT = {
+					has_country_flag = TUR_communist_purge
 					AND = {
-						has_country_flag = TUR_communist_purge
+						NOT = {
+							has_country_flag = TUR_national_movement_tag
+						}
+						has_country_flag = amasya_decleration	
 					}
-					AND = {
-					    tag = TRK
-				    }
-					AND = {
-					    has_country_flag = amasya_decleration
-				    }
 					AND = {
 						has_country_flag = no_enver_nationalmovement
-					    tag = TRK
-					    has_country_flag = TUR_TRK_yet_invite_ittihadists
-					}
-					AND = {
-					    tag = TRK
+					    has_country_flag = TUR_national_movement_tag
 					    has_country_flag = TUR_TRK_yet_invite_ittihadists
 				    }
 					has_country_flag = TUR_purge_radical_ittihadists
 					has_country_flag = TUR_purge_ittihadists
 					AND = {
+						NOT = {
+							has_country_flag = TUR_national_movement_tag
+						}	
 					    has_country_flag = great_war_loser
 					    has_country_flag = had_ittihadist_government					
 					}
@@ -88,7 +85,7 @@ ideas = {
 						ruling_only = yes
 					}
 					OR = {
-						tag = TRK
+						has_country_flag = TUR_national_movement_tag
 					    has_completed_focus = TUR_yildiz_teskilati
 					}
 					has_completed_focus = TUR_arrest_faction_leaders
@@ -124,7 +121,7 @@ ideas = {
 			visible = {
 				NOT = {
 					AND = {
-					    tag = TRK
+					    has_country_flag = TUR_national_movement_tag
 					    has_country_flag = TUR_TRK_yet_invite_ittihadists
 				    }
 					has_country_flag = TUR_purge_radical_ittihadists
@@ -161,7 +158,7 @@ ideas = {
 			visible = {
 				NOT = {
 					AND = {
-					    tag = TRK
+					    has_country_flag = TUR_national_movement_tag
 					    has_country_flag = TUR_TRK_yet_invite_ittihadists
 				    }
 					has_country_flag = TUR_purge_radical_ittihadists
@@ -212,28 +209,19 @@ ideas = {
 			}
 			visible = {
 				NOT = {
-					AND = {
-						has_country_flag = TUR_communist_purge
-						has_country_flag = no_enver_nationalmovement
-					}
-					AND = {
-					    tag = TRK
-						has_country_flag = no_enver_nationalmovement
-				    }
-					AND = {
-					    has_country_flag = amasya_decleration
-						has_country_flag = no_enver_nationalmovement
-				    }
-					AND = {
-					    tag = TRK
-					    has_country_flag = TUR_TRK_yet_invite_ittihadists
-					}
-					has_country_flag = TUR_purge_ittihadists
-					has_country_flag = amasya_decleration
 					has_country_flag = TUR_communist_purge
+					has_country_flag = no_enver_nationalmovement
+					has_country_flag = TUR_TRK_yet_invite_ittihadists
+					has_country_flag = TUR_purge_ittihadists
+					AND = {
+						NOT = {
+							has_country_flag = TUR_national_movement_tag
+						}
+						has_country_flag = amasya_decleration	
+					}					
 					AND = {
 					    has_country_flag = great_war_loser
-					    has_country_flag = had_ittihadist_government				
+					    has_country_flag = had_ittihadist_government					
 					}
 				}
 			}
@@ -260,7 +248,7 @@ ideas = {
 			visible = {
 				NOT = {
 					AND = {
-					    tag = TRK
+					    has_country_flag = TUR_national_movement_tag
 					    has_country_flag = TUR_TRK_yet_invite_ittihadists
 				    }
 					has_country_flag = TUR_purge_ittihadists
@@ -288,14 +276,12 @@ ideas = {
 			visible = {
 				NOT = {
 					AND = {
-					    tag = TRK
+					    has_country_flag = TUR_national_movement_tag
 					    has_country_flag = TUR_TRK_yet_invite_diplomat
 				    }
-					AND = {
-						country_exists = TRK
-						TRK = {
-						    has_completed_focus = TUR_open_foreign_relations
-						}
+					any_other_country = {
+						has_country_flag = TUR_national_movement_tag
+						has_completed_focus = TUR_open_foreign_relations
 					}
 				}
 			}
@@ -319,11 +305,17 @@ ideas = {
 				OR = {
 					has_government = democratic
 					has_country_leader_with_trait = trait_authoritarian_democracy
-				}				
+				}	
+				NOT = {
+					has_country_leader = {
+						name = "Damad Ferid Paşa"
+						ruling_only = yes
+					}
+				}			
 			}
 			visible = {
 				NOT = {
-					tag = TRK
+					has_country_flag = TUR_national_movement_tag
 				}
 				NOT = {
 					has_country_flag = TUR_purge_hurriyetveitifak
@@ -351,7 +343,7 @@ ideas = {
 			}
 			visible = {
 				NOT = {
-					tag = TRK
+					has_country_flag = TUR_national_movement_tag
 				}
 				NOT = {
 					has_country_flag = TUR_purge_hurriyetveitifak
@@ -376,7 +368,7 @@ ideas = {
 					    has_country_flag = had_ittihadist_government					
 					}
 					AND = {
-					    tag = TRK
+					    has_country_flag = TUR_national_movement_tag
 					    has_country_flag = TUR_TRK_yet_invite_ittihadists
 				    }
 				}
@@ -409,7 +401,7 @@ ideas = {
 			visible = {
 				NOT = {
 					AND = {
-					    tag = TRK
+					    has_country_flag = TUR_national_movement_tag
 					    has_country_flag = TUR_TRK_yet_invite_ittihadists
 				    }
 					has_country_flag = TUR_purge_ittihadists
@@ -485,7 +477,7 @@ ideas = {
 			visible = {
 				NOT = {
 					AND = {
-					    tag = TRK
+					    has_country_flag = TUR_national_movement_tag
 					    has_country_flag = TUR_TRK_yet_invite_ittihadists
 				    }
 					has_country_flag = TUR_purge_ittihadists
@@ -515,6 +507,7 @@ ideas = {
 			traits = {
 				vatan_ideologue
 			}
+			cost = 250
 			ai_will_do = {
 				factor = 10
 			}
@@ -532,7 +525,7 @@ ideas = {
 			visible = {
 				NOT = {
 					AND = {
-					    tag = TRK
+					    has_country_flag = TUR_national_movement_tag
 					    has_country_flag = TUR_TRK_yet_invite_ittihadists
 				    }
 					has_country_flag = TUR_no_celal_bayar
@@ -571,7 +564,7 @@ ideas = {
 			}
 			visible = {
 				NOT = {
-					tag = TRK
+					has_country_flag = TUR_national_movement_tag
 				}
 			}
 			traits = {
@@ -590,7 +583,7 @@ ideas = {
 			}
 			visible = {
 				NOT = {
-					tag = TRK
+					has_country_flag = TUR_national_movement_tag
 				}
 			}
 			available = {
@@ -622,22 +615,27 @@ ideas = {
 						name = "Mustafa Suphi Bey"
 						ruling_only = yes
 					}
-				}				
+				}
+				OR = {
+					has_government = communism
+					has_completed_focus = TUR_approach_to_soviets
+				}			
 			}
 			visible = {
-				if = {
-					limit = {
-						tag = TRK
+				OR = {
+					AND = {
+						has_country_flag = TUR_national_movement_tag
+						has_completed_focus = TUR_approach_to_soviets
 					}
-					has_completed_focus = TUR_approach_to_soviets
-				}
-				if = {
-					limit = {
-						tag = OTT
+					AND = {
+						NOT = {
+							has_country_flag = TUR_national_movement_tag
+						}
+						NOT = {
+							has_country_flag = TUR_suphi_gone
+						}
 					}
-					NOT = {
-						has_country_flag = TUR_suphi_gone
-					}
+
 				}
 			}
 			ai_will_do = {
@@ -649,19 +647,20 @@ ideas = {
 				original_tag = TUR
 			}
 			visible = {
-				if = {
-					limit = {
-						tag = TRK
+				OR = {
+					AND = {
+						has_country_flag = TUR_national_movement_tag
+						has_completed_focus = TUR_approach_to_soviets
 					}
-					has_completed_focus = TUR_approach_to_soviets
-				}
-				if = {
-					limit = {
-						tag = OTT
+					AND = {
+						NOT = {
+							has_country_flag = TUR_national_movement_tag
+						}
+						NOT = {
+							has_country_flag = TUR_suphi_gone
+						}
 					}
-					NOT = {
-						has_country_flag = TUR_suphi_gone
-					}
+
 				}
 			}
 			available = {
@@ -670,6 +669,10 @@ ideas = {
 						name = "Ethem Bey"
 						ruling_only = yes
 					}
+				}
+				OR = {
+					has_government = communism
+					has_completed_focus = TUR_approach_to_soviets
 				}
 			}
 			traits = {
@@ -691,7 +694,7 @@ ideas = {
 			}
 			visible = {
 				NOT = {
-					tag = TRK
+					has_country_flag = TUR_national_movement_tag
 				}
 			}
 			traits = {
@@ -717,6 +720,14 @@ ideas = {
 				}
 				has_government = fascism
 			}
+			visible = {
+				NOT = {
+					AND = {
+					    has_country_flag = great_war_loser
+					    has_country_flag = had_ittihadist_government					
+					}				
+				}	
+			}	
 			ai_will_do = {
 				factor = 10
 			}
@@ -761,8 +772,13 @@ ideas = {
 			}
 			visible = {
 				NOT = {
-					has_country_flag = amasya_decleration	
-				}
+					AND = {
+						NOT = {
+							has_country_flag = TUR_national_movement_tag
+						}
+						has_country_flag = amasya_decleration	
+					}
+				}				
 			}
 			ledger = army
 			traits = {
@@ -792,10 +808,7 @@ ideas = {
 					}
 				}
 				NOT = {
-					OR = {
-						tag = TRK
-					    has_completed_focus = TUR_yildiz_teskilati
-					}
+					has_completed_focus = TUR_yildiz_teskilati
 				}
 				NOT = {
 					has_idea = TUR_mustafa_kemal_advisor
@@ -803,24 +816,16 @@ ideas = {
 			}
 			visible = {
 				NOT = {
-					AND = {
-						has_country_flag = TUR_communist_purge
-						has_country_flag = no_enver_nationalmovement
-					}
-					AND = {
-					    tag = TRK
-						has_country_flag = no_enver_nationalmovement
-				    }
-					AND = {
-					    has_country_flag = amasya_decleration
-						has_country_flag = no_enver_nationalmovement
-				    }
-					AND = {
-					    tag = TRK
-					    has_country_flag = TUR_TRK_yet_invite_ittihadists
-					}
+					has_country_flag = TUR_communist_purge
+					has_country_flag = no_enver_nationalmovement
+					has_country_flag = TUR_TRK_yet_invite_ittihadists
 					has_country_flag = TUR_purge_ittihadists
-					has_country_flag = amasya_decleration	
+					AND = {
+						NOT = {
+							has_country_flag = TUR_national_movement_tag
+						}
+						has_country_flag = amasya_decleration	
+					}
 					AND = {
 					    has_country_flag = great_war_loser
 					    has_country_flag = had_ittihadist_government					
@@ -843,7 +848,7 @@ ideas = {
 			visible = {
 				NOT = {
 					AND = {
-					    tag = TRK
+					    has_country_flag = TUR_national_movement_tag
 					    has_country_flag = TUR_TRK_yet_invite_ittihadists
 				    }
 					has_country_flag = TUR_purge_radical_ittihadists
@@ -868,11 +873,15 @@ ideas = {
 			}
 			available = {
 				NOT = {
-					OR = {
-						tag = TRK
-					    has_completed_focus = TUR_yildiz_teskilati
-					}
+					has_completed_focus = TUR_yildiz_teskilati
 				}
+			}
+			visible = {
+				any_other_country = {
+					NOT = {
+						has_country_flag = TUR_national_movement_tag
+					}
+				}			
 			}
 			traits = {
 				army_chief_defensive_2
@@ -986,11 +995,15 @@ ideas = {
 			}
 			available = {
 				NOT = {
-					OR = {
-						tag = TRK
-					    has_completed_focus = TUR_yildiz_teskilati
-					}
+					has_completed_focus = TUR_yildiz_teskilati
 				}
+			}
+			visible = {
+				any_other_country = {
+					NOT = {
+						has_country_flag = TUR_national_movement_tag
+					}
+				}			
 			}
 			traits = {
 				army_artillery_2
@@ -1023,14 +1036,16 @@ ideas = {
 			}
 			available = {
 				NOT = {
+					has_completed_focus = TUR_yildiz_teskilati
 					has_completed_focus = TUR_arrest_faction_leaders
 				}
-				NOT = {
-					OR = {
-						tag = TRK
-					    has_completed_focus = TUR_yildiz_teskilati
+			}
+			visible = {
+				any_other_country = {
+					NOT = {
+						has_country_flag = TUR_national_movement_tag
 					}
-				}
+				}			
 			}
 			ai_will_do = {
 				factor = 1
@@ -1042,14 +1057,18 @@ ideas = {
 			picture = TUR_ali_fuat
 			allowed = {
 				original_tag = TUR
-			}
+			}	
 			available = {
 				NOT = {
-					OR = {
-						tag = TRK
-					    has_completed_focus = TUR_yildiz_teskilati
-					}
+					has_completed_focus = TUR_yildiz_teskilati
 				}
+			}
+			visible = {
+				any_other_country = {
+					NOT = {
+						has_country_flag = TUR_national_movement_tag
+					}
+				}			
 			}
 			traits = {
 				army_cavalry_2
@@ -1519,7 +1538,7 @@ ideas = {
 	###
 	country = {
 		TUR_freedom_of_speech = {
-			picture = GFX_tur_freedom_of_press
+			picture = generic_constitutional_guarantees
 			allowed = {
 				original_tag = TUR
 			}
@@ -1532,7 +1551,7 @@ ideas = {
 			}
 		}
 		TUR_limited_speech = {
-			picture = GFX_tur_limited_press
+			picture = generic_constitutional_guarantees
 			allowed = {
 				original_tag = TUR
 			}
@@ -1546,7 +1565,7 @@ ideas = {
 			}
 		}
 		TUR_autonomous_vilayets = {
-			picture = GFX_tur_freedom_of_press_vilayet
+			picture = generic_volunteer_expedition_bonus
 			allowed = {
 				original_tag = TUR
 			}
@@ -1560,7 +1579,7 @@ ideas = {
 			}
 		}
 		TUR_limited_autonomous_vilayets = {
-			picture = GFX_tur_limited_press_vilayet
+			picture = generic_volunteer_expedition_bonus
 			allowed = {
 				original_tag = TUR
 			}
@@ -1795,6 +1814,111 @@ ideas = {
 			modifier = {
 				political_power_factor = 0.15
 				stability_factor = -0.15
+			}
+		}
+		TUR_war_of_independence = {
+			picture = TUR_war_of_independence
+			allowed = {
+				original_tag = TUR
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			available = {
+				has_country_flag = TUR_national_movement_tag
+				is_subject = no
+			}	
+			removal_cost = -1
+			modifier = {
+				surrender_limit = 1
+				army_core_defence_factor = 0.1
+				army_core_attack_factor = 0.1
+			}
+		}
+		TUR_legitimacy_high = {
+			picture = TUR_legitimacy_high
+			allowed = {
+				original_tag = TUR
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_factor = 0.05
+				stability_factor = 0.05
+				conscription_factor = 0.05
+				army_org_factor = 0.05
+			}
+		}
+		TUR_legitimacy_normal = {
+			picture = TUR_legitimacy_normal
+			allowed = {
+				original_tag = TUR
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+			}
+		}
+		TUR_legitimacy_medium = {
+			picture = TUR_legitimacy_medium
+			allowed = {
+				original_tag = TUR
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_factor = -0.05
+				stability_factor = -0.05
+				conscription_factor = -0.05
+				army_org_factor = -0.05
+			}
+		}
+		TUR_legitimacy_low = {
+			picture = TUR_legitimacy_low
+			allowed = {
+				original_tag = TUR
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_factor = -0.1
+				stability_factor = -0.1
+				conscription_factor = -0.1
+				army_org_factor = -0.1
+			}
+		}
+		TUR_legitimacy_terrible = {
+			picture = TUR_legitimacy_terrible
+			allowed = {
+				original_tag = TUR
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_factor = -0.15
+				stability_factor = -0.15
+				conscription_factor = -0.15
+				army_org_factor = -0.15
+			}
+		}
+		TUR_war_reparations_to_greece = {
+			picture = SPR_seize_the_gold_reserves
+			allowed_civil_war = {
+				always = yes
+			}
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = -0.1
 			}
 		}
 		TUR_sick_man = {
@@ -2130,6 +2254,11 @@ ideas = {
 			picture = ottoman_army_airforce
 			allowed = {
 				original_tag = TUR
+			}
+			available = {
+				NOT = {
+					has_country_flag = great_war_loser
+				}
 			}
 			removal_cost = -1
 			allowed_civil_war = {
@@ -2856,6 +2985,11 @@ ideas = {
 			allowed = {
 				original_tag = TUR
 			}
+			available = {
+				NOT = {
+					has_country_flag = great_war_loser
+				}
+			}
 			removal_cost = -1
 			allowed_civil_war = {
 				original_tag = TUR
@@ -3140,6 +3274,9 @@ ideas = {
 				always = yes
 			}
 			available = {
+				NOT = {
+					has_country_flag = great_war_loser
+				}
 			}
 			modifier = {
 				max_planning_factor = -0.05
@@ -3157,7 +3294,13 @@ ideas = {
 				always = yes
 			}
 			available = {
-				is_in_faction_with = GER
+				OR = {
+					is_in_faction_with = GER
+					is_subject_of = GER
+				}
+				NOT = {
+					has_country_flag = great_war_loser
+				}
 			}
 			removal_cost = -1
 			research_bonus = {
@@ -4382,6 +4525,11 @@ ideas = {
 			allowed_civil_war = {
 				always = yes
 			}
+			available = {
+				NOT = {
+					has_country_flag = great_war_loser
+				}
+			}
 			modifier = {
 				acclimatization_hot_climate_gain_factor = 0.15
 				heat_attrition = -0.25
@@ -4598,6 +4746,11 @@ ideas = {
 			picture = ottoman_bahriye
 			allowed = {
 				original_tag = TUR
+			}
+			available = {
+				NOT = {
+					has_country_flag = great_war_loser
+				}	
 			}
 			removal_cost = -1
 			allowed_civil_war = {

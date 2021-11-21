@@ -1386,7 +1386,6 @@ TUR_minority_decision = {
 		state_target = yes
 		targets = {
 			44
-			803
 			848
 			847
 		}
@@ -1699,6 +1698,7 @@ TUR_minority_decision = {
 			756
 			860
 			861
+			803
 		}
 		on_map_mode = map_only
 		days_remove = 30
@@ -2780,9 +2780,7 @@ TUR_ittihadist_coup_decisions = {
 			complete_national_focus = TUR_raid_on_the_sublime_porte
 			every_unit_leader = {
 				limit = {
-					OR = {
-						has_trait = trait_TUR_halaskar_zabitan_member
-					}
+					has_trait = trait_TUR_halaskar_zabitan_member
 				}
 				retire = yes
 			}
@@ -2824,7 +2822,7 @@ TUR_ittihadist_coup_decisions = {
 			custom_effect_tooltip = TUR_CUP_coup_fails_tooltip
 			complete_national_focus = TUR_ittihadists_destroyed
 		}
-		days_mission_timeout = 140
+		days_mission_timeout = 150
 		fire_only_once = yes
 		is_good = yes
 	}
@@ -2857,6 +2855,10 @@ TUR_ittihadist_coup_decisions = {
 		fire_only_once = yes
 		cost = 20
 		days_remove = 5
+		modifier = {
+			political_power_cost = 0.15
+			democratic_drift = -0.1
+		}
 		complete_effect = {
 			set_country_flag = attacking_cup
 		}
@@ -2864,11 +2866,15 @@ TUR_ittihadist_coup_decisions = {
 			clr_country_flag = attacking_cup
 			add_popularity = {
 				ideology = neutrality
-				popularity = -0.1
+				popularity = -0.05
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = -0.05
 			}
 			add_popularity = {
 				ideology = fascism
-				popularity = 0.05
+				popularity = 0.1
 			}
 			add_stability = 0.05
 			modify_timed_idea = {
@@ -2912,11 +2918,16 @@ TUR_ittihadist_coup_decisions = {
 					has_country_flag = attacking_cup
 				}
 			}
+			has_country_flag = CUP_banned
 		}
 		fire_only_once = no
 		cost = 20
 		days_remove = 5
 		days_re_enable = 10
+		modifier = {
+			political_power_cost = 0.15
+			experience_gain_army_factor = -0.1
+		}
 		complete_effect = {
 			set_country_flag = attacking_cup
 		}
@@ -2937,7 +2948,7 @@ TUR_ittihadist_coup_decisions = {
 			}
 			add_popularity = {
 				ideology = fascism
-				popularity = 0.05
+				popularity = 0.07
 			}
 			add_days_mission_timeout = {
 				mission = TUR_CUP_coup_averted
@@ -2977,6 +2988,7 @@ TUR_ittihadist_coup_decisions = {
 			NOT = {
 				controls_state = 345
 			}
+			has_country_flag = CUP_banned
 		}
 		fire_only_once = no
 		cost = 20
@@ -2984,6 +2996,9 @@ TUR_ittihadist_coup_decisions = {
 		days_re_enable = 10
 		complete_effect = {
 			set_country_flag = attacking_cup
+		}
+		modifier = {
+			political_power_cost = 0.15
 		}
 		remove_effect = {
 			clr_country_flag = attacking_cup
@@ -3004,6 +3019,52 @@ TUR_ittihadist_coup_decisions = {
 		}
 		ai_will_do = {
 			factor = 0
+		}
+	}
+	TUR_liberal_propaganda = {
+		allowed = {
+			original_tag = TUR
+		}
+		visible = {
+			has_country_leader = {
+				name = "Mehmed Kamil Paşa"
+				ruling_only = yes
+			}
+			NOT = {
+				has_country_flag = liberal_victory
+			}
+			has_active_mission = TUR_CUP_prepares_coup_mission
+			has_active_mission = TUR_CUP_coup_averted
+		}
+		available = {
+			hidden_trigger = {
+				NOT = {
+					has_country_flag = attacking_cup
+				}
+			}
+		}
+		complete_effect = {
+			set_country_flag = attacking_cup
+		}
+		days_remove = 5
+		days_re_enable = 20
+		cost = 20
+		fire_only_once = no
+		modifier = {
+			democratic_drift = 0.3
+			political_power_cost = 0.35
+		}
+		remove_effect = {
+			clr_country_flag = attacking_cup
+			add_popularity = {
+				ideology = fascism
+				popularity = -0.02
+			}
+			add_stability = 0.05
+			add_days_mission_timeout = {
+				mission = TUR_CUP_coup_averted
+				days = -10
+			}
 		}
 	}
 	TUR_placate_the_army = {
@@ -3036,10 +3097,13 @@ TUR_ittihadist_coup_decisions = {
 		complete_effect = {
 			set_country_flag = attacking_cup
 		}
+		modifier = {
+			political_power_cost = 0.15
+		}
 		remove_effect = {
 			clr_country_flag = attacking_cup
 			army_experience = 10
-			add_war_support = 0.1
+			add_war_support = 0.05
 			add_popularity = {
 				ideology = neutrality
 				popularity = 0.03
@@ -3085,6 +3149,9 @@ TUR_ittihadist_coup_decisions = {
 		cost = 20
 		days_remove = 5
 		days_re_enable = 10
+		modifier = {
+			political_power_cost = 0.15
+		}
 		complete_effect = {
 			set_country_flag = attacking_cup
 		}
@@ -3092,6 +3159,10 @@ TUR_ittihadist_coup_decisions = {
 			clr_country_flag = attacking_cup
 			add_war_support = 0.05
 			add_stability = -0.05
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.02
+			}
 			add_days_mission_timeout = {
 				mission = TUR_CUP_prepares_coup_mission
 				days = 40
@@ -5573,6 +5644,9 @@ TUR_economy_decision = {
 					has_completed_focus = TUR_dissolve_debt_council
 				}
 			}
+			NOT = {
+				has_focus_tree = turkey2_focus_tree
+			}
 		}
 		available = {
 			if = {
@@ -5680,13 +5754,26 @@ TUR_economy_decision = {
 			has_variable = opda_lira
 		}
 		available = {
-			has_completed_focus = TUR_OPDA
-			custom_trigger_tooltip = {
-				tooltip = TUR_pay_our_debt_tooltip
-				check_variable = {
-					var = opda_lira
-					value = 0
-					compare = less_than_or_equals
+			if = {
+				limit = {
+				    has_focus_tree = turkey2_focus_tree
+				}
+				has_completed_focus = TUR_pay_debts
+			}
+			if = {
+				limit = {
+				    has_focus_tree = ottoman_focus_tree
+				}
+				has_completed_focus = TUR_OPDA
+			}
+			NOT = {
+				custom_trigger_tooltip = {
+					tooltip = debt_less_than_0
+					check_variable = {
+						var = opda_lira
+						value = 0
+						compare = less_than_or_equals
+					}
 				}
 			}
 		}
@@ -5726,12 +5813,14 @@ TUR_economy_decision = {
 		}
 		available = {
 			num_of_civilian_factories > 15
-			custom_trigger_tooltip = {
-				tooltip = TUR_pay_our_debt_tooltip
-				check_variable = {
-					var = opda_lira
-					value = 0
-					compare = less_than_or_equals
+			NOT = {
+				custom_trigger_tooltip = {
+					tooltip = debt_less_than_0
+					check_variable = {
+						var = opda_lira
+						value = 0
+						compare = less_than_or_equals
+					}
 				}
 			}
 		}
@@ -5820,12 +5909,14 @@ TUR_economy_decision = {
 					has_war_with = ITA
 				}
 			}
-			custom_trigger_tooltip = {
-				tooltip = TUR_pay_our_debt_tooltip
-				check_variable = {
-					var = opda_lira
-					value = 0
-					compare = less_than_or_equals
+			NOT = {
+				custom_trigger_tooltip = {
+					tooltip = debt_less_than_0
+					check_variable = {
+						var = opda_lira
+						value = 0
+						compare = less_than_or_equals
+					}
 				}
 			}
 		}
@@ -6019,12 +6110,14 @@ TUR_economy_decision = {
 			has_completed_focus = TUR_anglo_ottoman_convention
 			owns_state = 853
 			has_variable = opda_lira
-			custom_trigger_tooltip = {
-				tooltip = TUR_pay_our_debt_tooltip
-				check_variable = {
-					var = opda_lira
-					value = 0
-					compare = less_than_or_equals
+			NOT = {
+				custom_trigger_tooltip = {
+					tooltip = debt_less_than_0
+					check_variable = {
+						var = opda_lira
+						value = 0
+						compare = less_than_or_equals
+					}
 				}
 			}
 		}
@@ -6244,12 +6337,14 @@ TUR_economy_decision = {
 					has_war_with = ITA
 				}
 			}
-			custom_trigger_tooltip = {
-				tooltip = TUR_pay_our_debt_tooltip
-				check_variable = {
-					var = opda_lira
-					value = 0
-					compare = less_than_or_equals
+			NOT = {
+				custom_trigger_tooltip = {
+					tooltip = debt_less_than_0
+					check_variable = {
+						var = opda_lira
+						value = 0
+						compare = less_than_or_equals
+					}
 				}
 			}
 		}
@@ -6575,6 +6670,14 @@ TUR_economy_decision = {
 			NOT = {
 				has_country_flag = has_active_purchase_contract
 			}
+			NOT = {
+				custom_trigger_tooltip = {
+					tooltip = TUR_OPDA_trigger_tooltip
+					NOT = {
+						has_variable = opda_lira
+					}
+				}
+			}
 		}
 		cost = 10
 		fire_only_once = no
@@ -6588,6 +6691,10 @@ TUR_economy_decision = {
 				exists = yes
 			}
 			has_variable = opda_lira
+			NOT = {
+				has_focus_tree = turkey_focus_tree
+				has_focus_tree = turkey2_focus_tree
+			}
 		}
 		complete_effect = {
 			GER = {
@@ -6671,6 +6778,14 @@ TUR_economy_decision = {
 			NOT = {
 				has_country_flag = has_active_purchase_contract
 			}
+			NOT = {
+				custom_trigger_tooltip = {
+					tooltip = TUR_OPDA_trigger_tooltip
+					NOT = {
+						has_variable = opda_lira
+					}
+				}
+			}
 		}
 		cost = 10
 		fire_only_once = no
@@ -6684,6 +6799,18 @@ TUR_economy_decision = {
 				exists = yes
 			}
 			has_variable = opda_lira
+			if = {
+				limit = {
+				    has_focus_tree = turkey2_focus_tree
+				}
+				FROM = {
+					has_country_flag = great_war_winner
+				}
+				has_completed_focus = TUR_purchase_guns
+			}
+			NOT = {
+				has_focus_tree = turkey_focus_tree
+			}
 		}
 		complete_effect = {
 			ENG = {
@@ -6767,6 +6894,14 @@ TUR_economy_decision = {
 			NOT = {
 				has_country_flag = has_active_purchase_contract
 			}
+			NOT = {
+				custom_trigger_tooltip = {
+					tooltip = TUR_OPDA_trigger_tooltip
+					NOT = {
+						has_variable = opda_lira
+					}
+				}
+			}
 		}
 		cost = 10
 		fire_only_once = no
@@ -6781,6 +6916,18 @@ TUR_economy_decision = {
 			}
 			has_completed_focus = TUR_import_dependence
 			has_variable = opda_lira
+			if = {
+				limit = {
+				    has_focus_tree = turkey2_focus_tree
+				}
+				FROM = {
+					has_country_flag = great_war_winner
+				}
+				has_completed_focus = TUR_purchase_guns
+			}
+			NOT = {
+				has_focus_tree = turkey_focus_tree
+			}
 		}
 		complete_effect = {
 			FRA = {
@@ -6864,6 +7011,14 @@ TUR_economy_decision = {
 			}
 			NOT = {
 				has_country_flag = has_active_purchase_contract
+			}
+			NOT = {
+				custom_trigger_tooltip = {
+					tooltip = TUR_OPDA_trigger_tooltip
+					NOT = {
+						has_variable = opda_lira
+					}
+				}
 			}
 		}
 		cost = 10
@@ -6962,6 +7117,14 @@ TUR_economy_decision = {
 			NOT = {
 				has_country_flag = has_active_purchase_contract
 			}
+			NOT = {
+				custom_trigger_tooltip = {
+					tooltip = TUR_OPDA_trigger_tooltip
+					NOT = {
+						has_variable = opda_lira
+					}
+				}
+			}
 		}
 		cost = 10
 		fire_only_once = no
@@ -7058,6 +7221,14 @@ TUR_economy_decision = {
 			}
 			NOT = {
 				has_country_flag = has_active_purchase_contract
+			}
+			NOT = {
+				custom_trigger_tooltip = {
+					tooltip = TUR_OPDA_trigger_tooltip
+					NOT = {
+						has_variable = opda_lira
+					}
+				}
 			}
 		}
 		cost = 10
@@ -7160,6 +7331,14 @@ TUR_economy_decision = {
 			}
 			NOT = {
 				has_country_flag = has_active_purchase_contract
+			}
+			NOT = {
+				custom_trigger_tooltip = {
+					tooltip = TUR_OPDA_trigger_tooltip
+					NOT = {
+						has_variable = opda_lira
+					}
+				}
 			}
 		}
 		cost = 10
@@ -7269,6 +7448,14 @@ TUR_economy_decision = {
 			NOT = {
 				has_country_flag = has_active_purchase_contract
 			}
+			NOT = {
+				custom_trigger_tooltip = {
+					tooltip = TUR_OPDA_trigger_tooltip
+					NOT = {
+						has_variable = opda_lira
+					}
+				}
+			}
 		}
 		cost = 10
 		fire_only_once = no
@@ -7282,6 +7469,10 @@ TUR_economy_decision = {
 				exists = yes
 			}
 			has_variable = opda_lira
+			NOT = {
+				has_focus_tree = turkey2_focus_tree
+				has_focus_tree = turkey_focus_tree
+			}
 		}
 		complete_effect = {
 			FRA = {
@@ -7351,6 +7542,14 @@ TUR_economy_decision = {
 			NOT = {
 				has_country_flag = has_active_purchase_contract
 			}
+			NOT = {
+				custom_trigger_tooltip = {
+					tooltip = TUR_OPDA_trigger_tooltip
+					NOT = {
+						has_variable = opda_lira
+					}
+				}
+			}
 		}
 		cost = 10
 		fire_only_once = no
@@ -7364,6 +7563,10 @@ TUR_economy_decision = {
 				exists = yes
 			}
 			has_variable = opda_lira
+			NOT = {
+				has_focus_tree = turkey2_focus_tree
+				has_focus_tree = turkey_focus_tree
+			}
 		}
 		complete_effect = {
 			GER = {
@@ -7434,6 +7637,14 @@ TUR_economy_decision = {
 			NOT = {
 				has_country_flag = has_active_purchase_contract
 			}
+			NOT = {
+				custom_trigger_tooltip = {
+					tooltip = TUR_OPDA_trigger_tooltip
+					NOT = {
+						has_variable = opda_lira
+					}
+				}
+			}
 		}
 		cost = 10
 		fire_only_once = no
@@ -7447,6 +7658,10 @@ TUR_economy_decision = {
 				exists = yes
 			}
 			has_variable = opda_lira
+			NOT = {
+				has_focus_tree = turkey2_focus_tree
+				has_focus_tree = turkey_focus_tree
+			}
 		}
 		complete_effect = {
 			ENG = {
@@ -7529,6 +7744,14 @@ TUR_economy_decision = {
 			}
 			NOT = {
 				has_country_flag = has_active_purchase_contract
+			}
+			NOT = {
+				custom_trigger_tooltip = {
+					tooltip = TUR_OPDA_trigger_tooltip
+					NOT = {
+						has_variable = opda_lira
+					}
+				}
 			}
 		}
 		cost = 10
@@ -7626,6 +7849,14 @@ TUR_economy_decision = {
 			}
 			NOT = {
 				has_country_flag = has_active_purchase_contract
+			}
+			NOT = {
+				custom_trigger_tooltip = {
+					tooltip = TUR_OPDA_trigger_tooltip
+					NOT = {
+						has_variable = opda_lira
+					}
+				}
 			}
 		}
 		cost = 10
@@ -7729,6 +7960,14 @@ TUR_economy_decision = {
 			NOT = {
 				has_country_flag = has_active_purchase_contract
 			}
+			NOT = {
+				custom_trigger_tooltip = {
+					tooltip = TUR_OPDA_trigger_tooltip
+					NOT = {
+						has_variable = opda_lira
+					}
+				}
+			}
 		}
 		cost = 10
 		fire_only_once = no
@@ -7827,6 +8066,14 @@ TUR_economy_decision = {
 			NOT = {
 				has_country_flag = has_active_purchase_contract
 			}
+			NOT = {
+				custom_trigger_tooltip = {
+					tooltip = TUR_OPDA_trigger_tooltip
+					NOT = {
+						has_variable = opda_lira
+					}
+				}
+			}
 		}
 		cost = 10
 		fire_only_once = no
@@ -7924,6 +8171,14 @@ TUR_economy_decision = {
 			}
 			NOT = {
 				has_country_flag = has_active_purchase_contract
+			}
+			NOT = {
+				custom_trigger_tooltip = {
+					tooltip = TUR_OPDA_trigger_tooltip
+					NOT = {
+						has_variable = opda_lira
+					}
+				}
 			}
 		}
 		cost = 10
@@ -8538,14 +8793,14 @@ TUR_economy_decision = {
 		}
 	}
 	TUR_eng_investments_in_military_industry = {
-		allowed = {
-			always = no
-		}
 		icon = generic_factory
 		visible = {
-			always = no
 			country_exists = ENG
+			ENG = {
+				has_country_flag = great_war_winner
+			}
 			has_variable = opda_lira
+			has_completed_focus = TUR_purchase_factory_rights
 		}
 		target_trigger = {
 			FROM = {
@@ -8559,32 +8814,27 @@ TUR_economy_decision = {
 		}
 		cost = 25
 		fire_only_once = no
-		days_remove = 160
-		days_re_enable = 30
+		days_remove = 30
 		available = {
 			NOT = {
 				has_war_with = ENG
 			}
 		}
-		modifier = {
-			production_speed_arms_factory_factor = 0.02
+		complete_effect = {
+            add_offsite_building = {
+				type = arms_factory
+				level = 1
+			}
 		}
 		remove_effect = {
-			random_owned_controlled_state = {
-				limit = {
-					is_core_of = TUR
-					free_building_slots = {
-						building = arms_factory
-						size > 0
-						include_locked = yes
-					}
-				}
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
+            add_offsite_building = {
+				type = arms_factory
+				level = -1
 			}
+            add_to_variable = { var = opda_lira value = 0.295 }
+	        add_to_variable = { var = opda_consumer_goods value = 0.01 }
+	        add_to_variable = { var = opda_resources_to_market value = 0.005 }
+			custom_effect_tooltip = add_0295_lira_debt
 		}
 		ai_will_do = {
 			factor = 0
@@ -8728,14 +8978,15 @@ TUR_economy_decision = {
 		}
 	}
 	TUR_fra_investments_in_military_industry = {
-		allowed = {
-			always = no
-		}
 		icon = generic_factory
 		visible = {
-			always = no
 			country_exists = FRA
+			FRA = {
+				has_country_flag = great_war_winner
+			}
 			has_variable = opda_lira
+			has_focus_tree = turkey2_focus_tree
+			has_completed_focus = TUR_purchase_factory_rights
 		}
 		target_trigger = {
 			FROM = {
@@ -8749,32 +9000,28 @@ TUR_economy_decision = {
 		}
 		cost = 25
 		fire_only_once = no
-		days_remove = 160
+		days_remove = 30
 		days_re_enable = 30
 		available = {
 			NOT = {
 				has_war_with = FRA
 			}
 		}
-		modifier = {
-			production_speed_arms_factory_factor = 0.02
+		complete_effect = {
+            add_offsite_building = {
+				type = arms_factory
+				level = 1
+			}
 		}
 		remove_effect = {
-			random_owned_controlled_state = {
-				limit = {
-					is_core_of = TUR
-					free_building_slots = {
-						building = arms_factory
-						size > 0
-						include_locked = yes
-					}
-				}
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
+            add_offsite_building = {
+				type = arms_factory
+				level = -1
 			}
+            add_to_variable = { var = opda_lira value = 0.295 }
+	        add_to_variable = { var = opda_consumer_goods value = 0.01 }
+	        add_to_variable = { var = opda_resources_to_market value = 0.005 }
+			custom_effect_tooltip = add_0295_lira_debt
 		}
 		ai_will_do = {
 			factor = 0
@@ -9285,8 +9532,14 @@ TUR_war_of_independence_support_OTT = {
 		activation = {
 			always = no
 		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = TUR_congress_complete_tt
+				always = no
+			}
+		}
 		timeout_effect = {
-			add_war_support = -0.15
+			TUR_legitimacy_level_up = yes
 			set_country_flag = TUR_purge_radical_ittihadists
 			set_country_flag = TUR_purge_ittihadists
 			set_country_flag = TUR_no_celal_bayar
@@ -9331,10 +9584,15 @@ TUR_war_of_independence_support_OTT = {
 		activation = {
 			always = no
 		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = TUR_congress_complete_tt
+				always = no
+			}
+		}
 		timeout_effect = {
-			add_stability = -0.1
+			TUR_legitimacy_level_up = yes
 			TRK = {
-				load_focus_tree = turkey_focus_tree
 				if = {
 					limit = {
 						has_country_flag = no_enver_nationalmovement
@@ -9394,7 +9652,6 @@ TUR_war_of_independence_support_OTT = {
 						}
 					}
 				}
-				change_tag_from = ROOT
 			}
 			country_event = {
 				id = ww1_turkey.15
@@ -9410,38 +9667,20 @@ TUR_war_of_independence_support_OTT = {
 						}
 						add_core_of = PREV
 					}
-					transfer_state = 49
-					transfer_state = 355
-					transfer_state = 349
-					transfer_state = 348
-					transfer_state = 353
-					transfer_state = 352
-					transfer_state = 356
-					transfer_state = 350
-					transfer_state = 828
-					if = {
+					every_state = {
 						limit = {
-							OTT = {
-								owns_state = 354
+							is_owned_by = OTT
+							OR = {
+								state = 354
+								state = 353
+								state = 352
+								state = 355
+								state = 349
 							}
 						}
-						transfer_state = 354
-					}
-					if = {
-						limit = {
-							OTT = {
-								owns_state = 353
-							}
-						}
-						transfer_state = 353
-					}
-					if = {
-						limit = {
-							OTT = {
-								owns_state = 352
-							}
-						}
-						transfer_state = 352
+						TRK = {
+							transfer_state = PREV
+						}						
 					}
 					load_focus_tree = {
 						tree = turkey_focus_tree
@@ -9451,7 +9690,7 @@ TUR_war_of_independence_support_OTT = {
 					unlock_national_focus = TUR_erzurum_congress
 					unlock_national_focus = TUR_sivas_congress
 				}
-				49 = {
+				349 = {
 					create_unit = {
 						division = "name = \"Kuvâ-yi Milliye Milis Kuvveti\" division_template = \"Kuvâ-yi Milliye Force\" start_experience_factor = 0.2"
 						owner = TRK
@@ -9460,8 +9699,6 @@ TUR_war_of_independence_support_OTT = {
 						division = "name = \"Kuvâ-yi Milliye Milis Kuvveti\" division_template = \"Kuvâ-yi Milliye Force\" start_experience_factor = 0.2"
 						owner = TRK
 					}
-				}
-				356 = {
 					create_unit = {
 						division = "name = \"Kuvâ-yi Milliye Milis Kuvveti\" division_template = \"Kuvâ-yi Milliye Force\" start_experience_factor = 0.2"
 						owner = TRK
@@ -9472,32 +9709,30 @@ TUR_war_of_independence_support_OTT = {
 						division = "name = \"Kuvâ-yi Milliye Milis Kuvveti\" division_template = \"Kuvâ-yi Milliye Force\" start_experience_factor = 0.2"
 						owner = TRK
 					}
-				}
-				349 = {
 					create_unit = {
 						division = "name = \"Kuvâ-yi Milliye Milis Kuvveti\" division_template = \"Kuvâ-yi Milliye Force\" start_experience_factor = 0.2"
 						owner = TRK
 					}
-				}
-				348 = {
 					create_unit = {
 						division = "name = \"Kuvâ-yi Milliye Milis Kuvveti\" division_template = \"Kuvâ-yi Milliye Force\" start_experience_factor = 0.2"
 						owner = TRK
 					}
-				}
-				350 = {
-					create_unit = {
-						division = "name = \"Kuvâ-yi Milliye Milis Kuvveti\" division_template = \"Kuvâ-yi Milliye Force\" start_experience_factor = 0.2"
-						owner = TRK
-					}
-				}
-				828 = {
-					create_unit = {
-						division = "name = \"Kuvâ-yi Milliye Milis Kuvveti\" division_template = \"Kuvâ-yi Milliye Force\" start_experience_factor = 0.2"
-						owner = TRK
-					}
-				}
+				}	
 				352 = {
+					create_unit = {
+						division = "name = \"Kuvâ-yi Milliye Milis Kuvveti\" division_template = \"Kuvâ-yi Milliye Force\" start_experience_factor = 0.2"
+						owner = TRK
+					}
+					create_unit = {
+						division = "name = \"Kuvâ-yi Milliye Milis Kuvveti\" division_template = \"Kuvâ-yi Milliye Force\" start_experience_factor = 0.2"
+						owner = TRK
+					}
+					create_unit = {
+						division = "name = \"Kuvâ-yi Milliye Milis Kuvveti\" division_template = \"Kuvâ-yi Milliye Force\" start_experience_factor = 0.2"
+						owner = TRK
+					}
+				}
+				353 = {
 					create_unit = {
 						division = "name = \"Kuvâ-yi Milliye Milis Kuvveti\" division_template = \"Kuvâ-yi Milliye Force\" start_experience_factor = 0.2"
 						owner = TRK
@@ -9507,23 +9742,19 @@ TUR_war_of_independence_support_OTT = {
 						owner = TRK
 					}
 				}
-				353 = {
-					create_unit = {
-						division = "name = \"Kuvâ-yi Milliye Milis Kuvveti\" division_template = \"Kuvâ-yi Milliye Force\" start_experience_factor = 0.2"
-						owner = TRK
-					}
-				}
 				354 = {
 					create_unit = {
 						division = "name = \"Kuvâ-yi Milliye Milis Kuvveti\" division_template = \"Kuvâ-yi Milliye Force\" start_experience_factor = 0.2"
 						owner = TRK
 					}
 				}
-				country_event = {
-					id = ww1_turkey.15
-					days = 7
+				OTT = {
+					country_event = {
+						id = ww1_turkey.15
+						days = 7
+					}
 				}
-			}
+			}	
 		}
 		complete_effect = {
 			#SUCCESS
@@ -9531,6 +9762,121 @@ TUR_war_of_independence_support_OTT = {
 		fire_only_once = yes
 		days_mission_timeout = 42
 		is_good = no
+	}
+
+	TUR_root_out_kuvy_milliye = {
+		icon = GFX_decision_generic_army_support
+		allowed = {
+			tag = OTT
+		}
+		custom_cost_text = turkeyminoritycostitf
+		custom_cost_trigger = {
+			command_power > 14.99
+		}
+		state_target = yes
+		targets = {
+			857
+			344
+			342
+			824
+			339
+			825
+			861
+			356
+			356
+			355
+			348
+			349
+			49
+			346
+			830
+			340
+			854
+			350
+			828
+			829
+			680
+			676
+			853
+		}
+		on_map_mode = map_only
+		days_remove = 30
+
+		available = {
+            has_equipment = {
+                infantry_equipment > 499
+            }
+		}
+		visible = {
+			has_completed_focus = TUR_combat_against_kuvay_i_milliye
+			controls_state = FROM
+			FROM = {
+				has_state_flag = kuvay_milliye
+				OR = {
+					has_dynamic_modifier = { modifier = TUR_turkish_revolts }
+					has_dynamic_modifier = { modifier = TUR_turkish_support }
+				}
+			}
+		}
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -500
+			}
+			hidden_effect = {
+				add_command_power = -15
+			}
+		}
+		remove_effect = {
+			FROM = {
+				clr_state_flag = kuvay_milliye
+				if = {
+					limit = {
+						has_dynamic_modifier = { modifier = TUR_turkish_revolts }
+					}
+					remove_dynamic_modifier = { modifier = TUR_turkish_revolts }
+				}
+				if = {
+					limit = {
+						has_dynamic_modifier = { modifier = TUR_turkish_support }
+					}
+					remove_dynamic_modifier = { modifier = TUR_turkish_support }
+				}
+			}
+		}
+		ai_will_do = {
+			base = 5
+			modifier = {
+				factor = 10
+				has_equipment = {
+                    infantry_equipment > 1999
+                }
+			}
+			modifier = {
+				factor = 10
+				has_equipment = {
+                    infantry_equipment > 2999
+                }
+			}
+			modifier = {
+				factor = 10
+				has_equipment = {
+                    infantry_equipment > 3999
+                }
+			}
+			modifier = {
+				factor = 10
+				has_equipment = {
+                    infantry_equipment > 4999
+                }
+			}
+			modifier = {
+				factor = 10
+				has_equipment = {
+                    infantry_equipment > 5999
+                }
+			}
+		}
 	}
 }
 

@@ -973,6 +973,7 @@ on_actions = {
 					FROM = {
 						NOT = {
 							original_tag = SOV
+							has_cosmetic_tag = RUS_soviet
 						}
 					}
 				}
@@ -1018,7 +1019,10 @@ on_actions = {
 						has_cosmetic_tag = GEO_TSCN
 					}
 					FROM = {
-						original_tag = SOV
+						OR = {
+							original_tag = SOV
+							has_cosmetic_tag = RUS_soviet
+						}
 						has_government = communism
 					}
 				}
@@ -2038,7 +2042,10 @@ on_actions = {
 						has_cosmetic_tag = GEO_TSCN
 					}
 					FROM = {
-						original_tag = SOV
+						OR = {
+							original_tag = SOV
+							has_cosmetic_tag = RUS_soviet
+						}						
 						has_government = communism
 					}
 				}
@@ -3868,7 +3875,7 @@ on_actions = {
 		}
 	}
 	on_ruling_party_change = {
-		effect = {
+		effect = {			
 			if = {
 				limit = {
 					has_government = communism
@@ -3887,7 +3894,7 @@ on_actions = {
 						limit = {
 							has_trait = trait_royal
 						}
-						remove_unit_leader = PREV
+						retire = yes
 					}
 				}
 				if = {
@@ -3929,9 +3936,24 @@ on_actions = {
 							has_cosmetic_tag = RUS_socialism
 							has_cosmetic_tag = RUS_absolutism
 							has_cosmetic_tag = RUS_eser
+							has_cosmetic_tag = RUS_soviet
+							has_country_leader = {
+								name = "Vladimir Lenin"
+								ruling_only = no
+							}
 						}
 					}
 					set_cosmetic_tag = RUS_socialism
+				}
+				if = {
+					limit = {
+						original_tag = RUS
+						has_country_leader = {
+							name = "Vladimir Lenin"
+							ruling_only = yes
+						}
+					}
+					set_cosmetic_tag = RUS_soviet
 				}
 				if = {
 					limit = {
@@ -4022,7 +4044,10 @@ on_actions = {
 				}
 				if = {
 					limit = {
-						has_cosmetic_tag = RUS_socialism
+						OR = {
+							has_cosmetic_tag = RUS_socialism
+							has_cosmetic_tag = RUS_soviet
+						}
 						OR = {
 							has_country_leader = {
 								name = "Nikolai II"
@@ -4038,7 +4063,10 @@ on_actions = {
 				}
 				if = {
 					limit = {
-						has_cosmetic_tag = RUS_socialism
+						OR = {
+							has_cosmetic_tag = RUS_socialism
+							has_cosmetic_tag = RUS_soviet
+						}						
 						NOT = {
 							has_country_leader = {
 								name = "Nikolai II"

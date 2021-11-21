@@ -7,7 +7,7 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		original_tag = TUR
-		has_civil_war = no
+		has_war = no
 		OR = {
 			has_country_leader = {
 				name = "Ismail Enver Paşa"
@@ -26,20 +26,76 @@ country_event = {
 				ruling_only = yes
 			}
 		}
+		GER = {
+			NOT = {
+				has_country_flag = great_war_winner
+			}
+		}
 		has_country_flag = great_war_loser
 		NOT = {
 			has_country_flag = TUR_national_movement_tag
 		}
 	}
 	option = {
-		name = generic_ok
-		hidden_effect = {
-			TUR = {
-				country_event = {
-					id = ww1_turkey.4
-					days = 30
+		name = ww1_turkey.1.a
+		if = {
+			limit = {
+				ENG = {
+					has_country_flag = great_war_winner
+					is_subject = no
+				}					
+			}
+			ENG = {
+				if = {
+					limit = {
+						has_dlc = "Together for Victory"
+					}
+					set_autonomy = {
+						target = TUR
+						autonomous_state = autonomy_dominion
+						freedom_level = 0.1
+					}
+					else = {
+						puppet = TUR
+					}	
 				}
 			}
+			else_if = {
+				limit = {
+					FRA = {
+						has_country_flag = great_war_winner
+						is_subject = no
+						NOT = {
+							has_government = communism
+						}
+					}
+				}
+				FRA = {
+					if = {
+						limit = {
+							has_dlc = "Together for Victory"
+						}
+						set_autonomy = {
+							target = TUR
+							autonomous_state = autonomy_dominion
+							freedom_level = 0.1
+						}
+						else = {
+							puppet = TUR
+						}	
+					}
+				}
+			}
+		}
+		set_politics = {
+			ruling_party = neutrality
+			elections_allowed = no
+		}
+		set_popularities = {
+			democratic = 35
+			neutrality = 45
+			fascism = 15
+			communism = 5
 		}
 		if = {
 			limit = {
@@ -49,6 +105,12 @@ country_event = {
 				}
 			}
 			set_country_flag = no_enver_nationalmovement
+			every_unit_leader = {
+				limit = {
+					has_trait = trait_TUR_ittihadist_radical_sympathies
+				}
+				retire = yes
+			}
 		}
 		every_country = {
 			limit = {
@@ -58,14 +120,6 @@ country_event = {
 			TUR = {
 				give_military_access = PREV
 			}
-		}
-		add_popularity = {
-			ideology = fascism
-			popularity = -0.35
-		}
-		set_politics = {
-			ruling_party = neutrality
-			elections_allowed = no
 		}
 		retire_country_leader = yes
 		clr_country_flag = talat_enver_cemal
@@ -84,8 +138,8 @@ country_event = {
 		create_country_leader = {
 			name = "Ahmet Izzet Paşa"
 			picture = "gfx/leaders/TUR/TUR_ahmet_izzet.dds"
-			ideology = authoritarian_democracy
 			expire = "1935.1.1"
+			ideology = authoritarian_democracy			
 			traits = {
 				the_absentee_president
 				grand_vizier
@@ -102,7 +156,7 @@ country_event = {
 	desc = ww1_turkey.2.d
 	is_triggered_only = yes
 	option = {
-		name = generic_ok
+		name = ww1_turkey.2.a
 		add_political_power = 15
 		if = {
 			limit = {
@@ -133,17 +187,17 @@ country_event = {
 	}
 }
 
-###Ahmet Tefvik government
+###Ahmet Tevfik government
 country_event = {
 	id = ww1_turkey.3
 	title = ww1_turkey.3.t
 	desc = ww1_turkey.3.d
 	is_triggered_only = yes
 	option = {
-		name = generic_ok
+		name = ww1_turkey.3.a
 		retire_country_leader = yes
 		create_country_leader = {
-			name = "Ahmet Tefvik Paşa"
+			name = "Ahmet Tevfik Paşa"
 			picture = "gfx/leaders/TUR/TUR_ahmet_tevfik_politican.dds"
 			expire = "1935.1.1"
 			ideology = authoritarian_democracy
@@ -157,7 +211,7 @@ country_event = {
 			country_event = {
 				id = ww1_turkey.7
 				days = 41
-			}
+			}			
 		}
 	}
 }
@@ -167,26 +221,27 @@ country_event = {
 	id = ww1_turkey.4
 	title = ww1_turkey.4.t
 	desc = ww1_turkey.4.d
-	is_triggered_only = yes
 	trigger = {
-		original_tag = TUR
+		tag = TUR
+		has_war = no
 		has_country_flag = great_war_loser
-		OR = {
-			ENG = {
-				has_country_flag = great_war_winner
+		has_country_flag = had_ittihadist_government
+		any_country = { 
+			is_major = yes
+			is_subject = no
+			NOT = {
+				has_government = communism
 			}
-			FRA = {
-				has_country_flag = great_war_winner
+			OR = {
+				tag = ENG
+				tag = FRA
+				tag = RUS
 			}
-			RUS = {
-				has_country_flag = great_war_winner
-			}
-			ITA = {
-				has_country_flag = great_war_winner
-			}
-			GRE = {
-				has_country_flag = great_war_winner
-			}
+			has_country_flag = great_war_winner
+		}
+		has_global_flag = interbellum
+		NOT = {
+			has_country_flag = TUR_national_movement_tag
 		}
 	}
 	fire_only_once = yes
@@ -197,183 +252,138 @@ country_event = {
 		add_political_power = -200
 		if = {
 			limit = {
-				ENG = {
-					has_country_flag = great_war_winner
-				}
-			}
-			ENG = {
-				transfer_state = 291
-				transfer_state = 853
-				transfer_state = 675
-				transfer_state = 832
-				transfer_state = 455
-				transfer_state = 856
-				transfer_state = 454
-				transfer_state = 858
-			}
-		}
-		if = {
-			limit = {
 				FRA = {
+					exists = yes
 					has_country_flag = great_war_winner
+					NOT = {
+						has_government = communism
+					}
 				}
 			}
-			FRA = {
-				transfer_state = 829
-				transfer_state = 857
-				transfer_state = 344
-				transfer_state = 859
-				transfer_state = 852
-				transfer_state = 553
-				transfer_state = 680
-				transfer_state = 677
-				transfer_state = 554
-				transfer_state = 831
-			}
-			857 = {
-				add_dynamic_modifier = {
-					modifier = TUR_turkish_revolts
+			every_state = {
+				limit = {
+					is_owned_by = TUR
+					OR = {
+						state = 857
+						state = 344
+						state = 859
+					}
 				}
-			}
-			344 = {
-				add_dynamic_modifier = {
-					modifier = TUR_turkish_revolts
+				FRA = {
+					transfer_state = PREV
 				}
 			}
 		}
 		if = {
 			limit = {
 				GRE = {
+					exists = yes
 					has_country_flag = great_war_winner
 				}
+				339 = { is_owned_by = TUR }
 			}
 			GRE = {
 				transfer_state = 339
-			}
-			339 = {
-				add_dynamic_modifier = {
-					modifier = TUR_turkish_revolts
-				}
+				add_state_core = 339
 			}
 		}
 		if = {
 			limit = {
 				ITA = {
+					exists = yes
 					has_country_flag = great_war_winner
+					is_subject = no
+					NOT = {
+						has_government = communism
+					}
 				}
 			}
-			ITA = {
-				transfer_state = 342
-				if = {
+			every_state = {
+				limit = {
+					is_owned_by = TUR
+					OR = {
+						state = 342
+						state = 164
+					}
+				}
+				ITA = {
+					transfer_state = PREV
+				}
+			}
+			if = {
+				limit = {
+					GRE = {
+						OR = {
+							NOT = {
+								has_country_flag = great_war_winner
+							}
+							exists = no
+						}						
+					}
+				}
+				every_state = {
 					limit = {
-						TUR = {
-							owns_state = 164
+						is_owned_by = TUR
+						OR = {
+							state = 824
+							state = 339
+							state = 790
 						}
 					}
-					transfer_state = 164
-				}
-			}
-			342 = {
-				add_dynamic_modifier = {
-					modifier = TUR_turkish_revolts
-				}
-			}
-		}
-		if = {
-			limit = {
-				GRE = {
-					NOT = {
-						has_country_flag = great_war_winner
+					ITA = {
+						transfer_state = PREV
 					}
-				}
-				ITA = {
-					has_country_flag = great_war_winner
-				}
-			}
-			ITA = {
-				transfer_state = 824
-				transfer_state = 339
-			}
-			824 = {
-				add_dynamic_modifier = {
-					modifier = TUR_turkish_revolts
-				}
-			}
-			339 = {
-				add_dynamic_modifier = {
-					modifier = TUR_turkish_revolts
 				}
 			}
 		}
 		if = {
 			limit = {
 				RUS = {
-					NOT = {
-						has_country_flag = great_war_winner
+					OR = {
+						NOT = {
+							has_country_flag = great_war_winner
+						}
+						exists = no
+						is_subject = yes
+					}				
+				}			
+			}
+			if = {
+				limit = {
+					country_exists = ARM
+				}
+				every_state = {
+					limit = {
+						is_owned_by = TUR
+						OR = {
+							state = 787
+							state = 806
+						}
+					}
+					ARM = {
+						transfer_state = PREV
 					}
 				}
-				ENG = {
-					has_country_flag = great_war_winner
+			}
+			if = {
+				limit = {
+					country_exists = GEO
 				}
-			}
-			ENG = {
-				transfer_state = 347
-				transfer_state = 341
-				transfer_state = 860
-				transfer_state = 825
-				transfer_state = 861
-				transfer_state = 676
-			}
-			861 = {
-				add_dynamic_modifier = {
-					modifier = TUR_turkish_revolts
-				}
-			}
-			825 = {
-				add_dynamic_modifier = {
-					modifier = TUR_turkish_revolts
-				}
-			}
-		}
-		if = {
-			limit = {
-				RUS = {
-					NOT = {
-						has_country_flag = great_war_winner
+				every_state = {
+					limit = {
+						is_owned_by = TUR
+						OR = {
+							state = 748
+							state = 816
+							state = 855
+						}
+					}
+					GEO = {
+						transfer_state = PREV
 					}
 				}
-				country_exists = ARM
 			}
-			ARM = {
-				transfer_state = 806
-				transfer_state = 787
-			}
-		}
-		if = {
-			limit = {
-				RUS = {
-					has_country_flag = great_war_winner
-				}
-			}
-			RUS = {
-				transfer_state = 354
-				transfer_state = 353
-				transfer_state = 352
-				transfer_state = 828
-				transfer_state = 347
-				transfer_state = 341
-				transfer_state = 860
-			}
-			354 = {
-				add_dynamic_modifier = {
-					modifier = TUR_turkish_revolts
-				}
-			}
-			353 = {
-				add_dynamic_modifier = {
-					modifier = TUR_turkish_revolts
-				}
-			}
+			
 		}
 		if = {
 			limit = {
@@ -393,49 +403,6 @@ country_event = {
 				transfer_state = 756
 			}
 		}
-		if = {
-			limit = {
-				RUS = {
-					NOT = {
-						has_country_flag = great_war_winner
-					}
-				}
-				GRE = {
-					has_country_flag = great_war_winner
-				}
-				TUR = {
-					owns_state = 756
-				}
-			}
-			GRE = {
-				transfer_state = 756
-			}
-		}
-		if = {
-			limit = {
-				RUS = {
-					has_country_flag = great_war_winner
-				}
-				FRA = {
-					has_country_flag = great_war_winner
-				}
-			}
-			FRA = {
-				transfer_state = 676
-			}
-		}
-		if = {
-			limit = {
-				FRA = {
-					NOT = {
-						has_country_flag = great_war_winner
-					}
-				}
-			}
-			ENG = {
-				transfer_state = 676
-			}
-		}
 		hidden_effect = {
 			TUR = {
 				country_event = {
@@ -447,52 +414,50 @@ country_event = {
 		delete_unit = {
 			disband = yes
 		}
-		857 = {
-			set_state_flag = kuvay_milliye
+		every_state = {
+			limit = {
+				NOT = {
+					is_owned_by = TUR
+				}
+				OR = {
+					state = 857
+					state = 344
+					state = 339
+					state = 342
+					state = 824
+					state = 861
+					state = 825
+					state = 354
+					state = 353
+					state = 353
+				}
+			}
+			add_dynamic_modifier = {
+				modifier = TUR_turkish_revolts
+			}
 		}
-		344 = {
-			set_state_flag = kuvay_milliye
-		}
-		342 = {
-			set_state_flag = kuvay_milliye
-		}
-		824 = {
-			set_state_flag = kuvay_milliye
-		}
-		339 = {
-			set_state_flag = kuvay_milliye
-		}
-		825 = {
-			set_state_flag = kuvay_milliye
-		}
-		861 = {
-			set_state_flag = kuvay_milliye
-		}
-		356 = {
-			set_state_flag = kuvay_milliye
-		}
-		355 = {
-			set_state_flag = kuvay_milliye
-		}
-		348 = {
-			set_state_flag = kuvay_milliye
-		}
-		349 = {
-			set_state_flag = kuvay_milliye
-		}
-		49 = {
-			set_state_flag = kuvay_milliye
-		}
-		346 = {
-			set_state_flag = kuvay_milliye
-		}
-		830 = {
-			set_state_flag = kuvay_milliye
-		}
-		340 = {
-			set_state_flag = kuvay_milliye
-		}
-		854 = {
+		every_state = {
+			limit = {
+				OR = {
+					state = 857
+					state = 344
+					state = 342
+					state = 824
+					state = 339
+					state = 825
+					state = 861
+					state = 356
+					state = 355
+					state = 348
+					state = 349
+					state = 49
+					state = 346
+					state = 830
+					state = 340
+					state = 854
+
+				}
+			}
 			set_state_flag = kuvay_milliye
 		}
 	}
@@ -515,9 +480,7 @@ country_event = {
 			}
 		}
 		trigger = {
-			NOT = {
-				has_country_flag = no_enver_nationalmovement
-			}
+			has_country_flag = no_enver_nationalmovement
 		}
 	}
 	option = {
@@ -530,7 +493,9 @@ country_event = {
 			}
 		}
 		trigger = {
-			has_country_flag = no_enver_nationalmovement
+			NOT = {
+				has_country_flag = no_enver_nationalmovement
+			}
 		}
 	}
 }
@@ -560,18 +525,18 @@ country_event = {
 	desc = ww1_turkey.8.d
 	is_triggered_only = yes
 	option = {
-		name = generic_ok
+		name = ww1_turkey.8.a
 		retire_country_leader = yes
 		create_country_leader = {
-			name = "Damat Ferid Paşa"
-			ideology = authoritarian_democracy
+			name = "Damad Ferid Paşa"
 			picture = "gfx/leaders/TUR/TUR_damat_ferid.tga"
+			expire = "1935.1.1"
+			ideology = authoritarian_democracy
 			traits = {
 				liberal_democratic_paragon
 				grand_vizier
 				trait_authoritarian_democracy
-			}
-			expire = "1935.1.1"
+			}	
 		}
 		GRE = {
 			set_country_flag = {
@@ -596,7 +561,7 @@ country_event = {
 	desc = ww1_turkey.9.d
 	fire_only_once = yes
 	trigger = {
-		original_tag = TUR
+		tag = TUR
 		OR = {
 			has_country_leader = {
 				name = "Osman IV"
@@ -612,6 +577,10 @@ country_event = {
 			}
 			has_country_leader = {
 				name = "Abdülmecid II"
+				ruling_only = yes
+			}
+			has_country_leader = {
+				name = "Abdülhamid II"
 				ruling_only = yes
 			}
 			has_country_leader = {
@@ -633,9 +602,12 @@ country_event = {
 			}
 		}
 		has_country_flag = great_war_loser
+		NOT = {
+			has_country_flag = TUR_national_movement_tag
+		}
 	}
 	option = {
-		name = generic_ok
+		name = ww1_turkey.9.a
 		if = {
 			limit = {
 				OR = {
@@ -686,7 +658,7 @@ country_event = {
 	desc = ww1_turkey.10.d
 	is_triggered_only = yes
 	option = {
-		name = generic_ok
+		name = ww1_turkey.10.a
 		add_stability = -0.05
 		add_political_power = -50
 		add_popularity = {
@@ -760,7 +732,7 @@ country_event = {
 		name = ww1_turkey.5.a
 		retire_country_leader = yes
 		create_country_leader = {
-			name = "Damat Ferid Paşa"
+			name = "Damad Ferid Paşa"
 			ideology = authoritarian_democracy
 			picture = "gfx/leaders/TUR/TUR_damat_ferid.tga"
 			traits = {
@@ -771,13 +743,8 @@ country_event = {
 			expire = "1935.1.1"
 		}
 		add_political_power = -15
-		set_country_flag = damad_ferid_secured_power
-		hidden_effect = {
-			country_event = {
-				id = ww1_turkey.11
-				days = 34
-			}
-		}
+		custom_effect_tooltip = damat_ferid_secured_power_tt
+		set_country_flag = damat_ferid_secured_power
 	}
 }
 
@@ -785,7 +752,14 @@ country_event = {
 	id = ww1_turkey.11
 	title = ww1_turkey.11.t
 	desc = ww1_turkey.11.d
-	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		has_country_flag = damat_ferid_secured_power
+		has_idea = TUR_legitimacy_terrible
+	}
+	mean_time_to_happen = {
+		days = 34
+	}
 	option = {
 		name = ww1_turkey.11.a
 		retire_country_leader = yes
@@ -801,28 +775,9 @@ country_event = {
 			}
 		}
 		add_political_power = -15
-		ai_chance = {
-			base = 0
-			modifier = {
-				add = 5
-				surrender_progress < 0.5
-			}
-			modifier = {
-				add = 5
-				surrender_progress < 0.3
-			}
-			modifier = {
-				add = 5
-				surrender_progress < 0.15
-			}
-		}
-	}
-	option = {
-		name = ww1_turkey.11.b
-		add_political_power = 150
-		ai_chance = {
-			base = 10
-		}
+		set_country_flag = ahmet_izzettin_secured_power
+		custom_effect_tooltip = ahmet_izzettin_secured_power_tt
+		TUR_legitimacy_level_down = yes
 	}
 }
 
@@ -835,7 +790,7 @@ country_event = {
 	is_triggered_only = yes
 	immediate = {
 		hidden_effect = {
-			set_country_flag = TUR_revolter_flag
+			set_country_flag = TUR_kostantiniye_government_tag
 			create_dynamic_country = {
 				original_tag = TUR
 				set_cosmetic_tag = TUR_TRK_prewar
@@ -857,6 +812,70 @@ country_event = {
 				set_country_flag = TUR_TRK_yet_invite_diplomat
 				set_country_flag = TUR_not_agreed_on_debts
 				reserve_dynamic_country = yes
+				if = {
+					limit = {
+						OTT = {
+							has_country_flag = no_enver_nationalmovement
+						}
+					}
+					set_country_flag = no_enver_nationalmovement
+				}
+				set_country_flag = had_ittihadist_government
+
+
+				set_party_name = {
+					ideology = neutrality
+					name = TUR_national_movement_party
+					long_name = TUR_national_movement_party
+				}
+				#Commies
+				set_party_name = {
+					ideology = communism
+					name = TUR_turkish_communist_party
+					long_name = TUR_turkish_communist_party_long
+				}
+				create_country_leader = {
+					name = "Mustafa Suphi Bey"				
+					expire = "1935.1.1"
+					picture = "gfx/leaders/TUR/TUR_Mustafa_Suphi.png"
+					ideology = vanguardism
+					traits = {
+						mustafasuphi
+						trait_vanguardism
+					}
+				}
+				#Democrats
+				set_party_name = {
+					ideology = democratic
+					name = TUR_cancelation_of_annexation_party
+					long_name = TUR_cancelation_of_annexation_party_long
+				}
+				create_country_leader = {
+					name = "Celâl Bayar"
+					picture = "gfx/leaders/TUR/TUR_celal_bayar.png"
+					expire = "1935.1.1"
+					ideology = classical_liberalism
+					traits = {
+						liberal_democratic_paragon
+						trait_classical_liberalism
+					}
+				}
+				#Fascists
+				set_party_name = {
+					ideology = fascism
+					name = TUR_renewal_party
+					long_name = TUR_renewal_party
+				}
+				create_country_leader = {
+					name = "Ismail Enver Paşa"
+					picture = "gfx/leaders/TUR/TUR_enver_pasha.dds"
+					expire = "1935.1.1"
+					ideology = fascism_ideology
+					traits = {
+						tur_national_hero
+						trait_proto_fascism
+					}
+				}
 			}
 		}
 	}
@@ -867,44 +886,10 @@ country_event = {
 	fire_only_once = yes
 	option = {
 		name = ww1_turkey.14.a
-		trigger = {
-			is_ai = no
-		}
+		set_country_flag = TUR_chose_chose_national_movement
 		load_focus_tree = turkey_focus_tree
 		complete_national_focus = TUR_amasya_decleration
 		set_country_flag = amasya_decleration
-		hidden_effect = {
-			every_unit_leader = {
-				limit = {
-					has_id = 905312
-				}
-				retire = yes
-			}
-			if = {
-				limit = {
-					NOT = {
-						has_country_flag = no_enver_nationalmovement
-					}
-				}
-				every_unit_leader = {
-					limit = {
-						has_id = 90007
-					}
-					retire = yes
-				}
-			}
-			if = {
-				limit = {
-					has_country_flag = no_enver_nationalmovement
-				}
-				every_unit_leader = {
-					limit = {
-						has_id = 90013
-					}
-					retire = yes
-				}
-			}
-		}
 		every_unit_leader = {
 			limit = {
 				has_id = 905312
@@ -913,19 +898,6 @@ country_event = {
 		}
 		if = {
 			limit = {
-				NOT = {
-					has_country_flag = no_enver_nationalmovement
-				}
-			}
-			every_unit_leader = {
-				limit = {
-					has_id = 90007
-				}
-				set_nationality = TRK
-			}
-		}
-		if = {
-			limit = {
 				has_country_flag = no_enver_nationalmovement
 			}
 			every_unit_leader = {
@@ -934,56 +906,7 @@ country_event = {
 				}
 				set_nationality = TRK
 			}
-		}
-	}
-	option = {
-		name = ww1_turkey.14.b
-		load_focus_tree = turkey2_focus_tree
-		activate_mission = TUR_sivas_congress
-		set_country_flag = amasya_decleration
-		every_unit_leader = {
-			limit = {
-				has_id = 905312
-			}
-			retire = yes
-		}
-		if = {
-			limit = {
-				NOT = {
-					has_country_flag = no_enver_nationalmovement
-				}
-			}
-			every_unit_leader = {
-				limit = {
-					has_id = 90007
-				}
-				retire = yes
-			}
-		}
-		if = {
-			limit = {
-				has_country_flag = no_enver_nationalmovement
-			}
-			every_unit_leader = {
-				limit = {
-					has_id = 90013
-				}
-				retire = yes
-			}
-		}
-		hidden_effect = {
-			every_unit_leader = {
-				limit = {
-					has_id = 905312
-				}
-				set_nationality = TRK
-			}
-			if = {
-				limit = {
-					NOT = {
-						has_country_flag = no_enver_nationalmovement
-					}
-				}
+			else = {
 				every_unit_leader = {
 					limit = {
 						has_id = 90007
@@ -991,17 +914,46 @@ country_event = {
 					set_nationality = TRK
 				}
 			}
-			if = {
+		}
+		trigger = {
+			is_ai = no
+		}
+		hidden_effect = {
+			add_ideas = TUR_legitimacy_normal
+		}
+	}
+	option = {
+		name = ww1_turkey.14.b
+		set_country_flag = amasya_decleration
+		load_focus_tree = turkey2_focus_tree	
+		activate_mission = TUR_erzurum_congress	
+		every_unit_leader = {
+			limit = {
+				has_id = 905312
+			}
+			set_nationality = TRK
+		}
+		if = {
+			limit = {
+				has_country_flag = no_enver_nationalmovement
+			}
+			every_unit_leader = {
 				limit = {
-					has_country_flag = no_enver_nationalmovement
+					has_id = 90013
 				}
+				set_nationality = TRK
+			}
+			else = {
 				every_unit_leader = {
 					limit = {
-						has_id = 90013
+						has_id = 90007
 					}
 					set_nationality = TRK
 				}
 			}
+		}
+		hidden_effect = {
+			add_ideas = TUR_legitimacy_normal
 		}
 	}
 }
@@ -1010,63 +962,64 @@ country_event = {
 	id = ww1_turkey.15
 	title = ww1_turkey.15.t
 	desc = ww1_turkey.15.d
+	picture = GFX_report_event_turkish_war_of_independence
 	is_triggered_only = yes
 	immediate = {
 		hidden_effect = {
-			TRK = {
-				country_event = {
+		 	TRK = {
+		 		country_event = {
+		 			id = ww1_turkey.16
+		 			days = 8
+		 		}
+		# 		country_event = {
+		# 			id = ww1_turkey.17
+		# 			days = 5
+		# 		}
+		# 		country_event = {
+		#			id = ww1_turkey.18
+		# 			days = 11
+		#		}
+		# 		country_event = {
+		# 			id = ww1_turkey.19
+		# 			days = 5
+		# 		}
+		 	}
+		 	OTT = {
+		 		country_event = {
 					id = ww1_turkey.16
-					days = 8
-				}
-				country_event = {
-					id = ww1_turkey.17
-					days = 5
-				}
-				country_event = {
-					id = ww1_turkey.18
-					days = 11
-				}
-				country_event = {
-					id = ww1_turkey.19
-					days = 5
-				}
-			}
-			OTT = {
-				country_event = {
-					id = ww1_turkey.16
-					days = 8
-				}
-				country_event = {
-					id = ww1_turkey.17
-					days = 5
-				}
-				country_event = {
-					id = ww1_turkey.18
-					days = 11
-				}
-				country_event = {
-					id = ww1_turkey.19
-					days = 5
-				}
-			}
-			GRE = {
-				country_event = {
-					id = ww1_turkey.17
-					days = 5
-				}
-			}
-			ARM = {
-				country_event = {
-					id = ww1_turkey.18
-					days = 11
-				}
-			}
-			RUS = {
-				country_event = {
-					id = ww1_turkey.19
-					days = 5
-				}
-			}
+		 			days = 8
+		 		}
+		# 		country_event = {
+		# 			id = ww1_turkey.17
+		# 			days = 5
+		# 		}
+		# 		country_event = {
+		# 			id = ww1_turkey.18
+		#			days = 11
+		# 		}
+		# 		country_event = {
+		# 			id = ww1_turkey.19
+		# 			days = 5
+		# 		}
+		 	}
+		# 	GRE = {
+		# 		country_event = {
+		# 			id = ww1_turkey.17
+		# 			days = 5
+		# 		}
+		# 	}
+		# 	ARM = {
+		# 		country_event = {
+		# 			id = ww1_turkey.18
+		# 			days = 11
+		# 		}
+		# 	}
+		# 	RUS = {
+		# 		country_event = {
+		# 			id = ww1_turkey.19
+		# 			days = 5
+		# 		}
+		# 	}
 		}
 	}
 	option = {
@@ -1084,6 +1037,9 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			TRK = {
+				add_ideas = TUR_war_of_independence
+			}
 			OTT = {
 				declare_war_on = {
 					target = TRK
@@ -1097,7 +1053,8 @@ country_event = {
 		trigger = {
 			tag = OTT
 		}
-		complete_national_focus = TUR_spark_the_war_of_independence
+		add_ideas = TUR_war_of_independence
+		complete_national_focus = TUR_start_of_the_anatolian_rebellion
 		division_template = {
 			name = "Kuvâ-yi İnzibâtiye"
 			division_names_group = TUR_INF_01
@@ -1170,6 +1127,9 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+			TRK = {
+				add_ideas = TUR_war_of_independence
+			}
 			OTT = {
 				declare_war_on = {
 					target = TRK
@@ -1187,76 +1147,14 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = ww1_turkey.16.a
-		KUR = {
-			transfer_state = 350
-			transfer_state = 828
-		}
-		hidden_effect = {
-			KUR = {
-				division_template = {
-					name = "Milîsên Kurd "
-					division_names_group = TUR_INF_01
-					is_locked = yes
-					regiments = {
-						infantry = {
-							x = 0
-							y = 0
-						}
-						infantry = {
-							x = 1
-							y = 0
-						}
-						infantry = {
-							x = 0
-							y = 1
-						}
-						infantry = {
-							x = 1
-							y = 1
-						}
-						infantry = {
-							x = 0
-							y = 2
-						}
-						infantry = {
-							x = 1
-							y = 2
-						}
-						infantry = {
-							x = 0
-							y = 3
-						}
-						infantry = {
-							x = 1
-							y = 3
-						}
-						infantry = {
-							x = 0
-							y = 4
-						}
-						infantry = {
-							x = 1
-							y = 4
-						}
-					}
-				}
+		remove_state_core = 350
+		remove_state_core = 828
+		remove_state_core = 829
+		if = {
+			limit = {
+				tag = OTT
 			}
-			828 = {
-				create_unit = {
-					division = "name = \"Hakkâri Milîsên Kurd \" division_template = \"Milîsên Kurd \" start_experience_factor = 0.2"
-					owner = KUR
-				}
-			}
-			350 = {
-				create_unit = {
-					division = "name = \"Amed Milîsên Kurd  \" division_template = \"Milîsên Kurd \" start_experience_factor = 0.2"
-					owner = KUR
-				}
-				create_unit = {
-					division = "name = \"Xarpêt Milîsên Kurd \" division_template = \"Milîsên Kurd \" start_experience_factor = 0.2"
-					owner = KUR
-				}
-			}
+			TUR_legitimacy_level_up = yes
 		}
 	}
 }
@@ -1280,6 +1178,7 @@ country_event = {
 	trigger = {
 		GRE = {
 			has_country_flag = great_war_winner
+			is_subject = no
 		}
 	}
 	option = {
@@ -1342,6 +1241,9 @@ country_event = {
 	is_triggered_only = yes
 	trigger = {
 		country_exists = ARM
+		ARM = {
+			is_subject = no
+		}	
 	}
 	option = {
 		name = ww1_turkey.18.a
@@ -1388,6 +1290,7 @@ country_event = {
 	trigger = {
 		RUS = {
 			has_country_flag = great_war_winner
+			is_subject = no
 		}
 	}
 	option = {
@@ -1442,14 +1345,38 @@ country_event = {
 		trigger = {
 			tag = GRE
 		}
-		GRE = {
-			set_autonomy = {
-				target = OTT
-				autonomy_state = autonomy_dominion
+		every_state = {
+			limit = {
+				OR = {
+					is_owned_by = ENG
+					is_owned_by = OTT
+					is_owned_by = TRK
+				}
+				OR = {
+					state = 756
+					state = 341
+					state = 860
+					state = 825
+				}
 			}
-			transfer_state = 824
-			transfer_state = 340
-			transfer_state = 854
+			GRE = {
+				transfer_state = PREV
+			}
+		}
+		every_state = {
+			limit = {
+				OR = {
+					is_owned_by = OTT
+					is_owned_by = TRK
+				}
+				OR = {
+					state = 861
+					state = 347
+				}
+			}
+			GRE = {
+				transfer_state = PREV
+			}
 		}
 	}
 	option = {
@@ -1457,130 +1384,14 @@ country_event = {
 		trigger = {
 			original_tag = TUR
 		}
-		GRE = {
-			set_autonomy = {
-				target = OTT
-				autonomy_state = autonomy_dominion
+		if = {
+			limit = {
+				tag = OTT
 			}
-			transfer_state = 824
-			transfer_state = 340
-			transfer_state = 854
+			TUR_legitimacy_level_up = yes
 		}
 	}
 }
-
-country_event = {
-	id = ww1_turkey.21
-	title = ww1_turkey.21.t
-	desc = ww1_turkey.21.d
-	is_triggered_only = yes
-	option = {
-		name = ww1_turkey.21.a
-		effect_tooltip = {
-			TRK = {
-				annex_country = {
-					target = KUR
-				}
-			}
-		}
-		custom_effect_tooltip = GAME_OVER_TT
-		hidden_effect = {
-			country_event = {
-				id = ww1_turkey.22
-			}
-		}
-		ai_chance = {
-			base = 10
-			modifier = {
-				factor = 0
-				strength_ratio = {
-					tag = TRK
-					ratio > 0.5
-				}
-			}
-			modifier = {
-				factor = 0
-				TRK = {
-					has_government = communism
-				}
-			}
-			modifier = {
-				factor = 10
-				TRK = {
-					surrender_progress < 0.3
-				}
-			}
-			modifier = {
-				factor = 100
-				has_game_rule = {
-					rule = TUR_ai_behavior
-					option = DEFAULT
-				}
-				is_historical_focus_on = yes
-			}
-		}
-	}
-	option = {
-		name = ww1_turkey.21.b
-		TRK = {
-			country_event = {
-				id = ww1_turkey.23
-				days = 2
-			}
-		}
-		ai_chance = {
-			base = 5
-			modifier = {
-				factor = 10
-				strength_ratio = {
-					tag = TRK
-					ratio > 0.5
-				}
-			}
-			modifier = {
-				factor = 10
-				TRK = {
-					has_government = communism
-				}
-			}
-			modifier = {
-				factor = 0
-				has_game_rule = {
-					rule = TUR_ai_behavior
-					option = DEFAULT
-				}
-				is_historical_focus_on = yes
-			}
-		}
-	}
-}
-
-country_event = {
-	id = ww1_turkey.22
-	title = ww1_turkey.22.t
-	desc = ww1_turkey.22.d
-	is_triggered_only = yes
-	option = {
-		name = ww1_turkey.22.a
-		annex_country = {
-			target = KUR
-		}
-		hidden_effect = {
-			every_state = {
-				if = {
-					limit = {
-						is_core_of = KUR
-						NOT = {
-							has_state_flag = kuvay_milliye
-						}
-					}
-					set_state_flag = kuvay_milliye
-				}
-			}
-		}
-	}
-}
-
 country_event = {
 	id = ww1_turkey.23
 	title = ww1_turkey.23.t
@@ -1600,11 +1411,16 @@ country_event = {
 	title = ww1_turkey.24.t
 	desc = ww1_turkey.24.d
 	trigger = {
+		original_tag = TUR
+		has_country_flag = TUR_national_movement_tag
 		has_country_flag = no_enver_nationalmovement
-		TRK = {
-			surrender_progress > 0.5
+		surrender_progress > 0.5
+		has_country_leader = {
+			name = "Mustafa Kemal Paşa"
+			ruling_only = yes
 		}
 	}
+	fire_only_once = yes
 	option = {
 		name = ww1_turkey.24.a
 		clr_country_flag = no_enver_nationalmovement
@@ -1659,7 +1475,7 @@ country_event = {
 		TRK = {
 			add_state_claim = 855
 			add_state_claim = 816
-			add_state_claim = 789
+			add_state_claim = 806
 			if = {
 				limit = {
 					TRK = {
@@ -1725,7 +1541,7 @@ country_event = {
 			816 = {
 				set_state_flag = kars_state
 			}
-			789 = {
+			806 = {
 				set_state_flag = kars_state
 			}
 			354 = {
@@ -1772,7 +1588,7 @@ country_event = {
 			add_state_claim = 230
 			add_state_claim = 855
 			add_state_claim = 816
-			add_state_claim = 789
+			add_state_claim = 806
 			if = {
 				limit = {
 					AZR = {
@@ -1793,7 +1609,7 @@ country_event = {
 			effect_tooltip = {
 				remove_state_claim = 855
 				remove_state_claim = 816
-				remove_state_claim = 789
+				remove_state_claim = 806
 				if = {
 					limit = {
 						TRK = {
@@ -1910,7 +1726,7 @@ country_event = {
 		effect_tooltip = {
 			add_state_claim = 855
 			add_state_claim = 816
-			add_state_claim = 789
+			add_state_claim = 806
 			if = {
 				limit = {
 					TRK = {
@@ -1982,7 +1798,7 @@ country_event = {
 		name = ww1_turkey.27.a
 		remove_state_claim = 855
 		remove_state_claim = 816
-		remove_state_claim = 789
+		remove_state_claim = 806
 		if = {
 			limit = {
 				TRK = {
@@ -2026,7 +1842,7 @@ country_event = {
 			add_state_claim = 230
 			add_state_claim = 855
 			add_state_claim = 816
-			add_state_claim = 789
+			add_state_claim = 806
 			if = {
 				limit = {
 					AZR = {
@@ -2068,7 +1884,7 @@ country_event = {
 			816 = {
 				set_state_flag = kars_state
 			}
-			789 = {
+			806 = {
 				set_state_flag = kars_state
 			}
 			354 = {
@@ -2943,6 +2759,7 @@ country_event = {
 	#lozan conference
 	id = ww1_turkey.44
 	title = ww1_turkey.44.t
+	picture = GFX_report_event_lozan
 	desc = {
 		text = ww1_turkey.44.d
 		trigger = {
@@ -7106,6 +6923,14 @@ country_event = {
 				}
 				transfer_state = 790
 			}
+			if = {
+				limit = {
+					GRE = {
+						controls_state = 164
+					}
+				}
+				transfer_state = 164
+			}
 		}
 		if = {
 			limit = {
@@ -7338,6 +7163,8 @@ country_event = {
 					}
 				}
 				transfer_state = 347
+                set_province_name = { id = 9833 name = "Istanbul" }
+                347 = { set_state_name = "Istanbul" }
 			}
 			if = {
 				limit = {
@@ -7378,6 +7205,8 @@ country_event = {
 					}
 				}
 				transfer_state = 347
+                set_province_name = { id = 9833 name = "Istanbul" }
+                347 = { set_state_name = "Istanbul" }
 			}
 			if = {
 				limit = {
@@ -8449,5 +8278,378 @@ country_event = {
 			}
 			add_ideas = TUR_caliphate
 		}
+    }
+}
+
+country_event = {
+	#join national movement
+	id = ww1_turkey.98
+	title = ww1_turkey.98.t
+	desc = ww1_turkey.98.d
+	is_triggered_only = yes
+	option = {
+		name = ww1_turkey.98.a
+		effect_tooltip = {
+			annex_country = {
+				target = OTT
+				transfer_troops = yes
+			}
+			every_unit_leader = {
+				set_nationality = TRK
+			}
+		}
+		OTT = {
+			country_event = {
+				id = ww1_turkey.99
+				days = 2
+			}
+		}
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = TUR_ai_behavior
+					option = DEFAULT
+				}
+				is_historical_focus_on = yes
+			}
+		}
 	}
+	option = {
+		name = ww1_turkey.98.b
+		OTT = {
+			country_event = {
+				id = ww1_turkey.100
+				days = 2
+			}
+		}
+		ai_chance = {
+			base = 5
+			modifier = {
+				factor = 100
+				has_game_rule = {
+					rule = TUR_ai_behavior
+					option = DEFAULT
+				}
+				is_historical_focus_on = yes
+			}
+		}
+	}
+}
+
+country_event = {
+	#annexed 1
+	id = ww1_turkey.99
+	title = ww1_turkey.99.t
+	desc = ww1_turkey.99.d
+	is_triggered_only = yes
+	option = {
+		name = ww1_turkey.99.a
+		TRK = {
+			annex_country = {
+				target = OTT
+				transfer_troops = yes
+			}
+			hidden_effect = {
+				every_state = {
+					remove_core_of = OTT
+					remove_core_of = OTT
+				}
+			}
+			every_unit_leader = {
+				set_nationality = TRK
+			}
+			if = {
+				limit = {
+					is_ai = yes
+				}
+				change_tag_from = ROOT
+			}
+		}
+    }
+}
+
+country_event = {
+	#annexed 2
+	id = ww1_turkey.100
+	title = ww1_turkey.100.t
+	desc = ww1_turkey.100.d
+	is_triggered_only = yes
+	option = {
+		name = ww1_turkey.100.a
+		create_country_leader = {
+			name = "Damad Ferid Paşa"
+			ideology = authoritarian_democracy
+			picture = "gfx/leaders/TUR/TUR_damat_ferid.tga"
+			traits = {
+				liberal_democratic_paragon
+				grand_vizier
+				trait_authoritarian_democracy
+			}
+			expire = "1935.1.1"
+		}
+		custom_effect_tooltip = ahmet_izzettin_lost_power_tt
+		custom_effect_tooltip = damat_ferid_secured_power_tt
+		clr_country_flag = ahmet_izzettin_secured_power
+		every_unit_leader = {
+			limit = {
+				has_id = 90513
+			}
+			retire = yes
+		}
+		set_country_flag = damat_ferid_secured_power
+    }
+}
+
+country_event = {
+	#turkey asked for konstantinople
+	id = ww1_turkey.101
+	title = ww1_turkey.101.t
+	desc = ww1_turkey.101.d
+	is_triggered_only = yes
+	option = {
+		name = ww1_turkey.101.a
+		effect_tooltip = {
+			TUR = {
+			    if = {
+			    	limit = {
+			    		FROM = {
+			    			controls_state = 347
+			    		}
+			    	}
+			    	transfer_state = 347
+			    	347 = {
+			    		set_demilitarized_zone = yes
+			    	}
+			    }
+			    if = {
+			    	limit = {
+			    		FROM = {
+			    			controls_state = 825
+			    		}
+			    	}
+			    	transfer_state = 825
+			    	825 = {
+			    		set_demilitarized_zone = yes
+			    	}
+			    }
+			    if = {
+			    	limit = {
+			    		FROM = {
+			    			controls_state = 861
+			    		}
+			    	}
+			    	transfer_state = 861
+			    	861 = {
+			    		set_demilitarized_zone = yes
+			    	}
+			    }
+			    if = {
+			    	limit = {
+			    		TUR = {
+			    			controls_state = 347
+			    		}
+			    	}
+			    	347 = {
+			    		set_demilitarized_zone = yes
+			    	}
+			    }
+			    if = {
+			    	limit = {
+			    		TUR = {
+			    			controls_state = 825
+			    		}
+			    	}
+			    	825 = {
+			    		set_demilitarized_zone = yes
+			    	}
+			    }
+			    if = {
+			    	limit = {
+					TUR = {
+			    			controls_state = 861
+			    		}
+			    	}
+			    	861 = {
+			    		set_demilitarized_zone = yes
+			    	}
+			    }
+        	    diplomatic_relation = {
+        	        country = ROOT
+        	        relation = docking_rights
+        	        active = yes
+        	    }
+			}
+	    }
+		hidden_effect = {
+		    TUR = {
+			    country_event = {
+			    	id = ww1_turkey.102
+			    	days = 2
+		    	}
+		    }
+		}
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 0
+				347 = {
+					is_controlled_by = RUS
+				}
+				has_game_rule = {
+					rule = TUR_ai_behavior
+					option = DEFAULT
+				}
+				is_historical_focus_on = yes
+			}
+			modifier = {
+				factor = 100
+				347 = {
+					is_controlled_by = ENG
+				}
+				has_game_rule = {
+					rule = TUR_ai_behavior
+					option = DEFAULT
+				}
+				is_historical_focus_on = yes
+			}
+			modifier = {
+				factor = 10
+				347 = {
+					is_controlled_by = ENG
+				}
+			}
+		}
+	}
+	option = {
+		name = ww1_turkey.101.b
+		TUR = {
+			country_event = {
+				id = ww1_turkey.103
+				days = 2
+			}
+		}
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 0
+				347 = {
+					is_controlled_by = ENG
+				}
+				has_game_rule = {
+					rule = TUR_ai_behavior
+					option = DEFAULT
+				}
+				is_historical_focus_on = yes
+			}
+			modifier = {
+				factor = 100
+				347 = {
+					is_controlled_by = RUS
+				}
+				has_game_rule = {
+					rule = TUR_ai_behavior
+					option = DEFAULT
+				}
+				is_historical_focus_on = yes
+			}
+			modifier = {
+				factor = 10
+				347 = {
+					is_controlled_by = RUS
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	#got konstantinniye
+	id = ww1_turkey.102
+	title = ww1_turkey.102.t
+	desc = ww1_turkey.102.d
+	is_triggered_only = yes
+	option = {
+		name = ww1_turkey.102.a
+		if = {
+			limit = {
+				FROM = {
+					controls_state = 347
+				}
+			}
+			transfer_state = 347
+			347 = {
+				set_demilitarized_zone = yes
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					controls_state = 825
+				}
+			}
+			transfer_state = 825
+			825 = {
+				set_demilitarized_zone = yes
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					controls_state = 861
+				}
+			}
+			transfer_state = 861
+			861 = {
+				set_demilitarized_zone = yes
+			}
+		}
+		if = {
+			limit = {
+				TUR = {
+					controls_state = 347
+				}
+			}
+			347 = {
+				set_demilitarized_zone = yes
+			}
+		}
+		if = {
+			limit = {
+				TUR = {
+					controls_state = 825
+				}
+			}
+			825 = {
+				set_demilitarized_zone = yes
+			}
+		}
+		if = {
+			limit = {
+				TUR = {
+					controls_state = 861
+				}
+			}
+			861 = {
+				set_demilitarized_zone = yes
+			}
+		}
+        diplomatic_relation = {
+            country = FROM
+            relation = docking_rights
+            active = yes
+        }
+    }
+}
+
+country_event = {
+	#not got konstantinniye
+	id = ww1_turkey.103
+	title = ww1_turkey.103.t
+	desc = ww1_turkey.103.d
+	is_triggered_only = yes
+	option = {
+		name = ww1_turkey.103.a
+    }
 }

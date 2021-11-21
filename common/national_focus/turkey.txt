@@ -1,10 +1,14 @@
 focus_tree = {
 	id = turkey_focus_tree
 	country = {
-		factor = 0
+		base = 0
 		modifier = {
-			add = 0
+			add = 200
 			original_tag = TUR
+			OR = {
+				has_country_flag = TUR_chose_chose_national_movement
+				has_country_flag = TUR_national_movement_tag
+			}
 		}
 	}
 	default = no
@@ -31,17 +35,6 @@ focus_tree = {
 		}
 		completion_reward = {
 			OTT = {
-				hidden_effect = {
-					every_unit_leader = {
-						limit = {
-							OR = {
-								has_trait = trait_TUR_ittihadist_radical_sympathies
-								has_trait = trait_TUR_ittihadist_sympathies
-							}
-						}
-						set_nationality = TRK
-					}
-				}
 				every_unit_leader = {
 					limit = {
 						OR = {
@@ -49,7 +42,7 @@ focus_tree = {
 							has_trait = trait_TUR_ittihadist_sympathies
 						}
 					}
-					retire = yes
+					set_nationality = TRK
 				}
 				custom_effect_tooltip = TUR_erzurum_congress_tt
 				set_country_flag = TUR_no_celal_bayar
@@ -74,10 +67,12 @@ focus_tree = {
 		y = 2
 		completion_reward = {
 			TRK = {
-				load_focus_tree = turkey_focus_tree
+				hidden_effect = {
+					load_focus_tree = turkey_focus_tree
+				}				
 				if = {
 					limit = {
-						has_country_flag = no_enver_nationalmovement
+						has_country_flag = no_enver_nationalmovement	
 					}
 					create_country_leader = {
 						name = "Mustafa Kemal Paşa"
@@ -89,22 +84,17 @@ focus_tree = {
 							trait_authoritarian_democracy
 						}
 					}
-				}
-				if = {
-					limit = {
-						NOT = {
-							has_country_flag = no_enver_nationalmovement
-						}
-					}
-					create_country_leader = {
-						name = "Ismail Enver Paşa"
-						picture = "gfx/leaders/TUR/TUR_enver_pasha.dds"
-						expire = "1935.1.1"
-						ideology = despotism
-						traits = {
-							tur_national_hero
-							trait_despotism
-						}
+					else = {
+						create_country_leader = {
+							name = "Ismail Enver Paşa"
+							picture = "gfx/leaders/TUR/TUR_enver_pasha.dds"
+							expire = "1935.1.1"
+							ideology = despotism
+							traits = {
+								tur_national_hero
+								trait_despotism
+							}
+						}								
 					}
 				}
 				division_template = {
@@ -230,38 +220,20 @@ focus_tree = {
 						}
 						add_core_of = PREV
 					}
-					transfer_state = 49
-					transfer_state = 355
-					transfer_state = 349
-					transfer_state = 348
-					transfer_state = 353
-					transfer_state = 352
-					transfer_state = 356
-					transfer_state = 350
-					transfer_state = 828
-					if = {
+					every_state = {
 						limit = {
-							OTT = {
-								owns_state = 354
+							is_owned_by = OTT
+							OR = {
+								state = 354
+								state = 353
+								state = 352
+								state = 355
+								state = 349
 							}
 						}
-						transfer_state = 354
-					}
-					if = {
-						limit = {
-							OTT = {
-								owns_state = 353
-							}
-						}
-						transfer_state = 353
-					}
-					if = {
-						limit = {
-							OTT = {
-								owns_state = 352
-							}
-						}
-						transfer_state = 352
+						TRK = {
+							transfer_state = PREV
+						}						
 					}
 					load_focus_tree = {
 						tree = turkey_focus_tree
@@ -271,7 +243,7 @@ focus_tree = {
 					unlock_national_focus = TUR_erzurum_congress
 					unlock_national_focus = TUR_sivas_congress
 				}
-				49 = {
+				349 = {
 					create_unit = {
 						division = "name = \"Kuvâ-yi Milliye Milis Kuvveti\" division_template = \"Kuvâ-yi Milliye Force\" start_experience_factor = 0.2"
 						owner = TRK
@@ -280,8 +252,6 @@ focus_tree = {
 						division = "name = \"Kuvâ-yi Milliye Milis Kuvveti\" division_template = \"Kuvâ-yi Milliye Force\" start_experience_factor = 0.2"
 						owner = TRK
 					}
-				}
-				356 = {
 					create_unit = {
 						division = "name = \"Kuvâ-yi Milliye Milis Kuvveti\" division_template = \"Kuvâ-yi Milliye Force\" start_experience_factor = 0.2"
 						owner = TRK
@@ -292,44 +262,36 @@ focus_tree = {
 						division = "name = \"Kuvâ-yi Milliye Milis Kuvveti\" division_template = \"Kuvâ-yi Milliye Force\" start_experience_factor = 0.2"
 						owner = TRK
 					}
-				}
-				349 = {
 					create_unit = {
 						division = "name = \"Kuvâ-yi Milliye Milis Kuvveti\" division_template = \"Kuvâ-yi Milliye Force\" start_experience_factor = 0.2"
 						owner = TRK
 					}
-				}
-				348 = {
 					create_unit = {
 						division = "name = \"Kuvâ-yi Milliye Milis Kuvveti\" division_template = \"Kuvâ-yi Milliye Force\" start_experience_factor = 0.2"
 						owner = TRK
 					}
-				}
-				350 = {
-					create_unit = {
-						division = "name = \"Kuvâ-yi Milliye Milis Kuvveti\" division_template = \"Kuvâ-yi Milliye Force\" start_experience_factor = 0.2"
-						owner = TRK
-					}
-				}
-				828 = {
-					create_unit = {
-						division = "name = \"Kuvâ-yi Milliye Milis Kuvveti\" division_template = \"Kuvâ-yi Milliye Force\" start_experience_factor = 0.2"
-						owner = TRK
-					}
-				}
+				}	
 				352 = {
 					create_unit = {
 						division = "name = \"Kuvâ-yi Milliye Milis Kuvveti\" division_template = \"Kuvâ-yi Milliye Force\" start_experience_factor = 0.2"
 						owner = TRK
 					}
 					create_unit = {
-						division = "name = \"15. Kafkas Kolordusu\" division_template = \"Takviyeli Piyade Tümeni\" start_experience_factor = 0.2"
+						division = "name = \"Kuvâ-yi Milliye Milis Kuvveti\" division_template = \"Kuvâ-yi Milliye Force\" start_experience_factor = 0.2"
+						owner = TRK
+					}
+					create_unit = {
+						division = "name = \"Kuvâ-yi Milliye Milis Kuvveti\" division_template = \"Kuvâ-yi Milliye Force\" start_experience_factor = 0.2"
 						owner = TRK
 					}
 				}
 				353 = {
 					create_unit = {
 						division = "name = \"Kuvâ-yi Milliye Milis Kuvveti\" division_template = \"Kuvâ-yi Milliye Force\" start_experience_factor = 0.2"
+						owner = TRK
+					}
+					create_unit = {
+						division = "name = \"15. Kafkas Kolordusu\" division_template = \"Takviyeli Piyade Tümeni\" start_experience_factor = 0.2"
 						owner = TRK
 					}
 				}
@@ -341,6 +303,8 @@ focus_tree = {
 				}
 				OTT = {
 					load_focus_tree = turkey2_focus_tree
+					unlock_national_focus = TUR_organize_the_government
+					unlock_national_focus = TUR_increase_legitimacy
 					country_event = {
 						id = ww1_turkey.15
 						days = 7
@@ -363,17 +327,17 @@ focus_tree = {
 		y = 3
 		completion_reward = {
 			effect_tooltip = {
+				declare_war_on = {
+					target = OTT
+					type = annex_everything
+				}
+			}
+			hidden_effect = {
 				OTT = {
 					declare_war_on = {
 						target = TRK
 						type = annex_everything
 					}
-				}
-			}
-			hidden_effect = {
-				declare_war_on = {
-					target = TUR
-					type = annex_everything
 				}
 			}
 		}
@@ -702,7 +666,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TUR_help_from_azerbaijan
-		icon = GFX_focus_befriend_azerbaijan
+		icon = GFX_focus_generic_befriend_azerbaijan
 		cost = 5
 		prerequisite = {
 			focus = TUR_open_foreign_relations
@@ -1045,6 +1009,14 @@ focus_tree = {
 					}
 					transfer_state = 790
 				}
+			if = {
+				limit = {
+					GRE = {
+						controls_state = 164
+					}
+				}
+				transfer_state = 164
+			}
 			}
 			if = {
 				limit = {
@@ -1277,6 +1249,8 @@ focus_tree = {
 						}
 					}
 					transfer_state = 347
+                    set_province_name = { id = 9833 name = "Istanbul" }
+                    347 = { set_state_name = "Istanbul" }
 				}
 				if = {
 					limit = {
@@ -1317,6 +1291,8 @@ focus_tree = {
 						}
 					}
 					transfer_state = 347
+                    set_province_name = { id = 9833 name = "Istanbul" }
+                    347 = { set_state_name = "Istanbul" }
 				}
 				if = {
 					limit = {
@@ -1649,6 +1625,12 @@ focus_tree = {
 		completion_reward = {
 			if = {
 				limit = {
+					has_idea = TUR_war_of_independence
+				}
+				remove_ideas = TUR_war_of_independence
+			}
+			if = {
+				limit = {
 					has_completed_focus = TUR_open_underground_factories
 				}
 				add_offsite_building = {
@@ -1734,6 +1716,12 @@ focus_tree = {
 			}
 			hidden_effect = {
                 add_ideas = TUR_minorities
+			}
+			hidden_effect = {
+				every_state = {
+					remove_core_of = OTT
+					remove_core_of = OTT
+				}
 			}
 		}
 	}
@@ -1829,7 +1817,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TUR_ask_for_the_kurdish_support
-		icon = GFX_focus_befriend_kurdistan
+		icon = GFX_focus_generic_befriend_kurdistan
 		cost = 5
 		prerequisite = {
 			focus = TUR_unity_of_the_nation
@@ -1837,12 +1825,43 @@ focus_tree = {
 		x = 13
 		y = 5
 		completion_reward = {
-			KUR = {
-				country_event = {
-					id = ww1_turkey.21
-					days = 2
+			hidden_effect = {
+				every_state = {
+					limit = {
+						is_core_of = KUR
+						NOT = {
+							state = 419
+							state = 421
+							has_state_flag = kuvay_milliye
+						}
+					}
+					set_state_flag = kuvay_milliye
 				}
-			}
+			}	
+			every_state = {
+				limit = {
+					is_core_of = KUR
+					OR = {
+						state = 350 
+						state = 828
+						state = 829
+					}
+				}
+				add_core_of = ROOT
+			}	
+			every_state = {
+				limit = {
+					is_owned_by = OTT
+					OR = {
+						state = 350 
+						state = 828
+						state = 829
+					}
+				}
+				ROOT = {
+					transfer_state = PREV
+				}
+			}	
 		}
 	}
 	focus = {
@@ -2077,7 +2096,7 @@ focus_tree = {
 				type = arms_factory
 				level = 2
 			}
-			custom_trigger_tooltip = TUR_open_underground_factories_tt
+			custom_effect_tooltip = TUR_open_underground_factories_tt
 		}
 	}
 	focus = {
@@ -2295,22 +2314,29 @@ focus_tree = {
 		prerequisite = {
 			focus = TUR_unity_of_the_nation
 		}
+		available = {
+			NOT = {
+				OTT = {
+					has_completed_focus = TUR_secure_officer_loyalty
+				}
+			}
+		}
+		bypass = {
+			OTT = {
+				has_completed_focus = TUR_secure_officer_loyalty
+			}
+		}
 		x = 23
 		y = 5
 		completion_reward = {
-			OTT = {
-				every_unit_leader = {
-					limit = {
-						NOT = {
-							has_id = 90520
-							has_trait = trait_TUR_reactionaries_sympathies
-							has_trait = trait_TUR_halaskar_zabitan_member
+			if = {
+				limit = {
+					NOT = {
+						OTT = {
+							has_completed_focus = TUR_secure_officer_loyalty
 						}
 					}
-					set_nationality = TRK
 				}
-			}
-			hidden_effect = {
 				OTT = {
 					every_unit_leader = {
 						limit = {
@@ -2320,9 +2346,17 @@ focus_tree = {
 								has_trait = trait_TUR_halaskar_zabitan_member
 							}
 						}
-						retire = yes
+						set_nationality = TRK
 					}
 				}
+			}
+			if = {
+				limit = {
+					OTT = {
+						has_completed_focus = TUR_secure_officer_loyalty
+					}
+				}
+				custom_effect_tooltip = TUR_invite_ottoman_officers_no_tt
 			}
 		}
 
@@ -2346,7 +2380,7 @@ focus_tree = {
 		y = 6
 		completion_reward = {
 			OTT = {
-				add_stability = -0.15
+				TUR_legitimacy_level_up = yes
 			}
 		}
 
@@ -2426,19 +2460,6 @@ focus_tree = {
 					set_nationality = TRK
 				}
 			}
-			hidden_effect = {
-				OTT = {
-					every_unit_leader = {
-						limit = {
-							OR = {
-								has_id = 90518
-								has_id = 90537
-							}
-						}
-						retire = yes
-					}
-				}
-			}
 		}
 		x = 25
 		y = 5
@@ -2456,7 +2477,7 @@ focus_tree = {
 			set_party_name = {
 				ideology = neutrality
 				name = TUR_sultanate_party
-				long_name = TUR_sultanate_party_long
+				long_name = TUR_sultanate_party
 			}
 			retire_country_leader = yes
 			create_country_leader = {
@@ -2581,6 +2602,12 @@ focus_tree = {
 					}
 				}
 			}
+			SOV = {
+				country_event = {
+					id = ww1_turkey.25
+					days = 2
+				}
+			}
 			custom_effect_tooltip = SOV_has_to_agree
 		}
 	}
@@ -2649,21 +2676,6 @@ focus_tree = {
 		y = 8
 		completion_reward = {
 			retire_country_leader = yes
-			set_party_name = {
-				ideology = communism
-				name = TUR_tkp
-				long_name = TUR_tkp_long
-			}
-			create_country_leader = {
-				name = "Mustafa Suphi Bey"
-				ideology = marxism
-				expire = "1935.1.1"
-				picture = "gfx/leaders/TUR/TUR_Mustafa_Suphi.png"
-				traits = {
-					mustafasuphi
-					trait_marxism
-				}
-			}
 			add_popularity = {
 				ideology = communism
 				popularity = 0.5
