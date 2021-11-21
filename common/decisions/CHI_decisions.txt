@@ -1914,6 +1914,7 @@ CHI_chinese_warlords = {
 		complete_effect = {
 			hidden_effect = {
 				set_global_flag = reunite_china
+				set_country_flag = reunited_china
 			}
 			if = {
 				limit = {
@@ -1933,20 +1934,31 @@ CHI_chinese_warlords = {
 						name = CHI_zhigong_party
 					}
 				}
-				set_cosmetic_tag = CHI_reformed
-				else_if = {
+				if = {
 					limit = {
-						has_government = communism
-					}
-					hidden_effect = {
-						set_party_name = {
-							ideology = communism
-							long_name = CHI_communist_party
-							name = CHI_communist_party
+						has_country_leader = {
+							 name = "Chen Jiongming"
+							 ruling_only = yes
 						}
 					}
-					set_cosmetic_tag = CSR
-				}
+					set_cosmetic_tag = CHI_reformed_democratic
+					else_if = {
+						limit = {
+							has_government = communism
+						}
+						hidden_effect = {
+							set_party_name = {
+								ideology = communism
+								long_name = CHI_communist_party
+								name = CHI_communist_party
+							}
+						}
+						set_cosmetic_tag = CSR
+						else = {
+							set_cosmetic_tag = CHI_reformed
+						}
+					}
+				}				
 			}
 			every_state = {
 				limit = {

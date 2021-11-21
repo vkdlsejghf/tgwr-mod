@@ -26,7 +26,11 @@ CHI_uprising = {
 	color = rgb { 222 217 126 }
 	color_ui = rgb { 222 217 126 }
 }
-CHI_reformed = {
+#CHI_reformed = {
+#	color = rgb { 222 217 126 }
+#	color_ui = rgb { 222 217 126 }
+#}
+CHI_reformed_democratic = {
 	color = rgb { 222 217 126 }
 	color_ui = rgb { 222 217 126 }
 }
@@ -709,4 +713,8 @@ GER_suddeutscher_bund = {
 GBR = {
 	color = rgb { 150 0 24 }
 	color_ui = rgb { 150 0 24 }
+}
+GDC = {
+	color = rgb { 227 207 142 }
+	color_ui = rgb { 255 255 155 }
 }
