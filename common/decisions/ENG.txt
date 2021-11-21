@@ -21,7 +21,6 @@ ENG_imperial_federation_coring = {
 		targets = { 464 465 468 276 682 683 467 469 470 472 471 473 740 739 284 723 285 517 518 519 522 674 520 521 547 }
 
 		target_trigger = {
-				has_completed_focus = ENG_Imperial_Federation
 			FROM = {
 				is_owned_by = ROOT
 				NOT = {
@@ -45,7 +44,7 @@ ENG_imperial_federation_coring = {
 		}
 
 		visible = {
-				has_completed_focus = ENG_Imperial_Federation
+			has_completed_focus = ENG_Imperial_Federation
 		}
 
 		complete_effect = {
@@ -353,7 +352,7 @@ political_actions = {
 			create_field_marshal = {
 				name = "Prince David" 
 				portrait_path = "gfx/leaders/ENG/ENG_edward_viii.dds" 
-				traits = { politically_connected media_personality ENG_royalist }
+				traits = { politically_connected media_personality trait_royal trait_cautious inspirational_leader }
 				skill = 2
 				attack_skill = 2
 				defense_skill = 2
@@ -482,6 +481,10 @@ political_actions = {
 		available = {
 			has_war = yes
 			has_global_flag = kis_war
+			NOT = {
+				has_global_flag = great_war_ends
+				has_government = communism
+			}
 			POR = {
 				OR = {
 					has_government = ROOT
@@ -496,7 +499,11 @@ political_actions = {
 		
 		visible = {
 			has_war = yes
-			NOT = { has_war_with = POR }
+			has_global_flag = kis_war
+			NOT = {
+				has_war_with = POR
+				has_global_flag = great_war_ends
+			}
 		}
 		
 		complete_effect = {
@@ -510,6 +517,49 @@ political_actions = {
 				any_enemy_country = {
 						original_tag = SPR
 				}
+			}
+		}
+	}
+	ENG_send_knox_to_russia = {
+
+		icon = generic_prepare_civil_war
+	
+		allowed = {
+			tag = ENG
+		}
+		
+		available = {
+			country_exists = RUS
+			RUS = {
+				NOT = {
+					has_government = communism
+				}
+			}
+			NOT = {
+				has_war_with = RUS
+			}
+		}
+
+		cost = 10
+		
+		visible = {
+			NOT = {
+				has_war_with = RUS
+				has_country_flag = eng_decision_knox_in_russia
+			}
+		}
+		
+		complete_effect = {
+			RUS = { country_event = { id = ww1_england.209 hours = 5 } }
+			add_war_support = 0.05
+			set_country_flag = eng_decision_knox_in_russia
+		}
+
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+				date < 1911.1.6
 			}
 		}
 	}
@@ -527,7 +577,8 @@ operations = {
 		}
 		fire_only_once = yes
 		available = {
-			is_in_faction_with = RUS #in Entente, not in White Movenment
+			is_subject = no
+			is_in_faction_with = RUS
 			NOT = {
 				has_country_flag = great_war_loser 
 				has_war_with = PER
@@ -540,7 +591,10 @@ operations = {
 				exists = yes 
 				is_subject = no 
 				is_major = no
-				NOT = { is_in_faction_with = ENG }
+				OR = {
+					is_in_faction_with = ENG
+					is_in_faction = no
+				}
 			}
 		}
 		visible = {
@@ -548,34 +602,78 @@ operations = {
 			any_state = {
 				has_dynamic_modifier = { modifier = per_british_sphere }
 			}
+			RUS = {
+				NOT = {
+					has_war_with = SOV
+				}
+			}
 		}
 		complete_effect = {
+			add_state_claim = 413
+			add_state_claim = 410
+			RUS = {
+				add_state_claim = 420
+				add_state_claim = 419
+				add_state_claim = 266
+				add_state_claim = 416
+				add_state_claim = 418
+			}
 			hidden_effect = {
-				every_state = {
+				random_state = {
 					limit = {
-						has_dynamic_modifier = { modifier = per_british_sphere }
-						is_owned_and_controlled_by = PER
+						is_owned_by = PER
+						OR =  {
+							state = 413
+							state = 412
+							state = 410
+						}
+						
 					}
-					ENG = { transfer_state = PREV }
-					set_state_flag = PER_russian_british_cordon
+					prioritize = {
+						413
+					}
+					ENG = {
+						transfer_state = PREV
+					}
+				}
+				random_state = {
+					limit = {
+						is_owned_by = PER
+						OR =  {
+							state = 412
+							state = 410
+						}
+						
+					}
+					prioritize = {
+						410
+					}
+					ENG = {
+						transfer_state = PREV
+					}
 				}
 				every_state = {
 					limit = {
-						has_dynamic_modifier = { modifier = per_russian_sphere }
-						is_owned_and_controlled_by = PER
+						is_owned_by = PER
+						OR =  {
+							state = 420
+							state = 419
+						}
+						
 					}
-					RUS = { transfer_state = PREV }
-					set_state_flag = PER_russian_british_cordon
+					RUS = {
+						transfer_state = PREV
+					}
 				}
 				RUS = { country_event = ww1_russia.72 }
 			}
 			PER = { 
-				country_event = { id = ww1_england.110 days = 1 }
+				country_event = { id = ww1_persia.5 days = 1 hours = 4 }
 			}
 			set_global_flag = rus_eng_partition_of_persia
 		}
 		ai_will_do = { 
-			factor = 50
+			base = 50
 			modifier = { 	
 				OR = {
 					NOT = { 
@@ -590,35 +688,78 @@ operations = {
 	}	
 }
 
-war_measures = {
-	ENG_flee_to_canada = {
+ENG_interwar_entente_category = {
+	ENG_interwar_invite_in_entente = {
+		icon = spr_the_seeds_of_revolution
 		allowed = {
-			original_tag = ENG
+			OR = {
+				original_tag = FRA
+				original_tag = ENG
+				original_tag = CAN
+				original_tag = AST
+			}
+			
 		}
 		available = {
-			has_war_with = UOB
-			CAN = { NOT = { has_government = communism } }
+			has_war = no
+			is_faction_leader = yes
+			FROM = {
+				has_war = no				
+			}
 		}
 		visible = {
-			has_war_with = UOB
-			CAN = { exists = yes }
-		}
-		fire_only_once = yes
-		ai_will_do = {
-			base = 0
-			modifier = {
-				add = 10000
-				OR = {
-					surrender_progress > 0.7
-					has_war_support < 0.1
-					NOT = { has_full_control_of_state = 125 }
-					NOT = { has_full_control_of_state = 126 }
-					NOT = { has_full_control_of_state = 127 }
+			OR = {
+				AND = {
+					original_tag = ENG
+					has_country_flag = ENG_nationalist_britain_flag
+					has_country_flag = imperial_entente_formed
+
+				}
+				AND = {
+					original_tag = AST
+					has_country_flag = australia_is_britain
+				}
+				AND = {
+					original_tag = CAN
+					has_country_flag = canada_is_britain
+				}
+				AND = {
+					original_tag = FRA
+					has_country_flag = FRA_nationalist_france_flag
 				}
 			}
 		}
-		complete_effect = {
-			country_event = ww1_england.169
+		target_trigger = {
+			FROM = {
+				OR = {
+					tag = CAN
+					tag = SRD
+					tag = AST
+					tag = FRA
+					tag = SAF
+					tag = SAF
+					tag = NZL
+					tag = KEN
+					tag = ZIM
+					tag = NIR					
+					original_tag = ITA
+					tag = SIC
+				}
+				is_subject = no
+				is_in_faction = no		
+				NOT = {
+					tag = ROOT
+					has_government = communism
+				}
+			}
 		}
+		fire_only_once = yes
+		cost = 25
+		complete_effect = {
+			FROM = {
+				country_event = generic.5
+			}
+		}
+		ai_will_do = { factor = 100 }
 	}
 }

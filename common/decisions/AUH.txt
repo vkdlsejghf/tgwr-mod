@@ -10,7 +10,7 @@ AUH_franzferdinand = {
 		available = {
 			OR = {
 				SER = {
-					is_puppet_of = AUH
+					is_subject_of = AUH
 				}
 				AUH = {
 					has_war_with = SER
@@ -47,7 +47,7 @@ AUH_franzferdinand = {
 		available = {
 			OR = {
 				SER = {
-					is_puppet_of = AUH
+					is_subject_of = AUH
 				}
 				AUH = {
 					has_war_with = SER
@@ -132,9 +132,99 @@ political_actions = {
 		complete_effect = {
 			hidden_effect = {
 				every_country = {
-					limit = { is_subject_of = GER }
-					GER = { end_puppet = PREV }
-					AUH = { puppet = PREV }
+					limit = {
+						is_subject_of = GER
+					}
+					if = {
+						limit = {
+							has_dlc = "Together for Victory"
+						}
+						if = {
+							limit = {
+								has_autonomy_state = autonomy_colony
+							}
+							GER = { end_puppet = PREV }
+							AUH = {
+								set_autonomy = {
+									target = PREV
+									autonomy_state = autonomy_colony
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								has_autonomy_state = autonomy_dominion
+							}
+							GER = { end_puppet = PREV }
+							AUH = {
+								set_autonomy = {
+									target = PREV
+									autonomy_state = autonomy_dominion
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								has_autonomy_state = autonomy_integrated_puppet
+							}
+							GER = { end_puppet = PREV }
+							AUH = {
+								set_autonomy = {
+									target = PREV
+									autonomy_state = autonomy_integrated_puppet
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								has_autonomy_state = autonomy_puppet
+							}
+							GER = { end_puppet = PREV }
+							AUH = {
+								set_autonomy = {
+									target = PREV
+									autonomy_state = autonomy_puppet
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								has_autonomy_state = autonomy_satellite
+							}
+							GER = { end_puppet = PREV }
+							AUH = {
+								set_autonomy = {
+									target = PREV
+									autonomy_state = autonomy_satellite
+								}
+							}
+						}
+						else_if = {
+							limit = {
+								has_autonomy_state = autonomy_tgwr_protectorate
+							}
+							GER = { end_puppet = PREV }
+							AUH = {
+								set_autonomy = {
+									target = PREV
+									autonomy_state = autonomy_tgwr_protectorate
+								}
+							}
+						}
+						else = {
+							GER = { end_puppet = PREV }
+							AUH = {
+								set_autonomy = {
+									target = PREV
+									autonomy_state = autonomy_puppet
+								}
+							}
+						}
+					}
+					else = {
+						GER = { end_puppet = PREV }
+						AUH = { puppet = PREV }
+					}
 				}
 				every_state = {
 					limit = { is_core_of = GER }
@@ -147,6 +237,12 @@ political_actions = {
 					add_claim_by = AUH
 				}
 				GER = {
+					transfer_navy = {
+						target = AUH
+					}
+					every_unit_leader = {
+						set_nationality = AUH
+					}
 					transfer_units_fraction= {
 						target = AUH
 						size = 1
@@ -161,7 +257,10 @@ political_actions = {
 						picture = "gfx/leaders/GER/GER_wilhelm_ii.dds" 
 						expire = "1935.1.1"
 						ideology = autocracy
-						traits = { imperial_connections }
+						traits = {
+							imperial_connections
+							trait_autocracy
+						}
 					}
 					set_capital = 64
 					set_party_name = { 
@@ -474,5 +573,405 @@ political_actions = {
 				}
 			}
 		}
+	}
+}
+AUH_greater_austria_category = {
+	AUH_assimilate_czech = {
+		icon = generic_nationalism
+		allowed = {
+			original_tag = AUH
+		}
+		target_trigger = {
+			FROM = {
+				tag = CZE
+			}
+		}
+		available = {
+			has_completed_focus = AUH_reform_czech_cisleithania
+			has_country_flag = great_war_winner
+			has_war = no
+			CZE = {
+				is_subject_of = PREV
+				compare_autonomy_progress_ratio < 0.5
+			}
+		}
+		visible = {
+			has_completed_focus = AUH_reform_czech_cisleithania
+		}
+		fire_only_once = no
+		cost = 200
+		days_remove = 210
+		remove_effect = {
+			every_state = {
+				limit = {
+					is_core_of = CZE
+				}
+				add_core_of = AUH
+			}
+			transfer_units_fraction= {
+				target = CZE
+				size = 1
+				stockpile_ratio = 1
+				army_ratio = 1
+				navy_ratio = 1
+				air_ratio = 1
+			}
+			annex_country = {
+				target = CZE
+				transfer_troops = yes
+			}
+			if = {
+				limit = {
+					any_owned_state = {
+						is_core_of = GAL
+						is_core_of = AUH
+					}
+					any_owned_state = {
+						is_core_of = HUN
+						is_core_of = AUH
+					}
+					any_owned_state = {
+						is_core_of = CRO
+						is_core_of = AUH
+					}
+				}
+				set_cosmetic_tag = AUH_USGA
+			}
+		}
+		cancel_trigger = {
+			OR = {
+				NOT = {
+					country_exists = CZE
+				}
+				NOT = {
+					CZE = { is_subject_of = ROOT }
+				}
+				has_war = yes
+			}
+		}
+		ai_will_do = { factor = 100 }
+	}
+	AUH_assimilate_galicia = {
+		icon = generic_nationalism
+		allowed = {
+			original_tag = AUH
+		}
+		target_trigger = {
+			FROM = {
+				tag = GAL
+			}
+		}
+		available = {
+			has_completed_focus = AUH_reform_polish_galicia
+			has_country_flag = great_war_winner
+			has_war = no
+			GAL = {
+				is_subject_of = PREV
+				compare_autonomy_progress_ratio < 0.5
+			}
+		}
+		visible = {
+			has_completed_focus = AUH_reform_polish_galicia
+		}
+		fire_only_once = no
+		cost = 200
+		days_remove = 210
+		remove_effect = {
+			every_state = {
+				limit = {
+					is_core_of = GAL
+				}
+				add_core_of = AUH
+			}
+			transfer_units_fraction= {
+				target = GAL
+				size = 1
+				stockpile_ratio = 1
+				army_ratio = 1
+				navy_ratio = 1
+				air_ratio = 1
+			}
+			annex_country = {
+				target = GAL
+				transfer_troops = yes
+			}
+			if = {
+				limit = {
+					any_owned_state = {
+						is_core_of = CZE
+						is_core_of = AUH
+					}
+					any_owned_state = {
+						is_core_of = HUN
+						is_core_of = AUH
+					}
+					any_owned_state = {
+						is_core_of = CRO
+						is_core_of = AUH
+					}
+				}
+				set_cosmetic_tag = AUH_USGA
+			}
+		}
+		cancel_trigger = {
+			OR = {
+				NOT = {
+					country_exists = GAL
+				}
+				NOT = {
+					GAL = { is_subject_of = ROOT }
+				}
+				has_war = yes
+			}
+		}
+		ai_will_do = { factor = 100 }
+	}
+	AUH_assimilate_hungary = {
+		icon = generic_nationalism
+		allowed = {
+			original_tag = AUH
+		}
+		target_trigger = {
+			FROM = {
+				tag = HUN
+			}
+		}
+		available = {
+			has_completed_focus = AUH_reform_transleithania
+			has_country_flag = great_war_winner
+			has_war = no
+			HUN = {
+				is_subject_of = PREV
+				compare_autonomy_progress_ratio < 0.5
+			}
+		}
+		visible = {
+			has_completed_focus = AUH_reform_transleithania
+		}
+		fire_only_once = no
+		cost = 200
+		days_remove = 365
+		remove_effect = {
+			every_state = {
+				limit = {
+					is_core_of = HUN
+				}
+				add_core_of = AUH
+			}
+			transfer_units_fraction= {
+				target = HUN
+				size = 1
+				stockpile_ratio = 1
+				army_ratio = 1
+				navy_ratio = 1
+				air_ratio = 1
+			}
+			annex_country = {
+				target = HUN
+				transfer_troops = yes
+			}
+			if = {
+				limit = {
+					any_owned_state = {
+						is_core_of = CZE
+						is_core_of = AUH
+					}
+					any_owned_state = {
+						is_core_of = GAL
+						is_core_of = AUH
+					}
+					any_owned_state = {
+						is_core_of = CRO
+						is_core_of = AUH
+					}
+				}
+				set_cosmetic_tag = AUH_USGA
+			}
+		}
+		cancel_trigger = {
+			OR = {
+				NOT = {
+					country_exists = HUN
+				}
+				NOT = {
+					HUN = { is_subject_of = ROOT }
+				}
+				has_war = yes
+			}
+		}
+		ai_will_do = { factor = 100 }
+	}
+	AUH_assimilate_illyria = {
+		icon = generic_nationalism
+		allowed = {
+			original_tag = AUH
+		}
+		target_trigger = {
+			FROM = {
+				tag = CRO
+			}
+		}
+		available = {
+			has_completed_focus = AUH_form_illyria
+			has_country_flag = great_war_winner
+			has_war = no
+			CRO = {
+				is_subject_of = PREV
+				compare_autonomy_progress_ratio < 0.5
+			}
+		}
+		visible = {
+			has_completed_focus = AUH_form_illyria
+		}
+		fire_only_once = no
+		cost = 200
+		days_remove = 365
+		remove_effect = {
+			every_state = {
+				limit = {
+					is_core_of = CRO
+				}
+				add_core_of = AUH
+			}
+			transfer_units_fraction= {
+				target = CRO
+				size = 1
+				stockpile_ratio = 1
+				army_ratio = 1
+				navy_ratio = 1
+				air_ratio = 1
+			}
+			annex_country = {
+				target = CRO
+				transfer_troops = yes
+			}
+			if = {
+				limit = {
+					any_owned_state = {
+						is_core_of = CZE
+						is_core_of = AUH
+					}
+					any_owned_state = {
+						is_core_of = GAL
+						is_core_of = AUH
+					}
+					any_owned_state = {
+						is_core_of = HUN
+						is_core_of = AUH
+					}
+				}
+				set_cosmetic_tag = AUH_USGA
+			}
+		}
+		cancel_trigger = {
+			OR = {
+				NOT = {
+					country_exists = CRO
+				}
+				NOT = {
+					CRO = { is_subject_of = ROOT }
+				}
+				has_war = yes
+			}
+		}
+		ai_will_do = { factor = 100 }
+	}
+	AUH_assimilate_serbia = {
+		icon = generic_nationalism
+		allowed = {
+			original_tag = AUH
+		}
+		target_trigger = {
+			FROM = {
+				tag = SER
+			}
+		}
+		available = {
+			has_completed_focus = AUH_serbian_protectorate
+			has_completed_focus = AUH_form_illyria
+			has_country_flag = great_war_winner
+			has_war = no
+			CRO = {
+				exists = no
+			}
+			SER = {
+				is_subject_of = PREV
+				has_country_flag = great_war_winner
+				any_owned_state = {
+					is_core_of = CRO
+				}
+				compare_autonomy_progress_ratio < 0.5
+			}
+		}
+		visible = {
+			has_completed_focus = AUH_serbian_protectorate
+			has_completed_focus = AUH_form_illyria
+			CRO = {
+				exists = no
+			}
+			SER = {
+				is_subject_of = PREV
+				has_country_flag = great_war_winner
+				any_owned_state = {
+					is_core_of = CRO
+				}
+			}
+		}
+		fire_only_once = no
+		cost = 200
+		days_remove = 400
+		remove_effect = {
+			every_state = {
+				limit = {
+					is_core_of = SER
+				}
+				add_core_of = AUH
+			}
+			transfer_units_fraction= {
+				target = SER
+				size = 1
+				stockpile_ratio = 1
+				army_ratio = 1
+				navy_ratio = 1
+				air_ratio = 1
+			}
+			annex_country = {
+				target = SER
+				transfer_troops = yes
+			}
+			if = {
+				limit = {
+					any_owned_state = {
+						is_core_of = CZE
+						is_core_of = AUH
+					}
+					any_owned_state = {
+						is_core_of = GAL
+						is_core_of = AUH
+					}
+					any_owned_state = {
+						is_core_of = HUN
+						is_core_of = AUH
+					}
+					any_owned_state = {
+						is_core_of = CRO
+						is_core_of = AUH
+					}
+				}
+				set_cosmetic_tag = AUH_USGA
+			}
+		}
+		cancel_trigger = {
+			OR = {
+				NOT = {
+					country_exists = SER
+				}
+				NOT = {
+					SER = { is_subject_of = ROOT }
+				}
+				has_war = yes
+			}
+		}
+		ai_will_do = { factor = 100 }
 	}
 }

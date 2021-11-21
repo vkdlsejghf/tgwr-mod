@@ -4,6 +4,10 @@ spriteTypes = {
 		texturefile = "gfx/event_pictures/hoi4tgw/hoi4tgw_south_africa_act.dds"
 	}
 	spriteType = {
+		name = "GFX_great_famine_of_mount_lebanon"
+		texturefile = "gfx/event_pictures/hoi4tgw/great_famine_of_mount_lebanon.dds"
+	}
+	spriteType = {
 		name = "EVENT_hoi4tgw_korea_annexation"
 		texturefile = "gfx/event_pictures/hoi4tgw/hoi4tgw_korea_annexation.dds"
 	}
@@ -232,6 +236,19 @@ spriteTypes = {
 		name = "GFX_news_event_george_v"
 		texturefile = "gfx/event_pictures/news_event_george_v.dds"
 	}
+	spriteType = {
+		name = "GFX_news_event_eng_civil_war"
+		texturefile = "gfx/event_pictures/news_event_eng_civil_war.dds"
+	}
+	spriteType = {
+		name = "GFX_news_event_egyptian_revolution"
+		texturefile = "gfx/event_pictures/news_event_egyptian_revolution.dds"
+	}
+	spriteType = {
+		name = "GFX_news_event_eng_america_falls"
+		texturefile = "gfx/event_pictures/news_event_eng_america_falls.dds"
+	}
+
 	# For Reports
 	spriteType = {
 		name = "COUNTRY_hoi4tgw_report_austria_hungary"
@@ -307,6 +324,14 @@ spriteTypes = {
 		texturefile = "gfx/event_pictures/ww1_brazil/ww1_brazil_13.dds"
 	}
 	spriteType = {
+		name = "ww1_brazil_14"
+		texturefile = "gfx/event_pictures/ww1_brazil/ww1_brazil_14.dds"
+	}
+	spriteType = {
+		name = "ww1_brazil_15"
+		texturefile = "gfx/event_pictures/ww1_brazil/ww1_brazil_15.dds"
+	}
+	spriteType = {
 		name = "ww1_bulgaria_1"
 		texturefile = "gfx/event_pictures/ww1_bulgaria/ww1_bulgaria_1.dds"
 	}
@@ -355,6 +380,10 @@ spriteTypes = {
 		texturefile = "gfx/event_pictures/ww1_england/report_event_eng_ali_dinar_dead.dds"
 	}
 	spriteType = {
+		name = "GFX_report_event_amritsar_massacre"
+		texturefile = "gfx/event_pictures/ww1_england/report_event_amritsar_massacre.dds"
+	}
+	spriteType = {
 		name = "ww1_franzferdinand_1"
 		texturefile = "gfx/event_pictures/ww1_franzferdinand/ww1_franzferdinand_1.dds"
 	}
@@ -399,6 +428,10 @@ spriteTypes = {
 		texturefile = "gfx/event_pictures/ww1_germany/ww1_germany_64.dds"
 	}
 	spriteType = {
+		name = "ww1_germany_83"
+		texturefile = "gfx/event_pictures/ww1_germany/ww1_germany_83.dds"
+	}
+	spriteType = {
 		name = "ww1_japan_5"
 		texturefile = "gfx/event_pictures/ww1_japan/ww1_japan_5.dds"
 	}
@@ -409,6 +442,10 @@ spriteTypes = {
 	spriteType = {
 		name = "ww1_japan_8"
 		texturefile = "gfx/event_pictures/ww1_japan/ww1_japan_8.dds"
+	}
+	spriteType = {
+		name = "GFX_news_event_japan_britain"
+		texturefile = "gfx/event_pictures/news_event_japan_britain.png"
 	}
 	spriteType = {
 		name = "ww1_news_1"
@@ -463,40 +500,12 @@ spriteTypes = {
 		texturefile = "gfx/event_pictures/ww1_portugal/ww1_portugal_2.dds"
 	}
 	spriteType = {
-		name = "ww1_romania_1"
-		texturefile = "gfx/event_pictures/ww1_romania/ww1_romania_1.dds"
-	}
-	spriteType = {
 		name = "ww1_secondbalkan_1"
 		texturefile = "gfx/event_pictures/ww1_secondbalkan/ww1_secondbalkan_1.dds"
 	}
 	spriteType = {
 		name = "ww1_secondbalkan_2"
 		texturefile = "gfx/event_pictures/ww1_secondbalkan/ww1_secondbalkan_2.dds"
-	}
-	spriteType = {
-		name = "ww1_secondbalkan_3"
-		texturefile = "gfx/event_pictures/ww1_secondbalkan/ww1_secondbalkan_3.dds"
-	}
-	spriteType = {
-		name = "ww1_secondbalkan_4"
-		texturefile = "gfx/event_pictures/ww1_secondbalkan/ww1_secondbalkan_4.dds"
-	}
-	spriteType = {
-		name = "ww1_secondbalkan_5"
-		texturefile = "gfx/event_pictures/ww1_secondbalkan/ww1_secondbalkan_5.dds"
-	}
-	spriteType = {
-		name = "ww1_secondbalkan_6"
-		texturefile = "gfx/event_pictures/ww1_secondbalkan/ww1_secondbalkan_6.dds"
-	}
-	spriteType = {
-		name = "ww1_secondbalkan_7"
-		texturefile = "gfx/event_pictures/ww1_secondbalkan/ww1_secondbalkan_7.dds"
-	}
-	spriteType = {
-		name = "ww1_siam_1"
-		texturefile = "gfx/event_pictures/ww1_siam/ww1_siam_1.dds"
 	}
 	spriteType = {
 		name = "ww1_russia_1"
@@ -593,6 +602,10 @@ spriteTypes = {
 	spriteType = {
 		name = "ww1_russia_92"
 		texturefile = "gfx/event_pictures/ww1_russia/ww1_russia_92.dds"
+	}
+	spriteType = {
+		name = "ww1_russia_96"
+		texturefile = "gfx/event_pictures/ww1_russia/ww1_russia_96.dds"
 	}
 	spriteType = {
 		name = "ww1_soviet_10"
@@ -816,15 +829,80 @@ spriteTypes = {
 		name = "GFX_news_event_treaty_of_london"
 		texturefile = "gfx/event_pictures/ww1_italy/news_event_treaty_of_london.dds"
 	}
+	spriteType = {
+		name = "GFX_news_event_assanational_attemp_victor_emanuel_iii"
+		texturefile = "gfx/event_pictures/ww1_italy/news_event_assanational_attemp_victor_emanuel_iii.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_assanational_attemp_victor_emanuel_iii"
+		texturefile = "gfx/event_pictures/ww1_italy/report_event_assanational_attemp_victor_emanuel_iii.png"
+	}
+
 	#China
 	spriteType = {
 		name = "ww1_china_56"
 		texturefile = "gfx/event_pictures/news_event_warlord_era.dds"
 	}
-	#OTTOMAN
+	spriteType = {
+		name = "GFX_report_event_chi_yuan_cabinet"
+		texturefile = "gfx/event_pictures/ww1_china/report_event_chi_yuan_cabinet.dds"
+	}
+
+	#OTTOMAN/Turkey
 	spriteType = {
 		name = "ww1_ottoman_109"
 		texturefile = "gfx/event_pictures/news_event_goeben_breslau.dds"
+	}
+	spriteType = {
+		name = "GFX_news_event_ottomans_germany"
+		texturefile = "gfx/event_pictures/news_event_ottomans_germany.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_amasya_decleration"
+		texturefile = "gfx/event_pictures/ww1_turkey/report_event_amasya_decleration.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_turkish_war_of_independence"
+		texturefile = "gfx/event_pictures/ww1_turkey/report_event_turkish_war_of_independence.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_lozan"
+		texturefile = "gfx/event_pictures/ww1_turkey/report_event_lozan.png"
+	}
+	
+	#Netherlands
+	spriteType = {
+		name = "GFX_report_event_troelstra"
+		texturefile = "gfx/event_pictures/ww1_netherlands/report_event_troelstra.png"
+	}
+	spriteType = {
+		name = "GFX_news_event_troelstra"
+		texturefile = "gfx/event_pictures/ww1_netherlands/news_event_troelstra.png"
+	}
+	#Belgium
+	spriteType = {
+		name = "GFX_news_event_rape_of_belgium"
+		texturefile = "gfx/event_pictures/news_event_rape_of_belgium.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_picture_schollaert"
+		texturefile = "gfx/event_pictures/ww1_belgium/report_event_picture_schollaert.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_broqueville"
+		texturefile = "gfx/event_pictures/ww1_belgium/report_event_broqueville.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_hymans"
+		texturefile = "gfx/event_pictures/ww1_belgium/report_event_hymans.png" 
+	}
+	spriteType = {
+		name = "GFX_report_event_vandersmissen"
+		texturefile = "gfx/event_pictures/ww1_belgium/report_event_vandersmissen.png"
+	}
+	spriteType = {
+		name = "GFX_report_event_picture_force_publique"
+		texturefile = "gfx/event_pictures/ww1_belgium/report_event_picture_force_publique.png"
 	}
 	#GENERIC
 	spriteType = {

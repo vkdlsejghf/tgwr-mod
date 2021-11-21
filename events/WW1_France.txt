@@ -18,11 +18,11 @@ country_event = {
 				has_country_flag = FRA_nationalist_france_flag
 				has_war_with = FRA
 			}
+			has_country_flag = great_war_loser 
 		}
 		OR = {
 			has_stability < 0.05
 			communism > 0.5
-			has_country_flag = great_war_loser
 		}
 	}
 	mean_time_to_happen = {
@@ -32,6 +32,7 @@ country_event = {
 		set_global_flag = french_pacifist_strikes
 		hidden_effect = {
 			add_ideas = FRA_idea_pacifist_strike
+			add_ideas = FRA_interwar_Revanchism
 		}
 	}
 	option = {
@@ -103,7 +104,6 @@ country_event = {
 	id = ww1_france.3
 	#picture=ww1_france_3
 	fire_only_once = yes
-	is_triggered_only = no
 	mean_time_to_happen = {
 		months = 3
 	}
@@ -157,6 +157,7 @@ country_event = {
 					communism = 73
 				}
 				set_capital = 16
+				set_country_flag = great_war_loser
 				set_country_flag = color_communist_france
 				set_country_flag = FRA_socialist_france_flag
 				set_cosmetic_tag = FRA_socialism
@@ -169,6 +170,7 @@ country_event = {
 						trait_marxism
 					}
 				}
+				reserve_dynamic_country = yes
 			}
 			every_country = {
 				limit = {
@@ -260,12 +262,6 @@ country_event = {
 					}
 					remove_ideas = FRA_idea_pacifist_strike
 				}
-				if = {
-					limit = {
-						has_idea = idea_army_restrictions
-					}
-					remove_ideas = idea_army_restrictions
-				}
 				set_rule = {
 					can_join_factions = no
 				}
@@ -315,6 +311,7 @@ country_event = {
 				target = NFA
 				type = civil_war
 			}
+			load_focus_tree = france_socialist_focus
 		}
 		ai_chance = {
 			factor = 100
@@ -333,9 +330,11 @@ country_event = {
 	trigger = {
 		tag = FRA
 		has_civil_war = no
-		has_stability < 0.5
 		has_global_flag = frankfurt_treaty
 		is_subject = no
+		NOT = {
+			has_government = communism
+		}	
 	}
 	mean_time_to_happen = {
 		days = 60
@@ -379,6 +378,7 @@ country_event = {
 				}
 				set_capital = 26
 				set_country_flag = FRA_nationalist_france_flag
+				set_country_flag = great_war_loser
 				set_cosmetic_tag = NFA
 				create_country_leader = {
 					name = "Philippe Pétain"
@@ -389,7 +389,7 @@ country_event = {
 						trait_stratocracy
 					}
 				}
-				load_focus_tree = france_nationalist_focus
+				reserve_dynamic_country = yes
 			}
 			every_country = {
 				limit = {
@@ -496,6 +496,18 @@ country_event = {
 					}
 					remove_ideas = idea_army_restrictions
 				}
+				if = {
+					limit = {
+						has_idea = FRA_ww1_Revanchism
+					}
+					remove_ideas = FRA_ww1_Revanchism
+				}
+				if = {
+					limit = {
+						has_idea = ENG_france_on_their_own
+					}
+					remove_ideas = ENG_france_on_their_own
+				}
 				set_rule = {
 					can_join_factions = no
 				}
@@ -512,8 +524,12 @@ country_event = {
 					election_frequency = 60
 					elections_allowed = no
 				}
-				hidden_effect = {
-					set_cosmetic_tag = FRA_socialism
+				create_country_leader = { 
+					name = "Louis Frossard" 
+					picture = "gfx/leaders/FRA/FRA_louis_frossard.dds" 
+					expire = "1935.1.1" 
+					ideology = marxism
+					traits = { trait_marxism }  
 				}
 				set_popularities = {
 					democratic = 16
@@ -531,11 +547,13 @@ country_event = {
 					air_ratio = 0.5
 					keep_unit_leaders_trigger = {
 						NOT = {
-							OR = {
-								has_trait = old_guard
-								has_trait = politically_connected
-								has_id = 32009
-							}
+							has_trait = old_guard
+						}
+						NOT = {
+							has_trait = politically_connected
+						}
+						NOT = {
+							has_id = 32009
 						}
 					}
 				}
@@ -545,7 +563,6 @@ country_event = {
 					}
 					end_puppet = PREV
 				}
-				load_focus_tree = france_socialist_focus
 			}
 		}
 	}
@@ -557,8 +574,10 @@ country_event = {
 				target = NFA
 				type = civil_war
 			}
+			load_focus_tree = france_socialist_focus
 		}
 		NFA = {
+			load_focus_tree = france_nationalist_focus
 			change_tag_from = FRA
 		}
 		ai_chance = {
@@ -573,6 +592,10 @@ country_event = {
 				target = NFA
 				type = civil_war
 			}
+			load_focus_tree = france_socialist_focus
+		}
+		NFA = {
+			load_focus_tree = france_nationalist_focus
 		}
 		ai_chance = {
 			factor = 100
@@ -707,24 +730,14 @@ news_event = {
 			has_war_with = GER
 			has_full_control_of_state = 16
 			casualties > 450000
-			OR = {
-				AND = {
-					has_full_control_of_state = 18
-					NOT = {
-						has_full_control_of_state = 28
-					}
-				}
-				AND = {
-					owns_state = 18
-					NOT = {
-						has_full_control_of_state = 18
-					}
-				}
-			}
+			owns_state = 17
 		}
-		NOT = {
-			has_global_flag = battle_of_verdun
+		GER = {
+			controls_state = 17
 		}
+	}
+	mean_time_to_happen = {
+		days = 2
 	}
 	immediate = {
 		set_global_flag = battle_of_verdun
@@ -752,23 +765,27 @@ news_event = {
 	picture = GFX_news_event_005
 	fire_only_once = yes
 	major = yes
+	fire_only_once = yes
 	trigger = {
 		ENG = {
 			has_war_with = GER
-			casualties > 450000
 			is_in_faction_with = FRA
+			casualties > 450000
 		}
 		FRA = {
-			NOT = {
-				has_full_control_of_state = 18
-			}
+			has_war_with = GER
+			owns_state = 29
+			has_full_control_of_state = 16
 		}
-		NOT = {
-			has_global_flag = battle_of_somme
+		GER = {
+			controls_state = 29
 		}
 	}
 	immediate = {
 		set_global_flag = battle_of_somme
+	}
+	mean_time_to_happen = {
+		days = 2
 	}
 	option = {
 		name = ww1_france.19.a
@@ -837,11 +854,11 @@ country_event = {
 		name = ww1_generic.1.a
 		create_country_leader = {
 			name = "Alexandre Millerand"
-			picture = "gfx/leaders/Europe/Portrait_europe_generic_7.dds"
+			picture = "gfx/leaders/FRA/FRA_alexander_millerand.png"
 			expire = "1935.1.1"
-			ideology = socialism
+			ideology = conservatism
 			traits = {
-				trait_socialism
+				trait_conservatism
 			}
 		}
 	}
@@ -965,14 +982,6 @@ country_event = {
 					transfer_state = PREV
 				}
 			}
-			every_state = {
-				limit = {
-					impassable = no
-				}
-				teleport_armies = {
-					to_state = 459
-				}
-			}
 		}
 	}
 	option = {
@@ -1023,30 +1032,75 @@ country_event = {
 				GER = {
 					transfer_state = 734
 				}
-			}
-			if = {
-				limit = {
-					GER = {
-						exists = no
-					}
-					AUH = {
-						exists = yes
-						has_country_flag = great_war_winner
+				else_if = {
+					limit = {
+						ENG = {
+							exists = yes
+							has_country_flag = great_war_winner
+						}	
+					}		
+					ENG = {
+						transfer_state = 734
 					}
 				}
-				AUH = {
-					transfer_state = 734
+				else_if = {
+					limit = {
+						AUH = {
+							exists = yes
+							has_country_flag = great_war_winner
+						}	
+					}		
+					AUH = {
+						transfer_state = 734
+					}
 				}
 			}
 		}
 		if = {
 			limit = {
 				NFA = {
-					owns_state = 641
+					owns_state = 641 
 				}
 			}
-			USA = {
-				transfer_state = 641
+			if = {
+				limit = {
+					USA = {
+						exists = yes
+					}
+				}		
+				USA = {
+					transfer_state = 641
+				}
+				else_if = {
+					limit = {
+						USB = {
+							exists = yes
+						}	
+					}		
+					USB = {
+						transfer_state = 641
+					}
+					else_if = {
+						limit = {
+							NZL = {
+								exists = yes
+							}	
+						}		
+						NZL = {
+							transfer_state = 641
+						}
+						else_if = {
+							limit = {
+								CHL = {
+									exists = yes
+								}	
+							}		
+							CHL = {
+								transfer_state = 641
+							}
+						}
+					}
+				}
 			}
 		}
 		if = {
@@ -1055,8 +1109,46 @@ country_event = {
 					owns_state = 635
 				}
 			}
-			AST = {
-				transfer_state = 635
+			if = {
+				limit = {
+					AST = {
+						exists = yes
+					}
+				}		
+				AST = {
+					transfer_state = 635
+				}
+				else_if = {
+					limit = {
+						NZL = {
+							exists = yes
+						}	
+					}		
+					NZL = {
+						transfer_state = 635
+					}
+					else_if = {
+						limit = {
+							OST = {
+								exists = yes
+							}	
+						}		
+						OST = {
+							transfer_state = 635
+						}
+						else_if = {
+							limit = {
+								GER = {
+									exists = yes
+									has_country_flag = great_war_winner
+								}	
+							}		
+							GER = {
+								transfer_state = 641
+							}
+						}
+					}
+				}
 			}
 		}
 		if = {
@@ -1074,19 +1166,27 @@ country_event = {
 				GER = {
 					transfer_state = 268
 				}
-			}
-			if = {
-				limit = {
-					GER = {
-						exists = no
-					}
-					AUH = {
-						exists = yes
-						has_country_flag = great_war_winner
+				else_if = {
+					limit = {
+						ENG = {
+							exists = yes
+							has_country_flag = great_war_winner
+						}	
+					}		
+					ENG = {
+						transfer_state = 268
 					}
 				}
-				AUH = {
-					transfer_state = 268
+				else_if = {
+					limit = {
+						AUH = {
+							exists = yes
+							has_country_flag = great_war_winner
+						}	
+					}		
+					AUH = {
+						transfer_state = 268
+					}
 				}
 			}
 		}
@@ -1105,19 +1205,27 @@ country_event = {
 				GER = {
 					transfer_state = 543
 				}
-			}
-			if = {
-				limit = {
-					GER = {
-						exists = no
-					}
-					AUH = {
-						exists = yes
-						has_country_flag = great_war_winner
+				else_if = {
+					limit = {
+						ENG = {
+							exists = yes
+							has_country_flag = great_war_winner
+						}	
+					}		
+					ENG = {
+						transfer_state = 543
 					}
 				}
-				AUH = {
-					transfer_state = 543
+				else_if = {
+					limit = {
+						AUH = {
+							exists = yes
+							has_country_flag = great_war_winner
+						}	
+					}		
+					AUH = {
+						transfer_state = 543
+					}
 				}
 			}
 		}
@@ -1136,19 +1244,27 @@ country_event = {
 				GER = {
 					transfer_state = 706
 				}
-			}
-			if = {
-				limit = {
-					GER = {
-						exists = no
-					}
-					AUH = {
-						exists = yes
-						has_country_flag = great_war_winner
+				else_if = {
+					limit = {
+						ENG = {
+							exists = yes
+							has_country_flag = great_war_winner
+						}	
+					}		
+					ENG = {
+						transfer_state = 706
 					}
 				}
-				AUH = {
-					transfer_state = 706
+				else_if = {
+					limit = {
+						AUH = {
+							exists = yes
+							has_country_flag = great_war_winner
+						}	
+					}		
+					AUH = {
+						transfer_state = 706
+					}
 				}
 			}
 		}
@@ -1167,19 +1283,27 @@ country_event = {
 				GER = {
 					transfer_state = 708
 				}
-			}
-			if = {
-				limit = {
-					GER = {
-						exists = no
-					}
-					AUH = {
-						exists = yes
-						has_country_flag = great_war_winner
+				else_if = {
+					limit = {
+						ENG = {
+							exists = yes
+							has_country_flag = great_war_winner
+						}	
+					}		
+					ENG = {
+						transfer_state = 708
 					}
 				}
-				AUH = {
-					transfer_state = 708
+				else_if = {
+					limit = {
+						AUH = {
+							exists = yes
+							has_country_flag = great_war_winner
+						}	
+					}		
+					AUH = {
+						transfer_state = 708
+					}
 				}
 			}
 		}
@@ -1198,19 +1322,27 @@ country_event = {
 				GER = {
 					transfer_state = 713
 				}
-			}
-			if = {
-				limit = {
-					GER = {
-						exists = no
-					}
-					AUH = {
-						exists = yes
-						has_country_flag = great_war_winner
+				else_if = {
+					limit = {
+						ENG = {
+							exists = yes
+							has_country_flag = great_war_winner
+						}	
+					}		
+					ENG = {
+						transfer_state = 713
 					}
 				}
-				AUH = {
-					transfer_state = 713
+				else_if = {
+					limit = {
+						AUH = {
+							exists = yes
+							has_country_flag = great_war_winner
+						}	
+					}		
+					AUH = {
+						transfer_state = 713
+					}
 				}
 			}
 		}
@@ -1229,19 +1361,27 @@ country_event = {
 				GER = {
 					transfer_state = 660
 				}
-			}
-			if = {
-				limit = {
-					GER = {
-						exists = no
-					}
-					AUH = {
-						exists = yes
-						has_country_flag = great_war_winner
+				else_if = {
+					limit = {
+						ENG = {
+							exists = yes
+							has_country_flag = great_war_winner
+						}	
+					}		
+					ENG = {
+						transfer_state = 660
 					}
 				}
-				AUH = {
-					transfer_state = 660
+				else_if = {
+					limit = {
+						AUH = {
+							exists = yes
+							has_country_flag = great_war_winner
+						}	
+					}		
+					AUH = {
+						transfer_state = 660
+					}
 				}
 			}
 		}
@@ -1260,19 +1400,27 @@ country_event = {
 				GER = {
 					transfer_state = 814
 				}
-			}
-			if = {
-				limit = {
-					GER = {
-						exists = no
-					}
-					AUH = {
-						exists = yes
-						has_country_flag = great_war_winner
+				else_if = {
+					limit = {
+						ENG = {
+							exists = yes
+							has_country_flag = great_war_winner
+						}	
+					}		
+					ENG = {
+						transfer_state = 814
 					}
 				}
-				AUH = {
-					transfer_state = 814
+				else_if = {
+					limit = {
+						AUH = {
+							exists = yes
+							has_country_flag = great_war_winner
+						}	
+					}		
+					AUH = {
+						transfer_state = 814
+					}
 				}
 			}
 		}
@@ -1291,19 +1439,27 @@ country_event = {
 				GER = {
 					transfer_state = 772
 				}
-			}
-			if = {
-				limit = {
-					GER = {
-						exists = no
-					}
-					AUH = {
-						exists = yes
-						has_country_flag = great_war_winner
+				else_if = {
+					limit = {
+						ENG = {
+							exists = yes
+							has_country_flag = great_war_winner
+						}	
+					}		
+					ENG = {
+						transfer_state = 772
 					}
 				}
-				AUH = {
-					transfer_state = 772
+				else_if = {
+					limit = {
+						AUH = {
+							exists = yes
+							has_country_flag = great_war_winner
+						}	
+					}		
+					AUH = {
+						transfer_state = 772
+					}
 				}
 			}
 		}
@@ -1322,19 +1478,27 @@ country_event = {
 				GER = {
 					transfer_state = 752
 				}
-			}
-			if = {
-				limit = {
-					GER = {
-						exists = no
-					}
-					AUH = {
-						exists = yes
-						has_country_flag = great_war_winner
+				else_if = {
+					limit = {
+						ENG = {
+							exists = yes
+							has_country_flag = great_war_winner
+						}	
+					}		
+					ENG = {
+						transfer_state = 752
 					}
 				}
-				AUH = {
-					transfer_state = 752
+				else_if = {
+					limit = {
+						AUH = {
+							exists = yes
+							has_country_flag = great_war_winner
+						}	
+					}		
+					AUH = {
+						transfer_state = 752
+					}
 				}
 			}
 		}
@@ -1353,19 +1517,27 @@ country_event = {
 				GER = {
 					transfer_state = 815
 				}
-			}
-			if = {
-				limit = {
-					GER = {
-						exists = no
-					}
-					AUH = {
-						exists = yes
-						has_country_flag = great_war_winner
+				else_if = {
+					limit = {
+						ENG = {
+							exists = yes
+							has_country_flag = great_war_winner
+						}	
+					}		
+					ENG = {
+						transfer_state = 815
 					}
 				}
-				AUH = {
-					transfer_state = 815
+				else_if = {
+					limit = {
+						AUH = {
+							exists = yes
+							has_country_flag = great_war_winner
+						}	
+					}		
+					AUH = {
+						transfer_state = 815
+					}
 				}
 			}
 		}
@@ -1384,19 +1556,27 @@ country_event = {
 				GER = {
 					transfer_state = 774
 				}
-			}
-			if = {
-				limit = {
-					GER = {
-						exists = no
-					}
-					AUH = {
-						exists = yes
-						has_country_flag = great_war_winner
+				else_if = {
+					limit = {
+						ENG = {
+							exists = yes
+							has_country_flag = great_war_winner
+						}	
+					}		
+					ENG = {
+						transfer_state = 774
 					}
 				}
-				AUH = {
-					transfer_state = 774
+				else_if = {
+					limit = {
+						AUH = {
+							exists = yes
+							has_country_flag = great_war_winner
+						}	
+					}		
+					AUH = {
+						transfer_state = 774
+					}
 				}
 			}
 		}
@@ -1415,19 +1595,27 @@ country_event = {
 				GER = {
 					transfer_state = 776
 				}
-			}
-			if = {
-				limit = {
-					GER = {
-						exists = no
-					}
-					AUH = {
-						exists = yes
-						has_country_flag = great_war_winner
+				else_if = {
+					limit = {
+						ENG = {
+							exists = yes
+							has_country_flag = great_war_winner
+						}	
+					}		
+					ENG = {
+						transfer_state = 776
 					}
 				}
-				AUH = {
-					transfer_state = 776
+				else_if = {
+					limit = {
+						AUH = {
+							exists = yes
+							has_country_flag = great_war_winner
+						}	
+					}		
+					AUH = {
+						transfer_state = 776
+					}
 				}
 			}
 		}
@@ -1446,19 +1634,27 @@ country_event = {
 				GER = {
 					transfer_state = 779
 				}
-			}
-			if = {
-				limit = {
-					GER = {
-						exists = no
-					}
-					AUH = {
-						exists = yes
-						has_country_flag = great_war_winner
+				else_if = {
+					limit = {
+						ENG = {
+							exists = yes
+							has_country_flag = great_war_winner
+						}	
+					}		
+					ENG = {
+						transfer_state = 779
 					}
 				}
-				AUH = {
-					transfer_state = 779
+				else_if = {
+					limit = {
+						AUH = {
+							exists = yes
+							has_country_flag = great_war_winner
+						}	
+					}		
+					AUH = {
+						transfer_state = 779
+					}
 				}
 			}
 		}
@@ -1475,36 +1671,56 @@ country_event = {
 			JAM = {
 				transfer_state = 310
 			}
+			else_if = {
+				limit = {
+					BRA = {
+						is_subject = no
+						NOT = {
+							has_country_flag = great_war_loser
+						}
+						has_full_control_of_state = 496
+						owns_state = 496
+					}
+				}
+				BRA = { transfer_state = 310 }
+				else_if = {
+					limit = {
+						HOL = {
+							is_subject = no
+							NOT = {
+								has_country_flag = great_war_loser
+							}
+							has_full_control_of_state = 309
+						    owns_state = 309
+						}
+					}
+					HOL = { transfer_state = 310 }
+				}	
+			}		
 		}
 		if = {
 			limit = {
-				JAM = {
-					exists = yes
-					is_subject = no
-				}
 				NFA = {
 					owns_state = 694
+				}
+				JAM = {
+					exists = yes
 				}
 			}
 			JAM = {
 				transfer_state = 694
 			}
-		}
-		if = {
-			limit = {
-				JAM = {
-					exists = no
+			else_if = {
+				limit = {
+					ENG = {
+						is_subject = no
+						NOT = {
+							has_country_flag = ENG_socialist_britain_flag
+						}	
+					}
 				}
-				ENG = {
-					has_war = no
-				}
-				NFA = {
-					owns_state = 694
-				}
-			}
-			ENG = {
-				transfer_state = 694
-			}
+				ENG = { transfer_state = 694 }	
+			}		
 		}
 		if = {
 			limit = {
@@ -1512,8 +1728,29 @@ country_event = {
 					owns_state = 730
 				}
 			}
-			CAN = {
-				transfer_state = 730
+			if = {
+				limit = {
+					CAM = {
+						exists = yes
+					}
+				}
+				CAM = {
+					transfer_state = 730
+				}
+				else_if = {
+					limit = {
+						ENG = {
+							exists = yes	
+							NOT = {
+								has_country_flag = great_war_loser
+								has_country_flag = ENG_socialist_britain_flag
+							}				
+						}	
+					}		
+					ENG = {
+						transfer_state = 730
+					}
+				}
 			}
 		}
 		if = {
@@ -1522,35 +1759,41 @@ country_event = {
 					owns_state = 320
 				}
 			}
-			RAJ = {
-				transfer_state = 320
+			if = {
+				limit = {
+					RAJ = {
+						exists = yes
+					}
+				}
+				RAJ = {
+					transfer_state = 320
+				}
+				else_if = {
+					limit = {
+						ENG = {
+							exists = yes	
+							NOT = {
+								has_country_flag = great_war_loser
+								has_country_flag = ENG_socialist_britain_flag
+							}				
+						}	
+					}		
+					ENG = {
+						transfer_state = 320
+					}
+				}
 			}
 		}
 		if = {
 			limit = {
-				LBA = {
-					exists = yes
-					owns_state = 273
-				}
 				NFA = {
 					owns_state = 812
 				}
 			}
-			LBA = {
-				transfer_state = 812
-			}
-		}
-		if = {
-			limit = {
-				TUR = {
-					exists = yes
+			every_other_country = {
+				limit = {
 					owns_state = 273
 				}
-				NFA = {
-					owns_state = 812
-				}
-			}
-			TUR = {
 				transfer_state = 812
 			}
 		}
@@ -1695,9 +1938,6 @@ country_event = {
 		name = ww1_france.28.a
 		ai_chance = {
 			factor = 100
-		}
-		hidden_effect = {
-			set_country_flag = interwar_factions
 		}
 		FROM = {
 			add_to_faction = ROOT
@@ -1890,7 +2130,7 @@ country_event = {
 			kill_ideology_leader = neutrality
 			create_country_leader = {
 				name = "Charles XII"
-				picture = "gfx/leaders/FRA/FRA_Alfonso_Carlos.dds"
+				picture = "gfx/leaders/FRA/FRA_Alfonso_Carlos.png"
 				expire = "1935.1.1"
 				ideology = autocracy
 				traits = {

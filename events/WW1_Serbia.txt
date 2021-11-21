@@ -223,26 +223,14 @@ country_event = {
 	option = {
 		name = ww1_serbia.7.a
 		create_country_leader = {
-			name = "Alexander I"
+			name = "Alexander II"
 			picture = "gfx/leaders/SER/SER_alexander_i.dds"
 			expire = "1935.1.1"
 			ideology = fascism_ideology
 			traits = {
 				trait_proto_fascism
+				divisive_absolute_monarch
 			}
-		}
-		create_field_marshal = {
-			name = "Alexander I"
-			picture = "gfx/leaders/SER/SER_alexander_i.dds"
-			traits = {
-				politically_connected
-				media_personality
-			}
-			skill = 2
-			attack_skill = 2
-			defense_skill = 2
-			planning_skill = 1
-			logistics_skill = 1
 		}
 		set_country_flag = fascist_alexander_i
 		ai_chance = {
@@ -553,14 +541,6 @@ country_event = {
 			10 = {
 				if = {
 					limit = {
-						has_unit_leader = 6111
-					}
-					remove_unit_leader = 6111
-				}
-			}
-			10 = {
-				if = {
-					limit = {
 						has_unit_leader = 6139
 					}
 					remove_unit_leader = 6139
@@ -621,6 +601,47 @@ country_event = {
 					}
 					remove_unit_leader = 6144
 				}
+			}
+			10 = {
+				if = {
+					limit = {
+						has_unit_leader = 6145
+					}
+					remove_unit_leader = 6145
+				}
+			}
+			10 = {
+				if = {
+					limit = {
+						has_unit_leader = 6146
+					}
+					remove_unit_leader = 6146
+				}
+			}
+			10 = {
+				if = {
+					limit = {
+						has_unit_leader = 6147
+					}
+					remove_unit_leader = 6147
+				}
+			}
+			10 = {
+				if = {
+					limit = {
+						has_unit_leader = 6148
+					}
+					remove_unit_leader = 6148
+				}		
+			}
+			10 = {
+				if = {
+					limit = {
+						has_unit_leader = 6149
+					}
+					remove_unit_leader = 6149
+				}
+				
 			}
 		}
 		add_war_support = -0.02
@@ -709,11 +730,11 @@ country_event = {
 	trigger = {
 		tag = SER
 		SER = {
-			is_puppet = no
+			is_subject = no
 		}
 		CRO = {
 			exists = yes
-			is_puppet = no
+			is_subject = no
 		}
 		OR = {
 			AUH = {
@@ -748,6 +769,9 @@ country_event = {
 		ALB = {
 			transfer_state = 44
 			transfer_state = 803
+		}
+		ITA = {
+			give_guarantee = ALB
 		}
 		ai_chance = {
 			factor = 100
@@ -825,7 +849,16 @@ country_event = {
 			add_state_core = 203
 		}
 		SER = {
-			dismantle_faction = yes
+			if = {
+				limit = {
+					is_in_faction = yes
+					is_faction_leader = no
+				}
+				leave_faction = yes
+				else = {
+					dismantle_faction = yes					
+				}	
+			}
 		}
 		if = {
 			limit = {
@@ -888,10 +921,25 @@ country_event = {
 	option = {
 		name = ww1_serbia.26.b
 		BUL = {
-			leave_faction = yes
+			if = {
+				limit = {
+					is_in_faction_with = SER
+					is_subject = no
+				}
+				leave_faction = yes
+			}
 		}
 		SER = {
-			dismantle_faction = yes
+			if = {
+				limit = {
+					is_in_faction = yes
+					is_faction_leader = no
+				}
+				leave_faction = yes
+				else = {
+					dismantle_faction = yes					
+				}	
+			}
 		}
 		if = {
 			limit = {
@@ -1131,6 +1179,76 @@ news_event = {
 		name = ww1_serbia.40.a
 		ai_chance = {
 			factor = 100
+		}
+	}
+}
+
+# Fix Fiume
+#################################
+country_event = {
+	id = ww1_serbia.513 # temporal id
+	hidden = yes
+	trigger = {
+		OR = {
+			original_tag = CRO
+			original_tag = SER
+		}
+		is_subject = no
+		has_global_flag = great_war_ends
+		OR = {
+			has_global_flag = versallies_treaty
+			has_global_flag = frankfurt_treaty
+		}
+		owns_state = 513
+		ITA = {
+			owns_state = 736
+		}
+		has_war = yes
+		NOT = {
+			has_country_flag = fiume_demilitarization
+			has_government = fascism
+			has_government = communism
+		}
+	}
+	mean_time_to_happen = {
+		days = 0
+	}
+	immediate = {
+		set_country_flag = fiume_demilitarization
+	}
+}
+country_event = {
+	id = ww1_serbia.514
+	hidden = yes
+	trigger = {
+		OR = {
+			original_tag = CRO
+			original_tag = SER
+		}
+		is_subject = no
+		has_global_flag = great_war_ends
+		OR = {
+			has_global_flag = versallies_treaty
+			has_global_flag = frankfurt_treaty
+		}
+		owns_state = 513
+		ITA = {
+			owns_state = 736
+		}
+		has_war = no
+		has_country_flag = fiume_demilitarization
+		NOT = {
+			has_government = fascism
+			has_government = communism
+		}
+	}
+	mean_time_to_happen = {
+		days = 0
+	}
+	immediate = {
+		clr_country_flag = fiume_demilitarization
+		513 = {
+			set_demilitarized_zone = yes
 		}
 	}
 }

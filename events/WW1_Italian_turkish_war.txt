@@ -9,6 +9,10 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = ww1_italianturkish.1.a
+		add_named_threat = { 
+   	 		threat = 5 
+    		name = italo_turkish_war
+		}
 		if = {
 			limit = {
 				TUR = {
@@ -36,8 +40,8 @@ country_event = {
 				is_ai = yes
 			}
 			set_province_controller = 1149
-			set_province_controller = 1130
 			set_province_controller = 11954
+			set_province_controller = 1130
 			division_template = {
 				name = "Divisione di Fanteria di Tobruk"
 				division_names_group = ITA_INF_01
@@ -79,6 +83,7 @@ country_event = {
 					division = "name = \"I/Regio Corpo di Truppe Coloniale\" division_template = \"Divisione di Fanteria di Tobruk\" start_experience_factor = 0.2"
 					owner = ROOT
 					prioritize_location = 1149
+					allow_spawning_on_enemy_provs = yes
 				}
 			}
 			450 = {
@@ -86,13 +91,30 @@ country_event = {
 					division = "name = \"II/Regio Corpo di Truppe Coloniale\" division_template = \"Divisione di Fanteria di Tobruk\" start_experience_factor = 0.2"
 					owner = ROOT
 					prioritize_location = 11954
+					allow_spawning_on_enemy_provs = yes
 				}
 				create_unit = {
 					division = "name = \"III/Regio Corpo di Truppe Coloniale\" division_template = \"Divisione di Fanteria di Tobruk\" start_experience_factor = 0.2"
 					owner = ROOT
 					prioritize_location = 1130
+					allow_spawning_on_enemy_provs = yes
+				}	
+			}	
+			if = {
+				limit = {
+					TUR = {
+						is_ai = no
+					}	
 				}
-			}
+				448 = {
+					create_unit = {
+						division = "name = \"IV/Regio Corpo di Truppe Coloniale\" division_template = \"Divisione di Fanteria di Tobruk\" start_experience_factor = 0.2"
+						owner = ROOT
+						prioritize_location = 1149
+						allow_spawning_on_enemy_provs = yes
+					}
+				}
+			}	
 		}
 		news_event = {
 			days = 1
@@ -149,6 +171,52 @@ country_event = {
 				# 	days = 7
 				# 	id = ww1_italy.10
 				# }
+			}
+			TUR = {
+				if = {
+					limit = {
+						TUR = {
+					        has_country_flag = TUR_libya_set_port_4047
+						}
+					}
+			        661 = {
+				         remove_building = {
+					        type = naval_base
+					        province = 4047
+					        level = 1
+				        }
+			        }
+				}
+				if = {
+					limit = {
+						TUR = {
+					        has_country_flag = TUR_libya_set_port_1198
+						}
+					}
+			        663 = {
+				        remove_building = {
+					        type = naval_base
+					        province = 1198
+					        level = 1
+				        }
+			        }
+				}
+			    if = {
+				    limit = {
+					    has_country_flag = TUR_italo_turkish_war_arab_minorities
+				    }
+			        every_state = {
+				        limit = {
+					        is_core_of = LBA
+					        has_state_flag = TUR_removed_libyan_minority
+				        }
+				        add_dynamic_modifier = { modifier = TUR_arab_minority }
+				        set_state_flag = TUR_arab_state
+			        }
+			    }
+			}
+			TUR = {
+			    delete_unit_template_and_units = { division_template = "Trablusgarp Milisi" }
 			}
 		}
 		set_global_flag = italo_turkish_war_ends
@@ -219,12 +287,17 @@ country_event = {
 				transfer_state = PREV
 			}
 			hidden_effect = {
-				start_resistance = ITA
+				start_resistance = yes
 				set_resistance = 45
 				set_compliance = -100
 			}
 		}
 		hidden_effect = {
+			448 = { set_state_name = "Tripoli" }
+			661 = { set_state_name = "Tripolitania" }
+			450 = { set_state_name = "Benghazi" }
+		    set_province_name = { id = 1149 name = "Tripoli" }
+		    set_province_name = { id = 11954 name = "Benghazi" }
 			ITA = {
 				set_country_flag = italo_turkish_war_winner
 			}
@@ -275,6 +348,51 @@ country_event = {
 					}
 					transfer_state = 812
 				}
+			}
+			TUR = {
+				if = {
+					limit = {
+						TUR = {
+					        has_country_flag = TUR_libya_set_port_4047
+						}
+					}
+			        661 = {
+				         remove_building = {
+					        type = naval_base
+					        province = 4047
+					        level = 1
+				        }
+			        }
+				}
+				if = {
+					limit = {
+						TUR = {
+					        has_country_flag = TUR_libya_set_port_1198
+						}
+					}
+			        663 = {
+				         remove_building = {
+					        type = naval_base
+					        province = 1198
+					        level = 1
+				        }
+			        }
+				}
+			    if = {
+				    limit = {
+					    has_country_flag = TUR_italo_turkish_war_arab_minorities
+				    }
+			        every_state = {
+				        limit = {
+					        is_core_of = LBA
+					        has_state_flag = TUR_removed_libyan_minority
+				        }
+				        set_state_flag = TUR_arab_state
+			        }
+			    }
+			}
+			TUR = {
+			    delete_unit_template_and_units = { division_template = "Trablusgarp Milisi" }
 			}
 		}
 	}

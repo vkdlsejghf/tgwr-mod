@@ -4,7 +4,8 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			tag = FRC
+			original_tag = FRA
+			has_country_flag = FRA_socialist_france_flag
 		}
 	}
 	default = no
@@ -26,6 +27,7 @@ focus_tree = {
 		}
 		available = {
 			has_war_with = NFA
+			has_government = communism
 		}
 		completion_reward = {
 			add_manpower = 25000
@@ -49,6 +51,7 @@ focus_tree = {
 		}
 		available = {
 			has_war_with = NFA
+			has_government = communism
 		}
 		completion_reward = {
 			add_manpower = 25000
@@ -71,9 +74,16 @@ focus_tree = {
 			factor = 0
 		}
 		bypass = {
-			GER = { is_subject_of = FRC }
+			GER = {
+				OR = {
+					is_subject_of = FRC
+					exists = no
+				}
+			}
 		}
 		available = {
+			is_subject = no
+			has_government = communism
 			strength_ratio = {
  				tag = GER
 				ratio > 1.5
@@ -82,25 +92,10 @@ focus_tree = {
 				exists = yes
 				NOT = { has_government = communism }
 			}
-			NFA = {
-				exists = no
-			}
-			ENG = {
-				OR = {
-					exists = no
-					has_government = communism
-				}
-			}
-			ITA = {
-				OR = {
-					exists = no
-					has_government = communism
-				}
-			}
 		}
 		completion_reward = {
 			create_wargoal = {
-				type = topple_government
+				type = puppet_wargoal_focus
 				target = GER
 			}
 		}
@@ -119,63 +114,28 @@ focus_tree = {
 			focus = FRC_destory_the_counterrevolution 
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 0
 		}
 		bypass = {
 			ENG = { is_subject_of = FRC }
 		}
 		available = {
-			OR = {
-				ENG = {
-					exists = yes
-					NOT = { has_government = communism }
-				}
-				BRE = {
-					exists = yes
-					NOT = { has_government = communism }
-				}
-				UOB = {
-					exists = yes
-					NOT = { has_government = communism }
+			is_subject = no
+			has_government = communism
+			ENG = {
+				NOT = {
+					has_government = communism
+					OR = {
+						has_country_flag = great_war_loser
+						has_country_flag = ENG_nationalist_britain_flag
+					}					
 				}
 			}
 		}
 		completion_reward = {
-			if = {
-				limit = {
-					ENG = {
-						exists = yes
-						NOT = { has_government = communism }
-					}
-				}
-				create_wargoal = {
-					type = topple_government
-					target = ENG
-				}
-			}
-			if = {
-				limit = {
-					BRE = {
-						exists = yes
-						NOT = { has_government = communism }
-					}
-				}
-				create_wargoal = {
-					type = topple_government
-					target = BRE
-				}
-			}
-			if = {
-				limit = {
-					UOB = {
-						exists = yes
-						NOT = { has_government = communism }
-					}
-				}
-				create_wargoal = {
-					type = topple_government
-					target = UOB
-				}
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = ENG
 			}
 		}
 	}
@@ -193,27 +153,17 @@ focus_tree = {
 			focus = FRC_destory_the_counterrevolution 
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 0
 		}
 		bypass = {
 			ITA = { is_subject_of = FRC }
 		}
 		available = {
+			is_subject = no
+			has_government = communism
 			OR = {
-				ITA = {
-					exists = yes
-					NOT = { has_government = communism }
-				}
-				ITS = {
-					exists = yes
-					NOT = { has_government = communism }
-				}
-				ROI = {
-					exists = yes
-					NOT = { has_government = communism }
-				}
-				SRI = {
-					exists = yes
+				any_other_country = {
+					original_tag = ITA
 					NOT = { has_government = communism }
 				}
 				SIC = {
@@ -227,52 +177,16 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			if = {
+			every_other_country = {
 				limit = {
-					ITA = {
-						exists = yes
-						NOT = { has_government = communism }
+					original_tag = ITA
+					NOT = { has_government = communism }
+				}
+				FRA = {
+					create_wargoal = {
+						type = puppet_wargoal_focus
+						target = PREV
 					}
-				}
-				create_wargoal = {
-					type = topple_government
-					target = ITA
-				}
-			}
-			if = {
-				limit = {
-					ITS = {
-						exists = yes
-						NOT = { has_government = communism }
-					}
-				}
-				create_wargoal = {
-					type = topple_government
-					target = ITS
-				}
-			}
-			if = {
-				limit = {
-					ROI = {
-						exists = yes
-						NOT = { has_government = communism }
-					}
-				}
-				create_wargoal = {
-					type = topple_government
-					target = ROI
-				}
-			}
-			if = {
-				limit = {
-					SRI = {
-						exists = yes
-						NOT = { has_government = communism }
-					}
-				}
-				create_wargoal = {
-					type = topple_government
-					target = SRI
 				}
 			}
 			if = {
@@ -283,7 +197,7 @@ focus_tree = {
 					}
 				}
 				create_wargoal = {
-					type = topple_government
+					type = puppet_wargoal_focus
 					target = SIC
 				}
 			}
@@ -295,7 +209,7 @@ focus_tree = {
 					}
 				}
 				create_wargoal = {
-					type = topple_government
+					type = puppet_wargoal_focus
 					target = SRD
 				}
 			}
@@ -315,9 +229,12 @@ focus_tree = {
 			focus = FRC_destory_the_counterrevolution 
 		}
 		bypass = {
+			is_subject = no
 			NFA = { exists = no }
 		}
 		available = {
+			is_subject = no
+			has_government = communism
 			strength_ratio = {
  				tag = NFA
 				ratio > 1.5
@@ -333,6 +250,9 @@ focus_tree = {
 				target = NFA
 			}
 		}
+		ai_will_do = {
+			factor = 0
+		}
 	}
 
 	#Focus for Constitutional Convention
@@ -346,6 +266,12 @@ focus_tree = {
 		prerequisite = { focus = FRC_reconciliation }
 		ai_will_do = {
 			factor = 1
+		}
+		available = {
+			OR = {
+				has_government = communism
+				has_government = democratic
+			}		
 		}
 		completion_reward = {
 			add_political_power = 120
@@ -367,6 +293,9 @@ focus_tree = {
 		prerequisite = { focus = FRC_revolution_to_the_utmost }
 		ai_will_do = {
 			factor = 2
+		}
+		available = {
+			has_government = communism
 		}
 		completion_reward = {
 			add_stability = -0.1
@@ -399,6 +328,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		available = {
+			has_government = communism
+		}
 		completion_reward = {
 			add_war_support = 0.1
 			add_stability = -0.05
@@ -421,6 +353,12 @@ focus_tree = {
 		mutually_exclusive = { focus = FRC_revolution_to_the_utmost }
 		ai_will_do = {
 			factor = 1
+		}
+		available = {
+			OR = {
+				has_government = communism
+				has_government = democratic
+			}		
 		}
 		completion_reward = {
 			add_stability = 0.1
@@ -453,6 +391,9 @@ focus_tree = {
 		prerequisite = { 
 			focus = FRC_straighten_the_order 
 		}
+		available = {
+			has_government = communism
+		}
 		ai_will_do = {
 			factor = 1
 		}
@@ -472,6 +413,9 @@ focus_tree = {
 		prerequisite = { focus = FRC_a_triumph_of_revolution }
 		ai_will_do = {
 			factor = 1
+		}
+		available = {
+			has_government = communism
 		}
 		bypass = {
 			custom_trigger_tooltip = {
@@ -614,6 +558,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 1
 		}
+		available = {
+			has_government = communism
+		}
 		completion_reward = {
 			add_ideas = { FRA_womens_suffrage }
 			add_popularity = {
@@ -631,6 +578,9 @@ focus_tree = {
 		y = 4
 		cost = 10
 		available_if_capitulated = yes
+		available = {
+			has_government = communism
+		}
 		prerequisite = { focus = FRC_a_triumph_of_revolution }
 		ai_will_do = {
 			factor = 1
@@ -652,6 +602,7 @@ focus_tree = {
 			factor = 1
 		}
 		available = {
+			has_government = communism
 			NOT = { has_war_with = NFA }
 		}
 		completion_reward = {
@@ -879,6 +830,7 @@ focus_tree = {
 		}
 		available = {
 			has_war_with = NFA
+			has_government = communism
 		}
 		completion_reward = {
 			add_stability = 0.15
@@ -903,6 +855,7 @@ focus_tree = {
 		}
 		available = {
 			has_war_with = NFA
+			has_government = communism
 		}
 		completion_reward = {
 			add_manpower = 10000
@@ -931,6 +884,7 @@ focus_tree = {
 		}
 		available = {
 			has_war_with = NFA
+			has_government = communism
 		}
 		completion_reward = {
 			add_ideas = FRA_idea_french_women

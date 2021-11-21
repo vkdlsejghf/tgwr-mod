@@ -63,52 +63,6 @@ USA_pp_banana_wars = {
 		value = 100
 	}
 }
-USA_volunteers_entente = {
-	enable = {
-		original_tag = USA
-		date > 1914.8.1
-		has_government = democratic
-	}
-	abort = {
-		NOT = { has_government = democratic }
-		OR = {
-			has_war_with = ENG
-			has_war_with = FRA
-			is_in_faction = yes
-			date > 1917.1.1
-		}
-	}
-	ai_strategy = {
-		type = send_volunteers_desire
-		id = "FRA"
-		value = 200
-	}
-	ai_strategy = {
-		type = send_volunteers_desire
-		id = "ENG"
-		value = 200
-	}
-}
-USA_volunteers_cp = {
-	enable = {
-		original_tag = USA
-		date > 1914.8.1
-		has_government = neutrality
-	}
-	abort = {
-		NOT = { has_government = neutrality }
-		OR = {
-			has_war_with = GER
-			is_in_faction = yes
-			date > 1917.1.1
-		}
-	}
-	ai_strategy = {
-		type = send_volunteers_desire
-		id = "GER"
-		value = 200
-	}
-}
 USA_support_white_RUS = {
 	enable = {
 		original_tag = USA
@@ -247,5 +201,35 @@ USA_invade_every_damned_country_in_latin_america = {
 		type = front_unit_request
 		area = south_america
 		value = 50
+	}
+}
+
+USA_help_FRA_against_GER = {
+	allowed = {
+		tag = USA
+	}
+	enable = {
+		FRA = {
+			has_war_with = GER
+			has_capitulated = no
+		}
+		USA = {
+			has_war_with = GER
+		}
+	}
+
+	ai_strategy = {
+		type = front_unit_request
+		tag = GER
+		value = 250
+	}
+
+	ai_strategy = {
+		type = front_control
+		tag = GER
+		ratio = 0.4
+		
+		priority = 100
+		ordertype = front
 	}
 }

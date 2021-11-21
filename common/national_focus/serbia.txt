@@ -54,6 +54,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		completion_reward = {
 			add_war_support = 0.1
+			add_ideas = extensive_conscription
 		}
 		ai_will_do = {
 			factor = 100
@@ -87,6 +88,12 @@ focus_tree = {
 		}
 		x = 5
 		y = 1
+		available = {
+			OR = {
+				is_subject = no
+				has_government = democratic
+			}
+		}
 		available_if_capitulated = yes
 		completion_reward = {
 			add_timed_idea = {
@@ -95,11 +102,10 @@ focus_tree = {
 			}
 			create_country_leader = {
 				name = "Nikola Pasic"
-				desc = SER_peter_i_DESC
 				picture = "gfx/leaders/SER/SER_nikola_pasic.dds"
 				expire = "1935.1.1"
 				ideology = conservatism
-				traits = {conservative_grandee trait_conservatism}
+				traits = {conservative_grandee}
 			}
 		}
 		ai_will_do = {
@@ -152,7 +158,7 @@ focus_tree = {
 				SER_idea_alexander_i
 			}
 			create_country_leader = {
-				name = "Alexander I"
+				name = "Prince regent Alexander"
 				picture = "gfx/leaders/SER/SER_alexander_i.dds"
 				expire = "1935.1.1"
 				ideology = autocracy
@@ -160,6 +166,7 @@ focus_tree = {
 					divisive_absolute_monarch trait_autocracy
 				}
 			}
+			remove_unit_leader = 82052
 		}
 	}
 	focus = {
@@ -194,6 +201,12 @@ focus_tree = {
 		prerequisite = {
 			focus = SER_narodna_skupstina
 		}
+		available = {
+			OR = {
+				is_subject = no
+				has_government = neutrality
+			}
+		}
 		mutually_exclusive = {
 			focus = SER_Strengthen_civilian_authorities
 			focus = SER_strengthen_power_of_militaries
@@ -216,9 +229,10 @@ focus_tree = {
 					communism = 0
 					neutrality = 67
 				}
+				remove_unit_leader = 82052
 			}
 			create_country_leader = {
-				name = "Alexander I"
+				name = "Prince regent Alexander"
 				picture = "gfx/leaders/SER/SER_alexander_i.dds"
 				expire = "1935.1.1"
 				ideology = autocracy
@@ -288,6 +302,9 @@ focus_tree = {
 		prerequisite = {
 			focus = SER_narodna_skupstina
 		}
+		available = {
+			is_subject = no
+		}
 		mutually_exclusive = {
 			focus = SER_Strengthen_civilian_authorities
 			focus = SER_establish_regency
@@ -345,11 +362,15 @@ focus_tree = {
 		available_if_capitulated = yes
 		available = {
 			fascism > 0.3
+			is_subject = no
 		}
 		bypass = {
 			has_government = fascism
 		}
 		completion_reward = {
+			hidden_effect = {
+				remove_unit_leader = 82052
+			}
 			set_politics = {
 				ruling_party = fascism
 				last_election = "1908.5.31"
@@ -697,10 +718,13 @@ focus_tree = {
 			}
 		}
 		ai_will_do = {
-			factor = 10
+			factor = 0
 			modifier = {
-				factor = 500
-				date > 1912.1.1
+				add = 500
+				OR = {
+					date > 1912.1.1
+					has_global_flag = italo_turkish_war_ends		
+				}
 			}
 		}
 	}
@@ -717,6 +741,7 @@ focus_tree = {
 		available = {
 			threat > 0.05
 			is_subject = no
+			is_faction_leader = yes
 			OR = {
 				is_in_faction_with = BUL
 				is_in_faction_with = GRE
@@ -736,19 +761,8 @@ focus_tree = {
 				}
 				has_war_with = TUR
 				is_in_faction_with = TUR
-				TUR = {
-					all_owned_state = {
-						NOT = {
-							is_core_of = SER
-							is_core_of = MNT
-							is_core_of = BUL
-						}
-					}
-				}
-				AND = {
-					has_global_flag = kis_firstbalkan_war_slavic
-					is_in_faction_with = RUS
-				}
+				has_global_flag = kis_firstbalkan_war
+				has_country_flag = won_balkan_war
 			}
 		}
 		will_lead_to_war_with = TUR
@@ -758,7 +772,7 @@ focus_tree = {
 			}
 			add_timed_idea = {
 				idea = SER_idea_balkan_liberation
-				days = 180
+				days = 220
 			}
 			BUL = {
 				if = {
@@ -771,7 +785,7 @@ focus_tree = {
 					}
 					add_timed_idea = {
 						idea = SER_idea_balkan_liberation
-						days = 180
+						days = 220
 					}
 				}
 			}
@@ -786,7 +800,7 @@ focus_tree = {
 					}
 					add_timed_idea = {
 						idea = SER_idea_balkan_liberation
-						days = 180
+						days = 220
 					}
 				}
 			}
@@ -801,7 +815,7 @@ focus_tree = {
 					}
 					add_timed_idea = {
 						idea = SER_idea_balkan_liberation
-						days = 180
+						days = 220
 					}
 				}
 			}
@@ -814,7 +828,7 @@ focus_tree = {
 			factor = 100
 			modifier = {
 				factor = 0
-				date < 1912.1.1
+				date < 1912.9.1
 			}
 		}
 	}
@@ -828,6 +842,13 @@ focus_tree = {
 		}
 		x = 13
 		y = 4
+		available = {
+			is_subject = no
+			OR = {
+				has_global_flag = kis_firstbalkanwar_victory
+				has_global_flag = kis_firstbalkanwar_lose
+			}
+		}
 		completion_reward = {
 			add_war_support = 0.05
 			add_popularity = {
@@ -837,6 +858,9 @@ focus_tree = {
 			unlock_decision_category_tooltip = SER_black_hand_category
 			add_state_claim = 225
 			add_state_claim = 199
+			add_state_core = 106
+			add_state_core = 203
+			add_state_core = 759
 		}
 	}
 	focus = {
@@ -880,13 +904,21 @@ focus_tree = {
 			is_subject = no
 			has_war = no
 			BUL = {
-				owns_state = 759
+				OR = {
+					owns_state = 759
+					owns_state = 203
+					owns_state = 106
+				}
 			}
 		}
 		bypass = {
 			OR = {
 				has_global_flag = kis_secondbalkan_war
-				owns_state = 759
+				AND = {
+					owns_state = 759
+					owns_state = 203
+					owns_state = 106
+				}
 				OR = {
 					has_country_flag = odbili_albaniju
 					AND = {
@@ -908,6 +940,20 @@ focus_tree = {
 				}
 			}
 		}
+		ai_will_do = {
+		    base = 1
+			modifier = {
+	            factor = 0
+			    is_historical_focus_on = yes
+				BUL = { is_ai = yes }
+				BUL = {
+					NOT = {
+						owns_state = 203
+						owns_state = 106
+					}
+				}
+			}
+		}	
 	}
 	focus = {
 		id = SER_intervention_in_albania
@@ -1770,12 +1816,14 @@ focus_tree = {
 		x = 6
 		y = 6
 		available = {
+			has_war = no
 			FRA = {
 				is_in_faction = yes
 			}
 			NOT = {
 				has_war_with = FRA
 			}
+			is_subject = no
 		}
 		completion_reward = {
 			FRA = {
@@ -1787,6 +1835,9 @@ focus_tree = {
 					modifier = small_increase
 				}
 			}
+		}
+		ai_will_do = {
+		    base = 0
 		}
 	}
 	focus = {
@@ -1833,21 +1884,27 @@ focus_tree = {
 						}
 					}
 				}
+				MNT = {
+					create_wargoal = {
+						type = take_state_focus
+						target = PREV
+						generator = {
+							104
+							103
+							109
+							102
+						}
+					}
+				}
 			}
 		}
 		ai_will_do = {
-			factor = 10
+			base = 0
 			modifier = {
-				factor = 0
-				date < 1915.1.1
-			}
-			modifier = {
-				factor = 0
+				add = 100
+				has_war = no
 				AUH = {
-					has_war = no
-				}
-				SER = {
-					has_war = yes
+					surrender_progress > 0.5
 				}
 			}
 		}
@@ -1906,7 +1963,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SER_form_yugoslavia
-		icon = GFX_goal_generic_major_alliance
+		icon = GFX_focus_YUG_deal
 		cost = 10
 		prerequisite = {
 			focus = SER_intervention_in_albania
@@ -1914,6 +1971,10 @@ focus_tree = {
 		x = 15
 		y = 7
 		available = {
+			NOT = {
+				# If Serbia was one of a losers of the Great War, this would have been banned, just as Austria was prohibited from unifying with Germany.
+				has_country_flag = great_war_loser
+			}
 			has_war = no
 			OR = {
 				AND = {
@@ -1936,7 +1997,9 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			set_global_flag = form_yugoslavia
+			hidden_effect = {
+				set_global_flag = form_yugoslavia
+			}
 			if = {
 				limit = {
 					CRO = {
@@ -1948,18 +2011,19 @@ focus_tree = {
 						target = CRO
 						transfer_troops = no
 					}
+					add_ideas = YUG_idea_croatian_opposition
 				}
 			}
 			if = {
 				limit = {
 					MNT = {
-						is_ai = yes
+						is_subject_of = SER
 					}
 				}
 				SER = {
 					annex_country = {
 						target = MNT
-						transfer_troops = no
+						transfer_troops = yes
 					}
 				}
 			}
@@ -1970,17 +2034,10 @@ focus_tree = {
 					}
 				}
 				set_cosmetic_tag = SER_YUG
-			}
-			if = {
-				limit = {
-					SER = {
-						NOT = {
-							owns_state = 102
-						}
-					}
+				else = {
+					# They can't be named as Kingdom of Serbs, Croats and 'Slovenes' without owning Slevenia. This happens when Serbia is Austrian puppet, Illyria.
+					set_cosmetic_tag = YUG
 				}
-				# They can't be named as Kingdom of Serbs, Croats and 'Slovenes' without owning Slevenia. This happens when Serbia is Austrian puppet, Illyria.
-				set_cosmetic_tag = YUG
 			}
 		}
 		ai_will_do = {
@@ -2000,6 +2057,7 @@ focus_tree = {
 		x = 8
 		y = 6
 		available = {
+			has_war = no
 			OR = {
 				BUL = {
 					exists = yes
@@ -2088,6 +2146,9 @@ focus_tree = {
 					}
 				}
 			}
+		}
+		ai_will_do = {
+		    base = 0
 		}
 	}
 	focus = {

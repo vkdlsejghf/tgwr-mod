@@ -89,6 +89,106 @@ operations = {
 	#}
 }
 foreign_politics = {
+	RUS_help_SER = {
+		allowed = {
+			original_tag = RUS
+		}
+		target_trigger = {
+			FROM = {
+				tag = AUH
+			}
+		}
+		visible = {
+			is_subject = no
+		    SER = {
+				is_faction_leader = yes
+				is_in_faction_with = BUL
+				has_war_with = AUH
+			}	
+			NOT = {
+			    has_war_with = AUH 
+				is_in_faction_with = SER
+				is_in_faction_with = AUH
+			}
+		}	
+		available = {
+			SER = {
+				is_in_faction_with = BUL
+				has_war_with = AUH
+				surrender_progress > 0.1
+			}
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				add = 1000
+				SER = {
+					surrender_progress > 0.5
+				}
+			}
+			modifier = {
+				add = 1000
+				GER = {
+					has_war_with = SER 
+				    NOT = { is_in_faction_with = ROOT }
+				}
+			}
+			modifier = {
+				factor = 0
+				has_war = yes
+			}
+		}
+		days_remove = 10
+		war_with_target_on_timeout = yes
+		remove_effect = {
+			if = {
+				limit = {
+					is_faction_leader = yes
+				}
+				every_country = {
+					limit = {
+						OR = {
+							is_in_faction_with = SER
+							tag = SER				
+						}
+						
+					}
+					leave_faction = yes
+					ROOT = { add_to_faction = PREV }
+				}
+			}	
+            if = {
+				limit = {
+					is_faction_leader = no
+					is_in_faction = yes
+				}
+				every_country = {
+				    limit = {
+						is_in_faction_with = ROOT
+						is_faction_leader = yes
+                    }
+					every_country = {
+						limit = {
+							OR = {
+								is_in_faction_with = SER
+								tag = SER
+							}
+							
+						}
+						leave_faction = yes
+						PREV.PREV.PREV = { add_to_faction = PREV }
+					}
+				}
+			}
+			if = {
+				limit = {
+					is_faction_leader = no
+					is_in_faction = no
+				}
+				SER = { add_to_faction = ROOT }
+			}
+		}
+	}
 	RUS_claim_762 = {
 		allowed = {
 			original_tag = RUS
@@ -238,38 +338,6 @@ foreign_politics = {
 			add_state_claim = 717
 		}
 	}
-	RUS_release_KOR = {
-		allowed = {
-			original_tag = RUS
-		}
-		available = {
-			has_full_control_of_state = 525
-			has_full_control_of_state = 527
-			has_full_control_of_state = 800
-			has_full_control_of_state = 801
-			has_full_control_of_state = 802
-			NOT = { country_exists = KOR }
-		}
-		ai_will_do = {
-			factor = 100
-		}
-		cost = 0
-		visible = {
-			OR = {
-				controls_state = 525
-				controls_state = 527
-				controls_state = 800
-				controls_state = 801
-				controls_state = 802
-				has_war_with = JAP
-			}
-			NOT = { country_exists = KOR }
-		}
-		fire_only_once = no
-		complete_effect = {
-			RUS = { country_event = ww1_korea.2 }
-		}
-	}
 }
 political_actions = {	
 	RUS_move_capital_to_moscow = {
@@ -328,7 +396,7 @@ political_actions = {
 	}
 	RUS_draft_the_constitution = {
 		visible = {
-			has_completed_focus = RUS_convene_iv_state_duma
+			has_completed_focus = RUS_centrist_duma
 			has_government = neutrality
 		}
 		cost = 50
@@ -361,7 +429,7 @@ political_actions = {
 	}
 	RUS_raid_on_marxist_printing_house = {
 		visible = {
-			has_completed_focus = RUS_convene_iv_state_duma
+			has_completed_focus = RUS_centrist_duma
 			NOT = { has_government = communism }
 		}
 		icon = generic_arrest
@@ -403,7 +471,7 @@ political_actions = {
 	}
 	RUS_eradicate_bureaucratic_bribery = { #tsar visit
 		visible = {
-			has_completed_focus = RUS_convene_iv_state_duma
+			has_completed_focus = RUS_centrist_duma
 			has_government = neutrality
 		}
 		icon = generic_nationalism
@@ -493,6 +561,9 @@ propaganda_efforts = {
 		available = {
 			owns_state = 341 
 			has_full_control_of_state = 341
+			hidden_trigger = {
+				has_global_flag = kostantiniyye_is_constantinople
+			}
 		}
 		ai_will_do = {
 			factor = 100
@@ -595,9 +666,9 @@ RUS_tsar_decision = {
 		icon = eng_support_imperialist_coup
 		available = {
 			OR = {
-				NOT = { 
+				NOT = {
 					has_country_leader = {
-						name = "Nicholas II"
+						name = "Nikolai II"
 						ruling_only = yes
 					} 
 				}
@@ -611,7 +682,7 @@ RUS_tsar_decision = {
 		activation = {
 			tag = RUS
 			has_country_leader = {
-				name = "Nicholas II"
+				name = "Nikolai II"
 				ruling_only = yes
 			}		
 			OR = {
@@ -619,45 +690,43 @@ RUS_tsar_decision = {
 				has_idea = RUS_threat_of_revolution2
 				has_idea = RUS_threat_of_revolution3
 			}
-			has_war = yes
 			OR = {
 				AND = {
-					has_stability < 0.35
-					surrender_progress > 0.1
+					has_stability < 0.50
+					surrender_progress > 0.05
 					casualties > 2500000
 				}
 				AND = {
-					has_stability < 0.40
-					surrender_progress > 0.2
+					has_stability < 0.60
+					surrender_progress > 0.1
 					casualties > 2200000
 				}
 				AND = {
-					has_stability < 0.45
-					surrender_progress > 0.3
+					has_stability < 0.70
+					surrender_progress > 0.2
 					casualties > 1800000
 				}
 				AND = {
-					has_stability < 0.50
-					surrender_progress > 0.4
+					has_stability < 0.70
+					surrender_progress > 0.3
 					casualties > 1300000
 				}
 				AND = {
-					has_stability < 0.60
-					surrender_progress > 0.5
+					has_stability < 0.90
+					surrender_progress > 0.4
 					casualties > 1000000
 				}
 				AND = {
-					has_stability < 0.70
-					surrender_progress > 0.6
+					surrender_progress > 0.5
 					casualties > 500000
 				}
 				AND = {
-					has_stability < 0.80
-					surrender_progress > 0.7
+					surrender_progress > 0.6
 					casualties > 100000
 				}
 				AND = {
-					surrender_progress > 0.8
+					surrender_progress > 0.7
+					casualties > 50000
 				}
 			}
 			
@@ -668,68 +737,20 @@ RUS_tsar_decision = {
 				NOT = { has_completed_focus = RUS_Soviet_Russia }
 				NOT = { has_completed_focus = RUS_provisional_committee }
 			}
-			NOT = { has_global_flag = nicholas_ii_abdication }
 			NOT = { has_global_flag = russian_revolution }
 		}
 		allowed = {
 			original_tag = RUS
 		}
 		visible = {
-			has_war = yes
-			OR = {
-				AND = {
-					has_stability < 0.35
-					surrender_progress > 0.1
-					casualties > 2500000
-				}
-				AND = {
-					has_stability < 0.40
-					surrender_progress > 0.2
-					casualties > 2200000
-				}
-				AND = {
-					has_stability < 0.45
-					surrender_progress > 0.3
-					casualties > 1800000
-				}
-				AND = {
-					has_stability < 0.50
-					surrender_progress > 0.4
-					casualties > 1300000
-				}
-				AND = {
-					has_stability < 0.60
-					surrender_progress > 0.5
-					casualties > 1000000
-				}
-				AND = {
-					has_stability < 0.70
-					surrender_progress > 0.6
-					casualties > 500000
-				}
-				AND = {
-					has_stability < 0.80
-					surrender_progress > 0.7
-					casualties > 100000
-				}
-				AND = {
-					surrender_progress > 0.8
-				}
-			}
+			has_war = yes		
 		}
 		cancel_if_not_visible = yes
 		fire_only_once = yes
 		is_good = no
 		timeout_effect = {
 			set_global_flag = russian_revolution
-			if = {
-				limit = { has_war = yes }
-				country_event = { id = rusrevolt.2 }
-			}
-			if = {
-				limit = { has_war = no }
-				country_event = { id = rusrevolt.20 }
-			}
+			country_event = { id = rusrevolt.2 }
 		}	
 	}
 	RUS_abdicate_in_favor_of_brother = {
@@ -739,7 +760,7 @@ RUS_tsar_decision = {
 		visible = {
 			NOT = { has_global_flag = russian_revolution }
 			has_country_leader = {
-				name = "Nicholas II"
+				name = "Nikolai II"
 				ruling_only = yes
 			}
 			has_war = yes
@@ -749,7 +770,7 @@ RUS_tsar_decision = {
 		available = {
 			has_active_mission = RUS_mission_tsar_abdication
 			has_country_leader = {
-				name = "Nicholas II"
+				name = "Nikolai II"
 				ruling_only = yes
 			}
 		}
@@ -783,7 +804,7 @@ RUS_tsar_decision = {
 		visible = {
 			NOT = { has_global_flag = russian_revolution }
 			has_country_leader = {
-				name = "Nicholas II"
+				name = "Nikolai II"
 				ruling_only = yes
 			}
 			has_war = yes
@@ -793,7 +814,7 @@ RUS_tsar_decision = {
 		available = {
 			has_active_mission = RUS_mission_tsar_abdication
 			has_country_leader = {
-				name = "Nicholas II"
+				name = "Nikolai II"
 				ruling_only = yes
 			}
 		}
@@ -1035,7 +1056,7 @@ crisis = {
 					NOT = { has_global_flag = russian_revolution }
 					NOT = {
 						has_country_leader = {
-							name = "Nicholas II"
+							name = "Nikolai II"
 							ruling_only = yes
 						}
 					}
@@ -1058,12 +1079,12 @@ crisis = {
 		}		
 		available = {
 			OR = {
+			    has_capitulated = yes
 				has_war = no
 				has_government = communism
 				has_global_flag = great_war_ends
-			}
-			NOT = {
-				OR = { 
+				has_capitulated = yes
+				NOT = {
 					has_idea = RUS_threat_of_revolution
 					has_idea = RUS_threat_of_revolution2
 					has_idea = RUS_threat_of_revolution3 
@@ -1072,7 +1093,9 @@ crisis = {
 		}		
 		activation = {
 			tag = RUS
-			OR = { 
+			has_war = yes
+			has_capitulated = no
+			OR = {
 				has_idea = RUS_threat_of_revolution
 				has_idea = RUS_threat_of_revolution2
 				has_idea = RUS_threat_of_revolution3 
@@ -1083,7 +1106,7 @@ crisis = {
 					NOT = { has_global_flag = russian_revolution }
 					NOT = { 
 						has_country_leader = {
-							name = "Nicholas II"
+							name = "Nikolai II"
 							ruling_only = yes
 						}
 					}
@@ -1445,7 +1468,7 @@ RUS_civil_war = {
 		available = {
 			has_war_with = SOV
 			has_manpower > 30000
-			ESR = { 
+			EST = { 
 				exists = yes
 				is_subject = no
 			}
@@ -1454,7 +1477,7 @@ RUS_civil_war = {
 		days_remove = 25
 		fire_only_once = yes
 		remove_effect = {
-			ESR = { country_event = { id = ww1_estonia.2 } }
+			EST = { country_event = { id = ww1_estonia.2 } }
 		}
 		ai_will_do = {
 			factor = 10
@@ -1613,7 +1636,7 @@ RUS_reunite_white_generals = {
 				has_completed_focus = RUS_reunite_white_generals
 				has_completed_focus = RUS_united_russia
 			}
-			SIB = { exists = yes is_puppet_of = RUS }
+			SIB = { exists = yes is_subject_of = RUS }
 		}
 		
 		cost = 50
@@ -1658,7 +1681,7 @@ RUS_reunite_white_generals = {
 				has_completed_focus = RUS_reunite_white_generals
 				has_completed_focus = RUS_united_russia
 			}
-			CRI = { exists = yes is_puppet_of = RUS }
+			CRI = { exists = yes is_subject_of = RUS }
 		}
 		
 		cost = 50
@@ -1699,7 +1722,7 @@ RUS_reunite_white_generals = {
 				has_completed_focus = RUS_reunite_white_generals
 				has_completed_focus = RUS_united_russia
 			}
-			KBN = { exists = yes is_puppet_of = RUS }
+			KBN = { exists = yes is_subject_of = RUS }
 		}
 		
 		cost = 50
@@ -1744,7 +1767,7 @@ RUS_reunite_white_generals = {
 				has_completed_focus = RUS_reunite_white_generals
 				has_completed_focus = RUS_united_russia
 			}
-			DKB = { exists = yes is_puppet_of = RUS }
+			DKB = { exists = yes is_subject_of = RUS }
 		}
 		
 		cost = 50
@@ -1789,7 +1812,7 @@ RUS_reunite_white_generals = {
 				has_completed_focus = RUS_reunite_white_generals
 				has_completed_focus = RUS_united_russia
 			}
-			MOU = { exists = yes is_puppet_of = RUS }
+			MOU = { exists = yes is_subject_of = RUS }
 		}
 		
 		cost = 50
@@ -1830,7 +1853,7 @@ RUS_reunite_white_generals = {
 				has_completed_focus = RUS_reunite_white_generals
 				has_completed_focus = RUS_united_russia
 			}
-			KAZ = { exists = yes is_puppet_of = RUS }
+			KAZ = { exists = yes is_subject_of = RUS }
 		}
 		
 		cost = 50
@@ -1871,7 +1894,7 @@ RUS_reunite_white_generals = {
 				has_completed_focus = RUS_reunite_white_generals
 				has_completed_focus = RUS_united_russia
 			}
-			TMS = { exists = yes is_puppet_of = RUS }
+			TMS = { exists = yes is_subject_of = RUS }
 		}
 		
 		cost = 50
@@ -1908,9 +1931,7 @@ RUS_release_country = {
 			any_owned_state = {
 				is_core_of = FIN
 				is_fully_controlled_by = RUS
-			}	
-			FIN = { exists = no }
-			NOT = { has_global_flag = finland_released }
+			}		
 		}
 		ai_will_do = {
 			factor = 150
@@ -1919,27 +1940,25 @@ RUS_release_country = {
 			state = 111
 		}
 		visible = {
+			FIN = { exists = no }
+			is_subject = no
 			has_completed_focus = RUS_self_determination_of_nations
 		}
-		cost = 10
+		cost = 30
 		fire_only_once = yes
 		complete_effect = {
 			set_global_flag = finland_released
 			FIN = {
-				clr_country_flag = FIN_senate
 				set_country_flag = released_by_russia
+				set_cosmetic_tag = FIN_RUS
 			}
-			every_state = {
+			every_owned_state = {
 				limit = {
 					is_core_of = FIN
-					is_owned_by = RUS
 				}
 				FIN = {
 				    transfer_state = PREV
 				}
-				RUS = {
-					remove_state_core = PREV
-				}	
 			}
 			hidden_effect = {
                 FIN = {				
@@ -1951,26 +1970,17 @@ RUS_release_country = {
 			}
 			add_stability = 0.05
 			if = {
-				limit = { RUS = { is_faction_leader = yes } }
-				add_to_faction = FIN
-			}
-			if = {
-				limit = { RUS = { is_in_faction_with = FRA } }
-				FRA = { add_to_faction = FIN }
-			}
-			if = {
 				limit = {
-					OR = {
-						has_dlc = "Together for Victory"
-						has_dlc = "Man the Guns"
-					}
+					has_dlc = "Together for Victory"
 				}
 				set_autonomy = {
 					target = FIN
 					autonomous_state = autonomy_dominion
-					freedom_level = 0.5
+					freedom_level = 0.3
 				}
-				FIN = { set_cosmetic_tag = FIN_RUS }
+				else = {
+					puppet = FIN
+				}
 			}
 		}
 	}
@@ -1981,8 +1991,6 @@ RUS_release_country = {
 		available = {
 			owns_state = 13
 			has_full_control_of_state = 13
-			EST = { exists = no }
-			NOT = { has_global_flag = estonia_released }
 		}
 		ai_will_do = {
 			factor = 200
@@ -1991,44 +1999,35 @@ RUS_release_country = {
 			state = 13
 		}
 		visible = {
+			is_subject = no
 			has_completed_focus = RUS_self_determination_of_nations
+			EST = { exists = no }
 		}
 		cost = 10
 		fire_only_once = yes
 		complete_effect = {
 			set_global_flag = estonia_released
-			ESR = {
+			EST = {
 				set_country_flag = released_by_russia
 				transfer_state = 13
+				set_cosmetic_tag = EST_RUS
 				hidden_effect = {
 					#load_oob = "EST_army"
-					RUS = {
-						remove_state_core = 13
-					}
 				}			
 			}
 			add_stability = 0.05
 			if = {
-				limit = { RUS = { is_faction_leader = yes } }
-				add_to_faction = ESR
-			}
-			if = {
-				limit = { RUS = { is_in_faction_with = FRA } }
-				FRA = { add_to_faction = ESR }
-			}
-			if = {
 				limit = {
-					OR = {
-						has_dlc = "Together for Victory"
-						has_dlc = "Man the Guns"
-					}
+					has_dlc = "Together for Victory"
 				}
 				set_autonomy = {
-					target = ESR
-					autonomous_state = autonomy_dominion
+					target = EST
+					autonomous_state = autonomy_colony
 					freedom_level = 0.25
 				}
-				ESR = { set_cosmetic_tag = EST_RUS }
+				else = {
+					puppet = PREV
+				}
 			}
 		}
 	}
@@ -2038,60 +2037,53 @@ RUS_release_country = {
 		}
 		available = {
 			owns_state = 12
-			has_full_control_of_state = 12
-			LAT = { exists = no }
-			NOT = { has_global_flag = latvia_released }
+			has_full_control_of_state = 12			
 		}
 		ai_will_do = {
 			factor = 200
 		}
 		visible = {
+			is_subject = no
 			has_completed_focus = RUS_self_determination_of_nations
+			LAT = { exists = no }
 		}
 		highlight_states = {
 			state = 12
 		}
-		cost = 10
+		cost = 15
 		fire_only_once = yes
 		complete_effect = {
 			set_global_flag = latvia_released
-			LTR = {
-				set_country_flag = released_by_russia
-				transfer_state = 12
-				transfer_state = 190
-				transfer_state = 191
-				add_state_core = 191
-				hidden_effect = {
-					#load_oob = "LAT_army"
-					RUS = {
-						remove_state_core = 191
-						remove_state_core = 12
-						remove_state_core = 190
+			every_owned_state = {
+				limit = {
+					OR = {
+						state = 12
+						state = 190
+						state  = 191
 					}
-				}			
+				}
+				LAT = {
+					transfer_state = PREV
+					add_state_core = PREV
+				}		
+			}
+			LAT = {
+				set_country_flag = released_by_russia
+				set_cosmetic_tag = LAT_RUS	
 			}
 			add_stability = 0.05
 			if = {
-				limit = { RUS = { is_faction_leader = yes } }
-				add_to_faction = LTR
-			}
-			if = {
-				limit = { RUS = { is_in_faction_with = FRA } }
-				FRA = { add_to_faction = LTR }
-			}
-			if = {
 				limit = {
-					OR = {
-						has_dlc = "Together for Victory"
-						has_dlc = "Man the Guns"
-					}
+					has_dlc = "Together for Victory"
 				}
 				set_autonomy = {
-					target = LTR
-					autonomous_state = autonomy_dominion
+					target = LAT
+					autonomous_state = autonomy_colony
 					freedom_level = 0.25
 				}
-				LTR = { set_cosmetic_tag = LAT_RUS }
+				else = {
+					puppet = LAT
+				}
 			}
 		}
 	}
@@ -2100,60 +2092,57 @@ RUS_release_country = {
 			original_tag = RUS
 		}
 		available = {
-			owns_state = 11
-			has_full_control_of_state = 11
-			LIT = { exists = no }
-			NOT = { has_global_flag = litva_released }
+			owns_state = 784
+			has_full_control_of_state = 784
 		}
 		highlight_states = {
-			state = 11
+			state = 784
 		}
 		ai_will_do = {
 			factor = 200
 		}
 		visible = {
+			LIT = { exists = no }
+			is_subject = no
 			has_completed_focus = RUS_self_determination_of_nations
 		}
-		cost = 10
+		cost = 15
 		fire_only_once = yes
 		complete_effect = {
 			set_global_flag = litva_released
+			every_owned_state = {
+				limit = {
+					OR = {
+						is_core_of = LIT
+						state = 188
+					}				
+					NOT = {
+						state = 97
+						state = 773
+					}
+					is_core_of = LIT
+				}
+				LIT = {
+					transfer_state = PREV
+				}			
+			}
 			LIT = {
 				set_country_flag = released_by_russia
-				transfer_state = 11
-				transfer_state = 189
-				transfer_state = 784
-				hidden_effect = {
-					#load_oob = "LIT_army"
-					RUS = {
-						remove_state_core = 11
-						remove_state_core = 189
-						remove_state_core = 784
-					}
-				}		
+				set_cosmetic_tag = LIT_RUS	
 			}
 			add_stability = 0.05
 			if = {
-				limit = { RUS = { is_faction_leader = yes } }
-				add_to_faction = LIT
-			}
-			if = {
-				limit = { RUS = { is_in_faction_with = FRA } }
-				FRA = { add_to_faction = LIT }
-			}
-			if = {
 				limit = {
-					OR = {
-						has_dlc = "Together for Victory"
-						has_dlc = "Man the Guns"
-					}
+					has_dlc = "Together for Victory"
 				}
 				set_autonomy = {
 					target = LIT
-					autonomous_state = autonomy_dominion
+					autonomous_state = autonomy_colony
 					freedom_level = 0.25
 				}
-				LIT = { set_cosmetic_tag = LIT_RUS }
+				else = {
+					puppet = LIT
+				}
 			}
 		}
 	}
@@ -2162,12 +2151,8 @@ RUS_release_country = {
 			original_tag = RUS
 		}
 		available = {
-			any_owned_state = {
-				is_core_of = POL
-				is_fully_controlled_by = RUS
-			}
-			POL = { exists = no }
-			NOT = { has_global_flag = poland_released }
+			has_full_control_of_state = 10
+			owns_state = 10
 		}
 		highlight_states = {
 			state = 10
@@ -2176,25 +2161,79 @@ RUS_release_country = {
 			factor = 200
 		}
 		visible = {
+			POL = { exists = no }
+			is_subject = no
 			has_completed_focus = RUS_self_determination_of_nations
 		}
-		cost = 10
+		cost = 30
 		fire_only_once = yes
 		complete_effect = {
 			set_global_flag = poland_released
 			POL = {
 				set_country_flag = released_by_russia
+				set_cosmetic_tag = POL_RUS
 		    }
-			every_state = {
+			if = {
 				limit = {
-					is_core_of = POL
-					is_owned_by = RUS
+					has_government = neutrality
+				}
+				POL = {
+					create_country_leader = {
+						name = "Roman Dmowski"
+						picture = "POL_Roman_Dmowski.dds" 
+						expire = "1935.1.1" 
+						ideology = authoritarian_democracy
+						traits = { dislikes_germany trait_authoritarian_democracy } 
+					}
+					set_party_name = {
+						ideology = neutrality
+						name = POL_fascism_party
+						long_name = POL_fascism_party_long
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_government = democratic
+				}
+				POL = {
+					create_country_leader = {
+						name = "Roman Dmowski"
+						picture = "POL_Roman_Dmowski.dds" 
+						expire = "1935.1.1" 
+						ideology = conservatism
+						traits = { dislikes_germany trait_conservatism } 
+					}
+					set_party_name = {
+						ideology = democratic
+						name = POL_fascism_party
+						long_name = POL_fascism_party_long
+					}
+				}
+			}
+			every_owned_state = {
+				limit = {
+					OR = {
+						is_core_of = POL
+						state = 86
+						state = 85
+						state = 5
+						state = 63
+						state = 404
+						state = 762
+						state = 67
+					}
+					OR = {
+						state = 766
+						NOT = {
+							is_core_of = RUS
+							is_core_of = UKR
+						}
+					}
 				}
 				POL = {
 				    transfer_state = PREV
-				}
-				RUS = {
-					remove_state_core = PREV
+					add_state_core = PREV
 				}	
 			}
 			hidden_effect = {
@@ -2204,26 +2243,17 @@ RUS_release_country = {
 			}		
 			add_stability = 0.05
 			if = {
-				limit = { RUS = { is_faction_leader = yes } }
-				add_to_faction = POL
-			}
-			if = {
-				limit = { RUS = { is_in_faction_with = FRA } }
-				FRA = { add_to_faction = POL }
-			}
-			if = {
 				limit = {
-					OR = {
-						has_dlc = "Together for Victory"
-						has_dlc = "Man the Guns"
-					}
+					has_dlc = "Together for Victory"
 				}
 				set_autonomy = {
 					target = POL
 					autonomous_state = autonomy_dominion
-					freedom_level = 0.75
+					freedom_level = 0.4
 				}
-				POL = { set_cosmetic_tag = POL_RUS }
+				else = {
+					puppet = POL
+				}
 			}
 		}
 	}
@@ -2232,18 +2262,20 @@ RUS_release_country = {
 			original_tag = RUS
 		}
 		available = {
-			owns_state = 202
 			has_full_control_of_state = 202
-			UKR = { exists = no }
-			NOT = { has_global_flag = ukraine_released }
+			owns_state = 202	
 		}
 		ai_will_do = {
 			factor = 200
 		}
 		visible = {
+			is_subject = no
 			has_completed_focus = RUS_self_determination_of_nations
+			UKR = {
+				exists = no
+			}
 		}
-		cost = 10
+		cost = 20
 		highlight_states = {
 			state = 202
 		}
@@ -2254,129 +2286,82 @@ RUS_release_country = {
 				set_country_flag = released_by_russia
 				hidden_effect = {
 					load_oob = "UKR_army"
-					add_state_core = 808
-					every_state = {
-						limit = { is_core_of = UKR }
-						remove_core_of = SOV
-						remove_core_of = RUS
-					}
 				}
 			}
-			every_state = {
-				limit = { is_owned_by = ROOT is_core_of = UKR }
-				UKR = { transfer_state = PREV }
+			every_owned_state = {
+				limit = { 
+					OR = {
+						state = 198
+						state = 93
+						state = 201
+						state = 202
+						state = 193
+						state = 240
+						state = 220
+						state = 221
+						state = 259
+						state = 228
+						state = 91
+						state = 89
+						state = 73
+						state = 562
+						state = 237
+					} 
+			    }
+				UKR = { 
+					transfer_state = PREV 
+					add_state_core = PREV
+				}
 			}
 			add_stability = 0.05
 			if = {
-				limit = { RUS = { is_faction_leader = yes } }
-				add_to_faction = UKR
-			}
-			if = {
-				limit = { RUS = { is_in_faction_with = FRA } }
-				FRA = { add_to_faction = UKR }
-			}
-			if = {
 				limit = {
-					OR = {
-						has_dlc = "Together for Victory"
-						has_dlc = "Man the Guns"
-					}
+					has_dlc = "Together for Victory"
 				}
 				set_autonomy = {
 					target = UKR
-					autonomous_state = autonomy_dominion
-					freedom_level = 0.25
+					autonomous_state = autonomy_colony
+					freedom_level = 0.1
 				}
-				UKR = { set_cosmetic_tag = UKR_RUS }
+				else = {
+					puppet = UKR
+				}			
 			}
-			every_unit_leader = {
-				limit = {
- 				    has_id = 76234
+			remove_unit_leader = 76234
+			hidden_effect = {
+				UKR = {
+					create_field_marshal = {
+						name = "Pavlo Skoropadskyi"
+						portrait_path = "gfx/leaders/UKR/UKR_Pavlo_Skoropadskyi.dds"
+						traits = { media_personality politically_connected cavalry_officer harsh_leader}
+						skill = 3
+						attack_skill = 3
+						defense_skill = 2
+						planning_skill = 2
+						logistics_skill = 3
+					}
 				}
-                set_nationality = UKR
-			    promote_leader = yes
 			}
 			if = {
 				limit = {
 					MOL = {exists = no}
 				}
-                puppet = MOL
-				every_state = {
-					limit = { is_owned_by = ROOT is_core_of = MOL }
+				every_owned_state = {
+					limit = { is_core_of = MOL }
 					MOL = { transfer_state = PREV }
 				}
-				else = {
-					every_state = {
-						limit = { is_owned_by = ROOT is_core_of = MOL }
-						UKR = { transfer_state = PREV }
-					}
-				}	
-			}
-		}
-	}
-	RUS_release_BLR = {
-		allowed = {
-			original_tag = RUS
-		}
-		available = {
-			owns_state = 206
-			has_full_control_of_state = 206
-			BLR = { exists = no }
-			NOT = { has_global_flag = belarus_released }
-		}
-		ai_will_do = {
-			factor = 0
-		}
-		visible = {
-			has_completed_focus = RUS_self_determination_of_nations
-		}
-		cost = 10
-		fire_only_once = yes
-		highlight_states = {
-			state = 206
-		}
-		complete_effect = {
-			set_global_flag = belarus_released
-			BLR = {
-				set_country_flag = released_by_russia
-				transfer_state = 206
-				transfer_state = 204
-				transfer_state = 194
-				transfer_state = 94
-				transfer_state = 95
-				hidden_effect = {
-						load_oob = "BLR_1918"
-					RUS = {
-						remove_state_core = 206
-						remove_state_core = 204
-						remove_state_core = 194
-						remove_state_core = 94
-						remove_state_core = 95
-					}
-				}
-			}
-			add_stability = 0.05
-			if = {
-				limit = { RUS = { is_faction_leader = yes } }
-				add_to_faction = BLR
-			}
-			if = {
-				limit = { RUS = { is_in_faction_with = FRA } }
-				FRA = { add_to_faction = BLR }
+				puppet = MOL
 			}
 			if = {
 				limit = {
-					OR = {
-						has_dlc = "Together for Victory"
-						has_dlc = "Man the Guns"
+					has_subject = WUK
+				}
+				UKR = {
+					annex_country = {
+						target = WUK
+						transfer_troops = yes
 					}
 				}
-				set_autonomy = {
-					target = BLR
-					autonomous_state = autonomy_dominion
-					freedom_level = 0.25
-				}
-				BLR = { set_cosmetic_tag = BLR_RUS }
 			}
 		}
 	}
@@ -2387,13 +2372,13 @@ RUS_release_country = {
 		available = {
 			owns_state = 231
 			has_full_control_of_state = 231
-			GEO = { exists = no }
-			NOT = { has_global_flag = georgia_released }
 		}
 		ai_will_do = {
 			factor = 200
 		}
 		visible = {
+			GEO = { exists = no }
+			is_subject = no
 			has_completed_focus = RUS_self_determination_of_nations
 		}
 		highlight_states = {
@@ -2403,38 +2388,20 @@ RUS_release_country = {
 		fire_only_once = yes
 		complete_effect = {
 			set_global_flag = georgia_released
-			GEO = {
-				set_country_flag = released_by_russia
-				transfer_state = 231
-				transfer_state = 748
-				transfer_state = 816
-				hidden_effect = {
-					#load_oob = "GEO_1910"
-				}			
-			}
-			add_stability = 0.05
-			if = {
-				limit = { RUS = { is_faction_leader = yes } }
-				add_to_faction = GEO
-			}
-			if = {
-				limit = { RUS = { is_in_faction_with = FRA } }
-				FRA = { add_to_faction = GEO }
-			}
-			if = {
+			every_owned_state = {
 				limit = {
-					OR = {
-						has_dlc = "Together for Victory"
-						has_dlc = "Man the Guns"
-					}
+					is_core_of = GEO
 				}
-				set_autonomy = {
-					target = GEO
-					autonomous_state = autonomy_dominion
-					freedom_level = 0.25
+				GEO = {
+					transfer_state = PREV
 				}
-				GEO = { set_cosmetic_tag = GEO_RUS }
 			}
+			GEO = {
+				set_country_flag = released_by_russia	
+				set_cosmetic_tag = GEO_RUS		
+			}
+			add_stability = 0.03
+			puppet = GEO
 		}
 	}
 	RUS_release_ARM = {
@@ -2444,13 +2411,13 @@ RUS_release_country = {
 		available = {
 			owns_state = 230
 			has_full_control_of_state = 230
-			ARM = { exists = no }
-			NOT = { has_global_flag = armenia_released }
 		}
 		ai_will_do = {
 			factor = 200
 		}
 		visible = {
+			ARM = { exists = no }
+			is_subject = no
 			has_completed_focus = RUS_self_determination_of_nations
 		}
 		highlight_states = {
@@ -2460,38 +2427,29 @@ RUS_release_country = {
 		fire_only_once = yes
 		complete_effect = {
 			set_global_flag = armenia_released
+			every_owned_state = {
+				limit = {
+					OR = {
+						is_core_of = ARM
+						state = 354
+					}					
+					NOT = {
+						state = 816
+					}
+				}
+				ARM = {
+					transfer_state = PREV
+				}
+			}
 			ARM = {
 				set_country_flag = released_by_russia
-				transfer_state = 230
-				transfer_state = 806
-				transfer_state = 787
+				set_cosmetic_tag = ARM_RUS
 				hidden_effect = {
 					load_oob = "ARM_1918"
 				}			
 			}
-			add_stability = 0.05
-			if = {
-				limit = { RUS = { is_faction_leader = yes } }
-				add_to_faction = ARM
-			}
-			if = {
-				limit = { RUS = { is_in_faction_with = FRA } }
-				FRA = { add_to_faction = ARM }
-			}
-			if = {
-				limit = {
-					OR = {
-						has_dlc = "Together for Victory"
-						has_dlc = "Man the Guns"
-					}
-				}
-				set_autonomy = {
-					target = ARM
-					autonomous_state = autonomy_dominion
-					freedom_level = 0.25
-				}
-				ARM = { set_cosmetic_tag = ARM_RUS }
-			}
+			add_stability = 0.03
+			puppet = ARM
 		}
 	}
 	RUS_release_AZR = {
@@ -2501,13 +2459,13 @@ RUS_release_country = {
 		available = {
 			owns_state = 229
 			has_full_control_of_state = 229
-			AZR = { exists = no }
-			NOT = { has_global_flag = azerbaijan_released }
 		}
 		ai_will_do = {
 			factor = 150
 		}
 		visible = {
+			AZR = { exists = no }
+			is_subject = no
 			has_completed_focus = RUS_self_determination_of_nations
 		}
 		highlight_states = {
@@ -2517,38 +2475,26 @@ RUS_release_country = {
 		fire_only_once = yes
 		complete_effect = {
 			set_global_flag = azerbaijan_released
+			every_owned_state = {
+				limit = {
+					is_core_of = AZR					
+					NOT = {
+						is_core_of = ARM
+					}
+				}
+				AZR = {
+					transfer_state = PREV
+				}
+			}
 			AZR = {
+				set_cosmetic_tag = AZR_RUS
 				set_country_flag = released_by_russia
-				transfer_state = 229
-				transfer_state = 818
-				transfer_state = 823
 				hidden_effect = {
 					load_oob = "AZR_1918"
 				}			
 			}
-			add_stability = 0.05
-			if = {
-				limit = { RUS = { is_faction_leader = yes } }
-				add_to_faction = AZR
-			}
-			if = {
-				limit = { RUS = { is_in_faction_with = FRA } }
-				FRA = { add_to_faction = AZR }
-			}
-			if = {
-				limit = {
-					OR = {
-						has_dlc = "Together for Victory"
-						has_dlc = "Man the Guns"
-					}
-				}
-				set_autonomy = {
-					target = AZR
-					autonomous_state = autonomy_dominion
-					freedom_level = 0.25
-				}
-				AZR = { set_cosmetic_tag = AZR_RUS }
-			}
+			add_stability = 0.03
+			puppet = AZR
 		}
 	}
 	######################
@@ -2632,7 +2578,6 @@ RUS_release_country = {
 					}
 					remove_unit_leader = 100
 					drop_cosmetic_tag = yes
-					clr_country_flag = FIN_senate
 					load_oob = "FIN_1918"
 					declare_war_on = {
 						target = RUS
@@ -2669,14 +2614,14 @@ RUS_release_country = {
 		}
 		timeout_effect = {
 			set_global_flag = estonia_released
-			ESR = {
+			EST = {
 				transfer_state = 13
 				transfer_state = 191
 				hidden_effect = {
 					#load_oob = "EST_army"
 				}			
 			}
-			ESR = {
+			EST = {
 				declare_war_on = {
 					target = RUS
 					type = liberate_wargoal
@@ -2709,7 +2654,7 @@ RUS_release_country = {
 		}
 		timeout_effect = {
 			set_global_flag = latvia_released
-			LTR = {
+			LAT = {
 				transfer_state = 12
 				transfer_state = 190
 				transfer_state = 96
@@ -2717,7 +2662,7 @@ RUS_release_country = {
 					#load_oob = "LAT_army"
 				}			
 			}
-			LTR = {
+			LAT = {
 				declare_war_on = {
 					target = RUS
 					type = liberate_wargoal
@@ -2848,7 +2793,6 @@ RUS_release_country = {
 				GEO = { exists = yes }
 				NOT = { owns_state = 231 }
 				has_global_flag = georgia_released
-				has_global_flag = caucasus_released
 				has_stability > 0.1
 			}
 		}		
@@ -2890,7 +2834,6 @@ RUS_release_country = {
 				AZR = { exists = yes }
 				NOT = { owns_state = 229 }
 				has_global_flag = azerbaijan_released
-				has_global_flag = caucasus_released
 				has_stability > 0.1
 			}
 		}		
@@ -2931,7 +2874,6 @@ RUS_release_country = {
 			OR = {
 				ARM = { exists = yes }
 				has_global_flag = armenia_released
-				has_global_flag = caucasus_released
 				has_stability > 0.1
 			}
 		}		

@@ -8,6 +8,7 @@ scripted_gui = {
 				has_country_flag = se_test
 				has_country_flag = se_great_war
 				has_country_flag = SE_war_of_the_worlds
+				has_country_flag = SE_great_depression
 				has_country_flag = SE_eng_republic
 				has_country_flag = SE_eng_kitchener
 				has_country_flag = SE_eng_george_v
@@ -22,6 +23,8 @@ scripted_gui = {
 				has_country_flag = SE_bul_bw2_winner
 				has_country_flag = SE_ger_nazi
 				has_country_flag = SE_rus_savinkov_revolution
+				has_country_flag = SE_eng_fall_of_america
+                                                has_country_flag = SE_ger_civil_war
 			}
 		}
 		triggers = {
@@ -35,6 +38,10 @@ scripted_gui = {
 			SE_war_of_the_worlds_visible = {
 				has_country_flag = SE_war_of_the_worlds
 				#event ww1_generic.13
+			}
+			SE_great_depression_visible = {
+				has_country_flag = se_great_depression
+				#event ww1_generic.17
 			}
 			SE_eng_republic_visible = {
 				has_country_flag = SE_eng_republic
@@ -90,7 +97,15 @@ scripted_gui = {
 			}
 			SE_rus_savinkov_revolution_visible = {
 				has_country_flag = SE_rus_savinkov_revolution
-				#event ww1_russia.93
+				#event ww1_russia.92
+			}
+			SE_eng_fall_of_america_visible = {
+				has_country_flag = SE_eng_fall_of_america
+				#event eng_news.24
+			}
+                                    SE_ger_civil_war_visible = {
+				has_country_flag = SE_ger_civil_war
+				#event freikorps.9
 			}
 		}
 		effects = {
@@ -98,6 +113,7 @@ scripted_gui = {
 				clr_country_flag = se_test
 				clr_country_flag = se_great_war
 				clr_country_flag = SE_war_of_the_worlds
+				clr_country_flag = SE_great_depression
 				clr_country_flag = SE_eng_republic
 				clr_country_flag = SE_eng_kitchener
 				clr_country_flag = SE_eng_george_v
@@ -112,6 +128,8 @@ scripted_gui = {
 				clr_country_flag = SE_bul_bw2_winner
 				clr_country_flag = SE_ger_nazi
 				clr_country_flag = SE_rus_savinkov_revolution
+				clr_country_flag = SE_eng_fall_of_america
+                                                clr_country_flag = SE_ger_civil_war
 			}
 		}		
 	}		

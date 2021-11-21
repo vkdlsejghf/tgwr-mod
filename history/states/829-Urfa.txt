@@ -8,13 +8,14 @@ state={
 		owner=TUR
 		add_core_of=TUR
 		add_core_of=KUR
+		add_claim_by=SYR
 		buildings={
 			infrastructure=3
 		}
 	}
 	provinces={
-		3889 9823 11871 12387 12416 
+	 9823 11871 12387 12416
 	}
-	manpower=462200
+	manpower=308134
 	state_category=rural
 }

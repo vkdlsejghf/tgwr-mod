@@ -1,39 +1,46 @@
 ﻿add_namespace = ww1_albania
-#Vidi I expelled from Albania
+#Principality of Albania proclaimed
 country_event = {
 	title = ww1_albania.1.t
 	desc = ww1_albania.1.d
 	id = ww1_albania.1
 	fire_only_once = yes
 	mean_time_to_happen = {
-		days = 1
+		days = 21
 	}
 	trigger = {
 		tag = ALB
-		country_exists = ALB
+		date > 1914.2.1
+		has_government = democratic
+		has_global_flag = kis_firstbalkanwar_victory
+		has_war = no
 		NOT = {
-			has_country_flag = esat_toptani_ruler
-		}
-		has_government = neutrality
-		GER = {
-			has_war = yes
+			is_subject_of = TUR
 		}
 	}
 	option = {
 		name = ww1_albania.1.a
-		set_country_flag = esat_toptani_ruler
+		set_politics = {
+			ruling_party = neutrality
+			elections_allowed = no
+		}
 		create_country_leader = {
-			name = "Esat Toptani"
-			picture = "gfx/leaders/ALB/ALB_esat_toptani.dds"
+			name = "Vilhelm I"
+			picture = "gfx/leaders/ALB/ALB_Vilhelm_I.dds"
 			expire = "1935.1.1"
-			ideology = despotism
+			ideology = autocracy
 			traits = {
-				trait_despotism
+				foreign_leader
+				german_agent
+				trait_autocracy
 			}
 		}
-		ai_chance = {
-			factor = 100
+		set_party_name = {
+			ideology = neutrality
+			long_name = ALB_neutrality_prince_party
+			name = ALB_neutrality_prince_party
 		}
+		set_cosmetic_tag = ALB_principality
 	}
 }
 
@@ -99,52 +106,6 @@ country_event = {
 	}
 }
 
-#Albania released by Turkey
-country_event = {
-	title = ww1_albania.3.t
-	desc = ww1_albania.3.d
-	id = ww1_albania.3
-	picture = GFX_report_event_spr_civil_war_faction_defeated
-	fire_only_once = yes
-	mean_time_to_happen = {
-		days = 1
-	}
-	trigger = {
-		tag = TUR
-		country_exists = ALB
-		ALB = {
-			NOT = {
-				has_country_flag = esat_toptani_ruler
-			}
-		}
-		NOT = {
-			has_global_flag = kis_firstbalkan_war
-		}
-	}
-	immediate = {
-		hidden_effect = {
-			ALB = {
-				set_country_flag = esat_toptani_ruler
-				create_country_leader = {
-					name = "Esat Toptani"
-					picture = "gfx/leaders/ALB/ALB_esat_toptani.dds"
-					expire = "1935.1.1"
-					ideology = despotism
-					traits = {
-						trait_despotism
-					}
-				}
-			}
-		}
-	}
-	option = {
-		name = ww1_albania.3.a
-		ai_chance = {
-			factor = 100
-		}
-	}
-}
-
 #Albanian Revolt in 1911
 country_event = {
 	title = ww1_albania.2.t
@@ -196,7 +157,19 @@ country_event = {
 	desc = ww1_albania.5.d
 	id = ww1_albania.5
 	fire_only_once = yes
-	is_triggered_only = yes
+	trigger = {
+		tag = ALB
+		has_war = no
+		owns_state = 803
+		GRE = {
+			has_war = no
+			owns_state = 758
+		}
+		date > 1914.10.1
+	}
+	mean_time_to_happen = {
+		days = 26
+	}
 	option = {
 		name = ww1_albania.5.a
 		GRE = {
@@ -204,7 +177,7 @@ country_event = {
 				target = ALB
 				modifier = medium_decrease
 			}
-			transfer_state = 764
+			transfer_state = 803
 		}
 		ai_chance = {
 			factor = 1
@@ -263,32 +236,76 @@ country_event = {
 	}
 	trigger = {
 		tag = TUR
-		TUR = {
-			has_war = no
+		has_war = no
+		any_owned_state = {
+			is_core_of = ALB
+			is_owned_by = TUR
+			is_controlled_by = TUR
 		}
-		controls_state = 44
-		controls_state = 803
 		NOT = {
 			country_exists = ALB
 		}
-		date > 1913.1.10
+		date > 1913.4.10
 	}
 	option = {
 		name = ww1_albania.2.a
 		ALB = {
 			transfer_state = 44
 			transfer_state = 803
+			transfer_state = 848
+			transfer_state = 847
 			hidden_effect = {
-				create_country_leader = {
-					name = "Esat Toptani"
-					picture = "gfx/leaders/ALB/ALB_esat_toptani.dds"
-					expire = "1935.1.1"
-					ideology = despotism
-					traits = {
-						trait_despotism
+				division_template = {
+					name = "Albanian Militias"
+					regiments = {
+						infantry = {
+							x = 0
+							y = 0
+						}
+						infantry = {
+							x = 0
+							y = 1
+						}
+						infantry = {
+							x = 1
+							y = 0
+						}
+						infantry = {
+							x = 1
+							y = 1
+						}
+					}
+				}
+				44 = {
+					create_unit = {
+						division = "division_template = \"Albanian Militias\" start_experience_factor = 0.1"
+						owner = ALB
+						allow_spawning_on_enemy_provs = yes
+					}
+					create_unit = {
+						division = "division_template = \"Albanian Militias\" start_experience_factor = 0.1"
+						owner = ALB
+						allow_spawning_on_enemy_provs = yes
+					}
+				}
+				803 = {
+					create_unit = {
+						division = "division_template = \"Albanian Militias\" start_experience_factor = 0.1"
+						owner = ALB
+						allow_spawning_on_enemy_provs = yes
+					}
+				}
+				847 = {
+					create_unit = {
+						division = "division_template = \"Albanian Militias\" start_experience_factor = 0.1"
+						owner = ALB
+						allow_spawning_on_enemy_provs = yes
 					}
 				}
 				# load_oob = ALB_1912
+				every_owned_state = {
+					add_claim_by = TUR
+				}
 			}
 		}
 		declare_war_on = {
@@ -301,13 +318,24 @@ country_event = {
 	}
 	option = {
 		name = ww1_albania.2.b
-		ALB = {
-			transfer_state = 44
-			transfer_state = 803
+		every_owned_state = {
+			limit = {
+				is_core_of = ALB
+				NOT = {
+					is_core_of = SER
+				}
+			}
+			ALB = {
+				transfer_state = PREV
+			}
 		}
 		add_stability = 0.1
 		ai_chance = {
-			factor = 100
+			base = 100
+			modifier = {
+				factor = 0
+				has_global_flag = kis_firstbalkanwar_lose
+			}
 		}
 	}
 }
@@ -320,10 +348,14 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		tag = ALB
-		is_puppet = no
+		is_subject = no
 		has_war = no
 		SER = {
 			has_war_with = AUH
+		}
+		has_country_leader = {
+			name = "Essad Pasha Toptani"
+			ruling_only = yes
 		}
 	}
 	option = {
@@ -381,6 +413,36 @@ country_event = {
 		name = ww1_albania.9.b
 		ai_chance = {
 			factor = 0
+		}
+	}
+}
+
+# Peasant Revolt in Albania
+country_event = {
+	title = ww1_albania.10.t
+	desc = ww1_albania.10.d
+	id = ww1_albania.10
+	fire_only_once = yes
+	trigger = {
+		tag = ALB
+		has_country_leader = {
+			name = "Vilhelm I"
+			ruling_only = yes
+		}
+		date > 1914.7.1
+	}
+	mean_time_to_happen = {
+		days = 20
+	}
+	option = {
+		name = ww1_albania.10.a
+		add_stability = -0.1
+		retire_ideology_leader = neutrality
+		drop_cosmetic_tag = yes
+		set_party_name = {
+			ideology = neutrality
+			long_name = ALB_neutrality_party_long
+			name = ALB_neutrality_party
 		}
 	}
 }

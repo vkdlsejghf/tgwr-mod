@@ -6,16 +6,19 @@ set_war_support = 0.5
 set_convoys = 28
 add_namespace = { name = "unit_leader_sov" type = unit_leader }
 
-create_country_leader = { 
+create_country_leader = {
 	name = "Vladimir Lenin" 
 	picture = "gfx/leaders/SOV/SOV_vladimir_lenin.dds" 
 	expire = "1935.1.1" 
 	ideology = vanguardism 
-	traits={ trait_vanguardism } 
+	traits = { 
+		vozhd_of_proletariat
+		trait_vanguardism 
+	} 
 }
 create_country_leader = {
-	name = "Victor Chernov"
-	picture = "gfx/leaders/RUS/RUS_viktor_chernov.dds"				
+	name = "Viktor Chernov"
+	picture = "gfx/leaders/RUS/RUS_viktor_chernov.png"				
 	expire = "1935.1.1"
 	ideology = socialism
 	traits={ trait_socialism } 
@@ -105,9 +108,9 @@ create_corps_commander={
 create_corps_commander={  
 	name = "Kliment Voroshilov" 
 	id=85007 
-	portrait_path="gfx/leaders/SOV/SOV_voroshilov.tga" 
+	portrait_path="gfx/leaders/SOV/Portrait_Soviet_Kliment_Voroshilov.dds" 
 	traits={ old_guard politically_connected inflexible_strategist } 
-	skill=3 
+	skill=1
 	attack_skill = 1
 	defense_skill = 1
 	planning_skill = 1
@@ -158,9 +161,9 @@ create_corps_commander={
 	logistics_skill = 3
 }
 create_corps_commander={  
-	name = "Pavel Dyibenko" 
+	name = "Pavel Dybenko" 
 	id=85010 
-	portrait_path="gfx/leaders/SOV/SOV_dyibenko.tga" 
+	portrait_path="gfx/leaders/SOV/SOV_pavel_dybenko.dds" 
 	traits={ politically_connected trait_cautious } 
 	skill=2 
 	attack_skill = 2
@@ -193,7 +196,7 @@ create_corps_commander={
 create_corps_commander={  
 	name = "Grigoriy Kulik" 
 	id=85004 
-	portrait_path="gfx/leaders/SOV/SOV_kulik.tga" 
+	portrait_path="gfx/leaders/SOV/Portrait_Soviet_Grigory_Kulik.dds" 
 	traits={ old_guard career_officer politically_connected inflexible_strategist } 
 	skill=2 
 	attack_skill = 1

@@ -4,6 +4,7 @@ set_research_slots = 3
 set_stability = 0.66
 set_war_support = 0.75
 set_convoys = 5
+add_manpower = 150000
 
 create_country_leader = {
 	name = "Ferdinand I"
@@ -39,7 +40,7 @@ create_country_leader = {
 create_corps_commander={
     name = "Vladimir Vazov" 
 	portrait_path="gfx/leaders/BUL/BUL_Vladimir_Vazov.dds" 
-	traits={ commando trickster} 
+	traits={ commando trickster artillery_officer artillery_specialist } 
 	skill=2 
 	attack_skill = 2
 	defense_skill = 1
@@ -66,17 +67,6 @@ create_corps_commander={
 	planning_skill = 3
 	logistics_skill = 3
 }
-create_corps_commander={  
-    name = "Ivan Kolev" 	
-	portrait_path="gfx/leaders/BUL/BUL_Ivan_Kolev.dds" 
-	traits={ cavalry_officer cavalry_leader} 
-	skill=4 
-	attack_skill = 4
-	defense_skill = 3
-	planning_skill = 4
-	logistics_skill = 3
-}
-
 create_corps_commander={
     name = "Todor Kantardzhiev" 
 	portrait_path="gfx/leaders/BUL/BUL_Todor_Kantardzhiev.dds" 
@@ -101,7 +91,7 @@ create_corps_commander={
 
 create_corps_commander = {
 	name = "Radko Dimitriev" 
-	portrait_path = "gfx/leaders/BUL/BUL_radko_dimitriev.dds" 
+	portrait_path = "gfx/leaders/BUL/BUL_Radko_Dimitriev.dds" 
 	traits = { infantry_leader hidden_sympathies trait_cautious} 
 	id = 12032
 	skill = 3

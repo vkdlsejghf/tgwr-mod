@@ -118,7 +118,11 @@ if = {
         DAR = { add_ideas = protectorate }
 	}
 }
-
+diplomatic_relation = {
+	country = PER
+	relation = military_access
+	active = yes
+}
 
 give_guarantee = BEL # Treaty of London 1839
 
@@ -181,7 +185,7 @@ create_field_marshal = {
 }
 create_field_marshal = {
 	name = "John French" 
-	portrait_path = "gfx/leaders/ENG/ENG_john_french.dds" 
+	portrait_path = "gfx/leaders/ENG/ENG_john_french.png" 
 	traits = { old_guard politically_connected defensive_doctrine ENG_royalist } 
 	id = 801
 	skill = 4
@@ -214,7 +218,7 @@ create_field_marshal = {
 }
 create_field_marshal = {
 	name = "Rudolph Lambart" 
-	portrait_path = "gfx/leaders/ENG/ENG_rudolph_lambart.dds" 
+	portrait_path = "gfx/leaders/ENG/ENG_rudolph_lambart.png" 
 	traits = { old_guard politically_connected ENG_royalist } 
 	id = 804
 	skill = 3 
@@ -236,7 +240,7 @@ create_field_marshal = {
 }
 create_corps_commander = {
 	name = "Aylmer Hunter-Weston" 
-	portrait_path = "gfx/leaders/ENG/ENG_aylmer_hunter.dds" 
+	portrait_path = "gfx/leaders/ENG/ENG_aylmer_hunter.png" 
 	traits = { career_officer politically_connected ENG_royalist } 
 	id = 806
 	skill = 3 
@@ -258,7 +262,7 @@ create_corps_commander = {
 }
 create_corps_commander = {
 	name = "Robert Baden-Powell" 
-	portrait_path = "gfx/leaders/ENG/ENG_baden_powell.dds" 
+	portrait_path = "gfx/leaders/ENG/ENG_baden_powell.png" 
 	traits = { old_guard ranger trickster ENG_royalist } 
 	id = 808
 	skill = 3 
@@ -302,8 +306,8 @@ create_corps_commander = {
 }
 create_corps_commander = {
 	name = "Henry Horne" 
-	portrait_path = "gfx/leaders/ENG/ENG_henry_horne.dds" 
-	traits = { fortress_buster bearer_of_artillery ENG_royalist } 
+	portrait_path = "gfx/leaders/ENG/ENG_henry_horne.png" 
+	traits = { fortress_buster artillery_officer artillery_specialist ENG_royalist } 
 	id = 813
 	skill = 3
 	attack_skill = 3
@@ -313,7 +317,7 @@ create_corps_commander = {
 }
 create_corps_commander = {
 	name = "Herbert Plumer" 
-	portrait_path = "gfx/leaders/ENG/ENG_herbert_plumer.dds" 
+	portrait_path = "gfx/leaders/ENG/ENG_herbert_plumer.png" 
 	traits = { ENG_royalist }
 	id = 814
 	skill = 3
@@ -367,9 +371,13 @@ create_corps_commander = {
 	logistics_skill = 3
 }
 create_corps_commander = {
-	name = "Thomas Snow" 
+	name = "Thomas D'Oyly Snow" 
 	portrait_path = "gfx/leaders/ENG/ENG_thomas_snow.dds" 
-	
+	traits = {
+		old_guard
+		trait_reckless
+		cavalry_officer
+	}
 	id = 819
 	skill = 2
 	attack_skill = 1
@@ -401,7 +409,7 @@ create_corps_commander = {
 }
 create_corps_commander = {
 	name = "Oliver Nugent" 
-	portrait_path = "gfx/leaders/ENG/ENG_oliver_nugent.dds" 
+	portrait_path = "gfx/leaders/ENG/ENG_oliver_nugent.png" 
 	traits = { ENG_royalist }
 	id = 823
 	skill = 2
@@ -420,6 +428,17 @@ create_corps_commander = {
 	defense_skill = 2
 	planning_skill = 1
 	logistics_skill = 2
+}
+create_corps_commander = {
+	name = "Alfred Knox" 
+	portrait_path = "gfx/leaders/ENG/ENG_Alfred_Knox.png" 
+	traits = { politically_connected winter_specialist career_officer }
+	id = 827
+	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 3
 }
 #NAVY
 create_navy_leader = {
@@ -457,6 +476,7 @@ create_navy_leader = {
 	portrait_path="gfx/leaders/ENG/ENG_john_jellicoe.dds" 
 	traits = { superior_tactician gentlemanly } 
 	skill = 3
+	id = 826
 	attack_skill = 4
 	defense_skill = 2
 	maneuvering_skill = 4
@@ -531,6 +551,7 @@ create_navy_leader = {
 		#infantry
 		infantry_weapons = 1
 		infantry_weapons1 = 1
+		bicycle_infantry = 1
 		
 		#support
 		tech_support = 1
@@ -610,7 +631,17 @@ if = {
 	### Variants ###
 	# Drednoughts #
 	create_equipment_variant = {
-		name = "King George Class"
+		name = "King George V Class"
+		type = battleship_2
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Neptune Class"
+		type = battleship_2
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "St Vincent Class"
 		type = battleship_2
 		parent_version = 0
 	}
@@ -891,6 +922,42 @@ if = {
 	create_equipment_variant = {
 		name = "King George V Class"
 		type = ship_hull_heavy_2
+		name_group = ENG_BB_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_heavy_battery_2
+			fixed_ship_anti_air_slot = empty
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = heavy_ship_engine_1
+			fixed_ship_secondaries_slot = ship_secondaries_1
+			fixed_ship_armor_slot = ship_armor_bb_1
+			front_1_custom_slot = empty
+			mid_1_custom_slot = empty
+			rear_1_custom_slot = empty
+		}
+	}
+	create_equipment_variant = {
+		name = "Neptune Class"
+		type = ship_hull_heavy_1
+		name_group = ENG_BB_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_heavy_battery_2
+			fixed_ship_anti_air_slot = empty
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = heavy_ship_engine_1
+			fixed_ship_secondaries_slot = ship_secondaries_1
+			fixed_ship_armor_slot = ship_armor_bb_1
+			front_1_custom_slot = empty
+			mid_1_custom_slot = empty
+			rear_1_custom_slot = empty
+		}
+	}
+	create_equipment_variant = {
+		name = "St Vincent Class"
+		type = ship_hull_heavy_1
 		name_group = ENG_BB_HISTORICAL
 		parent_version = 0
 		modules = {

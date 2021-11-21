@@ -80,7 +80,7 @@ country_event = {
 			picture = "gfx/leaders/ITA/ITA_antonio_salandra.dds"
 			expire="1935.1.1" 
 			ideology = conservatism
-			traits = { conservative_grandee trait_conservatism }
+			traits = { conservative_grandee }
 	    }
 	}	
 }
@@ -405,6 +405,134 @@ country_event = {
 			expire="1935.1.1" 
 			ideology = classical_liberalism
 			traits = { two_faced trait_classical_liberalism }
+	    }
+	}	
+}
+#Assasiantion attempt on Victor Emmanuel III
+country_event = {
+	id = ww1_italy.14
+	title = ww1_italy.14.t
+	desc = ww1_italy.14.d
+	picture = GFX_report_event_assanational_attemp_victor_emanuel_iii
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ITA
+		has_government = democratic
+		date > 1912.3.1 
+		has_war = no
+		has_country_leader = {
+			name = "Vittorio Emanuele III"
+			ruling_only = no
+		}
+	}
+
+	mean_time_to_happen = { days = 14 }
+
+	option = {
+		name = ww1_italy.14.a
+		add_stability = -0.02
+		news_event = {
+			id = ww1_italy.15
+			hours = 10
+		}
+	}	
+}
+#Assasiantion attempt on Victor Emmanuel III - News
+news_event = {
+	id = ww1_italy.15
+	title = ww1_italy.15.t
+	desc = ww1_italy.15.d
+	picture = GFX_news_event_assanational_attemp_victor_emanuel_iii
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_italy.15.a
+	}	
+}
+#Bonomi goverment
+country_event = {
+	id = ww1_italy.16
+	title = ww1_italy.16.t
+	desc = ww1_italy.16.d
+	#picture = GFX_report_event_ita_giolitti_elected
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ITA
+		has_government = democratic
+		date > 1921.7.1
+		NOT = {
+			has_country_flag = great_war_loser
+			has_global_flag = italian_civil_war
+		} 
+		has_war = no
+		has_country_leader = {
+			name = "Giovanni Giolitti"
+			ruling_only = yes
+		}
+	}
+
+	mean_time_to_happen = { days = 4 }
+
+	option = {
+		name = ww1_italy.16.a
+		set_party_name = {
+			ideology = democratic
+			long_name = ITA_democratic_reformist_party_long
+			name = ITA_democratic_reformist_party
+		}
+		create_country_leader = {
+			name = "Ivanoe Bonomi"
+			picture = "gfx/leaders/ITA/ITA_Ivanoe_Bonomi.png"
+			expire="1935.1.1" 
+			ideology = socialism
+			traits = { trait_socialism }
+	    }
+	}	
+}
+#Facta goverment
+country_event = {
+	id = ww1_italy.17
+	title = ww1_italy.17.t
+	desc = ww1_italy.17.d
+	#picture = GFX_report_event_ita_giolitti_elected
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ITA
+		has_government = democratic
+		date > 1922.2.1
+		NOT = {
+			has_country_flag = great_war_loser
+			has_global_flag = italian_civil_war
+		} 
+		has_war = no
+		has_country_leader = {
+			name = "Ivanoe Bonomi"
+			ruling_only = yes
+		}
+	}
+
+	mean_time_to_happen = { days = 26 }
+
+	option = {
+		name = ww1_italy.17.a
+		set_party_name = {
+			ideology = democratic
+			long_name = ITA_democratic_liberal_union_party
+			name = ITA_democratic_liberal_union_party
+		}
+		create_country_leader = {
+			name = "Luigi Facta"
+			picture = "gfx/leaders/ITA/ITA_Luigi_Facta.png"
+			expire="1935.1.1" 
+			ideology = classical_liberalism
+			traits = { trait_classical_liberalism }
 	    }
 	}	
 }

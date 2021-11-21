@@ -107,30 +107,35 @@ ideas = {
 		SER_idea_alexander_i = {			
 			picture = alexander_i
 			allowed = {
-				tag = SER
+				original_tag = SER
 			}			
-			allowed_civil_war = {
+			available = { 
+				NOT = { 
+					has_government = communism 
+					has_government = neutrality
+				} 
 			}
-			available = { NOT = { has_government = communism } }
 			removal_cost = -1					
 			modifier = {
-				political_power_gain = 0.05
-				democratic_drift = 0.05
+				war_support_factor = 0.05
+				neutrality_acceptance = 10
 			}
 		}		
 		SER_idea_alexander_i_1 = {			
 			picture = alexander_i		
 			allowed = {
-				tag = SER
+				original_tag = SER
 			}			
-			allowed_civil_war = {
-			}
-			available = { NOT = { has_government = communism } }		
+			available = { 
+				NOT = { 
+					has_government = communism 
+					has_government = neutrality
+				} 
+			}	
 			removal_cost = -1					
 			modifier = {
-				political_power_gain = 0.05
-				democratic_drift = 0.05
-				guarantee_cost = -0.75
+				war_support_factor = 0.1
+				neutrality_acceptance = 20
 			}
 		}
 		SER_idea_orthodox_state = {	
@@ -156,15 +161,17 @@ ideas = {
 			removal_cost = -1
 			
 			available = {
-				OR = {
-					NOT = { has_global_flag = kis_firstbalkanwar_victory }
-					NOT = { has_global_flag = kis_war }
+				NOT = {
+					has_global_flag = kis_firstbalkanwar_victory
+					has_global_flag = kis_firstbalkanwar_lose
+					has_global_flag = kis_war
 				}
-				SER = { is_puppet = no }
+				SER = { is_subject = no }
 			}
 			
 			modifier = {
-				conscription = 0.075
+				conscription = 0.05
+				mobilization_speed = 0.3
 				training_time_army_factor = -0.25
 			}
 		}
@@ -199,12 +206,92 @@ ideas = {
 			removal_cost = -1
 			
 			available = {
-				SER = { is_puppet = no }
+				SER = { is_subject = no }
 			}
 			
 			modifier = {
 				experience_gain_army = 0.05
 				resistance_damage_to_garrison = -0.1
+			}
+		}
+
+		YUG_idea_croatian_opposition = {
+			
+			picture = FRA_scw_intervention_republicans_focus
+
+			allowed = {
+				original_tag = SER
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			cancel = {
+				country_exists = CRO
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = -0.3
+			}
+		}
+
+		YUG_idea_macedonian_opposition = {
+			
+			picture = generic_volunteer_expedition_bonus
+
+			allowed = {
+				always = no
+				country_exists = BUL
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			available = {
+				OR = {
+					owns_state = 106
+					owns_state = 203
+					owns_state = 225
+					owns_state = 759
+				}
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				political_advisor_cost_factor = 0.25
+				trade_laws_cost_factor = 0.25
+				mobilization_laws_cost_factor = 0.25
+				economy_cost_factor = 0.25
+			}
+		}
+
+		YUG_idea_slovene_nationalism = {
+			
+			picture = generic_morale_bonus
+
+			allowed = {
+				original_tag = SER
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			cancel = {
+				country_exists = SLV
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				production_factory_efficiency_gain_factor = -0.1
 			}
 		}
 	}

@@ -75,6 +75,7 @@ check_has_focus_tree_to_switch_to_fascism = {
 	NOT = { tag = KOR }
 	NOT = { tag = CHI }
 	NOT = { tag = POL }
+	NOT = { tag = SWE }
 }
 
 check_has_focus_tree_to_switch_to_democratic = {
@@ -94,6 +95,9 @@ check_has_focus_tree_to_switch_to_democratic = {
 	NOT = { tag = KOR }
 	NOT = { tag = CHI }
 	NOT = { tag = POL }
+	NOT = { tag = QIN }
+	NOT = { tag = BEL }
+	NOT = { tag = SWE }
 }
 
 check_has_focus_tree_to_switch_to_communism = {
@@ -110,6 +114,8 @@ check_has_focus_tree_to_switch_to_communism = {
 	NOT = { tag = KOR }
 	NOT = { original_tag = ITA }
 	NOT = { tag = POL }
+	NOT = { tag = BEL }
+	NOT = { tag = SWE }
 }
 
 #State scope

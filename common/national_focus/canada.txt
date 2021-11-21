@@ -10,7 +10,7 @@ focus_tree = {
 	country = {
 		factor = 0
 		modifier = {
-			add = 1000
+			add = 1000 
 			tag = CAN
 		}
 	}
@@ -34,6 +34,9 @@ focus_tree = {
 		completion_reward = {
 			country_event = canada.2
 		}
+		search_filters = {
+			FOCUS_FILTER_HISTORICAL
+		}
 
 	}
 	
@@ -52,18 +55,19 @@ focus_tree = {
 		}
 		x = 13
 		y = 3
-		
-		
-		
-		
-		
 		available = {
-			is_subject = no
+			OR = {
+				is_subject = no
+				is_subject_of = USA
+			}
 		}
 		
 		completion_reward = {
 			country_event = canada.13
 			leave_faction = yes
+		}
+		ai_will_do = {
+			factor = 5
 		}
 	}
 	
@@ -166,11 +170,11 @@ focus_tree = {
 		
 		ai_will_do = {
 			factor = 9
-			#is_historical_focus_on = yes
 		}
 		
 		available = {
 			ENG = { has_government = ROOT }
+			is_subject_of = ENG
 		}
 		
 		bypass = {
@@ -189,6 +193,9 @@ focus_tree = {
 				}
 			}
 			country_event = canada.3
+		}
+		search_filters = {
+			FOCUS_FILTER_HISTORICAL
 		}
 
 	}
@@ -212,7 +219,7 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-			hidden_effect = {set_cosmetic_tag = CAN_democratic_republic}
+			hidden_effect = {set_cosmetic_tag = CAN_republic}
 
 			swap_ideas = {
 				remove_idea = CAN_republic_americanism
@@ -358,12 +365,8 @@ focus_tree = {
 		y = 1
 		
 		ai_will_do = {
-			factor = 1
-			#is_historical_focus_on = no
+			factor = 3
 		}
-		
-		
-		
 		available_if_capitulated = yes
 		
 		completion_reward = {
@@ -381,8 +384,11 @@ focus_tree = {
 		}
 		x = 13
 		y = 2
-		
-		
+		bypass = {
+			NOT = {
+				is_subject_of = ENG
+			}
+		}
 		
 		available_if_capitulated = yes
 		
@@ -412,13 +418,19 @@ focus_tree = {
 		
 		x = 7
 		y = 3
-		
-		
-		
+		available = {
+			ENG = {
+				NOT  = { has_government = communism }
+			}
+			has_government = democratic 
+		}
 		available_if_capitulated = yes
 		
 		completion_reward = {
 			country_event = canada.10
+		}
+		ai_will_do = {
+			factor = 10
 		}
 	}
 	
@@ -447,6 +459,9 @@ focus_tree = {
 				category = electronics
 				category  = industry
 			}
+		}
+		search_filters = {
+			FOCUS_FILTER_HISTORICAL
 		}
 
 	}
@@ -786,6 +801,9 @@ focus_tree = {
 			country_event = canada.30
 			leave_faction = yes
 		}
+		ai_will_do = {
+			factor = 2
+		}
 	}
 	
 	focus = {
@@ -984,20 +1002,24 @@ focus_tree = {
 			focus = CAN_france_demands
 		}
 		x = 21
-		y = 8
-		
-		
-		
-		
-		
+		y = 8	
 		available = {
-			NOT = {has_war_with = USA}
-		}
-		
-		bypass = {
-			has_war_with = USA
-		}
-		
+			any_country = {
+				OR = {
+					original_tag = USA
+					original_tag = USB
+					original_tag = CSA
+				}
+				exists = yes
+				NOT = {
+					is_subject_of = ROOT
+					has_war_with = ROOT
+				}
+			}
+			NOT = {
+				has_country_flag = great_war_loser
+			}
+		}		
 		completion_reward = {
 			hidden_effect = {
 				add_state_claim = 357
@@ -1016,15 +1038,26 @@ focus_tree = {
 				add_state_claim = 385
 				add_state_claim = 381
 			}
-			
-			
-			create_wargoal = {
-				type = take_claimed_state
-				target = USA
-				generator = {357 358 360 359 261 393 394 391 389 390 388 387 386 385}
-			}
-			
-			USA = {
+			every_country = {
+				limit = {
+					OR = {
+						original_tag = USA
+						original_tag = USB
+						original_tag = CSA
+					}
+					exists = yes
+					NOT = {
+						is_subject_of = ROOT
+						has_war_with = ROOT
+					}
+				}
+				ROOT = {
+					create_wargoal = {
+						type = take_claimed_state
+						target = PREV
+						generator = {357 358 360 359 261 393 394 391 389 390 388 387 386 385}
+					}
+				}
 				add_ideas = CAN_american_defensive_war
 			}
 		}
@@ -1360,7 +1393,9 @@ focus_tree = {
 						picture = "gfx/leaders/CAN/CAN_albert_grey.dds"
 						expire = "1935.1.1"
 						ideology = autocracy
-						traits = {}
+						traits = {
+							trait_autocracy
+						}
 					}
 					
 					set_cosmetic_tag = CUB_CAN
@@ -1907,7 +1942,7 @@ focus_tree = {
 		
 		completion_reward = {
 			add_tech_bonus = {
-				
+				name = CAN_assembly_line
 				bonus = 0.75
 				uses = 3
 				technology = machine_tools2
@@ -2106,6 +2141,7 @@ focus_tree = {
 		
 		completion_reward = {
 			add_tech_bonus = {
+				name = CAN_ross_company
 				bonus = 0.9
 				uses = 1
 				category = infantry_weapons

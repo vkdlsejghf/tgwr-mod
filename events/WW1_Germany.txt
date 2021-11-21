@@ -33,6 +33,12 @@ country_event = {
 			activate_mission = mission_interwar_demobilization
 			set_stability = 0.1
 			set_war_support = 0.35
+			every_state = {
+				limit = {
+					is_claimed_by = ROOT
+				}
+				remove_claim_by = ROOT
+			}
 		}
 		set_politics = {
 			ruling_party = democratic
@@ -41,15 +47,19 @@ country_event = {
 			elections_allowed = yes
 		}
 		hidden_effect = {
+			every_unit_leader = {
+				limit = {
+					has_trait = trait_royal
+				}		
+                retire = yes
+			}
 			set_popularities = {
 				democratic = 42
 				neutrality = 26
 				fascism = 12
 				communism = 20
 			}
-			load_oob = GER_1918
 		}
-		add_ideas = GER_idea_freikorps
 		add_ideas = GER_idea_stuggle_for_power
 		set_global_flag = weimar_republic
 		news_event = {
@@ -334,17 +344,29 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		tag = GER
+		has_global_flag = weimar_republic
+		has_country_flag = great_war_loser
 		NOT = {
-			has_government = communism
-		}
-		OR = {
-			has_stability < 0.15
-			has_global_flag = weimar_republic
-		}
-		communism > 0.2
+		    has_global_flag = prussian_blue
+		}	
+		NOT = { has_government = communism }
 	}
 	mean_time_to_happen = {
-		days = 10
+		days = 20
+	}
+	immediate = {
+		hidden_effect = {
+			add_popularity = {
+				ideology = communism
+				popularity = 0.1
+			}
+			add_stability = -0.05
+			set_party_name = {
+				ideology = communism
+				long_name = GER_communism_party_interwar_long
+				name = GER_communism_party_interwar
+			}
+		}
 	}
 	option = {
 		name = ww1_germany.12.a
@@ -353,6 +375,7 @@ country_event = {
 			ideology = communism
 			popularity = -0.02
 		}
+		country_event = { id = freikorps.2 days = 3 }
 		set_global_flag = spartacist_uprising
 		ai_chance = {
 			factor = 100
@@ -360,13 +383,36 @@ country_event = {
 	}
 	option = {
 		name = ww1_germany.12.b
+		trigger = {
+			has_government = democratic
+		}
 		add_popularity = {
 			ideology = communism
 			popularity = 0.1
 		}
 		set_global_flag = support_spartacists
 		ai_chance = {
-			factor = 0
+			factor = 30
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+			modifier = {
+				RUS = {
+					has_country_flag = great_war_winner	
+					has_country_leader = {
+						name = "Nikolai II"
+						ruling_only = no
+					}
+					OR = {
+						has_cosmetic_tag = RUS_absolutism
+						NOT = {
+							has_government = communism
+						}
+					}					
+				}
+				factor = 0
+			}
 		}
 	}
 }
@@ -381,19 +427,36 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		tag = GER
+		has_country_flag = great_war_loser
 		has_civil_war = no
-		NOT = {
-			has_government = communism
+		has_government = democratic
+		NOT = { 
+		    has_global_flag = treaty_of_berlin
 		}
 		has_global_flag = support_spartacists
+		has_global_flag = versallies_treaty
+		has_war = no
 	}
 	mean_time_to_happen = {
-		days = 30
+		days = 20
 	}
 	option = {
 		name = ww1_germany.13.a
 		news_event = ww1_germany.14
+		if = {
+			limit = {
+				is_faction_leader = yes
+			}
+			dismantle_faction = yes
+			else_if = {
+				limit = { 
+					is_in_faction = yes
+				}
+				leave_faction = yes
+			}
+		}
 		GER = {
+			remove_ideas = idea_army_restrictions
 			start_civil_war = {
 				ruling_party = democratic
 				ideology = communism
@@ -401,14 +464,19 @@ country_event = {
 				capital = 64
 				states = {
 					64
-					61
-					62
-					58
-					59
-					66
-					67
+					60
 					68
-					63
+					53
+					52
+					54
+				}
+				keep_unit_leaders_trigger = {
+					OR = {
+						has_trait = trait_royal
+						has_trait = ENG_royalist
+						has_trait = old_guard
+						has_trait = politically_connected
+					}
 				}
 			}
 		}
@@ -433,7 +501,7 @@ country_event = {
 						}
 					}
 				}
-				52 = {
+				50 = {
 					create_unit = {
 						division = "name = \"Eiserne Brigade\" division_template = \"Freikorps Brigade\" start_experience_factor = 0.4"
 						owner = GER
@@ -455,7 +523,7 @@ country_event = {
 						owner = GER
 					}
 				}
-				53 = {
+				55 = {
 					create_unit = {
 						division = "name = \"Lützow Brigade\" division_template = \"Freikorps Brigade\" start_experience_factor = 0.4"
 						owner = GER
@@ -465,7 +533,7 @@ country_event = {
 						owner = GER
 					}
 				}
-				54 = {
+				59 = {
 					create_unit = {
 						division = "name = \"Marinebrigade Loewenfeld\" division_template = \"Freikorps Brigade\" start_experience_factor = 0.4"
 						owner = GER
@@ -475,7 +543,7 @@ country_event = {
 						owner = GER
 					}
 				}
-				50 = {
+				58 = {
 					create_unit = {
 						division = "name = \"Maercker Brigade\" division_template = \"Freikorps Brigade\" start_experience_factor = 0.4"
 						owner = GER
@@ -532,7 +600,7 @@ country_event = {
 						owner = PREV
 					}
 				}
-				61 = {
+				60 = {
 					create_unit = {
 						division = "name = \"IV Brigade\" division_template = \"Spartacus Brigade\" start_experience_factor = 0.2"
 						owner = PREV
@@ -561,27 +629,47 @@ country_event = {
 			}
 		}
 		set_global_flag = white_germany
-		ai_chance = {
-			factor = 0
+		trigger = {
+			is_ai = no
 		}
 	}
 	option = {
 		name = ww1_germany.13.b
 		news_event = ww1_germany.14
+		if = {
+			limit = {
+				is_faction_leader = yes
+			}
+			dismantle_faction = yes
+			else_if = {
+				limit = { 
+					is_in_faction = yes
+				}
+				leave_faction = yes
+			}
+		}
 		GER = {
 			start_civil_war = {
 				ruling_party = communism
 				ideology = democratic
 				size = 0.5
-				states = {
-					52
-					53
-					54
-					50
-					55
-					60
-					65
-					57
+				states_filter = {
+					NOT = {
+						state = 64
+						state = 60
+						state = 68
+						state = 53
+						state = 52
+						state = 54
+					}
+				}
+				keep_unit_leaders_trigger = {
+					NOT = {
+						has_trait = trait_royal
+						has_trait = ENG_royalist
+						has_trait = old_guard
+						has_trait = politically_connected
+					}
 				}
 			}
 		}
@@ -623,7 +711,7 @@ country_event = {
 						owner = GER
 					}
 				}
-				61 = {
+				60 = {
 					create_unit = {
 						division = "name = \"V Brigade\" division_template = \"Spartacus Brigade\" start_experience_factor = 0.2"
 						owner = GER
@@ -686,56 +774,56 @@ country_event = {
 						}
 					}
 				}
-				52 = {
+				50 = {
 					create_unit = {
 						division = "name = \"Eiserne Brigade\" division_template = \"Freikorps Brigade\" start_experience_factor = 0.4"
-						owner = PREV
+						owner = GER
 					}
 					create_unit = {
 						division = "name = \"Garde-Schützendivision\" division_template = \"Freikorps Brigade\" start_experience_factor = 0.4"
-						owner = PREV
+						owner = GER
 					}
 					create_unit = {
 						division = "name = \"Caspari Brigade\" division_template = \"Freikorps Brigade\" start_experience_factor = 0.4"
-						owner = PREV
+						owner = GER
 					}
 					create_unit = {
 						division = "name = \"Lichtschlag Brigade\" division_template = \"Freikorps Brigade\" start_experience_factor = 0.4"
-						owner = PREV
+						owner = GER
 					}
 					create_unit = {
 						division = "name = \"Epp Brigade\" division_template = \"Freikorps Brigade\" start_experience_factor = 0.4"
-						owner = PREV
+						owner = GER
 					}
 				}
-				53 = {
+				55 = {
 					create_unit = {
 						division = "name = \"Lützow Brigade\" division_template = \"Freikorps Brigade\" start_experience_factor = 0.4"
-						owner = PREV
+						owner = GER
 					}
 					create_unit = {
 						division = "name = \"Marinebrigade Ehrhardt\" division_template = \"Freikorps Brigade\" start_experience_factor = 0.4"
-						owner = PREV
+						owner = GER
 					}
 				}
-				54 = {
+				59 = {
 					create_unit = {
 						division = "name = \"Marinebrigade Loewenfeld\" division_template = \"Freikorps Brigade\" start_experience_factor = 0.4"
-						owner = PREV
+						owner = GER
 					}
 					create_unit = {
 						division = "name = \"Oberland Brigade\" division_template = \"Freikorps Brigade\" start_experience_factor = 0.4"
-						owner = PREV
+						owner = GER
 					}
 				}
-				50 = {
+				58 = {
 					create_unit = {
 						division = "name = \"Maercker Brigade\" division_template = \"Freikorps Brigade\" start_experience_factor = 0.4"
-						owner = PREV
+						owner = GER
 					}
 					create_unit = {
 						division = "name = \"Rossbach Brigade\" division_template = \"Freikorps Brigade\" start_experience_factor = 0.4"
-						owner = PREV
+						owner = GER
 					}
 				}
 			}
@@ -889,8 +977,7 @@ country_event = {
 				NOT = {
 					owns_state = 76
 					owns_state = 84
-					owns_state = 83
-					owns_state = 80
+					owns_state = 778
 				}
 				factor = 0
 			}
@@ -1002,21 +1089,28 @@ country_event = {
 			}
 		}
 		ai_chance = {
-			factor = 70
+			factor = 30
+			modifier = {
+				is_historical_focus_on = yes
+				NOT = {
+					has_government = neutrality
+				}
+				factor = 0
+			}
+			modifier = {
+				factor = 5
+				has_government = neutrality
+			}
 		}
 	}
 	option = {
 		name = ww1_germany.20.b
 		ai_chance = {
-			factor = 30
+			factor = 70
 			modifier = {
 				is_historical_focus_on = yes
 				factor = 0
-			}
-			modifier = {
-				factor = 2
-				has_government = neutrality
-			}
+			}			
 		}
 	}
 }
@@ -1104,7 +1198,16 @@ country_event = {
 	option = {
 		name = ww1_germany.21.b
 		add_stability = -0.1
-		ITA = { leave_faction = yes }
+		ITA = { 
+		    leave_faction = yes 
+			set_country_flag = germany_betrayed_us
+			if = {
+				limit = {
+					has_completed_focus = ITA_flexible_foreign_policy
+				}
+				unlock_national_focus = ITA_friend_with_entente
+			}
+		}
 		if = {
 			limit  = {
 				CRO = {
@@ -1314,10 +1417,6 @@ country_event = {
 						state = 770
 						state = 789
 						state = 548
-						state = 776
-						state = 779
-						state = 274
-						state = 558
 						state = 768
 					}
 				}
@@ -1337,9 +1436,9 @@ country_event = {
 					target = MAF
 					autonomy_state = autonomy_colony
 				}
-				else = {
-					puppet = MAF
-				}
+			}
+			else = {
+				puppet = MAF
 			}
 			MAF = {
 				set_popularities = {
@@ -1352,6 +1451,29 @@ country_event = {
 					ruling_party = neutrality
 					elections_allowed = no
 				}
+				if = {
+					limit = {
+						BEL = {
+							is_subject_of = GER
+						}
+						NOT = {
+							country_exists = COG
+							country_exists = BLE
+						}
+					}
+					create_corps_commander = {
+						name = "Félix Fuchs"
+						portrait_path="gfx/leaders/BEL/BEL_felix_fuchs.dds" 
+						traits = { old_guard politically_connected jungle_rat } 
+						skill = 2 
+						attack_skill = 1
+						defense_skill = 2
+						planning_skill = 3
+						logistics_skill = 4
+					}
+				}
+				add_ideas = GER_idea_colonial_exploitation_interwar
+				add_ideas = GER_dysfunctional_government
 				division_template = {
 					name = "Mittelafrikanische Division"	# Infantry
 					division_names_group = GER_MONINF_01	
@@ -1408,40 +1530,49 @@ country_event = {
 					}
 					create_unit = {
 						division = "name = \"5. Mittelafrikanische Division\" division_template = \"Mittelafrikanische Division\" start_experience_factor = 0.3"
-						owner = CMR
+						owner = MAF
 					}
 					create_unit = {
 						division = "name = \"5. Mittelafrikanische Division\" division_template = \"Mittelafrikanische Division\" start_experience_factor = 0.3"
-						owner = CMR
+						owner = MAF
 					}
 					create_unit = {
 						division = "name = \"4. Mittelafrikanische Division\" division_template = \"Mittelafrikanische Division\" start_experience_factor = 0.3"
-						owner = CMR
+						owner = MAF
 					}
 					create_unit = {
 						division = "name = \"3. Mittelafrikanische Division\" division_template = \"Mittelafrikanische Division\" start_experience_factor = 0.3"
-						owner = CMR
+						owner = MAF
 					}
 					create_unit = {
 						division = "name = \"2. Mittelafrikanische Division\" division_template = \"Mittelafrikanische Division\" start_experience_factor = 0.3"
-						owner = CMR
+						owner = MAF
 					}
 					create_unit = {
 						division = "name = \"1. Mittelafrikanische Division\" division_template = \"Mittelafrikanische Division\" start_experience_factor = 0.3"
-						owner = CMR
+						owner = MAF
 					}
 					create_unit = {
 						division = "name = \"Katanga Miliz\" division_template = \"Afrikanische Stammesmiliz\" start_experience_factor = 0.3"
-						owner = CMR
+						owner = MAF
 					}
 					create_unit = {
 						division = "name = \"Ugandische Stämme\" division_template = \"Afrikanische Stammesmiliz\" start_experience_factor = 0.3"
-						owner = CMR
+						owner = MAF
 					}
 					create_unit = {
 						division = "name = \"Askari Schützen Division\" division_template = \"Afrikanische Stammesmiliz\" start_experience_factor = 0.3"
-						owner = CMR
+						owner = MAF
 					}
+				}
+			}
+			if = {
+				limit = {
+					owns_state = 268
+					has_military_access_to = SOM
+				}
+				SOM = {
+					give_military_access = MAF
 				}
 			}
 		}
@@ -2221,11 +2352,12 @@ country_event = {
 	option = {
 		name = ww1_germany.48.a
 		set_country_flag = city_of_consenssion
+		add_ideas = GER_legation_profits
 		if = {
 			limit = {
 				owns_state = 729
 			}
-			OST = {
+			LGC = {
 				transfer_state = 729
 				add_state_core = 729
 			}
@@ -2234,7 +2366,7 @@ country_event = {
 			limit = {
 				owns_state = 326
 			}
-			OST = {
+			LGC = {
 				transfer_state = 326
 				add_state_core = 326
 			}
@@ -2243,7 +2375,7 @@ country_event = {
 			limit = {
 				owns_state = 746
 			}
-			OST = {
+			LGC = {
 				transfer_state = 746
 				add_state_core = 746
 			}
@@ -2252,7 +2384,7 @@ country_event = {
 			limit = {
 				owns_state = 745
 			}
-			OST = {
+			LGC = {
 				transfer_state = 745
 				add_state_core = 745
 			}
@@ -2261,15 +2393,15 @@ country_event = {
 			limit = {
 				owns_state = 728
 			}
-			OST = {
+			LGC = {
 				transfer_state = 728
 				add_state_core = 728
 			}
 		}
-		OST = {
+		LGC = {
 			give_military_access = ROOT
 		}
-		give_guarantee = OST
+		give_guarantee = LGC
 		ai_chance = {
 			factor = 100
 			modifier = {
@@ -2338,7 +2470,23 @@ country_event = {
 	option = {
 		name = ww1_germany.49.a
 		GER = {
-			puppet = ROOT
+			if = {
+				limit = {
+					OR = {
+						has_dlc = "Together for Victory"
+						has_dlc = "Waking the Tiger"
+					}
+				}
+				set_autonomy = {
+					target = ROOT
+					autonomy_state = autonomy_tgwr_informal_protectorate
+				}
+				ROOT = { set_country_flag = protectorate }
+			}
+			else = {
+				puppet = ROOT
+				ROOT = { add_ideas = protectorate }
+			}
 		}
 		ai_chance = {
 			factor = 5
@@ -2381,30 +2529,40 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = ww1_germany.50.a
+		hidden_effect = {
+			set_country_flag = tokyo_pact
+			add_opinion_modifier = {
+				target = GER
+				modifier = HOI4TGW_Opinion_improved_diplomatic_relations
+			}
+			USA = {
+				set_country_flag = {
+					flag = GER_tokyo_pact
+					days = 60
+					value = 1
+				}
+			}
+			GER = {
+				add_opinion_modifier = {
+					target = JAP
+					modifier = HOI4TGW_Opinion_improved_diplomatic_relations
+				}
+			}
+		}
 		GER = {
 			add_ideas = GER_idea_tokyo_pact
-		}
-		diplomatic_relation = {
-			country = GER
-			relation = non_aggression_pact
-			active = yes
-		}
-		set_country_flag = tokyo_pact
-		add_ideas = GER_idea_tokyo_pact
-		GER = {
 			diplomatic_relation = {
 				country = JAP
 				relation = docking_rights
 				active = yes
 			}
 		}
-		USA = {
-			set_country_flag = {
-				flag = GER_tokyo_pact
-				days = 60
-				value = 1
-			}
+		diplomatic_relation = {
+			country = GER
+			relation = non_aggression_pact
+			active = yes
 		}
+		add_ideas = GER_idea_tokyo_pact
 		ai_chance = {
 			factor = 100
 			modifier = {
@@ -2688,9 +2846,9 @@ country_event = {
 			}
 			AUH = {
 				add_manpower = 50000
-				remove_state_core = 39
 				remove_state_core = 244
 				remove_state_core = 736
+				remove_state_core = 513
 				random_owned_state = {
 					limit = {
 						is_core_of = AUH
@@ -2704,9 +2862,9 @@ country_event = {
 				}
 			}
 			ITA = {
-				transfer_state = 39
 				transfer_state = 244
 				transfer_state = 736
+				transfer_state = 513
 			}
 			GER = {
 				random_owned_state = {
@@ -2746,6 +2904,7 @@ country_event = {
 			AUH = {
 				add_manpower = 25000
 				remove_state_core = 736
+				remove_state_core = 513
 				random_owned_state = {
 					limit = {
 						is_core_of = AUH
@@ -2760,6 +2919,7 @@ country_event = {
 			}
 			ITA = {
 				transfer_state = 736
+				transfer_state = 513
 			}
 			GER = {
 				random_owned_state = {
@@ -2837,10 +2997,17 @@ country_event = {
 			}
 			AUH = {
 				add_manpower = 100000
-				remove_state_core = 76
-				remove_state_core = 84
-				remove_state_core = 83
-				remove_state_core = 82
+				every_owned_state = {
+					limit = {
+						OR = {
+							state = 76
+							state = 84
+							state = 778
+						}	
+					}
+					remove_core_of = AUH
+					ROM = { transfer_state = PREV }
+				}
 				random_owned_state = {
 					limit = {
 						is_core_of = AUH
@@ -2852,12 +3019,6 @@ country_event = {
 					}
 					add_extra_state_shared_building_slots = 2
 				}
-			}
-			ROM = {
-				transfer_state = 76
-				transfer_state = 84
-				transfer_state = 83
-				transfer_state = 82
 			}
 			GER = {
 				random_owned_state = {
@@ -2896,6 +3057,13 @@ country_event = {
 			}
 			AUH = {
 				add_manpower = 50000
+				every_owned_state = {
+					limit = {
+						state = 84
+					}
+					remove_core_of = AUH
+					ROM = { transfer_state = PREV }
+				}
 				remove_state_core = 84
 				random_owned_state = {
 					limit = {
@@ -2908,9 +3076,6 @@ country_event = {
 					}
 					add_extra_state_shared_building_slots = 1
 				}
-			}
-			ROM = {
-				transfer_state = 84
 			}
 			GER = {
 				random_owned_state = {
@@ -2969,15 +3134,32 @@ country_event = {
 	fire_only_once = yes
 	option = {
 		name = ww1_germany.59.a
-		kill_country_leader = yes
-		create_country_leader = {
-			name = "Nikolai Bukharin"
-			picture = "gfx/leaders/SOV/SOV_nikolai_bukharin.dds"
-			expire = "1935.1.1"
-			ideology = vanguardism
-			traits = {
-				socialite_connections
-				trait_vanguardism
+		kill_ideology_leader = communism
+		if = {
+			limit = {
+				date < 1919.2.16
+			}
+			create_country_leader = {
+				name = "Yakov Sverdlov"
+				picture = "gfx/leaders/SOV/SOV_yakov_sverdlov.dds"
+				expire = "1935.1.1"
+				ideology = vanguardism
+				traits = {
+					prince_of_terror
+					trait_vanguardism
+				}
+			}
+			else = {
+				create_country_leader = {
+					name = "Leon Trotsky"
+					picture = "gfx/leaders/SOV/SOV_leon_trotsky_army.dds"
+					expire = "1935.1.1"
+					ideology = vanguardism
+					traits = {
+						permanent_revolutionary
+						trait_vanguardism
+					}
+				}
 			}
 		}
 		add_stability = -0.35
@@ -3005,6 +3187,13 @@ country_event = {
 	picture = GFX_report_event_generic_read_write
 	is_triggered_only = yes
 	fire_only_once = yes
+	trigger = {
+	    NOT = {
+		    original_tag = GER
+			is_in_faction_with = GER
+			is_subject_of = GER
+		}	
+	}
 	option = {
 		name = ww1_germany.60.a
 		add_opinion_modifier = {
@@ -3017,6 +3206,22 @@ country_event = {
 				modifier = medium_increase
 			}
 		}
+		if = {
+			limit = {
+				OR = {
+					original_tag = QIN
+					original_tag = CHI
+				}
+			}
+			# German support
+			complete_national_focus = CHI_german_manufacturer
+			complete_national_focus = CHI_mauser_contract
+			complete_national_focus = CHI_hanyang
+			complete_national_focus = CHI_modern_staff
+		}
+		hidden_effect = {
+			set_country_flag = german_chinese_campaign
+		}
 		ai_chance = {
 			factor = 10
 		}
@@ -3025,6 +3230,12 @@ country_event = {
 		name = ww1_germany.60.b
 		ai_chance = {
 			factor = 10
+		}
+		GER = {
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = HOI4TGW_Opinion_diplomats_malus
+			}
 		}
 	}
 }
@@ -3039,6 +3250,7 @@ country_event = {
 	trigger = {
 		tag = GER
 		has_country_flag = great_war_loser
+		has_global_flag = versallies_treaty
 	}
 	fire_only_once = yes
 	mean_time_to_happen = {
@@ -3068,11 +3280,15 @@ country_event = {
 		name = ww1_germany.62.a
 		add_war_support = -0.1
 		add_stability = -0.1
+		add_popularity = {
+			ideology = fascism
+			popularity = -0.2
+		}
 		news_event = ww1_germany.63
 		set_global_flag = beer_hall_putsch
 		add_timed_idea = {
 			idea = GER_idea_hitler_arrested
-			days = 270
+			days = 365
 		}
 		remove_ideas = GER_idea_nazism
 		ai_chance = {
@@ -3135,18 +3351,28 @@ country_event = {
 	fire_only_once = yes
 	option = {
 		name = ww1_germany.65.a
+		hidden_effect = {
+			set_country_flag = tokyo_pact
+			add_opinion_modifier = {
+				target = GER
+				modifier = HOI4TGW_Opinion_improved_diplomatic_relations
+			}
+			GER = {
+				add_opinion_modifier = {
+					target = SIA
+					modifier = HOI4TGW_Opinion_improved_diplomatic_relations
+				}
+			}
+		}
 		GER = {
 			country_event = ww1_germany.66
-		}
-		add_ideas = GER_idea_tokyo_pact
-		GER = {
 			diplomatic_relation = {
 				country = SIA
 				relation = docking_rights
 				active = yes
 			}
 		}
-		set_country_flag = tokyo_pact
+		add_ideas = GER_idea_tokyo_pact
 		ai_chance = {
 			factor = 90
 		}
@@ -3232,7 +3458,6 @@ country_event = {
 			add_to_war = {
 				targeted_alliance = GER
 				enemy = ENG
-				hostility_reason = asked_to_join
 			}
 		}
 		ai_chance = {
@@ -3246,7 +3471,9 @@ country_event = {
 				has_war_with = ENG
 			}
 		}
-		set_country_flag = tokyo_pact_traitor
+		hidden_effect = {
+			set_country_flag = tokyo_pact_traitor
+		}
 		GER = {
 			country_event = ww1_germany.69
 		}
@@ -3267,8 +3494,43 @@ country_event = {
 	option = {
 		name = ww1_germany.69.a
 		create_wargoal = {
-			type = annex_everything
+			type = puppet_wargoal_focus
 			target = FROM
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					JAP = {
+						has_country_flag = tokyo_pact_traitor
+					}
+				}
+				every_state = {
+					limit = {
+						is_owned_by = JAP
+						OR = {
+							state = 524 #Taiwan
+							state = 526 #Okinawa
+							state = 645 #Io To
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					SIA = {
+						has_country_flag = tokyo_pact_traitor
+					}
+				}
+				every_state = {
+					limit = {
+						is_owned_by = SIA
+						OR = {
+							state = 289
+							state = 724
+						}
+					}
+				}
+			}
 		}
 		ai_chance = {
 			factor = 90
@@ -3306,7 +3568,6 @@ country_event = {
 		add_to_war = {
 			targeted_alliance = JAP
 			enemy = ENG
-			hostility_reason = asked_to_join
 		}
 		ai_chance = {
 			factor = 90
@@ -3481,18 +3742,34 @@ country_event = {
 		if = {
 			limit = {
 				ROM = {
-					owns_state = 77
+					owns_state = 846
 				}
 				BUL = {
-					OR = {
-						NOT = {
-							has_war_with = ROM
-						}
+					has_war_with = ROM
+					NOT = {
 						has_war_with = GER
 					}
 				}
 			}
+			BUL = {
+				transfer_state = 846
+			}
+		}
+		if = {
+			limit = {
+				ROM = {
+					owns_state = 77
+				}
+			}
 			transfer_state = 77
+		}
+		if = {
+			limit = {
+				ROM = {
+					owns_state = 846
+				}
+			}
+			transfer_state = 846
 		}
 		if = {
 			limit = {
@@ -3531,6 +3808,9 @@ country_event = {
 				state = 46
 			}
 			add_ideas = idea_army_restrictions
+			# Prevent weird bug I had
+			unlock_national_focus = join_cp
+			unlock_national_focus = join_entente
 		}
 		every_country = {
 			limit = {
@@ -3778,28 +4058,28 @@ news_event = {
 			has_country_flag = great_war_loser
 		}
 	}
-	mean_time_to_happen = {
-		days = 0
-	}
+	fire_only_once = yes
 	immediate = {
-		if = {
-			limit = {
+	    hidden_effect = {
+			if = {
+				limit = {
+					ENG = {
+						has_country_flag = great_war_winner
+					}
+				}
 				ENG = {
-					has_country_flag = great_war_winner
+					transfer_state = 343
 				}
 			}
-			ENG = {
-				transfer_state = 343
-			}
-		}
-		if = {
-			limit = {
+			if = {
+				limit = {
+					BEL = {
+						has_country_flag = great_war_winner
+					}
+				}
 				BEL = {
-					has_country_flag = great_war_winner
+					transfer_state = 51
 				}
-			}
-			BEL = {
-				transfer_state = 51
 			}
 		}
 	}
@@ -3818,6 +4098,491 @@ news_event = {
 			NOT = {
 				original_tag = GER
 				has_country_flag = great_war_loser
+			}
+		}
+	}
+}
+
+# SCUTTLING OF THE GERMAN FLEET
+####################################
+country_event = {
+	id = ww1_germany.82
+	title = ww1_germany.82.t
+	desc = ww1_germany.82.d
+	trigger = {
+		original_tag = GER
+		has_country_flag = great_war_loser
+		has_global_flag = compiegne_armistice
+	}
+	fire_only_once = yes
+	mean_time_to_happen = { days = 20 }
+	option = {
+		name = ww1_germany.82.a
+		destroy_ships = {
+			type = ship_hull_cruiser
+			count = all
+		}
+		destroy_ships = {
+			type = ship_hull_heavy
+			count = all
+		}
+		destroy_ships = {
+			type = ship_hull_light
+			count = all
+		}
+		destroy_ships = {
+			type = ship_hull_submarine
+			count = all
+		}
+		destroy_ships = {
+			type = ship_hull_pre_dreadnought
+			count = all
+		}
+		destroy_ships = {
+			type = destroyer
+			count = all
+		}	
+		
+		hidden_effect = {
+			destroy_ships = {
+				type = ship_hull_torpedo_cruiser
+				count = all
+			}
+			destroy_ships = {
+				type = ship_hull_cruiser_coastal_defense_ship
+				count = all
+			}
+			destroy_ships = {
+				type = ship_hull_cruiser_panzerschiff
+				count = all
+			}
+			destroy_ships = {
+				type = ship_hull_cruiser_submarine
+				count = all
+			}
+			destroy_ships = {
+				type = ship_hull_carrier_conversion_bb
+				count = all
+			}
+			destroy_ships = {
+				type = ship_hull_carrier_conversion_ca
+				count = all
+			}
+			news_event = ww1_germany.83
+			if = {
+				limit = {
+					has_dlc = "Man the Guns"
+				}
+				load_oob = GER_1921_naval_mtg
+			}
+			else = {
+				load_oob = GER_1921_naval_legacy
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = ww1_germany.82.b
+		if = {
+			limit = {
+				USA = {
+					exists = yes
+					has_country_flag = great_war_winner
+				}
+			}
+			transfer_units_fraction= {
+				target = USA
+				size = 0.5
+				stockpile_ratio = 0
+				army_ratio = 0
+				navy_ratio = 1
+				air_ratio = 0
+				keep_unit_leaders_trigger = {
+					always = yes
+				}
+			}
+		}
+		if = {
+			limit = {
+				ENG = {
+					exists = yes
+					has_country_flag = great_war_winner
+				}
+			}
+			transfer_units_fraction= {
+				target = ENG
+				size = 0.5
+				stockpile_ratio = 0
+				army_ratio = 0
+				navy_ratio = 1
+				air_ratio = 0
+				keep_unit_leaders_trigger = {
+					always = yes
+				}
+			}
+		}
+		if = {
+			limit = {
+				FRA = {
+					exists = yes
+					has_country_flag = great_war_winner
+				}
+			}
+			transfer_units_fraction= {
+				target = FRA
+				size = 0.5
+				stockpile_ratio = 0
+				army_ratio = 0
+				navy_ratio = 1
+				air_ratio = 0
+				keep_unit_leaders_trigger = {
+					always = yes
+				}
+			}
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+# SCUTTLING OF THE GERMAN FLEET
+####################################
+news_event = {
+	id = ww1_germany.83
+	title = ww1_germany.83.t
+	desc = ww1_germany.83.d
+	picture = ww1_germany_83
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = ww1_germany.83.a
+		trigger = {
+			has_country_flag = great_war_winner
+		}
+	}
+	option = {
+		name = ww1_germany.83.b
+		trigger = {
+			has_country_flag = great_war_loser
+		}
+	}
+	option = {
+		name = ww1_germany.83.c
+		trigger = {
+			NOT = {
+				has_country_flag = great_war_winner
+				has_country_flag = great_war_loser
+			}
+		}
+	}
+}
+
+country_event = {
+	id = ww1_germany.84
+	title = ww1_germany.84.t
+	desc = ww1_germany.84.d
+	trigger = {
+		original_tag = GER
+		has_country_flag = great_war_loser
+		has_global_flag = versallies_treaty
+		has_idea = idea_army_restrictions
+		has_war = no
+	}
+	fire_only_once = yes
+	mean_time_to_happen = { days = 10 }
+	option = {
+		name = ww1_germany.84.a
+		hidden_effect = {
+			every_state = {
+				teleport_armies = {
+					limit = {
+						tag = GER
+					}
+					to_state = 64
+				}
+			}
+			delete_unit = {
+				state = 64
+				disband = yes
+			}
+		}
+		create_country_leader = {
+			name = "Hans von Seeckt"
+			picture = "gfx/leaders/GER/GER_hans_von_seeckt.dds"
+			expire = "1935.1.1"
+			ideology = stratocracy
+			traits = {
+				generallissimo
+				trait_stratocracy
+			}
+		}
+		set_equipment_fraction = 0.3
+		load_oob = GER_1918
+	}
+}
+
+# Erich Ludendorff is in power
+#########################
+country_event = {
+	id = ww1_germany.85
+	title = ww1_germany.85.t
+	desc = ww1_germany.85.d
+	picture = GFX_report_event_ger_civil_war
+	fire_only_once = yes
+	trigger = {
+		tag = GER
+		has_government = neutrality
+		has_war_with = FRA
+		NOT = {
+			has_global_flag = great_war_ends
+		}
+		fascism > 0.3
+		has_idea = GER_erich_ludendorff
+	}
+	mean_time_to_happen = {
+		days = 2
+	}
+	option = {
+		name = ww1_germany.85.a
+		hidden_effect = {
+			set_global_flag = ludendorff_in_power
+		}
+		set_politics = {
+			ruling_party = fascism
+			elections_allowed = no
+		}
+		add_ideas = GER_idea_wilhelm_ii
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+# Treaty of Rapallo (1922) - Approach to the Soviets
+############################
+country_event = {
+	id = ww1_germany.86
+	title = ww1_germany.86.t
+	desc = ww1_germany.86.d
+	picture = GFX_report_event_generic_read_write
+	fire_only_once = yes
+	trigger = {
+		tag = GER
+		has_war = no
+		has_global_flag = interbellum
+		has_country_flag = great_war_loser
+		has_government = democratic
+		SOV = {
+			exists = yes
+			has_war = no
+			has_government = communism
+		}
+	}
+	mean_time_to_happen = {
+		days = 1252
+	}
+	option = {
+		name = ww1_germany.86.a
+		SOV = {
+			country_event = ww1_germany.87
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = ww1_germany.86.b
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+# Treaty of Rapallo (1922) - Soviets answer
+############################
+country_event = {
+	id = ww1_germany.87
+	title = ww1_germany.87.t
+	desc = ww1_germany.87.d
+	picture = GFX_report_event_generic_read_write
+	fire_only_once = yes
+	is_triggered_only = yes
+	# Treaty of Rapallo is signed
+	option = {
+		name = ww1_germany.87.a
+		#add_ideas = GER_idea_treaty_of_rapallo
+		add_opinion_modifier = {
+			target = FROM
+			modifier = medium_increase
+		}
+		FROM = {
+			#add_ideas = GER_idea_treaty_of_rapallo
+			add_opinion_modifier = {
+				target = PREV
+				modifier = medium_increase
+			}
+		}
+		every_state = {
+			limit = {
+				OR = {
+					AND = {
+						is_owned_by = POL
+						POL = {
+							NOT = {
+								has_government = communism
+								is_subject_of = SOV
+							}
+						}
+					}
+					AND = {
+						is_owned_by = UKR
+						UKR = {
+							NOT = {
+								has_government = communism
+								is_subject_of = SOV
+							}
+						}
+					}
+					AND = {
+						is_owned_by = LIT
+						LIT = {
+							NOT = {
+								has_government = communism
+								is_subject_of = SOV
+							}
+						}
+					}
+					AND = {
+						is_owned_by = LAT
+						LAT = {
+							NOT = {
+								has_government = communism
+								is_subject_of = SOV
+							}
+						}
+					}
+					AND = {
+						is_owned_by = EST
+						EST = {
+							NOT = {
+								has_government = communism
+								is_subject_of = SOV
+							}
+						}
+					}
+					AND = {
+						is_owned_by = FIN
+						FIN = {
+							NOT = {
+								has_government = communism
+								is_subject_of = SOV
+							}
+						}
+					}
+				}
+				OR = {
+					is_core_of = SOV
+					is_claimed_by = SOV
+				}
+			}
+			remove_core_of = SOV
+			remove_claim_by = SOV
+		}
+		news_event = ww1_germany.88
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 0
+				OR = {
+					has_war_with = GER
+					is_in_faction_with = ENG
+					is_in_faction_with = FRA
+				}
+			}
+		}
+	}
+	# Soviets don't want to befriend with Germans
+	option = {
+		name = ww1_germany.87.b
+		add_timed_idea = {
+			idea = GER_idea_reparations
+			days = 100
+		}
+		FROM = {
+			country_event = ww1_germany.89
+		}
+		ai_chance = {
+			base = 0
+			modifier = {
+				add = 100
+				OR = {
+					has_war_with = GER
+					is_in_faction_with = ENG
+					is_in_faction_with = FRA
+				}
+			}
+		}
+	}
+}
+
+# Treaty of Rapallo (1922) - The treaty signed
+############################
+news_event = {
+	id = ww1_germany.88
+	title = ww1_germany.88.t
+	desc = ww1_germany.88.d
+	picture =  EVENT_hoi4tgw_second_treaty_of_frankfort
+	fire_only_once = yes
+	is_triggered_only = yes
+	# Germany and Soviet
+	option = {
+		name = ww1_germany.88.a
+		trigger = {
+			OR = {
+				tag = GER
+				tag = SOV
+				is_subject_of = GER
+				is_subject_of = SOV
+				has_government = communism
+			}
+		}
+	}
+	# And the rest of the world
+	option = {
+		name = ww1_germany.88.b
+		trigger = {
+			NOT = {
+				tag = GER
+				tag = SOV
+				is_subject_of = GER
+				is_subject_of = SOV
+				has_government = communism
+			}
+		}
+	}
+}
+
+# Treaty of Rapallo (1922) - Soviets denied
+############################
+country_event = {
+	id = ww1_germany.89
+	title = ww1_germany.89.t
+	desc = ww1_germany.89.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = ww1_germany.89.a
+		add_opinion_modifier = {
+			target = FROM
+			modifier = HOI4TGW_Opinion_diplomats_malus
+		}
+		FROM = {
+			add_opinion_modifier = {
+				target = PREV
+				modifier = HOI4TGW_Opinion_diplomats_malus
 			}
 		}
 	}

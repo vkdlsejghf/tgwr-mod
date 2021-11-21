@@ -13,19 +13,15 @@ state={
 			infrastructure = 4
 			industrial_complex = 1
 			arms_factory=1
-			11842 = {
-				bunker = 2
-
-			}
 
 		}
 
 	}
 
 	provinces={
-		922 3893 11842 
+		922 3893 11842 13060
 	}
 	manpower=75000
 	buildings_max_level_factor=1.000
-	state_category=city
+	state_category=town
 }

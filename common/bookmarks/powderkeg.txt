@@ -22,6 +22,22 @@ bookmarks = {
 				USA_cult_of_the_american_nation
 			}
 		}
+		"ENG"={
+			history = "ENG_POWDERKEG_DESC"
+			ideology = democratic
+			ideas = {
+				ENG_lords_opposition
+				eng_overextension
+				eng_fleet_at_rest
+				stiff_upper_lip
+				ENG_golden_age_espionage
+			}
+			focuses = {
+				ENG_The_British_Are_Coming
+				ENG_Red_Flag_London
+				ENG_Pro_Patria_Mori
+			}
+		}
 		"FRA"={
 			history = "FRA_POWDERKEG_DESC"
 			ideology = democratic
@@ -50,28 +66,13 @@ bookmarks = {
 				RUS_dalnyi_or_war
 			}
 		}
-		"ENG"={
-			history = "ENG_POWDERKEG_DESC"
-			ideology = democratic
-			ideas = {
-				ENG_lords_opposition
-				eng_overextension
-				eng_fleet_at_rest
-				stiff_upper_lip
-				ENG_golden_age_espionage
-			}
-			focuses = {
-				ENG_The_British_Are_Coming
-				ENG_Red_Flag_London
-				ENG_Pro_Patria_Mori
-			}
-		}
 		"ITA"={
 			history = "ITA_POWDERKEG_DESC"
 			ideology = neutrality
 			ideas = {
-				ITA_ww1_Risorgimento
+				ITA_lackluster_industrialisation
 				idea_italy_triple_alliance
+				ITA_questione_meridionale		
 			}
 			focuses = {
 				ITA_arditi
@@ -113,7 +114,7 @@ bookmarks = {
 			ideas = {
 				TUR_sick_man
 				TUR_officers_struggle
-				TUR_balkan_separatism
+				TUR_minorities
 			}
 			focuses = {
 				TUR_three_pashas
@@ -150,6 +151,24 @@ bookmarks = {
 			}
 		}
 
+		"BEL"={
+			minor = yes
+			history = "BEL_POWDERKEG_DESC"
+			ideology = democratic
+			ideas = {
+				BEL_idea_albert_i
+				BEL_idea_pacifism
+				BEL_neglected_military
+				BEL_congo_attrocities
+				BEL_nationalist_divides_1
+			}
+			focuses = {
+				BEL_catholic_landslide
+				BEL_socialism_achieved
+				BEL_empower_albert
+			}
+		}
+
 		"HOL"={
 			minor = yes
 			history = "HOL_POWDERKEG_DESC"
@@ -163,6 +182,22 @@ bookmarks = {
 				HOL_empower_parlament
 				HOL_imperial_spirit
 				HOL_independent_course
+			}
+		}
+		
+		"SWE"={
+			minor = yes
+			history = "SWE_POWDERKEG_DESC"
+			ideology = democratic
+			ideas = {
+				SWE_gustaf_v
+				SWE_economic_turbulence_1
+				SWE_high_emigration_1
+			}
+			focuses = {
+				SWE_staaff
+				SWE_royal_dictatorship
+				SWE_anslutning
 			}
 		}
 

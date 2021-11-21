@@ -53,7 +53,7 @@ SAU_unite_arabia = {
 SAU_unite_hejaz = {
 	enable = {
 		original_tag = SAU
-		HJZ = { exists = yes is_puppet = no }
+		HJZ = { exists = yes is_subject = no }
 		JBS = { exists = no }
 	}
 	abort = {
@@ -83,7 +83,7 @@ SAU_unite_hejaz = {
 SAU_unite_asir = {
 	enable = {
 		original_tag = SAU
-		ASR = { exists = yes is_puppet = no }
+		ASR = { exists = yes is_subject = no }
 		JBS = { exists = no }
 		HJZ = { exists = no }
 	}
@@ -138,5 +138,26 @@ LBA_hate_italy = {
 		type = prepare_for_war
 		id = ITA
 		value = 200
+	}
+}
+KUW_be_guaranteed_by_ottomans = {
+	allowed = {
+		tag = KUW
+	}
+	enable = {
+		tag = KUW
+		has_cosmetic_tag = KUW_TUR
+		is_guaranteed_by = TUR
+		OR = {
+			is_subject_of = ENG
+			is_subject_of = TUR
+		}
+	}
+	abort_when_not_enabled = yes
+	ai_strategy = {
+		type = diplo_action_desire
+		id = TUR
+		target = guarantee
+		value = 2000
 	}
 }

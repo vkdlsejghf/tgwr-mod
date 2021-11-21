@@ -113,7 +113,7 @@ focus_tree = {
 	}
 	focus = {
 		id = AUH_federalism
-		icon = GFX_goal_support_democracy
+		icon = GFX_focus_AUH_federalism
 		cost = 10
 		prerequisite = {
 			focus = AUH_dualism
@@ -125,6 +125,10 @@ focus_tree = {
 		y = 2
 		available = {
 			is_subject = no
+			NOT = {
+				has_cosmetic_tag = AUH_EMP
+				has_subject = HUN			
+			}			
 		}
 		completion_reward = {
 			add_stability = 0.1
@@ -277,7 +281,7 @@ focus_tree = {
 	}
 	focus = {
 		id = AUH_reform_croatian_region
-		icon = GFX_focus_YUG_banovina_of_croatia
+		icon = GFX_focus_CRO_AUH_coat_of_arms
 		cost = 10
 		prerequisite = {
 			focus = AUH_deal_with_italy
@@ -383,6 +387,12 @@ focus_tree = {
 				is_subject = no 
 				has_war = no
 			}
+			OR = {
+			    has_global_flag = kis_secondbalkanwar_victory
+				has_global_flag = kis_secondbalkanwar_lose
+				has_global_flag = kis_firstbalkanwar_lose
+			
+			}
 		}
 		bypass = {
 		    SER = {
@@ -403,7 +413,7 @@ focus_tree = {
 	}
 	focus = {
 		id = AUH_reform_polish_galicia
-		icon = GFX_focus_generic_support_the_left_right
+		icon = GFX_focus_GAL_coat_of_arms
 		cost = 10
 		prerequisite = {
 			focus = AUH_reform_croatian_region
@@ -426,7 +436,10 @@ focus_tree = {
 			every_owned_state = {
 				limit = {
 					is_core_of = GAL
-					NOT = { is_fully_controlled_by = AUH } 
+					NOT = {
+						is_fully_controlled_by = AUH
+						state = 72 # Zaolzie
+					}
 				}
 				GAL = { set_state_owner = PREV }
 			}
@@ -435,6 +448,9 @@ focus_tree = {
 				limit = {
 					is_core_of = GAL
 					is_fully_controlled_by = AUH
+					NOT = {
+						state = 72 # Zaolzie
+					}
 				}
 				GAL = { transfer_state = PREV }
 			}
@@ -463,7 +479,7 @@ focus_tree = {
 	}
 	focus = {
 		id = AUH_reform_czech_cisleithania
-		icon = GFX_focus_generic_diplomatic_treaty
+		icon = GFX_focus_CZE_AUH_coat_of_arms
 		cost = 10
 		prerequisite = {
 			focus = AUH_international_staff
@@ -485,7 +501,7 @@ focus_tree = {
 			every_owned_state = {
 				limit = {
 					is_core_of = CZE
-					NOT = { is_fully_controlled_by = AUH } 
+					NOT = { is_fully_controlled_by = AUH }
 				}
 				CZE = { set_state_owner = PREV }
 			}
@@ -528,6 +544,8 @@ focus_tree = {
 						OR = {
 							has_cosmetic_tag = GER_confederation
 							has_cosmetic_tag = GER_HRE
+							has_cosmetic_tag = GER_suddeutscher_bund
+							has_cosmetic_tag = AUH_USGA
 						}
 					}
 					every_state = {
@@ -563,7 +581,7 @@ focus_tree = {
 	}
 	focus = {
 		id = AUH_form_illyria
-		icon = GFX_goal_anschluss
+		icon = GFX_focus_YUG_deal
 		cost = 10
 		prerequisite = {
 			focus = AUH_secularization
@@ -586,6 +604,12 @@ focus_tree = {
 					transfer_troops = yes
 				}
 				remove_ideas = protectorate
+				every_state = {
+					limit = {
+						is_core_of = CRO
+					}
+					add_core_of = SER
+				}
 			}
 			if = {
 				limit = {
@@ -641,8 +665,8 @@ focus_tree = {
 	}
 	focus = {
 		id = AUH_deal_with_romania
-		icon = GFX_focus_rom_preserve_romania
-		cost = 1
+		icon = GFX_focus_deal_with_romania
+		cost = 5
 		prerequisite = {
 			focus = AUH_exploration_of_resources
 		}
@@ -744,7 +768,7 @@ focus_tree = {
 	}
 	focus = {
 		id = AUH_suppression_of_separatism
-		icon = GFX_goal_tfv_saf_anti_colonialist_crusade
+		icon = GFX_focus_AUH_monarchy
 		cost = 10
 		prerequisite = {
 			focus = AUH_dualism
@@ -880,7 +904,7 @@ focus_tree = {
 	}
 	focus = {
 		id = AUH_dissolve_aus_parliament
-		icon = GFX_focus_rom_royal_dictatorship
+		icon = GFX_focus_AUH_strengthen_monarchy
 		cost = 10
 		prerequisite = {
 			focus = AUH_dissolve_czech_parliament
@@ -1102,6 +1126,7 @@ focus_tree = {
 		y = 6
 		ai_will_do = { factor = 1 }
 		completion_reward = {
+			custom_effect_tooltip = AUH_ban_election_in_hungary_tt
 			add_stability = -0.25
 			remove_ideas = { AUH_hungarian_opposition } 
 		}
@@ -1113,13 +1138,31 @@ focus_tree = {
 		prerequisite = {
 			focus = AUH_ban_election_in_hungary
 		}
-		ai_will_do = { factor = 1 }
+		ai_will_do = { 
+		    base = 0
+			modifier = {
+				factor = 1
+			    is_historical_focus_on = no
+			}	
+		}
 		x = 13
 		y = 7
 		available = {
 			has_war = no
 			has_stability > 0.75
+			NOT = {
+				has_country_flag = great_war_loser
+			}
 		}
+		bypass = {
+			NOT = {
+				has_country_flag = great_war_loser
+			}
+			OR = {
+				has_cosmetic_tag = AUH_EMP
+				has_subject = HUN			
+			}				
+		}	
 		completion_reward = {
 			custom_effect_tooltip = AUH_prevent_collapse_tt
 			add_political_power = 150
@@ -1127,6 +1170,8 @@ focus_tree = {
 				limit = {
 					NOT = { AUH = { has_cosmetic_tag = GER_confederation } }
 					NOT = { AUH = { has_cosmetic_tag = GER_HRE } }
+					NOT = { AUH = { has_cosmetic_tag = GER_suddeutscher_bund } }
+					NOT = { AUH = { has_cosmetic_tag = AUH_USGA } }
 				}
 				set_cosmetic_tag = AUH_EMP
 			}
@@ -1487,7 +1532,7 @@ focus_tree = {
 	}
 	focus = {
 		id = AUH_international_mobilization
-		icon = GFX_goal_generic_national_unity
+		icon = GFX_focus_AUH_country
 		cost = 10
 		prerequisite = {
 			focus = AUH_hungarian_alluminium
@@ -1800,6 +1845,9 @@ focus_tree = {
 		y = 2
 		available = {
 			is_in_faction_with = GER
+			NOT = {
+				has_country_flag = great_war_loser
+			}
 		}
 		completion_reward = {
 			if = {
@@ -1839,6 +1887,9 @@ focus_tree = {
 		y = 3
 		available = {
 			is_in_faction_with = GER
+			NOT = {
+				has_country_flag = great_war_loser
+			}
 		}
 		completion_reward = {
 			division_template = {
@@ -1884,6 +1935,11 @@ focus_tree = {
 		}
 		x = 31
 		y = 3
+		available = {
+			NOT = {
+				has_country_flag = great_war_loser
+			}
+		}
 		completion_reward = {
 			add_manpower = 50000
 			add_equipment_to_stockpile = {
@@ -1911,6 +1967,9 @@ focus_tree = {
 		}
 		available = {
 			is_in_faction_with = GER
+			NOT = {
+				has_country_flag = great_war_loser
+			}
 		}
 		x = 28
 		y = 4
@@ -2282,7 +2341,7 @@ focus_tree = {
 	}
 	focus = {
 		id = AUH_reform_transleithania
-		icon = GFX_focus_hun_elect_a_king
+		icon = GFX_focus_HUN_coat_of_arms
 		cost = 10
 		prerequisite = {
 			focus = AUH_form_illyria
@@ -2297,12 +2356,18 @@ focus_tree = {
 			is_subject = no
 			owns_state = 43
 			owns_state = 155
+			NOT = {
+				has_country_flag = great_war_loser
+			}
 		}
 		bypass = {
+			NOT = {
+				has_country_flag = great_war_loser
+			}
 			HUN = { exists = yes }
 		}
 		completion_reward = {
-			custom_effect_tooltip = AUH_prevent_collapse_tt
+			custom_effect_tooltip = AUH_reform_cisleithania_tt
 			remove_ideas = { AUH_hungarian_opposition }
 
 			every_owned_state = {
@@ -2430,6 +2495,8 @@ focus_tree = {
 					NOT = { 
 						has_cosmetic_tag = GER_confederation 
 						has_cosmetic_tag = GER_HRE
+						has_cosmetic_tag = GER_suddeutscher_bund
+						has_cosmetic_tag = AUH_USGA
 					} 
 				}
 				set_cosmetic_tag = AUH_EMP
@@ -2500,6 +2567,10 @@ focus_tree = {
 		will_lead_to_war_with = ITA
 		
 		completion_reward = {
+			add_named_threat = {
+				threat = 2
+				name = AUH_war_with_italy
+			}
 			create_wargoal = {
 				type = take_claimed_state
 				target = ITA
@@ -2530,7 +2601,7 @@ focus_tree = {
 		ai_will_do = { factor = 100 }
 		completion_reward = {
 			add_named_threat = {
-				threat = 5
+				threat = 10
 				name = AUH_intervention_in_serbia
 			}
 			create_wargoal = {

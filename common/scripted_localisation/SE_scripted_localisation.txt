@@ -61,7 +61,7 @@ defined_text = { #SUPER EVENT TITLE
 		}
 		localization_key = SE_eng_imperial_federation_T
 	}
-    text = { 
+	text = { 
 		trigger = {
 			has_country_flag = se_chi_warlord_era
 		}
@@ -81,6 +81,18 @@ defined_text = { #SUPER EVENT TITLE
 	}
 	text = { 
 		trigger = {
+			has_country_flag = SE_eng_fall_of_america
+		}
+		localization_key = SE_eng_fall_of_america_T
+	}
+	text = { 
+		trigger = {
+			has_country_flag = SE_ger_civil_war
+		}
+		localization_key = SE_ger_civil_war_T
+	}
+	text = { 
+		trigger = {
 			has_country_flag = se_rus_civil_war_winner_white
 		}
 		localization_key = SE_rus_civil_war_winner_white_T
@@ -90,6 +102,12 @@ defined_text = { #SUPER EVENT TITLE
 			has_country_flag = se_rus_civil_war_winner_red
 		}
 		localization_key = SE_rus_civil_war_winner_red_T
+	}
+	text = {
+		trigger = {
+			has_country_flag = se_great_depression
+		}
+		localization_key = SE_great_depression_T
 	}
 	text = { 
 		trigger = {
@@ -131,7 +149,7 @@ defined_text = { #SUPER EVENT QUOTE
 		}
 		localization_key = SE_bul_bw2_winner_D
 	}
-    text = {
+	text = {
 		trigger = {
 			has_country_flag = SE_rus_savinkov_revolution
 		}
@@ -147,7 +165,7 @@ defined_text = { #SUPER EVENT QUOTE
 		trigger = {
 			has_country_flag = se_war_of_the_worlds
 		}
-		localization_key = SE_WAR_OF_DHE_WORLDS_D
+		localization_key = SE_WAR_OF_THE_WORLDS_D
 	}
 	text = { 
 		trigger = {
@@ -187,6 +205,18 @@ defined_text = { #SUPER EVENT QUOTE
 	}
 	text = { 
 		trigger = {
+			has_country_flag = SE_eng_fall_of_america
+		}
+		localization_key = SE_eng_fall_of_america_D
+	}
+	text = { 
+		trigger = {
+			has_country_flag = SE_ger_civil_war
+		}
+		localization_key = SE_ger_civil_war_D
+	}
+	text = { 
+		trigger = {
 			has_country_flag = se_rus_civil_war_winner_white
 		}
 		localization_key = SE_rus_civil_war_winner_white_D
@@ -196,6 +226,12 @@ defined_text = { #SUPER EVENT QUOTE
 			has_country_flag = se_rus_civil_war_winner_red
 		}
 		localization_key = SE_rus_civil_war_winner_red_D
+	}
+	text = {
+		trigger = {
+			has_country_flag = se_great_depression
+		}
+		localization_key = SE_great_depression_D
 	}
 	text = { 
 		trigger = {
@@ -253,7 +289,7 @@ defined_text = { #SUPER EVENT OPTION
 		trigger = {
 			has_country_flag = se_war_of_the_worlds
 		}
-		localization_key = SE_WAR_OF_AHE_WORLDS_A
+		localization_key = SE_WAR_OF_THE_WORLDS_A
 	}
 	text = { 
 		trigger = {
@@ -293,6 +329,18 @@ defined_text = { #SUPER EVENT OPTION
 	}
 	text = { 
 		trigger = {
+			has_country_flag = SE_eng_fall_of_america
+		}
+		localization_key = SE_eng_fall_of_america_A
+	}
+	text = { 
+		trigger = {
+			has_country_flag = SE_ger_civil_war
+		}
+		localization_key = SE_ger_civil_war_A
+	}
+	text = { 
+		trigger = {
 			has_country_flag = se_rus_civil_war_winner_white
 		}
 		localization_key = SE_rus_civil_war_winner_white_A
@@ -302,6 +350,12 @@ defined_text = { #SUPER EVENT OPTION
 			has_country_flag = se_rus_civil_war_winner_red
 		}
 		localization_key = SE_rus_civil_war_winner_red_A
+	}
+	text = {
+		trigger = {
+			has_country_flag = se_great_depression
+		}
+		localization_key = SE_great_depression_A
 	}
 	text = { 
 		trigger = {

@@ -3,11 +3,12 @@ state={
 	name="STATE_803"
 	manpower=228000
 	state_category=rural
-	provinces={ 914 3448 }
+	provinces={ 914 3448 13272 }
 	history={
 		owner=TUR
 		add_core_of = ALB
-		add_claim_by = GRE
+		add_core_of = GRE
+		victory_points={ 914 1 }
 		buildings={
 			infrastructure=2
 		}

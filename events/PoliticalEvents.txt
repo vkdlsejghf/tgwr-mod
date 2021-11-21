@@ -645,6 +645,7 @@ country_event = {
 		democratic > 0.6
 		NOT = { democratic > 0.7 }
 		check_has_focus_tree_to_switch_to_democratic = yes
+		NOT = { has_country_flag = dont_trigger_political_event }
 	}
 	
 	fire_only_once = yes
@@ -926,6 +927,13 @@ country_event = {
 				ruling_party = fascism
 				ideology = communism
 				size = 0.5
+				keep_unit_leaders_trigger = {
+					OR = {
+						has_trait = trait_royal
+						has_trait = old_guard
+						has_trait = politically_connected						
+					}
+				}
 			}
 		}
 		if = {
@@ -986,6 +994,14 @@ country_event = {
 		start_civil_war = {
 			ideology = communism
 			size = 0.5
+			keep_unit_leaders_trigger = {
+				OR = {
+					has_trait = trait_royal
+					has_trait = ENG_royalist
+					has_trait = old_guard
+					has_trait = politically_connected	
+				}
+			}
 		}
 	}
 
@@ -1213,7 +1229,14 @@ country_event = {
 	trigger = {
 		OR = {
 			has_government = fascism
-			has_government = communism
+			AND = {			
+				has_government = communism
+				NOT = {
+					has_country_leader_with_trait = trait_reformist_socialism
+					has_country_leader_with_trait = trait_market_socialism
+					has_country_leader_with_trait = trait_agrarian_socialism
+				}
+			}	
 		}
 		has_idea = neutrality_idea
 		NOT = { has_country_flag = dont_trigger_political_event }
@@ -1241,13 +1264,19 @@ country_event = {
 		is_subject = no
 		has_civil_war = yes
 		NOT = {
-			tag = ROI
-			tag = SRI
-			tag = ITS
-			tag = NFA
-			tag = FRC
-			tag = BRE
-			tag = UOB
+			has_country_flag = ENG_nationalist_britain_flag
+			has_country_flag = FRA_nationalist_france_flag
+			has_country_flag = FRA_socialist_france_flag
+			has_country_flag = ENG_socialist_britain_flag
+			has_country_flag = GER_rhine_federation_flag
+			has_country_flag = CHI_national_protection_flag
+			has_country_flag = CHI_kuomintang_flag
+			has_country_flag = CHI_soviet_republic_flag
+			has_country_flag = PER_gendarmerie_flag
+			has_country_flag = CHI_left_kuomintang_flag
+			has_cosmetic_tag = OST_LGC
+			has_cosmetic_tag = COG_belgium_in_exile
+			original_tag = GDC
 			original_tag = ITA
 			original_tag = TUR
 		}

@@ -2,7 +2,7 @@ state={
 	id=361
 	name="STATE_361"
 	manpower = 1828737
-	state_category=city
+	state_category=metropolis
 	provinces={ 3957 6823 6892 6929 6984 9758 9786 11892 }
 	history={
 		victory_points={ 3957 40 }
@@ -13,7 +13,7 @@ state={
 			infrastructure=7
 			industrial_complex=4
 			air_base=1
-			dockyard=1
+			dockyard=2
 			6984={ naval_base=2  }
 			3957={ naval_base=1  }
 		}

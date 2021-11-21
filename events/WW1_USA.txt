@@ -130,31 +130,6 @@ country_event = {
 		}
 		hidden_effect = {
 			every_country = {
-				limit = {
-					OR = {
-						tag = CAN
-						tag = MEX
-						tag = CUB
-						tag = HAI
-						tag = DOM
-						tag = GUA
-						tag = HON
-						tag = ELS
-						tag = NIC
-						tag = COS
-						tag = PAN
-						tag = VEN
-						tag = COL
-						tag = ECU
-						tag = PRU
-						tag = BRA
-						tag = BOL
-						tag = CHL
-						tag = PAR
-						tag = ARG
-						tag = URG
-					}
-				}
 				USA = {
 					diplomatic_relation = {
 						country = PREV
@@ -560,10 +535,12 @@ country_event = {
 	picture = GFX_report_event_crowd_in_prague
 	trigger = {
 		tag = USA
+		has_global_flag = kis_war
+		has_global_flag = great_war_ends
+		is_major = yes
 		NOT = {
 			has_country_flag = great_depression_spreads
 		}
-		has_global_flag = kis_war
 		OR = {
 			NOT = {
 				has_government = communism
@@ -580,10 +557,7 @@ country_event = {
 			num_of_civilian_factories > 80
 		}
 		OR = {
-			AND = {
-				has_stability < 0.1
-				date > 1919.1.1
-			}
+			has_stability < 0.1
 			date > 1929.1.1
 		}
 		date < 1930.1.1
@@ -1647,7 +1621,7 @@ country_event = {
 			factor = 100
 		}
 		trigger = {
-			communism > 0.5
+			communism > 0.49
 		}
 		set_country_flag = new_socialism
 		set_politics = {
@@ -2047,6 +2021,9 @@ country_event = {
 					army_ratio = 0.45
 					navy_ratio = 0.55
 					air_ratio = 0.1
+					keep_unit_leaders_trigger = {
+						has_trait = old_guard
+					}
 				}
 			}
 			USB = {
@@ -2092,32 +2069,6 @@ country_event = {
 				}
 			}
 			every_country = {
-				limit = {
-					OR = {
-						tag = CAN
-						tag = MEX
-						tag = CUB
-						tag = HAI
-						tag = DOM
-						tag = GUA
-						tag = HON
-						tag = ELS
-						tag = NIC
-						tag = COS
-						tag = PAN
-						tag = VEN
-						tag = COL
-						tag = ECU
-						tag = PRU
-						tag = BRA
-						tag = BOL
-						tag = CHL
-						tag = PAR
-						tag = ARG
-						tag = URG
-						tag = LIB
-					}
-				}
 				USA = {
 					diplomatic_relation = {
 						country = PREV
@@ -2285,6 +2236,11 @@ country_event = {
 					army_ratio = 0.35
 					navy_ratio = 0.15
 					air_ratio = 0.1
+					keep_unit_leaders_trigger = {
+						NOT = {
+							has_trait = old_guard
+						}					
+					}
 				}
 				transfer_units_fraction = {
 					target = USB
@@ -2293,6 +2249,11 @@ country_event = {
 					army_ratio = 0.45
 					navy_ratio = 0.15
 					air_ratio = 0.1
+					keep_unit_leaders_trigger = {
+						NOT = {
+							has_trait = politically_connected
+						}						
+					}
 				}
 			}
 			CSA = {
@@ -2389,32 +2350,6 @@ country_event = {
 				}
 			}
 			every_country = {
-				limit = {
-					OR = {
-						tag = CAN
-						tag = MEX
-						tag = CUB
-						tag = HAI
-						tag = DOM
-						tag = GUA
-						tag = HON
-						tag = ELS
-						tag = NIC
-						tag = COS
-						tag = PAN
-						tag = VEN
-						tag = COL
-						tag = ECU
-						tag = PRU
-						tag = BRA
-						tag = BOL
-						tag = CHL
-						tag = PAR
-						tag = ARG
-						tag = URG
-						tag = LIB
-					}
-				}
 				USA = {
 					diplomatic_relation = {
 						country = PREV
@@ -2477,6 +2412,13 @@ country_event = {
 				states_filter = {
 					has_state_flag = is_usa_socialist_state
 				}
+				set_cosmetic_tag = USA_socialist_color_only
+				keep_unit_leaders_trigger = {
+					OR = {
+						has_trait = old_guard
+						has_trait = politically_connected
+					}
+				}
 			}
 			random_other_country = {
 				limit = {
@@ -2491,14 +2433,21 @@ country_event = {
 				set_capital = 395
 				set_cosmetic_tag = USB_socialist
 				create_country_leader = {
-					name = "Eugene V. Debs"
-					picture = "gfx/leaders/USA/USA_eugene_v_debs.dds"
+					name = "Bill Haywood"		
+					picture = "gfx/leaders/USA/USA_Bill_Haywood.png"								
 					expire = "1935.1.1"
-					ideology = reformist_socialism
+					ideology = syndicalism
 					traits = {
-						trait_reformist_socialism
+						big_bill
+						trait_syndicalism
 					}
 				}
+				set_party_name = { 
+					ideology = communism
+					long_name = USA_communism_iww_party_long
+					name = USA_communism_iww_party
+				}
+				add_ideas = USA_idea_industrial_workers_of_the_world
 			}
 		}
 	}
@@ -2664,14 +2613,37 @@ country_event = {
 					target = USB
 					size = 0.4
 					stockpile_ratio = 0.65
-					army_ratio = 0.6
+					army_ratio = 0.5
 					navy_ratio = 1
 					air_ratio = 0.35
+					keep_unit_leaders_trigger = {
+						NOT = {
+							has_trait = politically_connected
+							has_trait = old_guard
+						}									
+					}
 				}
 				set_politics = {
 					ruling_party = communism
 					elections_allowed = yes
 				}
+				create_country_leader = {
+					name = "Bill Haywood"
+					picture = "gfx/leaders/USA/USA_Bill_Haywood.png"						
+					expire = "1935.1.1"
+					ideology = syndicalism
+					traits = {
+						big_bill
+						trait_syndicalism
+					}
+				}
+				set_party_name = { 
+					ideology = communism
+					long_name = USA_communism_iww_party_long
+					name = USA_communism_iww_party
+				}
+				remove_ideas = USA_idea_union_activism
+				add_ideas = USA_idea_industrial_workers_of_the_world
 				add_popularity = {
 					ideology = communism
 					popularity = 0.2
@@ -2699,22 +2671,6 @@ country_event = {
 					fascism = 2
 					communism = 0
 					neutrality = 21
-				}
-				if = {
-					limit = {
-						USA = {
-							has_country_flag = new_conservatism
-						}
-					}
-					create_country_leader = {
-						name = "William H. Taft"
-						picture = "gfx/leaders/USA/USA_william_h_taft.dds"
-						expire = "1935.1.1"
-						ideology = conservatism
-						traits = {
-							trait_conservatism
-						}
-					}
 				}
 				if = {
 					limit = {
@@ -2751,34 +2707,43 @@ country_event = {
 							days = 180
 						}
 					}
-				}
-				if = {
-					limit = {
-						USA = {
+					else_if = {
+						limit = {
 							has_country_flag = new_nationalism
 						}
-					}
-					create_country_leader = {
-						name = "Theodore Roosevelt"
-						desc = USA_theodore_roosevelt_DESC
-						picture = "gfx/leaders/USA/USA_theodore_roosevelt.dds"
-						expire = "1935.1.1"
-						ideology = socialism
-						traits = {
-							bull_moose
-							trait_socialism
+						create_country_leader = {
+							name = "Theodore Roosevelt"
+							picture = "gfx/leaders/USA/USA_theodore_roosevelt.dds"
+							expire = "1935.1.1"
+							ideology = socialism
+							traits = {
+								bull_moose
+								trait_socialism
+							}
+						}
+						add_popularity = {
+							ideology = communism
+							popularity = 0.1
+						}
+						USB = {
+							country_event = {
+								id = ww1_usa.56
+								days = 180
+							}
+						}
+						else = {
+							create_country_leader = {
+								name = "William H. Taft"
+								picture = "gfx/leaders/USA/USA_william_h_taft.dds"
+								expire = "1935.1.1"
+								ideology = classical_liberalism
+								traits = {
+									trait_classical_liberalism
+								}
+							}
 						}
 					}
-					add_popularity = {
-						ideology = communism
-						popularity = 0.1
-					}
-					USB = {
-						country_event = {
-							id = ww1_usa.56
-							days = 180
-						}
-					}
+
 				}
 			}
 			every_country = {
@@ -2790,32 +2755,6 @@ country_event = {
 				}
 			}
 			every_country = {
-				limit = {
-					OR = {
-						tag = CAN
-						tag = MEX
-						tag = CUB
-						tag = HAI
-						tag = DOM
-						tag = GUA
-						tag = HON
-						tag = ELS
-						tag = NIC
-						tag = COS
-						tag = PAN
-						tag = VEN
-						tag = COL
-						tag = ECU
-						tag = PRU
-						tag = BRA
-						tag = BOL
-						tag = CHL
-						tag = PAR
-						tag = ARG
-						tag = URG
-						tag = LIB
-					}
-				}
 				USA = {
 					diplomatic_relation = {
 						country = PREV
@@ -2938,6 +2877,12 @@ country_event = {
 					army_ratio = 0.6
 					navy_ratio = 1
 					air_ratio = 0.35
+					keep_unit_leaders_trigger = {
+						has_trait = old_guard
+						NOT = {
+							has_trait = politically_connected
+						}									
+					}
 				}
 				set_politics = {
 					ruling_party = fascism
@@ -3029,32 +2974,6 @@ country_event = {
 				}
 			}
 			every_country = {
-				limit = {
-					OR = {
-						tag = CAN
-						tag = MEX
-						tag = CUB
-						tag = HAI
-						tag = DOM
-						tag = GUA
-						tag = HON
-						tag = ELS
-						tag = NIC
-						tag = COS
-						tag = PAN
-						tag = VEN
-						tag = COL
-						tag = ECU
-						tag = PRU
-						tag = BRA
-						tag = BOL
-						tag = CHL
-						tag = PAR
-						tag = ARG
-						tag = URG
-						tag = LIB
-					}
-				}
 				USA = {
 					diplomatic_relation = {
 						country = PREV
@@ -3143,32 +3062,6 @@ country_event = {
 				}
 			}
 			every_country = {
-				limit = {
-					OR = {
-						tag = CAN
-						tag = MEX
-						tag = CUB
-						tag = HAI
-						tag = DOM
-						tag = GUA
-						tag = HON
-						tag = ELS
-						tag = NIC
-						tag = COS
-						tag = PAN
-						tag = VEN
-						tag = COL
-						tag = ECU
-						tag = PRU
-						tag = BRA
-						tag = BOL
-						tag = CHL
-						tag = PAR
-						tag = ARG
-						tag = URG
-						tag = LIB
-					}
-				}
 				USA = {
 					diplomatic_relation = {
 						country = PREV
@@ -3215,6 +3108,12 @@ country_event = {
 					army_ratio = 0.6
 					navy_ratio = 1
 					air_ratio = 0.35
+					keep_unit_leaders_trigger = {
+						has_trait = old_guard
+						NOT = {
+							has_trait = politically_connected
+						}									
+					}
 				}
 				set_politics = {
 					ruling_party = fascism
@@ -3395,32 +3294,6 @@ country_event = {
 				}
 			}
 			every_country = {
-				limit = {
-					OR = {
-						tag = CAN
-						tag = MEX
-						tag = CUB
-						tag = HAI
-						tag = DOM
-						tag = GUA
-						tag = HON
-						tag = ELS
-						tag = NIC
-						tag = COS
-						tag = PAN
-						tag = VEN
-						tag = COL
-						tag = ECU
-						tag = PRU
-						tag = BRA
-						tag = BOL
-						tag = CHL
-						tag = PAR
-						tag = ARG
-						tag = URG
-						tag = LIB
-					}
-				}
 				USA = {
 					diplomatic_relation = {
 						country = PREV
@@ -3639,32 +3512,6 @@ country_event = {
 				}
 			}
 			every_country = {
-				limit = {
-					OR = {
-						tag = CAN
-						tag = MEX
-						tag = CUB
-						tag = HAI
-						tag = DOM
-						tag = GUA
-						tag = HON
-						tag = ELS
-						tag = NIC
-						tag = COS
-						tag = PAN
-						tag = VEN
-						tag = COL
-						tag = ECU
-						tag = PRU
-						tag = BRA
-						tag = BOL
-						tag = CHL
-						tag = PAR
-						tag = ARG
-						tag = URG
-						tag = LIB
-					}
-				}
 				USA = {
 					diplomatic_relation = {
 						country = PREV
@@ -3863,6 +3710,9 @@ country_event = {
 					army_ratio = 0.25
 					navy_ratio = 0.1
 					air_ratio = 0.1
+					keep_unit_leaders_trigger = {
+						always = yes									
+					}
 				}
 			}
 			CSA = {
@@ -4071,32 +3921,6 @@ country_event = {
 				}
 			}
 			every_country = {
-				limit = {
-					OR = {
-						tag = CAN
-						tag = MEX
-						tag = CUB
-						tag = HAI
-						tag = DOM
-						tag = GUA
-						tag = HON
-						tag = ELS
-						tag = NIC
-						tag = COS
-						tag = PAN
-						tag = VEN
-						tag = COL
-						tag = ECU
-						tag = PRU
-						tag = BRA
-						tag = BOL
-						tag = CHL
-						tag = PAR
-						tag = ARG
-						tag = URG
-						tag = LIB
-					}
-				}
 				USA = {
 					diplomatic_relation = {
 						country = PREV
@@ -4150,6 +3974,12 @@ country_event = {
 					army_ratio = 0.6
 					navy_ratio = 0.9
 					air_ratio = 0.7
+					keep_unit_leaders_trigger = {
+						has_trait = old_guard
+						NOT = {
+							has_trait = politically_connected
+						}			
+					}
 				}
 				set_stability = 0.55
 				set_war_support = 0.9
@@ -4369,6 +4199,12 @@ country_event = {
 					army_ratio = 0.6
 					navy_ratio = 0.9
 					air_ratio = 0.7
+					keep_unit_leaders_trigger = {
+						NOT = {
+							has_trait = politically_connected
+							has_trait = old_guard
+						}									
+					}
 				}
 				set_cosmetic_tag = USA_CSA_only_color
 				create_country_leader = {
@@ -4466,32 +4302,6 @@ country_event = {
 				}
 			}
 			every_country = {
-				limit = {
-					OR = {
-						tag = CAN
-						tag = MEX
-						tag = CUB
-						tag = HAI
-						tag = DOM
-						tag = GUA
-						tag = HON
-						tag = ELS
-						tag = NIC
-						tag = COS
-						tag = PAN
-						tag = VEN
-						tag = COL
-						tag = ECU
-						tag = PRU
-						tag = BRA
-						tag = BOL
-						tag = CHL
-						tag = PAR
-						tag = ARG
-						tag = URG
-						tag = LIB
-					}
-				}
 				USA = {
 					diplomatic_relation = {
 						country = PREV
@@ -4696,6 +4506,11 @@ country_event = {
 					army_ratio = 0.6
 					navy_ratio = 0.9
 					air_ratio = 0.7
+					keep_unit_leaders_trigger = {
+						NOT = {
+							has_trait = old_guard
+						}									
+					}
 				}
 				add_popularity = {
 					ideology = democratic
@@ -4749,32 +4564,6 @@ country_event = {
 				}
 			}
 			every_country = {
-				limit = {
-					OR = {
-						tag = CAN
-						tag = MEX
-						tag = CUB
-						tag = HAI
-						tag = DOM
-						tag = GUA
-						tag = HON
-						tag = ELS
-						tag = NIC
-						tag = COS
-						tag = PAN
-						tag = VEN
-						tag = COL
-						tag = ECU
-						tag = PRU
-						tag = BRA
-						tag = BOL
-						tag = CHL
-						tag = PAR
-						tag = ARG
-						tag = URG
-						tag = LIB
-					}
-				}
 				USA = {
 					diplomatic_relation = {
 						country = PREV

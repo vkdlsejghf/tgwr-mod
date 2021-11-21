@@ -1,20 +1,28 @@
 ﻿capital = 141
+
 set_research_slots = 3
-set_stability = 0.9
+set_stability = 0.65
 set_convoys = 25
+
+country_event = {
+	id = ww1_sweden.1
+	days = 511
+}
+
 create_country_leader = {
-	name = "Zeth Höglund"
-	picture = "gfx/leaders/Europe/portrait_europe_generic_1.dds"
+	name = "Elise Ottesen"
+	picture = "SWE_elise_ottesen.png"
 	expire = "1935.1.1"
-	ideology = marxism
+	ideology = anarcho_syndicalism
+	female = yes
 	traits = {
-		trait_marxism
+		SWE_ottar trait_anarcho_syndicalism
 	}
 }
 
 create_country_leader = {
 	name = "Arvid Lindman"
-	picture = "gfx/leaders/SWE/SWE_arvid_lindman.dds"
+	picture = "SWE_arvid_lindman.dds"
 	expire = "1935.1.1"
 	ideology = conservatism
 	traits = {
@@ -24,7 +32,7 @@ create_country_leader = {
 
 create_country_leader = {
 	name = "Gustaf V"
-	picture = "gfx/leaders/SWE/SWE_gustaf_v.dds"
+	picture = "SWE_gustaf_v.dds"
 	expire = "1935.1.1"
 	ideology = autocracy
 	traits = {
@@ -32,62 +40,111 @@ create_country_leader = {
 	}
 }
 
+create_country_leader = {
+	name = "Knut Gillis Bildt"
+	picture = "SWE_knut_bildt.png"
+	expire = "1935.1.1"
+	ideology = stratocracy
+	traits = {
+		trait_stratocracy
+	}
+}
+
 create_corps_commander = {
-	name = "von Matern"
+	name = "Axel von Matern"
 	traits = {
 		winter_specialist
+		old_guard
 	}
 	skill = 2
+	picture = "SWE_axel_matern.png"
+	attack_skill = 2
+	defense_skill = 4
+	planning_skill = 2
+	logistics_skill = 2
 }
 
 create_corps_commander = {
-	name = "Fallenius"
+	name = "Constantin Fallenius"
 	traits = {
+		cavalry_officer naval_liason
 	}
 	skill = 3
+	picture = "SWE_constantin_fallenius.png"
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 2
 }
 
 create_corps_commander = {
-	name = "Mörcke"
+	name = "Emil Mörcke"
 	traits = {
+		politically_connected organizer
 	}
 	skill = 3
+	picture = "SWE_emil_morcke.png"
+	attack_skill = 1
+	defense_skill = 3
+	planning_skill = 3
+	logistics_skill = 1
 }
 
 create_corps_commander = {
-	name = "Nordenskjöld"
+	name = "Carl Gustaf Hammarskjöld"
 	traits = {
+		media_personality infantry_officer brilliant_strategist 
 	}
 	skill = 2
-}
-
-create_corps_commander = {
-	name = "Uggla"
-	traits = {
-	}
-	skill = 2
-}
-
-create_corps_commander = {
-	name = "Hasselroth"
-	traits = {
-	}
-	skill = 2
-}
-
-create_corps_commander = {
-	name = "von Platen"
-	traits = {
-	}
-	skill = 3
-}
+	picture = "SWE_Carl_Gustaf_Hammarskjold.png"
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 3
+	logistics_skill = 2
+}	
 
 create_field_marshal = {
-	name = "Schmidt"
+	name = "Knut Gillis Bildt"
 	traits = {
-		defensive_doctrine
+		cavalry_officer politically_connected defensive_doctrine organisational_leader logistics_wizard
 	}
+	skill = 3
+	picture = "SWE_knut_bildt.png"
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 2
+}
+
+create_navy_leader = {
+	name = "Gustaf V"
+	picture = "SWE_gustaf_v.dds"
+	traits = { navy_media_personality ironside trait_royal }
 	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	maneuvering_skill = 1
+	coordination_skill = 3
+}
+create_navy_leader = {
+	name = "Wilhelm Dyrssen"
+	picture = "SWE_Wilhelm_Dyrssen.png"
+	traits = { navy_media_personality gunnery_expert spotter }
+	skill = 2
+	attack_skill = 1
+	defense_skill = 3
+	maneuvering_skill = 2
+	coordination_skill = 2
+}
+create_navy_leader = {
+	name = "Carl August Ehrensvärd"
+	picture = "SWE_Carl_August_Ehrensvard.png"
+	traits = { navy_career_officer ENG_royalist}
+	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	maneuvering_skill = 2
+	coordination_skill = 2
 }
 
 1910.1.1 = {
@@ -124,6 +181,13 @@ create_field_marshal = {
 		communism = 2
 		neutrality = 33
 	}
+	add_ideas = {
+		SWE_gustaf_v
+		SWE_conservative_army_leadership
+		SWE_economic_turbulence_1
+		SWE_class_conflict
+		SWE_high_emigration_1
+	}
 }
 
 if = {
@@ -132,17 +196,443 @@ if = {
 	}
 	set_technology = {
 		basic_naval_mines = 1
+		early_ship_hull_submarine = 1
 		early_ship_hull_light = 1
+		basic_ship_hull_light = 1
 		early_ship_hull_cruiser = 1
 		basic_battery = 1
 		basic_light_battery = 1
 		basic_medium_battery = 1
-		basic_torpedo = 1
+		improved_medium_battery = 1
+		basic_heavy_battery = 1
 		basic_secondary_battery = 1
 		basic_cruiser_armor_scheme = 1
+		basic_heavy_armor_scheme = 1
+		basic_torpedo = 1
 		mtg_transport = 1
+		pre_dreadnoughts = 1
 	}
-	# set_naval_oob = "SWE_1910_naval_mtg"
+
+	set_naval_oob = "SWE_1910_naval_mtg"
+
+	create_equipment_variant = {
+		name = "Äran Class"
+		type = ship_hull_pre_dreadnought
+		name_group = SWE_BB_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_heavy_battery_1
+			fixed_ship_anti_air_slot = empty
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = heavy_ship_engine_1
+			fixed_ship_secondaries_slot = ship_secondaries_1
+			fixed_ship_armor_slot = ship_armor_bc_1
+			front_1_custom_slot = empty
+			mid_1_custom_slot = ship_torpedo_1
+			rear_1_custom_slot = empty
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Oscar II Class"
+		type = ship_hull_pre_dreadnought
+		name_group = SWE_BB_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_heavy_battery_1
+			fixed_ship_anti_air_slot = empty
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = heavy_ship_engine_1
+			fixed_ship_secondaries_slot = ship_secondaries_1
+			fixed_ship_armor_slot = ship_armor_bc_1
+			front_1_custom_slot = empty
+			mid_1_custom_slot = ship_torpedo_1
+			rear_1_custom_slot = empty
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Dristigethen Class"
+		type = ship_hull_pre_dreadnought
+		name_group = SWE_BB_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_heavy_battery_1
+			fixed_ship_anti_air_slot = empty
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = heavy_ship_engine_1
+			fixed_ship_secondaries_slot = ship_secondaries_1
+			fixed_ship_armor_slot = ship_armor_bc_1
+			front_1_custom_slot = empty
+			mid_1_custom_slot = ship_torpedo_1
+			rear_1_custom_slot = empty
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Oden Class"
+		type = ship_hull_pre_dreadnought
+		name_group = SWE_BB_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_heavy_battery_1
+			fixed_ship_anti_air_slot = empty
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = heavy_ship_engine_1
+			fixed_ship_secondaries_slot = ship_secondaries_1
+			fixed_ship_armor_slot = ship_armor_bc_1
+			front_1_custom_slot = empty
+			mid_1_custom_slot = ship_torpedo_1
+			rear_1_custom_slot = empty
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Svea Class"
+		type = ship_hull_pre_dreadnought
+		name_group = SWE_BB_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_heavy_battery_1
+			fixed_ship_anti_air_slot = empty
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = heavy_ship_engine_1
+			fixed_ship_secondaries_slot = ship_secondaries_1
+			fixed_ship_armor_slot = ship_armor_bc_1
+			front_1_custom_slot = empty
+			mid_1_custom_slot = ship_torpedo_1
+			rear_1_custom_slot = empty
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Fylgia Class"
+		type = ship_hull_cruiser_1
+		name_group = NOR_CL_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_medium_battery_1
+			fixed_ship_anti_air_slot = empty
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = cruiser_ship_engine_1
+			fixed_ship_armor_slot = ship_armor_cruiser_1
+			mid_1_custom_slot = ship_torpedo_1
+			rear_1_custom_slot = ship_light_medium_battery_1
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Örnen Class"
+		type = ship_hull_cruiser_1
+		name_group = NOR_CL_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_medium_battery_1
+			fixed_ship_anti_air_slot = empty
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = cruiser_ship_engine_1
+			fixed_ship_armor_slot = ship_armor_cruiser_1
+			mid_1_custom_slot = ship_torpedo_1
+			rear_1_custom_slot = empty
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Hugin Class"
+		type = ship_hull_light_2
+		name_group = NOR_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_battery_1
+			fixed_ship_anti_air_slot = empty
+			fixed_ship_fire_control_system_slot = empty
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = light_ship_engine_1
+			fixed_ship_torpedo_slot = ship_torpedo_1
+			mid_1_custom_slot = empty
+			rear_1_custom_slot = empty
+		}
+	}
+	create_equipment_variant = {
+		name = "Ragnar Class"
+		type = ship_hull_light_2
+		name_group = NOR_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_battery_1
+			fixed_ship_anti_air_slot = empty
+			fixed_ship_fire_control_system_slot = empty
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = light_ship_engine_1
+			fixed_ship_torpedo_slot = ship_torpedo_1
+			mid_1_custom_slot = empty
+			rear_1_custom_slot = empty
+		}
+		obsolete = yes
+	}create_equipment_variant = {
+		name = "Wale Class"
+		type = ship_hull_light_2
+		name_group = NOR_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_battery_1
+			fixed_ship_anti_air_slot = empty
+			fixed_ship_fire_control_system_slot = empty
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = light_ship_engine_1
+			fixed_ship_torpedo_slot = ship_torpedo_1
+			mid_1_custom_slot = empty
+			rear_1_custom_slot = empty
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Magne Class"
+		type = ship_hull_light_2
+		name_group = NOR_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_battery_1
+			fixed_ship_anti_air_slot = empty
+			fixed_ship_fire_control_system_slot = empty
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = light_ship_engine_1
+			fixed_ship_torpedo_slot = ship_torpedo_1
+			mid_1_custom_slot = empty
+			rear_1_custom_slot = empty
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Fashion Class"
+		type = ship_hull_light_2
+		name_group = NOR_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_battery_1
+			fixed_ship_anti_air_slot = empty
+			fixed_ship_fire_control_system_slot = empty
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = light_ship_engine_1
+			fixed_ship_torpedo_slot = ship_torpedo_1
+			mid_1_custom_slot = empty
+			rear_1_custom_slot = empty
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Plejad Class"
+		type = ship_hull_light_1
+		name_group = NOR_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_battery_1
+			fixed_ship_anti_air_slot = empty
+			fixed_ship_fire_control_system_slot = empty
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = light_ship_engine_1
+			fixed_ship_torpedo_slot = ship_torpedo_1
+			mid_1_custom_slot = empty
+			rear_1_custom_slot = empty
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Komet Class"
+		type = ship_hull_light_1
+		name_group = NOR_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_battery_1
+			fixed_ship_anti_air_slot = empty
+			fixed_ship_fire_control_system_slot = empty
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = light_ship_engine_1
+			fixed_ship_torpedo_slot = ship_torpedo_1
+			mid_1_custom_slot = empty
+			rear_1_custom_slot = empty
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Gondul Class"
+		type = ship_hull_light_1
+		name_group = NOR_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_battery_1
+			fixed_ship_anti_air_slot = empty
+			fixed_ship_fire_control_system_slot = empty
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = light_ship_engine_1
+			fixed_ship_torpedo_slot = ship_torpedo_1
+			mid_1_custom_slot = empty
+			rear_1_custom_slot = empty
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "No. 79 Class"
+		type = ship_hull_light_1
+		name_group = NOR_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_battery_1
+			fixed_ship_anti_air_slot = empty
+			fixed_ship_fire_control_system_slot = empty
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = light_ship_engine_1
+			fixed_ship_torpedo_slot = ship_torpedo_1
+			mid_1_custom_slot = empty
+			rear_1_custom_slot = empty
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Agne Class"
+		type = ship_hull_light_1
+		name_group = NOR_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_battery_1
+			fixed_ship_anti_air_slot = empty
+			fixed_ship_fire_control_system_slot = empty
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = light_ship_engine_1
+			fixed_ship_torpedo_slot = ship_torpedo_1
+			mid_1_custom_slot = empty
+			rear_1_custom_slot = empty
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Bygve Class"
+		type = ship_hull_light_1
+		name_group = NOR_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_battery_1
+			fixed_ship_anti_air_slot = empty
+			fixed_ship_fire_control_system_slot = empty
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = light_ship_engine_1
+			fixed_ship_torpedo_slot = ship_torpedo_1
+			mid_1_custom_slot = empty
+			rear_1_custom_slot = empty
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Narf Class"
+		type = ship_hull_light_1
+		name_group = NOR_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_battery_1
+			fixed_ship_anti_air_slot = empty
+			fixed_ship_fire_control_system_slot = empty
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = light_ship_engine_1
+			fixed_ship_torpedo_slot = ship_torpedo_1
+			mid_1_custom_slot = empty
+			rear_1_custom_slot = empty
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Galdr Class"
+		type = ship_hull_light_1
+		name_group = NOR_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_battery_1
+			fixed_ship_anti_air_slot = empty
+			fixed_ship_fire_control_system_slot = empty
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = light_ship_engine_1
+			fixed_ship_torpedo_slot = ship_torpedo_1
+			mid_1_custom_slot = empty
+			rear_1_custom_slot = empty
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Blink Class"
+		type = ship_hull_light_1
+		name_group = NOR_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_battery_1
+			fixed_ship_anti_air_slot = empty
+			fixed_ship_fire_control_system_slot = empty
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = light_ship_engine_1
+			fixed_ship_torpedo_slot = ship_torpedo_1
+			mid_1_custom_slot = empty
+			rear_1_custom_slot = empty
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Blink Class"
+		type = ship_hull_light_1
+		name_group = NOR_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_battery_1
+			fixed_ship_anti_air_slot = empty
+			fixed_ship_fire_control_system_slot = empty
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = light_ship_engine_1
+			fixed_ship_torpedo_slot = ship_torpedo_1
+			mid_1_custom_slot = empty
+			rear_1_custom_slot = empty
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Undertvattensbaten No. 2 Class"	
+		type = ship_hull_submarine_1
+		name_group = SWE_SS_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_torpedo_slot = ship_torpedo_sub_1
+			fixed_ship_engine_slot = sub_ship_engine_1
+			rear_1_custom_slot = empty
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Hvalen Class"	
+		type = ship_hull_submarine_1
+		name_group = SWE_SS_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_torpedo_slot = ship_torpedo_sub_1
+			fixed_ship_engine_slot = sub_ship_engine_1
+			rear_1_custom_slot = empty
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Hajen Class"	
+		type = ship_hull_submarine_1
+		name_group = SWE_SS_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_torpedo_slot = ship_torpedo_sub_1
+			fixed_ship_engine_slot = sub_ship_engine_1
+			rear_1_custom_slot = empty
+		}
+		obsolete = yes
+	}
 }
 
 if = {
@@ -152,10 +642,122 @@ if = {
 		}
 	}
 	set_technology = {
+		early_submarine = 1
 		early_destroyer = 1
+		basic_destroyer = 1
 		early_light_cruiser = 1
 		early_heavy_cruiser = 1
+		early_battleship = 1
 		transport = 1
 	}
-	# set_naval_oob = "SWE_1910_naval_legacy"
+
+	set_naval_oob = "SWE_1910_naval_legacy"
+
+	create_equipment_variant = {
+		name = "Äran Class"
+		type = battleship_1
+		parent_version = 0
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Oscar II Class"
+		type = battleship_1
+		parent_version = 0
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Dristigethen Class"
+		type = battleship_1
+		parent_version = 0
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Oden Class"
+		type = battleship_1
+		parent_version = 0
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Svea Class"
+		type = battleship_1
+		parent_version = 0
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Fylgia Class"
+		type = heavy_cruiser_1
+		parent_version = 0
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Örnen Class"
+		type = heavy_cruiser_1
+		parent_version = 0
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Hugin Class"
+		type = destroyer_2
+		parent_version = 0
+	}
+	create_equipment_variant = {
+		name = "Ragnar Class"
+		type = destroyer_2
+		parent_version = 0
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Wale Class"
+		type = destroyer_2
+		parent_version = 0
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Magne Class"
+		type = destroyer_2
+		parent_version = 0
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Fashion Class"
+		type = destroyer_2
+		parent_version = 0
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Plejad Class"
+		type = destroyer_1
+		parent_version = 0
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Komet Class"
+		type = destroyer_1
+		parent_version = 0
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Gondul Class"
+		type = destroyer_1
+		parent_version = 0
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Undervattensbaten Class"
+		type = submarine_1
+		parent_version = 0
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Hvalen Class"
+		type = submarine_1
+		parent_version = 0
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Hajen Class"
+		type = submarine_1
+		parent_version = 0
+		obsolete = yes
+	}
 }

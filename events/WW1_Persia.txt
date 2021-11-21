@@ -1,150 +1,80 @@
 ﻿add_namespace = ww1_persia
-
-
-# East Persian Cordon
-##################
 country_event = {
-	id = ww1_persia.3
-	title = ww1_persia.3.t
-	desc = ww1_persia.3.d
-	picture = GFX_report_event_soldiers_in_france
-
+	title = ww1_persia.1.t
+	desc = ww1_persia.1.d
+	id = ww1_persia.1
+	picture = report_event_royal_parade
+	
 	fire_only_once = yes
+	mean_time_to_happen = { days = 21 }
 	trigger = {
 		tag = PER
-		is_subject = no
-		ENG = { has_war_with = TUR }
-		RUS = { has_war_with = TUR }
-		NOT = { has_war_with = RUS }		
-		NOT = { has_war_with = ENG }
-		NOT = { is_in_faction = yes }
+		date > 1914.6.1
+		has_country_leader = { name = "Ahmad Shah Qajar" ruling_only = no }
 	}
-	mean_time_to_happen = { days = 10 }
+	
 	option = {
-		name = ww1_persia.3.a
-		if = {
-			limit = {
-				any_state = { 
-					has_dynamic_modifier = { modifier = per_russian_sphere }
-				}
+		name = ww1_persia.1.a
+		remove_country_leader_trait = underage_monarch
+		hidden_effect = {
+			retire_ideology_leader = neutrality
+			create_country_leader = { 
+				name = "Ahmad Shah Qajar"
+				picture = "gfx/leaders/PER/PER_ahmad_shah_qajar.dds" 
+				expire = "1935.1.1" 
+				ideology = autocracy  
+				traits = { trait_autocracy } 
 			}
-			RUS = {
-				diplomatic_relation = {
-					country = PER
-					relation = military_access
-					active = yes
-				}
-			}
-		}
-		if = {
-			limit = {
-				any_state = { 
-					has_dynamic_modifier = { modifier = per_british_sphere }
-				}
-			}
-			ENG = {
-				diplomatic_relation = {
-					country = PER
-					relation = military_access
-					active = yes
-				}
-			}
-		}
-		ai_chance = { factor = 100 }
+		}	
 	}
 }
-# Gendarmie
-country_event = {
-	id = ww1_persia.4
-	title = ww1_persia.4.t
-	desc = ww1_persia.4.d
-	picture = GFX_report_event_american_hunger_march
 
-	fire_only_once = yes
-	trigger = {
-		original_tag = PER
-		has_global_flag = rus_eng_partition_of_persia
-	}
-	mean_time_to_happen = { days = 7 }
-	option = {
-		name = ww1_persia.4.a
-		every_owned_state = {
-			limit = { is_core_of = PER }
-			add_dynamic_modifier = { modifier = per_paramilitary_gendarmerie }
-		}
-		ai_chance = { factor = 100 }
-	}
-}
 # Surrender to Allies
 country_event = {
-	id = ww1_persia.5 
+	id = ww1_persia.5
 	title = ww1_persia.5.t
 	desc = ww1_persia.5.d
 	picture = GFX_report_event_american_hunger_march
-
-	fire_only_once = yes
-	trigger = {
-		original_tag = PER
-		is_subject = no
-		has_civil_war = no
-		has_war_with = TUR
-		any_state = { 
-			has_dynamic_modifier = { modifier = per_paramilitary_gendarmerie }
-		}
-	}
-	mean_time_to_happen = { days = 14 }
+	is_triggered_only = yes
 	option = {
-		name = ww1_persia.5.a	#surrender to Britain
-		ENG = {
-			if = {
-				limit = {
-					OR = {
-						has_dlc = "Together for Victory"
-						has_dlc = "Man the Guns"
-					}
-				}
-				
-				set_autonomy = {
-					target = PER
-					autonomous_state = autonomy_tgwr_protectorate
-					freedom_level = 0.90
-				}
-				else = {
-					puppet = PER
-				}
-			}
-		}
-		hidden_effect = {
-			set_popularities = {
-				democratic = 18
-				neutrality = 75
-				fascism = 0
-				communism = 7
-			}
-			set_politics = { ruling_party = neutrality }
-			every_state = {
-				limit = { 
-					has_state_flag = PER_russian_british_cordon 
-					NOT = { is_claimed_by = RUS }
-					NOT = { is_claimed_by = ENG }
-				}
-				PER = { transfer_state = PREV }
+		name = ww1_persia.5.a
+		trigger = {
+		    NOT = {
+			    has_government = fascism
 			}
 		}	
-		start_civil_war = { 
-			ideology = fascism 
-			size = 0.5
-			states = all			
+		start_civil_war = {
+			ideology = fascism
+			size = 0.6
+			capital = 411
+			states = all
 			states_filter = {
-				has_dynamic_modifier = { modifier = per_paramilitary_gendarmerie }
-			}
-		}
-		hidden_effect = {
-			random_country = {
-				limit = {
-					original_tag = PER
-					has_government = fascism
+				NOT = {
+					state = 266
+					state = 416
+					state = 418
 				}
+			}
+			keep_political_leader = yes
+			hidden_effect = {
+				create_country_leader = {
+					name = "Persian Central Government"
+					picture = "gfx/leaders/PER/PER_gendarmerie.dds"
+					expire = "1935.1.1"
+					ideology = stratocracy
+					traits = {
+						eng_civil_war_trait
+						trait_stratocracy
+					}
+				}
+				set_popularities = {
+					democratic = 35
+					neutrality = 10
+					fascism = 55
+					communism = 0
+				}
+				set_cosmetic_tag = PER_gendarmerie
+				set_country_flag = PER_gendarmerie_flag
 				every_other_country = {
 					add_ai_strategy = {
 						type = protect
@@ -157,123 +87,215 @@ country_event = {
 						value = -200
 					}
 				}
-				set_popularities = {
-					democratic = 35
-					neutrality = 10
-					fascism = 55
-					communism = 0
+				declare_war_on = {
+					target = ENG
+					type = take_core_state
 				}
-				set_cosmetic_tag = PER_gendarmerie
+				declare_war_on = {
+					target = RUS
+					type = take_core_state
+				}
 			}
 		}
 		set_global_flag = persian_gendarmerie_revolt
-		ai_chance = { factor = 100 }
+		ai_chance = {
+			factor = 100
+		}
 	}
 	option = {
-		name = ww1_persia.5.b	#stand with gendarmie
-		
-		hidden_effect = {
-			set_popularities = {
-				democratic = 35
-				neutrality = 10
-				fascism = 55
-				communism = 0
-			}
-			set_politics = { ruling_party = fascism }
-			every_state = {
-				limit = { 
-					has_state_flag = PER_russian_british_cordon 
-					NOT = { is_claimed_by = RUS }
-					NOT = { is_claimed_by = ENG }
-				}
-				PER = { transfer_state = PREV }
-			}
-			every_other_country = {
-				add_ai_strategy = {
-					type = protect
-					id = PER
-					value = -200
-				}
-				add_ai_strategy = {
-					type = alliance
-					id = PER
-					value = -200
-				}
+		name = ww1_persia.5.b
+		declare_war_on = {
+			target = ENG
+			type = take_core_state
+		}
+		declare_war_on = {
+			target = RUS
+			type = take_core_state
+		}
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.1
+		}
+		add_war_support = 0.1
+		ai_chance = {
+			base = 10
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
 			}
 		}
-		start_civil_war = {
-			ideology = neutrality
-			size = 0.5
-			states = all
-			states_filter = {
-				has_state_flag = PER_russian_british_cordon
-			}
-			ENG = {
-				if = {
-					limit = {
-						OR = {
-							has_dlc = "Together for Victory"
-							has_dlc = "Man the Guns"
-						}
-					}
-					
-					set_autonomy = {
-						target = PER
-						autonomous_state = autonomy_tgwr_protectorate
-						freedom_level = 0.90
-					}
-					else = {
-						puppet = PER
-					}
-				}
-			}
-		}
-		hidden_effect = {
-			random_country = {
-				limit = {
-					original_tag = PER
-					has_government = neutrality
-				}		
-				set_popularities = {
-					democratic = 18
-					neutrality = 75
-					fascism = 0
-					communism = 7
-				}
-			}
-		}
-		PER = { set_cosmetic_tag = PER_gendarmerie }
-		set_global_flag = persian_gendarmerie_revolt
-		ai_chance = { factor = 0 }
 	}
 }
-# Leave British sphere
+
+# 1921 Persian coup d'état
+################################
 country_event = {
 	id = ww1_persia.6
 	title = ww1_persia.6.t
 	desc = ww1_persia.6.d
-	picture = GFX_report_event_american_hunger_march
-
-	fire_only_once = yes
 	trigger = {
-		original_tag = PER
-		has_civil_war = no
+		tag = PER
+		date > 1921.2.1
 		OR = {
-			date > 1919.6.22
-			has_global_flag = denouncement_of_anglo_persian_agreement_1919
+			has_government = neutrality
+			has_government = fascism
 		}
-		is_subject = yes
-		has_global_flag = persian_gendarmerie_revolt
-	}
-	mean_time_to_happen = { days = 1 }
-	option = {
-		name = ww1_persia.6.a
-		OVERLORD = {
-			set_autonomy = {
-				target = PER
-				autonomous_state = autonomy_free
+		OR = {
+			is_subject_of = ENG
+			any_state = {
+				is_core_of = PER
+				is_owned_by = ENG
 			}
 		}
-		ai_chance = { factor = 100 }
+	}
+	mean_time_to_happen = {
+		days = 21
+	}
+	option = {
+		name = ww1_persia.6.a
+		if = {
+			limit = {
+				is_subject = yes
+			}
+			OVERLORD = {
+				end_puppet = PREV
+			}
+		}
+		if = {
+			limit = {
+				has_idea = idea_victors_of_wwi
+			}
+			remove_ideas = idea_victors_of_wwi
+		}
+		retire_ideology_leader = neutrality
+		set_politics = {
+			ruling_party = neutrality
+		}
+		create_country_leader = {
+			name = "Reza Khan"
+			picture = "Portrait_Iran_Reza_Shah_Pahlavi.dds"
+			expire = "1965.1.1"
+			ideology = despotism
+			traits = {
+				trait_despotism
+			}
+		}
+		every_state = {
+			limit = {
+				is_core_of = PER
+				OR = {
+					is_owned_by = ENG
+					is_owned_by = RUS
+				}
+			}
+			PER = {
+				transfer_state = PREV
+			}
+		}
+		add_political_power = -100
+		add_stability = -0.1
+		add_war_support = 0.1
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = ww1_persia.6.b
+		if = {
+			limit = {
+				is_subject_of = ENG
+			}
+			ENG = {
+				end_puppet = PER
+			}
+		}
+		every_state = {
+			limit = {
+				is_core_of = PER
+				OR = {
+					is_owned_by = ENG
+					is_owned_by = RUS
+				}
+			}
+			PER = {
+				transfer_state = PREV
+			}
+		}
+		start_civil_war = {
+			ideology = fascism
+			size = 0.2
+			keep_political_leader = yes
+			hidden_effect = {
+				create_country_leader = {
+					name = "Reza Khan"
+					picture = "Portrait_Iran_Reza_Shah_Pahlavi.dds"
+					expire = "1965.1.1"
+					ideology = stratocracy
+					traits = {
+						trait_stratocracy
+					}
+				}
+			}
+		}
+		add_political_power = -200
+		add_stability = -0.2
+		add_war_support = -0.1
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+# Imperial State of Persia (Iran from 1935)
+#################################
+country_event = {
+	id = ww1_persia.7
+	title = ww1_persia.7.t
+	desc = ww1_persia.7.d
+	trigger = {
+		original_tag = PER
+		has_war = no
+		OR = {
+			is_subject = no
+			has_government = neutrality
+		}		
+		date > 1925.12.1
+		has_country_leader = {
+			name = "Reza Khan"
+			ruling_only = yes
+		}
+	}
+	mean_time_to_happen = {
+		days = 25
+	}
+	option = {
+		name = ww1_persia.7.a
+		hidden_effect = {
+			retire_country_leader = yes
+			set_popularities = {
+				democratic = 25
+				neutrality = 55
+				fascism = 20
+				communism = 0
+			}
+			set_politics = {
+				ruling_party = neutrality
+			}
+			set_cosmetic_tag = PER_pahlavi
+		}
+		set_party_name = {
+			ideology = neutrality
+			long_name = PER_pahlavi_dynasty
+			name = PER_pahlavi_dynasty
+		}
+		create_country_leader = {
+			name = "Reza Shah Pahlavi"
+			picture = "Portrait_Iran_Reza_Shah_Pahlavi.dds"
+			expire = "1965.1.1"
+			ideology = autocracy
+			traits = {
+				trait_autocracy
+			}
+		}
 	}
 }
