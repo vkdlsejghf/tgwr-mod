@@ -40,7 +40,7 @@ focus_tree = {
 			}
 		}
 		ai_will_do = {
-			factor = 5
+			factor = 6
 		}
 		search_filters = {
 			FOCUS_FILTER_HISTORICAL
@@ -1060,6 +1060,9 @@ focus_tree = {
 			SWE = {
 				is_subject = no
 				is_in_faction = no
+				NOT = {
+					has_government = communism
+				}
 			}
 			NOT = {
 				has_country_flag = great_war_loser
@@ -2425,6 +2428,7 @@ focus_tree = {
 						add_state_claim = PREV
 					}
 				}
+				add_state_claim = 728
 				add_state_claim = 744
 				add_state_claim = 746
 				add_state_claim = 524
@@ -2440,6 +2444,27 @@ focus_tree = {
 				add_state_claim = 632
 				add_state_claim = 639
 				add_state_claim = 647
+			}
+			hidden_effect = {
+				every_state = {
+					limit = {
+						is_fully_controlled_by = GER
+						is_claimed_by = OST
+					}
+					OST = {
+						transfer_state = PREV
+					}
+				}
+				every_state = {
+					limit = {
+						is_owned_by = GER
+						NOT = { is_fully_controlled_by = GER }
+						is_claimed_by = OST
+					}
+					OST = {
+						set_state_owner = PREV
+					}
+				}
 			}
 			puppet = OST
 			every_unit_leader = {
@@ -2463,6 +2488,7 @@ focus_tree = {
 			}
 			hidden_effect = {
 				OST = {
+					set_capital = 737
 					division_template = {
 						name = "Ostasien Marines"
 						regiments = {
@@ -2923,6 +2949,7 @@ focus_tree = {
 					add_state_core = 546
 					add_state_claim = 547
 					add_state_claim = 792
+					add_state_claim = 548
 				}
 				set_cosmetic_tag = TZN_GER
 			}
@@ -3753,7 +3780,7 @@ focus_tree = {
 	}
 	focus = {
 		id = GER_naval_supremacy
-		icon = GFX_goal_generic_navy_battleship
+		icon = GFX_focus_GER_navy
 		cost = 10
 		prerequisite = {
 			focus = GER_turn_to_asia
@@ -5257,7 +5284,7 @@ focus_tree = {
 	focus = {
 		id = GER_veteran_organisation
 		icon = GFX_focus_chi_army_reform
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = GER_rise_of_evil
 			focus = GER_kaiserreich
@@ -5265,14 +5292,7 @@ focus_tree = {
 		x = 10
 		y = 9
 		completion_reward = {
-			add_timed_idea = {
-				idea = paramilitary_training
-				days = 180
-			}
-			add_timed_idea = {
-				idea = mutiny_3
-				days = 180
-			}
+			add_ideas = GER_idea_freikorps
 		}
 		ai_will_do = {
 			factor = 10
@@ -5377,35 +5397,15 @@ focus_tree = {
 			}
 			every_state = {
 				limit = {
-					is_owned_by = FRA
+					OR = {
+						is_owned_by = FRA
+						is_owned_by = ENG
+						is_owned_by = BEL
+					}			
 					is_core_of = ROOT
 					NOT = {
 						is_core_of = FRA
-					}
-				}
-				ROOT = {
-					transfer_state = PREV
-				}
-				set_demilitarized_zone = yes
-			}
-			every_state = {
-				limit = {
-					is_owned_by = ENG
-					is_core_of = ROOT
-					NOT = {
 						is_core_of = ENG
-					}
-				}
-				ROOT = {
-					transfer_state = PREV
-				}
-				set_demilitarized_zone = yes
-			}
-			every_state = {
-				limit = {
-					is_owned_by = BEL
-					is_core_of = ROOT
-					NOT = {
 						is_core_of = BEL
 					}
 				}
@@ -5458,42 +5458,6 @@ focus_tree = {
 					trait_nazism
 				}
 			}
-			hidden_effect = {
-				AUS = {
-					if = {
-						limit = {
-							exists = yes
-							has_country_flag = great_war_loser
-						}
-						add_ideas = nationalism
-					}
-				}
-				set_party_name = {
-					ideology = democratic
-					long_name = GER_democratic_party_zentrum_long
-					name = GER_democratic_party_zentrum
-				}
-				create_country_leader = {
-					name = "Konrad Adenauer"
-					picture = "Portrait_Germany_Konrad_Adenauer.dds"
-					expire = "1935.1.1"
-					ideology = conservatism
-					traits = {
-						trait_conservatism
-					}
-				}
-				retire_ideology_leader = communism
-				create_country_leader = {
-					name = "Wilhelm Pieck"
-					picture = "Portrait_Germany_Wilhelm_Pieck.dds"
-					expire = "1935.1.1"
-					ideology = vanguardism
-					traits = {
-						exiled
-						trait_vanguardism
-					}
-				}
-			}
 		}
 		ai_will_do = {
 			base = 100
@@ -5519,7 +5483,7 @@ focus_tree = {
 			factor = 100
 		}
 		completion_reward = {
-			remove_ideas = paramilitary_training
+			remove_ideas = GER_idea_freikorps
 			add_ideas = fascist_assault_divisions
 		}
 	}
@@ -5644,10 +5608,24 @@ focus_tree = {
 					limit = {
 						SER = {
 							has_country_flag = great_war_winner
+							NOT = {
+								has_government = fascism
+							}
 						}
 					}
 					SER = {
 						add_ideas = anti_german_military
+					}
+				}
+				hidden_effect = {
+					AUS = {
+						if = {
+							limit = {
+								exists = yes
+								has_country_flag = great_war_loser
+							}
+							add_ideas = nationalism
+						}
 					}
 				}
 			}
@@ -5833,6 +5811,20 @@ focus_tree = {
 				}
 			}
 			add_ideas = GER_quenched_militarism
+			if = {
+				limit = {
+					has_global_flag = ludendorff_is_in_power
+					has_government = fascism
+				}
+				set_politics = {
+					ruling_party = neutrality
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = fascism
+					popularity = -0.2
+				}
+			}
 		}
 		ai_will_do = {
 			factor = 10
@@ -6532,7 +6524,7 @@ focus_tree = {
 				else = {
 					set_faction_name = reichspakt
 				}
-	    	}
+			}
 		}
 		ai_will_do = {
 			factor = 10
@@ -6949,6 +6941,12 @@ focus_tree = {
 						2
 					}
 				}
+			}
+			PAP = {
+				add_state_core = 2
+				add_state_core = 157
+				add_state_core = 161
+				add_state_core = 835
 			}
 		}
 		ai_will_do = {

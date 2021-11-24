@@ -1373,7 +1373,7 @@ focus_tree = {
 				remove_idea = BEL_nationalist_divides_1
 				add_idea = BEL_nationalist_divides_2
 			}
-			add_popularity = { ideology = fascism popularity = 0.10 }
+			add_popularity = { ideology = fascism popularity = 0.02 }
 		}
 		search_filters = { FOCUS_FILTER_HISTORICAL }
 	}
@@ -1401,7 +1401,7 @@ focus_tree = {
 				remove_idea = BEL_nationalist_divides_1
 				add_idea = BEL_nationalist_divides_2
 			}
-			add_popularity = { ideology = communism popularity = 0.10 }
+			add_popularity = { ideology = communism popularity = 0.02 }
 		}
 
 	}
@@ -1430,7 +1430,7 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			add_popularity = { ideology = communism popularity = 0.05 }
+			add_popularity = { ideology = communism popularity = 0.01 }
 		}
 
 	}
@@ -1459,7 +1459,7 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			add_popularity = { ideology = fascism popularity = 0.05 }
+			add_popularity = { ideology = fascism popularity = 0.01 }
 		}
 		search_filters = { FOCUS_FILTER_HISTORICAL }
 	}
@@ -1642,13 +1642,12 @@ focus_tree = {
 		x = 26
 		y = 6
 		completion_reward = {
-			remove_ideas = BEL_nationalist_divides_3
-			add_timed_idea = {
-				idea = BEL_nationalist_divides_4
+			swap_ideas = {
+				remove_idea = BEL_nationalist_divides_3
+				add_idea = BEL_nationalist_divides_4
 				days = 180
-			}
+			}		
 		}
-
 	}
 	focus = {
 		id = BEL_join_entente
@@ -1946,7 +1945,7 @@ focus_tree = {
 			}
 			swap_ideas = {
 				remove_idea = BEL_nationalist_divides_1
-				add_idea = BEL_nationalist_divides_3
+				add_idea = BEL_nationalist_divides_2
 			}
 		}
 
@@ -1964,6 +1963,15 @@ focus_tree = {
 			has_government = neutrality
 		}
 		completion_reward = {
+			if = {
+				limit = {
+					has_idea = BEL_nationalist_divides_2
+				}
+				swap_ideas = {
+					remove_idea = BEL_nationalist_divides_2
+					add_idea = BEL_nationalist_divides_3
+				}
+			}
 			if = {
 				limit = {
 					has_idea = BEL_nationalist_divides_3
@@ -2004,6 +2012,15 @@ focus_tree = {
 			has_government = neutrality
 		}
 		completion_reward = {
+			if = {
+				limit = {
+					has_idea = BEL_nationalist_divides_2
+				}
+				swap_ideas = {
+					remove_idea = BEL_nationalist_divides_2
+					add_idea = BEL_nationalist_divides_3
+				}
+			}
 			if = {
 				limit = {
 					has_idea = BEL_nationalist_divides_3
@@ -2110,6 +2127,15 @@ focus_tree = {
 			has_government = neutrality
 		}
 		completion_reward = {
+			if = {
+				limit = {
+					has_idea = BEL_nationalist_divides_2
+				}
+				swap_ideas = {
+					remove_idea = BEL_nationalist_divides_2
+					add_idea = BEL_nationalist_divides_3
+				}
+			}
 			if = {
 				limit = {
 					has_idea = BEL_nationalist_divides_3
@@ -2223,14 +2249,12 @@ focus_tree = {
 		prerequisite = {
 			focus = BEL_intensify_military_spending
 		}
-		available = {
-			has_government = neutrality
-		}
 		x = 36
 		y = 6
 		available = {
 			is_subject = no
 			has_capitulated = no
+			has_government = neutrality
 		}
 		will_lead_to_war_with = LUX
 		completion_reward = {
@@ -2386,7 +2410,13 @@ focus_tree = {
 			focus = BEL_empower_albert
 		}
 		available = {
+			has_country_leader = { name = "Albert I" ruling_only = yes }
+		}
+		bypass = {
 			has_government = neutrality
+			NOT = {
+				has_country_leader = { name = "Albert I" ruling_only = yes }
+			}
 		}
 		x = 41
 		y = 3
@@ -2421,6 +2451,18 @@ focus_tree = {
 		}
 		x = 41
 		y = 4
+		bypass = {
+			hidden_trigger = {
+				NOT = {
+					has_idea = BEL_idea_pacifism6
+					has_idea = BEL_idea_pacifism5
+					has_idea = BEL_idea_pacifism4
+					has_idea = BEL_idea_pacifism3
+					has_idea = BEL_idea_pacifism2
+					has_idea = BEL_idea_pacifism
+				}
+			}
+		}
 		completion_reward = {
 			if = {
 				limit = { has_idea = BEL_idea_pacifism6 }
@@ -2459,7 +2501,7 @@ focus_tree = {
 				limit = { has_idea = BEL_idea_pacifism }
 				swap_ideas = {
 					remove_idea = BEL_idea_pacifism
-					add_idea = BEL_idea_pacifism3
+					add_idea = BEL_idea_pacifism2
 				}
 			}
 		}
@@ -2589,9 +2631,9 @@ focus_tree = {
 		x = 24
 		y = 6
 		completion_reward = {
-			remove_ideas = BEL_nationalist_divides_3
-			add_timed_idea = {
-				idea = BEL_nationalist_divides_4
+			swap_ideas = {
+				remove_idea = BEL_nationalist_divides_3
+				add_idea = BEL_nationalist_divides_4
 				days = 100
 			}
 		}

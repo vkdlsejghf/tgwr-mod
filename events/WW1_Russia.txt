@@ -1570,6 +1570,14 @@ country_event = {
 		}
 		ai_chance = {
 			factor = 100
+			modifier = {
+				factor = 0
+				OR = {
+					has_government = democratic
+					has_government = communism
+					has_completed_focus = RUS_revolutionaries_in_duma
+				}	
+			}
 		}
 	}
 	option = {
@@ -1586,6 +1594,10 @@ country_event = {
 		}
 		ai_chance = {
 			factor = 10
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes 		
+			}	
 		}
 	}
 }
@@ -1796,7 +1808,8 @@ country_event = {
 						is_core_of = ARM
 					}
 					NOT = {
-						state = 235
+						state = 419
+						state = 420
 					}
 					is_fully_controlled_by = ROOT
 				}
@@ -4793,7 +4806,7 @@ country_event = {
 	trigger = {
 		tag = RUS
 		has_country_leader = {
-			name = "Nicholas II"
+			name = "Nikolai II"
 			ruling_only = yes
 		}
 		has_government = neutrality
@@ -4834,7 +4847,7 @@ country_event = {
 	}
 }
 
-# DEATH OF NICHOLAS II
+# DEATH OF Nikolai II
 ##################
 country_event = {
 	id = ww1_russia.88
@@ -4845,7 +4858,7 @@ country_event = {
 		tag = RUS
 		has_global_flag = tsarevich_alexey_death
 		has_country_leader = {
-			name = "Nicholas II"
+			name = "Nikolai II"
 			ruling_only = yes
 		}
 		has_government = neutrality
@@ -5260,6 +5273,140 @@ country_event = {
 		name = ww1_russia.96.a
 		effect_tooltip = {
 			remove_unit_leader = 76246
+		}
+	}
+}
+# Polish Autonomy after Great War
+##################
+country_event = {
+	id = ww1_russia.97
+	title = ww1_russia.97.t
+	desc = ww1_russia.97.d
+	picture = GFX_report_event_generic_sign_treaty1
+	fire_only_once = yes
+	trigger = {
+		original_tag = RUS
+		has_war = no
+		is_subject = no
+		has_completed_focus = RUS_unite_poland
+		NOT = {
+			country_exists = POL
+		}
+		OR = {
+			owns_state = 85
+			owns_state = 86
+			owns_state = 762
+		}
+		owns_state = 10
+	}
+	mean_time_to_happen = {
+		days = 45
+	}
+	immediate = {
+		set_country_flag = rus_poland_unite_triggered	
+	}	
+	option = {
+		name = ww1_russia.97.a
+		every_owned_state = {
+			limit = {
+				OR = {
+					is_core_of = POL
+					state = 86
+					state = 85
+					state = 63					
+					state = 762
+					state = 67
+				}
+				NOT = {
+					state = 404
+					state = 763
+					state = 5		
+				}
+				OR = {
+					state = 237
+					NOT = {
+						is_core_of = RUS
+						is_core_of = UKR
+					}
+				}
+			}
+			POL = {
+				transfer_state = PREV
+				add_state_core = PREV
+			}	
+			ROOT = {
+				remove_state_claim = PREV
+			}
+		}
+		set_global_flag = poland_released
+		POL = {
+			set_country_flag = released_by_russia
+			set_cosmetic_tag = POL_RUS
+		}
+		RUS = {
+			puppet = POL
+		}
+		if = {
+			limit = {
+				has_government = neutrality
+			}
+			POL = {
+				create_country_leader = {
+					name = "Roman Dmowski"
+					picture = "POL_Roman_Dmowski.dds" 
+					expire = "1935.1.1" 
+					ideology = authoritarian_democracy
+					traits = { dislikes_germany trait_authoritarian_democracy } 
+				}
+				set_party_name = {
+					ideology = neutrality
+					name = POL_fascism_party
+					long_name = POL_fascism_party_long
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_government = democratic
+			}
+			POL = {
+				create_country_leader = {
+					name = "Roman Dmowski"
+					picture = "POL_Roman_Dmowski.dds" 
+					expire = "1935.1.1" 
+					ideology = conservatism
+					traits = { dislikes_germany trait_conservatism } 
+				}
+				set_party_name = {
+					ideology = democratic
+					name = POL_fascism_party
+					long_name = POL_fascism_party_long
+				}
+			}
+		}
+		hidden_effect = {
+			POL = {
+				load_oob = "POL_divisions"
+			}	
+		}		
+		add_stability = 0.05
+	}
+	option = {
+		name = ww1_russia.97.b
+		trigger = {
+			is_ai = no
+		}
+		add_stability = -0.3
+		add_political_power = -200
+		every_owned_state = {
+			limit = {
+				is_core_of = POL
+				NOT = {
+					is_core_of = ROOT
+				}				
+			}
+			add_resistance = 0.5
+			add_compliance = -0.5
 		}
 	}
 }

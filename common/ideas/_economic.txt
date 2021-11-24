@@ -59,7 +59,7 @@ ideas = {
 				production_speed_arms_factory_factor = -0.5
 				production_speed_dockyard_factor = -0.5
 				conversion_cost_civ_to_mil_factor = 0.5
-				conversion_cost_mil_to_civ_factor = 0.5
+				conversion_cost_mil_to_civ_factor = -0.5
 				generate_wargoal_tension = 1.00
 				join_faction_tension = 0.20
 				lend_lease_tension = 0.50
@@ -284,7 +284,7 @@ ideas = {
 				}
 				any_enemy_country = {
 					ic_ratio = {
-						original_tag = ROOT 
+						tag = ROOT 
 						ratio > 0.4
 					}
 				}
@@ -336,7 +336,7 @@ ideas = {
 				has_war_support > 0.8
 				any_enemy_country = {
 					ic_ratio = {
-						original_tag = ROOT
+						tag = ROOT
 						ratio > 0.7
 					}
 				}
@@ -448,38 +448,6 @@ ideas = {
 						has_idea = idea_ITA_moderate_protectionism		
 					}			
 				}				
-			}
-			cancel = {
-				if = {
-					limit = {
-						original_tag = GER
-						ENG = {
-							NOT = {
-								has_country_flag = great_war_loser
-							}
-							is_major = yes
-						}					
-					}
-					has_war_with = ENG			
-				}
-				if = {
-					limit = {
-						original_tag = RUS
-						FRA = {
-							NOT = {
-								has_country_flag = great_war_loser
-							}
-							is_major = yes
-						}					
-					}
-					has_war_with = FRA			
-				}
-				if = {
-					limit = {
-						original_tag = ITA				
-					}
-					has_idea = idea_ITA_moderate_protectionism					
-				}			
 			}
 			
 			ai_will_do = {

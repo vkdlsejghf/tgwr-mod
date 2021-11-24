@@ -76,76 +76,25 @@ peace_deals = {
 			base = 0
 			modifier = {
 				add = 400
-				if = {
-					limit = {
-						is_in_faction_with = BUL
-					}
-					BUL = {
-							has_capitulated = yes
-							surrender_progress > 0.4
-					}
-				}
-			}
-			modifier = {
-				add = 400
-				if = {
-					limit = {
-						is_in_faction_with = GRE
-					}
-					GRE = {
-						OR = {
-							has_capitulated = yes
-							surrender_progress > 0.4
-						}
-					}
-				}
-			}
-			modifier = {
-				add = 400
 				OR = {
 				AND = {
-				surrender_progress > 0.3
+				surrender_progress > 0.4
 				GRE = {
-				surrender_progress > 0.3
+				surrender_progress > 0.4
 				}
 				}
 				AND = {
-				surrender_progress > 0.3
+				surrender_progress > 0.4
 				BUL = {
-				surrender_progress > 0.3
-				}
-				}
-				AND = {
-				GRE = {
-				surrender_progress > 0.3
-				}
-				BUL = {
-				surrender_progress > 0.3
-				}
-				}
-				}
-			}
-			modifier = {
-				add = 400
-				OR = {
-				AND = {
-				surrender_progress > 0.5
-				GRE = {
-				surrender_progress > 0.5
-				}
-				}
-				AND = {
-				surrender_progress > 0.5
-				BUL = {
-				surrender_progress > 0.5
+				surrender_progress > 0.4
 				}
 				}
 				AND = {
 				GRE = {
-				surrender_progress > 0.5
+				surrender_progress > 0.4
 				}
 				BUL = {
-				surrender_progress > 0.5
+				surrender_progress > 0.4
 				}
 				}
 				}

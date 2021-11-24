@@ -426,7 +426,7 @@ political_actions = {
 					puppet = CAN
 				}
 				CAN = { set_cosmetic_tag = CAN_UK }
-				drop_cosmetic_tag = yes #No Hong Kong
+				hidden_effect = { set_cosmetic_tag = GBR }
 			}
 			CAN = {
 				set_politics = {
@@ -539,7 +539,6 @@ foreign_politics = {
 			}
 		}
 		complete_effect = {
-			hidden_effect = { set_country_flag = interwar_factions }
 			create_faction = entente
 			if = {
 				limit = {

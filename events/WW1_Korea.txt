@@ -156,6 +156,11 @@ country_event = {
 				set_country_flag = korean_independence
 			}
 		}
+		trigger = {
+			NOT = {
+				country_exists = FNG
+			}
+		}
 		ai_chance = {
 			base = 0
 			modifier = {
@@ -1455,9 +1460,9 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		KOR = {
-			has_completed_focus = KOR_democratic_republic
+			is_subject = no
 			has_government = democratic
-			has_stability < 0
+			has_stability < 0.01
 			has_war = no
 		}
 	}
@@ -1514,9 +1519,9 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		KOR = {
-			has_completed_focus = KOR_socialist_state
+			is_subject = no
 			has_government = communism
-			has_stability < 0
+			has_stability < 0.01
 			has_war = no
 		}
 	}
@@ -1879,9 +1884,11 @@ country_event = {
 					trait_stratocracy
 				}
 			}
-			declare_war_on = {
-				target = KOR
-				type = puppet_wargoal_focus
+			every_state = {
+				limit = {
+					is_core_of = KOR
+				}
+				PREV = { add_state_claim = PREV }
 			}
 		}
 	}
@@ -2327,42 +2334,34 @@ country_event = {
 				}
 			}
 			525 = {
-				start_resistance = yes
 				add_compliance = -5
 				add_resistance = 5
 			}
 			527 = {
-				start_resistance = yes
 				add_compliance = -5
 				add_resistance = 5
 			}
 			796 = {
-				start_resistance = yes
 				add_compliance = -5
 				add_resistance = 5
 			}
 			797 = {
-				start_resistance = yes
 				add_compliance = -5
 				add_resistance = 5
 			}
 			799 = {
-				start_resistance = yes
 				add_compliance = -5
 				add_resistance = 5
 			}
 			800 = {
-				start_resistance = yes
 				add_compliance = -5
 				add_resistance = 5
 			}
 			801 = {
-				start_resistance = yes
 				add_compliance = -5
 				add_resistance = 5
 			}
 			802 = {
-				start_resistance = yes
 				add_compliance = -5
 				add_resistance = 5
 			}
@@ -2403,11 +2402,9 @@ country_event = {
 				}
 			}
 			797 = {
-				start_resistance = yes
 				add_resistance = 10
 			}
 			799 = {
-				start_resistance = yes
 				add_resistance = 10
 			}
 		}
@@ -2525,22 +2522,22 @@ country_event = {
 				}
 			}
 			525 = {
-				start_resistance = yes
+				
 				add_compliance = -5
 				add_resistance = 5
 			}
 			527 = {
-				start_resistance = yes
+				
 				add_compliance = -5
 				add_resistance = 5
 			}
 			796 = {
-				start_resistance = yes
+				
 				add_compliance = -5
 				add_resistance = 5
 			}
 			797 = {
-				start_resistance = yes
+				
 				add_compliance = -5
 				add_resistance = 5
 			}
@@ -2549,17 +2546,17 @@ country_event = {
 				add_resistance = 5
 			}
 			800 = {
-				start_resistance = yes
+				
 				add_compliance = -5
 				add_resistance = 5
 			}
 			801 = {
-				start_resistance = yes
+				
 				add_compliance = -5
 				add_resistance = 5
 			}
 			802 = {
-				start_resistance = yes
+				
 				add_compliance = -5
 				add_resistance = 5
 			}
@@ -2599,7 +2596,7 @@ country_event = {
 				}
 			}
 			525 = {
-				start_resistance = yes
+				
 				add_resistance = 10
 			}
 		}
@@ -3342,7 +3339,7 @@ country_event = {
 			add_political_power = 50
 		}
 		802 = {
-			start_resistance = yes
+			
 			add_compliance = -10
 			add_resistance = 10
 		}
@@ -3591,7 +3588,7 @@ news_event = {
 					}
 				}
 				802 = {
-					start_resistance = yes
+					
 					add_compliance = -30
 					add_resistance = 50
 				}
