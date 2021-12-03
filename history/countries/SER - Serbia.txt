@@ -323,45 +323,45 @@ recruit_character = SER_kosta_miletic
 		modifier = TGW_opinion_post_annexion_crisis
 	}
 	###Parlament
-	set_variable = {
-		radical_seats = 84
-	}
-	set_variable = {
-		independent_radical_seats = 48
-	}
-	set_variable = {
-		liberal_seats = 20
-	}
-	set_variable = {
-		progressives_seats = 7
-	}
-	set_variable = {
-		socdem_seats = 1
-	}
-	set_variable = {
-		dissident_radical_seats = 0
-	}
-	set_variable = {
-		government_seats = radical_seats
-	}
-	add_to_variable = {
-		government_seats = independent_radical_seats
-	}
-	add_to_variable = {
-		government_seats = liberal_seats
-	}
-	add_to_variable = {
-		government_seats = progressives_seats
-	}
-	set_variable = {
-		supports_law = 0		#nobody supports law if no law is voted lol 
-	}
-	set_variable = {
-		vacant_seats = 0
-	}
-	set_country_flag = radikalska_vlada
-	set_country_flag = radicals_coalition
-	set_country_flag = liberals_coalition
-	set_country_flag = independent_radical_coalition
-	set_country_flag = progressives_coalition
+	# set_variable = {
+	# 	radical_seats = 84
+	# }
+	# set_variable = {
+	# 	independent_radical_seats = 48
+	# }
+	# set_variable = {
+	# 	liberal_seats = 20
+	# }
+	# set_variable = {
+	# 	progressives_seats = 7
+	# }
+	# set_variable = {
+	# 	socdem_seats = 1
+	# }
+	# set_variable = {
+	# 	dissident_radical_seats = 0
+	# }
+	# set_variable = {
+	# 	government_seats = radical_seats
+	# }
+	# add_to_variable = {
+	# 	government_seats = independent_radical_seats
+	# }
+	# add_to_variable = {
+	# 	government_seats = liberal_seats
+	# }
+	# add_to_variable = {
+	# 	government_seats = progressives_seats
+	# }
+	# set_variable = {
+	# 	supports_law = 0		#nobody supports law if no law is voted lol 
+	# }
+	# set_variable = {
+	# 	vacant_seats = 0
+	# }
+	# set_country_flag = radikalska_vlada
+	# set_country_flag = radicals_coalition
+	# set_country_flag = liberals_coalition
+	# set_country_flag = independent_radical_coalition
+	# set_country_flag = progressives_coalition
 }

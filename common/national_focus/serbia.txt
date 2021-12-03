@@ -1696,23 +1696,23 @@ focus_tree = {
 		}
 		completion_reward = {
 			country_event = ww1_serbia.120
-			set_country_flag = raspustena_skupstina
-			clr_country_flag = passing_law
-			clr_country_flag = negotiated_with_democrats
-			clr_country_flag = negotiated_with_dissidents
-			clr_country_flag = negotiated_with_radicals
-			clr_country_flag = negotiated_with_independent_radicals
-			clr_country_flag = negotiated_with_socdem
-			clr_country_flag = negotiated_with_liberals
-			clr_country_flag = negotiated_with_progressives
+			# set_country_flag = raspustena_skupstina
+			# clr_country_flag = passing_law
+			# clr_country_flag = negotiated_with_democrats
+			# clr_country_flag = negotiated_with_dissidents
+			# clr_country_flag = negotiated_with_radicals
+			# clr_country_flag = negotiated_with_independent_radicals
+			# clr_country_flag = negotiated_with_socdem
+			# clr_country_flag = negotiated_with_liberals
+			# clr_country_flag = negotiated_with_progressives
 			clr_country_flag = radikalska_vlada
 			clr_country_flag = radicals_coalition
 			clr_country_flag = dissidents_coalition
-			clear_variable = radical_seats
-			clear_variable = independent_radical_seats
-			clear_variable = progressives_seats
-			clear_variable = liberal_seats
-			clear_variable = socdem_seats
+			# clear_variable = radical_seats
+			# clear_variable = independent_radical_seats
+			# clear_variable = progressives_seats
+			# clear_variable = liberal_seats
+			# clear_variable = socdem_seats
 			custom_effect_tooltip = SER_parlament_dissolved_tt
 			every_unit_leader = {
 				limit = {
@@ -2444,9 +2444,10 @@ focus_tree = {
 			}
 			custom_effect_tooltip = coalition_partners_leave_tt
 			hidden_effect = {
-				set_variable = {
-					government_seats = progressives_seats
-				}
+				add_ideas = SER_idea_minority_government
+				# set_variable = {
+				# 	government_seats = progressives_seats
+				# }
 				clr_country_flag = radicals_coalition
 				clr_country_flag = independent_radical_coalition
 				clr_country_flag = dissidents_coalition
@@ -2541,18 +2542,18 @@ focus_tree = {
 				long_name = "Demokratska stranka"
 				name = "Demokratska stranka"
 			}
-			set_variable = {
-				democratic_party_seats = independent_radical_seats
-			}
-			add_to_variable = {
-				democratic_party_seats = progressives_seats
-			}
-			add_to_variable = {
-				democratic_party_seats = liberal_seats
-			}
-			clear_variable = independent_radical_seats
-			clear_variable = progressives_seats
-			clear_variable = liberal_seats
+			# set_variable = {
+			# 	democratic_party_seats = independent_radical_seats
+			# }
+			# add_to_variable = {
+			# 	democratic_party_seats = progressives_seats
+			# }
+			# add_to_variable = {
+			# 	democratic_party_seats = liberal_seats
+			# }
+			# clear_variable = independent_radical_seats
+			# clear_variable = progressives_seats
+			# clear_variable = liberal_seats
 			set_country_flag = demokratska_stranka_formirana
 		}
 	}

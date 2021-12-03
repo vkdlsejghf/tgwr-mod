@@ -56,15 +56,15 @@ SER_balkan_league_mechanics = {
 		always = no
 	}
 }
-SER_parlament_mechanics = {
-	allowed = {
-		original_tag = SER
-	}
-	visible_when_empty = yes
-	visible = {
-		original_tag = SER
-		NOT = {
-			has_country_flag = raspustena_skupstina
-		}
-	}
-}
+# SER_parlament_mechanics = {
+# 	allowed = {
+# 		original_tag = SER
+# 	}
+# 	visible_when_empty = yes
+# 	visible = {
+# 		original_tag = SER
+# 		NOT = {
+# 			has_country_flag = raspustena_skupstina
+# 		}
+# 	}
+# }

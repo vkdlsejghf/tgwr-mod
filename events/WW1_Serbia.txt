@@ -1851,7 +1851,7 @@ country_event = {
 		name = ww1_serbia.49.a
 		add_political_power = 50
 		set_country_flag = radikalska_vlada
-		clr_country_flag = raspustena_skupstina
+		# clr_country_flag = raspustena_skupstina
 		clr_country_flag = independent_radical_coalition
 		clr_country_flag = samostalska_vlada
 		custom_effect_tooltip = SER_radicals_join_coalition_tt
@@ -1880,34 +1880,34 @@ country_event = {
 				}
 			}
 		}
-		hidden_effect = {
-			set_variable = {
-				radical_seats = 84
-			}
-			set_variable = {
-				independent_radical_seats = 41
-			}
-			set_variable = {
-				dissident_radical_seats = 7
-			}
-			set_variable = {
-				progressives_seats = 8
-			}
-			set_variable = {
-				liberal_seats = 18
-			}
-			set_variable = {
-				socdem_seats = 2
-			}
-			set_variable = {
-				government_seats = radical_seats
-			}
-			add_to_variable = {
-				government_seats = dissident_radical_seats
-			}
-			set_country_flag = radicals_coalition
-			set_country_flag = dissidents_coalition
-		}
+		# hidden_effect = {
+		# 	set_variable = {
+		# 		radical_seats = 84
+		# 	}
+		# 	set_variable = {
+		# 		independent_radical_seats = 41
+		# 	}
+		# 	set_variable = {
+		# 		dissident_radical_seats = 7
+		# 	}
+		# 	set_variable = {
+		# 		progressives_seats = 8
+		# 	}
+		# 	set_variable = {
+		# 		liberal_seats = 18
+		# 	}
+		# 	set_variable = {
+		# 		socdem_seats = 2
+		# 	}
+		# 	set_variable = {
+		# 		government_seats = radical_seats
+		# 	}
+		# 	add_to_variable = {
+		# 		government_seats = dissident_radical_seats
+		# 	}
+		# 	set_country_flag = radicals_coalition
+		# 	set_country_flag = dissidents_coalition
+		# }
 		ai_chance = {
 			factor = 50
 		}
@@ -1937,32 +1937,32 @@ country_event = {
 				trait_social_liberalism
 			}
 		}
-		custom_effect_tooltip = SER_radicals_leave_coalition_tt
-		custom_effect_tooltip = SER_liberals_leave_coalition_tt
-		custom_effect_tooltip = SER_progressives_leave_coalition_tt
-		custom_effect_tooltip = SER_independent_radicals_join_coalition_tt
-		clr_country_flag = raspustena_skupstina
-		set_variable = {
-			radical_seats = 55
-		}
-		set_variable = {
-			independent_radical_seats = 81
-		}
-		set_variable = {
-			progressives_seats = 4
-		}
-		set_variable = {
-			socdem_seats = 2
-		}
-		set_variable = {
-			liberal_seats = 17
-		}
-		set_variable = {
-			dissident_radical_seats = 1
-		}
-		set_variable = {
-			government_seats = independent_radical_seats
-		}
+	# 	custom_effect_tooltip = SER_radicals_leave_coalition_tt
+	# 	custom_effect_tooltip = SER_liberals_leave_coalition_tt
+	# 	custom_effect_tooltip = SER_progressives_leave_coalition_tt
+	# 	custom_effect_tooltip = SER_independent_radicals_join_coalition_tt
+	# 	clr_country_flag = raspustena_skupstina
+	# 	set_variable = {
+	# 		radical_seats = 55
+	# 	}
+	# 	set_variable = {
+	# 		independent_radical_seats = 81
+	# 	}
+	# 	set_variable = {
+	# 		progressives_seats = 4
+	# 	}
+	# 	set_variable = {
+	# 		socdem_seats = 2
+	# 	}
+	# 	set_variable = {
+	# 		liberal_seats = 17
+	# 	}
+	# 	set_variable = {
+	# 		dissident_radical_seats = 1
+	# 	}
+	# 	set_variable = {
+	# 		government_seats = independent_radical_seats
+	# 	}
 		clr_country_flag = radicals_coalition
 		clr_country_flag = dissidents_coalition
 		clr_country_flag = liberals_coalition
@@ -2001,18 +2001,18 @@ country_event = {
 		add_political_power = -50
 		add_ideas = SER_idea_interim_government
 		custom_effect_tooltip = SER_Pasic_resigned_tt
-		clr_country_flag = passing_law
-		set_country_flag = raspustena_skupstina
-		clr_country_flag = negotiated_with_democrats
-		clr_country_flag = negotiated_with_dissidents
-		clr_country_flag = negotiated_with_radicals
-		clr_country_flag = negotiated_with_independent_radicals
-		clr_country_flag = negotiated_with_socdem
-		clr_country_flag = negotiated_with_liberals
-		clr_country_flag = negotiated_with_progressives
-		set_variable = {
-			supports_law = 0
-		}
+		# clr_country_flag = passing_law
+		# set_country_flag = raspustena_skupstina
+		# clr_country_flag = negotiated_with_democrats
+		# clr_country_flag = negotiated_with_dissidents
+		# clr_country_flag = negotiated_with_radicals
+		# clr_country_flag = negotiated_with_independent_radicals
+		# clr_country_flag = negotiated_with_socdem
+		# clr_country_flag = negotiated_with_liberals
+		# clr_country_flag = negotiated_with_progressives
+		# set_variable = {
+		# 	supports_law = 0
+		# }
 		hidden_effect = {
 			country_event = {
 				id = ww1_serbia.51
@@ -2075,7 +2075,7 @@ country_event = {
 		}
 		set_country_flag = elections_suspended
 		complete_national_focus = SER_elections_suspended
-		clr_country_flag = raspustena_skupstina
+		# clr_country_flag = raspustena_skupstina
 		ai_chance = {
 			factor = 50
 		}
@@ -2134,34 +2134,34 @@ country_event = {
 		}
 		complete_national_focus = SER_opposition_wins
 		set_country_flag = opposition_victory
-		clr_country_flag = raspustena_skupstina
-		set_variable = {
-			radical_seats = 50
-		}
-		set_variable = {
-			independent_radical_seats = 65
-		}
-		set_variable = {
-			progressives_seats = 30
-		}
-		set_variable = {
-			socdem_seats = 3
-		}
-		set_variable = {
-			liberal_seats = 12
-		}
-		set_variable = {
-			dissident_radical_seats = 0
-		}
-		set_variable = {
-			government_seats = independent_radical_seats
-		}
-		add_to_variable = {
-			government_seats = progressives_seats
-		}
-		add_to_variable = {
-			government_seats = liberal_seats
-		}
+		# clr_country_flag = raspustena_skupstina
+		# set_variable = {
+		# 	radical_seats = 50
+		# }
+		# set_variable = {
+		# 	independent_radical_seats = 65
+		# }
+		# set_variable = {
+		# 	progressives_seats = 30
+		# }
+		# set_variable = {
+		# 	socdem_seats = 3
+		# }
+		# set_variable = {
+		# 	liberal_seats = 12
+		# }
+		# set_variable = {
+		# 	dissident_radical_seats = 0
+		# }
+		# set_variable = {
+		# 	government_seats = independent_radical_seats
+		# }
+		# add_to_variable = {
+		# 	government_seats = progressives_seats
+		# }
+		# add_to_variable = {
+		# 	government_seats = liberal_seats
+		# }
 		if = {
 			limit = {
 				has_completed_focus = SER_contain_Pasic
@@ -2174,11 +2174,11 @@ country_event = {
 		set_country_flag = progressives_coalition
 		set_country_flag = liberals_coalition
 		country_event = ww1_serbia.54
-		custom_effect_tooltip = SER_radicals_leave_coalition_tt
-		custom_effect_tooltip = SER_liberals_join_coalition_tt
-		custom_effect_tooltip = SER_progressives_join_coalition_tt
-		custom_effect_tooltip = SER_independent_radicals_join_coalition_tt
-		custom_effect_tooltip = SER_dissidents_leave_coalition_tt
+		# custom_effect_tooltip = SER_radicals_leave_coalition_tt
+		# custom_effect_tooltip = SER_liberals_join_coalition_tt
+		# custom_effect_tooltip = SER_progressives_join_coalition_tt
+		# custom_effect_tooltip = SER_independent_radicals_join_coalition_tt
+		# custom_effect_tooltip = SER_dissidents_leave_coalition_tt
 	}
 }
 
@@ -2405,15 +2405,15 @@ country_event = {
 				id = ww1_serbia.59
 				days = 54
 			}
-			add_to_variable = {
-				radical_seats = -5
-			}
-			add_to_variable = {
-				dissident_radical_seats = 5
-			}
-			set_variable = {
-				government_seats = radical_seats
-			}
+			# add_to_variable = {
+			# 	radical_seats = -5
+			# }
+			# add_to_variable = {
+			# 	dissident_radical_seats = 5
+			# }
+			# set_variable = {
+			# 	government_seats = radical_seats
+			# }
 		}
 	}
 }
@@ -2585,7 +2585,7 @@ country_event = {
 			add_state_core = 701
 			hidden_effect = {
 				country_event = {
-					id = ww1_serbia.128
+					id = ww1_serbia.129
 					days = 10
 				}
 			}
@@ -2646,15 +2646,15 @@ country_event = {
 		set_country_flag = independent_radical_coalition
 		clr_country_flag = naprednjacka_vlada
 		set_country_flag = liberals_coalition
-		set_variable = {
-			government_seats = independent_radical_seats
-		}
-		add_to_variable = {
-			government_seats = liberal_seats
-		}
-		add_to_variable = {
-			government_seats = progressives_seats
-		}
+		# set_variable = {
+		# 	government_seats = independent_radical_seats
+		# }
+		# add_to_variable = {
+		# 	government_seats = liberal_seats
+		# }
+		# add_to_variable = {
+		# 	government_seats = progressives_seats
+		# }
 		set_party_name = {
 			ideology = democratic
 			long_name = SER_democratic_independent_long
@@ -3376,9 +3376,9 @@ country_event = {
 				id = ww1_serbia.55
 				days = 20
 			}
-			set_variable = {
-				government_seats = radical_seats
-			}
+			# set_variable = {
+			# 	government_seats = radical_seats
+			# }
 			clr_country_flag = liberals_coalition
 			clr_country_flag = progressives_coalition
 			clr_country_flag = independent_radical_coalition
@@ -3386,9 +3386,9 @@ country_event = {
 				limit = {
 					has_country_flag = passing_law
 				}
-				set_variable = {
-					supports_law = government_seats
-				}
+				# set_variable = {
+				# 	supports_law = government_seats
+				# }
 			}
 		}
 	}
@@ -3572,18 +3572,18 @@ country_event = {
 		add_political_power = -300
 		add_ideas = SER_idea_interim_government
 		add_ideas = SER_idea_national_catastrophe
-		set_country_flag = raspustena_skupstina
-		clr_country_flag = negotiated_with_democrats
-		clr_country_flag = negotiated_with_dissidents
-		clr_country_flag = negotiated_with_radicals
-		clr_country_flag = negotiated_with_independent_radicals
-		clr_country_flag = negotiated_with_socdem
-		clr_country_flag = negotiated_with_liberals
-		clr_country_flag = negotiated_with_progressives
-		clr_country_flag = passing_law
-		set_variable = {
-			supports_law = 0
-		}
+		# set_country_flag = raspustena_skupstina
+		# clr_country_flag = negotiated_with_democrats
+		# clr_country_flag = negotiated_with_dissidents
+		# clr_country_flag = negotiated_with_radicals
+		# clr_country_flag = negotiated_with_independent_radicals
+		# clr_country_flag = negotiated_with_socdem
+		# clr_country_flag = negotiated_with_liberals
+		# clr_country_flag = negotiated_with_progressives
+		# clr_country_flag = passing_law
+		# set_variable = {
+		# 	supports_law = 0
+		# }
 		add_popularity = {
 			ideology = democratic
 			popularity = -0.35
@@ -3603,14 +3603,14 @@ country_event = {
 			}
 		}
 		set_global_flag = kis_secondbalkanwar_lose
-		if = {
-			limit = {
-				has_war_with = GRE
-			}
-			GRE = {
-				country_event = ww1_secondbalkan.13
-			}
-		}
+		# if = {
+		# 	limit = {
+		# 		has_war_with = GRE
+		# 	}
+		# 	GRE = {
+		# 		country_event = ww1_secondbalkan.13
+		# 	}
+		# }
 		if = {
 			limit = {
 				has_war_with = BUL
@@ -3650,27 +3650,27 @@ country_event = {
 				has_country_flag = dissidents_coalition
 			}
 			clr_country_flag = dissidents_coalition
-			subtract_from_variable = {
-				government_seats = dissident_radical_seats
-			}
+			# subtract_from_variable = {
+			# 	government_seats = dissident_radical_seats
+			# }
 		}
 		if = {
 			limit = {
 				has_country_flag = liberals_coalition
 			}
 			clr_country_flag = liberals_coalition
-			subtract_from_variable = {
-				government_seats = liberal_seats
-			}
+			# subtract_from_variable = {
+			# 	government_seats = liberal_seats
+			# }
 		}
 		if = {
 			limit = {
 				has_country_flag = progressives_coalition
 			}
 			clr_country_flag = progressives_coalition
-			subtract_from_variable = {
-				government_seats = progressives_seats
-			}
+			# subtract_from_variable = {
+			# 	government_seats = progressives_seats
+			# }
 		}
 		custom_effect_tooltip = "Our coalition partners will stop supporting government"
 		activate_mission = SER_vote_of_no_confidence_mission
@@ -3717,18 +3717,18 @@ country_event = {
 				long_name = "Demokratska stranka"
 				name = "Demokratska stranka"
 			}
-			set_variable = {
-				democratic_party_seats = independent_radical_seats
-			}
-			add_to_variable = {
-				democratic_party_seats = progressives_seats
-			}
-			add_to_variable = {
-				democratic_party_seats = liberal_seats
-			}
-			clear_variable = independent_radical_seats
-			clear_variable = progressives_seats
-			clear_variable = liberal_seats
+			# set_variable = {
+			# 	democratic_party_seats = independent_radical_seats
+			# }
+			# add_to_variable = {
+			# 	democratic_party_seats = progressives_seats
+			# }
+			# add_to_variable = {
+			# 	democratic_party_seats = liberal_seats
+			# }
+			# clear_variable = independent_radical_seats
+			# clear_variable = progressives_seats
+			# clear_variable = liberal_seats
 			set_country_flag = demokratska_stranka_formirana
 		}
 	}
@@ -4032,7 +4032,7 @@ country_event = {
 				modifier = TGW_SER_AUH_trade_war
 			}
 		}
-		unlock_decision_tooltip = SER_pass_new_trade_deal_with_AUH
+		# unlock_decision_tooltip = SER_pass_new_trade_deal_with_AUH
 		set_country_flag = trade_war_ends
 	}
 }
@@ -4089,12 +4089,12 @@ country_event = {
 			}
 			set_country_flag = independent_radical_coalition
 			set_country_flag = progressives_coalition
-			add_to_variable = {
-				government_seats = independent_radical_seats
-			}
-			add_to_variable = {
-				government_seats = progressives_seats
-			}
+			# add_to_variable = {
+			# 	government_seats = independent_radical_seats
+			# }
+			# add_to_variable = {
+			# 	government_seats = progressives_seats
+			# }
 			custom_effect_tooltip = SER_independent_radicals_join_coalition_tt
 			custom_effect_tooltip = SER_progressives_join_coalition_tt
 		}
@@ -4103,9 +4103,9 @@ country_event = {
 				has_country_flag = election_1914
 			}
 			set_country_flag = radicals_coalition
-			add_to_variable = {
-				government_seats = radical_seats
-			}
+			# add_to_variable = {
+			# 	government_seats = radical_seats
+			# }
 			custom_effect_tooltip = SER_radicals_join_coalition_tt
 		}
 		if = {
@@ -4293,20 +4293,20 @@ country_event = {
 		add_war_support = 0.05
 		add_ideas = SER_idea_failed_parlamentarism
 		add_political_power = -150
-		clr_country_flag = independent_radical_coalition
-		clr_country_flag = dissidents_coalition
-		clr_country_flag = liberals_coalition
-		clr_country_flag = progressives_coalition
+		# clr_country_flag = independent_radical_coalition
+		# clr_country_flag = dissidents_coalition
+		# clr_country_flag = liberals_coalition
+		# clr_country_flag = progressives_coalition
 		activate_mission = SER_escalation_of_political_crisis
-		set_variable = {
-			government_seats = radical_seats
-		}
-		set_variable = {
-			vacant_seats = 160
-		}
-		subtract_from_variable = {
-			vacant_seats = radical_seats
-		}
+		# set_variable = {
+		# 	government_seats = radical_seats
+		# }
+		# set_variable = {
+		# 	vacant_seats = 160
+		# }
+		# subtract_from_variable = {
+		# 	vacant_seats = radical_seats
+		# }
 		add_popularity = {
 			ideology = democratic
 			popularity = -0.2
@@ -4462,32 +4462,32 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = ww1_serbia.122.a
-		clr_country_flag = raspustena_skupstina
-		set_variable = {
-			royalists_seats = 145
-		}
-		set_variable = {
-			radical_seats = 0
-		}
-		set_variable = {
-			democratic_party_seats = 15
-		}
-		set_variable = {
-			dissident_radical_seats = 0
-		}
-		set_variable = {
-			socdem_seats = 0
-		}
-		set_variable = {
-			vacant_seats = 0
-		}
+		# clr_country_flag = raspustena_skupstina
+		# set_variable = {
+		# 	royalists_seats = 145
+		# }
+		# set_variable = {
+		# 	radical_seats = 0
+		# }
+		# set_variable = {
+		# 	democratic_party_seats = 15
+		# }
+		# set_variable = {
+		# 	dissident_radical_seats = 0
+		# }
+		# set_variable = {
+		# 	socdem_seats = 0
+		# }
+		# set_variable = {
+		# 	vacant_seats = 0
+		# }
 		add_popularity = {
 			ideology = neutrality
 			popularity = 0.03
 		}
-		set_variable = {
-			government_seats = royalists_seats
-		}
+		# set_variable = {
+		# 	government_seats = royalists_seats
+		# }
 		add_stability = 0.05
 		add_days_mission_timeout = {
 			mission = SER_radical_plot
@@ -4553,27 +4553,27 @@ country_event = {
 			elections_allowed = yes
 			election_frequency = 48
 		}
-		set_variable = {
-			radical_seats = 40
-		}
-		set_variable = {
-			independent_radical_seats = 20
-		}
-		set_variable = {
-			liberal_seats = 13
-		}
-		set_variable = {
-			progressives_seats = 4
-		}
-		set_variable = {
-			socdem_seats = 83
-		}
-		set_variable = {
-			dissident_seats = 0
-		}
-		set_variable = {
-			government_seats = socdem_seats
-		}
+		# set_variable = {
+		# 	radical_seats = 40
+		# }
+		# set_variable = {
+		# 	independent_radical_seats = 20
+		# }
+		# set_variable = {
+		# 	liberal_seats = 13
+		# }
+		# set_variable = {
+		# 	progressives_seats = 4
+		# }
+		# set_variable = {
+		# 	socdem_seats = 83
+		# }
+		# set_variable = {
+		# 	dissident_seats = 0
+		# }
+		# set_variable = {
+		# 	government_seats = socdem_seats
+		# }
 		set_country_flag = socijaldemokratska_vlada
 		set_country_flag = socdem_coalition
 		custom_effect_tooltip = SER_socdem_join_coalition_tt
@@ -4686,15 +4686,15 @@ country_event = {
 		clr_country_flag = liberals_coalition
 		clr_country_flag = socdem_coalition
 		clr_country_flag = progressives_coalition
-		set_country_flag = raspustena_skupstina
-		clr_country_flag = negotiated_with_democrats
-		clr_country_flag = negotiated_with_dissidents
-		clr_country_flag = negotiated_with_radicals
-		clr_country_flag = negotiated_with_independent_radicals
-		clr_country_flag = negotiated_with_socdem
-		clr_country_flag = negotiated_with_liberals
-		clr_country_flag = negotiated_with_progressives
-		clr_country_flag = passing_law
+		# set_country_flag = raspustena_skupstina
+		# clr_country_flag = negotiated_with_democrats
+		# clr_country_flag = negotiated_with_dissidents
+		# clr_country_flag = negotiated_with_radicals
+		# clr_country_flag = negotiated_with_independent_radicals
+		# clr_country_flag = negotiated_with_socdem
+		# clr_country_flag = negotiated_with_liberals
+		# clr_country_flag = negotiated_with_progressives
+		# clr_country_flag = passing_law
 		set_country_flag = radicals_coalition
 		hidden_effect = {
 			set_politics = {
@@ -4718,17 +4718,17 @@ country_event = {
 		set_country_flag = independent_radical_coalition
 		clr_country_flag = radikalska_vlada
 		clr_country_flag = radicals_coalition
-		set_variable = {
-			government_seats = independent_radical_seats
-		}
-		if = {
-			limit = {
-				has_country_flag = passing_law
-			}
-			set_variable = {
-				supports_law = government_seats
-			}
-		}
+		# set_variable = {
+		# 	government_seats = independent_radical_seats
+		# }
+		# if = {
+		# 	limit = {
+		# 		has_country_flag = passing_law
+		# 	}
+		# 	set_variable = {
+		# 		supports_law = government_seats
+		# 	}
+		# }
 		create_country_leader = {
 			name = "Ljubomir Stojanović"
 			ideology = social_liberalism
@@ -4773,44 +4773,44 @@ country_event = {
 		add_political_power = 50		#victory
 		set_country_flag = radicals_coalition
 		clr_country_flag = negotiated_with_radicals
-		add_to_variable = {
-			government_seats = radical_seats
-		}
-		if = {
-			limit = {
-				has_country_flag = passing_law
-			}
-			set_variable = {
-				supports_law = government_seats
-			}
-		}
+		# add_to_variable = {
+		# 	government_seats = radical_seats
+		# }
+		# if = {
+		# 	limit = {
+		# 		has_country_flag = passing_law
+		# 	}
+		# 	set_variable = {
+		# 		supports_law = government_seats
+		# 	}
+		# }
 	}
 }
 
 ###Progressives dissolve parlament for new elections under new system
-country_event = {
-	id = ww1_serbia.128
-	title = ww1_serbia.128.t
-	desc = ww1_serbia.128.d
-	is_triggered_only = yes
-	option = {
-		name = ww1_serbia.128.a
-		set_country_flag = raspustena_skupstina
-		clr_country_flag = negotiated_with_democrats
-		clr_country_flag = negotiated_with_dissidents
-		clr_country_flag = negotiated_with_radicals
-		clr_country_flag = negotiated_with_independent_radicals
-		clr_country_flag = negotiated_with_socdem
-		clr_country_flag = negotiated_with_liberals
-		clr_country_flag = negotiated_with_progressives
-		clr_country_flag = passing_law
-		custom_effect_tooltip = SER_Pasic_resigned_tt
-		set_variable = {
-			supports_law = 0
-		}
-		add_stability = -0.1
-	}
-}
+# country_event = {
+# 	id = ww1_serbia.128
+# 	title = ww1_serbia.128.t
+# 	desc = ww1_serbia.128.d
+# 	is_triggered_only = yes
+# 	option = {
+# 		name = ww1_serbia.128.a
+# 		set_country_flag = raspustena_skupstina
+# 		clr_country_flag = negotiated_with_democrats
+# 		clr_country_flag = negotiated_with_dissidents
+# 		clr_country_flag = negotiated_with_radicals
+# 		clr_country_flag = negotiated_with_independent_radicals
+# 		clr_country_flag = negotiated_with_socdem
+# 		clr_country_flag = negotiated_with_liberals
+# 		clr_country_flag = negotiated_with_progressives
+# 		clr_country_flag = passing_law
+# 		custom_effect_tooltip = SER_Pasic_resigned_tt
+# 		set_variable = {
+# 			supports_law = 0
+# 		}
+# 		add_stability = -0.1
+# 	}
+# }
 
 ###Elections under new system
 country_event = {
@@ -4820,89 +4820,92 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = ww1_serbia.129.a
-		set_variable = {
-			progressives_seats = 82
-		}
-		set_variable = {
-			liberal_seats = 48
-		}
-		set_variable = {
-			independent_radical_seats = 18
-		}
-		set_variable = {
-			radical_seats = 12
-		}
-		set_variable = {
-			dissident_seats = 0
-		}
-		set_variable = {
-			socdem_seats = 0
-		}
-		set_variable = {
-			government_seats = progressives_seats
-		}
+		add_stability = 0.02
+		add_political_power = 15
+		remove_ideas = SER_idea_minority_government
+		# set_variable = {
+		# 	progressives_seats = 82
+		# }
+		# set_variable = {
+		# 	liberal_seats = 48
+		# }
+		# set_variable = {
+		# 	independent_radical_seats = 18
+		# }
+		# set_variable = {
+		# 	radical_seats = 12
+		# }
+		# set_variable = {
+		# 	dissident_seats = 0
+		# }
+		# set_variable = {
+		# 	socdem_seats = 0
+		# }
+		# set_variable = {
+		# 	government_seats = progressives_seats
+		# }
 	}
 }
 
 ###Wartime coalition crash
-country_event = {
-	id = ww1_serbia.130
-	title = ww1_serbia.130.t
-	desc = ww1_serbia.130.d
-	is_triggered_only = yes
-	option = {
-		name = ww1_serbia.130.a
-		if = {
-			limit = {
-				has_country_flag = election_1914
-			}
-			clr_country_flag = radicals_coalition
-			custom_effect_tooltip = SER_radicals_leave_coalition_tt
-			if = {
-				limit = {
-					NOT = {
-						has_country_flag = demokratska_stranka_formirana
-					}
-					NOT = {
-						has_completed_focus = SER_formalize_the_merger
-					}
-				}
-				clr_country_flag = progressives_coalition
-				clr_country_flag = liberals_coalition
-				custom_effect_tooltip = SER_progressives_leave_coalition_tt
-				custom_effect_tooltip = SER_liberals_leave_coalition_tt
-				set_variable = {
-					government_seats = independent_radical_seats
-				}
-				else = {
-					set_variable = {
-						government_seats = democratic_party_seats
-					}
-				}
-			}
-		}
-		if = {
-			limit = {
-				has_country_flag = elections_suspended
-			}
-			custom_effect_tooltip = SER_independent_radicals_leave_coalition_tt
-			custom_effect_tooltip = SER_progressives_leave_coalition_tt
-			clr_country_flag = independent_radical_coalition
-			clr_country_flag = progressives_coalition
-			set_variable = {
-				government_seats = radical_seats
-			}
-		}
-		if = {
-			limit = {
-				has_country_flag = passing_law
-			}
-			set_variable = {
-				supports_law = government_seats
-			}
-		}
-	}
-}
+# country_event = {
+# 	id = ww1_serbia.130
+# 	title = ww1_serbia.130.t
+# 	desc = ww1_serbia.130.d
+# 	is_triggered_only = yes
+# 	option = {
+# 		name = ww1_serbia.130.a
+# 		if = {
+# 			limit = {
+# 				has_country_flag = election_1914
+# 			}
+# 			clr_country_flag = radicals_coalition
+# 			custom_effect_tooltip = SER_radicals_leave_coalition_tt
+# 			if = {
+# 				limit = {
+# 					NOT = {
+# 						has_country_flag = demokratska_stranka_formirana
+# 					}
+# 					NOT = {
+# 						has_completed_focus = SER_formalize_the_merger
+# 					}
+# 				}
+# 				clr_country_flag = progressives_coalition
+# 				clr_country_flag = liberals_coalition
+# 				custom_effect_tooltip = SER_progressives_leave_coalition_tt
+# 				custom_effect_tooltip = SER_liberals_leave_coalition_tt
+# 				set_variable = {
+# 					government_seats = independent_radical_seats
+# 				}
+# 				else = {
+# 					set_variable = {
+# 						government_seats = democratic_party_seats
+# 					}
+# 				}
+# 			}
+# 		}
+# 		if = {
+# 			limit = {
+# 				has_country_flag = elections_suspended
+# 			}
+# 			custom_effect_tooltip = SER_independent_radicals_leave_coalition_tt
+# 			custom_effect_tooltip = SER_progressives_leave_coalition_tt
+# 			clr_country_flag = independent_radical_coalition
+# 			clr_country_flag = progressives_coalition
+# 			set_variable = {
+# 				government_seats = radical_seats
+# 			}
+# 		}
+# 		if = {
+# 			limit = {
+# 				has_country_flag = passing_law
+# 			}
+# 			set_variable = {
+# 				supports_law = government_seats
+# 			}
+# 		}
+# 	}
+# }
 
 ###Alexander II in Skoplje 
 country_event = {
@@ -4948,24 +4951,24 @@ country_event = {
 		add_stability = -0.1
 		add_political_power = -100
 		add_war_support = -0.1
-		add_to_variable = {
-			radical_seats = -20
-		}
-		add_to_variable = {
-			dissident_radical_seats = 20
-		}
+		# add_to_variable = {
+		# 	radical_seats = -20
+		# }
+		# add_to_variable = {
+		# 	dissident_radical_seats = 20
+		# }
 		clr_country_flag = dissidents_coalition
-		set_variable = {
-			government_seats = radical_seats
-		}
-		if = {
-			limit = {
-				has_country_flag = passing_law
-			}
-			set_variable = {
-				supports_law = government_seats
-			}
-		}
+		# set_variable = {
+		# 	government_seats = radical_seats
+		# }
+		# if = {
+		# 	limit = {
+		# 		has_country_flag = passing_law
+		# 	}
+		# 	set_variable = {
+		# 		supports_law = government_seats
+		# 	}
+		# }
 	}
 }
 
@@ -4995,19 +4998,19 @@ country_event = {
 			long_name = "Ujedinjena Radikalna Stranka"
 		}
 		set_country_flag = radical_party_merged
-		add_to_variable = {
-			independent_radical_seats = radical_seats
-		}
-		subtract_from_variable = {
-			independent_radical_seats = 20
-		}
-		add_to_variable = {
-			dissident_radical_seats = 20
-		}
-		set_variable = {
-			government_seats = independent_radical_seats
-		}
-		clear_variable = radical_seats
+		# add_to_variable = {
+		# 	independent_radical_seats = radical_seats
+		# }
+		# subtract_from_variable = {
+		# 	independent_radical_seats = 20
+		# }
+		# add_to_variable = {
+		# 	dissident_radical_seats = 20
+		# }
+		# set_variable = {
+		# 	government_seats = independent_radical_seats
+		# }
+		# clear_variable = radical_seats
 		hidden_effect = {
 			country_event = {
 				id = ww1_serbia.116
@@ -5040,15 +5043,15 @@ country_event = {
 			}
 		}
 		add_ideas = SER_idea_interim_government
-		set_country_flag = raspustena_skupstina
-		clr_country_flag = negotiated_with_democrats
-		clr_country_flag = negotiated_with_dissidents
-		clr_country_flag = negotiated_with_radicals
-		clr_country_flag = negotiated_with_independent_radicals
-		clr_country_flag = negotiated_with_socdem
-		clr_country_flag = negotiated_with_liberals
-		clr_country_flag = negotiated_with_progressives
-		clr_country_flag = passing_law
+		# set_country_flag = raspustena_skupstina
+		# clr_country_flag = negotiated_with_democrats
+		# clr_country_flag = negotiated_with_dissidents
+		# clr_country_flag = negotiated_with_radicals
+		# clr_country_flag = negotiated_with_independent_radicals
+		# clr_country_flag = negotiated_with_socdem
+		# clr_country_flag = negotiated_with_liberals
+		# clr_country_flag = negotiated_with_progressives
+		# clr_country_flag = passing_law
 		set_variable = {
 			supports_law = 0
 		}
@@ -5073,53 +5076,53 @@ country_event = {
 	}
 	option = {
 		name = ww1_serbia.117.a
-		clr_country_flag = raspustena_skupstina
-		set_variable = {
-			radical_seats = 90
-		}
-		set_variable = {
-			liberal_seats = 35
-		}
-		set_variable = {
-			progressives_seats = 30
-		}
-		set_variable = {
-			dissident_seats = 2			#Pašićevci pukli)
-		}
-		set_variable = {
-			socdem_seats = 3
-		}
-		set_variable = {
-			government_seats = radical_seats
-		}
+		# clr_country_flag = raspustena_skupstina
+		# set_variable = {
+		# 	radical_seats = 90
+		# }
+		# set_variable = {
+		# 	liberal_seats = 35
+		# }
+		# set_variable = {
+		# 	progressives_seats = 30
+		# }
+		# set_variable = {
+		# 	dissident_seats = 2			#Pašićevci pukli)
+		# }
+		# set_variable = {
+		# 	socdem_seats = 3
+		# }
+		# set_variable = {
+		# 	government_seats = radical_seats
+		# }
 		country_event = ww1_serbia.134
 	}
 	option = {
 		name = ww1_serbia.117.b
 		clr_country_flag = samostalska_vlada
-		clr_country_flag = raspustena_skupstina
-		set_variable = {
-			radical_seats = 65
-		}
-		set_variable = {
-			liberal_seats = 45
-		}
-		set_variable = {
-			progressives_seats = 42
-		}
-		set_variable = {
-			dissident_seats = 5
-		}
-		set_variable = {
-			socdem_seats = 3
-		}
-		set_variable = {
-			government_seats = liberal_seats
-		}
+		# clr_country_flag = raspustena_skupstina
+		# set_variable = {
+		# 	radical_seats = 65
+		# }
+		# set_variable = {
+		# 	liberal_seats = 45
+		# }
+		# set_variable = {
+		# 	progressives_seats = 42
+		# }
+		# set_variable = {
+		# 	dissident_seats = 5
+		# }
+		# set_variable = {
+		# 	socdem_seats = 3
+		# }
+		# set_variable = {
+		# 	government_seats = liberal_seats
+		# }
 		country_event = ww1_serbia.135
-		add_to_variable = {
-			government_seats = progressives_seats
-		}
+		# add_to_variable = {
+		# 	government_seats = progressives_seats
+		# }
 	}
 }
 
@@ -5225,20 +5228,20 @@ country_event = {
 }
 
 ###Hidden effect to stop passing law if assembly is dissolved, fallback event lol
-country_event = {
-	id = ww1_serbia.136
-	hidden = yes
-	trigger = {
-		has_country_flag = raspustena_skupstina
-		has_country_flag = passing_law
-	}
-	immediate = {
-		clr_country_flag = passing_law
-	}
-	mean_time_to_happen = {
-		days = 0
-	}
-}
+# country_event = {
+# 	id = ww1_serbia.136
+# 	hidden = yes
+# 	trigger = {
+# 		has_country_flag = raspustena_skupstina
+# 		has_country_flag = passing_law
+# 	}
+# 	immediate = {
+# 		clr_country_flag = passing_law
+# 	}
+# 	mean_time_to_happen = {
+# 		days = 0
+# 	}
+# }
 
 ###Elections of 1914- Radical victory in monarchist path
 country_event = {
@@ -5254,7 +5257,7 @@ country_event = {
 	}
 	option = {
 		name = ww1_serbia.137.a
-		clr_country_flag = raspustena_skupstina
+		# clr_country_flag = raspustena_skupstina
 		set_country_flag = radikalska_vlada
 		set_country_flag = radicals_coalition
 		set_country_flag = election_1914
@@ -5264,47 +5267,47 @@ country_event = {
 		}
 		activate_mission = SER_radical_plot
 		add_ideas = SER_idea_radical_opposition
-		set_variable = {
-			radical_seats = 100
-		}
-		set_variable = {
-			independent_radical_seats = 29
-		}
-		set_variable = {
-			liberal_seats = 16
-		}
-		set_variable = {
-			progressives_seats = 13
-		}
-		set_variable = {
-			socdem_seats = 2
-		}
-		set_variable = {
-			dissident_radical_seats = 0
-		}
-		set_variable = {
-			government_seats = radical_seats
-		}
+		# set_variable = {
+		# 	radical_seats = 100
+		# }
+		# set_variable = {
+		# 	independent_radical_seats = 29
+		# }
+		# set_variable = {
+		# 	liberal_seats = 16
+		# }
+		# set_variable = {
+		# 	progressives_seats = 13
+		# }
+		# set_variable = {
+		# 	socdem_seats = 2
+		# }
+		# set_variable = {
+		# 	dissident_radical_seats = 0
+		# }
+		# set_variable = {
+		# 	government_seats = radical_seats
+		# }
 	}
 }
 
-country_event = {
-	id = ww1_serbia.138
-	title = ww1_serbia.138.t
-	desc = ww1_serbia.138.d
-	is_triggered_only = yes
-	trigger = {
-		original_tag = SER
-		has_country_flag = passing_law
-	}
-	option = {
-		name = ww1_serbia.138.a
-		add_political_power = -5
-		subtract_from_variable = {
-			supports_law = 5
-		}
-	}
-}
+# country_event = {
+# 	id = ww1_serbia.138
+# 	title = ww1_serbia.138.t
+# 	desc = ww1_serbia.138.d
+# 	is_triggered_only = yes
+# 	trigger = {
+# 		original_tag = SER
+# 		has_country_flag = passing_law
+# 	}
+# 	option = {
+# 		name = ww1_serbia.138.a
+# 		add_political_power = -5
+# 		subtract_from_variable = {
+# 			supports_law = 5
+# 		}
+# 	}
+# }
 
 country_event = {
 	id = ww1_serbia.139
