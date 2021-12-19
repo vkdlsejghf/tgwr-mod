@@ -1,7 +1,7 @@
 ﻿capital = 279
 
 set_research_slots = 3
-set_stability = 0.75
+set_stability = 0.21
 set_convoys = 20
 set_country_flag = monroe_doctrine
 
@@ -25,8 +25,6 @@ recruit_character = CHL_ibáñez
 recruit_character = CHL_neff
 recruit_character = CHL_ward
 recruit_character = CHL_soublette
-recruit_character = CHL_eduardo_santa_maría
-recruit_character = CHL_manuel_blanco
 recruit_character = CHL_luis_alamos_barros
 recruit_character = CHL_agustin_edwards_mac_clure
 recruit_character = CHL_marmaduke_grove
@@ -48,15 +46,19 @@ set_technology = {
 
 set_politics = {
 	ruling_party = democratic
-	last_election = "1906.9.18" 
+	last_election = "1906.9.18"
 	election_frequency = 60 
 	elections_allowed = yes
 }	
 set_popularities = {
 	fascism = 0
 	communism = 0
-	democratic = 58
-	neutrality = 42
+	democratic = 62
+	neutrality = 38
+}
+add_ideas = {
+	CHL_prussian_army
+	CHL_parlamentary_republic
 }
 
 if = {
@@ -336,4 +338,6 @@ if = {
 		}
 		obsolete = yes
 	}
-}
+}	
+
+country_event = { id = ww1_developer_note.4 days = 1}

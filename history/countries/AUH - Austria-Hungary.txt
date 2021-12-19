@@ -17,7 +17,6 @@ recruit_character = AUH_franz_koritschoner
 
 recruit_character = AUH_hermann_von_spaun
 recruit_character = AUH_anton_haus
-recruit_character = AUH_franz_joseph_i
 recruit_character = AUH_franz_ferdinand_i
 recruit_character = AUH_karl_i
 recruit_character = AUH_zita_of_bourbonparma
@@ -54,13 +53,12 @@ recruit_character = AUH_maximilian_daublebsky_von_sterneck
 recruit_character = AUH_eugen_hordliczka
 recruit_character = AUH_blasius_schemua
 recruit_character = AUH_august_urbanski
-recruit_character = AUH_artur_arz_von_straussenberg
 recruit_character = AUH_gabor_ugron
 recruit_character = AUH_friedrich_von_beck_rzikowsky
 recruit_character = AUH_rudolf_montecuccoli
+recruit_character = AUH_Karl_Stephan
 recruit_character = AUH_maximilian_ronge
 recruit_character = AUH_leon_von_bilinski
-recruit_character = AUH_franz_conrad_von_hotzendorf
 
 
 1910.1.1 = {

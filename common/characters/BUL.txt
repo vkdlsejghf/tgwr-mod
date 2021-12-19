@@ -19,6 +19,9 @@ characters={
 			civilian={
 				large="gfx/leaders/BUL/BUL_ferdinand_i.dds"
 			}
+			army={
+				large="gfx/leaders/BUL/BUL_ferdinand_i_army.dds"
+			}
 		}
 		country_leader={
 			ideology=autocracy
@@ -233,13 +236,8 @@ characters={
 		}
 		portraits={
 			army={
-				small=""
-			}
-			navy={
-				small="GFX_idea_BUL_dmitry_dobrev"
-			}
-			army={
 				large="gfx/leaders/BUL/BUL_dmitry_dobrev.dds"
+				small="GFX_idea_BUL_dmitry_dobrev"
 			}
 		}
 		navy_leader={
@@ -299,13 +297,8 @@ characters={
 		}
 		portraits={
 			army={
-				small=""
-			}
-			navy={
-				small="GFX_idea_BUL_rashko_serafimov"
-			}
-			army={
 				large="gfx/leaders/BUL/BUL_rashko_serafimov.dds"
+				small="GFX_idea_BUL_rashko_serafimov"
 			}
 		}
 		navy_leader={
@@ -377,7 +370,7 @@ characters={
 		name="Vladimir Vazov"
 		portraits={
 			army={
-				small=""
+				small="gfx/interface/ideas/idea_europe_generic_land_1.dds"
 			}
 			army={
 				large="gfx/leaders/BUL/BUL_Vladimir_Vazov.dds"
@@ -397,7 +390,7 @@ characters={
 		name="Todor Kantardzhiev"
 		portraits={
 			army={
-				small=""
+				small="gfx/interface/ideas/idea_europe_generic_land_2.dds"
 			}
 			army={
 				large="gfx/leaders/BUL/BUL_Todor_Kantardzhiev.dds"
@@ -416,7 +409,7 @@ characters={
 		name="Panteley Kiselov"
 		portraits={
 			army={
-				small=""
+				small="gfx/interface/ideas/idea_europe_generic_land_3.dds"
 			}
 			army={
 				large="gfx/leaders/BUL/BUL_Panteley_Kiselov.dds"
@@ -436,7 +429,7 @@ characters={
 		name="Kliment Boyadzhiev"
 		portraits={
 			army={
-				small=""
+				small="gfx/interface/ideas/idea_europe_generic_land_5.dds"
 			}
 			army={
 				large="gfx/leaders/BUL/BUL_Kliment_Boyadzhiev.dds"
@@ -456,7 +449,7 @@ characters={
 		name="Vasil Kutinchev"
 		portraits={
 			army={
-				small=""
+				small="gfx/interface/ideas/idea_europe_generic_land_3.dds"
 			}
 			army={
 				large="gfx/leaders/BUL/BUL_Vasil_Kutinchev.dds"

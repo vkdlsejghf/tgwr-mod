@@ -341,6 +341,10 @@ spriteTypes = {
 	SpriteType = {
 		name = "GFX_focus_BUL_National_Catastrophe"
 		texturefile = "gfx/interface/goals/focus_BUL_National_Catastrophe.png"
+	}	
+	SpriteType = {
+		name = "GFX_focus_AUH_serbian_protectorate"
+		texturefile = "gfx/interface/goals/focus_auh_serbian_protectorate.dds"
 	}
 	
 	### 1.8
@@ -1201,30 +1205,41 @@ spriteTypes = {
 		name = "GFX_focus_TUR_reform_ottoman_bank"
 		texturefile ="gfx/interface/goals/focus_tur_reform_ottoman_bank.dds"	
 	}
+
 	SpriteType = {
-		name = "GFX_focus_TUR_spirit_of_the_suleyman"
-		texturefile ="gfx/interface/goals/focus_tur_spirit_of_the_suleyman.dds"	
+		name = "focus_Ballot_Chile"
+		texturefile = "gfx/interface/goals/focus_Ballot_Chile.dds"
 	}
 	SpriteType = {
-		name = "GFX_focus_AUH_serbian_protectorate"
-		texturefile ="gfx/interface/goals/focus_auh_serbian_protectorate.dds"	
+		name = "focus_chilean_army"
+		texturefile = "gfx/interface/goals/focus_chilean_army.dds"
 	}
 	SpriteType = {
-		name = "GFX_focus_TUR_goeben_breslau"
-		texturefile = "gfx/interface/goals/focus_tur_goeben_breslau.tga"
+		name = "focus_chilean_navy"
+		texturefile = "gfx/interface/goals/focus_chilean_navy.dds"
+	}
+
+	SpriteType = {
+		name = "focus_reorganize_famae"
+		texturefile = "gfx/interface/goals/focus_reorganize_famae.dds"
 	}
 	SpriteType = {
-		name = "GFX_focus_TUR_restore_eyalet_egypt"
-		texturefile = "gfx/interface/goals/focus_tur_restore_eyalet_egypt.tga"
+		name = "focus.connect_south"
+		texturefile = "gfx/interface/goals/focus.connect_south.dds"
 	}
 	SpriteType = {
-		name = "GFX_focus_TUR_experience_of_mediterranean_conflict"
-		texturefile = "gfx/interface/goals/focus_tur_experience_of_mediterranean_conflict.dds"
+		name = "focus_oppose_barros_luco"
+		texturefile = "gfx/interface/goals/focus_oppose_barros_luco.png"
 	}
 	SpriteType = {
 		name = "GFX_focus_south_america"
 		texturefile = "gfx/interface/goals/focus_south_america.dds"
+	}	
+	SpriteType = {		
+		name = "consolidate_barros_luco"
+		texturefile = "gfx/interface/goals/consolidate_barros_luco.png"
 	}
+
 	SpriteType = {
 		name = "GFX_focus_TUR_secure_egypt"
 		texturefile = "gfx/interface/goals/focus_tur_secure_egypt.dds"
