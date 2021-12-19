@@ -1,0 +1,29 @@
+focus_tree = {
+    id = spain_focus
+    #continuous_focus_position = { x = 0 y = 1000 } 
+    country = {
+        factor = 0
+        modifier = {
+            add = 10
+            tag = SPR
+        }
+    }
+    focus = {
+        id = SPR_1910_General_Election
+        icon = GFX_goal_generic_support_democracy
+        x = 5
+        y = 0
+        cost = 1
+        search_filters = {
+            FOCUS_FILTER_POLITICAL
+        }
+        ai_will_do = {
+            factor = 100
+        }
+        completion_reward = {
+            country_event = {
+                id = ww1_spain.2
+            }
+        }
+    }
+}

@@ -5949,3 +5949,8 @@
  SWE_baltic_fleet_desc:0 "We should build up and prepare a fleet worthy of protecting the Baltic Sea."
  SWE_dockyard_effort:0 "Dockyard Effort"
  SWE_dockyard_effort_desc:0 "More improvements to the navy are in order."
+
+#Spanish
+
+SPR_1910_General_Election:0 "The 1910 General Election"
+SPR_1910_General_Election_desc:0 "The Time Has Come For Another General Election To Be Held For Our Parliament. Let Us Hold It."
