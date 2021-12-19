@@ -10,8 +10,8 @@ focus_tree = {
     }
     focus = {
         id = SPR_1910_General_Election
-        icon = GFX_goal_generic_support_democracy
-        x = 5
+        icon = GFX_focus_fate_of_royal_family
+        x = 10
         y = 0
         cost = 1
         search_filters = {
@@ -24,6 +24,29 @@ focus_tree = {
             country_event = {
                 id = ww1_spain.2
             }
+        }
+    }
+    focus = {
+        id = SPR_republican_victory
+        icon = GFX_focus_marxism
+        x = 3
+        y = 2
+        cost = 1
+        prerequisite = {
+            focus = SPR_1910_General_Election
+        }
+        search_filters = {
+            FOCUS_FILTER_POLITICAL
+        }
+        ai_will_do = {
+            factor = 34
+        }
+        completion_reward = {
+            add_popularity = {
+                ideology = communism
+                popularity = 0.20
+            }
+            add_stability = -0.05
         }
     }
 }
