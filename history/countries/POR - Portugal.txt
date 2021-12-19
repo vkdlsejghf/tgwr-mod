@@ -34,6 +34,33 @@ create_country_leader = {
 	ideology=stratocracy
 	traits={  } 
 }
+recruit_character = POR_manuel_ii
+recruit_character = POR_teófilo_braga
+
+recruit_character = POR_antonio_de_oliveira_salazar
+recruit_character = POR_jose_vicente_de_freitas
+recruit_character = POR_josé_mendes_cabeçadas
+recruit_character = POR_manuel_gomes_da_costa
+recruit_character = POR_josé_vicente_de_freitas
+recruit_character = POR_artur_ivens_ferraz
+recruit_character = POR_Óscar_f._carmona
+recruit_character = POR_josé_m._cabeçadas
+recruit_character = POR_tomas_garcia_rosado
+recruit_character = POR_jose_carlos_de_maia
+recruit_character = POR_joao_martins_de_carvalho
+recruit_character = POR_jose_norton_de_matos
+recruit_character = POR_joao_jose_sinel_de_cordes
+recruit_character = POR_antonio_caetano_macieira_junior
+recruit_character = POR_joaquim_pimenta_de_castro
+recruit_character = POR_antonio_rodrigues_ribeiro
+recruit_character = POR_joao_do_canto_e_castro
+recruit_character = POR_antonio_maria_baptista
+recruit_character = POR_gomes_da_costa
+recruit_character = POR_vitor_hugo_de_azevedo_coutinho
+recruit_character = POR_afonso_augusto_da_costa
+recruit_character = POR_joao_de_sousa_barbosa
+recruit_character = POR_antonio_teixeira_de_sousa
+recruit_character = POR_antonio_joaquim_granjo
 
 create_corps_commander = {  
 	name = "Óscar F. Carmona" 
