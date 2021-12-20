@@ -66,6 +66,11 @@ ideas = {
 				naval_equipment_upgrade_xp_cost = 0.5
 				experience_gain_navy_factor = -0.3
 				experience_gain_navy_unit_factor = -0.3
+				war_support_factor = -0.25
+				naval_retreat_speed = -0.35
+				naval_retreat_chance = -0.35
+				ships_at_battle_start = -0.35
+				experience_gain_navy_factor = -0.2
 			}
 		}
 	}
