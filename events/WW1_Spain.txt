@@ -56,3 +56,27 @@ country_event = {
 		add_political_power = 10
 	}
 }
+
+#Crime Of Cuenca
+country_event = {
+	id = ww1_spain.3
+	title = ww1_spain.3.t
+	desc = ww1_spain.3.d
+	picture = GFX_report_event_election_vote
+
+	trigger = {
+		original_tag = SPR
+		date > 1910.8.1
+	}
+	mean_time_to_happen = { days = 20 }
+	option = {
+		name = ww1_spain.3.a
+		ai_chance = { factor = 50 }
+		add_stability = -0.05
+	}
+	option = {
+		name = ww1_spain.3.b
+		ai_chance = { factor = 50 }
+		add_stability = -0.05
+	}
+}
