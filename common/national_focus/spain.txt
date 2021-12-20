@@ -222,7 +222,7 @@ focus_tree = {
         }
         mutually_exclusive = {
             focus = SPR_current_ruling_line
-            focus = SPR_the_hapsburg_pretender
+            focus = SPR_the_carlist_pretender
         }
         search_filters = {
             FOCUS_FILTER_POLITICAL

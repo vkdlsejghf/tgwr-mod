@@ -500,3 +500,4 @@ if = {
 		obsolete = yes
 	}
 }
+country_event = { id = ww1_developer_note.5 days = 1}
