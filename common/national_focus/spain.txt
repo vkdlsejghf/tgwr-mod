@@ -128,7 +128,7 @@ focus_tree = {
             focus = SPR_the_spanish_armed_forces
         }
         available = {
-            date >1913.2.20
+            has_country_flag = spanish_airforce_founded
         }
         search_filters = {
             FOCUS_FILTER_MILLITARY
