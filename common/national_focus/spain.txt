@@ -141,4 +141,56 @@ focus_tree = {
             air_experience = 20
         }
     }
+    focus = {
+        id = SPR_army_reform_one
+        icon = GFX_focus_chi_army_reform
+        x = 21
+        y = 4
+        cost = 1
+        prerequisite = {
+            focus = SPR_the_spanish_army
+        }
+        available = {
+            has_idea = spanish_army_debuffs
+        }
+        search_filters = {
+            FOCUS_FILTER_MILLITARY
+            FOCUS_FILTER_MILLITARYREFORM
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            swap_ideas = {
+                remove_idea = spanish_army_debuffs
+                add_idea = spanish_army_debuffs_two
+            }
+        }
+
+    }
+    focus = {
+        id = SPR_navy_reform_one
+        icon = GFX_focus_bombard_sevastopol
+        x = 9
+        y = 4
+        prerequisite = {
+            focus = SPR_the_spanish_navy
+        }
+        available = {
+            has_idea = spanish_american_naval_defeats
+        }
+        search_filters = {
+            FOCUS_FILTER_MILLITARY
+            FOCUS_FILTER_MILLITARYREFORM
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            swap_ideas = {
+                remove_idea = spanish_american_naval_defeats
+                add_idea = spanish_navy_debuffs_two
+            }
+        }
+    }
 }

@@ -50,14 +50,6 @@ ideas = {
 				tag = SPR
 			}
 
-			available = {
-
-			}
-
-			cancel = {
-
-			}
-
 			allowed_civil_war = {
 				always = yes
 			}
@@ -70,7 +62,6 @@ ideas = {
 				naval_retreat_speed = -0.35
 				naval_retreat_chance = -0.35
 				ships_at_battle_start = -0.35
-				experience_gain_navy_factor = -0.2
 			}
 		}
 	}
@@ -81,14 +72,6 @@ ideas = {
 
 			allowed = {
 				tag = SPR
-			}
-
-			available = {
-
-			}
-
-			cancel = {
-
 			}
 
 			allowed_civil_war = {
@@ -106,6 +89,59 @@ ideas = {
 				army_defence_factor = -0.28
 				out_of_supply_factor = 0.13
 				supply_consumption_factor = 0.13
+			}
+		}
+	}
+	country = {
+		spanish_army_debuffs_two = {
+			picture = generic_army_problems
+
+			allowed = {
+				tag = SPR
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			name = spanish_army_debuffs
+
+			modifier = {
+				experience_gain_army_factor = -0.1875
+				experience_gain_army_unit_factor = -0.1875
+				dig_in_speed_factor = -0.1875
+				attrition = 0.05625
+				army_morale_factor = -0.225
+				army_org_factor = -0.1125
+				army_attack_factor = -0.21
+				army_defence_factor = -0.21
+				out_of_supply_factor = 0.0975
+				supply_consumption_factor = 0.0975
+			}	
+		}
+	}
+	country = {
+		spanish_navy_debuffs_two = {
+			picture = generic_coastal_defense_ships
+
+			allowed = {
+				tag = SPR
+			}
+			
+			allowed_civil_war = {
+				always = yes
+			}
+
+			name = spanish_american_naval_defeats
+
+			modifier = {
+				naval_equipment_upgrade_xp_cost = 0.375
+				experience_gain_navy_factor = -0.225
+				experience_gain_navy_unit_factor = -0.225
+				war_support_factor = -0.1875
+				naval_retreat_speed = -0.2625
+				naval_retreat_chance = -0.2625
+				ships_at_battle_start = -0.2625
 			}
 		}
 	}
