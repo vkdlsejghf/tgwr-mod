@@ -6,18 +6,18 @@ ideas = {
 				always = no
 			}
 			removal_cost = -1
-            picture = generic_victors_of_ww1
+            		picture = generic_victors_of_ww1
 			research_bonus = {
 				land_doctrine = -0.75
 				air_doctrine = -0.75
 				naval_doctrine = -0.75
-            }
+          		}
 			modifier = {
 				ai_focus_defense_factor = 1.0
 				ai_get_ally_desire_factor = -1.0			
 				ai_desired_divisions_factor = -0.8
 			}
-        }
+        	}
 		idea_armistice = {
 			picture = generic_constitutional_guarantees
 			allowed = { always = no }
@@ -87,11 +87,11 @@ ideas = {
 			}
 		}
 		idea_great_war_armistice = { #??? Was in Belgium
-		    picture = ENG_the_war_to_end_all_wars
+			picture = ENG_the_war_to_end_all_wars
 			allowed = {
-                always = no
-            }			
-            removal_cost = -1 
+                		always = no
+            		}
+            		removal_cost = -1 
 			available = {
 				has_war = no
 			}
@@ -100,7 +100,7 @@ ideas = {
 			}
 			modifier = {		
 			}
-        }
+      		}
 		idea_production_restrictions = {
 			picture = generic_constitutional_guarantees
 			allowed = { always = no }
@@ -209,8 +209,8 @@ ideas = {
 			available = { has_war = yes }
 			modifier = {
 				conscription_factor = -0.10
-                war_support_weekly = -0.03
-                 stability_weekly = -0.02
+				war_support_weekly = -0.03
+				stability_weekly = -0.02
 				weekly_manpower = -1000
 			}
 		}
@@ -219,10 +219,10 @@ ideas = {
 			removal_cost = -1
 			available = { has_war = yes }
 			modifier = {
-			conscription_factor = -0.20
-            war_support_weekly = -0.05
-            stability_weekly = -0.05
-			weekly_manpower = -2500
+				conscription_factor = -0.20
+            			war_support_weekly = -0.05
+				stability_weekly = -0.05
+				weekly_manpower = -2500
 			}
 		}
 		protectorate = {
@@ -235,7 +235,7 @@ ideas = {
 			}
 			rule = {
 				can_decline_call_to_war = yes
-	        }
+	      		}
 			available = {
 				is_subject = yes
 			}
@@ -251,6 +251,14 @@ ideas = {
 			removal_cost = -1
 			modifier = {
 				neutrality_drift = 0.1
+			}
+		}
+		league_of_nations_member = {
+			picture = generic_constitutional_guarantees
+			allowed = { always = no }
+			removal_cost = -1
+			allowed_civil_war = {
+				always = yes
 			}
 		}
 		#generic focus tree
