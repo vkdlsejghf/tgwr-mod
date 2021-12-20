@@ -799,6 +799,9 @@ focus_tree = {
 					ruling_only = yes
 				}
 			}
+			NOT = {
+				has_war_with = AUH
+			}
 		}
 		bypass = {
 			OR = {
