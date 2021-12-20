@@ -83,6 +83,7 @@ recruit_character = SPR_lucas_puente
 		ww1_Scramble_for_Africa
 		limited_conscription
 		spanish_american_naval_defeats
+		spanish_army_debuffs
 	}
 
 }
