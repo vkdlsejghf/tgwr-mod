@@ -1,6 +1,6 @@
 focus_tree = {
     id = spain_focus
-    #continuous_focus_position = { x = 0 y = 1000 } 
+    continuous_focus_position = { x = 200    y = 2500 } 
     country = {
         factor = 0
         modifier = {
@@ -11,8 +11,8 @@ focus_tree = {
     focus = {
         id = SPR_1910_General_Election
         icon = GFX_focus_fate_of_royal_family
-        x = 10
-        y = 0
+        x = 15
+        y = 1
         cost = 1
         search_filters = {
             FOCUS_FILTER_POLITICAL
@@ -22,24 +22,48 @@ focus_tree = {
         }
         completion_reward = {
             country_event = {
+                #Event Is Kinda Bugged Rn
                 id = ww1_spain.2
             }
         }
     }
     focus = {
+        id = SPR_the_spanish_armed_forces
+        icon  = GFX_focus_marmara_artillery
+        x = 50
+        y = 1
+        cost = 1
+        #search_filters = {
+        #
+        #}
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            #Placeholder
+            army_experience = 20
+            navy_experience = 20
+            air_experience = 20
+        }
+    }
+    focus = {
         id = SPR_republican_victory
         icon = GFX_focus_marxism
-        x = 3
-        y = 2
+        x = 5
+        y = 3
         cost = 1
         prerequisite = {
             focus = SPR_1910_General_Election
+        }
+        mutually_exclusive = {
+            focus = SPR_status_quo_victory
+            focus = SPR_absolutist_victory
         }
         search_filters = {
             FOCUS_FILTER_POLITICAL
         }
         ai_will_do = {
-            factor = 34
+            factor = 1
         }
         completion_reward = {
             add_popularity = {
@@ -47,6 +71,185 @@ focus_tree = {
                 popularity = 0.20
             }
             add_stability = -0.05
+        }
+    }
+    focus = {
+        id = SPR_status_quo_victory
+        icon = GFX_focus_generic_home_defense
+        x = 15
+        y = 3
+        cost = 1
+        prerequisite = {
+            focus = SPR_1910_General_Election
+        }
+        mutually_exclusive = {
+            focus = SPR_republican_victory
+            focus = SPR_absolutist_victory
+        }
+        search_filters = {
+            FOCUS_FILTER_POLITICAL
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            add_popularity = {
+                ideology = neutrality
+                popularity = 0.10
+            }
+            add_popularity = {
+                ideology = democratic
+                popularity = 0.10
+            }
+            add_popularity = {
+                ideology = communism
+                popularity = -1
+            }
+            add_stability = 0.05
+        }
+    }
+    focus = {
+        id = SPR_absolutist_victory
+        icon = GFX_focus_generic_monarchy_2
+        x = 25
+        y = 3
+        cost = 1
+        prerequisite = {
+            focus = SPR_1910_General_Election
+        }
+        mutually_exclusive = {
+            focus = SPR_republican_victory
+            focus = SPR_status_quo_victory
+        }
+        search_filters = {
+            FOCUS_FILTER_POLITICAL
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            add_popularity = {
+                ideology = democratic
+                popularity = -1
+            }
+            add_popularity = {
+                ideology = communism
+                popularity = -1
+            }
+            add_popularity = {
+                ideology = neutrality
+                popularity = 1
+            }
+            add_stability = -0.10
+        }
+    }
+    focus = {
+        id = SPR_the_question_of_the_house
+        icon = GFX_focus_generic_monarchy_2
+        x = 26
+        y = 4
+        cost = 1
+        prerequisite = {
+            focus = SPR_absolutist_victory
+        }
+        search_filters = {
+            FOCUS_FILTER_POLITICAL
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            #This Is A Placeholder
+            add_political_power = 100
+        }
+    }
+    focus = {
+        id = SPR_current_ruling_line
+        icon = GFX_focus_convention
+        x = 26
+        y = 5
+        cost = 1
+        prerequisite = {
+            focus = SPR_the_question_of_the_house
+        }
+        mutually_exclusive = {
+            focus = SPR_the_carlist_pretender
+            focus = SPR_the_hapsburg_pretender
+        }
+        search_filters = {
+            FOCUS_FILTER_POLITICAL
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            #Placeholder
+            add_political_power = 100
+        }
+    }
+    focus = {
+        id = SPR_the_carlist_pretender
+        icon = GFX_focus_spa_no_compromise_on_carlist_ideals
+        x = 22
+        y = 5
+        cost = 1
+        prerequisite = {
+            focus = SPR_the_question_of_the_house
+        }
+        mutually_exclusive = {
+            focus = SPR_current_ruling_line
+            focus = SPR_the_hapsburg_pretender
+        }
+        search_filters = {
+            FOCUS_FILTER_POLITICAL
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            #Placeholder
+            add_political_power = 100
+        }
+    }
+    focus = {
+        id = SPR_the_hapsburg_pretender
+        icon = GFX_focus_AUH_federalism
+        x = 30
+        y = 5
+        cost = 1
+        prerequisite = {
+            focus = SPR_the_question_of_the_house
+        }
+        mutually_exclusive = {
+            focus = SPR_current_ruling_line
+            focus = SPR_the_hapsburg_pretender
+        }
+        search_filters = {
+            FOCUS_FILTER_POLITICAL
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            #Placeholder
+            add_political_power = 100
+        }
+    }
+    focus = {
+        id = SPR_the_spanish_navy
+        icon = GFX_focus_generic_destroyer
+        x = 46
+        y = 3
+        cost = 1
+        prerequisite = {
+            focus = SPR_the_spanish_armed_forces
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            #Placeholder
+            navy_experience = 20
         }
     }
 }
