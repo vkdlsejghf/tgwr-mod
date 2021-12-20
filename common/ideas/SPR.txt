@@ -96,16 +96,16 @@ ideas = {
 			}
 
 			modifier = {
-				experience_gain_army_factor = -0.5
-				experience_gain_army_unit_factor = -0.5
-				dig_in_speed_factor = -0.5
-				attrition = 0.5
+				experience_gain_army_factor = -0.25
+				experience_gain_army_unit_factor = -0.25
+				dig_in_speed_factor = -0.25
+				attrition = 0.25
 				army_morale_factor = -0.3
-				army_org_factor = -0.3
-				army_attack_factor = -0.35
-				army_defence_factor = -0.35
-				out_of_supply_factor = 0.28
-				supply_consumption_factor = 0.3
+				army_org_factor = -0.15
+				army_attack_factor = -0.28
+				army_defence_factor = -0.28
+				out_of_supply_factor = 0.23
+				supply_consumption_factor = 0.17
 			}
 		}
 	}

@@ -5664,6 +5664,9 @@
  ww1_spain.4.t:0 "Spanish Naval Recovery Committee Formed"
  ww1_spain.4.d:0 "Upon the command of the king and government the ministry of the navy has formed a committee to oversee the recovery of the Spanish navy."
  ww1_spain.4.a:0 "Ok"
+ ww1_spain.5.t:0 "Spanish Army Recovery Committee Formed"
+ ww1_spain.5.d:0 "Placeholder"
+ ww1_spain.5.a:0 "Ok"
 
  #Developer Notes
  ww1_developer_note.1.t:0 "Note from the British Dev"
