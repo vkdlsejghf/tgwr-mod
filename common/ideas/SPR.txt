@@ -41,4 +41,32 @@ ideas = {
 			picture = generic_tank_manufacturer_3 
 		}
 	}
+
+	country = {
+		spanish_american_naval_defeats = {
+			picture = generic_coastal_defense_ships
+
+			allowed = {
+				tag = SPR
+			}
+
+			available = {
+
+			}
+
+			cancel = {
+
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			modifier = {
+				naval_equipment_upgrade_xp_cost = 0.5
+				experience_gain_navy_factor = -0.3
+				experience_gain_navy_unit_factor = -0.3
+			}
+		}
+	}
 }

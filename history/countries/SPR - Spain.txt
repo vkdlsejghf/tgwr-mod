@@ -82,6 +82,7 @@ recruit_character = SPR_lucas_puente
 		neutrality_idea
 		ww1_Scramble_for_Africa
 		limited_conscription
+		spanish_american_naval_defeats
 	}
 
 }
