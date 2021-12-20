@@ -24,3 +24,13 @@ peace_deals = {
 	allowed = { always = yes }
 	priority = 500
 }
+league_of_nations_category = {
+	icon = decision_category_generic_economy
+	allowed = {
+		always = yes
+	}
+	visible = {
+		has_global_flag = versailles_treaty
+	}
+	priority = 100
+}
