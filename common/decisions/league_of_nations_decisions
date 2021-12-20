@@ -1,4 +1,4 @@
-league_of_nations = {
+league_of_nations_category = {
 	join_league_of_nations = {
 		allowed = {
 		}
