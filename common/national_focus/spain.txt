@@ -283,4 +283,33 @@ focus_tree = {
             }
         }
     }
+    focus = {
+        id = SPR_naval_expansion_two
+        icon = GFX_focus_bombard_sevastopol
+        x = 12
+        y = 5
+        cost = 1
+        prerequisite = {
+            focus = SPR_navy_reform_one
+        }
+        available = {
+            has_idea = spanish_navy_debuffs_two
+        }
+        search_filters = {
+            FOCUS_FILTER_MILLITARY
+            FOCUS_FILTER_MILLITARYREFORM
+        }
+        select_effect = {
+            add_timed_idea = { idea = preparing_to_reform_navy_two  days = 35 }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            swap_ideas = {
+                remove_idea = spanish_navy_debuffs_two
+                add_idea = spanish_navy_debuffs_three
+            }
+        }
+    }
 }

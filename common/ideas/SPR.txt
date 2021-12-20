@@ -145,4 +145,47 @@ ideas = {
 			}
 		}
 	}
+	country = {
+		preparing_to_reform_navy_two = {
+			picture = interwar_recovery
+
+			allowed = {
+				tag = SPR
+			}
+
+			allowed = {
+				always = yes
+			}
+
+			modifier = {
+				consumer_goods_factor = 0.05
+			}
+		}
+	}
+
+	country = {
+		spanish_navy_debuffs_three = {
+			picture = generic_coastal_defense_ships
+
+			allowed = {
+				tag = SPR
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			name = spanish_american_naval_defeats
+
+			modifier = {
+				naval_equipment_upgrade_xp_cost = 0.25
+				experience_gain_navy_factor = -0.15
+				experience_gain_navy_unit_factor = -0.15
+				war_support_factor = -0.125
+				naval_retreat_speed = -0.175
+				naval_retreat_chance = -0.175
+				ships_at_battle_start = -0.175
+			}
+		}
+	}
 }
