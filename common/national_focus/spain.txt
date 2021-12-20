@@ -20,6 +20,9 @@ focus_tree = {
         ai_will_do = {
             factor = 100
         }
+        bypass = {
+            date > 1910.12.31
+        }
         completion_reward = {
             country_event = {
                 #Event Is Kinda Bugged Rn
@@ -33,9 +36,9 @@ focus_tree = {
         x = 15
         y = 1
         cost = 1
-        #search_filters = {
-        #
-        #}
+        search_filters = {
+            FOCUS_FILTER_MILLITARY
+        }
         ai_will_do = {
             factor = 1
         }
@@ -54,10 +57,6 @@ focus_tree = {
         cost = 1
         prerequisite = {
             focus = SPR_1910_General_Election
-        }
-        mutually_exclusive = {
-            focus = SPR_republican_victory
-            focus = SPR_absolutist_victory
         }
         search_filters = {
             FOCUS_FILTER_POLITICAL
@@ -95,6 +94,46 @@ focus_tree = {
         completion_reward = {
             #Placeholder
             navy_experience = 20
+        }
+    }
+    focus = {
+        id = SPR_the_spanish_army
+        icon = GFX_focus_chi_army_reform
+        x = 15
+        y = 3
+        cost = 1
+        prerequisite = {
+            focus = SPR_the_spanish_armed_forces
+        }
+        search_filters = {
+            FOCUS_FILTER_MILLITARY
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            #Placeholder
+            army_experience = 20
+        }
+    }
+    focus = {
+        id = SPR_the_spanish_airforce
+        icon = GFX_focus_generic_aircraft_production
+        x = 18
+        y = 3
+        cost = 1
+        prerequisite = {
+            focus = SPR_the_spanish_armed_forces
+        }
+        search_filters = {
+            FOCUS_FILTER_MILLITARY
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            #Placeholder
+            air_experience = 20
         }
     }
 }
