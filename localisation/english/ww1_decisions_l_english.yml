@@ -1149,6 +1149,6 @@
  join_league_of_nations:0 "Join the League of Nations"
  join_league_of_nations_desc:0 "After the Great War, peace came to the world. But to keep this peace, we must work together to stop those who want to start a war. This ambitious goal will be achievable by the League of Nations."
  leave_league_of_nations:0 "Leave from League of Nations"
- leave_league_of_nations:0 "The League of Nations is only an illusion with a good cause, and it is just a helpless one without any actual power to force the world peace. All they do is flip through reports, sip coffee, and have fun maintaining colonial empires with keeping their interests."
+ leave_league_of_nations_desc:0 "The League of Nations is only an illusion with a good cause, and it is just a helpless one without any actual power to force the world peace. All they do is flip through reports, sip coffee, and have fun maintaining colonial empires with keeping their interests."
  embargo_threatening_country:0 "Embargo [FROM.GetName]"
  embargo_threatening_country_desc:0 "It is necessary to condemn [FROM.GetNameDef] that disturbs world order and peace and to ban the export of war materials."
