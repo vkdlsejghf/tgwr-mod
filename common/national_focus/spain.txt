@@ -25,7 +25,6 @@ focus_tree = {
         }
         completion_reward = {
             country_event = {
-                #Event Is Kinda Bugged Rn
                 id = ww1_spain.2
             }
         }
@@ -94,6 +93,9 @@ focus_tree = {
         completion_reward = {
             #Placeholder
             navy_experience = 20
+            country_event = {
+                id = ww1_spain.4
+            }
         }
     }
     focus = {
@@ -124,6 +126,9 @@ focus_tree = {
         cost = 1
         prerequisite = {
             focus = SPR_the_spanish_armed_forces
+        }
+        available = {
+            date >1913.2.20
         }
         search_filters = {
             FOCUS_FILTER_MILLITARY
