@@ -114,8 +114,9 @@ focus_tree = {
             factor = 1
         }
         completion_reward = {
-            #Placeholder
-            army_experience = 20
+            country_event = {
+                id = ww1_spain.5
+            }
         }
     }
     focus = {
@@ -407,6 +408,29 @@ focus_tree = {
             set_technology = {
                 early_fighter = 1
                 aircraft_engine = 1
+            }
+        }
+    }
+    focus = {
+        id = SPR_rifle_research_bonus
+        icon = GFX_focus_generic_manpower
+        x = 25
+        y = 4
+        cost = 1
+        prerequisite = {
+            focus = SPR_the_spanish_army
+        }
+        search_filters = {
+            FOCUS_FILTER_MILLITARY
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            add_tech_bonus = {
+                bonus = 1
+                uses = 1
+                category = infantry_weapons
             }
         }
     }
