@@ -201,6 +201,22 @@ bookmarks = {
 			}
 		}
 
+		"SPR"={
+			minor = yes
+			history = "SPR_POWDERKEG_DESC"
+			ideology = neutrality
+			ideas = {
+				ww1_Scramble_for_Africa
+				spanish_american_naval_defeats
+				spanish_army_debuffs
+			}
+			focuses = {
+				SPR_1910_General_Election
+				SPR_the_spanish_armed_forces
+				SPR_the_spanish_navy
+			}
+		}
+
 		"CAN"={
 			minor = yes
 			history = "CAN_POWDERKEG_DESC"
