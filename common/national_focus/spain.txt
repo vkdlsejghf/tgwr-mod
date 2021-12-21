@@ -396,6 +396,14 @@ focus_tree = {
                 idea = spain_purchases_planes
                 days = 20
             }
+            create_production_license = {
+                target = SPR
+                equipment = {
+                    type = fighter_equipment_0
+                    version = 0
+                }
+                cost_factor = 1
+            }
         }
     }
 }
