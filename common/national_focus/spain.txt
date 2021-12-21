@@ -387,7 +387,15 @@ focus_tree = {
             factor = 1
         }
         completion_reward = {
-            
+            add_equipment_to_stockpile = {
+                type = fighter_equipment_0
+                amount = 100
+                producer = ENG
+            }
+            add_timed_idea = {
+                idea = spain_purchases_planes
+                days = 20
+            }
         }
     }
 }

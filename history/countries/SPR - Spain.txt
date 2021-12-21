@@ -63,6 +63,10 @@ recruit_character = SPR_lucas_puente
 		electrical_engineering = 1
 		mechanical_engineering = 1
 		basic_train = 1
+		#aircraft_engine = 1
+
+		#air
+		#early_fighter = 1
 	}
 
 	set_politics = {
