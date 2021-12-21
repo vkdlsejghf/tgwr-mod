@@ -5670,6 +5670,9 @@
  ww1_spain.6.t:0 "Formation Of The Spanish Airforce"
  ww1_spain.6.d:0 "Placeholder"
  ww1_spain.6.a:0 "Per aspera ad astra"
+ ww1_spain.7.t:0 "Britain Allows Us To Purchase Their Aircraft"
+ ww1_spain.7.d:0 "Our delegation has returned from London with good news. The British government has allowed us to purchase some of their fighters along with a production liscense for the planes."
+ ww1_spain.7.a:0 "Good News"
 
  #Developer Notes
  ww1_developer_note.1.t:0 "Note from the British Dev"

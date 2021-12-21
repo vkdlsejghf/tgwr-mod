@@ -371,4 +371,23 @@ focus_tree = {
             }
         }
     }
+    focus = {
+        id = SPR_buy_first_planes
+        icon = GFX_focus_generic_aircraft_production
+        x = 22
+        y = 4
+        cost = 1
+        prerequisite = {
+           focus = SPR_the_spanish_airforce
+        }
+        search_filters = {
+            FOCUS_FILTER_MILLITARY
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            
+        }
+    }
 }
