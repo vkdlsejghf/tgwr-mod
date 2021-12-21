@@ -581,11 +581,6 @@ AUH_greater_austria_category = {
 		allowed = {
 			original_tag = AUH
 		}
-		target_trigger = {
-			FROM = {
-				tag = CZE
-			}
-		}
 		available = {
 			has_global_flag = great_war_ends
 			NOT = {
@@ -660,11 +655,6 @@ AUH_greater_austria_category = {
 		allowed = {
 			original_tag = AUH
 		}
-		target_trigger = {
-			FROM = {
-				tag = GAL
-			}
-		}
 		available = {
 			has_global_flag = great_war_ends
 			NOT = {
@@ -732,8 +722,10 @@ AUH_greater_austria_category = {
 				}
 				WUK = {
 					set_cosmetic_tag = WUK_AUH
-					set_country_flag = assimilated_to_austria
 				}
+			}
+			WUK = {
+				set_country_flag = assimilated_to_austria
 			}
 			every_state = {
 				limit = {
@@ -790,11 +782,6 @@ AUH_greater_austria_category = {
 		icon = generic_nationalism
 		allowed = {
 			original_tag = AUH
-		}
-		target_trigger = {
-			FROM = {
-				tag = HUN
-			}
 		}
 		available = {
 			has_global_flag = great_war_ends
@@ -946,8 +933,10 @@ AUH_greater_austria_category = {
 				}
 				TRA = {
 					set_cosmetic_tag = TRA_AUH
-					set_country_flag = assimilated_to_austria
 				}
+			}
+			TRA = {
+				set_country_flag = assimilated_to_austria
 			}
 			every_state = {
 				limit = {
@@ -1028,11 +1017,6 @@ AUH_greater_austria_category = {
 		allowed = {
 			original_tag = AUH
 		}
-		target_trigger = {
-			FROM = {
-				tag = CRO
-			}
-		}
 		available = {
 			has_global_flag = great_war_ends
 			NOT = {
@@ -1078,11 +1062,6 @@ AUH_greater_austria_category = {
 		icon = generic_nationalism
 		allowed = {
 			original_tag = AUH
-		}
-		target_trigger = {
-			FROM = {
-				tag = SER
-			}
 		}
 		available = {
 			has_global_flag = great_war_ends
@@ -1143,11 +1122,6 @@ AUH_greater_austria_category = {
 		allowed = {
 			original_tag = AUH
 		}
-		target_trigger = {
-			FROM = {
-				tag = SLV
-			}
-		}
 		available = {
 			has_global_flag = great_war_ends
 			NOT = {
@@ -1197,9 +1171,11 @@ AUH_greater_austria_category = {
 					}
 				}
 				SLV = {
-					set_country_flag = assimilated_to_austria
 					set_cosmetic_tag = SLV_AUH
 				}
+			}
+			SLV = {
+				set_country_flag = assimilated_to_austria
 			}
 		}
 		cancel_trigger = {
@@ -1225,11 +1201,6 @@ AUH_greater_austria_category = {
 		icon = generic_nationalism
 		allowed = {
 			original_tag = AUH
-		}
-		target_trigger = {
-			FROM = {
-				tag = VNC
-			}
 		}
 		available = {
 			has_global_flag = great_war_ends
@@ -1292,9 +1263,11 @@ AUH_greater_austria_category = {
 					}
 				}
 				VNC = {
-					set_country_flag = assimilated_to_austria
 					set_cosmetic_tag = ROI_neutrality
 				}
+			}
+			VNC = {
+				set_country_flag = assimilated_to_austria
 			}
 		}
 		cancel_trigger = {
@@ -1324,11 +1297,6 @@ AUH_greater_austria_category = {
 		allowed = {
 			original_tag = AUH
 		}
-		target_trigger = {
-			FROM = {
-				tag = VNC
-			}
-		}
 		available = {
 			has_global_flag = great_war_ends
 			NOT = {
@@ -1352,25 +1320,14 @@ AUH_greater_austria_category = {
 		complete_effect = {
 			every_other_country = {
 				limit = {
-					is_subject = PREV
-					OR = {
-						tag = HUN
-						tag = SLV
-						tag = CRO
-						tag = SLO
-						tag = TRA
-						tag = GAL
-						tag = CZE
-						tag = WUK
-						tag = SER
-					}
+					is_subject_of = PREV
 					has_country_flag = assimilated_to_austria
 				}
 				every_state = {
 					remove_core_of = PREV
 				}
 				transfer_units_fraction= {
-					target = PREV
+					target = AUH
 					size = 1
 					stockpile_ratio = 1
 					army_ratio = 1
@@ -1378,12 +1335,12 @@ AUH_greater_austria_category = {
 					air_ratio = 1
 				}
 				every_unit_leader = {
-					set_nationality = PREV
+					set_nationality = AUH
 				}
 				transfer_navy = {
-					target = PREV
+					target = AUH
 				}
-				PREV = {
+				AUH = {
 					annex_country = {
 						target = PREV
 						transfer_troops = yes
