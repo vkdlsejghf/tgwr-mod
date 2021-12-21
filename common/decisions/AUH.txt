@@ -600,7 +600,7 @@ AUH_greater_austria_category = {
 		visible = {
 			has_completed_focus = AUH_reform_czech_cisleithania
 		}
-		fire_only_once = no
+		fire_only_once = yes
 		cost = 200
 		days_remove = 210
 		remove_effect = {
@@ -621,6 +621,9 @@ AUH_greater_austria_category = {
 				PREV = {
 					transfer_state = PREV
 				}
+			}
+			CZE = {
+				set_country_flag = assimilated_to_austria
 			}
 			if = {
 				limit = {
@@ -676,7 +679,7 @@ AUH_greater_austria_category = {
 		visible = {
 			has_completed_focus = AUH_reform_polish_galicia
 		}
-		fire_only_once = no
+		fire_only_once = yes
 		cost = 200
 		days_remove = 210
 		remove_effect = {
@@ -702,6 +705,7 @@ AUH_greater_austria_category = {
 			}
 			GAL = {
 				set_cosmetic_tag = POL_neutrality
+				set_country_flag = assimilated_to_austria
 			}
 			if = {
 				limit = {
@@ -726,7 +730,10 @@ AUH_greater_austria_category = {
 						puppet = WUK
 					}
 				}
-				WUK = { set_cosmetic_tag = WUK_AUH }
+				WUK = {
+					set_cosmetic_tag = WUK_AUH
+					set_country_flag = assimilated_to_austria
+				}
 			}
 			every_state = {
 				limit = {
@@ -761,7 +768,9 @@ AUH_greater_austria_category = {
 						puppet = TRA
 					}
 				}
-				TRA = { set_cosmetic_tag = TRA_AUH }
+				TRA = {
+					set_cosmetic_tag = TRA_AUH
+				}
 			}
 		}
 		cancel_trigger = {
@@ -801,7 +810,7 @@ AUH_greater_austria_category = {
 		visible = {
 			has_completed_focus = AUH_reform_transleithania
 		}
-		fire_only_once = no
+		fire_only_once = yes
 		cost = 200
 		days_remove = 365
 		remove_effect = {
@@ -894,7 +903,10 @@ AUH_greater_austria_category = {
 						puppet = SLO
 					}
 				}
-				SLO = { set_cosmetic_tag = SLO_AUH }
+				SLO = {
+					set_cosmetic_tag = SLO_AUH
+					set_country_flag = assimilated_to_austria
+				}
 			}
 			every_state = {
 				limit = {
@@ -932,7 +944,10 @@ AUH_greater_austria_category = {
 						puppet = TRA
 					}
 				}
-				TRA = { set_cosmetic_tag = TRA_AUH }
+				TRA = {
+					set_cosmetic_tag = TRA_AUH
+					set_country_flag = assimilated_to_austria
+				}
 			}
 			every_state = {
 				limit = {
@@ -987,7 +1002,12 @@ AUH_greater_austria_category = {
 						puppet = CRO
 					}
 				}
-				CRO = { set_cosmetic_tag = CRO_AUH }
+				CRO = {
+					set_cosmetic_tag = CRO_AUH
+				}
+			}
+			HUN = {
+				set_country_flag = assimilated_to_austria
 			}
 		}
 		cancel_trigger = {
@@ -1027,7 +1047,7 @@ AUH_greater_austria_category = {
 		visible = {
 			has_completed_focus = AUH_form_illyria
 		}
-		fire_only_once = no
+		fire_only_once = yes
 		cost = 200
 		days_remove = 365
 		remove_effect = {
@@ -1036,6 +1056,9 @@ AUH_greater_austria_category = {
 					is_core_of = CRO
 				}
 				add_core_of = AUH
+			}
+			CRO = {
+				set_country_flag = assimilated_to_austria
 			}
 		}
 		cancel_trigger = {
@@ -1088,7 +1111,7 @@ AUH_greater_austria_category = {
 				}
 			}
 		}
-		fire_only_once = no
+		fire_only_once = yes
 		cost = 200
 		days_remove = 400
 		remove_effect = {
@@ -1097,6 +1120,9 @@ AUH_greater_austria_category = {
 					is_core_of = SER
 				}
 				add_core_of = AUH
+			}
+			SER = {
+				set_country_flag = assimilated_to_austria
 			}
 		}
 		cancel_trigger = {
@@ -1130,10 +1156,12 @@ AUH_greater_austria_category = {
 			has_war = no
 		}
 		visible = {
-			owns_state = 102
-			owns_state = 736
+			OR = {
+				owns_state = 102
+				owns_state = 736
+			}
 		}
-		fire_only_once = no
+		fire_only_once = yes
 		cost = 100
 		days_remove = 100
 		remove_effect = {
@@ -1168,7 +1196,10 @@ AUH_greater_austria_category = {
 						puppet = SLV
 					}
 				}
-				SLV = { set_cosmetic_tag = SLV_AUH }
+				SLV = {
+					set_country_flag = assimilated_to_austria
+					set_cosmetic_tag = SLV_AUH
+				}
 			}
 		}
 		cancel_trigger = {
@@ -1208,11 +1239,13 @@ AUH_greater_austria_category = {
 			has_war = no
 		}
 		visible = {
-			owns_state = 244
-			owns_state = 159
-			owns_state = 160
+			OR = {
+				owns_state = 244
+				owns_state = 159
+				owns_state = 160
+			}
 		}
-		fire_only_once = no
+		fire_only_once = yes
 		cost = 100
 		days_remove = 100
 		remove_effect = {
@@ -1258,7 +1291,10 @@ AUH_greater_austria_category = {
 						puppet = VNC
 					}
 				}
-				VNC = { set_cosmetic_tag = ROI_neutrality }
+				VNC = {
+					set_country_flag = assimilated_to_austria
+					set_cosmetic_tag = ROI_neutrality
+				}
 			}
 		}
 		cancel_trigger = {
@@ -1303,21 +1339,7 @@ AUH_greater_austria_category = {
 		visible = {
 			has_completed_focus = AUH_reform_transleithania
 			any_country = {
-				is_subject = PREV
-				OR = {
-					tag = HUN
-					tag = SLV
-					tag = CRO
-					tag = SLO
-					tag = TRA
-					tag = GAL
-					tag = CZE
-					tag = WUK
-					tag = SER
-				}
-				NOT = {
-					has_country_flag = protectorate
-				}
+				has_country_flag = assimilated_to_austria
 			}
 			NOT = {
 				has_cosmetic_tag = GER_HRE
@@ -1342,9 +1364,7 @@ AUH_greater_austria_category = {
 						tag = WUK
 						tag = SER
 					}
-					NOT = {
-						has_country_flag = protectorate
-					}
+					has_country_flag = assimilated_to_austria
 				}
 				every_state = {
 					remove_core_of = PREV
