@@ -36,3 +36,5 @@
  air_factory_construct_one:0 "First Air Factory"
  spain_purchases_planes:0 "Purchased Aircraft"
  spain_purchases_planes_desc:0 "We Have Purchased Some Aircraft"
+ prep_reform_army_one:0 "Allocated Budget For Army Reform"
+ prep_reform_army_one_desc:0 "We must allocate our army reform program more money"

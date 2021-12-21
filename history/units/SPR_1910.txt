@@ -110,7 +110,7 @@ units = {
 			division_template="División de Infantería"
 			start_experience_factor=0.2
 			start_equipment_factor = 0.4
-	}
+	}i
 	
 	
 	division= { 
@@ -123,5 +123,5 @@ units = {
 }
 
 instant_effect = {
-	add_equipment_production = { equipment = { type = infantry_equipment_0 creator = "SPR" } requested_factories = 3 progress = 0.1 efficiency = 50}
+	add_equipment_production = { equipment = { type = infantry_equipment_0 creator = "SPR" } requested_factories = 2 progress = 0.1 efficency = 50}
 }

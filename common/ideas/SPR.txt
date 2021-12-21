@@ -205,4 +205,42 @@ ideas = {
 			}
 		}
 	}
+	country = {
+		prep_reform_army_one = {
+			picture = interwar_recovery
+			allowed = {
+				tag = SPR
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				consumer_goods_factor = 0.05
+			}
+		}
+	}
+	country = {
+		spanish_army_debuffs_three = {
+			picture = generic_army_problems
+			allowed = {
+				tag = SPR
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			name = spanish_army_debuffs
+			modifier = {
+				experience_gain_army_factor = -0.125
+				experience_gain_army_unit_factor = -0.125
+				dig_in_speed_factor = -0.125
+				attrition = 0.0375
+				army_morale_factor = -0.15
+				army_org_factor = -0.075
+				army_attack_factor = -0.14
+				army_defence_factor = -0.14
+				out_of_supply_factor = 0.065
+				supply_consumption_factor = 0.065
+			}
+		}
+	}
 }
