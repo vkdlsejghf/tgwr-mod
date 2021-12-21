@@ -397,18 +397,6 @@ focus_tree = {
                 idea = spain_purchases_planes
                 days = 20
             }
-            create_production_license = {
-                target = SPR
-                equipment = {
-                    type = fighter_equipment_0
-                    version = 0
-                }
-                cost_factor = 1
-            }
-            set_technology = {
-                early_fighter = 1
-                aircraft_engine = 1
-            }
         }
     }
     focus = {
@@ -431,6 +419,48 @@ focus_tree = {
                 bonus = 1
                 uses = 1
                 category = infantry_weapons
+            }
+        }
+    }
+    focus = {
+        id = SPR_first_of_other_industry
+        icon = GFX_focus_generic_economic_profit
+        x = 50
+        y = 1
+        cost = 1
+        search_filters = {
+            FOCUS_FILER_CONSTRUCTION
+            FOCUS_FILTER_INDUSTRIAL
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            #Placeholder
+            add_political_power = 100
+        }
+    }
+    focus = {
+        id = SPR_research_plane_technology
+        icon = GFX_focus_generic_aircraft_production
+        x = 18
+        y = 4
+        cost = 1
+        prerequisite = {
+            focus = SPR_the_spanish_airforce
+        }
+        search_filters = {
+            FOCUS_FILTER_MILLITARY
+            FOCUS_FILTER_RESEARCH
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            add_tech_bonus = {
+                bonus = 1
+                uses = 1
+                category = light_fighter
             }
         }
     }
