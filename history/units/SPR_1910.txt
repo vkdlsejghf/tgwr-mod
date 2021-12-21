@@ -110,7 +110,7 @@ units = {
 			division_template="División de Infantería"
 			start_experience_factor=0.2
 			start_equipment_factor = 0.4
-	}i
+	}
 	
 	
 	division= { 

@@ -11,7 +11,7 @@ focus_tree = {
     focus = {
         id = SPR_1910_General_Election
         icon = GFX_focus_fate_of_royal_family
-        x = 1
+        x = 80
         y = 1
         cost = 1
         search_filters = {
@@ -24,9 +24,6 @@ focus_tree = {
             date > 1910.12.31
         }
         completion_reward = {
-            country_event = {
-                id = ww1_spain.2
-            }
         }
     }
     focus = {
@@ -46,33 +43,6 @@ focus_tree = {
             army_experience = 20
             navy_experience = 20
             air_experience = 20
-        }
-    }
-    focus = {
-        id = SPR_status_quo_victory
-        icon = GFX_focus_generic_home_defense
-        x = 1
-        y = 3
-        cost = 1
-        prerequisite = {
-            focus = SPR_1910_General_Election
-        }
-        search_filters = {
-            FOCUS_FILTER_POLITICAL
-        }
-        ai_will_do = {
-            factor = 1
-        }
-        completion_reward = {
-            add_popularity = {
-                ideology = neutrality
-                popularity = 0.10
-            }
-            add_popularity = {
-                ideology = democratic
-                popularity = 0.10
-            }
-            add_stability = 0.05
         }
     }
     focus = {
