@@ -17,6 +17,9 @@ focus_tree = {
         search_filters = {
             FOCUS_FILTER_POLITICAL
         }
+        available = {
+            has_country_flag = ninteen_ten_election
+        }
         ai_will_do = {
             factor = 100
         }

@@ -53,7 +53,7 @@ country_event = {
 		name = ww1_spain.2.a
 		ai_chance = { factor = 100 }
 		add_political_power = -10
-		set_country_flag = 1910_election_happened
+		set_country_flag = ninteen_ten_election
 	}
 }
 
