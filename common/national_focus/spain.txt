@@ -598,4 +598,30 @@ focus_tree = {
             }
         }
     }
+    focus = {
+        id = SPR_airbase_build_one
+        icon = GFX_focus_red_sky
+        x = 10
+        y = 5
+        cost = 1
+        prerequisite = {
+            focus = SPR_plane_factory_one
+        }
+        search_filters = {
+            FOCUS_FILER_CONSTRUCTION
+            FOCUS_FILTER_MILLITARY
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            41 = {
+                add_building_construction = {
+                    type = air_base
+                    level = 1
+                    instant_build = yes
+                }
+            }
+        }
+    }
 }
