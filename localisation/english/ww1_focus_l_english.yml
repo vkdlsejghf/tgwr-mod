@@ -6009,4 +6009,6 @@ SPR_airbase_build_one_desc:0 "We must expand the Madrid Airfield to allow us to 
 SPR_navarre_airbase_factory:0 "Construct The Navarre Airbase And Fighter Factory"
 SPR_navarre_airbase_factory_desc:0 "Placeholder"
 SPR_railway_improve_one:0 "Improve The Madrid To Castille Railway"
-SPR_railway_improve_one_desc:0 "Placeholder"
+SPR_railway_improve_one_desc:0 "Before we can improve the railways from Castille to the Ferrol naval base we must first improve the railways running from Madrid to Castille."
+SPR_railway_improve_two:0 "Improve The Castille To Ferrol Railway"
+SPR_railway_improve_two_desc:0 "Placeholder"

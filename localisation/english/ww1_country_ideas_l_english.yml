@@ -41,3 +41,5 @@
  ninteen_ten_election:0 "1910 General Election Has Happened"
  spain_finance_rail_build:0 "Financing Rail Construction"
  spain_finance_rail_build_desc:0 "Placeholder"
+ spain_unable_to_build_rails:0 "Recent Railway Works"
+ spain_unable_to_build_rails_desc:0 "Placeholder"
