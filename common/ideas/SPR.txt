@@ -275,4 +275,18 @@ ideas = {
 			}
 		}
 	}
+	country = {
+		spain_finance_road_build = {
+			picture = generic_build_infrastructure
+			allowed = {
+				tag = SPR
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				consumer_goods_factor = 0.05
+			}
+		}
+	}
 }
