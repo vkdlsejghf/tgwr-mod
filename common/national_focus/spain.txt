@@ -657,4 +657,24 @@ focus_tree = {
             }
         }
     }
+    focus = {
+        id = SPR_railway_improve_one
+        icon = GFX_focus_train_railroads
+        x = 50
+        y = 3
+        cost = 1
+        prerequisite = {
+            focus = SPR_first_of_other_industry
+        }
+        search_filters = {
+            FOCUS_FILER_CONSTRUCTION
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            #Placeholder
+            add_political_power = 100
+        }
+    }
 }
