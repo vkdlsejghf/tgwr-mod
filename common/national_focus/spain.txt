@@ -673,8 +673,38 @@ focus_tree = {
             factor = 1
         }
         completion_reward = {
-            #Placeholder
-            add_political_power = 100
+            build_railway = {
+                level = 1
+                build_only_on_allied = no
+                controller_priority = {
+                    base = 1
+
+                    modifier = {
+                        tag = SPR
+                        add = 2
+                    }
+                }
+                fallback = yes
+                path = { 3938 3794 }
+                start_province = 41
+                target_province = 41
+            }
+            build_railway = {
+                level = 1
+                build_only_on_allied = no
+                controller_priority = {
+                    base = 1
+
+                    modifier = {
+                        tag = SPR
+                        add = 2
+                    }
+                }
+                fallback = yes
+                path = { 3794 9800 9846 11825 }
+                start_province = 41
+                target_province = 176   
+            }
         }
     }
 }
