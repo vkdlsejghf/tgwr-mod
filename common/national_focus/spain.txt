@@ -666,6 +666,12 @@ focus_tree = {
         prerequisite = {
             focus = SPR_first_of_other_industry
         }
+        select_effect = {
+            add_timed_idea = {
+                idea = spain_finance_rail_build
+                days = 7
+            }
+        }
         search_filters = {
             FOCUS_FILER_CONSTRUCTION
         }
