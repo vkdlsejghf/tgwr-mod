@@ -14,5 +14,9 @@ state={
 			10875={ naval_base=1 }
 			4920 = { naval_base = 1 }
 		}
+		start_resistance = yes
+		add_resistance_target = -32
+		set_resistance = 10
+		set_compliance = 40
 	}
 }
