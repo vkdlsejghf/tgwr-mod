@@ -289,4 +289,20 @@ ideas = {
 			}
 		}
 	}
+	country = {
+		spain_industrial_debuffs = {
+			picture = man_five_year_plan_industry
+			allowed = {
+				tag = SPR
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				production_speed_buildings_factor = -0.1
+				production_speed_industrial_complex_factor = -0.1
+				production_speed_arms_factory_factor = -0.1
+			}
+		}
+	}
 }

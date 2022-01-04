@@ -45,3 +45,5 @@
  spain_unable_to_build_rails_desc:0 "Due to recent works on our rail network it will be unable to run at full efficiency for a time."
  spain_finance_road_build:0 "Financing Road Construction"
  spain_finance_road_build_desc:0 "We have allocared funds for the construction of roads and other infrastructure in our territory"
+ spain_industrial_debuffs:0 "Spanish Industry Issues"
+ spain_industrial_debuffs_desc:0 "Placeholder"
