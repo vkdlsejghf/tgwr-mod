@@ -1521,4 +1521,8 @@ spriteTypes = {
 		name = "GFX_TUR_ratify_sevres"
 		texturefile = "gfx/interface/goals/TUR_ratify_sevres.png"
 	}
+	spriteType = {
+		name = "GFX_SPR_road_construction"
+		texturefile = "gfx/interface/goals/SPR_road_construction.png"
+	}
 }

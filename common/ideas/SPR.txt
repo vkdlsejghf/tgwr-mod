@@ -277,7 +277,7 @@ ideas = {
 	}
 	country = {
 		spain_finance_road_build = {
-			picture = generic_build_infrastructure
+			picture = SPR_road_construct_spirit
 			allowed = {
 				tag = SPR
 			}

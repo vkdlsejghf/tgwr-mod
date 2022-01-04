@@ -786,7 +786,7 @@ focus_tree = {
     }
     focus = {
         id = SPR_improve_colonial_roads
-        icon = GFX_goal_generic_construct_infrastructure
+        icon = GFX_SPR_road_construction
         x = 39
         y = 4
         cost = 1
