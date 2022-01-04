@@ -463,8 +463,11 @@ focus_tree = {
             factor = 1
         }
         completion_reward = {
-            #Placeholder
-            add_political_power = 100
+            add_tech_bonus = {
+                bonus = 0.25
+                uses = 1
+                category = construction_tech
+            }
         }
     }
     focus = {
@@ -483,8 +486,11 @@ focus_tree = {
             factor = 1
         }
         completion_reward = {
-            #Placeholder
-            add_political_power = 100
+            add_tech_bonus = {
+                bonus = 0.25
+                uses = 1
+                category = construction_tech
+            }
         }
     }
     focus = {
