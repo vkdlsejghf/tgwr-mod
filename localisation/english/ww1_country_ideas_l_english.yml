@@ -46,4 +46,6 @@
  spain_finance_road_build:0 "Financing Road Construction"
  spain_finance_road_build_desc:0 "We have allocared funds for the construction of roads and other infrastructure in our territory"
  spain_industrial_debuffs:0 "Spanish Industry Issues"
- spain_industrial_debuffs_desc:0 "Placeholder"
+ spain_industrial_debuffs_desc:0 "As a result of Spain not having much modern industry our ability to construct more modern industrial complexes is hapmpered."
+ spain_production_debuffs:0 "Spanish Arms Production Issues"
+ spain_production_debuffs_desc:0 "Due to issues with our national industries our ability to produce arms and other millitary equipment is hampered."

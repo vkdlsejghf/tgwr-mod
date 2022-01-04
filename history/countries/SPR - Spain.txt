@@ -89,6 +89,7 @@ recruit_character = SPR_lucas_puente
 		spanish_american_naval_defeats
 		spanish_army_debuffs
 		spain_industrial_debuffs
+		spain_production_debuffs
 	}
 
 }

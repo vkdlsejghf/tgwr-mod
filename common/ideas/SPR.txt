@@ -305,4 +305,18 @@ ideas = {
 			}
 		}
 	}
+	country = {
+		spain_production_debuffs = {
+			picture = generic_production_bonus
+			allowed = {
+				tag = SPR
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				production_factory_efficiency_gain_factor = -0.25
+			}
+		}
+	}
 }
