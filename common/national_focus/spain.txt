@@ -947,8 +947,10 @@ focus_tree = {
             FOCUS_FILTER_INDUSTRIAL
         }
         completion_reward = {
-            #Placeholder
-            add_political_power = 100
+            swap_ideas = {
+                remove_idea = spain_industrial_debuffs
+                add_idea = spain_industrial_debuffs_two
+            }
         }
     }
     focus = {
@@ -964,8 +966,10 @@ focus_tree = {
             FOCUS_FILTER_INDUSTRIAL
         }
         completion_reward = {
-            #Placeholder
-            add_political_power = 100
+            swap_ideas = {
+                remove_idea = spain_production_debuffs
+                add_idea = spain_production_debuffs_two
+            }
         }
     }
 }
