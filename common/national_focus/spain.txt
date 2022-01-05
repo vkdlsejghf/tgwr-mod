@@ -945,6 +945,14 @@ focus_tree = {
         prerequisite = {
             focus = SPR_begin_fixing_industry
         }
+        available = {
+            has_idea = spain_industrial_debuffs
+        }
+        bypass = {
+            NOT = {
+                has_idea = spain_industrial_debuffs
+            }
+        }
         search_filters = {
             FOCUS_FILTER_INDUSTRIAL
         }
@@ -963,6 +971,14 @@ focus_tree = {
         cost = 1
         prerequisite = {
             focus = SPR_begin_fixing_industry
+        }
+        available = {
+            has_idea = spain_production_debuffs
+        }
+        bypass = {
+            NOT = {
+                has_idea = spain_production_debuffs
+            }
         }
         search_filters = {
             FOCUS_FILTER_INDUSTRIAL
