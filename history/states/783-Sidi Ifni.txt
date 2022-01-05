@@ -14,6 +14,10 @@ state={
 				naval_base = 1
 			}
 		}
+		start_resistance = yes
+		add_resistance_target = -30
+		set_resistance = 8
+		set_compliance = 45
 	}
 	provinces={
 		12857
