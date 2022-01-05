@@ -934,4 +934,38 @@ focus_tree = {
             add_political_power = 100
         }
     }
+    focus = {
+        id = SPR_construction_reform_one
+        icon = GFX_focus_industry_steel
+        x = 47
+        y = 4
+        cost = 1
+        prerequisite = {
+            focus = SPR_begin_fixing_industry
+        }
+        search_filters = {
+            FOCUS_FILTER_INDUSTRIAL
+        }
+        completion_reward = {
+            #Placeholder
+            add_political_power = 100
+        }
+    }
+    focus = {
+        id = SPR_production_reform_one
+        icon = GFX_goal_generic_production
+        x = 53
+        y = 4
+        cost = 1
+        prerequisite = {
+            focus = SPR_begin_fixing_industry
+        }
+        search_filters = {
+            FOCUS_FILTER_INDUSTRIAL
+        }
+        completion_reward = {
+            #Placeholder
+            add_political_power = 100
+        }
+    }
 }
