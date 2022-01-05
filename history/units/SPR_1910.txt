@@ -13,6 +13,12 @@ division_template = {
 		infantry = { x = 2 y = 1 }
 		infantry = { x = 2 y = 2 }
 	}
+	support = {
+		artillery = {
+			x = 0
+			y = 0
+		}
+	}
 }
 
 division_template = {
@@ -110,7 +116,7 @@ units = {
 			division_template="División de Infantería"
 			start_experience_factor=0.2
 			start_equipment_factor = 0.4
-	}
+	}	
 	
 	
 	division= { 
@@ -120,8 +126,27 @@ units = {
 			start_experience_factor=0.2
 			start_equipment_factor = 0.5
 	}
+
+
+	division = {
+		name = "10a División de Infantería"
+		location=9979 # Málaga
+		division_template="División de Infantería"
+		start_experience_factor=0.2
+		start_equipment_factor = 0.5
+	}
+
+
+	division = {
+		name = "2a División de Caballería"
+		location=9979 # Málaga
+		division_template="División de Caballería"
+		start_experience_factor=0.2
+		start_equipment_factor = 0.5
+	}
 }
 
 instant_effect = {
 	add_equipment_production = { equipment = { type = infantry_equipment_0 creator = "SPR" } requested_factories = 2 progress = 0.1 efficency = 50}
+	add_equipment_production = { equipment = { type = artillery_equipment_1 creator = "SPR" } requested_factories = 1 progress = 0.1 efficency = 50 }
 }
