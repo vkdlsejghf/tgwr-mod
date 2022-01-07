@@ -151,3 +151,24 @@ news_event = {
 		promote_character = SPR_alvaro_de_figueroa
 	}
 }
+
+#Mid-1913 General Strike (For Going Republican)
+country_event = {
+	id = ww1_spain.9
+	title = ww1_spain.9.t
+	desc = ww1_spain.9.d
+	picture = GFX_report_event_spain_general_strike
+
+	trigger = {
+		tag = SPR
+		date > 1913.5.1
+	}
+	mean_time_to_happen = { days = 10 }
+	fire_only_once = yes
+	option = {
+		name = ww1_spain.9.a
+		ai_chance = { factor = 100 }
+		#Might have another event firing here
+		add_ideas = spain_general_strike
+	}
+}

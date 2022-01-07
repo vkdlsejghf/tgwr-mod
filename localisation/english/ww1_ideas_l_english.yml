@@ -1882,3 +1882,5 @@
  spain_industrial_debuffs_two_desc:0 "As a result of Spain not having much modern industry our ability to construct more modern industrial complexes is hampered."
  spain_budget_for_industrial_reform:0 "Allocated Budget For Industrial Reform"
  spain_budget_for_industrial_reform_desc:0 "We have allocated our industrial reform program some money."
+ spain_general_strike:0 "General Strike"
+ spain_general_strike_desc:0 "The workers of Spain have walked out of their workplaces and commenced with a general strike, they refuse to go back to work until their demands are met."

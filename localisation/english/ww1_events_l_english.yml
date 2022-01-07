@@ -5716,6 +5716,9 @@
  ww1_spain.8.t:0 "Assassination Of Prime Minister José Canalejas"
  ww1_spain.8.d:0 "Earlier today our Prime Minister José Canalejas y Méndez was assassinated while at the San Martín Library in central Madrid by the anarchist Manuel Pardiñas, who after shooting the prime minister turned the gun on himself and commited suicide."
  ww1_spain.8.a:0 "The Nation Mourns."
+ ww1_spain.9.t:0 "General Strike!"
+ ww1_spain.9.d:0 "The workers of Spain have been talking of a general strike for months, now it has actually happened. All accross the country workers have walked out of their job sites and refuse to go back to work until their demands are met. Meanwhile the prime minister is considering ordering in the army to crush the strike before it gets out of hand, if he does this it would put down the strike but also greatly increase the chances of a revolt against the government."
+ ww1_spain.9.a:0 "Ready The Troops!"
 
  #Developer Notes
  ww1_developer_note.1.t:0 "Note from the British Dev"

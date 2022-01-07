@@ -390,4 +390,20 @@ ideas = {
 			}
 		}
 	}
+	country = {
+		spain_general_strike = {
+			picture = chi_war_of_resistance3
+			allowed = {
+				tag = SPR
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				industrial_capacity_dockyard = -0.25
+				industrial_capacity_factory = -0.25
+				consumer_goods_factor = 0.2
+			}
+		}
+	}
 }
