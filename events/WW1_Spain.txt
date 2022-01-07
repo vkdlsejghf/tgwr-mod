@@ -129,3 +129,25 @@ country_event = {
 		set_country_flag = spanish_airforce_founded
 	}
 }
+
+#Assassination Of José Canalejas y Méndez
+news_event = {
+	title = ww1_spain.8.t
+	desc = ww1_spain.8.d
+	id = ww1_spain.8
+	picture = GFX_news_event_032
+
+	trigger = {
+		tag = SPR
+		date > 1912.11.1
+	}
+	mean_time_to_happen = { days = 12 }
+	fire_only_once = yes
+	option = {
+		name = ww1_spain.8.a
+		ai_chance = { factor = 100 }
+		set_country_flag = jose_canalejas_dead
+		retire_character = SPR_jose_canalejas
+		promote_character = SPR_alvaro_de_figueroa
+	}
+}

@@ -5,6 +5,7 @@ set_stability = 0.52
 set_convoys = 150
 
 recruit_character = SPR_jose_canalejas
+recruit_character = SPR_alvaro_de_figueroa
 recruit_character = SPR_alfonso_xiii
 recruit_character = SPR_antonio_maura_montaner
 recruit_character = SPR_niceto_alcalázamora

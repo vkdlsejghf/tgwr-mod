@@ -148,6 +148,20 @@ characters={
 			id=-1
 		}
 	}
+	SPR_alvaro_de_figueroa{
+		name="Álvaro de Figueroa y Torres-Sotomayor"
+		portraits={
+			civilian={
+				large="gfx/leaders/SPR/SPR_alvaro_de_figueroa.dds"
+			}
+		}
+		country_leader={
+			ideology=authoritarian_democracy
+			traits={ trait_authoritarian_democracy }
+			expire="1935.1.1"
+			id=-1
+		}
+	}
 	SPR_juan_olazábal={
 		name="Juan Olazábal"
 		portraits={
