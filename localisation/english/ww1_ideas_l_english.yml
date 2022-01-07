@@ -1849,3 +1849,11 @@
  LIB_overreliance_on_german_trade_desc:0 "Germany alone makes up 75% of Liberian trade. This is causing our economy certain problems..."
  LIB_pacification_of_the_hinterlands:0 "Pacification of the Hinterlands"
  LIB_pacification_of_the_hinterlands_desc:0 "We must bring the Hinterland tribals under heel, to ensure they're paying taxes and joining proper Liberian society as all good Africans ought to."
+
+ #Spain
+ spanish_american_naval_defeats:0 "1898 Naval Defeats"
+ spanish_american_naval_defeats_desc:0 "As a result of our naval defeats at the hands of the USA in the Spanish American war of 1898 our navy is severely weakened."
+ spanish_army_debuffs:0 "Spanish Army Issues"
+ spanish_army_debuffs_desc:0 "Our army has severe issues."
+ spanish_airforce_founded:0 "Spanish Airforce Has Been Founded"
+ 
