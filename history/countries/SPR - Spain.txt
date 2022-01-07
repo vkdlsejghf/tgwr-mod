@@ -85,6 +85,7 @@ recruit_character = SPR_lucas_puente
 	}
 
 	add_ideas = {
+		spain_alfonso_xiii
 		neutrality_idea
 		ww1_Scramble_for_Africa
 		limited_conscription

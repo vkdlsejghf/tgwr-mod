@@ -375,4 +375,19 @@ ideas = {
 			}
 		}
 	}
+	country = {
+		spain_alfonso_xiii = {
+			picture = generic_army_europe_6
+			allowed = {
+				tag = SPR
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				political_power_gain = 0.1
+				stability_factor = -0.05
+			}
+		}
+	}
 }
