@@ -5713,9 +5713,9 @@
  ww1_spain.7.t:0 "Britain Allows Us To Purchase Their Aircraft"
  ww1_spain.7.d:0 "Our delegation has returned from London with good news. The British government has allowed us to purchase some of their fighters along with a production liscense for the planes."
  ww1_spain.7.a:0 "Good News"
- ww1_spain.8.t:0 "Assassination Of Prime Minister José Canalejas y Méndez"
- ww1_spain.8.d:0 "Placeholder"
- ww1_spain.8.a:0 "Placeholder"
+ ww1_spain.8.t:0 "Assassination Of Prime Minister José Canalejas"
+ ww1_spain.8.d:0 "Earlier today our Prime Minister José Canalejas y Méndez was assassinated while at the San Martín Library in central Madrid by the anarchist Manuel Pardiñas, who after shooting the prime minister turned the gun on himself and commited suicide."
+ ww1_spain.8.a:0 "The Nation Mourns."
 
  #Developer Notes
  ww1_developer_note.1.t:0 "Note from the British Dev"
