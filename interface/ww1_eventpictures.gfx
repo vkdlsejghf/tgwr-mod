@@ -941,4 +941,8 @@ spriteTypes = {
 		name = "GFX_news_event_tank_warfare.png"
 		texturefile = "gfx/event_pictures/news_event_tank_warfare.png"
 	}
+	spriteType = {
+		name = "GFX_news_event_spain_pm_death"
+		texturefile = "gfx/event_pictures/ww1_spain/spain_pm_death.dds"
+	}
 }

@@ -135,7 +135,7 @@ news_event = {
 	title = ww1_spain.8.t
 	desc = ww1_spain.8.d
 	id = ww1_spain.8
-	picture = GFX_news_event_032
+	picture = GFX_news_event_spain_pm_death
 
 	trigger = {
 		tag = SPR
