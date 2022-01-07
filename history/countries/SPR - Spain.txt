@@ -4,7 +4,9 @@ set_research_slots = 3
 set_stability = 0.52
 set_convoys = 150
 
+recruit_character = SPR_jose_canalejas
 recruit_character = SPR_alfonso_xiii
+recruit_character = SPR_antonio_maura_montaner
 recruit_character = SPR_niceto_alcalázamora
 recruit_character = SPR_pablo_iglesias
 recruit_character = SPR_juan_olazábal

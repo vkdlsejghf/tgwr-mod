@@ -92,6 +92,20 @@ characters={
 			id=-1
 		}
 	}
+	SPR_antonio_maura_montaner={
+		name="Antonio Maura Montaner"
+		portraits={
+			civilian={
+				large="gfx/leaders/SPR/SPR_antonio_maura.dds"
+			}
+		}
+		country_leader={
+			ideology=conservatism
+			traits={ trait_conservatism }
+			expire="1935.1.1"
+			id=-1
+		}
+	}
 	SPR_pablo_iglesias={
 		name="Pablo Iglesias"
 		portraits={
@@ -116,6 +130,20 @@ characters={
 		country_leader={
 			ideology=autocracy
 			traits={ trait_autocracy }
+			expire="1935.1.1.1"
+			id=-1
+		}
+	}
+	SPR_jose_canalejas={
+		name="José Canalejas y Méndez"
+		portraits={
+			civilian={
+				large="gfx/leaders/SPR/SPR_jose_canalejas.dds"
+			}
+		}
+		country_leader={
+			ideology=authoritarian_democracy
+			traits={ trait_authoritarian_democracy }
 			expire="1935.1.1.1"
 			id=-1
 		}
