@@ -144,6 +144,33 @@ units = {
 		start_experience_factor=0.2
 		start_equipment_factor = 0.5
 	}
+
+
+	division = {
+		name = "11a División de Infantería"
+		location=13071 # Canary Islands
+		division_template="División de Infantería"
+		start_experience_factor=0.2
+		start_equipment_factor = 0.5
+	}
+
+
+	division = {
+		name = "12a División de Infantería"
+		location=9793 # Mallorca
+		division_template="División de Infantería"
+		start_experience_factor=0.2
+		start_equipment_factor = 0.5
+	}
+
+
+	division = {
+		name = "3a División de Caballería"
+		location=9945 # Ceuta
+		division_template="División de Caballería"
+		start_experience_factor=0.2
+		start_equipment_factor = 0.5
+	}
 }
 
 instant_effect = {
