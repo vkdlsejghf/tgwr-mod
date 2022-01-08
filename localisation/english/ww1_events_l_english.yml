@@ -5723,6 +5723,12 @@
  ww1_spain.9.t:0 "General Strike!"
  ww1_spain.9.d:0 "The workers of Spain have been talking of a general strike for months, now it has actually happened. All accross the country workers have walked out of their job sites and refuse to go back to work until their demands are met. Meanwhile the prime minister is considering ordering in the army to crush the strike before it gets out of hand, if he does this it would put down the strike but also greatly increase the chances of a revolt against the government."
  ww1_spain.9.a:0 "Ready The Troops!"
+ ww1_spain.10.t:0 "Troops Deployed To Supress The General Strike!"
+ ww1_spain.10.d:0 "At the command of the Spanish Government the army has deployed to the cities to begin violently supressing this general strike that is taking place. It remains to be seen if this action could sometime in the future end up causing a revolt against the current government or not. For now we must wait and see if they supress the strike or not."
+ ww1_spain.10.a:0 "Open Fire!"
+ ww1_spain.11.t:0 "Troops Supress The General Strike!"
+ ww1_spain.11.d:0 "Good news from the army today, they have moved into the cities affected by the general strike. At first they tried ending it peacefully but after the strikers refused to listen to them and started throwing projectiles at the army, the army was forced to open fire upon strikers in multiples cities. In doing this they have successfully ended the strike but have angered a lot of the population in doing so."
+ ww1_spain.11.a:0 "Ok"
 
  #Developer Notes
  ww1_developer_note.1.t:0 "Note from the British Dev"
