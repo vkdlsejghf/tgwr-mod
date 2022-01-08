@@ -949,4 +949,20 @@ spriteTypes = {
 		name = "GFX_report_event_spain_general_strike"
 		texturefile = "gfx/event_pictures/ww1_spain/spain_general_strike.dds"
 	}
+	spriteType = {
+		name = "GFX_news_event_spain_troops_deployed"
+		texturefile = "gfx/event_pictures/ww1_spain/spain_troops_deployed.dds"
+	}
+	spriteType = {
+		name = "GFX_news_event_spain_com_rev"
+		texturefile = "gfx/event_pictures/ww1_spain/spain_com_rev.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_spain_com_rev"
+		texturefile = "gfx/event_pictures/ww1_spain/report_event_spain_com_rev.dds"
+	}
+	spriteType = {
+		name = "GFX_report_event_spain_troops_deployed"
+		texturefile = "gfx/event_pictures/ww1_spain/report_event_spain_troops_dep.dds"
+	}
 }
