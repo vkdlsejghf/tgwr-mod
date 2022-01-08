@@ -5740,6 +5740,9 @@
  ww1_spain.11.t:0 "Troops Supress The General Strike!"
  ww1_spain.11.d:0 "Good news from the army today, they have moved into the cities affected by the general strike. At first they tried ending it peacefully but after the strikers refused to listen to them and started throwing projectiles at the army, the army was forced to open fire upon strikers in multiples cities. In doing this they have successfully ended the strike but have angered a lot of the population in doing so."
  ww1_spain.11.a:0 "Ok"
+ ww1_spain.12.t:0 "Robbery At The Barcelona Armoury"
+ ww1_spain.12.d:0 "Yesterday evening a group of armed socialist revolutionaries broke into and robbed the Barceolna Arsenal and made away with a large portion of the rifles stored there, it remains to be seen what these revolutionaries will use the stolen guns for, if they actually use them at all."
+ ww1_spain.12.a:0 "Bad Developments"
 
  #Developer Notes
  ww1_developer_note.1.t:0 "Note from the British Dev"

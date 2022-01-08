@@ -965,4 +965,8 @@ spriteTypes = {
 		name = "GFX_report_event_spain_troops_deployed"
 		texturefile = "gfx/event_pictures/ww1_spain/report_event_spain_troops_dep.dds"
 	}
+	spriteType = {
+		name = "GFX_news_event_spain_arsenal_heist"
+		texturefile = "gfx/event_pictures/ww1_spain/spain_arsenal_heist.dds"
+	}
 }
