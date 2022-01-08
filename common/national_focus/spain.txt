@@ -1061,8 +1061,9 @@ focus_tree = {
             factor = 1
         }
         completion_reward = {
-            #Placeholder
-            add_political_power = 100
+            country_event = {
+                id = ww1_spain.12
+            }
         }
     }
 }
