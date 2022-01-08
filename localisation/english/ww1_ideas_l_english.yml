@@ -1885,3 +1885,5 @@
  spain_general_strike:0 "General Strike"
  spain_general_strike_desc:0 "The workers of Spain have walked out of their workplaces and commenced with a general strike, they refuse to go back to work until their demands are met."
  nineteen_thirteen_general_strike:0 "1913 General Strike Has Happened"
+ troops_deployed_strike:0 "Troops Deployed To Supress Strike"
+ strike_supressed:0 "Strike Supressed"

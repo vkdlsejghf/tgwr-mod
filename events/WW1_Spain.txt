@@ -186,6 +186,7 @@ country_event = {
 		name = ww1_spain.10.a
 		ai_chance = { factor = 100 }
 		news_event = { id = ww1_spain.11 days = 30 }
+		set_country_flag = troops_deployed_strike
 	}
 }
 
@@ -201,5 +202,6 @@ news_event = {
 		name = ww1_spain.11.a
 		ai_chance = { factor = 100 }
 		remove_ideas = spain_general_strike
+		set_country_flag = strike_supressed
 	}
 }
