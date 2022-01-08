@@ -994,4 +994,18 @@ focus_tree = {
             }
         }
     }
+    focus = {
+        id = SPR_strike_supressed
+        icon = GFX_focus_generic_suppress_socdems
+        x = 80
+        y = 2
+        cost = 1
+        prerequisite = {
+            focus = SPR_the_general_strike
+        }
+        available = {
+            has_country_flag = troops_deployed_strike
+            has_country_flag = strike_supressed
+        }
+    }
 }
