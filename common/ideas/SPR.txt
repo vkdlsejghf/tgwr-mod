@@ -406,4 +406,19 @@ ideas = {
 			}
 		}
 	}
+	country = {
+		spain_garner_support_soc = {
+			picture = generic_communism_drift_bonus
+			allowed = {
+				original_tag = SPR
+				#tag = SPR
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				communism_drift = 0.05
+			}
+		}
+	}
 }

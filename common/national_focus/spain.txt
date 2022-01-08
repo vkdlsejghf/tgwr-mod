@@ -1021,4 +1021,27 @@ focus_tree = {
             add_war_support = -0.1
         }
     }
+    focus = {
+        id = SPR_boost_communism_support
+        icon = GFX_focus_worker_culture
+        x = 77
+        y = 3
+        cost = 1
+        prerequisite = {
+            focus = SPR_strike_supressed
+        }
+        search_filters = {
+            FOCUS_FILTER_POLITICAL
+            FOCUS_FILTER_REPUBLICAN
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            add_timed_idea = {
+                idea = spain_garner_support_soc
+                days = 100
+            }
+        }
+    }
 }
