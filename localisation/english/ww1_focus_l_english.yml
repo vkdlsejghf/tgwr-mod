@@ -6023,6 +6023,6 @@ SPR_improve_madrid_roads_desc:0 "As Madrid is the capital of our nation it makes
 SPR_begin_fixing_industry:0 "Begin Industrial Reforms"
 SPR_begin_fixing_industry_desc:0 "The time has come to begin the process of reforming our national industry"
 SPR_construction_reform_one:0 "Initial Construction Reform"
-SPR_construction_reform_one_desc:0 "Placeholder"
+SPR_construction_reform_one_desc:0 "We must begin the initial process of reforming our construction processes."
 SPR_production_reform_one:0 "Initial Production Reform"
-SPR_production_reform_one_desc:0 "Placeholder"
+SPR_production_reform_one_desc:0 "We must begin the initial process of reforming our production processes."

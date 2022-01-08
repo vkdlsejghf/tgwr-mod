@@ -170,6 +170,7 @@ country_event = {
 		ai_chance = { factor = 100 }
 		add_ideas = spain_general_strike
 		country_event = { id = ww1_spain.10 days = 5 }
+		set_country_flag = nineteen_thirteen_general_strike
 	}
 }
 

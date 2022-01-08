@@ -9,27 +9,6 @@ focus_tree = {
         }
     }
     focus = {
-        id = SPR_1910_General_Election
-        icon = GFX_focus_fate_of_royal_family
-        x = 80
-        y = 1
-        cost = 0
-        search_filters = {
-            FOCUS_FILTER_POLITICAL
-        }
-        available = {
-            has_country_flag = ninteen_ten_election
-        }
-        ai_will_do = {
-            factor = 100
-        }
-        bypass = {
-            date > 1910.12.31
-        }
-        completion_reward = {
-        }
-    }
-    focus = {
         id = SPR_the_spanish_armed_forces
         icon  = GFX_focus_marmara_artillery
         x = 10
@@ -988,6 +967,28 @@ focus_tree = {
                 remove_idea = spain_production_debuffs
                 add_idea = spain_production_debuffs_two
             }
+        }
+    }
+    #Republican Branch
+    focus = {
+        id = SPR_the_general_strike
+        icon = GFX_focus_communist_urbanization
+        x = 80
+        y = 1
+        cost = 1
+        available = {
+            has_country_flag = nineteen_thirteen_general_strike
+        }
+        search_filters = {
+            FOCUS_FILTER_POLITICAL
+            FOCUS_FILTER_REPUBLICAN
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            #Placeholder
+            add_political_power = 100
         }
     }
 }
