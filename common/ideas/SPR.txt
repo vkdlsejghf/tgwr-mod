@@ -422,4 +422,16 @@ ideas = {
 			}
 		}
 	}
+	country = {
+		spain_prewar_ind_sabotage = {
+			picture = chi_war_of_resistance3
+			allowed = {
+				tag = SPR
+			}
+			modifier = {
+				industrial_capacity_dockyard = -0.05
+				industrial_capacity_factory = -0.05
+			}
+		}
+	}
 }

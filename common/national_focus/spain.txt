@@ -1066,4 +1066,24 @@ focus_tree = {
             }
         }
     }
+    focus = {
+        id = SPR_prewar_sabotage
+        icon = GFX_focus_ottoman_comie_flag
+        x = 83
+        y = 3
+        cost = 1
+        prerequisite = {
+            focus = SPR_strike_supressed
+        }
+        search_filters = {
+            FOCUS_FILTER_POLITICAL
+            FOCUS_FILTER_REPUBLICAN
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            add_ideas = spain_prewar_ind_sabotage
+        }
+    }
 }
