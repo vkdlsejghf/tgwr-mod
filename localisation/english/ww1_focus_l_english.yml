@@ -6037,6 +6037,6 @@ SPR_raid_weapons_store_desc:0 "In order to aquire arms for our upcoming revolt w
 SPR_prewar_sabotage:0 "Sabotage Military Industry"
 SPR_prewar_sabotage_desc:0 "To impact the ability of the people we will soon be fighting to produce arms and other military equipment we will start sabotaging their industry before and after we revolt."
 SPR_final_preperations_com:0 "The Final Preperations"
-SPR_final_preperations_com_desc:0 "Placeholder"
+SPR_final_preperations_com_desc:0 "We will begin making final preperations for the revolution."
 SPR_com_revolution_begin:0 "It Is Time"
 SPR_com_revolution_begin_desc:0 "The time has come, all preperations have been made, all the units are in place. Now we will begin the glorious socialist revolution."
