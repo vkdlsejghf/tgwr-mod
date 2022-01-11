@@ -1083,7 +1083,37 @@ focus_tree = {
             factor = 1
         }
         completion_reward = {
-            add_ideas = spain_prewar_ind_sabotage
+            add_timed_idea = {
+                idea = spain_prewar_ind_sabotage
+                days = 70
+            }
+        }
+    }
+    focus = {
+        id = SPR_final_preperations_com
+        icon = GFX_focus_soviet_congress
+        x = 80
+        y = 5
+        cost = 1
+        prerequisite = {
+            focus = SPR_boost_communism_support
+        }
+        prerequisite = {
+            focus = SPR_raid_weapons_store
+        }
+        prerequisite = {
+            focus = SPR_prewar_sabotage
+        }
+        search_filters = {
+            FOCUS_FILTER_POLITICAL
+            FOCUS_FILTER_REPUBLICAN
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            #Placeholder
+            add_political_power = 100
         }
     }
 }
