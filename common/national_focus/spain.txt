@@ -1085,7 +1085,7 @@ focus_tree = {
         completion_reward = {
             add_timed_idea = {
                 idea = spain_prewar_ind_sabotage
-                days = 70
+                days = 100
             }
         }
     }
