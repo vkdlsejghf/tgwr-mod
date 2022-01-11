@@ -1136,7 +1136,7 @@ focus_tree = {
             start_civil_war = {
                 ruling_party = communism
                 ideology = ROOT
-                size = 0.2
+                size = 0.1
                 only_own_territory = no
                 capital = 165
                 states = {
@@ -1150,6 +1150,9 @@ focus_tree = {
             }
             D01 = {
                 add_ideas = spain_alfonso_xiii
+            }
+            country_event = {
+                id = ww1_spain.13
             }
         }
     }
