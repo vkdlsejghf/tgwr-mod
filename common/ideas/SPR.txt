@@ -382,7 +382,7 @@ ideas = {
 				tag = SPR
 			}
 			allowed_civil_war = {
-				always = yes
+				always = no
 			}
 			modifier = {
 				political_power_gain = 0.1

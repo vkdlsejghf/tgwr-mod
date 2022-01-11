@@ -1133,8 +1133,24 @@ focus_tree = {
             factor = 1
         }
         completion_reward = {
-            #Placeholder
-            add_political_power = 100
+            start_civil_war = {
+                ruling_party = communism
+                ideology = ROOT
+                size = 0.2
+                only_own_territory = no
+                capital = 165
+                states = {
+                    165 166 167 172 176 168
+                }
+                keep_unit_leaders = {
+                    
+                }
+                keep_political_leader = yes
+                keep_political_party_members = yes
+            }
+            D01 = {
+                add_ideas = spain_alfonso_xiii
+            }
         }
     }
 }
