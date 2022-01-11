@@ -1116,4 +1116,25 @@ focus_tree = {
             add_political_power = 100
         }
     }
+    focus = {
+        id = SPR_com_revolution_begin
+        icon = GFX_focus_red_star_soldier
+        x = 80
+        y = 6
+        cost = 1
+        prerequisite = {
+            focus = SPR_final_preperations_com
+        }
+        search_filters = {
+            FOCUS_FILTER_REPUBLICAN
+            FOCUS_FILTER_POLITICAL
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            #Placeholder
+            add_political_power = 100
+        }
+    }
 }
