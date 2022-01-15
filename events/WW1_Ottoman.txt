@@ -1769,6 +1769,7 @@ country_event = {
 				OR = {
 					is_core_of = SYR
 					is_claimed_by = SYR
+					is_core_of = LEB
 				}
 			}
 			SYR = {
@@ -2021,6 +2022,7 @@ country_event = {
 				OR = {
 					has_id = 34260
 					has_id = 333444
+					has_id = 333445
 				}
 			}
 			set_nationality = TUR

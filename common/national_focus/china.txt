@@ -332,6 +332,12 @@ focus_tree = {
 		y = 4
 		available = {
 			has_war_support > 0.1
+			has_idea = CHI_idea_army_corruption3
+		}
+		bypass = {
+			NOT = {
+				has_idea = CHI_idea_army_corruption3
+			}
 		}
 		completion_reward = {
 			swap_ideas = {
@@ -356,6 +362,9 @@ focus_tree = {
 			has_idea = CHI_idea_inflation5
 		}
 		bypass = {
+			NOT = {
+				has_idea = CHI_idea_inflation5
+			}
 		}
 		completion_reward = {
 			remove_ideas = CHI_idea_inflation5
@@ -387,6 +396,9 @@ focus_tree = {
 			has_idea = CHI_idea_inflation3
 		}
 		bypass = {
+			NOT = {
+				has_idea = CHI_idea_inflation3
+			}
 		}
 		completion_reward = {
 			remove_ideas = CHI_idea_inflation3
@@ -415,6 +427,9 @@ focus_tree = {
 			has_idea = CHI_idea_inflation
 		}
 		bypass = {
+			NOT = {
+				has_idea = CHI_idea_inflation
+			}
 		}
 		completion_reward = {
 			add_stability = 0.05
@@ -479,7 +494,11 @@ focus_tree = {
 				ideology = democratic
 				popularity = -0.2
 			}
-            hidden_effect = {
+			set_politics = {
+				ruling_party = neutrality
+				elections_allowed = no
+			}
+			hidden_effect = {
 				set_capital = { state = 608 }
 			}
 		}
@@ -562,43 +581,32 @@ focus_tree = {
 			has_stability > 0.35
 			has_war = no #until kill some republics
 			has_country_leader = {
-				name = "Yuan Shikai"
+				character = CHI_yuan_shikai
 				ruling_only = yes
 			}
 		}
-		bypass = {
-		}
 		completion_reward = {
-			country_event = {
-				id = ww1_china.1
-				hours = 2
-			}
 			remove_ideas = CHI_idea_republican_plot
-			hidden_effect = {
-				set_capital = { state = 608 }
-				retire_ideology_leader = fascism
-			}
-			create_country_leader = {
-				name = "Hongxian Emperor"
-				picture = "gfx/leaders/CHI/CHI_yuan_shikai_emperor.dds"
-				expire = "1935.1.1"
-				ideology = fascism_ideology
-				traits = {
-					#trait_proto_fascism, added by an event
-				}
-			}
 			set_politics = {
 				ruling_party = fascism
 				elections_allowed = no
 			}
-                        every_state = {
-				limit = {
-					OR = {
-						is_core_of = MON
-						is_core_of = TIB
+			promote_character = CHI_hongxian_emperor
+			hidden_effect = {
+				set_capital = { state = 608 }
+				every_state = {
+					limit = {
+						OR = {
+							is_core_of = MON
+							is_core_of = TIB
+						}
 					}
+					add_core_of = ROOT
 				}
-				add_core_of = ROOT
+				country_event = {
+					id = ww1_china.1
+					hours = 2
+				}
 			}
 		}
 		ai_will_do = {
@@ -637,32 +645,29 @@ focus_tree = {
 				ruling_party = neutrality
 				elections_allowed = yes
 			} 
-			set_capital = { state = 608 }
 			set_party_name = {
 				ideology = neutrality
 				long_name = CHI_neutrality_party
 				name = CHI_neutrality_party
 			}
+			set_capital = { state = 608 }
 			hidden_effect = {
-				create_country_leader = {
-					name = "Yuan Shikai"
-					picture = "gfx/leaders/CHI/CHI_yuan_shikai.dds"
-					expire = "1935.1.1"
-					ideology = oligarchism
-					traits = {
-						generallissimo
-						trait_oligarchism
+				CHI_yuan_shikai = {
+					promote_character = {
+						ideology = oligarchism
 					}
 				}
-				set_popularities = {
-					fascism = 25
-					communism = 0
-					democratic = 28
-					neutrality = 47
-				}
-				country_event = {
-					id = ww1_xinhai.6
-					days = 1
+				hidden_effect = {
+					set_popularities = {
+						fascism = 25
+						communism = 0
+						democratic = 28
+						neutrality = 47
+					}
+					country_event = {
+						id = ww1_xinhai.6
+						days = 1
+					}
 				}
 			}
 		}
@@ -695,16 +700,8 @@ focus_tree = {
 				ruling_party = democratic
 				elections_allowed = yes
 			}
+			promote_character = CHI_sun_yatsen
 			hidden_effect = {
-				create_country_leader = {
-					name = "Sun Yat-sen"
-					picture = "gfx/leaders/CHI/CHI_sun_wen.dds"
-					expire = "1935.1.1"
-					ideology = socialism
-					traits = {
-						trait_socialism
-					}
-				}
 				set_popularities = {
 					fascism = 28
 					communism = 0
@@ -968,6 +965,12 @@ focus_tree = {
 		y = 5
 		available = {
 			has_war_support > 0.25
+			has_idea = CHI_idea_army_corruption2
+		}
+		bypass = {
+			NOT = {
+				has_idea = CHI_idea_army_corruption2
+			}
 		}
 		completion_reward = {
 			swap_ideas = {
@@ -1205,6 +1208,7 @@ focus_tree = {
 			OR = {
 				has_global_flag = warlord_era
 				has_global_flag = warlord_era_end
+				has_country_flag = great_war_winner
 			}
 			if = {
 				limit = {
