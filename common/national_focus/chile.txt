@@ -19,15 +19,11 @@
  			always = no
  		}
  		completion_reward = {
- 			retire_country_leader = yes
-			create_country_leader = {
-				name = "Ramon Barros Luco"
-				picture = "gfx/leaders/CHL/CHL_ramon_barros_luco.dds"
-				expire = "1935.1.1"
-				ideology = social_liberalism
-				traits = {
-						trait_social_liberalism
-				}
+ 			promote_character = CHL_ramón_barros_luco
+			set_party_name = {
+				ideology = democratic
+				long_name = CHL_democratic_coalition_liberal_alliance_party_long
+				name = CHL_democratic_coalition_liberal_alliance_party
 			}
 			add_ideas = CHL_rotativa
 		}
@@ -124,7 +120,7 @@ focus = {
 				popularity = 0.14
 			}
 			country_event = {
-				id = ww1_chile.8
+				id = ww1_chile.14
 				days = 137
 			}
 		}
@@ -290,7 +286,7 @@ focus = {
 	x = 19
 	y = 1
 	completion_reward = {
-		country_event = ww1_chile.5
+		country_event = ww1_chile.12
 		days = 3
 	}
 }
@@ -764,7 +760,7 @@ focus = {
 			}
 		}
 		BOL = {
-			country_event = ww1_chile.3
+			country_event = ww1_chile.10
 		}
 	}
 }
