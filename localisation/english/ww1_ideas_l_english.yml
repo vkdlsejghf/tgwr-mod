@@ -1822,7 +1822,7 @@
  CHL_prussian_army:0 "Prussian tradition"
  CHL_prussian_army_desc:0 "After the Victory Against Bolivia and Peru In The Pacific War, the Chilean officers realized about the urgent modernization of the army, after that in 1895 and with the full support of the German Kaiser Wilhelm II Von Hohenzzollern, Prussian Captain Emil Korner left for Chile, where thanks to him great reforms began, which allowed the modernization of the army and the armed forces of Chile,What Made Chile Feared By All America With Its Nickname "Prussia OF America"
 
- CHL_parlamentary_republic:0 "Parlamentary Republic"
+ CHL_parlamentary_republic:0 "Pseudo-parlamentary Republic"
  CHL_parlamentary_republic_desc:0 "Next year will be 20 years since the civil war and the establishment of the parliamentary republic, unfortunately this period is only bringing us problems, corruption, insecurity, poverty etc ..."
 
  CHL_idea_legacy_of_the_pacific_war:0 "Legacy Of The Pacific War"
@@ -1893,3 +1893,18 @@
  spain_garner_support_soc_desc:0 "We will start garnering support for the socialist party and the upcoming revolution."
  spain_prewar_ind_sabotage:0 "Prewar Sabotage"
  spain_prewar_ind_sabotage_desc:0 "Communist revolutionaries have suddenly sabotaged some of our military industry, for what reason? We do not know."
+ #Poland
+ POL_idea_polish_reclamation:0 "Polish Reclamation"
+ POL_idea_polish_reclamation_desc:0 "Poland was once strong in Eastern Europe, but was forcibly divided and destroyed by Germany, Russia and Austria. The Soviets are attacking us now, but we will go beyond defending our independence and reclaim our rightful territories that they have usurped!"
+ 
+ #Liberia
+ LIB_liberian_dollar:0 "Liberian Dollar"
+ LIB_us_dollar:0 "U.S. Dollar"
+ LIB_tax_exempt_tribals:0 "Tax Exemptions for Tribes"
+ LIB_askari:0 "Liberian Askari"
+ LIB_national_austerity:0 "National Austerity"
+ LIB_american_bailout:0 "Uncle Sam's Bailout"
+ LIB_liberian_army:0 "The Liberian Army"
+ LIB_syndicalism_idea:0 "Syndicalism"
+ LIB_french_staff:0 "French Drill"
+ LIB_german_staff:0 "Prussian Drill"
