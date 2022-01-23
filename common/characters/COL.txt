@@ -1,9 +1,9 @@
 characters={
-	COL_ramón_gonzález_valencia={
-		name="Ramón González Valencia"
+	COL_ramon_gonzalez_valencia={
+		name="COL_ramon_gonzalez_valencia"
 		portraits={
 			civilian={
-				large="gfx/leaders/COL/COL_ramon_gonzalez_valencia.dds"
+				large="gfx/leaders/COL/COL_ramon_gonzalez_valencia.png"
 			}
 		}
 		country_leader={

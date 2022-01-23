@@ -109,7 +109,7 @@ country_event = {
 				limit = {
 					has_trait = trait_TUR_ittihadist_radical_sympathies
 				}
-				retire = yes
+				remove_unit_leader_role = yes
 			}
 		}
 		every_country = {
@@ -624,6 +624,55 @@ country_event = {
 				}
 			}
 			set_country_flag = had_osman_fuad
+		}
+		if = {
+			limit = {
+				ENG = {
+					has_country_flag = great_war_winner
+					is_subject = no
+				}					
+			}
+			ENG = {
+				if = {
+					limit = {
+						has_dlc = "Together for Victory"
+					}
+					set_autonomy = {
+						target = TUR
+						autonomous_state = autonomy_dominion
+						freedom_level = 0.1
+					}
+					else = {
+						puppet = TUR
+					}	
+				}
+			}
+			else_if = {
+				limit = {
+					FRA = {
+						has_country_flag = great_war_winner
+						is_subject = no
+						NOT = {
+							has_government = communism
+						}
+					}
+				}
+				FRA = {
+					if = {
+						limit = {
+							has_dlc = "Together for Victory"
+						}
+						set_autonomy = {
+							target = TUR
+							autonomous_state = autonomy_dominion
+							freedom_level = 0.1
+						}
+						else = {
+							puppet = TUR
+						}	
+					}
+				}
+			}
 		}
 		set_politics = {
 			ruling_party = neutrality
@@ -1399,7 +1448,7 @@ country_event = {
 			limit = {
 				has_id = 90007
 			}
-			retire = yes
+			remove_unit_leader_role = yes
 		}
 		create_country_leader = {
 			name = "Ismail Enver Paşa"
@@ -8362,7 +8411,7 @@ country_event = {
 			limit = {
 				has_id = 90513
 			}
-			retire = yes
+			remove_unit_leader_role = yes
 		}
 		set_country_flag = damat_ferid_secured_power
     }

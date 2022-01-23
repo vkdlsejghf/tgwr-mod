@@ -809,30 +809,14 @@ country_event = {
 			set_country_flag = king_edward_death
 			add_ideas = george_v
 			remove_ideas = edward_vii
-			create_country_leader = {
-				name = "George V"
-				picture = "gfx/leaders/ENG/ENG_george_v.dds"
-				expire = "1935.1.1"
-				ideology = autocracy
-				traits = {
-					trait_autocracy
-				}
-			}
+			promote_character = ENG_george_v
 		}
 	}
 	option = {
 		name = britain.16.a
 		effect_tooltip = {
 			remove_ideas = edward_vii
-			create_country_leader = {
-				name = "George V"
-				picture = "gfx/leaders/ENG/ENG_george_v.dds"
-				expire = "1935.1.1"
-				ideology = autocracy
-				traits = {
-					trait_autocracy
-				}
-			}
+			promote_character = ENG_george_v
 		}
 	}
 }
@@ -851,15 +835,7 @@ news_event = {
 		hidden_effect = {
 			SAF = {
 				drop_cosmetic_tag = yes
-				create_country_leader = {
-					name = "Louis Botha"
-					picture = "gfx/leaders/SAF/SAF_louis_botha.png"
-					expire = "1935.1.1"
-					ideology = classical_liberalism
-					traits = {
-						trait_classical_liberalism
-					}
-				}
+				promote_character = SAF_louis_botha
 				load_oob = "SAF_1910"
 				set_country_flag = saf_release
 			}
@@ -1896,6 +1872,7 @@ country_event = {
 				traits = {
 					guerilla_fighter
 					politically_connected
+					substance_abuser
 					ENG_royalist
 				}
 				skill = 2
@@ -3485,13 +3462,14 @@ country_event = {
 				transfer_state = 789
 			}
 		}
+		end_puppet = SAF
 		SAF = {
 			transfer_state = 542
 			add_state_core = 542
 		}
-		end_puppet = SAF
 		hidden_effect = {
 			SAF = {
+				leave_faction = yes
 				start_civil_war = {
 					ideology = fascism
 					size = 0.2
@@ -5551,7 +5529,7 @@ country_event = {
 		GER = {
 			NOT = {
 				has_country_leader = {
-					name = "Adolf Hitler"
+					character = GER_adolf_hitler
 					ruling_only = no
 				}
 			}
@@ -8789,7 +8767,7 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = ww1_england.196.a
-		kill_country_leader = yes
+		#kill_country_leader = yes
 		create_country_leader = {
 			name = "Henry Page Croft"
 			picture = "gfx/leaders/ENG/ENG_henry_page_croft.dds" 

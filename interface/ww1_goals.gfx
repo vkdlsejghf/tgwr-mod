@@ -106,6 +106,10 @@ spriteTypes = {
 		texturefile = "gfx/interface/goals/focus_ENG_All_The_Kings_Men.dds"
 	}
 	SpriteType = {
+		name = "GFX_focus_eng_militarist_commonwealth"
+		texturefile = "gfx/interface/goals/focus_eng_militarist_commonwealth.png"
+	}
+	SpriteType = {
 		name = "GFX_focus_ger_kaiserreich"
 		texturefile = "gfx/interface/goals/focus_ger_kaiserreich.dds"
 	}
@@ -1523,5 +1527,23 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_TUR_ratify_sevres"
 		texturefile = "gfx/interface/goals/TUR_ratify_sevres.png"
+	}
+
+	#Liberia
+	spriteType = {
+		name = "GFX_goal_LIB_engineer_crisis"
+		texturefile = "gfx/interface/goals/LIB_engineer_crisis.png"
+	}
+	spriteType = {
+		name = "GFX_goal_LIB_new_president"
+		texturefile = "gfx/interface/goals/LIB_new_president.png"
+	}
+	spriteType = {
+		name = "GFX_goal_LIB_pan_africa"
+		texturefile = "gfx/interface/goals/LIB_pan_africa.png"
+	}
+	spriteType = {
+		name = "GFX_goal_LIB_trial_whigs"
+		texturefile = "gfx/interface/goals/LIB_trial_whigs.png"
 	}
 }

@@ -403,6 +403,60 @@ armistice_effect = {
 			clr_country_flag = protectorate
 		}
 	}
+	if = {
+		limit = {
+			GER = {
+				has_country_flag = great_war_winner
+				is_subject = no
+				NOT = {
+					has_government = communism
+				}
+			}
+		}			
+		if = {
+			limit = {
+				BEL = {
+					has_country_flag = great_war_loser
+				}
+				exists = yes
+			}
+			GER = {
+				puppet = BEL
+			}
+			BEL = {
+				set_popularities = {
+					democratic = 10
+					neutrality = 40
+					fascism = 40
+					communism = 10
+				}
+				set_war_support = 0.05
+				set_stability = 0.15
+				set_politics = {
+					ruling_party = fascism
+					elections_allowed = no
+				}
+				set_party_name = {
+					ideology = fascism
+					long_name = BEL_occupation_party_long
+					name = BEL_occupation_party
+				}
+				set_cosmetic_tag = BEL_GER
+				create_country_leader = {
+					name = "GER_ludwig_von_falkenhausen"
+					picture = "gfx/leaders/GER/GER_Ludwig_von_Falkenhausen.png"
+					expire = "1935.1.1"
+					ideology = stratocracy
+					traits = {
+						german_agent
+						foreign_leader
+						trait_stratocracy
+					}
+				}
+				add_ideas = BEL_belgian_resistance
+			}
+		}
+	}
 	##### Russia #####
 	if = {
 		limit = {
@@ -865,82 +919,29 @@ conference_effect = {
 			}
 			if = {
 				limit = {
-					BEL = {
-						has_country_flag = great_war_loser
-					}
-					exists = yes
-					GER = {
-						NOT = {
-							has_government = communism
-						}
-					}
-				}
-				GER = {
-					puppet = BEL
-				}
-				BEL = {
-					set_popularities = {
-						democratic = 10
-						neutrality = 70
-						fascism = 10
-						communism = 10
-					}
-					set_politics = {
-						ruling_party = neutrality
-					}
-					if = {
-						limit = {
-							has_game_rule = {
-								rule = rule_tgwr_burgundy
-								option = burgundy_yes_based
-							}
-						}
-						set_cosmetic_tag = BEL_burgundy
-					}
-					add_ideas = BEL_belgian_resistance
-					remove_unit_leader = 9009
-					create_country_leader = {
-						name = "Adalbert"
-						picture = "gfx/leaders/GER/GER_Adalbert_of_Prussia.png"
-						expire = "1935.1.1"
-						ideology = despotism
-						traits = {
-							german_agent
-							foreign_leader
-							trait_autocracy
-						}
-					}
-					create_field_marshal = {
-						name = "Adalbert"
-						portrait_path = "gfx/leaders/GER/GER_Adalbert_of_Prussia.png"
-						traits = {
-							media_personality
-							war_hero
-							politically_connected
-							naval_liason
-							trait_royal
-						}
-						skill = 1
-						attack_skill = 1
-						defense_skill = 1
-						planning_skill = 2
-						logistics_skill = 2
-					}
-					set_party_name = {
-						ideology = neutrality
-						long_name = GER_neutrality_party
-						name = GER_neutrality_party
-					}
-				}
-			}
-			if = {
-				limit = {
 					SWI = {
 						has_country_flag = great_war_loser
 					}
 				}
 				GER = {
 					puppet = SWI
+					if = {
+						limit = {
+							has_idea = GER_idea_wilhelm_ii
+						}
+						SWI = {
+							set_politics = {
+								ruling_party = neutrality
+								elections_allowed = no
+							}
+							set_popularities = {
+								democratic = 10
+								neutrality = 70
+								fascism = 10
+								communism = 10
+							}
+						}
+					}
 				}
 			}
 			if = {
@@ -954,6 +955,23 @@ conference_effect = {
 				}
 				GER = {
 					puppet = HOL
+					if = {
+						limit = {
+							has_idea = GER_idea_wilhelm_ii
+						}
+						HOL = {
+							set_politics = {
+								ruling_party = neutrality
+								elections_allowed = no
+							}
+							set_popularities = {
+								democratic = 10
+								neutrality = 70
+								fascism = 10
+								communism = 10
+							}
+						}
+					}
 				}
 			}
 			if = {
@@ -970,6 +988,23 @@ conference_effect = {
 					}
 					GER = {
 						puppet = SWE
+						if = {
+							limit = {
+								has_idea = GER_idea_wilhelm_ii
+							}
+							SWE = {
+								set_politics = {
+									ruling_party = neutrality
+									elections_allowed = no
+								}
+								set_popularities = {
+									democratic = 10
+									neutrality = 70
+									fascism = 10
+									communism = 10
+								}
+							}
+						}
 					}
 				}
 				if = {
@@ -980,6 +1015,23 @@ conference_effect = {
 					}
 					GER = {
 						puppet = DEN
+						if = {
+							limit = {
+								has_idea = GER_idea_wilhelm_ii	
+							}
+							DEN = {
+								set_politics = {
+									ruling_party = neutrality
+									elections_allowed = no
+								}
+								set_popularities = {
+									democratic = 10
+									neutrality = 70
+									fascism = 10
+									communism = 10
+								}
+							}
+						}
 					}
 				}
 				if = {
@@ -990,6 +1042,23 @@ conference_effect = {
 					}
 					GER = {
 						puppet = NOR
+						if = {
+							limit = {
+								has_idea = GER_idea_wilhelm_ii
+							}
+							NOR = {
+								set_politics = {
+									ruling_party = neutrality
+									elections_allowed = no
+								}
+								set_popularities = {
+									democratic = 10
+									neutrality = 70
+									fascism = 10
+									communism = 10
+								}
+							}
+						}
 					}
 				}
 			}
@@ -1018,7 +1087,12 @@ conference_effect = {
 					set_cosmetic_tag = BLR_WHR
 					if = {
 						limit = {
-							has_government = neutrality
+							GER = {
+								OR = {
+									has_government = neutrality
+									has_idea = GER_idea_wilhelm_ii
+								}
+							}	
 						}
 						GER = {
 							remove_unit_leader = 34038
@@ -1027,28 +1101,26 @@ conference_effect = {
 							limit = {
 								date < 1929.4.20
 							}
-							create_country_leader = {
-								name = "Genrikh"
-								picture = "gfx/leaders/GER/GER_Albert_Wilhelm_Heinrich.dds"
-								expire = "1935.1.1"
-								ideology = autocracy
-								traits = {
-									german_agent
-									trait_autocracy
+							add_country_leader_role = {
+								character = BLR_genrikh
+								country_leader = {
+									ideology = autocracy
+									traits = { german_agent foreign_leader trait_autocracy }
+									expire = "1935.1.1.1"
 								}
 							}
-		
+							promote_character = BLR_genrikh
 						}
 						else = {
-							create_country_leader = {
-								name = "Uladzimir"
-								picture = "gfx/leaders/BLR/BLR_waldemar.dds"
-								expire = "1935.1.1"
-								ideology = autocracy
-								traits = {
-									trait_autocracy
+							add_country_leader_role = {
+								character = BLR_uladzimir
+								country_leader = {
+									ideology = autocracy
+									traits = { trait_autocracy }
+									expire = "1935.1.1.1"
 								}
 							}
+							promote_character = BLR_uladzimir
 						}
 						set_party_name = {
 							ideology = neutrality
@@ -1113,6 +1185,22 @@ conference_effect = {
 					}				
 					GER = {
 						puppet = UBD
+						if = {
+							limit = {
+								has_idea = GER_idea_wilhelm_ii
+							}
+							UBD = {
+								set_politics = {
+									ruling_party = neutrality
+									elections_allowed = no
+								}
+								set_popularities = {
+									democratic = 25
+									communism = 22
+									neutrality = 53
+								}
+							}
+						}
 					}
 				}	
 				if = {
@@ -1150,15 +1238,52 @@ conference_effect = {
 							remove_state_core = PREV
 						}						
 					}
+					GER = {
+						puppet = LIT
+						if = {
+							limit = {
+								has_idea = GER_idea_wilhelm_ii
+							}
+							LIT = {
+								set_politics = {
+									ruling_party = neutrality
+									elections_allowed = no
+								}
+								set_popularities = {
+									democratic = 4
+									communism = 16
+									neutrality = 80
+								}
+							}
+						}
+					}
 					LIT = {
 						set_cosmetic_tag = LIT_GER
-						create_country_leader = {
-							name = "Mindaugas II"
-							picture = "gfx/leaders/LIT/LIT_mindaugas_ii.png"
-							expire = "1935.1.1"
-							ideology = autocracy
-							traits = {
-								trait_autocracy
+						if = {
+							limit = {
+								date < 1928.3.24
+							}
+							LIT_mindaugas_ii = {
+								add_country_leader_role = {
+									country_leader = {
+										ideology = autocracy
+										traits = { german_agent trait_autocracy }
+										expire = "1935.1.1.1"
+									}
+								}
+								promote_character = autocracy
+							}
+							else = {
+								LIT_vytautas_ii = {
+									add_country_leader_role = {
+										country_leader = {
+											ideology = autocracy
+											traits = { german_agent trait_autocracy }
+											expire = "1935.1.1.1"
+										}
+									}
+									promote_character = autocracy
+								}
 							}
 						}
 						set_party_name = {
@@ -1167,9 +1292,6 @@ conference_effect = {
 							name = LIT_kingdom_party
 						}
 						set_country_flag = released_by_germany
-					}	
-					GER = {
-						puppet = LIT
 					}
 				}
 				if = {
@@ -1220,6 +1342,23 @@ conference_effect = {
 					}
 					GER = {
 						puppet = POL
+						if = {
+							limit = {
+								has_idea = GER_idea_wilhelm_ii
+							}
+							POL = {
+								set_politics = {
+									ruling_party = neutrality
+									elections_allowed = no
+								}
+								set_popularities = {
+									democratic = 13
+									fascism = 5
+									communism = 21
+									neutrality = 61
+								}
+							}
+						}
 					}
 				}
 				if = {
@@ -1321,10 +1460,51 @@ conference_effect = {
 				}
 				GER = {
 					puppet = POL
+					if = {
+						limit = {
+							has_idea = GER_idea_wilhelm_ii
+						}
+						POL = {
+							set_politics = {
+								ruling_party = neutrality
+								elections_allowed = no
+							}
+							set_popularities = {
+								democratic = 13
+								fascism = 5
+								communism = 21
+								neutrality = 61
+							}
+						}
+					}
 				}				
 			}				
 		}	
-	}	
+	}
+	if = {
+		limit = {
+			GER = {
+				has_country_flag = great_war_loser
+			}
+		}
+		GER = {
+			if = {
+				limit = {
+					has_global_flag = spartakist_in_bavaria
+					owns_state = 188
+					NOT = {
+						owns_state = 763
+					}
+				}
+			}
+			every_other_country = {
+				limit = {
+					owns_state = 11
+				}
+				transfer_state = 188
+			}
+		}
+	}
 	### OTTOMANS ###
 	if = {
 		limit = {
@@ -1481,6 +1661,7 @@ conference_effect = {
 				OR = {
 					has_id = 34260
 					has_id = 333444
+					has_id = 333445
 				}
 			}
 			set_nationality = GER
@@ -1634,15 +1815,16 @@ conference_effect = {
 						is_subject = no
 					}
 				}
-				UKR = {			
-					create_country_leader = {
-						name = "Vasyl I"
-						picture = "gfx/leaders/UKR/UKR_vasyl_habsburg.dds"
-						expire = "1935.1.1"
-						ideology = autocracy
-						traits = {
-							trait_autocracy
+				UKR = {
+					UKR_vasyl_i = {
+						add_country_leader_role = {
+							country_leader = {
+								ideology = autocracy
+								traits = { trait_autocracy }
+								expire = "1935.1.1.1"
+							}
 						}
+						promote_character = autocracy
 					}
 					set_cosmetic_tag = UKR_KNG
 					set_party_name = {

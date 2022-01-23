@@ -28,7 +28,7 @@ country_event = {
 	}
 	option = {
 		name = ww1_luxembourg.1.a
-		kill_country_leader = yes
+		#kill_country_leader = yes
 		create_country_leader = {
 			name = "Marie-Adelaide"
 			picture = "gfx/leaders/LUX/LUX_marie_adelaide.dds"
@@ -88,7 +88,7 @@ country_event = {
 		retire_ideology_leader = neutrality
 		create_country_leader = {
 			name = "Charlotte"
-			picture = "gfx/leaders/LUX/LUX_Charlotte.dds"
+			picture = "gfx/leaders/LUX/LUX_Charlotte.png"
 			expire = "1935.1.1"
 			ideology = autocracy
 			traits = {

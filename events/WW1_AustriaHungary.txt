@@ -8,75 +8,113 @@ news_event = {
 	picture = ww1_austria_1
 	major = yes
 	mean_time_to_happen = {
-		days = 0
+		days = 21
 	}
+	fire_only_once = yes
 	trigger = {
 		any_country = {
 			OR = {
 				has_country_leader = {
-					name = "Franz Joseph I"
+					character = AUH_franz_joseph_i
 					ruling_only = no
 				}
 				has_country_leader = {
-					name = "I. Ferenc József"
+					character = HUN_franz_joseph_i
+					ruling_only = no
+				}
+				has_country_leader = {
+					character = AUS_franz_joseph_i
+					ruling_only = no
+				}
+				has_country_leader = {
+					name = "Franz Joseph I"
 					ruling_only = no
 				}
 			}
 		}
-		date > 1916.11.21
+		date > 1916.11.1
 	}
 	immediate = {
 		hidden_effect = {
-			if = {
+			every_possible_country = {
 				limit = {
-					has_global_flag = kis_franzferdinand_murdered
+					OR = {
+						has_country_leader = {
+							character = AUH_franz_joseph_i
+							ruling_only = no
+						}
+						has_country_leader = {
+							character = HUN_franz_joseph_i
+							ruling_only = no
+						}
+						has_country_leader = {
+							character = AUS_franz_joseph_i
+							ruling_only = no
+						}
+						has_country_leader = {
+							name = "Franz Joseph I"
+							ruling_only = no
+						}
+					}
 				}
-				AUH = {
+				set_country_flag = emperor_franz_dead
+				if = {
+					limit = {
+						original_tag = AUH
+					}
+					retire_character = AUH_franz_joseph_i
+				}
+				else_if = {
+					limit = {
+						original_tag = HUN
+					}
+					retire_character = HUN_franz_joseph_i
+				}
+				else_if = {
+					limit = {
+						original_tag = AUS
+					}
+					retire_character = AUS_franz_joseph_i
+				}
+				else = {
 					kill_ideology_leader = neutrality
-					create_country_leader = {
-						name = "Karl I"
-						picture = "gfx/leaders/AUH/AUH_karl_i.dds"
-						expire = "1935.1.1"
-						ideology = autocracy
-						traits = {
-							trait_autocracy
-						}
-					}
-					set_country_flag = emperor_franz_dead
 				}
 				if = {
 					limit = {
-						HUN = {
-							has_country_leader = {
-								name = "I. Ferenc József"
-								ruling_only = no
+						has_global_flag = kis_franzferdinand_murdered
+					}
+					if = {
+						limit = {
+							original_tag = AUH
+						}
+						retire_character = AUH_karl_von_habsburg
+						promote_character = AUH_karl_i
+					}
+					else_if = {
+						limit = {
+							original_tag = HUN
+						}
+						promote_character = HUN_karl_i
+					}
+					else_if = {
+						limit = {
+							original_tag = AUS
+						}
+						AUS_karl_i = {
+							add_country_leader_role = {
+								country_leader = {
+									ideology = autocracy
+									traits = { trait_autocracy }
+									expire = "1935.1.1.1"
+								}
 							}
+							set_character_name = {
+								name = "AUH_karl_von_habsburg"
+							}
+							promote_character = autocracy
 						}
 					}
-					HUN = {
-						kill_ideology_leader = neutrality
-						create_country_leader = {
-							name = "IV. Károly"
-							picture = "gfx/leaders/AUH/AUH_karl_i.dds"
-							expire = "1935.1.1"
-							ideology = autocracy
-							traits = {
-								trait_autocracy
-							}
-						}
-					}
-				}
-				if = {
-					limit = {
-						AUS = {
-							has_country_leader = {
-								name = "Franz Joseph I"
-								ruling_only = no
-							}
-						}
-					}
-					AUS = {
-						kill_ideology_leader = neutrality
+					else = {
 						create_country_leader = {
 							name = "Karl von Habsburg"
 							picture = "gfx/leaders/AUH/AUH_karl_i.dds"
@@ -88,61 +126,39 @@ news_event = {
 						}
 					}
 				}
-			}
-			if = {
-				limit = {
-					NOT = {
-						has_global_flag = kis_franzferdinand_murdered
-					}
-				}
-				AUH = {
-					kill_ideology_leader = neutrality
-					create_country_leader = {
-						name = "Franz Ferdinand I"
-						picture = "gfx/leaders/AUH/AUH_franz_ferdinand.dds"
-						expire = "1935.1.1"
-						ideology = autocracy
-						traits = {
-							trait_autocracy
-						}
-					}
-					set_country_flag = emperor_franz_dead
+				else = {
 					set_country_flag = franz_ferdinand_ruler
-				}
-				if = {
-					limit = {
-						HUN = {
-							has_country_leader = {
-								name = "I. Ferenc József"
-								ruling_only = no
+					if = {
+						limit = {
+							original_tag = AUH
+						}
+						promote_character = AUH_franz_ferdinand_i
+					}
+					else_if = {
+						limit = {
+							original_tag = HUN
+						}
+						promote_character = HUN_franz_ferdinand_i
+					}
+					else_if = {
+						limit = {
+							original_tag = AUS
+						}
+						AUS_franz_ferdinand_i = {
+							add_country_leader_role = {
+								country_leader = {
+									ideology = autocracy
+									traits = { trait_autocracy }
+									expire = "1935.1.1.1"
+								}
 							}
+							set_character_name = {
+								name = "AUH_franz_ferdinand_von_habsburg"
+							}
+							promote_character = autocracy
 						}
 					}
-					HUN = {
-						kill_ideology_leader = neutrality
-						create_country_leader = {
-							name = "I. Ferenc Ferdinánd"
-							picture = "gfx/leaders/AUH/AUH_franz_ferdinand.dds"
-							expire = "1935.1.1"
-							ideology = autocracy
-							traits = {
-								unpopular_monarch
-								trait_autocracy
-							}
-						}
-					}
-				}
-				if = {
-					limit = {
-						AUS = {
-							has_country_leader = {
-								name = "Franz Joseph I"
-								ruling_only = no
-							}
-						}
-					}
-					AUS = {
-						kill_ideology_leader = neutrality
+					else = {
 						create_country_leader = {
 							name = "Franz Ferdinand von Habsburg"
 							picture = "gfx/leaders/AUH/AUH_franz_ferdinand.dds"
@@ -326,25 +342,14 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = ww1_austria.5.a
-		load_focus_tree = austrian_Serbia
-		retire_ideology_leader = neutrality
-		create_country_leader = {
-			name = "Đorđe Obrenović"
-			expire = "1935.1.1"
-			ideology = autocracy
-			picture = "gfx/leaders/SER/SER_djordje_obrenovic.dds"
-			traits = {unpopular_monarch}
+		every_other_country = {
+			limit = {
+				is_subject_of = PREV
+			}
+			hidden_effect = {
+				set_country_flag = serbian_subject
+			}
 		}
-		set_party_name ={
-			ideology = neutrality
-			long_name = SER_obrenovic_dynasty_long
-			name = SER_obrenovic_dynasty
-		}
-		remove_ideas = { SER_idea_Peter_I SER_idea_Peter_I_2 SER_idea_Peter_I_3 }
-		remove_ideas = { SER_idea_black_hand_2 SER_idea_black_hand_3 SER_idea_black_hand_empowered }
-		add_ideas = SER_idea_black_hand
-		add_ideas = protectorate
-		add_ideas = SER_idea_radical_opposition
 		set_country_flag = protectorate
 		if = {
 			limit = {
@@ -365,6 +370,29 @@ country_event = {
 					puppet = SER
 					SER = {
 						add_ideas = protectorate
+					}
+				}
+			}
+		}
+		hidden_effect = {
+			every_other_country = {
+				limit = {
+					has_country_flag = serbian_subject
+				}
+				if = {
+					limit = {
+						has_dlc = "Together for Victory"
+					}
+					PREV = {
+						set_autonomy = {
+							target = PREV
+							autonomous_state = autonomy_dominion
+						}
+					}
+					else = {
+						PREV = {
+							puppet = PREV
+						}
 					}
 				}
 			}
@@ -572,16 +600,9 @@ country_event = {
 		has_country_flag = great_war_loser
 		NOT = {
 			has_global_flag = AUH_collapse
-		}
-		NOT = {
 			has_global_flag = croatia_released
+			SER = { has_country_flag = great_war_loser }
 		}
-		# NOT = {
-		# 	has_completed_focus = AUH_unitary_monarchy
-		# }
-		# NOT = {
-		# 	has_completed_focus = AUH_reform_transleithania
-		# }
 	}
 	fire_only_once = yes
 	mean_time_to_happen = {
@@ -1263,16 +1284,7 @@ country_event = {
 					name = HUN_neutrality_party
 				}
 				retire_ideology_leader = neutrality
-				create_country_leader = {
-					name = "Miklós Horthy"
-					picture = "gfx/leaders/HUN/Portrait_Hungary_Miklos_Horthy.dds"
-					expire = "1965.1.1"
-					ideology = despotism
-					traits = {
-						anti_communist
-						trait_despotism
-					}
-				}
+				promote_character = HUN_miklós_horthy
 			}
 		}
 		news_event = {
@@ -1507,6 +1519,8 @@ country_event = {
 	}
 }
 
+# KINGDOM OF LOMBARDY-VENETIA
+################################
 country_event = {
 	id = ww1_austria.24
 	title = ww1_austria.24.t
@@ -1517,7 +1531,10 @@ country_event = {
 	}
 	trigger = {
 		tag = AUH
-		owns_state = 160
+		OR = {
+			owns_state = 159
+			owns_state = 160
+		}
 	}
 	option = {
 		name = ww1_austria.24.a
@@ -1525,24 +1542,78 @@ country_event = {
 			factor = 100
 		}
 		VNC = {
-			add_state_core = 159
-			add_state_core = 160
-			transfer_state = 160
-			set_cosmetic_tag = VNC_AUH
-		}
-		if = {
-			limit = {
-				owns_state = 159
+			hidden_effect = {
+				if = {
+					limit = {
+						NOT = {
+							has_cosmetic_tag = VNC_AUH
+						}
+					}
+					set_cosmetic_tag = VNC_AUH
+				}
 			}
+			PREV = {
+				every_owned_state = {
+					limit = {
+						OR = {
+							state = 159
+							state = 160
+						}
+					}
+					PREV.PREV = {
+						add_state_core = PREV
+						transfer_state = PREV
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						is_subject_of = PREV
+					}
+				}
+				PREV = {
+					if = {
+						limit = {
+							OR = {
+								has_dlc = "Together for Victory"
+								has_dlc = "Waking the Tiger"
+							}
+						}
+						set_autonomy = {
+							target = PREV
+							autonomous_state = autonomy_tgwr_crownland
+						}
+					}
+					else = {
+						puppet = PREV
+					}
+				}
+			}
+		}
+		trigger = {
 			VNC = {
-				transfer_state = 159
+				OR = {
+					exists = no
+					is_subject_of = PREV
+				}
 			}
 		}
 	}
 	option = {
 		name = ww1_austria.24.b
-		AUH = {
-			add_stability = -0.07
+		add_stability = -0.07
+		add_manpower = -1000
+		trigger = {
+			has_stability > 0.07
+			has_manpower > 1000
+		}
+		ai_chance = {
+			base = 0
+			modifier = {
+				add = 75
+				has_government = fascism
+			}
 		}
 	}
 }
@@ -1661,7 +1732,7 @@ country_event = {
 			}
 		}
 		NOT = {
-			country_exists = GAL
+			has_completed_focus = AUH_federalism
 		}
 	}
 	mean_time_to_happen = {
@@ -1985,6 +2056,39 @@ country_event = {
 				}
 			}
 		}
+		if = {
+			limit = {
+				any_country = {
+					exists = yes
+					has_country_flag = joined_brothers_war
+				}
+			}
+			hidden_effect = {
+				every_other_country = {
+					limit = {
+						exists = yes
+						has_country_flag = joined_brothers_war
+						NOT = {
+							has_war_with = PREV
+						}
+					}
+					every_owned_state = {
+						limit = {
+							OR = {
+								is_core_of = PREV.PREV
+								is_claimed_by = PREV.PREV
+							}
+						}
+						PREV.PREV = {
+							transfer_state = PREV
+						}
+					}
+					PREV = {
+						puppet = PREV
+					}
+				}
+			}
+		}
 		ai_chance = {
 			factor = 100
 		}
@@ -2007,7 +2111,7 @@ country_event = {
 			date > 1934.5.1
 		}
 		has_country_leader = {
-			name = "Engelbert Dollfuss"
+			character = AUS_engelbert_dollfuss
 			ruling_only = yes
 		}
 		NOT = {
@@ -2033,30 +2137,26 @@ country_event = {
 			long_name = AUS_vaterland_party
 			name = AUS_vaterland_party
 		}
-		create_country_leader = {
-			name = "Engelbert Dollfuss"
-			picture = "gfx/leaders/AUS/AUS_Engelbert_Dollfuss_general.png"
-			expire = "1935.1.1"
-			ideology = fascism_ideology
-			traits = {
-				trait_fascism
+		AUS_engelbert_dollfuss = {
+			promote_character = fascism_ideology
+			add_field_marshal_role = {
+				traits = {
+					media_personality
+					politically_connected
+					guerilla_fighter
+					trait_mountaineer
+				}
+				skill = 2
+				attack_skill = 2
+				defense_skill = 1
+				planning_skill = 2
+				logistics_skill = 2
 			}
-		}
-		create_field_marshal = {
-			name = "Engelbert Dollfuss"
-			portrait_path = "gfx/leaders/AUS/AUS_Engelbert_Dollfuss_general.png"
-			traits = {
-				media_personality
-				politically_connected
-				guerilla_fighter
-				trait_mountaineer
+			set_portraits = {
+				civilian = {
+					large="gfx/leaders/AUS/AUS_Engelbert_Dollfuss_general.png"
+				}
 			}
-			skill = 2
-			attack_skill = 2
-			defense_skill = 1
-			planning_skill = 2
-			logistics_skill = 2
-			id = 4725
 		}
 		hidden_effect = {
 			set_cosmetic_tag = AUS_vaterland
@@ -2074,14 +2174,14 @@ country_event = {
 	trigger = {
 		tag = AUS
 		has_country_leader = {
-			name = "Engelbert Dollfuss"
+			character = AUS_engelbert_dollfuss
 			ruling_only = yes
 		}
 		has_government = fascism
 		date > 1934.7.25
 		GER = {
 			has_country_leader = {
-				name = "Adolf Hitler"
+				character = GER_adolf_hitler
 				ruling_only = yes
 			}
 			has_government = fascism
@@ -2092,13 +2192,7 @@ country_event = {
 	fire_only_once = yes
 	immediate = {
 		hidden_effect = {
-			kill_ideology_leader = fascism
-			every_unit_leader = {
-				limit = {
-					has_id = 4725
-				}
-				retire = yes
-			}
+			retire_character = AUS_engelbert_dollfuss
 			create_country_leader = {
 				name = "Kurt Schuschnigg"
 				picture = "Portrait_Austria_Kurt_Schuschnigg.dds"
@@ -2264,16 +2358,7 @@ country_event = {
 					long_name = HUN_neutrality_party
 					name = HUN_neutrality_party
 				}
-				create_country_leader = {
-					name = "Miklós Horthy"
-					picture = "gfx/leaders/HUN/Portrait_Hungary_Miklos_Horthy.dds"
-					expire = "1965.1.1"
-					ideology = despotism
-					traits = {
-						anti_communist
-						trait_despotism
-					}
-				}
+				promote_character = HUN_miklós_horthy
 			}
 		}
 		set_global_flag = AUH_collapse
@@ -2288,28 +2373,77 @@ country_event = {
 	desc = ww1_austria.33.d
 	trigger = {
 		OR = {
-			# Austrian Empire is not collapsed
 			has_country_leader = {
-				name = "Karl I"
+				character = AUH_karl_i
 				ruling_only = yes
 			}
-			# Kingdom of Austria by Bruderkrieg
+			has_country_leader = {
+				character = HUN_karl_i
+				ruling_only = yes
+			}
+			has_country_leader = {
+				character = AUS_karl_i
+				ruling_only = yes
+			}
 			has_country_leader = {
 				name = "Karl von Habsburg"
 				ruling_only = yes
 			}
 		}
-		# He will maintain the throne when not lost the war
 		has_country_flag = great_war_loser
-		date > 1922.4.1
-		NOT = {
-			has_country_flag = emperor_karl_dead
-		}
+		has_global_flag = interbellum
 	}
 	mean_time_to_happen = {
 		days = 0
 	}
 	fire_only_once = yes
+	immediate = {
+		hidden_effect = {
+			every_possible_country = {
+				limit = {
+					OR = {
+						has_country_leader = {
+							character = AUH_karl_i
+							ruling_only = no
+						}
+						has_country_leader = {
+							character = HUN_karl_i
+							ruling_only = no
+						}
+						has_country_leader = {
+							character = AUS_karl_i
+							ruling_only = no
+						}
+						has_country_leader = {
+							name = "Karl von Habsburg"
+							ruling_only = no
+						}
+					}
+				}
+				if = {
+					limit = {
+						original_tag = AUH
+					}
+					retire_character = AUH_karl_i
+				}
+				else_if = {
+					limit = {
+						original_tag = HUN
+					}
+					retire_character = HUN_karl_i
+				}
+				else_if = {
+					limit = {
+						original_tag = AUS
+					}
+					retire_character = AUS_karl_i
+				}
+				else = {
+					retire_ideology_leader = neutrality
+				}
+			}
+		}
+	}
 	option = {
 		name = ww1_austria.33.a
 		trigger = {
@@ -2318,30 +2452,6 @@ country_event = {
 				is_subject = yes
 			}
 		}
-		hidden_effect = {
-			set_country_flag = emperor_karl_dead
-			every_other_country = {
-				limit = {
-					has_country_leader = {
-						name = "IV. Károly"
-						ruling_only = no
-					}
-				}
-				retire_ideology_leader = neutrality
-				set_country_flag = emperor_karl_dead
-			}
-			every_other_country = {
-				limit = {
-					has_country_leader = {
-						name = "Carlo I"
-						ruling_only = no
-					}
-				}
-				retire_ideology_leader = neutrality
-				set_country_flag = emperor_karl_dead
-			}
-		}
-		retire_ideology_leader = neutrality
 		create_country_leader = {
 			name = "Franz Josef II"
 			picture = GFX_Portrait_hungary_otto_von_hapsburg
@@ -2351,14 +2461,19 @@ country_event = {
 				trait_autocracy
 			}
 		}
-		create_country_leader = {
-			name = "Zita of Bourbon-Parma"
-			picture = "gfx/leaders/AUH/AUH_Zita.dds"
-			expire = "1932.11.20"
-			ideology = autocracy
-			female = yes
-			traits = {
-				trait_autocracy
+		if = {
+			limit = {
+				NOT = { date > 1932.11.20 }
+			}
+			create_country_leader = {
+				name = "Zita of Bourbon-Parma"
+				picture = "gfx/leaders/AUH/AUH_Zita.dds"
+				expire = "1932.11.20"
+				ideology = autocracy
+				female = yes
+				traits = {
+					trait_autocracy
+				}
 			}
 		}
 	}
@@ -2370,20 +2485,6 @@ country_event = {
 				is_subject = yes
 			}
 		}
-		hidden_effect = {
-			set_country_flag = emperor_karl_dead
-			every_other_country = {
-				limit = {
-					has_country_leader = {
-						name = "IV. Károly"
-						ruling_only = no
-					}
-				}
-				retire_ideology_leader = neutrality
-				set_country_flag = emperor_karl_dead
-			}
-		}
-		retire_ideology_leader = neutrality
 		create_country_leader = {
 			name = "Otto von Habsburg"
 			picture = GFX_Portrait_hungary_otto_von_hapsburg
@@ -2393,14 +2494,19 @@ country_event = {
 				trait_autocracy
 			}
 		}
-		create_country_leader = {
-			name = "Zita of Bourbon-Parma"
-			picture = "gfx/leaders/AUH/AUH_Zita.dds"
-			expire = "1932.11.20"
-			ideology = autocracy
-			female = yes
-			traits = {
-				trait_autocracy
+		if = {
+			limit = {
+				NOT = { date > 1932.11.20 }
+			}
+			create_country_leader = {
+				name = "Zita von Bourbon-Parma"
+				picture = "gfx/leaders/AUH/AUH_Zita.dds"
+				expire = "1932.11.20"
+				ideology = autocracy
+				female = yes
+				traits = {
+					trait_autocracy
+				}
 			}
 		}
 	}
@@ -2414,7 +2520,7 @@ country_event = {
 	desc = ww1_austria.34.d
 	trigger = {
 		has_country_leader = {
-			name = "Zita of Bourbon-Parma"
+			name = "Zita von Bourbon-Parma"
 			ruling_only = yes
 		}
 		# On his twentieth birthday
@@ -2432,7 +2538,7 @@ country_event = {
 			every_other_country = {
 				limit = {
 					has_country_leader = {
-						name = "Miklós Horthy"
+						character = HUN_miklos_horthy
 						ruling_only = yes
 					}
 				}
@@ -2451,7 +2557,7 @@ country_event = {
 					long_name = AUH_neutrality_party_long
 					name = AUH_neutrality_party
 				}
-				ROOT = {
+				PREV = {
 					if = {
 						limit = {
 							has_dlc = "Together for Victory"
@@ -2498,7 +2604,6 @@ country_event = {
 		every_owned_state = {
 			limit = {
 				is_core_of = CZE
-				NOT = { state = 72 } # Zaolzie
 			}
 			CZE = {
 				transfer_state = PREV
@@ -2586,51 +2691,42 @@ country_event = {
 			if = {
 				limit = {
 					has_country_leader = {
-						name = "Franz Joseph I"
+						character = AUH_franz_joseph_i
 						ruling_only = yes
 					}
 				}
 				HUN = {
-					create_country_leader = {
-						name = "I. Ferenc József"
-						picture = "gfx/leaders/AUH/AUH_franz_joseph_i.dds"
-						expire = "1935.1.1"
-						ideology = autocracy
-						traits = { oldschool_kaiser trait_autocracy }
+					HUN_franz_joseph_i = {
+						add_country_leader_trait = unpopular_monarch
+						promote_character = autocracy
 					}
 				}
 			}
 			if = {
 				limit = {
 					has_country_leader = {
-						name = "Franz Ferdinand I"
+						character = AUH_franz_ferdinand_i
 						ruling_only = yes
 					}
 				}
 				HUN = {
-					create_country_leader={
-						name = "I. Ferenc Ferdinánd"
-						picture = "gfx/leaders/AUH/AUH_franz_ferdinand.dds"
-						expire = "1935.1.1"
-						ideology = autocracy
-						traits = { unpopular_monarch trait_autocracy}
+					HUN_franz_ferdinand_i = {
+						add_country_leader_trait = unpopular_monarch
+						promote_character = autocracy
 					}
 				}
 			}
 			if = {
 				limit = {
 					has_country_leader = {
-						name = "Karl I"
+						character = AUH_karl_i
 						ruling_only = yes
 					}
 				}
 				HUN = {
-					create_country_leader = { 
-						name = "IV. Károly"
-						picture = "gfx/leaders/AUH/AUH_karl_i.dds"
-						expire = "1935.1.1"
-						ideology = autocracy
-						traits = { trait_autocracy }
+					HUN_karl_i = {
+						add_country_leader_trait = unpopular_monarch
+						promote_character = autocracy
 					}
 				}
 			}						
@@ -2704,6 +2800,7 @@ country_event = {
 						transfer_state = PREV
 						set_cosmetic_tag = GER_suddeutscher_bund
 						create_faction = danube_adriabund
+						set_capital = { state = 4 }
 					}
 				}
 				set_cosmetic_tag = GER_norddeutscher_bund
@@ -2773,35 +2870,34 @@ country_event = {
 		}
 		if = {
 			limit = {
-				has_global_flag = west_ukrainian_revolt
+				any_country = {
+					exists = yes
+					has_country_flag = joined_brothers_war
+				}
 			}
 			hidden_effect = {
-				if = {
+				every_other_country = {
 					limit = {
-						GAL = {
-							is_subject_of = AUH
+						exists = yes
+						has_country_flag = joined_brothers_war
+						NOT = {
+							has_war_with = PREV
 						}
 					}
-					GAL = {
-						annex_country = {
-							target = WUK
-							transfer_troops = no
+					every_owned_state = {
+						limit = {
+							OR = {
+								is_core_of = PREV.PREV
+								is_claimed_by = PREV.PREV
+							}
+						}
+						PREV.PREV = {
+							transfer_state = PREV
 						}
 					}
-				}
-				else = {
-					AUH = {
-						annex_country = {
-							target = WUK
-							transfer_troops = no
-						}
+					PREV = {
+						puppet = PREV
 					}
-				}
-				every_state = {
-					limit = {
-						is_core_of = WUK
-					}
-					remove_core_of = WUK
 				}
 			}
 		}
@@ -2876,6 +2972,66 @@ country_event = {
 				}
 			}
 			remove_core_of = AUH
+		}
+	}
+}
+
+# Abdication of Franz Ferdinand I
+####################################
+country_event = {
+	id = ww1_austria.38
+	hidden = yes
+	trigger = {
+		tag = AUH
+		has_country_flag = great_war_loser
+		has_country_leader = {
+			character = AUH_franz_ferdinand_i
+			ruling_only = no
+		}
+		has_global_flag = interbellum
+	}
+	mean_time_to_happen = {
+		days = 0
+	}
+	immediate = {
+		every_possible_country = {
+			limit = {
+				OR = {
+					has_country_leader = {
+						character = AUH_franz_ferdinand_i
+						ruling_only = no
+					}
+					has_country_leader = {
+						character = HUN_franz_ferdinand_i
+						ruling_only = no
+					}
+					has_country_leader = {
+						character = AUS_franz_ferdinand_i
+						ruling_only = no
+					}
+				}
+			}
+			if = {
+				limit = {
+					original_tag = AUH
+				}
+				retire_character = AUH_franz_ferdinand_i
+			}
+			else_if = {
+				limit = {
+					original_tag = HUN
+				}
+				retire_character = HUN_franz_ferdinand_i
+			}
+			else_if = {
+				limit = {
+					original_tag = AUS
+				}
+				retire_character = AUS_franz_ferdinand_i
+			}
+			else = {
+				retire_ideology_leader = neutrality
+			}
 		}
 	}
 }

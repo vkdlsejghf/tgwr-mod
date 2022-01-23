@@ -1,6 +1,6 @@
 characters={
-	CRO_dr_ante_pavelić={
-		name="dr Ante Pavelić"
+	CRO_dr_ante_pavelic={
+		name="CRO_dr_ante_pavelic"
 		portraits={
 			civilian={
 				large="gfx/leaders/CRO/CRO_Ante_Pavelic.dds"
@@ -19,8 +19,8 @@ characters={
 			id=-1
 		}
 	}
-	CRO_stjepan_radić={
-		name="Stjepan Radić"
+	CRO_stjepan_radic={
+		name="CRO_stjepan_radic"
 		portraits={
 			civilian={
 				large="gfx/leaders/CRO/CRO_Stjepan_Radic.dds"
@@ -37,6 +37,14 @@ characters={
 			traits={ trait_authoritarian_democracy }
 			expire="1935.1.1.1"
 			id=-1
+		}
+	}
+	CRO_ivan_skerlecz = {
+		name = "CRO_ivan_skerlecz"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/CRO/CRO_Ivan_Skerlecz.png"
+			}
 		}
 	}
 }
