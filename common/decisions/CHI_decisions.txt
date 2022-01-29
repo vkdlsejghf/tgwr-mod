@@ -391,7 +391,7 @@ CHI_warlord_era = {
 			}
 			has_global_flag = warlord_era
 			has_country_leader = {
-				name = "Duan Qirui"
+				character = CHI_duan_qirui
 				ruling_only = yes
 			}
 		}
@@ -410,7 +410,7 @@ CHI_warlord_era = {
 			has_global_flag = chinese_warlord_crisis
 			has_global_flag = warlord_era
 			has_country_leader = {
-				name = "Duan Qirui"
+				character = CHI_duan_qirui
 				ruling_only = yes
 			}
 		}
@@ -923,7 +923,7 @@ CHI_warlord_era = {
 					expire = 1935.1.1
 					ideology = despotism
 					traits = {
-						trait_despotism
+						
 					}
 				}
 				every_unit_leader = {
@@ -1037,7 +1037,7 @@ CHI_warlord_era = {
 					expire = "1965.1.1"
 					ideology = authoritarian_democracy 
 					traits = {
-						trait_authoritarian_democracy
+						
 					}
 				}
 				create_corps_commander = {
@@ -2215,7 +2215,7 @@ CHI_chinese_warlords = {
 			XSM = {
 				if = {
 					limit = {
-						is_in_faction_with = QIN
+						is_in_faction_with = PREV
 					}
 					leave_faction = yes
 				}
@@ -2227,8 +2227,9 @@ CHI_chinese_warlords = {
 			modifier = {
 				add = 1
 				original_tag = QIN
-				has_army_manpower = {
-					size > 250000
+				strength_ratio = {
+					tag = XSM
+					ratio > 1
 				}
 				PRC = {
 					exists = no
@@ -2275,7 +2276,7 @@ CHI_chinese_warlords = {
 			SHX = {
 				if = {
 					limit = {
-						is_in_faction_with = QIN
+						is_in_faction_with = PREV
 					}
 					leave_faction = yes
 				}
@@ -2287,8 +2288,9 @@ CHI_chinese_warlords = {
 			modifier = {
 				add = 1
 				original_tag = QIN
-				has_army_manpower = {
-					size > 250000
+				strength_ratio = {
+					tag = SHX
+					ratio > 1
 				}
 				SDC = {
 					exists = no
@@ -2332,7 +2334,7 @@ CHI_chinese_warlords = {
 			SIK = {
 				if = {
 					limit = {
-						is_in_faction_with = QIN
+						is_in_faction_with = PREV
 					}
 					leave_faction = yes
 				}
@@ -2344,8 +2346,9 @@ CHI_chinese_warlords = {
 			modifier = {
 				add = 1
 				original_tag = QIN
-				has_army_manpower = {
-					size > 250000
+				strength_ratio = {
+					tag = SIK
+					ratio > 1
 				}
 				XSM = {
 					exists = no
@@ -2389,7 +2392,7 @@ CHI_chinese_warlords = {
 			YUN = {
 				if = {
 					limit = {
-						is_in_faction_with = QIN
+						is_in_faction_with = PREV
 					}
 					leave_faction = yes
 				}
@@ -2401,8 +2404,9 @@ CHI_chinese_warlords = {
 			modifier = {
 				add = 1
 				original_tag = QIN
-				has_army_manpower = {
-					size > 250000
+				strength_ratio = {
+					tag = YUN
+					ratio > 1
 				}
 				GXC = {
 					exists = no
@@ -2415,6 +2419,15 @@ CHI_chinese_warlords = {
 				}
 				JNC = {
 					exists = no
+				}
+			}
+			modifier = {
+				add = 1
+				original_tag = CHI
+				has_country_flag = great_war_winner
+				strength_ratio = {
+					tag = YUN
+					ratio > 1
 				}
 			}
 		}
@@ -2455,7 +2468,7 @@ CHI_chinese_warlords = {
 			GXC = {
 				if = {
 					limit = {
-						is_in_faction_with = QIN
+						is_in_faction_with = PREV
 					}
 					leave_faction = yes
 				}
@@ -2467,14 +2480,24 @@ CHI_chinese_warlords = {
 			modifier = {
 				add = 1
 				original_tag = QIN
-				has_army_manpower = {
-					size > 250000
+				strength_ratio = {
+					tag = GXC
+					ratio > 1
 				}
 				JNC = {
 					exists = no
 				}
 				HNC = {
 					exists = no
+				}
+			}
+			modifier = {
+				add = 1
+				original_tag = CHI
+				has_country_flag = great_war_winner
+				strength_ratio = {
+					tag = GXC
+					ratio > 1
 				}
 			}
 		}
@@ -2515,7 +2538,7 @@ CHI_chinese_warlords = {
 			GDC = {
 				if = {
 					limit = {
-						is_in_faction_with = QIN
+						is_in_faction_with = PREV
 					}
 					leave_faction = yes
 				}
@@ -2527,8 +2550,9 @@ CHI_chinese_warlords = {
 			modifier = {
 				add = 1
 				original_tag = QIN
-				has_army_manpower = {
-					size > 250000
+				strength_ratio = {
+					tag = GDC
+					ratio > 1
 				}
 				JNC = {
 					exists = no
@@ -2575,7 +2599,7 @@ CHI_chinese_warlords = {
 			JXC = {
 				if = {
 					limit = {
-						is_in_faction_with = QIN
+						is_in_faction_with = PREV
 					}
 					leave_faction = yes
 				}
@@ -2586,8 +2610,9 @@ CHI_chinese_warlords = {
 			base = 0
 			modifier = {
 				add = 100
-				has_army_manpower = {
-					size > 250000
+				strength_ratio = {
+					tag = JXC
+					ratio > 1
 				}
 			}
 		}
@@ -2628,7 +2653,7 @@ CHI_chinese_warlords = {
 			HNC = {
 				if = {
 					limit = {
-						is_in_faction_with = QIN
+						is_in_faction_with = PREV
 					}
 					leave_faction = yes
 				}
@@ -2639,8 +2664,9 @@ CHI_chinese_warlords = {
 			base = 0
 			modifier = {
 				add = 100
-				has_army_manpower = {
-					size > 250000
+				strength_ratio = {
+					tag = HNC
+					ratio > 1
 				}
 			}
 		}
@@ -2681,7 +2707,7 @@ CHI_chinese_warlords = {
 			JNC = {
 				if = {
 					limit = {
-						is_in_faction_with = QIN
+						is_in_faction_with = PREV
 					}
 					leave_faction = yes
 				}
@@ -2693,8 +2719,9 @@ CHI_chinese_warlords = {
 			modifier = {
 				add = 100
 				original_tag = CHI
-				has_army_manpower = {
-					size > 250000
+				strength_ratio = {
+					tag = JNC
+					ratio > 1
 				}
 			}
 		}
@@ -2735,7 +2762,7 @@ CHI_chinese_warlords = {
 			GZC = {
 				if = {
 					limit = {
-						is_in_faction_with = QIN
+						is_in_faction_with = PREV
 					}
 					leave_faction = yes
 				}
@@ -2746,8 +2773,9 @@ CHI_chinese_warlords = {
 			base = 0
 			modifier = {
 				add = 100
-				has_army_manpower = {
-					size > 250000
+				strength_ratio = {
+					tag = GZC
+					ratio > 1
 				}
 			}
 		}
@@ -2788,7 +2816,7 @@ CHI_chinese_warlords = {
 			SCC = {
 				if = {
 					limit = {
-						is_in_faction_with = QIN
+						is_in_faction_with = PREV
 					}
 					leave_faction = yes
 				}
@@ -2799,8 +2827,9 @@ CHI_chinese_warlords = {
 			base = 0
 			modifier = {
 				add = 100
-				has_army_manpower = {
-					size > 250000
+				strength_ratio = {
+					tag = SCC
+					ratio > 1
 				}
 			}
 		}
@@ -2841,7 +2870,7 @@ CHI_chinese_warlords = {
 			SDC = {
 				if = {
 					limit = {
-						is_in_faction_with = QIN
+						is_in_faction_with = PREV
 					}
 					leave_faction = yes
 				}
@@ -2852,8 +2881,9 @@ CHI_chinese_warlords = {
 			base = 0
 			modifier = {
 				add = 100
-				has_army_manpower = {
-					size > 250000
+				strength_ratio = {
+					tag = SDC
+					ratio > 1
 				}
 			}
 		}
@@ -2894,7 +2924,7 @@ CHI_chinese_warlords = {
 			PRC = {
 				if = {
 					limit = {
-						is_in_faction_with = QIN
+						is_in_faction_with = PREV
 					}
 					leave_faction = yes
 				}
@@ -2905,8 +2935,14 @@ CHI_chinese_warlords = {
 			base = 0
 			modifier = {
 				add = 100
-				has_army_manpower = {
-					size > 250000
+				NOT = {
+					PRC = {
+						has_government = communism
+					}
+				}
+				strength_ratio = {
+					tag = PRC
+					ratio > 1
 				}
 			}
 		}
@@ -2947,7 +2983,7 @@ CHI_chinese_warlords = {
 			FNG = {
 				if = {
 					limit = {
-						is_in_faction_with = QIN
+						is_in_faction_with = PREV
 					}
 					leave_faction = yes
 				}
@@ -2957,9 +2993,20 @@ CHI_chinese_warlords = {
 		ai_will_do = {
 			base = 0
 			modifier = {
-				add = 100
-				has_army_manpower = {
-					size > 250000
+				add = 10
+				strength_ratio = {
+					tag = FNG
+					ratio > 1
+				}
+				FNG = {
+					all_country = {
+						is_major = yes
+						NOT = {
+							has_guaranteed = PREV
+							has_subject = PREV
+							is_in_faction_with = PREV
+						}
+					}
 				}
 			}
 		}
@@ -3154,6 +3201,61 @@ CHI_chinese_warlords = {
 				strength_ratio = {
 					tag = HNC
 					ratio > 2
+				}
+			}
+		}
+	}
+	CHI_JNC_attack_QIN = {
+		icon = generic_prepare_civil_war
+		allowed = {
+			original_tag = JNC
+		}
+		target_trigger = {
+			FROM = {
+				tag = QIN
+			}
+		}
+		war_with_on_remove = QIN
+		visible = {
+			QIN = {
+				exists = yes
+				NOT = {
+					has_war_with = PREV
+				}
+			}
+		}
+		available = {
+			QIN = {
+				exists = yes
+			}
+			has_war = no
+			is_neighbor_of = QIN
+		}
+		cost = 100
+		days_remove = 10
+		fire_only_once = yes
+		remove_effect = {
+			every_state = {
+				limit = {
+					is_core_of = QIN
+				}
+				add_core_of = QIN
+			}
+			leave_faction = yes
+			declare_war_on = {
+				target = QIN
+				type = civil_war
+			}
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 100
+				QIN = {
+					has_war_with = FNG
+				}
+				NOT = {
+					has_war_with = FNG
 				}
 			}
 		}
@@ -4114,51 +4216,33 @@ political_actions = {
 		}
 		available = {
 			has_global_flag = national_protection_war
-			has_government = fascism
+			has_global_flag = yuan_shikai_dead
 			has_war = no
-			OR = {
-				has_global_flag = yuan_shikai_dead
-				has_country_leader = {
-					name = "Duan Qirui"
-					ruling_only = yes
-				}
-			}
 		}
 		ai_will_do = {
 			factor = 100
 		}
 		cost = 150
 		visible = {
+			has_completed_focus = CHI_second_empire
 			has_government = fascism
-			OR = {
-				has_country_leader = {
-					name = "Hongxian Emperor"
-					ruling_only = yes
-				}
-				has_global_flag = yuan_shikai_dead
-				has_country_leader = {
-					name = "Duan Qirui"
-					ruling_only = yes
-				}
-			}
-			NOT = {
-				has_country_leader = {
-					name = "Yuan Keding"
-					ruling_only = yes
-				}
-			}
 		}
 		fire_only_once = yes
 		complete_effect = {
-			retire_ideology_leader = fascism
-			create_country_leader = {
-				name = "Yuan Keding"
-				picture = "gfx/leaders/CHI/CHI_Yuan_Keding.dds"
-				expire = "1935.1.1"
-				ideology = fascism_ideology
-				traits = {
-					divisive_emperor
-					trait_proto_fascism
+			add_country_leader_role = {
+				character = CHI_yuan_keding
+				country_leader = {
+					ideology = fascism_ideology
+					traits = {
+						divisive_emperor
+						
+					}
+					
+				}
+			}
+			CHI_yuan_keding = {
+				promote_character = {
+					ideology = fascism_ideology
 				}
 			}
 		}
@@ -4169,60 +4253,103 @@ GER_great_war = {
 	CHI_join_entente = {
 		icon = generic_prepare_civil_war
 		allowed = {
-			tag = CHI
+			is_china_or_warlord = yes
 		}
 		visible = {
-			hidden_trigger = {
-				has_global_flag = duan_qirui_great_war
-			}
-			has_global_flag = great_war
+			is_subject = no
 			NOT = {
 				has_global_flag = great_war_ends
+				has_global_flag = GER_capitulation
+				has_global_flag = FRA_capitulation
 				has_war_with = GER
 				has_war_with = FRA
 			}
 			GER = {
 				has_war_with = FRA
 			}
-			has_country_leader = {
-				name = "Duan Qirui"
-				ruling_only = yes
+			OR = {
+				AND = {
+					has_country_leader = {
+						character = CHI_duan_qirui
+						ruling_only = yes
+					}
+					hidden_trigger = {
+						has_global_flag = duan_qirui_great_war
+					}
+				}
+				AND = {
+					has_country_flag = reunited_china
+					has_global_flag = warlord_era_end
+				}
+				AND = {
+					tag = QIN
+					NOT = {
+						has_global_flag = warlord_era
+					}
+				}
+				AND = {
+					tag = CHI
+					has_government = fascism
+					has_global_flag = national_protection_war
+				}
 			}
-			is_subject = no
 		}
 		available = {
 			has_war = no
-			has_global_flag = constitutional_protection_war
+			if = {
+				limit = {
+					has_country_leader = {
+						character = CHI_duan_qirui
+						ruling_only = yes
+					}
+				}
+				has_global_flag = constitutional_protection_war
+				NOT = {
+					country_exists = GXC
+				}
+			}
+			else = {
+				any_country = {
+					has_war_with = PREV
+					is_major = yes
+					is_in_faction_with = GER
+				}
+			}
 			NOT = {
-				country_exists = GXC
 				has_idea = CHI_idea_government_divided
-				has_global_flag = CHI_government_split_mission
 				is_in_faction_with = FRA
 				is_in_faction_with = GER
+			}
+			OR = {
+				NOT = {
+					has_global_flag = CHI_government_split_mission
+				}
+				has_global_flag = warlord_era_end
 			}
 		}
 		cancel_trigger = {
 			OR = {
 				has_war = yes
-				is_subject = no
+				is_subject = yes
 				has_idea = CHI_idea_government_divided
-				has_global_flag = CHI_government_split_mission
 				is_in_faction_with = FRA
 				is_in_faction_with = GER
-				NOT = {
-					has_country_leader = {
-						name = "Duan Qirui"
-						ruling_only = yes
+				has_global_flag = great_war_ends
+				has_global_flag = GER_capitulation
+				has_global_flag = FRA_capitulation
+				has_war_with = GER
+				has_war_with = FRA
+				AND = {
+					has_global_flag = CHI_government_split_mission
+					NOT = {
+						has_global_flag = warlord_era_end
 					}
 				}
 			}
 		}
 		cost = 200
 		days_remove = 70
-		fire_only_once = yes
-		complete_effect = {
-			add_stability = -0.1
-		}
+		fire_only_once = no
 		remove_effect = {
 			FRA = {
 				country_event = generic.2
@@ -4232,9 +4359,143 @@ GER_great_war = {
 			add_political_power = 200
 		}
 		ai_will_do = {
-			factor = 10
+			base = 0
+			modifier = {
+				add = 10
+				has_country_leader = {
+					character = CHI_duan_qirui
+					ruling_only = yes
+				}
+			}
+			modifier = {
+				add = 1
+				has_government = democratic
+			}
 		}
 	}
+	CHI_join_cp = {
+		icon = generic_prepare_civil_war
+		allowed = {
+			is_china_or_warlord = yes
+		}
+		visible = {
+			is_subject = no
+			NOT = {
+				has_global_flag = great_war_ends
+				has_global_flag = GER_capitulation
+				has_global_flag = FRA_capitulation
+				has_war_with = GER
+				has_war_with = FRA
+				hidden_trigger = {
+					has_global_flag = duan_qirui_great_war
+				}
+			}
+			GER = {
+				has_war_with = FRA
+			}
+			OR = {
+				AND = {
+					has_country_flag = reunited_china
+					has_global_flag = warlord_era_end
+				}
+				AND = {
+					tag = QIN
+					NOT = {
+						has_global_flag = warlord_era
+					}
+				}
+				AND = {
+					tag = CHI
+					OR = {
+						AND = {
+							has_government = fascism
+							has_global_flag = national_protection_war
+						}
+						any_country = {
+							has_war_with = PREV
+							is_major = yes
+							is_in_faction_with = FRA
+						}
+					}
+				}
+			}
+		}
+		available = {
+			has_war = no
+			if = {
+				limit = {
+					has_country_leader = {
+						character = CHI_duan_qirui
+						ruling_only = yes
+					}
+				}
+				has_global_flag = constitutional_protection_war
+				NOT = {
+					country_exists = GXC
+				}
+			}
+			NOT = {
+				has_idea = CHI_idea_government_divided
+				is_in_faction_with = FRA
+				is_in_faction_with = GER
+			}
+			OR = {
+				NOT = {
+					has_global_flag = CHI_government_split_mission
+				}
+				has_global_flag = warlord_era_end
+			}
+		}
+		cancel_trigger = {
+			OR = {
+				has_war = yes
+				is_subject = yes
+				has_idea = CHI_idea_government_divided
+				is_in_faction_with = FRA
+				is_in_faction_with = GER
+				has_global_flag = great_war_ends
+				has_global_flag = GER_capitulation
+				has_global_flag = FRA_capitulation
+				has_war_with = GER
+				has_war_with = FRA
+				AND = {
+					has_global_flag = CHI_government_split_mission
+					NOT = {
+						has_global_flag = warlord_era_end
+					}
+				}
+			}
+		}
+		cost = 200
+		days_remove = 70
+		fire_only_once = no
+		remove_effect = {
+			GER = {
+				country_event = generic.2
+			}
+		}
+		cancel_effect = {
+			add_political_power = 200
+		}
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 10
+				has_government = fascism
+			}
+			modifier = {
+				add = 1
+				OR = {
+					original_tag = QIN
+					has_cosmetic_tag = QIN
+					has_cosmetic_tag = QIN_government
+					has_cosmetic_tag = QIN_democratic
+				}
+			}
+		}
+	}
+	# HISTORICAL DECISION ONLY FOR BEIYANG GOVERNMENT WITH DUAN QIRUI
+	#####################################################################
 	CHI_join_great_war = {
 		icon = generic_prepare_civil_war
 		allowed = {
@@ -4243,6 +4504,7 @@ GER_great_war = {
 		visible = {
 			has_global_flag = great_war
 			NOT = {
+				has_global_flag = duan_qirui_great_war
 				has_global_flag = great_war_ends
 				has_war_with = GER
 				has_war_with = FRA
@@ -4251,7 +4513,7 @@ GER_great_war = {
 				has_war_with = FRA
 			}
 			has_country_leader = {
-				name = "Duan Qirui"
+				character = CHI_duan_qirui
 				ruling_only = yes
 			}
 			is_subject = no
@@ -4272,7 +4534,7 @@ GER_great_war = {
 				is_in_faction_with = GER
 				NOT = {
 					has_country_leader = {
-						name = "Duan Qirui"
+						character = CHI_duan_qirui
 						ruling_only = yes
 					}
 				}
@@ -4280,7 +4542,7 @@ GER_great_war = {
 		}
 		cost = 75
 		days_remove = 210
-		fire_only_once = yes
+		fire_only_once = no
 		complete_effect = {
 			add_stability = -0.1
 		}

@@ -12,11 +12,11 @@ spriteTypes = {
 	}
 	spriteType = {
 		name = "GFX_ideology_autocracy"
-		texturefile = "gfx/interface/ideologies/autocracy.dds"
+		texturefile = "gfx/interface/ideologies/despotism.dds"
 	}
 	spriteType = {
 		name = "GFX_ideology_theocracy"
-		texturefile = "gfx/interface/ideologies/autocracy.dds"
+		texturefile = "gfx/interface/ideologies/despotism.dds"
 	}
 	spriteType = {
 		name = "GFX_ideology_despotism"
@@ -32,6 +32,10 @@ spriteTypes = {
 	}	
 	spriteType = {
 		name = "GFX_ideology_conservatism"
+		texturefile = "gfx/interface/ideologies/conservatism.dds"
+	}
+	spriteType = {
+		name = "GFX_ideology_liberal_conservatism"
 		texturefile = "gfx/interface/ideologies/conservatism.dds"
 	}
 	spriteType = {
@@ -286,6 +290,10 @@ spriteTypes = {
 		texturefile = "gfx/interface/ideologies/MON_theocracy.dds"
 	}
 	spriteType = {
+		name = "GFX_ideology_TIB_theocracy"
+		texturefile = "gfx/interface/ideologies/TIB_theocracy.dds"
+	}
+	spriteType = {
 		name = "GFX_ideology_NIR_autocracy"
 		texturefile = "gfx/interface/ideologies/NIR_autocracy.dds"
 	}
@@ -337,11 +345,15 @@ spriteTypes = {
 		name = "GFX_ideology_CHA_autocracy"
 		texturefile = "gfx/interface/ideologies/CHA_autocracy.dds"
 	}
+	spriteType = {
+		name = "GFX_ideology_HAW_autocracy"
+		texturefile = "gfx/interface/ideologies/HAW_autocracy.png"
+	}
 
 	#Socialism
 	spriteType = {
 		name = "GFX_ideology_anarchist_communism"
-		texturefile = "gfx/interface/ideologies/anarchist_communism.dds"
+		texturefile = "gfx/interface/ideologies/anarchism.dds"
 	}
 	spriteType = {
 		name = "GFX_ideology_market_socialism"

@@ -25,13 +25,15 @@ country_event = {
 			long_name = UBD_neutrality_duke_party
 			name = UBD_neutrality_duke_party
 		}
-		create_country_leader = {
-			name = "Adolf Friedrich"
-			picture = "gfx/leaders/UBD/UBD_adolf_friedrich.dds"
-			expire = "1935.1.1"
-			ideology = autocracy
-			traits = {
-				trait_autocracy
+		UBD_adolf_friedrich = {
+			add_country_leader_role = {
+				promote_leader = yes
+				country_leader = {
+					ideology = autocracy
+					traits = {
+						german_agent		
+					}
+				}
 			}
 		}
 		hidden_effect = {
@@ -43,7 +45,7 @@ country_event = {
 					expire = "1935.1.1"
 					ideology = oligarchism
 					traits = {
-						trait_oligarchism
+						
 					}
 				}
 			}

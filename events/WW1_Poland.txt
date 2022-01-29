@@ -141,7 +141,7 @@ country_event = {
 			traits = { 
 			    nationalist_symbol 
 				dislikes_russia 
-				trait_authoritarian_democracy
+				
 			} 
 		}
 		set_cosmetic_tag = POL_republic
@@ -152,7 +152,7 @@ country_event = {
 				picture = "gfx/leaders/POL/POL_ignacy_daszynski.dds" 
 				expire = "1935.1.1" 
 				ideology = reformist_socialism
-				traits = { trait_reformist_socialism }
+				
 			}			
 		}	
 		set_party_name = { ideology = neutrality name = POL_pilsudski_party long_name = POL_pilsudski_party}
@@ -225,7 +225,7 @@ country_event = {
 					traits = { 
 					    revolutionary_general
 					    dislikes_russia
-						trait_reformist_socialism
+						
 					} 
 				}
 				set_cosmetic_tag = POL_republic
@@ -268,7 +268,7 @@ country_event = {
 				picture = "gfx/leaders/POL/POL_felix_dzerzhinsky.dds" 
 				expire = "1935.1.1" 
 				ideology = vanguardism
-				traits = { prince_of_terror trait_vanguardism } 
+				traits = { prince_of_terror  } 
 			}
 			set_party_name = { ideology = communism name = POL_polrewkom_party long_name = POL_polrewkom_party_long }
 			set_cosmetic_tag = POL_SOVIET
@@ -283,7 +283,7 @@ country_event = {
 				picture = "gfx/leaders/POL/POL_felix_dzerzhinsky.dds" 
 				expire = "1935.1.1" 
 				ideology = vanguardism
-				traits = { prince_of_terror trait_vanguardism } 
+				traits = { prince_of_terror  } 
 			}
 			set_party_name = { ideology = communism name = POL_polrewkom_party long_name = POL_polrewkom_party_long }
 			set_cosmetic_tag = POL_SOVIET
@@ -309,7 +309,7 @@ country_event = {
 			picture = "gfx/leaders/POL/POL_ignacy_daszynski.dds" 
 			expire = "1935.1.1" 
 			ideology = reformist_socialism
-			traits = { trait_reformist_socialism } 
+			 
 		}
 		set_party_name = { ideology = communism name = POL_communism_party long_name = POL_communism_party_long }
 		drop_cosmetic_tag = yes
@@ -455,7 +455,7 @@ country_event = {
 			expire = "1935.1.1"
 			ideology = autocracy
 			traits = {
-				trait_autocracy
+				
 			}
 		}
 		every_country = {
@@ -486,7 +486,7 @@ country_event = {
 			expire = "1935.1.1"
 			ideology = autocracy
 			traits = {
-				trait_autocracy
+				
 			}
 		}
 		every_country = {
@@ -513,11 +513,11 @@ country_event = {
 		name = ww1_poland.9.c #	Wettin
 		create_country_leader = {
 			name = "Fryderyk Krystian I"
-			picture = "gfx/leaders/SAX/SAX_Friedrich_Christian_von_Wettin.dds"
+			picture = "gfx/leaders/SAX/SAX_Friedrich_Christian_von_Wettin.png"
 			expire = "1935.1.1"
 			ideology = autocracy
 			traits = {
-				trait_autocracy
+				
 			}
 		}
 		set_party_name = {
@@ -543,7 +543,7 @@ country_event = {
 			ideology = autocracy
 			traits = {
 				auwi
-				trait_autocracy
+				
 			}
 		}
 		set_party_name = {
@@ -555,7 +555,8 @@ country_event = {
 	}
 }
 
-# DANZIG
+# GDANSK
+###########
 country_event = {
 	id = ww1_poland.10
 	hidden = yes
@@ -565,6 +566,12 @@ country_event = {
 		has_global_flag = great_war_ends
 		has_global_flag = versallies_treaty
 		owns_state = 404
+		GER = {
+			owns_state = 763
+			NOT = {
+				is_subject_of = PREV
+			}
+		}
 		has_war = yes
 		NOT = {
 			has_country_flag = danzig_demilitarization
@@ -579,6 +586,8 @@ country_event = {
 		set_country_flag = danzig_demilitarization
 	}
 }
+# GDANSK
+###########
 country_event = {
 	id = ww1_poland.11
 	hidden = yes
@@ -588,6 +597,12 @@ country_event = {
 		has_global_flag = great_war_ends
 		has_global_flag = versallies_treaty
 		owns_state = 404
+		GER = {
+			owns_state = 763
+			NOT = {
+				is_subject_of = PREV
+			}
+		}
 		has_war = no
 		has_country_flag = danzig_demilitarization
 		NOT = {

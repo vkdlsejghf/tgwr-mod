@@ -56,8 +56,9 @@ recruit_character = TUR_ali_riza_paşa
 recruit_character = TUR_salih_hulusi_paşa
 recruit_character = TUR_mehmed_v
 recruit_character = TUR_abdülhamid_ii
-recruit_character = TUR_mehmed_vi
 recruit_character = TUR_yusuf_i
+recruit_character = TUR_yusuf_izzeddin
+recruit_character = TUR_mehmed_vi
 recruit_character = TUR_abdülmecid_ii
 recruit_character = TUR_osman_iv
 recruit_character = TUR_yıldız_teşkilatı_council
@@ -209,8 +210,8 @@ if = {
 	}
 	set_party_name = {
 		ideology = democratic
-		name = TUR_CUP_democratic
-		long_name = TUR_CUP_democratic_long
+		name = TUR_CUP_democratic_party
+		long_name = TUR_CUP_democratic_long_party
 	}
 
     set_variable = { var = opda_lira value = 8.258 }
@@ -645,9 +646,9 @@ if = {
 }
 
 757 = {
-	set_state_flag = TUR_greek_state
+	set_state_flag = TUR_southslav_state
 	add_dynamic_modifier = {
-		modifier = TUR_greek_minority
+		modifier = TUR_southslav_minority
 	}
 }
 

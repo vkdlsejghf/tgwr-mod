@@ -1,6 +1,6 @@
 characters={
-	BOS_marijan_varešanin={
-		name="Marijan Varešanin"
+	BOS_marijan_varesanin={
+		name="BOS_marijan_varesanin"
 		portraits={
 			civilian={
 				large="gfx/leaders/BOS/BOS_marijan_varesanin.dds"
@@ -8,9 +8,9 @@ characters={
 		}
 		country_leader={
 			ideology=autocracy
-			traits={ trait_autocracy }
-			expire="1935.1.1.1"
-			id=-1
+			
+			
+			
 		}
 	}
 }

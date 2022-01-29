@@ -116,6 +116,24 @@ country_event = {
 				ruling_only = no
 			}
 		}
+		NOT = {
+			has_country_leader = {
+				name = "Osman IV"
+				ruling_only = yes
+			}
+			has_country_leader = {
+				name = "Osman Fuad"
+				ruling_only = yes
+			}
+			has_country_leader = {
+				name = "Abdülmecid Efendi"
+				ruling_only = yes
+			}
+			has_country_leader = {
+				name = "Abdülmecid II"
+				ruling_only = yes
+			}
+		}
 	}
 	mean_time_to_happen = {
 		days = 1
@@ -140,7 +158,7 @@ country_event = {
 					ideology = autocracy
 					traits = {
 						mehmed_vi
-						trait_autocracy
+						
 					}
 				}
 			}
@@ -182,6 +200,22 @@ country_event = {
 		}
 		NOT = {
 			has_country_flag = yusuf_izzettin_suicide
+			has_country_leader = {
+				name = "Osman IV"
+				ruling_only = yes
+			}
+			has_country_leader = {
+				name = "Osman Fuad"
+				ruling_only = yes
+			}
+			has_country_leader = {
+				name = "Abdülmecid Efendi"
+				ruling_only = yes
+			}
+			has_country_leader = {
+				name = "Abdülmecid II"
+				ruling_only = yes
+			}
 		}
 	}
 	option = {
@@ -207,7 +241,7 @@ country_event = {
 				traits = {
 					hero_of_CUP_trials
 					legitimate_heir
-					trait_autocracy
+					
 				}
 			}
 		}
@@ -250,6 +284,10 @@ country_event = {
 	}
 	option = {
 		name = ww1_ottoman.10.a
+		retire_character = TUR_yusuf_izzeddin
+		hidden_effect = {
+			retire_character = TUR_yusuf_i
+		}
 		set_country_flag = yusuf_izzettin_suicide
 		custom_effect_tooltip = vahdettin_succeeds_mehmed_tt
 	}
@@ -337,7 +375,7 @@ country_event = {
 					expire = "1935.1.1"
 					ideology = autocracy
 					traits = {
-						trait_autocracy
+						
 					}
 				}
 				every_state = {
@@ -583,20 +621,24 @@ country_event = {
 					}
 				}
 				set_popularities = {
-					democratic = 0
-					fascism = 18
+					democratic = 18
+					fascism = 64
 					communism = 0
-					neutrality = 82
+					neutrality = 18
+				}
+				set_politics = {
+					ruling_party = fascism
+					elections_allowed = no
 				}
 				create_country_leader = {
 					name = "Ismail Enver Paşa"
 					picture = "gfx/leaders/TUR/TUR_enver_pasha.dds"
 					expire = "1935.1.1"
-					ideology = despotism
+					ideology = fascism_ideology
 					traits = {
 						tur_national_hero
 						eng_civil_war_trait
-						trait_despotism
+						
 					}
 				}
 				load_focus_tree = {
@@ -626,6 +668,14 @@ country_event = {
 		news_event = ww1_ottoman.49
 		set_country_flag = TUR_purge_radical_ittihadists
 		set_country_flag = TUR_purge_ittihadists
+		hidden_effect = {
+			set_popularities = {
+				democratic = 5
+				neutrality = 25
+				fascism = 68
+				communism = 2
+			}
+		}
 		every_unit_leader = {
 			limit = {
 				OR = {
@@ -692,7 +742,7 @@ country_event = {
 					ideology = fascism_ideology
 					traits = {
 						tur_national_hero
-						trait_proto_fascism
+						
 						eng_civil_war_trait
 					}
 				}
@@ -720,6 +770,14 @@ country_event = {
 	option = {
 		name = ww1_ottoman.26.a
 		news_event = ww1_ottoman.49
+		hidden_effect = {
+			set_popularities = {
+				democratic = 5
+				communism = 10
+				fascism = 10
+				neutrality = 75
+			}
+		}
 		every_unit_leader = {
 			limit = {
 				OR = {
@@ -885,7 +943,7 @@ country_event = {
 			ideology = autocracy
 			traits = {
 				inexperienced_imperialist
-				trait_autocracy
+				
 			}
 		}
 		ai_chance = {
@@ -929,75 +987,75 @@ country_event = {
 	}
 }
 
-####islamist civil war over
-country_event = {
-	id = ww1_ottoman.31
-	title = ww1_ottoman.31.t
-	desc = ww1_ottoman.31.d
-	picture = GFX_report_event_generic_rally
-	fire_only_once = yes
-	is_triggered_only = yes
-	trigger = {
-		tag = TUR
-		has_civil_war = no
-		has_completed_focus = TUR_ittihadi_muhammedi
-		OR = {
-			has_country_flag = TUR_hareket_ordusu_uprising
-			has_completed_focus = TUR_compromise_with_ittihadists
-		}
-	}
-	option = {
-		name = ww1_ottoman.31.b
-		remove_ideas = TUR_sultan_mehmed_v
-		remove_ideas = TUR_sultan_mehmed_v_puppet
-		create_country_leader = {
-			name = "Yusuf I"
-			picture = "gfx/leaders/TUR/TUR_yusuf_izzedidin_efendi.dds"
-			expire = "1935.1.1"
-			ideology = autocracy
-			traits = {
-				tgwr_caliph
-				trait_autocracy
-			}
-		}
-		ai_chance = {
-			factor = 1
-		}
-	}
-	option = {
-		###easter egg)))
-		name = ww1_ottoman.31.c
-		trigger = {
-			has_country_flag = TUR_hareket_ordusu_uprising
-		}
-		create_country_leader = {
-			name = "Abdulhamid II"
-			picture = "gfx/leaders/TUR/TUR_abdulhamid_ii.dds"
-			expire = "1935.1.1"
-			ideology = autocracy
-			traits = {
-				tgwr_caliph
-				abdulhamid
-				trait_autocracy
-			}
-		}
-		if = {
-			limit = {
-				has_idea = TUR_sultan_mehmed_v
-			}
-			remove_ideas = TUR_sultan_mehmed_v
-		}
-		if = {
-			limit = {
-				has_idea = TUR_sultan_mehmed_v_puppet
-			}
-			remove_ideas = TUR_sultan_mehmed_v_puppet
-		}
-		ai_chance = {
-			factor = 0
-		}
-	}
-}
+# ####islamist civil war over
+# country_event = {
+# 	id = ww1_ottoman.31
+# 	title = ww1_ottoman.31.t
+# 	desc = ww1_ottoman.31.d
+# 	picture = GFX_report_event_generic_rally
+# 	fire_only_once = yes
+# 	is_triggered_only = yes
+# 	trigger = {
+# 		tag = TUR
+# 		has_civil_war = no
+# 		has_completed_focus = TUR_ittihadi_muhammedi
+# 		OR = {
+# 			has_country_flag = TUR_hareket_ordusu_uprising
+# 			has_completed_focus = TUR_compromise_with_ittihadists
+# 		}
+# 	}
+# 	option = {
+# 		name = ww1_ottoman.31.b
+# 		remove_ideas = TUR_sultan_mehmed_v
+# 		remove_ideas = TUR_sultan_mehmed_v_puppet
+# 		create_country_leader = {
+# 			name = "Yusuf I"
+# 			picture = "gfx/leaders/TUR/TUR_yusuf_izzedidin_efendi.dds"
+# 			expire = "1935.1.1"
+# 			ideology = autocracy
+# 			traits = {
+# 				tgwr_caliph
+# 				
+# 			}
+# 		}
+# 		ai_chance = {
+# 			factor = 1
+# 		}
+# 	}
+# 	option = {
+# 		###easter egg)))
+# 		name = ww1_ottoman.31.c
+# 		trigger = {
+# 			has_country_flag = TUR_hareket_ordusu_uprising
+# 		}
+# 		create_country_leader = {
+# 			name = "Abdulhamid II"
+# 			picture = "gfx/leaders/TUR/TUR_abdulhamid_ii.dds"
+# 			expire = "1935.1.1"
+# 			ideology = autocracy
+# 			traits = {
+# 				tgwr_caliph
+# 				abdulhamid
+# 				
+# 			}
+# 		}
+# 		if = {
+# 			limit = {
+# 				has_idea = TUR_sultan_mehmed_v
+# 			}
+# 			remove_ideas = TUR_sultan_mehmed_v
+# 		}
+# 		if = {
+# 			limit = {
+# 				has_idea = TUR_sultan_mehmed_v_puppet
+# 			}
+# 			remove_ideas = TUR_sultan_mehmed_v_puppet
+# 		}
+# 		ai_chance = {
+# 			factor = 0
+# 		}
+# 	}
+# }
 
 # Crisis: Millet-i Osmaniye against Socialists
 ####
@@ -1027,7 +1085,7 @@ country_event = {
 					ideology = fascism_ideology
 					traits = {
 						tur_national_hero
-						trait_proto_fascism
+						
 						eng_civil_war_trait
 					}
 				}
@@ -1082,6 +1140,14 @@ country_event = {
 			set_nationality = OTT
 		}
 		set_country_flag = TUR_hareket_ordusu_uprising
+		hidden_effect = {
+			set_popularities = {
+				democratic = 20
+				communism = 50
+				fascism = 10
+				neutrality = 20
+			}
+		}
 		custom_effect_tooltip = TUR_socialist_civilwar_elections
 		ai_chance = {
 			factor = 1
@@ -1140,7 +1206,7 @@ country_event = {
 					ideology = fascism_ideology
 					traits = {
 						tur_national_hero
-						trait_proto_fascism
+						
 						eng_civil_war_trait
 					}
 				}
@@ -1176,6 +1242,14 @@ country_event = {
 				}
 			}
 			set_nationality = OTT
+		}
+		hidden_effect = {
+			set_popularities = {
+				democratic = 5
+				communism = 10
+				fascism = 10
+				neutrality = 75
+			}
 		}
 		ai_chance = {
 			factor = 1
@@ -1729,6 +1803,7 @@ country_event = {
 				OR = {
 					is_core_of = SYR
 					is_claimed_by = SYR
+					is_core_of = LEB
 				}
 			}
 			SYR = {
@@ -1900,7 +1975,7 @@ country_event = {
 			limit = {
 				has_trait = trait_royal
 			}
-			retire = yes
+			remove_unit_leader_role = yes
 		}
 		add_political_power = 150
 		custom_effect_tooltip = TUR_declare_republic
@@ -1981,6 +2056,7 @@ country_event = {
 				OR = {
 					has_id = 34260
 					has_id = 333444
+					has_id = 333445
 				}
 			}
 			set_nationality = TUR
@@ -3619,7 +3695,7 @@ country_event = {
 					picture = "gfx/leaders/EGY/EGY_abbas_ii.dds"
 					expire = "1935.1.1"
 					traits = {
-						trait_autocracy
+						
 					}
 				}
 				drop_cosmetic_tag = yes
@@ -3703,7 +3779,7 @@ country_event = {
 				picture = "gfx/leaders/EGY/EGY_abbas_ii.dds"
 				expire = "1935.1.1"
 				traits = {
-					trait_autocracy
+					
 				}
 			}
 			drop_cosmetic_tag = yes
@@ -3843,8 +3919,8 @@ country_event = {
 		name = ottoman.187.b
 		set_party_name = {
 			ideology = democratic
-			long_name = TUR_CUP_democratic2_long
-			name = TUR_CUP_democratic2
+			long_name = TUR_CUP_democratic2_long_party
+			name = TUR_CUP_democratic2_party
 		}
 		hidden_effect = {
 			set_country_flag = TUR_elected_itf
@@ -3862,45 +3938,15 @@ country_event = {
 		trigger = {
 			date < 1913.11.1
 		}
-		create_country_leader = {
-			name = "Mehmed Kamil Paşa"
-			ideology = classical_liberalism
-			expire = "1935.1.1"
-			picture = "gfx/leaders/TUR/TUR_kamil_pasha.dds"
-			traits = {
-				kamil
-				grand_vizier
-				trait_classical_liberalism
-			}
-		}
+		promote_character = TUR_mehmed_kamil_paşa
 	}
 	option = {
 		name = ottoman.188.b
-		create_country_leader = {
-			name = "Damad Ferid Paşa"
-			ideology = conservatism
-			expire = "1935.1.1"
-			picture = "gfx/leaders/TUR/TUR_damat_ferid.tga"
-			traits = {
-				ferit
-				grand_vizier
-				trait_conservatism
-			}
-		}
+		promote_character = TUR_damad_ferid_paşa
 	}
 	option = {
 		name = ottoman.188.c
-		create_country_leader = {
-			name = "Prens Sabahattin"
-			ideology = classical_liberalism
-			expire = "1935.1.1"
-			picture = "gfx/leaders/TUR/TUR_Prens_Sabahaddin.png"
-			traits = {
-				sabahattin
-				grand_vizier
-				trait_classical_liberalism
-			}
-		}
+		promote_character = TUR_prens_sabahattin
 	}
 }
 
@@ -3911,42 +3957,15 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = ottoman.190.a
-		create_country_leader = {
-			name = "Hüseyin Hilmi Bey"
-			ideology = reformist_socialism
-			expire = "1935.1.1"
-			picture = "gfx/leaders/TUR/TUR_Huseyin_Hilmi.png"
-			traits = {
-				istirakci_hilmi
-				trait_reformist_socialism
-			}
-		}
+		promote_character = TUR_hüseyin_hilmi_bey
 	}
 	option = {
 		name = ottoman.190.b
-		create_country_leader = {
-			name = "Refik Nevzat Bey"
-			picture = "gfx/leaders/TUR/TUR_Refik_Nevzat.dds"
-			expire = "1935.1.1"
-			ideology = market_socialism
-			traits = {
-				refiknevzat2
-				trait_market_socialism
-			}
-		}
+		promote_character = TUR_refik_nevzat_bey
 	}
 	option = {
 		name = ottoman.190.c
-		create_country_leader = {
-			name = "Mustafa Suphi Bey"
-			ideology = marxism
-			expire = "1935.1.1"
-			picture = "gfx/leaders/TUR/TUR_Mustafa_Suphi.png"
-			traits = {
-				mustafasuphi
-				trait_marxism
-			}
-		}
+		promote_character = TUR_mustafa_suphi_bey
 		hidden_effect = {
 			set_politics = {
 				ruling_party = communism
@@ -3956,17 +3975,7 @@ country_event = {
 	}
 	option = {
 		name = ottoman.190.f
-		create_country_leader = {
-			name = "Ethem Bey"
-			picture = "gfx/leaders/TUR/TUR_ethem_nejat.dds"
-			expire = "1935.1.1"
-			ideology = vanguardism
-			traits = {
-				ethem
-				turanist
-				trait_vanguardism
-			}
-		}
+		promote_character = TUR_ethem_bey
 		hidden_effect = {
 			set_politics = {
 				ruling_party = communism
@@ -4234,7 +4243,7 @@ country_event = {
 					expire = "1935.1.1"
 					ideology = authoritarian_democracy
 					traits = {
-						trait_authoritarian_democracy
+						
 					}
 				}
 				create_country_leader = {
@@ -4243,7 +4252,7 @@ country_event = {
 					expire = "1935.1.1"
 					ideology = socialism
 					traits = {
-						trait_socialism
+						
 					}
 				}
 			}
@@ -4443,7 +4452,7 @@ country_event = {
 					ideology = autocracy
 					traits = {
 						gentle_scholar
-						trait_autocracy
+						
 					}
 				}
 			}
@@ -4496,7 +4505,7 @@ country_event = {
 			traits = {
 				kamil
 				grand_vizier
-				trait_classical_liberalism
+				
 			}
 		}
 		activate_mission = TUR_CUP_prepares_coup_mission
@@ -4516,7 +4525,7 @@ country_event = {
 				traits = {
 					sevket
 					grand_vizier
-					trait_authoritarian_democracy
+					
 				}
 			}
 		}
@@ -4542,11 +4551,11 @@ country_event = {
 	picture = GFX_report_event_europe_funeral
 	immediate = {
 		set_global_flag = shevket_pasha_dead
-		remove_unit_leader = 90507
+		retire_character = TUR_mahmud_Şevket_paşa
 	}
 	option = {
 		name = ww1_ottoman.118.a
-		kill_country_leader = yes
+		#kill_country_leader = yes
 		create_country_leader = {
 			name = "Mehmed Talat Paşa"
 			picture = "gfx/leaders/TUR/TUR_talat_pasha.dds"
@@ -4554,25 +4563,79 @@ country_event = {
 			ideology = oligarchism
 			traits = {
 				three_pashas
-				trait_oligarchism
+				
 			}
 		}
 		set_country_flag = talat_enver_cemal
-		if = {
-			limit = {
-				NOT = {
-					has_idea = TUR_ismail_enver
-				}
-			}
-			add_ideas = TUR_ismail_enver
+		hidden_effect = {
+			remove_ideas = TUR_ismail_enver
+			remove_ideas = TUR_ahmed_cemal_advisor
 		}
-		if = {
-			limit = {
-				NOT = {
-					has_idea = TUR_ahmed_cemal_advisor
+		add_advisor_role = {
+			character = TUR_ismail_enver_paşa
+			advisor={
+				slot = political_advisor
+				idea_token = TUR_ismail_enver_triumvirate
+				removal_cost = -1
+				cost  = 0
+				traits  = {
+					tur_national_hero 
+				}
+				visible  = {
+					has_country_flag  = talat_enver_cemal 
+					has_country_leader  = {
+						name  = "Mehmed Talat Paşa"
+						ruling_only  = yes 
+					}
+				}
+				available  = {
+					custom_trigger_tooltip  = {
+						tooltip  = TUR_three_pasha_locked_tt
+						has_country_flag  = talat_enver_cemal 
+							has_country_leader  = {
+								name  = "Mehmed Talat Paşa"
+								ruling_only  = yes 
+						}
+					}				
+				}
+				ai_will_do  = {
+					factor  = 100
 				}
 			}
-			add_ideas = TUR_ahmed_cemal_advisor
+			activate = yes
+		}
+		add_advisor_role = {
+			character = TUR_ahmed_cemal_paşa
+			advisor={
+				slot = political_advisor
+				idea_token = TUR_ahmed_cemal_triumvirate
+				removal_cost = -1
+				cost  = 0
+				traits  = {
+					prince_of_terror 
+				}
+				visible  = {
+					has_country_flag  = talat_enver_cemal 
+					has_country_leader  = {
+						name  = "Mehmed Talat Paşa"
+						ruling_only  = yes 
+					}
+				}
+				available  = {
+					custom_trigger_tooltip  = {
+						tooltip  = TUR_three_pasha_locked_tt
+						has_country_flag  = talat_enver_cemal 
+						has_country_leader  = {
+							name  = "Mehmed Talat Paşa"
+							ruling_only  = yes 
+						}
+					}				
+				}
+				ai_will_do  = {
+					factor  = 100
+				}
+			}
+			activate = yes
 		}
 		ai_chance = {
 			base = 1
@@ -4605,7 +4668,7 @@ country_event = {
 			ideology = authoritarian_democracy
 			traits = {
 				three_pashas_2
-				trait_authoritarian_democracy
+				
 			}
 		}
 		if = {
@@ -4653,7 +4716,7 @@ country_event = {
 	}
 	option = {
 		name = ww1_ottoman.118.c
-		kill_country_leader = yes
+		#kill_country_leader = yes
 		create_country_leader = {
 			name = "Ismail Enver Paşa"
 			ideology = despotism
@@ -4661,7 +4724,7 @@ country_event = {
 			expire = "1935.1.1"
 			traits = {
 				tur_national_hero
-				trait_despotism
+				
 			}
 		}
 		ai_chance = {
@@ -4780,6 +4843,10 @@ country_event = {
 	trigger = {
 		original_tag = TUR
 		date > 1911.11.1
+		NOT = {
+			has_completed_focus = TUR_trial_of_freedom_and_accord
+			has_completed_focus = TUR_yildiz_teskilati
+		}
 	}
 	mean_time_to_happen = {
 		days = 21
@@ -4801,7 +4868,7 @@ country_event = {
 			traits = {
 				kamil
 				grand_vizier
-				trait_classical_liberalism
+				
 			}
 		}
 		add_popularity = {
@@ -4838,7 +4905,7 @@ country_event = {
 	fire_only_once = yes
 	option = {
 		name = ww1_ottoman.140.a
-		kill_country_leader = yes
+		#kill_country_leader = yes
 		create_country_leader = {
 			name = "Damad Ferid Paşa"
 			ideology = classical_liberalism
@@ -4846,7 +4913,7 @@ country_event = {
 			expire = "1935.1.1"
 			traits = {
 				liberal_democratic_paragon
-				trait_classical_liberalism
+				
 				grand_vizier
 			}
 		}
@@ -4879,7 +4946,7 @@ country_event = {
 					has_id = 90507
 				}
 			}
-			retire = yes
+			remove_unit_leader_role = yes
 		}
 		set_country_flag = TUR_purge_radical_ittihadists
 	}
@@ -4897,7 +4964,7 @@ country_event = {
 					has_trait = trait_TUR_ittihadist_sympathies
 				}
 			}
-			retire = yes
+			remove_unit_leader_role = yes
 		}
 		set_country_flag = TUR_purge_radical_ittihadists
 		set_country_flag = TUR_purge_ittihadists
@@ -4934,7 +5001,7 @@ country_event = {
 			picture = "gfx/leaders/TUR/TUR_Huseyin_Hilmi.png"
 			traits = {
 				istirakci_hilmi
-				trait_reformist_socialism
+				
 			}
 		}
 		add_popularity = {
@@ -5107,6 +5174,13 @@ country_event = {
 	title = ww1_ottoman.124.t
 	desc = ww1_ottoman.124.d
 	is_triggered_only = yes
+	trigger = {
+		original_tag = TUR
+		NOT = {
+			has_completed_focus = TUR_dissolve_chamber_of_deputies
+			has_completed_focus = TUR_trial_of_freedom_and_accord
+		}
+	}
 	option = {
 		name = ww1_ottoman.124.a
 		add_popularity = {
@@ -5215,7 +5289,7 @@ country_event = {
 			traits = {
 				kamil
 				grand_vizier
-				trait_classical_liberalism
+				
 			}
 		}
 	}
@@ -5231,7 +5305,7 @@ country_event = {
 			traits = {
 				sevket
 				grand_vizier
-				trait_classical_liberalism
+				
 			}
 		}
 	}
@@ -5287,7 +5361,7 @@ country_event = {
 			traits = {
 				puppet_of_enver_pasha
 				grand_vizier
-				trait_authoritarian_democracy
+				
 			}
 		}
 	}
@@ -5361,5 +5435,39 @@ country_event = {
 				}
 			}
 		}
+	}
+}
+
+##Sell Israel for covering debt
+country_event = {
+	id = ww1_ottoman.131
+	title = ww1_ottoman.131.t
+	desc = ww1_ottoman.131.d
+	trigger = {
+		has_country_leader = {
+			name = "Abdülhamid II"
+			ruling_only = yes
+		}
+	}
+	is_triggered_only = yes
+	option = {
+		name = ww1_ottoman.131.a
+		ISR = {
+			add_state_core = 454
+		}
+		release_puppet = ISR
+		add_ideas = tur_bankjuden
+		add_to_variable = {
+			opda_lira = -1.475
+		}
+		add_to_variable = {
+			opda_consumer_goods = -0.05
+		}
+		add_to_variable = {
+			opda_resources_to_market = -0.025
+		}
+	}
+	option = {
+		name = ww1_ottoman.131.b
 	}
 }

@@ -14,7 +14,15 @@ leader_traits = {
 			factor = 1
 		}
 	}
-
+	proto_fascist = {
+		random = no
+		sprite = 13
+		fascism_drift = 0.1
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
 	patriota = {
 		random = no
 		war_support_factor = 0.05
@@ -379,6 +387,7 @@ leader_traits = {
 		political_power_gain = 0.1
 		democratic_drift = 0.05
 		stability_factor = 0.05
+		army_morale_factor = 0.1
 		war_support_factor = 0.1
 		army_attack_factor = 0.05
 		army_defence_factor = 0.05
@@ -415,7 +424,6 @@ leader_traits = {
 		stability_factor = 0.1
 		political_power_factor = 0.15
 		neutrality_acceptance = 10
-		democratic_acceptance = 10
 	}
 	sevket = {
 		random = no
@@ -494,8 +502,8 @@ leader_traits = {
 	tgwr_caliph = {
 		random = no
 		political_power_gain = 0.05
-		weekly_manpower = 1500
-		war_support_factor = 0.2
+		weekly_manpower = 500
+		war_support_factor = 0.1
 		conscription_factor = 0.1
 		mobilization_speed = 0.15
 	}
@@ -552,7 +560,7 @@ leader_traits = {
 		navy_chief_cost_factor = -0.1
 		stability_factor = 0.1
 		army_morale_factor = 0.1
-		political_power_factor = 0.15
+		political_power_factor = 0.05
 		justify_war_goal_time = -0.2
 	}
 	tur_national_hero = {
@@ -1047,7 +1055,6 @@ leader_traits = {
 	dud_murra = {
 		random = no
 		war_support_factor = 0.1
-		army_core_defence_factor = 0.07
 		army_core_attack_factor = 0.05
 	}
 	#Italy
@@ -1143,6 +1150,12 @@ leader_traits = {
 	SWE_pragmatist = {
 		random = no
 		stability_factor = 0.05
+	}	
+	#LIBERIA
+	LIB_emergency_powers = {
+		random = no
+		political_power_factor = 0.15
+		neutrality_drift = 0.05
 	}	
 	#France
 	socialist_giant = {

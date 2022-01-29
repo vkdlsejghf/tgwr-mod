@@ -77,29 +77,13 @@ country_event = {
 			limit = {
 				has_country_flag = Flavio_Alfaro_chosen
 			}
-			create_country_leader = {
-				name = "Flavio Alfaro"
-				picture = "gfx/leaders/ECU/ECU_flavio_alfaro.dds"
-				expire = "1935.1.1"
-				ideology = social_liberalism
-				traits = {
-					trait_social_liberalism
-				}
-			}
+			promote_character = ECU_flavio_alfaro
 		}
 		if = {
 			limit = {
 				has_country_flag = Emilio_Estrada_chosen
 			}
-			create_country_leader = {
-				name = "Emilio Estrada"
-				picture = "gfx/leaders/ECU/ECU_emilio_estrada.dds"
-				expire = "1935.1.1"
-				ideology = classical_liberalism
-				traits = {
-					trait_classical_liberalism
-				}
-			}
+			promote_character = ECU_emilio_estrada
 			add_political_power = -50
 		}
 		ai_chance = {
@@ -151,7 +135,7 @@ country_event = {
 			expire = "1935.1.1"
 			ideology = classical_liberalism
 			traits = {
-				trait_classical_liberalism
+				
 			}
 		}
 		ai_chance = {
@@ -267,7 +251,7 @@ country_event = {
 				expire = "1935.1.1"
 				ideology = authoritarian_democracy
 				traits = {
-					trait_authoritarian_democracy
+					
 				}
 			}
 			set_politics = {
@@ -285,7 +269,7 @@ country_event = {
 					ideology = social_liberalism
 					traits = {
 						first_among_equals
-						trait_social_liberalism
+						
 					}
 				}
 			}
@@ -296,7 +280,7 @@ country_event = {
 					expire = "1935.1.1"
 					ideology = social_liberalism
 					traits = {
-						trait_social_liberalism
+						
 					}
 				}
 			}
@@ -355,7 +339,7 @@ country_event = {
 			expire = "1935.1.1"
 			ideology = authoritarian_democracy
 			traits = {
-				trait_authoritarian_democracy
+				
 			}
 		}
 		add_popularity = {
@@ -413,7 +397,7 @@ country_event = {
 				expire = "1935.1.1"
 				ideology = social_liberalism
 				traits = {
-					trait_social_liberalism
+					
 				}
 			}
 			else = {
@@ -423,7 +407,7 @@ country_event = {
 					expire = "1935.1.1"
 					ideology = authoritarian_democracy
 					traits = {
-						trait_authoritarian_democracy
+						
 					}
 				}
 			}

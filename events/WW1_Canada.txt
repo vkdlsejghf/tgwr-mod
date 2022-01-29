@@ -615,15 +615,14 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = canada.30.a
-		create_country_leader = {
-			name = "Regency Council"
-			#picture = "gfx/leaders/CAN/CAN_regency_council.dds"
-			expire = "1935.1.1"
-			ideology = autocracy
-			traits = {
-				regency_council
-				# trait_regency_council
-				trait_autocracy
+		CAN_regency_council = {
+			add_country_leader_role = {
+				promote_leader = yes
+				country_leader={
+					ideology=autocracy
+					traits={ regency_council  }
+					
+				}
 			}
 		}
 		add_ideas = CAN_monarchism
@@ -643,14 +642,14 @@ country_event = {
 	is_triggered_only = yes
 	option = {
 		name = canada.31.a
-		create_country_leader = {
-			name = "Arthur I"
-			picture = "gfx/leaders/CAN/CAN_prince_arthur.dds"
-			expire = "1935.1.1"
-			ideology = autocracy
-			traits = {
-				canadian_imperialist
-				trait_autocracy
+		CAN_arthur_i = {
+			add_country_leader_role = {
+				promote_leader = yes
+				country_leader={
+					ideology=autocracy
+					traits={ canadian_imperialist  }
+					
+				}
 			}
 		}
 		set_party_name = {
@@ -1517,7 +1516,7 @@ country_event = {
 				expire = "1935.1.1"
 				ideology = autocracy
 				traits = {
-					trait_autocracy
+					
 				}
 			}
 		}
@@ -1581,7 +1580,7 @@ country_event = {
 				expire = "1935.1.1"
 				ideology = autocracy
 				traits = {
-					trait_autocracy
+					
 				}
 			}
 		}
@@ -1683,7 +1682,7 @@ country_event = {
 			expire = "1935.1.1"
 			ideology = autocracy
 			traits = {
-				trait_autocracy
+				
 			}
 		}
 		hidden_effect = {
@@ -1737,7 +1736,7 @@ country_event = {
 	option = {
 		#Accepts
 		name = canada.59.a
-		create_faction = "Ottawa-Yamato Pacific Treaty"
+		create_faction = ottawa_yamato_pacific_treaty
 		add_to_faction = JAP
 	}
 }
@@ -1904,17 +1903,8 @@ country_event = {
 				}
 			}
 		}
-		retire_country_leader = yes
-		create_country_leader = {
-			name = "Robert Borden"
-			picture = "gfx/leaders/CAN/CAN_robert_borden.dds"
-			expire = "1925.1.1"
-			ideology = conservatism
-			traits = {
-				british_loyalist
-				trait_conservatism
-			}
-		}
+		retire_character = CAN_wilfrid_laurier
+		promote_character = CAN_robert_borden
 		set_party_name = {
 			ideology = democratic
 			name = CAN_democratic_party2
@@ -1965,16 +1955,7 @@ country_event = {
 		ai_chance = {
 			factor = 100
 		}
-		retire_country_leader = yes
-		create_country_leader = {
-			name = "Arthur Meighen"
-			picture = "gfx/leaders/CAN/CAN_arthur_meighen.dds"
-			expire = "1935.1.1"
-			ideology = conservatism
-			traits = {
-				trait_conservatism
-			}
-		}
+		promote_character = CAN_arthur_meighen
 		set_party_name = {
 			ideology = democratic
 			name = CAN_democratic_party2
@@ -2024,7 +2005,7 @@ country_event = {
 				ideology = autocracy
 				traits = {
 					revolution_trauma
-					trait_autocracy
+					
 				}
 			}
 		}
@@ -2044,7 +2025,7 @@ country_event = {
 				ideology = autocracy
 				traits = {
 					auwi
-					trait_autocracy
+					
 				}
 			}
 		}
@@ -2060,7 +2041,7 @@ country_event = {
 				expire = "1935.1.1"
 				ideology = autocracy
 				traits = {
-					trait_autocracy
+					
 				}
 			}
 			add_ideas = george_v
@@ -2274,7 +2255,7 @@ country_event = {
 			expire = "1935.1.1"
 			ideology = conservatism
 			traits = {
-				trait_conservatism
+				
 			}
 		}
 		add_ideas = ENG_imperial_refuge
@@ -2427,7 +2408,7 @@ country_event = {
 			expire = "1935.1.1"
 			ideology = autocracy
 			traits = {
-				trait_autocracy
+				
 			}
 		}
 		add_ideas = george_v

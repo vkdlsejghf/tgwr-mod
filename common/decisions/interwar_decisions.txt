@@ -250,14 +250,22 @@ interwar_decisions = {
 		allowed = { always = no }
 		available = {
 			OR = {
-				threat < 0.5
-				OR = {
-					has_war_support > 0.9
-					AND = {
-						has_war_support > 0.5
-						threat > 0.9
-					}
+				threat < 0.10
+				has_war_support > 0.8
+				AND = {
+					has_war_support > 0.5
+					threat > 0.5
 				}
+				AND = {
+ 					any_other_country = {
+ 						PREV = {
+ 							has_wargoal_against = PREV
+ 						}
+ 					}
+ 					NOT = {
+ 						has_country_flag = great_war_loser
+ 					}
+ 				}
 			}
 			NOT = { has_idea = interwar_recovery }
 			OR = {
@@ -276,6 +284,32 @@ interwar_decisions = {
 			factor = 10
 		}
 	}
+	interwar_recovery_removal = {
+		icon = GFX_decision_generic_industry
+		days_mission_timeout = 1000
+		activation = {
+			has_idea = interwar_recovery
+			has_global_flag = interbellum
+		}
+		allowed = {
+			always = no
+		}
+		available = {
+			NOT = {
+				has_idea = interwar_recovery
+			}
+		}
+		visible = {
+			has_idea = interwar_recovery
+		}
+		fire_only_once = yes
+		is_good = yes
+		timeout_effect = {
+			add_stability = 0.10
+			set_country_flag = interwar_recovery_removal
+		}
+	}
+	
 	#reparations_mission = {
 	#}
 	#refuse_to_pay_reparations = {

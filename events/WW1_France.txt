@@ -46,7 +46,7 @@ country_event = {
 			expire = "1935.1.1"
 			ideology = conservatism
 			traits = {
-				trait_conservatism
+				
 			}
 		}
 		hidden_effect = {
@@ -167,7 +167,7 @@ country_event = {
 					expire = "1935.1.1"
 					ideology = marxism
 					traits = {
-						trait_marxism
+						
 					}
 				}
 				reserve_dynamic_country = yes
@@ -190,6 +190,7 @@ country_event = {
 						state = 24
 						state = 27
 						state = 29
+						state = 865
 						state = 30
 						state = 785
 					}
@@ -383,7 +384,7 @@ country_event = {
 					expire = "1935.1.1"
 					ideology = stratocracy
 					traits = {
-						trait_stratocracy
+						
 					}
 				}
 				reserve_dynamic_country = yes
@@ -473,6 +474,9 @@ country_event = {
 				set_rule = {
 					can_join_factions = no
 				}
+				every_owned_state = {
+					set_state_flag = nationalist_french_states
+				}
 			}
 			FRA = {
 				if = {
@@ -526,7 +530,7 @@ country_event = {
 					picture = "gfx/leaders/FRA/FRA_louis_frossard.dds" 
 					expire = "1935.1.1" 
 					ideology = marxism
-					traits = { trait_marxism }  
+					  
 				}
 				set_popularities = {
 					democratic = 16
@@ -707,7 +711,7 @@ country_event = {
 			ideology = classical_liberalism
 			traits = {
 				poincare_la_guerre
-				trait_classical_liberalism
+				
 			}
 		}
 	}
@@ -823,7 +827,7 @@ country_event = {
 			ideology = classical_liberalism
 			traits = {
 				lunatic
-				trait_classical_liberalism
+				
 			}
 		}
 	}
@@ -854,7 +858,7 @@ country_event = {
 			expire = "1935.1.1"
 			ideology = conservatism
 			traits = {
-				trait_conservatism
+				
 			}
 		}
 	}
@@ -1618,45 +1622,6 @@ country_event = {
 		if = {
 			limit = {
 				NFA = {
-					owns_state = 779
-				}
-			}
-			if = {
-				limit = {
-					GER = {
-						exists = yes
-					}
-				}
-				GER = {
-					transfer_state = 779
-				}
-				else_if = {
-					limit = {
-						ENG = {
-							exists = yes
-							has_country_flag = great_war_winner
-						}	
-					}		
-					ENG = {
-						transfer_state = 779
-					}
-				}
-				else_if = {
-					limit = {
-						AUH = {
-							exists = yes
-							has_country_flag = great_war_winner
-						}	
-					}		
-					AUH = {
-						transfer_state = 779
-					}
-				}
-			}
-		}
-		if = {
-			limit = {
-				NFA = {
 					owns_state = 310
 				}
 				JAM = {
@@ -2045,7 +2010,7 @@ country_event = {
 				expire = "1935.1.1"
 				ideology = autocracy
 				traits = {
-					trait_autocracy
+					
 				}
 			}
 			set_country_flag = napoleon_v_dead
@@ -2089,7 +2054,7 @@ country_event = {
 				expire = "1935.1.1"
 				ideology = autocracy
 				traits = {
-					trait_autocracy
+					
 				}
 			}
 			set_country_flag = jacques_i_dead
@@ -2126,7 +2091,7 @@ country_event = {
 			expire = "1935.1.1"
 			ideology = anarcho_syndicalism
 			traits = {
-				trait_anarcho_syndicalism
+				
 			}
 		}
 		set_party_name = {
@@ -2146,13 +2111,13 @@ country_event = {
 		}
 		create_country_leader = {
 			name = "Léon Blum"
-			picture = GFX_portrait_fra_leon_blum
+			picture = "gfx/leaders/FRA/FRA_Leon_Blum_young.png"
 			expire = "1935.1.1"
 			ideology = reformist_socialism
 			traits = {
 				reluctant_interventionist
 				stout_defender
-				trait_reformist_socialism
+				
 			}
 		}
 		set_party_name = {
@@ -2176,7 +2141,7 @@ country_event = {
 			expire = "1935.1.1"
 			ideology = vanguardism
 			traits = {
-				trait_vanguardism
+				
 			}
 		}
 		set_party_name = {
@@ -2208,7 +2173,7 @@ country_event = {
 				expire = "1935.1.1"
 				ideology = national_syndicalism
 				traits = {
-					trait_national_syndicalism
+					
 				}
 			}
 		}
@@ -2218,7 +2183,7 @@ country_event = {
 			expire = "1935.1.1"
 			ideology = syndicalism
 			traits = {
-				trait_syndicalism
+				
 			}
 		}
 		set_party_name = {

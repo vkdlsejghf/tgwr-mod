@@ -74,20 +74,20 @@ ideas = {
 			removal_cost = -1
 			picture = GER_idea_wilhelm_ii
 			available = {
-				OR = {
-					has_government = democratic
-					has_completed_focus = GER_two_kaisers
-					has_country_leader = {
-						name = "Erich Ludendorff"
-						ruling_only = yes
-					}
-					hidden_trigger = { has_country_flag = prussian_hitler }
-				}
 				NOT = {
 					has_country_leader = {
-						name = "Wilhelm II"
+						character = GER_wilhelm_ii
 						ruling_only = yes
 					}
+					has_cosmetic_tag = GER_nazi
+					AND = {
+						has_government = democratic
+						NOT = {
+							has_cosmetic_tag = GER_confederation
+							has_cosmetic_tag = GER_kaiserreich_flag
+						}
+					}
+					has_government = communism
 				}
 			}
 			modifier = {
@@ -103,10 +103,8 @@ ideas = {
 				always = no
 			}
 			removal_cost = -1
-			research_bonus = {
-				land_doctrine = 0.1
-			}
 			modifier = {
+				land_doctrine_cost_factor = -0.1
 				military_leader_cost_factor = -0.5
 				high_command_cost_factor = -0.5
 				army_leader_start_level = 2
@@ -185,29 +183,27 @@ ideas = {
 					AND = {
 						has_government = fascism
 						has_country_leader = {
-							name = "Erich Ludendorff"
+							character = GER_erich_ludendorff
 							ruling_only = yes
 						}
 					}
 				}
 			}
 			removal_cost = -1
-			research_bonus = {
-				land_doctrine = 0.1
-			}
 			available = {
 				OR = {
 					has_government = neutrality
 					AND = {
 						has_government = fascism
 						has_country_leader = {
-							name = "Erich Ludendorff"
+							character = GER_erich_ludendorff
 							ruling_only = yes
 						}
 					}
 				}
 			}
 			modifier = {
+				land_doctrine_cost_factor = -0.1
 				max_planning = 0.05
 				planning_speed = 0.05
 			}
@@ -223,29 +219,27 @@ ideas = {
 					AND = {
 						has_government = fascism
 						has_country_leader = {
-							name = "Erich Ludendorff"
+							character = GER_erich_ludendorff
 							ruling_only = yes
 						}
 					}
 				}
 			}
 			removal_cost = -1
-			research_bonus = {
-				land_doctrine = 0.1
-			}
 			available = {
 				OR = {
 					has_government = neutrality
 					AND = {
 						has_government = fascism
 						has_country_leader = {
-							name = "Erich Ludendorff"
+							character = GER_erich_ludendorff
 							ruling_only = yes
 						}
 					}
 				}
 			}
 			modifier = {
+				land_doctrine_cost_factor = -0.1
 				political_power_gain = -0.05
 				max_planning = 0.1
 				planning_speed = 0.1
@@ -263,29 +257,27 @@ ideas = {
 					AND = {
 						has_government = fascism
 						has_country_leader = {
-							name = "Erich Ludendorff"
+							character = GER_erich_ludendorff
 							ruling_only = yes
 						}
 					}
 				}
 			}
 			removal_cost = -1
-			research_bonus = {
-				land_doctrine = 0.1
-			}
 			available = {
 				OR = {
 					has_government = neutrality
 					AND = {
 						has_government = fascism
 						has_country_leader = {
-							name = "Erich Ludendorff"
+							character = GER_erich_ludendorff
 							ruling_only = yes
 						}
 					}
 				}
 			}
 			modifier = {
+				land_doctrine_cost_factor = -0.1
 				political_power_gain = -0.1
 				max_planning = 0.15
 				planning_speed = 0.15
@@ -303,29 +295,27 @@ ideas = {
 					AND = {
 						has_government = fascism
 						has_country_leader = {
-							name = "Erich Ludendorff"
+							character = GER_erich_ludendorff
 							ruling_only = yes
 						}
 					}
 				}
 			}
 			removal_cost = -1
-			research_bonus = {
-				land_doctrine = 0.1
-			}
 			available = {
 				OR = {
 					has_government = neutrality
 					AND = {
 						has_government = fascism
 						has_country_leader = {
-							name = "Erich Ludendorff"
+							character = GER_erich_ludendorff
 							ruling_only = yes
 						}
 					}
 				}
 			}
 			modifier = {
+				land_doctrine_cost_factor = -0.1
 				political_power_gain = -0.2
 				max_planning = 0.2
 				planning_speed = 0.2
@@ -343,29 +333,27 @@ ideas = {
 					AND = {
 						has_government = fascism
 						has_country_leader = {
-							name = "Erich Ludendorff"
+							character = GER_erich_ludendorff
 							ruling_only = yes
 						}
 					}
 				}
 			}
 			removal_cost = -1
-			research_bonus = {
-				land_doctrine = 0.1
-			}
 			available = {
 				OR = {
 					has_government = neutrality
 					AND = {
 						has_government = fascism
 						has_country_leader = {
-							name = "Erich Ludendorff"
+							character = GER_erich_ludendorff
 							ruling_only = yes
 						}
 					}
 				}
 			}
 			modifier = {
+				land_doctrine_cost_factor = -0.1
 				political_power_gain = -0.25
 				fascism_drift = 0.01
 				max_planning = 0.25
@@ -384,7 +372,7 @@ ideas = {
 					AND = {
 						has_government = fascism
 						has_country_leader = {
-							name = "Erich Ludendorff"
+							character = GER_erich_ludendorff
 							ruling_only = yes
 						}
 					}
@@ -397,7 +385,7 @@ ideas = {
 					AND = {
 						has_government = fascism
 						has_country_leader = {
-							name = "Erich Ludendorff"
+							character = GER_erich_ludendorff
 							ruling_only = yes
 						}
 					}
@@ -778,10 +766,14 @@ ideas = {
 			available = {
 				FRA = {
 					exists = yes
+					is_subject = no
+					NOT = {
+						has_war_with = PREV
+					}
 				}
 			}
 			allowed = {
-				original_tag = GER
+				always = yes
 			}
 			modifier = {
 				consumer_goods_factor = 0.35
@@ -796,10 +788,14 @@ ideas = {
 			available = {
 				FRA = {
 					exists = yes
+					is_subject = no
+					NOT = {
+						has_war_with = PREV
+					}
 				}
 			}
 			allowed = {
-				original_tag = GER
+				always = yes
 			}
 			modifier = {
 				consumer_goods_factor = 0.3
@@ -814,10 +810,14 @@ ideas = {
 			available = {
 				FRA = {
 					exists = yes
+					is_subject = no
+					NOT = {
+						has_war_with = PREV
+					}
 				}
 			}
 			allowed = {
-				original_tag = GER
+				always = yes
 			}
 			modifier = {
 				consumer_goods_factor = 0.25
@@ -935,10 +935,8 @@ ideas = {
 			allowed = {
 				original_tag = GER
 			}
-			research_bonus = {
-				air_doctrine = 0.1
-			}
 			modifier = {
+				air_doctrine_cost_factor = -0.1
 				air_ace_generation_chance_factor = 0.15
 			}
 		}
@@ -1111,11 +1109,9 @@ ideas = {
 				political_power_gain = 0.2
 				conscription = -0.002
 				war_support_factor = -0.05
-			}
-			research_bonus = {
-				land_doctrine = -0.7
-				naval_doctrine = -0.5
-				air_doctrine = -0.7
+				land_doctrine_cost_factor = 0.7
+				naval_doctrine_cost_factor = 0.5
+				air_doctrine_cost_factor = 0.7
 			}
 		}
 		GER_quenched_militarism = {
@@ -1365,6 +1361,36 @@ ideas = {
 				army_chief_cost_factor = 0.25
 				air_chief_cost_factor = 0.25
 				navy_chief_cost_factor = 0.25
+			}
+		}
+		GER_revive_the_kaiserreich = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				 has_government = neutrality
+			}
+
+			removal_cost = -1
+
+			picture = ger_revive_the_kaiserreich
+
+			modifier = {
+				neutrality_drift = 0.1
+				drift_defence_factor = 0.1
+			}
+		}
+		GER_idea_treaty_of_rapallo = {
+			picture = ger_the_great_red_menace
+			allowed = {
+				always = no
+			}
+			removal_cost = -1
+			modifier = {
+				consumer_goods_factor = 0.15
+				production_factory_efficiency_gain_factor = -0.25
+				industrial_capacity_factory = -0.25
 			}
 		}
 	}

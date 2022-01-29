@@ -276,7 +276,7 @@ focus_tree = {
 		continue_if_invalid = yes
 		available_if_capitulated = yes
 		completion_reward = {
-			country_event = { id = ww1_austria.2 }
+			country_event = { id = ww1_auh.2 }
 		}
 	}
 	focus = {
@@ -296,11 +296,10 @@ focus_tree = {
 			owns_state = 208
 		}
 		bypass = {
-			CRO = {exists = yes}
+			CRO = { exists = yes }
 		}	
 		completion_reward = {
 			remove_ideas = { AUH_croatian_separatism }
-
 			every_owned_state = {
 				limit = {
 					OR = {
@@ -312,7 +311,6 @@ focus_tree = {
 				add_core_of = CRO
 				CRO = { set_state_owner = PREV }
 			}
-
 			every_owned_state = {
 				limit = {
 					OR = {
@@ -326,15 +324,6 @@ focus_tree = {
 			}
 			hidden_effect = {
 				CRO = {
-					create_country_leader = {
-						name = "Stjepan Radić"
-						picture = "gfx/leaders/CRO/CRO_Stjepan_Radic.dds"
-						expire = "1935.1.1"
-						ideology = authoritarian_democracy
-						traits = {
-							trait_authoritarian_democracy
-						}
-					}
 					set_cosmetic_tag = CRO_AUH
 					set_popularities = {
 						fascism = 0
@@ -347,6 +336,7 @@ focus_tree = {
 						elections_allowed = no
 					}
 				}
+				set_global_flag = croatia_released
 			}
 			if = {
 				limit = {
@@ -388,20 +378,18 @@ focus_tree = {
 				has_war = no
 			}
 			OR = {
-			    has_global_flag = kis_secondbalkanwar_victory
 				has_global_flag = kis_secondbalkanwar_lose
 				has_global_flag = kis_firstbalkanwar_lose
-			
 			}
 		}
 		bypass = {
 		    SER = {
-			    OR = { is_subject = yes exists = no } 
+			    OR = { is_subject = yes exists = no has_global_flag = kis_secondbalkanwar_victory } 
 			}
 		}
 		completion_reward = {
 			add_opinion_modifier = { target = SER modifier = large_increase }
-			SER = { country_event = { id = ww1_austria.5 days = 2 } }
+			SER = { country_event = { id = ww1_auh.5 days = 2 } }
 			AUH = {
 				add_ai_strategy = {
 					type = protect
@@ -691,7 +679,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
-			ROM = { country_event = { id = ww1_austria.10 } }
+			ROM = { country_event = { id = ww1_auh.10 } }
 		}
 	}
 	focus = {
@@ -873,7 +861,7 @@ focus_tree = {
 		completion_reward = {
 			add_opinion_modifier = { target = RUS modifier = large_decrease }
 			RUS = {
-				country_event = { id = ww1_austria.7 }
+				country_event = { id = ww1_auh.7 }
 				add_opinion_modifier = { target = AUH modifier = large_decrease } 
 				add_ai_strategy = {
 					type = protect
@@ -1177,7 +1165,7 @@ focus_tree = {
 			}
 			set_country_flag = auh_unitary_monarchy
 			set_rule = { can_create_factions = yes }
-			news_event = { id = ww1_austria.9 }
+			news_event = { id = ww1_auh.9 }
 		}
 	}
 	focus = {
@@ -2345,8 +2333,6 @@ focus_tree = {
 		cost = 10
 		prerequisite = {
 			focus = AUH_form_illyria
-		}
-		prerequisite = {
 			focus = AUH_reform_czech_cisleithania
 		}
 		x = 4
@@ -2401,71 +2387,8 @@ focus_tree = {
 			}
 
 			hidden_effect = {
-				if = {
-					limit = {
-						has_government = neutrality
-					}    
-					HUN = {  						
-						set_party_name = {
-							ideology = neutrality
-							long_name = AUH_neutrality_party
-							name = AUH_neutrality_party
-						}
-						add_ideas = AUH_ww1_House_Habsburg_Lorraine
-					}
-				}	
-				if = {
-					limit = {
-						has_country_leader = {
-							name = "Franz Joseph I"
-							ruling_only = yes
-						}
-					}
-					HUN = {
-						create_country_leader = {
-							name = "I. Ferenc József"
-							picture = "gfx/leaders/AUH/AUH_franz_joseph_i.dds"
-							expire = "1935.1.1"
-							ideology = autocracy
-							traits = {oldschool_kaiser trait_autocracy}
-						}
-					}
-				}
-				if = {
-					limit = {
-						has_country_leader = {
-							name = "Franz Ferdinand I"
-							ruling_only = yes
-						}
-					}
-					HUN = {
-						create_country_leader={
-							name = "I. Ferenc Ferdinánd"
-							picture = "gfx/leaders/AUH/AUH_franz_ferdinand.dds"
-							expire = "1935.1.1"
-							ideology = autocracy
-							traits = { unpopular_monarch trait_autocracy}
-						}
-					}
-				}
-				if = {
-					limit = {
-						has_country_leader = {
-							name = "Karl I"
-							ruling_only = yes
-						}
-					}
-					HUN = {
-						create_country_leader = { 
-							name = "IV. Károly"
-							picture = "gfx/leaders/AUH/AUH_karl_i.dds"
-							expire = "1935.1.1"
-							ideology = autocracy
-							traits = { trait_autocracy}
-						}
-					}
-				}						
-				HUN =  { hidden_effect = { load_oob = "HUN_1918" } }
+				AUH_HUN_create_habsburg = yes				
+				HUN =  { load_oob = "HUN_1918" }
 			}
 
 			if = {

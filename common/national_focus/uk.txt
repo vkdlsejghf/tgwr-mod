@@ -437,7 +437,7 @@ focus_tree = {
 						expire = "1935.1.1"
 						ideology = despotism
 						traits = {
-							trait_despotism
+							
 						}
 					}
 					set_popularities = {
@@ -2333,7 +2333,7 @@ focus_tree = {
 				ideology = conservatism
 				traits = {
 					eng_hand_of_king
-					trait_conservatism
+					
 				}
 			}
 			hidden_effect = {
@@ -2514,7 +2514,7 @@ focus_tree = {
 					ideology = autocracy
 					traits = {
 						revolution_trauma
-						trait_autocracy
+						
 					}
 				}
 				remove_ideas = george_v
@@ -2573,7 +2573,7 @@ focus_tree = {
 					picture = "ENG_Winston_Churchill.dds"
 					expire = "1935.1.1"
 					ideology = classical_liberalism
-					traits = { trait_classical_liberalism }
+					
 				}
 				news_event = {
 					id = eng_news.12
@@ -2638,7 +2638,7 @@ focus_tree = {
 					ideology = autocracy
 					traits = {
 						revolution_trauma
-						trait_autocracy
+						
 					}
 				}
 			}
@@ -2754,7 +2754,7 @@ focus_tree = {
 					ideology = autocracy
 					traits = {
 						auwi
-						trait_autocracy
+						
 					}
 				}
 				set_global_flag = king_william_v
@@ -2817,7 +2817,7 @@ focus_tree = {
 	}
 	focus = {
 		id = ENG_Lord_Protector_England
-		icon = GFX_focus_spr_torchbearers_of_tomorrow
+		icon = GFX_focus_eng_militarist_commonwealth
 		cost = 10
 		prerequisite = {
 			focus = ENG_Never_Let_Old_Flag
@@ -2830,11 +2830,10 @@ focus_tree = {
 		available = {
 			has_country_leader = {
 				ruling_only = yes
-				name = "Herbert Kitchener"
+				character = ENG_herbert_kitchener
 			}
 		}
 		completion_reward = {
-			add_country_leader_trait = lord_protector
 			if = {
 				limit = {
 					NOT = {
@@ -2843,16 +2842,24 @@ focus_tree = {
 				}
 				set_cosmetic_tag = ENG_cromwealth
 			}
-			hidden_effect = {
-				retire_country_leader = yes
-				create_country_leader = {
-					name = "Herbert Kitchener"
-					picture = "gfx/leaders/ENG/ENG_herbert_kitchener_lord_protector.dds"
-					expire = "1935.1.1"
-					ideology = fascism_ideology
-					traits = {
-						lord_protector
-						trait_proto_fascism
+			ENG_herbert_kitchener = {
+				add_country_leader_role = {
+					promote_leader = yes
+					country_leader = {
+						ideology = fascism_ideology
+						
+						traits = {
+							lord_protector
+							
+						}
+					}
+				}	
+				set_portraits = {
+					civilian = {
+						large="gfx/leaders/ENG/ENG_herbert_kitchener_lord_protector.dds"
+					}
+					army = {
+						large="gfx/leaders/ENG/ENG_herbert_kitchener_lord_protector.dds"
 					}
 				}
 			}
@@ -3017,9 +3024,15 @@ focus_tree = {
 		x = 41
 		y = 1
 		completion_reward = {
+			promote_character = ENG_edward_reynolds_pease
+			set_party_name = {
+				ideology = communism
+				long_name = ENG_fabian_party
+				name = ENG_fabian_party
+			}
 			add_popularity = {
 				ideology = communism
-				popularity = 0.05
+				popularity = 0.08
 			}
 			custom_effect_tooltip = available_political_advisor
 			show_ideas_tooltip = ENG_communist_guy
@@ -3073,7 +3086,7 @@ focus_tree = {
 			add_stability = -0.05
 			add_popularity = {
 				ideology = communism
-				popularity = 0.1
+				popularity = 0.12
 			}
 		}
 	}
@@ -3192,7 +3205,7 @@ focus_tree = {
 						picture = "gfx/leaders/Europe/Portrait_europe_generic_7.dds" 
 						expire = "1935.1.1" 
 						ideology = conservatism
-						traits = { trait_conservatism }  
+						  
 					}
 				}
 				news_event = {
@@ -3242,10 +3255,6 @@ focus_tree = {
 			}
 			hidden_effect = {
 				set_country_leader_ideology = marxism
-				swap_ruler_traits = {
-					remove = trait_market_socialism
-					add = trait_marxism
-				}
 				country_event = {
 					id = ww1_england.180
 					days = 1
@@ -3269,7 +3278,7 @@ focus_tree = {
 			add_ideas = trade_union_democracy
 			set_party_name = {
 				ideology = communism
-				long_name = ENG_labour_party_long
+				long_name = ENG_labour_party
 				name = ENG_labour_party
 			}
 			hidden_effect = {
@@ -4542,7 +4551,7 @@ focus_tree = {
 					female = yes
 					traits = {
 						conservative_grandee
-						trait_autocracy
+						
 					}
 				}
 			}
@@ -4726,7 +4735,7 @@ focus_tree = {
 				picture = "ENG_Winston_Churchill.dds"
 				expire = "1935.1.1"
 				ideology = conservatism
-				traits = { trait_conservatism }
+				
 			}
 			hidden_effect = {
 				set_party_name = {
@@ -4810,7 +4819,10 @@ focus_tree = {
 				NOT = {
 					has_country_flag = great_war_loser
 				}
-				has_government = neutrality
+				OR = {
+					has_government = neutrality
+					has_idea = GER_idea_wilhelm_ii
+				}
 			}
 			NOT = {
 				has_country_flag = great_war_loser
@@ -4841,16 +4853,7 @@ focus_tree = {
 			is_subject = no
 			RUS = {
 				is_faction_leader = yes
-				OR = {
-					has_country_leader = {
-						name = "Mikhail II"
-						ruling_only = yes
-					}
-					has_country_leader = {
-						name = "Nikolai II"
-						ruling_only = yes
-					}
-				}
+				is_russia_a_monarchy = yes
 			}
 			NOT = {
 				has_country_flag = great_war_loser

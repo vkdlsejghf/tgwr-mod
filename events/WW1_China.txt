@@ -1,6 +1,7 @@
-﻿add_namespace = ww1_xinhai
+add_namespace = ww1_xinhai
 add_namespace = ww1_china
 add_namespace = ww1_xinjiang
+
 # GUANGZHOU UPRISING
 ##########################
 country_event = {
@@ -38,16 +39,6 @@ country_event = {
 	is_triggered_only = yes
 	immediate = {
 		hidden_effect = {
-			create_country_leader = {
-				name = "Xiang Ping"
-				picture = "gfx/leaders/Asia/Portrait_Asia_Generic_democracy.dds"
-				expire = "1935.1.1"
-				ideology = conservatism
-				traits = {
-					appeaser
-					trait_conservatism
-				}
-			}
 			every_unit_leader = {
 				limit = {
 					has_id = 73047
@@ -122,15 +113,7 @@ country_event = {
 					democratic = 36
 					neutrality = 59
 				}
-				create_country_leader = {
-					name = "Li Yuanhong"
-					picture = "gfx/leaders/CHI/CHI_Li_Yuanhong.dds"
-					expire = "1935.1.1"
-					ideology = oligarchism
-					traits = {
-						trait_oligarchism
-					}
-				}
+				promote_character = CHI_li_yuanhong
 				set_cosmetic_tag = CHI_revolution
 				set_party_name = {
 					ideology = neutrality
@@ -431,15 +414,7 @@ country_event = {
 				transfer_state = 600
 				transfer_state = 595
 				transfer_state = 593
-				create_country_leader = {
-					name = "Huang Xing"
-					picture = "gfx/leaders/CHI/CHI_Huang_Xing.dds"
-					expire = "1935.1.1"
-					ideology = socialism
-					traits = {
-						trait_socialism
-					}
-				}
+				promote_character = CHI_huang_xing
 				set_politics = {
 					ruling_party = democratic
 				}
@@ -480,8 +455,8 @@ country_event = {
 			}
 		}
 		has_country_leader = {
-			name = "Yuan Shikai"
-			ruling_only = YES
+			name = QIN_yuan_shikai
+			ruling_only = yes
 		}
 		has_government = neutrality
 		has_country_flag = third_uprising
@@ -541,16 +516,7 @@ country_event = {
 			add_ideas = CHI_idea_inflation5
 			add_ideas = CHI_idea_army_corruption3
 			set_country_flag = xinhai_victory
-			create_country_leader = {
-				name = "Yuan Shikai"
-				picture = "gfx/leaders/CHI/CHI_yuan_shikai.dds"
-				expire = "1935.1.1"
-				ideology = oligarchism
-				traits = {
-					generallissimo
-					trait_oligarchism
-				}
-			}
+			promote_character = CHI_yuan_shikai
 			set_party_name = {
 				ideology = neutrality
 				long_name = CHI_fascism_party
@@ -708,15 +674,15 @@ country_event = {
 				add_state_core = 592
 				drop_cosmetic_tag = yes
 				retire_ideology_leader = democratic
-				create_country_leader = {
-					name = "Sun Yat-sen"
-					picture = "gfx/leaders/CHI/CHI_sun_wen.dds"
-					expire = "1935.1.1"
-					ideology = socialism
-					traits = {
-						trait_socialism
+				add_country_leader_role = {
+					character = CHI_sun_yatsen
+					country_leader = {
+						ideology = socialism
+						traits = { popular_figurehead  }
+						expire = "1935.1.1.1"
 					}
 				}
+				promote_character = CHI_sun_yatsen
 				load_oob = PRC_1911_uprising3
 				set_country_flag = third_uprising
 			}
@@ -782,9 +748,6 @@ country_event = {
 		set_global_flag = chinese_warlord_crisis
 		activate_mission_tooltip = CHI_warlord_era_mission
 		add_country_leader_trait = unpopular_monarch
-		hidden_effect = {
-			add_country_leader_trait = trait_proto_fascism
-		}
 	}
 }
 
@@ -1133,7 +1096,10 @@ country_event = {
 	fire_only_once = yes
 	is_triggered_only = yes
 	immediate = {
-		set_global_flag = manchu_restoration
+		hidden_effect = {
+			set_global_flag = manchu_restoration
+			retire_character = CHI_li_yuanhong
+		}
 	}
 	option = {
 		name = ww1_china.8.a
@@ -1145,15 +1111,15 @@ country_event = {
 		}
 		QIN = {
 			transfer_state = 608
-			create_country_leader = {
-				name = "Zhang Xun"
-				picture = "gfx/leaders/CHI/CHI_Zhang_Xun.dds"
-				expire = "1935.1.1"
-				ideology = oligarchism
-				traits = {
-					trait_oligarchism
+			add_country_leader_role = {
+				character = QIN_zhang_xun
+				country_leader = {
+					ideology = oligarchism
+					traits = { generallissimo  }
+					expire = "1935.1.1.1"
 				}
 			}
+			promote_character = QIN_zhang_xun
 			set_party_name = {
 				ideology = neutrality
 				long_name = QIN_neutrality_restoration_party_long
@@ -1187,7 +1153,7 @@ country_event = {
 				can_join_factions = no
 			}
 		}
-		every_country = {
+		every_possible_country = {
 			limit = {
 				has_unit_leader = 73004
 			}
@@ -1209,15 +1175,15 @@ country_event = {
 		}
 		QIN = {
 			transfer_state = 608
-			create_country_leader = {
-				name = "Zhang Xun"
-				picture = "gfx/leaders/CHI/CHI_Zhang_Xun.dds"
-				expire = "1935.1.1"
-				ideology = oligarchism
-				traits = {
-					trait_oligarchism
+			add_country_leader_role = {
+				character = QIN_zhang_xun
+				country_leader = {
+					ideology = oligarchism
+					traits = { generallissimo  }
+					expire = "1935.1.1.1"
 				}
 			}
+			promote_character = QIN_zhang_xun
 			set_party_name = {
 				ideology = neutrality
 				long_name = QIN_neutrality_restoration_party_long
@@ -1251,7 +1217,7 @@ country_event = {
 				can_join_factions = no
 			}
 		}
-		every_country = {
+		every_possible_country = {
 			limit = {
 				has_unit_leader = 73004
 			}
@@ -1304,16 +1270,14 @@ country_event = {
 	picture = GFX_report_event_japan_army_mountainside
 	fire_only_once = yes
 	trigger = {
-		original_tag = CHI
 		OR = {
 			has_country_leader = {
-				name = "Yuan Shikai"
-				ruling_only = yes
+				character = QIN_yuan_shikai
 			}
 			has_country_leader = {
-				name = "Hongxian Emperor"
-				ruling_only = yes
+				character = CHI_yuan_shikai
 			}
+			has_unit_leader = 73069
 		}
 		OR = {
 			date > 1916.5.1
@@ -1336,53 +1300,69 @@ country_event = {
 	}
 	immediate = {
 		hidden_effect = {
-			kill_ideology_leader = neutrality
-			kill_ideology_leader = fascism
-			remove_unit_leader = 73069
-			create_country_leader = {
-				name = "Duan Qirui"
-				picture = "gfx/leaders/CHI/CHI_Duan_Qirui.png"
-				expire = "1935.1.1"
-				ideology = oligarchism
-				traits = {
-					trait_oligarchism
-				}
-			}
-			create_country_leader = {
-				name = "Duan Qirui"
-				picture = "gfx/leaders/CHI/CHI_Duan_Qirui.png"
-				expire = "1935.1.1"
-				ideology = stratocracy
-				traits = {
-					trait_stratocracy
-				}
-			}
-			add_stability = -0.05
-			remove_ideas = CHI_idea_republican_plot
-			set_global_flag = yuan_shikai_dead
-			# For if player did not anything triggers the Warlord Era
 			if = {
 				limit = {
-					NOT = {
-						has_completed_focus = CHI_second_empire
-						has_global_flag = national_protection_war
-						has_government = fascism
-					}
+					original_tag = QIN
 				}
-				set_global_flag = chinese_warlord_crisis
+				retire_character = QIN_yuan_shikai
 			}
-			if = {
+			else_if = {
 				limit = {
-					NOT = {
-						has_completed_focus = CHI_second_empire
+					original_tag = CHI
+				}
+				retire_character = CHI_yuan_shikai
+				add_country_leader_role = {
+					character = CHI_duan_qirui
+					country_leader = {
+						ideology = oligarchism
+						
+						expire = "1935.1.1.1"
+					}
+					country_leader = {
+						ideology = stratocracy
+						
+						expire = "1935.1.1.1"
 					}
 				}
+				CHI_duan_qirui = {
+					promote_character = {
+						ideology = oligarchism
+					}
+					promote_character = {
+						ideology = stratocracy
+					}
+				}
+				promote_character = CHI_li_yuanhong
 				remove_ideas = CHI_idea_republican_plot
+				if = {
+					limit = {
+						NOT = {
+							has_completed_focus = CHI_second_empire
+							has_global_flag = national_protection_war
+							has_government = fascism
+						}
+					}
+					set_global_flag = chinese_warlord_crisis
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_completed_focus = CHI_second_empire
+						}
+					}
+					remove_ideas = CHI_idea_republican_plot
+				}
 			}
+			remove_unit_leader = 73069
+			set_global_flag = yuan_shikai_dead
 		}
 	}
 	option = {
 		name = ww1_china.10.a
+		effect_tooltip = {
+			retire_character = CHI_yuan_shikai
+		}
+		add_stability = -0.05
 		ai_chance = {
 			factor = 100
 		}
@@ -1426,7 +1406,7 @@ country_event = {
 				set_demilitarized_zone = no
 			}
 			hidden_effect = {
-				every_country = {
+				every_possible_country = {
 					limit = {
 						has_unit_leader = 73048
 					}
@@ -1572,7 +1552,7 @@ country_event = {
 			}
 			hidden_effect = {
 				set_capital = { state = 592 }
-				every_country = {
+				every_possible_country = {
 					limit = {
 						has_unit_leader = 73047
 					}
@@ -1705,7 +1685,7 @@ country_event = {
 				set_demilitarized_zone = no
 			}
 			hidden_effect = {
-				every_country = {
+				every_possible_country = {
 					limit = {
 						has_unit_leader = 73046
 					}
@@ -1846,7 +1826,7 @@ country_event = {
 				set_demilitarized_zone = no
 			}
 			hidden_effect = {
-				every_country = {
+				every_possible_country = {
 					limit = {
 						has_unit_leader = 15097
 					}
@@ -2000,7 +1980,7 @@ country_event = {
 				set_demilitarized_zone = no
 			}
 			hidden_effect = {
-				every_country = {
+				every_possible_country = {
 					limit = {
 						has_unit_leader = 73055
 					}
@@ -2072,6 +2052,29 @@ country_event = {
 						type = support_equipment
 						amount = 500
 						producer = QIN
+					}
+					start_civil_war = {
+						ideology = communism
+						size = 0.7
+						set_cosmetic_tag = CSR
+						create_country_leader = {
+							name = "Mao Zedong"
+							picture = "GFX_portrait_prc_mao_zedong"
+							expire = "1935.1.1"
+							ideology = vanguardism
+							traits = {
+								cornered_fox
+								
+							}
+						}
+						set_party_name = {
+							ideology = communism
+							long_name = CHI_communist_party_long
+							name = CHI_communist_party
+						}
+						set_rule = {
+							can_join_factions = no
+						}
 					}
 					QIN = {
 						add_to_faction = PREV
@@ -2273,7 +2276,7 @@ country_event = {
 }
 
 #WARLORD ERA - JNC
-##################
+#####################
 country_event = {
 	id = ww1_china.17
 	hidden = yes
@@ -2300,11 +2303,11 @@ country_event = {
 					limit = {
 						OR = {
 							state = 595
-						state = 596
-						state = 598
-						state = 600
-						state = 606
-						state = 613
+							state = 596
+							state = 598
+							state = 600
+							state = 606
+							state = 613
 						}
 					}
 					add_core_of = JNC
@@ -2329,6 +2332,40 @@ country_event = {
 					democratic = 36
 					neutrality = 59
 				}
+				set_party_name = {
+					ideology = democratic
+					long_name = CHI_kuomintang_party
+					name = CHI_kuomintang_party
+				}
+				set_party_name = {
+					ideology = fascism
+					long_name = CHI_fascism_party
+					name = CHI_fascism_party
+				}
+				set_party_name = {
+					ideology = neutrality
+					long_name = CHI_fascism_party
+					name = CHI_fascism_party
+				}
+				set_party_name = {
+					ideology = communism
+					long_name = CHI_left_kuomintang_party
+					name = CHI_left_kuomintang_party
+				}
+				create_country_leader = {
+					name = "Wang Jingwei"
+					picture = "gfx/leaders/CHI/CHI_wang_jingwei.dds"
+					ideology = socialism
+					expire = "1935.1.1"
+					
+				}
+				create_country_leader = {
+					name = "Wang Jingwei"
+					picture = "gfx/leaders/CHI/CHI_wang_jingwei.dds"
+					ideology = reformist_socialism
+					expire = "1935.1.1"
+					
+				}
 				if = {
 					limit = {
 						NOT = {
@@ -2338,23 +2375,37 @@ country_event = {
 					create_country_leader = {
 						name = "Sun Yat-sen"
 						picture = "gfx/leaders/CHI/CHI_sun_wen.dds"
-						expire = "1935.1.1"
 						ideology = socialism
-						traits = {
-							trait_socialism
-						}
+						expire = "1935.1.1"
+						traits = { popular_figurehead  }
+					}
+					create_country_leader = {
+						name = "Sun Yat-sen"
+						picture = "gfx/leaders/CHI/CHI_sun_wen.dds"
+						ideology = reformist_socialism
+						expire = "1935.1.1"
+						traits = { popular_figurehead  }
 					}
 				}
-				else = {
-					create_country_leader = {
-						name = "Chiang Kai-shek"
-						picture = "gfx/leaders/CHI/CHI_chiang_kai_shek.dds"
-						expire = "1935.1.1"
-						ideology = conservatism
-						traits = {
-							trait_conservatism
-						}
+				create_country_leader={
+					name = "Cao Kun"
+					picture = "gfx/leaders/CHI/CHI_Cao_Kun.dds"
+					ideology = despotism
+					expire = "1935.1.1"
+					
+				}
+				create_country_leader={
+					name = "Cao Kun"
+					picture = "gfx/leaders/CHI/CHI_Cao_Kun.dds"
+					ideology = stratocracy
+					expire = "1935.1.1"
+					
+				}
+				every_unit_leader = {
+					limit = {
+						has_id = 73006
 					}
+					set_nationality = PREV
 				}
 				if = {
 					limit = {
@@ -2362,43 +2413,25 @@ country_event = {
 							has_global_flag = feng_guozhang_dead
 						}
 					}
-					create_country_leader = {
-						name = "Cao Kun"
-						picture = "gfx/leaders/CHI/CHI_Cao_Kun.dds"
-						expire = "1935.1.1"
-						ideology = despotism
-						traits = {
-							trait_despotism
-						}
-					}
-					create_country_leader = {
-						name = "Cao Kun"
-						picture = "gfx/leaders/CHI/CHI_Cao_Kun.dds"
-						expire = "1935.1.1"
-						ideology = stratocracy
-						traits = {
-							trait_stratocracy
-						}
-					}
-				}
-				else = {
-					create_country_leader = {
+					create_country_leader={
 						name = "Feng Guozhang"
-						picture = "gfx/leaders/CHI/CHI_feng_guozhang.dds"
-						expire = "1935.1.1"
+						picture = "gfx/leaders/CHI/CHI_Feng_Guozhang.dds"
 						ideology = despotism
-						traits = {
-							trait_despotism
-						}
-					}
-					create_country_leader = {
-						name = "Feng Guozhang"
-						picture = "gfx/leaders/CHI/CHI_feng_guozhang.dds"
 						expire = "1935.1.1"
+						
+					}
+					create_country_leader={
+						name = "Feng Guozhang"
+						picture = "gfx/leaders/CHI/CHI_Feng_Guozhang.dds"
 						ideology = stratocracy
-						traits = {
-							trait_stratocracy
+						expire = "1935.1.1"
+						
+					}
+					every_unit_leader = {
+						limit = {
+							has_id = 73005
 						}
+						set_nationality = PREV
 					}
 				}
 				division_template = {
@@ -2830,7 +2863,7 @@ country_event = {
 				set_demilitarized_zone = no
 			}
 			hidden_effect = {
-				every_country = {
+				every_possible_country = {
 					limit = {
 						has_unit_leader = 73051
 					}
@@ -3514,17 +3547,15 @@ country_event = {
 					long_name = MON_ungern_party
 					name = MON_ungern_party
 				}
-				create_country_leader = {
-					name = "Roman von Ungern-Sternberg"
-					picture = "gfx/leaders/MON/MON_ungern.dds"
-					expire = "1935.1.1"
-					ideology = stratocracy
-					traits = {
-						spirit_of_genghis
-						lunatic
-						trait_stratocracy
+				add_country_leader_role = {
+					character = MON_roman_ungernsternberg
+					country_leader = {
+						ideology = stratocracy
+						traits = { spirit_of_genghis lunatic  }
+						expire = "1935.1.1"
 					}
 				}
+				promote_character = MON_roman_ungernsternberg
 				set_cosmetic_tag = MON_Ungern
 			}
 		}
@@ -3560,7 +3591,19 @@ country_event = {
 	desc = ww1_china.28.d
 	id = ww1_china.28
 	picture = GFX_report_event_japan_army_mountainside
-	is_triggered_only = yes
+	trigger = {
+		tag = CHI
+		has_global_flag = interbellum
+		has_global_flag = chinese_warlord_crisis
+		has_war = no
+		is_subject = no
+		country_exists = GXC
+		NOT = {
+			has_subject = GXC
+			has_country_flag = great_war_winner
+		}
+	}
+	fire_only_once = yes
 	immediate = {
 		hidden_effect = {
 			#ZHILI
@@ -3668,7 +3711,7 @@ country_event = {
 	}
 	immediate = {
 		hidden_effect = {
-			every_country = {
+			every_possible_country = {
 				limit = {
 					has_unit_leader = 73009
 				}
@@ -3679,7 +3722,7 @@ country_event = {
 					set_nationality = ANC
 				}
 			}
-			every_country = {
+			every_possible_country = {
 				limit = {
 					OR = {
 						has_unit_leader = 73005
@@ -3731,7 +3774,7 @@ country_event = {
 					expire = "1935.1.1"
 					ideology = despotism
 					traits = {
-						trait_despotism
+						
 					}
 				}
 				create_country_leader = {
@@ -3740,7 +3783,7 @@ country_event = {
 					expire = "1935.1.1"
 					ideology = stratocracy
 					traits = {
-						trait_stratocracy
+						
 					}
 				}
 				set_cosmetic_tag = CHI_ZHC
@@ -4176,7 +4219,7 @@ country_event = {
 						ideology = vanguardism
 						traits = {
 							cornered_fox
-							trait_vanguardism
+							
 						}
 					}
 					add_ideas = {
@@ -4278,7 +4321,7 @@ country_event = {
 }
 
 #NATIONAL PROTECTION WAR
-##################
+###########################
 country_event = {
 	title = ww1_china.37.t
 	desc = {
@@ -4375,13 +4418,25 @@ country_event = {
 						can_join_factions = no
 					}
 					create_country_leader = {
-						name = "Duan Qirui"
+						name = "CHI_duan_qirui"
 						picture = "gfx/leaders/CHI/CHI_Duan_Qirui.png"
+						ideology = oligarchism
 						expire = "1935.1.1"
+						traits = { }
+					}
+					create_country_leader = {
+						name = "CHI_duan_qirui"
+						picture = "gfx/leaders/CHI/CHI_Duan_Qirui.png"
 						ideology = stratocracy
-						traits = {
-							trait_stratocracy
-						}
+						expire = "1935.1.1"
+						traits = { }
+					}
+					create_country_leader = {
+						name = "CHI_li_yuanhong"
+						picture = "gfx/leaders/CHI/CHI_Li_Yuanhong.dds"
+						ideology = oligarchism
+						expire = "1935.1.1"
+						traits = { }
 					}
 					add_ideas = CHI_idea_army_corruption
 				}
@@ -4441,22 +4496,18 @@ country_event = {
 						can_join_factions = no
 					}
 					create_country_leader = {
-						name = "Cai E"
+						name = "CHI_cai_e"
 						picture = "gfx/leaders/CHI/CHI_cai_e.dds"
-						expire = "1935.1.1"
 						ideology = authoritarian_democracy
-						traits = {
-							trait_authoritarian_democracy
-						}
+						expire = "1935.1.1"
+						traits = { }
 					}
 					create_country_leader = {
-						name = "Cai E"
+						name = "CHI_cai_e"
 						picture = "gfx/leaders/CHI/CHI_cai_e.dds"
+						ideology = stratocracy
 						expire = "1935.1.1"
-						ideology = socialism
-						traits = {
-							trait_socialism
-						}
+						traits = { }
 					}
 				}
 				CHI = {
@@ -4494,6 +4545,12 @@ country_event = {
 			}
 			add_civil_war_target = CHI
 		}
+		if = {
+			limit = {
+				has_government = fascism
+			}
+			news_event = kis_news.121
+		}
 	}
 	option = {
 		name = ww1_china.37.b
@@ -4508,6 +4565,7 @@ country_event = {
 			change_tag_from = CHI
 			add_civil_war_target = CHI
 		}
+		news_event = kis_news.121
 		trigger = {
 			has_government = fascism
 		}
@@ -4525,6 +4583,7 @@ country_event = {
 			add_civil_war_target = CHI
 			change_tag_from = CHI
 		}
+		news_event = kis_news.121
 		trigger = {
 			NOT = {
 				has_government = fascism
@@ -4557,7 +4616,7 @@ country_event = {
 		ai_chance = {
 			factor = 100
 		}
-		every_country = {
+		every_possible_country = {
 			limit = {
 				OR = {
 					has_unit_leader = 73004
@@ -4623,6 +4682,8 @@ country_event = {
 				set_rule = {
 					can_not_declare_war = yes
 				}
+				promote_character = CHI_duan_qirui
+				promote_character = CHI_li_yuanhong
 			}
 		}
 	}
@@ -5020,6 +5081,8 @@ country_event = {
 				every_owned_state = {
 					limit = {
 						NOT = {
+							state = 329
+							state = 330
 							state = 595
 							state = 596
 							state = 613
@@ -5220,7 +5283,7 @@ country_event = {
 }
 
 #SECOND CONSTITUTIONAL PROTECTION MOVEMENT
-##################
+#############################################
 country_event = {
 	id = ww1_china.47
 	title = ww1_china.47.t
@@ -5300,21 +5363,17 @@ country_event = {
 					create_country_leader = {
 						name = "Sun Yat-sen"
 						picture = "gfx/leaders/CHI/CHI_sun_wen.dds"
-						expire = "1935.1.1"
 						ideology = socialism
-						traits = {
-							trait_socialism
-						}
+						traits = { popular_figurehead  }
+						expire = "1935.1.1"
 					}
 					else = {
 						create_country_leader = {
-							name = "Chiang Kai-shek"
-							picture = "gfx/leaders/CHI/CHI_chiang_kai_shek.dds"
+							name = "Wang Jingwei"
+							picture = "gfx/leaders/CHI/CHI_wang_jingwei.dds"
+							ideology = socialism
+							
 							expire = "1935.1.1"
-							ideology = conservatism
-							traits = {
-								trait_conservatism
-							}
 						}
 					}
 				}
@@ -5396,7 +5455,7 @@ country_event = {
 							expire = "1935.1.1"
 							ideology = social_liberalism
 							traits = {
-								trait_social_liberalism
+								
 							}
 						}
 						set_party_name = {
@@ -5842,7 +5901,7 @@ country_event = {
 					expire = 1935.1.1
 					ideology = despotism
 					traits = {
-						trait_despotism
+						
 					}
 				}
 				create_country_leader = {
@@ -5851,7 +5910,7 @@ country_event = {
 					expire = 1935.1.1
 					ideology = stratocracy
 					traits = {
-						trait_stratocracy
+						
 					}
 				}
 			}
@@ -5884,7 +5943,7 @@ country_event = {
 }
 
 # DEATH OF SUN YAT-SEN
-##################
+#########################
 country_event = {
 	id = ww1_china.54
 	title = ww1_china.54.t
@@ -5892,9 +5951,16 @@ country_event = {
 	picture = GFX_report_event_japan_army_mountainside
 	fire_only_once = yes
 	trigger = {
-		has_country_leader = {
-			name = "Sun Yat-sen"
-			ruling_only = yes
+		OR = {
+			has_country_leader = {
+				name = "Sun Yat-sen"
+			}
+			has_country_leader = {
+				character = CHI_sun_yatsen
+			}
+			has_country_leader = {
+				character = QIN_sun_yatsen
+			}
 		}
 		date > 1925.3.12
 	}
@@ -5903,29 +5969,75 @@ country_event = {
 	}
 	immediate = {
 		hidden_effect = {
-			kill_country_leader = yes
-			create_country_leader = {
-				name = "Hu Hanmin"
-				picture = "gfx/leaders/CHI/CHI_Hu_Hanmin.dds"
-				expire = "1935.1.1"
-				ideology = conservatism
-				traits = {
-					trait_conservatism
-				}
-			}
-			add_stability = -0.05
 			if = {
 				limit = {
-					original_tag = CHI
+					has_country_leader = {
+						character = QIN_sun_yatsen
+					}
 				}
-				remove_ideas = CHI_idea_militarist_plot
-				set_global_flag = chinese_warlord_crisis
+				retire_character = QIN_sun_yatsen
+			}
+			else_if = {
+				limit = {
+					has_country_leader = {
+						character = CHI_sun_yatsen
+					}
+				}
+				retire_character = CHI_sun_yatsen
+			}
+			if = {
+				limit = {
+					has_country_leader = {
+						name = "Sun Yat-sen"
+					}
+				}
+				kill_ideology_leader = democratic
+				if = {
+					limit = {
+						has_country_leader = {
+							name = "Sun Yat-sen"
+						}
+					}
+					kill_ideology_leader = communism
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = CHI_kuomintang_flag
+				}
+				create_country_leader = {
+					name = "Hu Hanmin"
+					picture = "gfx/leaders/CHI/CHI_Hu_Hanmin.dds"
+					expire = "1935.1.1"
+					ideology = conservatism
+					traits = {
+						
+					}
+				}
 			}
 			set_global_flag = sun_yatsen_dead
 		}
 	}
 	option = {
 		name = ww1_china.54.a
+		effect_tooltip = {
+			kill_ideology_leader = democratic
+			if = {
+				limit = {
+					has_country_flag = CHI_kuomintang_flag
+				}
+				create_country_leader = {
+					name = "Hu Hanmin"
+					picture = "gfx/leaders/CHI/CHI_Hu_Hanmin.dds"
+					expire = "1935.1.1"
+					ideology = conservatism
+					traits = {
+						
+					}
+				}
+			}
+		}
+		add_stability = -0.05
 		ai_chance = {
 			factor = 100
 		}
@@ -6047,6 +6159,10 @@ country_event = {
 				ruling_only = yes
 			}
 			has_country_leader = {
+				character = CHI_sun_yatsen
+				ruling_only = yes
+			}
+			has_country_leader = {
 				name = "Hu Hanmin"
 				ruling_only = yes
 			}
@@ -6055,7 +6171,15 @@ country_event = {
 				ruling_only = yes
 			}
 			has_country_leader = {
+				character = CHI_wang_jingwei
+				ruling_only = yes
+			}
+			has_country_leader = {
 				name = "Chiang Kai-shek"
+				ruling_only = yes
+			}
+			has_country_leader = {
+				character = CHI_chiang_kaishek
 				ruling_only = yes
 			}
 		}
@@ -6078,13 +6202,19 @@ country_event = {
 			ideology = communism
 			popularity = 0.05
 		}
-		create_country_leader = {
-			name = "Li Dazhao"
-			picture = "gfx/leaders/CHI/CHI_li_dazhao.dds"
-			expire = "1935.1.1"
-			ideology = marxism
-			traits = {
-				trait_marxism
+		if = {
+			limit = {
+				original_tag = CHI
+			}
+			promote_character = CHI_li_dazhao
+			else = {
+				create_country_leader = {
+					name = "LI Dazhao"
+					picture = "gfx/leaders/CHI/CHI_li_dazhao.dds"
+					ideology = marxism
+					
+					expire = "1935.1.1"
+				}
 			}
 		}
 		add_ideas = CHI_idea_communist_movement
@@ -6203,7 +6333,7 @@ country_event = {
 					ideology = vanguardism
 					traits = {
 						cornered_fox
-						trait_vanguardism
+						
 					}
 				}
 				add_ideas = {
@@ -6760,7 +6890,7 @@ country_event = {
 				expire = "1935.1.1"
 				ideology = despotism
 				traits = {
-					trait_despotism
+					
 				}
 			}
 			create_country_leader = {
@@ -6769,7 +6899,7 @@ country_event = {
 				expire = "1935.1.1"
 				ideology = stratocracy
 				traits = {
-					trait_stratocracy
+					
 				}
 			}
 		}
@@ -7427,44 +7557,42 @@ country_event = {
 							long_name = CHI_kuomintang_party
 							name = CHI_kuomintang_party
 						}
-						create_country_leader = {
-							name = "Chiang Kai-shek"
-							picture = "gfx/leaders/CHI/CHI_chiang_kai_shek.dds"
-							expire = "1935.1.1"
-							ideology = authoritarian_democracy
-							traits = {
-								generallissimo
-								trait_authoritarian_democracy
+						add_country_leader_role = {
+							character = CHI_chaing_kaishek
+							country_leader = {
+								ideology = authoritarian_democracy
+								traits = { generallissimo  }
+								expire = "1935.1.1.1"
 							}
 						}
-						create_country_leader = {
-							name = "Zhang Guotao"
-							picture = "gfx/leaders/Asia/Portrait_Asia_Generic_land_4.dds"
-							expire = "1935.1.1"
-							ideology = vanguardism
-							traits = {
-								cornered_fox
-								trait_vanguardism
+						CHI_chiang_kaishek = {
+							promote_character = {
+								ideology = authoritarian_democracy
 							}
 						}
-						create_country_leader = {
-							name = "Wang Jingwei"
-							picture = "gfx/leaders/CHI/CHI_wang_jingwei.dds"
-							expire = "1935.1.1"
-							ideology = fascism_ideology
-							traits = {
-								trait_fascism
+						add_country_leader_role = {
+							character = CHI_zhang_guotao
+							country_leader = {
+								ideology = vanguardism
+								traits = { cornered_fox  }
+								expire = "1935.1.1.1"
 							}
 						}
-						create_country_leader = {
-							name = "Weng Wenhao"
-							picture = "GFX_portrait_chi_weng_wenhao"
-							expire = "1935.1.1"
-							ideology = socialism
-							traits = {
-								trait_socialism
+						promote_character = CHI_zhang_guotao
+						add_country_leader_role = {
+							character = CHI_wang_jingwei
+							country_leader = {
+								ideology = fascism_ideology
+								
+								expire = "1935.1.1.1"
 							}
 						}
+						CHI_wang_jingwei = {
+							promote_character = {
+								ideology = fascism_ideology
+							}
+						}
+						promote_character = CHI_weng_wenhao
 						create_field_marshal = {
 							name = "Tu Yu-ming"
 							gfx = "GFX_portrait_chi_du_yuming"
@@ -7790,16 +7918,15 @@ country_event = {
 								remove_core_of = SHX
 							}
 							set_capital = { state = 608 }
-							create_country_leader = {
-								name = "Yan Xishan"
-								picture = "gfx/leaders/Asia/Portrait_Asia_Generic_warlord2.dds"
-								expire = "1935.1.1"
-								ideology = authoritarian_democracy
-								traits = {
-									propaganda_expert
-									trait_authoritarian_democracy
+							add_country_leader_role = {
+								character = CHI_yan_xishan
+								country_leader = {
+									ideology = authoritarian_democracy
+									traits = { propaganda_expert  }
+									expire = "1935.1.1.1"
 								}
 							}
+							promote_character = CHI_yan_xishan
 							change_tag_from = SHX
 							change_tag_from = GMJ
 						}
@@ -7925,7 +8052,7 @@ country_event = {
 						ideology = autocracy
 						traits = {
 							spirit_of_genghis
-							trait_autocracy
+							
 						}
 					}
 					create_country_leader = {
@@ -7935,7 +8062,7 @@ country_event = {
 						ideology = fascism_ideology
 						traits = {
 							spirit_of_genghis
-							trait_fascism
+							
 						}
 					}
 					add_popularity = {
@@ -8011,29 +8138,23 @@ country_event = {
 			create_country_leader = {
 				name = "Long Yun"
 				picture = "GFX_portrait_yun_long_yun"
-				expire = "1935.1.1"
-				ideology = authoritarian_democracy
-				traits = {
-					trait_authoritarian_democracy
-				}
-			}
-			create_country_leader = {
-				name = "Long Yun"
-				picture = "GFX_portrait_yun_long_yun"
-				expire = "1935.1.1"
 				ideology = conservatism
-				traits = {
-					trait_conservatism
-				}
+				
+				expire = "1935.1.1"
 			}
 			create_country_leader = {
 				name = "Long Yun"
 				picture = "GFX_portrait_yun_long_yun"
+				ideology = authoritarian_democracy
+				
 				expire = "1935.1.1"
+			}
+			create_country_leader = {
+				name = "Long Yun"
+				picture = "GFX_portrait_yun_long_yun"
 				ideology = stratocracy
-				traits = {
-					trait_stratocracy
-				}
+				
+				expire = "1935.1.1"
 			}
 		}
 	}
@@ -8046,16 +8167,21 @@ country_event = {
 }
 
 # DEATH OF FENG GUOZHANG
-######################
+###########################
 country_event = {
 	id = ww1_china.68
 	title = ww1_china.68.t
 	desc = ww1_china.68.d
 	trigger = {
 		date > 1919.12.12
-		has_country_leader = {
-			name = "Feng Guozhang"
-			ruling_only = no
+		OR = {
+			has_country_leader = {
+				name = "Feng Guozhang"
+			}
+			has_country_leader = {
+				character = QIN_feng_guozhang
+			}
+			has_unit_leader = 73005
 		}
 	}
 	fire_only_once = yes
@@ -8064,31 +8190,39 @@ country_event = {
 	}
 	immediate = {
 		hidden_effect = {
-			kill_ideology_leader = neutrality
-			kill_ideology_leader = fascism
-			create_country_leader = {
-				name = "Cao Kun"
-				picture = "gfx/leaders/CHI/CHI_Cao_Kun.dds"
-				expire = "1935.1.1"
-				ideology = despotism
-				traits = {
-					trait_despotism
+			if = {
+				limit = {
+					has_country_leader = {
+						character = QIN_feng_guozhang
+					}
 				}
+				retire_character = QIN_feng_guozhang
 			}
-			create_country_leader = {
-				name = "Cao Kun"
-				picture = "gfx/leaders/CHI/CHI_Cao_Kun.dds"
-				expire = "1935.1.1"
-				ideology = stratocracy
-				traits = {
-					trait_stratocracy
+			if = {
+				limit = {
+					has_country_leader = {
+						name = "Feng Guozhang"
+					}
 				}
+				kill_ideology_leader = fascism
+				kill_ideology_leader = neutrality
 			}
+			remove_unit_leader = 73005
 			set_global_flag = feng_guozhang_dead
 		}
 	}
 	option = {
 		name = ww1_china.68.a
+		effect_tooltip = {
+			kill_ideology_leader = neutrality
+			create_country_leader = {
+				name = "Cao Kun"
+				picture = "gfx/leaders/CHI/CHI_cao_kun.dds"
+				ideology = despotism
+				expire = "1935.1.1"
+				
+			}
+		}
 		ai_chance = {
 			factor = 100
 		}
@@ -8228,11 +8362,9 @@ country_event = {
 				create_country_leader = {
 					name = "Wang Jingwei"
 					picture = "gfx/leaders/CHI/CHI_wang_jingwei.dds"
-					expire = "1935.1.1"
 					ideology = socialism
-					traits = {
-						trait_socialism
-					}
+					
+					expire = "1935.1.1"
 				}
 				set_rule = {
 					can_join_factions = no
@@ -8358,30 +8490,62 @@ country_event = {
 		else = {
 			set_cosmetic_tag = KMT_GUANGZHOU
 		}
-		create_country_leader = {
-			name = "Wang Jingwei"
-			picture = "gfx/leaders/CHI/CHI_wang_jingwei.dds"
-			expire = "1935.1.1"
-			ideology = socialism
-			traits = {
-				trait_socialism
+		if = {
+			limit = {
+				original_tag = CHI
+			}
+			add_country_leader_role = {
+				character = CHI_wang_jingwei
+				country_leader = {
+					ideology = socialism
+					
+					expire = "1935.1.1.1"
+				}
+			}
+			promote_character = CHI_wang_jingwei
+			add_country_leader_role = {
+				character = CHI_chiang_kaishek
+				country_leader = {
+					ideology = authoritarian_democracy
+					traits = { generallissimo  }
+					expire = "1935.1.1.1"
+				}
+			}
+			CHI_chiang_kaishek = {
+				promote_character = {
+					ideology = authoritarian_democracy
+				}
 			}
 		}
-		# Chiang-Wang Coalition
+		else = {
+			create_country_leader = {
+				name = "Wang Jingwei"
+				picture = "gfx/leaders/CHI/CHI_wang_jingwei.dds"
+				ideology = socialism
+				
+				expire = "1935.1.1"
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_country_leader = {
+							name = "Chiang Kai-shek"
+						}
+					}
+				}
+				create_country_leader = {
+					name = "Chiang Kai-shek"
+					picture = "gfx/leaders/CHI/CHI_chiang_kai-shek.dds"
+					ideology = authoritarian_democracy
+					traits = { generallissimo  }
+					expire = "1935.1.1"
+				}
+			}
+		}
 		set_party_name = {
 			ideology = neutrality
 			long_name = CHI_revolutionary_army_long
 			name = CHI_revolutionary_army
-		}
-		create_country_leader = {
-			name = "Chiang Kai-shek"
-			picture = "gfx/leaders/CHI/CHI_chiang_kai_shek.dds"
-			expire = "1935.1.1"
-			ideology = authoritarian_democracy
-			traits = {
-				generallissimo
-				trait_authoritarian_democracy
-			}
 		}
 	}
 }
@@ -8404,6 +8568,10 @@ country_event = {
 			name = "Wang Jingwei"
 			ruling_only = yes
 		}
+		has_country_leader = {
+			name = "Chiang Kai-shek"
+			ruling_only = no
+		}
 	}
 	fire_only_once = yes
 	mean_time_to_happen = {
@@ -8420,15 +8588,13 @@ country_event = {
 			ideology = communism
 			popularity = -0.07
 		}
+		retire_country_leader = yes
 		create_country_leader = {
 			name = "Chiang Kai-shek"
 			picture = "gfx/leaders/CHI/CHI_chiang_kai_shek.dds"
-			expire = "1935.1.1"
 			ideology = conservatism
-			traits = {
-				generallissimo
-				trait_conservatism
-			}
+			traits = { generallissimo  }
+			expire = "1935.1.1"
 		}
 		ai_chance = {
 			factor = 100
@@ -8453,22 +8619,16 @@ country_event = {
 				create_country_leader = {
 					name = "Chiang Kai-shek"
 					picture = "gfx/leaders/CHI/CHI_chiang_kai_shek.dds"
-					expire = "1935.1.1"
 					ideology = conservatism
-					traits = {
-						generallissimo
-						trait_conservatism
-					}
+					traits = { generallissimo  }
+					expire = "1935.1.1"
 				}
 				create_country_leader = {
 					name = "Chiang Kai-shek"
 					picture = "gfx/leaders/CHI/CHI_chiang_kai_shek.dds"
-					expire = "1935.1.1"
 					ideology = stratocracy
-					traits = {
-						generallissimo
-						trait_stratocracy
-					}
+					traits = { generallissimo  }
+					expire = "1935.1.1"
 				}
 			}
 		}
@@ -8502,6 +8662,7 @@ country_event = {
 }
 
 # ZHANG JINGYAO IS OVERTHROWN
+################################
 country_event = {
 	id = ww1_china.74
 	title = ww1_china.74.t
@@ -8523,22 +8684,18 @@ country_event = {
 		retire_ideology_leader = fascism
 		remove_unit_leader = 19611
 		create_country_leader = {
-			name = "Zhao Hengti"
+			name = "Zao Hengti"
 			picture = "gfx/leaders/CHI/CHI_Zhao_Hengti.dds"
+			ideology = conservatism
+			
 			expire = "1935.1.1"
-			ideology = authoritarian_democracy
-			traits = {
-				trait_authoritarian_democracy
-			}
 		}
 		create_country_leader = {
-			name = "Zhao Hengti"
+			name = "Zao Hengti"
 			picture = "gfx/leaders/CHI/CHI_Zhao_Hengti.dds"
+			ideology = authoritarian_democracy
+			
 			expire = "1935.1.1"
-			ideology = conservatism
-			traits = {
-				trait_conservatism
-			}
 		}
 		set_party_name = {
 			ideology = democratic
@@ -8583,7 +8740,7 @@ country_event = {
 			traits = {
 				german_agent
 				foreign_leader
-				trait_authoritarian_democracy
+				
 			}
 		}
 		create_country_leader = {
@@ -8594,7 +8751,7 @@ country_event = {
 			traits = {
 				german_agent
 				foreign_leader
-				trait_stratocracy
+				
 			}
 		}
 		create_country_leader = {
@@ -8605,7 +8762,7 @@ country_event = {
 			traits = {
 				german_agent
 				foreign_leader
-				trait_conservatism
+				
 			}
 		}
 		if = {
@@ -8846,37 +9003,69 @@ country_event = {
 	# Side with Li Yuanhong
 	option = {
 		name = ww1_china.81.b
+		promote_character = CHI_li_yuanhong
 		start_civil_war = {
 			ideology = neutrality
 			size = 0.3
 			states = {
 				287 597 607 609 610 611 614 617 619 620 716
 			}
-			hidden_effect = {
-				every_other_country = {
-					limit = {
-						original_tag = CHI
-						NOT = {
-							has_country_leader = {
-								name = "Duan Qirui"
-								ruling_only = yes
-							}
-						}
-					}
-					create_country_leader = {
-						name = "Li Yuanhong"
-						picture = "gfx/leaders/CHI/CHI_Li_Yuanhong.dds"
-						expire = "1935.1.1"
-						ideology = oligarchism
-						traits = {
-							trait_oligarchism
-						}
-					}
-				}
-			}
+			promote_character = CHI_duan_qirui
 		}
 		ai_chance = {
 			factor = 0
+		}
+	}
+}
+
+# DEATH OF CAI E
+###########################
+country_event = {
+	id = ww1_china.82
+	trigger = {
+		date > 1916.11.8
+		OR = {
+			has_country_leader = {
+				character = CHI_cai_e
+			}
+			has_unit_leader = 15098
+		}
+	}
+	fire_only_once = yes
+	mean_time_to_happen = {
+		days = 0
+	}
+	hidden = yes
+	immediate = {
+		hidden_effect = {
+			every_possible_country = {
+				limit = {
+					OR = {
+						has_country_leader = {
+							character = CHI_cai_e
+						}
+						has_unit_leader = 15098
+					}
+				}
+				if = {
+					limit = {
+						has_country_flag = CHI_national_protection_flag
+					}
+					promote_character = CHI_sun_yatsen
+					create_country_leader = {
+						name = "Tang Jiyao"
+						picture = "gfx/leaders/CHI/CHI_tang_jiyao.dds"
+						expire = "1935.1.1"
+						ideology = authoritarian_democracy
+						traits = {
+							
+						}
+					}
+				}
+				retire_character = CHI_cai_e
+				remove_unit_leader = 15098
+			}
+			set_global_flag = cai_e_dead
 		}
 	}
 }
@@ -8903,6 +9092,10 @@ country_event = {
 					ruling_only = yes
 				}
 				has_country_leader = {
+					character = CHI_sun_yatsen
+					ruling_only = yes
+				}
+				has_country_leader = {
 					name = "Hu Hanmin"
 					ruling_only = yes
 				}
@@ -8911,7 +9104,15 @@ country_event = {
 					ruling_only = yes
 				}
 				has_country_leader = {
+					character = CHI_wang_jingwei
+					ruling_only = yes
+				}
+				has_country_leader = {
 					name = "Chiang Kai-shek"
+					ruling_only = yes
+				}
+				has_country_leader = {
+					character = CHI_chiang_kaishek
 					ruling_only = yes
 				}
 			}
@@ -8928,20 +9129,16 @@ country_event = {
 			create_country_leader = {
 				name = "Jin Shuren"
 				picture = "gfx/leaders/CHI/CHI_Jin_Shuren.dds"
-				expire = "1935.1.1"
 				ideology = despotism
-				traits = {
-					trait_despotism
-				}
+				
+				expire = "1935.1.1"
 			}
 			create_country_leader = {
 				name = "Jin Shuren"
 				picture = "gfx/leaders/CHI/CHI_Jin_Shuren.dds"
-				expire = "1935.1.1"
 				ideology = stratocracy
-				traits = {
-					trait_stratocracy
-				}
+				
+				expire = "1935.1.1"
 			}
 		}
 	}
@@ -8989,7 +9186,7 @@ country_event = {
 					expire = "1935.1.1"
 					ideology = autocracy
 					traits = {
-						trait_autocracy
+						
 					}
 				}
 			}
@@ -9184,7 +9381,7 @@ country_event = {
 			expire = "1935.1.1"
 			ideology = despotism
 			traits = {
-				trait_despotism
+				
 			}
 		}
 		hidden_effect = {
@@ -9195,7 +9392,7 @@ country_event = {
 				expire = "1935.1.1"
 				ideology = stratocracy
 				traits = {
-					trait_stratocracy
+					
 				}
 			}
 			create_country_leader = {
@@ -9204,7 +9401,7 @@ country_event = {
 				expire = "1935.1.1"
 				ideology = vanguardism
 				traits = {
-					trait_vanguardism
+					
 				}
 			}
 		}
@@ -9261,20 +9458,20 @@ country_event = {
 			kill_ideology_leader = fascism
 			create_country_leader = {
 				name = "Ma Lin"
-				picture = "gfx/leaders/CHI/CHI_Ma_Lin.dds"
+				picture = "gfx/leaders/CHI/CHI_Ma_Lin.png"
 				expire = "1935.1.1"
 				ideology = despotism
 				traits = {
-					trait_despotism
+					
 				}
 			}
 			create_country_leader = {
 				name = "Ma Lin"
-				picture = "gfx/leaders/CHI/CHI_Ma_Lin.dds"
+				picture = "gfx/leaders/CHI/CHI_Ma_Lin.png"
 				expire = "1935.1.1"
 				ideology = stratocracy
 				traits = {
-					trait_stratocracy
+					
 				}
 			}
 		}

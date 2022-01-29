@@ -102,7 +102,9 @@ ideas = {
 				NOT = { has_government = communism }
 			}
 			removal_cost=-1 
-			research_bonus = { land_doctrine = 0.07 } 
+			modifier = {
+				land_doctrine_cost_factor = 0.07
+			}
 		}
 		CHI_idea_support_for_revolution = {
 			allowed_civil_war = { always = yes }
@@ -163,6 +165,7 @@ ideas = {
 			removal_cost = -1
 			picture = prc_low_popular_support3
 			available = {
+				has_war = yes
 				NOT = { has_war_with = CHI }
 				NOT = { has_war_with = QIN }
 			}

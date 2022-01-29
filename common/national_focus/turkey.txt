@@ -81,7 +81,7 @@ focus_tree = {
 						ideology = authoritarian_democracy
 						traits = {
 							ataturk
-							trait_authoritarian_democracy
+							
 						}
 					}
 					else = {
@@ -92,7 +92,7 @@ focus_tree = {
 							ideology = despotism
 							traits = {
 								tur_national_hero
-								trait_despotism
+								
 							}
 						}								
 					}
@@ -767,11 +767,11 @@ focus_tree = {
 			}
 			NOT = {
 				has_country_flag = TUR_cancel_lozan
-				OTT = {
-					OR = {
-						has_capitulated = yes
-						exists = no
-					}
+			}
+			OTT = {
+				OR = {
+					has_capitulated = yes
+					exists = no
 				}
 			}
 		}
@@ -2683,7 +2683,7 @@ focus_tree = {
 				ideology = autocracy
 				traits = {
 					autocratic_imperialist
-					trait_autocracy
+					
 				}
 			}
 			add_popularity = {
@@ -2701,7 +2701,7 @@ focus_tree = {
 					limit = {
 						has_id = 90007
 					}
-					retire = yes
+					remove_unit_leader_role = yes
 				}
 			}
 			if = {
@@ -2712,7 +2712,7 @@ focus_tree = {
 					limit = {
 						has_id = 90013
 					}
-					retire = yes
+					remove_unit_leader_role = yes
 				}
 			}
 		}
@@ -2891,7 +2891,7 @@ focus_tree = {
 					limit = {
 						has_id = 90007
 					}
-					retire = yes
+					remove_unit_leader_role = yes
 				}
 			}
 			if = {
@@ -2902,7 +2902,7 @@ focus_tree = {
 					limit = {
 						has_id = 90013
 					}
-					retire = yes
+					remove_unit_leader_role = yes
 				}
 			}
 		}

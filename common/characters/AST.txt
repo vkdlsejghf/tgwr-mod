@@ -1,6 +1,6 @@
 characters={
 	AST_andrew_fisher={
-		name="Andrew Fisher"
+		name="AST_andrew_fisher"
 		advisor={
 			slot = political_advisor
 			idea_token = AST_andrew_fisher
@@ -24,16 +24,16 @@ characters={
 		}
 		country_leader={
 			ideology=socialism
-			traits={ labour_man trait_socialism }
+			traits={ labour_man  }
 			expire="1915.5.1.1"
-			id=-1
+			
 		}
 	}
-	AST_harry_Chauvel={
-		name="Harry Chauvel"
+	AST_harry_chauvel={
+		name="AST_harry_chauvel"
 		advisor={
 			slot = high_command
-			idea_token = AST_harry_Chauvel
+			idea_token = AST_harry_chauvel
 			allowed  = {
 					original_tag  = AST 
 				}
@@ -63,11 +63,11 @@ characters={
 			defense_skill=2
 			planning_skill=3
 			logistics_skill=1
-			legacy_id=-1
+			
 		}
 	}
 	AST_lord_thomas_denman={
-		name="Lord Thomas Denman"
+		name="AST_lord_thomas_denman"
 		portraits={
 			civilian={
 				large="gfx/leaders/AST/AST_thomas_denman.dds"
@@ -75,13 +75,13 @@ characters={
 		}
 		country_leader={
 			ideology=despotism
-			traits={ trait_despotism }
-			expire="1935.1.1.1"
-			id=-1
+			
+			
+			
 		}
 	}
 	AST_michael_considine={
-		name="Michael Considine"
+		name="AST_michael_considine"
 		portraits={
 			civilian={
 				large="gfx/leaders/Europe/portrait_europe_generic_4.dds"
@@ -89,13 +89,13 @@ characters={
 		}
 		country_leader={
 			ideology=market_socialism
-			traits={ trait_market_socialism }
-			expire="1935.1.1.1"
-			id=-1
+			
+			
+			
 		}
 	}
 	AST_billy_hughes={
-		name="Billy Hughes"
+		name="AST_billy_hughes"
 		portraits={
 			civilian={
 				large="gfx/leaders/AST/AST_william_hughes.dds"
@@ -103,13 +103,13 @@ characters={
 		}
 		country_leader={
 			ideology=socialism
-			traits={ little_digger trait_socialism }
+			traits={ little_digger  }
 			expire="1923.2.9.1"
-			id=-1
+			
 		}
 	}
 	AST_stanley_bruce={
-		name="Stanley Bruce"
+		name="AST_stanley_bruce"
 		portraits={
 			civilian={
 				large="gfx/leaders/AST/AST_stanley_bruce.dds"
@@ -117,13 +117,13 @@ characters={
 		}
 		country_leader={
 			ideology=conservatism
-			traits={ trait_conservatism }
-			expire="1935.1.1.1"
-			id=-1
+			
+			
+			
 		}
 	}
 	AST_harold_elliott={
-		name="Harold Elliott"
+		name="AST_harold_elliott"
 		portraits={
 			army={
 				small="gfx/interface/ideas/idea_europe_generic_land_2.dds"
@@ -139,11 +139,11 @@ characters={
 			defense_skill=2
 			planning_skill=2
 			logistics_skill=3
-			legacy_id=-1
+			
 		}
 	}
-	AST_james_w._mccay={
-		name="James W. McCay"
+	AST_james_w_mccay={
+		name="AST_james_w_mccay"
 		portraits={
 			army={
 				small="gfx/interface/ideas/idea_europe_generic_land_1.dds"
@@ -159,11 +159,11 @@ characters={
 			defense_skill=2
 			planning_skill=2
 			logistics_skill=3
-			legacy_id=-1
+			
 		}
 	}
 	AST_william_bridges={
-		name="William Bridges"
+		name="AST_william_bridges"
 		portraits={
 			army={
 				small="gfx/interface/ideas/idea_europe_generic_land_3.dds"
@@ -179,11 +179,11 @@ characters={
 			defense_skill=1
 			planning_skill=2
 			logistics_skill=2
-			legacy_id=-1
+			
 		}
 	}
 	AST_charles_cox={
-		name="Charles Cox"
+		name="AST_charles_cox"
 		portraits={
 			army={
 				small="gfx/interface/ideas/idea_ENG_generic_land_1.dds"
@@ -199,11 +199,11 @@ characters={
 			defense_skill=2
 			planning_skill=3
 			logistics_skill=2
-			legacy_id=-1
+			
 		}
 	}
 	AST_charles_rosenthal={
-		name="Charles Rosenthal"
+		name="AST_charles_rosenthal"
 		portraits={
 			army={
 				small="gfx/interface/ideas/idea_ENG_generic_land_2.dds"
@@ -218,11 +218,11 @@ characters={
 			defense_skill=1
 			planning_skill=2
 			logistics_skill=2
-			legacy_id=-1
+			
 		}
 	}
 	AST_william_holmes={
-		name="William Holmes"
+		name="AST_william_holmes"
 		portraits={
 			army={
 				small="gfx/interface/ideas/idea_ENG_generic_land_3.dds"
@@ -238,11 +238,11 @@ characters={
 			defense_skill=1
 			planning_skill=2
 			logistics_skill=2
-			legacy_id=-1
+			
 		}
 	}
 	AST_charles_brand={
-		name="Charles Brand"
+		name="AST_charles_brand"
 		portraits={
 			army={
 				small="gfx/interface/ideas/idea_ENG_generic_land_4.dds"
@@ -257,11 +257,11 @@ characters={
 			defense_skill=1
 			planning_skill=2
 			logistics_skill=2
-			legacy_id=-1
+			
 		}
 	}
 	AST_george_hyde={
-		name="George Hyde"
+		name="AST_george_hyde"
 		portraits={
 			army={
 				small="gfx/interface/ideas/idea_ENG_generic_navy_1.dds"
@@ -277,7 +277,7 @@ characters={
 			defense_skill=2
 			maneuvering_skill=1
 			coordination_skill=1
-			legacy_id=-1
+			
 		}
 	}
 	AST_henry_petre={
