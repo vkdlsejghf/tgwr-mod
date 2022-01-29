@@ -473,6 +473,9 @@ country_event = {
 				set_rule = {
 					can_join_factions = no
 				}
+				every_owned_state = {
+					set_state_flag = nationalist_french_states
+				}
 			}
 			FRA = {
 				if = {
@@ -1611,45 +1614,6 @@ country_event = {
 					}		
 					AUH = {
 						transfer_state = 776
-					}
-				}
-			}
-		}
-		if = {
-			limit = {
-				NFA = {
-					owns_state = 779
-				}
-			}
-			if = {
-				limit = {
-					GER = {
-						exists = yes
-					}
-				}
-				GER = {
-					transfer_state = 779
-				}
-				else_if = {
-					limit = {
-						ENG = {
-							exists = yes
-							has_country_flag = great_war_winner
-						}	
-					}		
-					ENG = {
-						transfer_state = 779
-					}
-				}
-				else_if = {
-					limit = {
-						AUH = {
-							exists = yes
-							has_country_flag = great_war_winner
-						}	
-					}		
-					AUH = {
-						transfer_state = 779
 					}
 				}
 			}
