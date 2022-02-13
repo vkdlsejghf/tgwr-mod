@@ -3,10 +3,14 @@
 ##############################
 SPR_trade_abroad_category = {
     priority = 100
+    icon = GFX_decision_category_generic_industry
     allowed = {
         original_tag = SPR
     }
     visible = {
         always = yes
+        has_global_flag = {
+            flag = kis_war
+        }
     }
 }
