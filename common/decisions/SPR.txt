@@ -1,0 +1,27 @@
+SPR_foreign_trade_category = {
+    SPR_trade_with_france = {
+        icon = decision_generic_fort
+        allowed = {
+            original_tag = SPR
+        }
+        available = {
+            original_tag = SPR
+        }
+        visible = {
+        }
+        complete_effect = {
+            add_political_power = 100
+        }
+    }
+}
+SPR_foreign_trade_category = {
+    SPR_trade_with_germany = {
+        allowed = {
+            original_tag = SPR
+        }
+        available = {
+            original_tag = SPR
+            has_political_power > 1
+        }
+    }
+}

@@ -1,0 +1,10 @@
+SPR_foreign_trade_category = {
+    icon = decision_category_tur_minorities
+    priority = 100
+    allowed = {
+        original_tag = SPR
+    }
+    visible = {
+        always = yes
+    }
+}
