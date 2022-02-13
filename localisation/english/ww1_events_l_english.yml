@@ -506,6 +506,10 @@
  ww1_france.200.d:0 "Now that the region of Alsace-Lorraine belongs to us again, we can expunge the affront of 1870 and call again our beloved cities by their former French appelations!"
  ww1_france.200.a:0 "Avec Plaisir!"
  ww1_france.200.b:0 "We have other things to do"
+ ww1_france.34.t:0 "Spain Offers To Supply Us With Coal."
+ ww1_france.34.d:0 "Placeholder"
+ ww1_france.34.a:0 "Oui, We Accept."
+ ww1_france.34.b:0 "Non."
  
  #BELGIUM
  ww1_belgium.1.t:0 "Rape of Belgium"

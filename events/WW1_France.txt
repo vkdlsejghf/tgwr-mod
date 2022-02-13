@@ -2205,3 +2205,24 @@ country_event = {
 		}
 	}
 }
+
+country_event = {
+	id = ww1_france.34
+	title = ww1_france.34.t
+	desc = ww1_france.34.d
+	picture = GFX_report_event_spain_coal_mines
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = ww1_france.34.a
+		ai_chance = {
+			factor = 80
+		}
+	}
+	option = {
+		name = ww1_france.34.b
+		ai_chance = {
+			factor = 20
+		}
+	}
+}
