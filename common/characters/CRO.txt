@@ -3,40 +3,22 @@ characters={
 		name="CRO_dr_ante_pavelic"
 		portraits={
 			civilian={
-				large="gfx/leaders/CRO/CRO_Ante_Pavelic.dds"
+				large="gfx/leaders/CRO/CRO_Ante_Pavelic.png"
 			}
 		}
 		country_leader={
-			ideology=conservatism
-			traits={ trait_conservatism }
-			expire="1935.1.1.1"
-			id=-1
-		}
-		country_leader={
 			ideology=authoritarian_democracy
-			traits={ trait_authoritarian_democracy }
-			expire="1935.1.1.1"
-			id=-1
 		}
 	}
 	CRO_stjepan_radic={
 		name="CRO_stjepan_radic"
 		portraits={
 			civilian={
-				large="gfx/leaders/CRO/CRO_Stjepan_Radic.dds"
+				large="gfx/leaders/CRO/CRO_Stjepan_Radic.png"
 			}
 		}
 		country_leader={
-			ideology=classical_liberalism
-			traits={ trait_classical_liberalism }
-			expire="1935.1.1.1"
-			id=-1
-		}
-		country_leader={
-			ideology=authoritarian_democracy
-			traits={ trait_authoritarian_democracy }
-			expire="1935.1.1.1"
-			id=-1
+			ideology=social_liberalism
 		}
 	}
 	CRO_ivan_skerlecz = {

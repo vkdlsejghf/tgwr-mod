@@ -152,6 +152,66 @@ GER_great_war = {
 			}
 		}
 	}
+	# FAMINE TIMER
+	#################
+	GER_misison_famine_timer = {
+		icon = generic_nationalism
+		allowed = {
+			original_tag = GER
+		}
+		days_mission_timeout = 1170
+		activation = {
+			has_global_flag = kis_war
+			has_war_with = FRA
+			enemies_naval_strength_ratio > 1.5
+			OR = {
+				USA = {
+					has_war_with = PREV
+					has_capitulated = no
+				}
+				ENG = {
+					has_war_with = PREV
+					has_capitulated = no
+				}
+			}
+			NOT = {
+				has_global_flag = great_war_ends
+			}
+		}
+		available = {
+			OR = {
+				has_war = no
+				has_global_flag = great_war_ends
+				USA = {
+					has_war_with = PREV
+					has_capitulated = yes
+				}
+				ENG = {
+					has_war_with = PREV
+					has_capitulated = yes
+				}
+				AND = {
+					enemies_naval_strength_ratio < 0.8
+					UKR = {
+						is_subject_of = PREV
+						surrender_progress < 0.10
+					}
+				}
+			}
+		}
+		visible = {
+			has_global_flag = kis_war
+			has_war_with = FRA
+		}
+		fire_only_once = no
+		is_good = no
+		timeout_effect = {
+			country_event = {
+				id = ww1_germany.91
+				days = 20
+			}
+		}
+	}
 	#Conference timer moved to TGWR_peace_conference_decisions
 }
 GER_decision_puppet_kingdoms = {
@@ -235,40 +295,7 @@ GER_decision_puppet_kingdoms = {
 		fire_only_once = yes
 		cost = 25
 		complete_effect = {
-			POL = {
-				set_country_flag = released_by_germany
-				transfer_state = 10
-				transfer_state = 87
-				transfer_state = 90
-				transfer_state = 92
-				transfer_state = 98
-				transfer_state = 766
-				hidden_effect = {
-					load_oob = "POL_divisions"
-					RUS = {
-						remove_state_core = 10
-						remove_state_core = 87
-						remove_state_core = 90
-						remove_state_core = 92
-						remove_state_core = 98
-						remove_state_core = 766
-					}
-				}
-			}
-			puppet = POL
-			POL = {
-				set_politics = {
-					ruling_party = neutrality
-  					elections_allowed = no
-				}
-				set_popularities = {
-   					democratic = 13
-   					fascism = 5
-   					communism = 21
-   					neutrality = 61
-				}
-			}
-			set_global_flag = poland_released
+			GER_release_POL = yes
 		}
 		ai_will_do = { 
 			base = 100
@@ -310,52 +337,7 @@ GER_decision_puppet_kingdoms = {
 		fire_only_once = yes
 		cost = 25
 		complete_effect = {
-			LIT = {
-				set_country_flag = released_by_germany
-				set_cosmetic_tag = LIT_GER
-				transfer_state = 11
-				transfer_state = 189
-				transfer_state = 784
-				transfer_state = 97
-				transfer_state = 773				
-				hidden_effect = {
-					create_country_leader = {
-						name = "Mindaugas II"
-						picture = "gfx/leaders/LIT/LIT_mindaugas_ii.png"
-						expire = "1935.1.1"
-						ideology = autocracy
-						traits = {
-							trait_autocracy
-						}
-					}
-					set_party_name = {
-						ideology = neutrality 
-						long_name = LIT_kingdom_party 
-						name = LIT_kingdom_party
-			   		}										
-					RUS = {
-						remove_state_core = 11
-						remove_state_core = 189
-						remove_state_core = 784
-						remove_state_core = 97
-						remove_state_core = 773
-					}
-				}		
-			}
-			puppet = LIT
-			set_global_flag = litva_released
-			LIT = {
-				set_politics = {
-					ruling_party = neutrality
-  					elections_allowed = no
-				}
-				set_popularities = {
-   					democratic = 4
-   					fascism = 0
-   					communism = 16
-   					neutrality = 80
-				}
-			}
+			GER_release_LIT = yes
 		}
 		ai_will_do = { 
 			base = 100
@@ -404,31 +386,7 @@ GER_decision_puppet_kingdoms = {
 		fire_only_once = yes
 		cost = 25
 		complete_effect = {
-			hidden_effect = {
-				RUS = {
-					remove_state_core = 190
-				}
-			}			
-			COU = {
-				transfer_state = 190
-				hidden_effect = {
-					add_state_core = 190	
-				}	
-			}
-			GER = { puppet = COU }
-			set_global_flag = latvia_released
-			COU = {
-				set_politics = {
-					ruling_party = neutrality
-  					elections_allowed = no
-				}
-				set_popularities = {
-   					democratic = 25
-   					fascism = 0
-   					communism = 22
-   					neutrality = 53
-				}
-			}
+			GER_release_COU = yes
 		}
 		ai_will_do = { 
 			base = 100
@@ -468,37 +426,7 @@ GER_decision_puppet_kingdoms = {
 		fire_only_once = yes
 		cost = 25
 		complete_effect = {
-			hidden_effect = {
-				RUS = {
-					remove_state_core = 13
-					remove_state_core = 191
-					remove_state_core = 12
-				}
-			}					
-			UBD = {
-				transfer_state = 13
-				transfer_state = 191
-				transfer_state = 12
-				hidden_effect = {
-					add_state_core = 13
-					add_state_core = 191
-					add_state_core = 12					
-				}	
-			}	
-			puppet = UBD
-			set_global_flag = estonia_released
-			UBD = {
-				set_politics = {
-					ruling_party = neutrality
-  					elections_allowed = no
-				}
-				set_popularities = {
-   					democratic = 25
-   					fascism = 0
-   					communism = 22
-   					neutrality = 53
-				}
-			}
+			GER_release_UBD = yes
 		}
 		ai_will_do = { 
 			base = 100
@@ -1456,11 +1384,24 @@ foreign_politics = {
 					limit = {
 						is_subject = no
 						is_in_faction = no
+						is_neighbor_of = SOV
+						OR = {
+							is_neighbor_of = PREV
+							AND = {
+								any_other_country = {
+									is_neighbor_of = PREV
+									OR = {
+										is_in_faction_with = GER
+										is_subject_of = GER
+									}
+								}
+							}
+						}
 					}
 					PREV = {
 						declare_war_on = {
 							target = PREV
-							type = topple_government
+							type = puppet_wargoal_focus
 						}
 					}
 				}
@@ -1508,7 +1449,7 @@ foreign_politics = {
 				has_country_flag = FRA_socialist_france_flag
 			}
 		}
-		war_with_on_remove = FRC
+		#war_with_on_remove = FRC
 		complete_effect = {
 			add_stability = -0.2
 			add_named_threat = {
@@ -1520,9 +1461,6 @@ foreign_politics = {
 			declare_war_on = {
 				target = FRC
 				type = topple_government
-			}
-			hidden_effect = {
-				set_country_flag = germany_helped_nationalist_france
 			}
 		}
 		ai_will_do = {
@@ -2304,7 +2242,7 @@ GER_decision_abwehr_operations = {
 		}
 	}
 }
-political_actions = {
+prestigious_projects = {
 	GER_yellow_HRE = { #not yellow.
 		icon = GFX_decision_generic_operation
 		allowed = { tag = GER }
@@ -4110,6 +4048,14 @@ GER_third_franco_german_war = {
 						}
 						NFA = { transfer_state = 29 }
 					}
+					if = {
+						limit = {
+							BEL = {
+								owns_state = 865
+							}
+						}
+						NFA = { transfer_state = 865 }
+					}
 					
 					#Luxembourg
 					if = {
@@ -4195,10 +4141,10 @@ GER_third_franco_german_war = {
 						if = {
 							limit = {
 								has_country_leader = {
-									name = "Adalbert"
+									character = BEL_adalbert
 									ruling_only = no
 								}
-							}
+							}							
 							set_politics = {
 								ruling_party = democratic
 								elections_allowed = yes 
@@ -4212,7 +4158,7 @@ GER_third_franco_german_war = {
 								long_name = BEL_neutrality_party
 								name = BEL_neutrality_party
 							}
-							retire_ideology_leader = neutrality
+							retire_character = BEL_adalbert
 							remove_ideas = BEL_belgian_resistance
 							drop_cosmetic_tag = yes
 						}
@@ -4476,8 +4422,8 @@ GER_interwar_reichspakt_category = {
 					has_country_flag = great_war_loser
 				}
 				is_subject = no
-				is_in_faction = no	
-
+				is_in_faction = no
+				has_war = no
 			}
 		}
 		available = {

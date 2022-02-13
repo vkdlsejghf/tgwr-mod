@@ -35,21 +35,21 @@ set_technology = {
 
 create_country_leader = {
 	name = "Ma Qi"
-	picture = "gfx/leaders/CHI/CHI_ma_qi.dds"
+	picture = "gfx/leaders/CHI/CHI_ma_qi.png"
 	expire = "1935.1.1"
 	ideology = despotism
 	traits = {
-		trait_despotism
+		
 	}
 }
 
 create_country_leader = {
 	name = "Ma Qi"
-	picture = "gfx/leaders/CHI/CHI_ma_qi.dds"
+	picture = "gfx/leaders/CHI/CHI_ma_qi.png"
 	expire = "1935.1.1"
 	ideology = stratocracy
 	traits = {
-		trait_stratocracy
+		
 	}
 }
 create_country_leader = {
@@ -58,7 +58,7 @@ create_country_leader = {
 	expire = "1935.1.1"
 	ideology = despotism
 	traits = {
-		trait_despotism
+		
 	}
 }
 create_country_leader = {
@@ -67,6 +67,6 @@ create_country_leader = {
 	expire = "1935.1.1"
 	ideology = stratocracy
 	traits = {
-		trait_stratocracy
+		
 	}
 }

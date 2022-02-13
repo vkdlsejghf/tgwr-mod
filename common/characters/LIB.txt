@@ -3,13 +3,13 @@ characters={
 		name="Arthur Barclay"
 		portraits={
 			civilian={
-				large="gfx/leaders/LIB/LIB_arthur_barclay.dds"
+				large="gfx/leaders/LIB/LIB_arthur_barclay.png"
 			}
 		}
 		country_leader={
 			ideology=authoritarian_democracy
-			traits={ trait_authoritarian_democracy }
-			expire="1935.1.1.1"
+			
+			
 		}
 	}
 	LIB_daniel_howard={
@@ -21,8 +21,8 @@ characters={
 		}
 		country_leader={
 			ideology=authoritarian_democracy
-			traits={ trait_authoritarian_democracy }
-			expire="1935.1.1.1"
+			
+			
 		}
 	}
 	LIB_james_jenkins_dossen={
@@ -34,8 +34,8 @@ characters={
 		}
 		country_leader={
 			ideology=national_syndicalism
-			traits={ trait_national_syndicalism }
-			expire="1935.1.1.1"
+			
+			
 		}
 	}
 	LIB_thomas_faulkner={
@@ -47,8 +47,8 @@ characters={
 		}
 		country_leader={
 			ideology=agrarianism
-			traits={ trait_agrarianism }
-			expire="1935.1.1.1"
+			
+			
 		}
 	}
 
@@ -58,6 +58,7 @@ characters={
 		portraits={
 			army={
 				#large="gfx/leaders/LIB/LIB_sydney_cloman.png"
+				large = "gfx/leaders/USA/Portrait_USA_Generic_land_5.dds"
 				small="GFX_idea_generic_army_chief_off"
 			}
 		}

@@ -1,6 +1,6 @@
 characters={
 	RUS_pavel_milyukov={
-		name="Pavel Milyukov"
+		name="RUS_pavel_milyukov"
 		advisor={
 			slot = political_advisor
 			idea_token = RUS_pavel_milyukov
@@ -25,18 +25,18 @@ characters={
 				small="GFX_idea_RUS_pavel_milyukov"
 			}
 			civilian={
-				large="gfx/leaders/RUS/RUS_pavel_milyukov.dds"
+				large="gfx/leaders/RUS/RUS_pavel_milyukov.png"
 			}
 		}
 		country_leader={
 			ideology=social_liberalism
-			traits={ staunch_constitutionalist trait_social_liberalism }
-			expire="1935.1.1.1"
-			id=-1
+			traits={ staunch_constitutionalist  }
+			
+			
 		}
 	}
 	RUS_vladimir_sukhomlinov={
-		name="Vladimir Sukhomlinov"
+		name="RUS_vladimir_sukhomlinov"
 		advisor={
 			slot = political_advisor
 			idea_token = RUS_vladimir_sukhomlinov
@@ -58,13 +58,13 @@ characters={
 				small="GFX_idea_RUS_vladimir_sukhomlinov"
 			}
 			army={
-				large="gfx/leaders/RUS/RUS_Vladimir_Sukhomlinov.dds"
+				large="gfx/leaders/RUS/RUS_Vladimir_Sukhomlinov.png"
 			}
 		}
-		corps_commander={
-			traits={ old_guard media_personality cavalry_officer war_hero }
-			skill=2
-			attack_skill=2
+		field_marshal={
+			traits={ old_guard media_personality politically_connected cavalry_officer war_hero }
+			skill=1
+			attack_skill=1
 			defense_skill=1
 			planning_skill=1
 			logistics_skill=1
@@ -78,7 +78,7 @@ characters={
 		}
 	}
 	RUS_boris_savinkov={
-		name="Boris Savinkov"
+		name="RUS_boris_savinkov"
 		advisor={
 			slot = political_advisor
 			idea_token = RUS_boris_savinkov
@@ -107,7 +107,7 @@ characters={
 				visible  = {
 					not  = {
 						has_country_leader  = {
-							name  = "Boris Savinkov"
+							character = RUS_boris_savinkov
 							ruling_only  = yes 
 						}
 					}
@@ -121,18 +121,18 @@ characters={
 				small="GFX_idea_RUS_boris_savinkov"
 			}
 			civilian={
-				large="gfx/leaders/RUS/RUS_boris_savinkov.dds"
+				large="gfx/leaders/RUS/RUS_boris_savinkov.png"
 			}
 		}
 		country_leader={
 			ideology=agrarian_socialism
-			traits={ rider_named_death trait_agrarian_socialism }
-			expire="1935.1.1.1"
-			id=-1
+			traits={ rider_named_death  }
+			
+			
 		}
 	}
 	RUS_alexander_kerensky={
-		name="Aleksandr Kerensky"
+		name="RUS_alexander_kerensky"
 		advisor={
 			slot = political_advisor
 			idea_token = RUS_alexander_kerensky
@@ -157,18 +157,18 @@ characters={
 				small="GFX_idea_alexander_kerensky"
 			}
 			civilian={
-				large="gfx/leaders/RUS/RUS_alexander_kerensky.dds"
+				large="gfx/leaders/RUS/RUS_alexander_kerensky.png"
 			}
 		}
 		country_leader={
 			ideology=socialism
-			traits={ rus_knight_of_revolution trait_socialism }
-			expire="1935.1.1.1"
-			id=-1
+			traits={ rus_knight_of_revolution  }
+			
+			
 		}
 	}
 	RUS_viktor_chernov={
-		name="Viktor Chernov"
+		name="RUS_viktor_chernov"
 		advisor={
 			slot = political_advisor
 			idea_token = RUS_viktor_chernov
@@ -198,9 +198,17 @@ characters={
 		}
 		country_leader={
 			ideology=agrarian_socialism
-			traits={ trait_agrarian_socialism }
-			expire="1935.1.1.1"
-			id=-1
+		}
+	}
+	RUS_nikolai_chkheidze={
+		name=RUS_nikolai_chkheidze
+		portraits={
+			civilian={
+				large="gfx/leaders/RUS/RUS_Nikolai_Chkheidze.png"
+			}
+		}
+		country_leader={
+			ideology=reformist_socialism
 		}
 	}
 	RUS_alexei_brusilov={
@@ -228,16 +236,16 @@ characters={
 				small="GFX_idea_RUS_alexei_brusilov"
 			}
 			army={
-				large="gfx/leaders/RUS/RUS_alexei_brusilov.dds"
+				large="gfx/leaders/RUS/RUS_alexei_brusilov.png"
 			}
 		}
 		corps_commander={
-			traits={ media_personality cavalry_officer hidden_sympathies trickster }
+			traits={ war_hero media_personality brilliant_strategist cavalry_officer trickster skilled_staffer }
 			skill=5
-			attack_skill=5
-			defense_skill=1
+			attack_skill=4
+			defense_skill=4
 			planning_skill=5
-			logistics_skill=3
+			logistics_skill=4
 			legacy_id=76187
 			visible = {
 				NOT = {
@@ -247,7 +255,7 @@ characters={
 		}
 	}
 	RUS_lavr_kornilov={
-		name="Lavr Kornilov"
+		name="RUS_lavr_kornilov"
 		advisor={
 			slot = army_chief
 			idea_token = RUS_lavr_kornilov
@@ -268,21 +276,21 @@ characters={
 				small="GFX_idea_RUS_lavr_kornilov"
 			}
 			civilian={
-				large="gfx/leaders/RUS/RUS_lavr_kornilov.dds"
+				large="gfx/leaders/RUS/RUS_lavr_kornilov.png"
 			}
 		}
 		corps_commander={
-			traits={ brilliant_strategist harsh_leader infantry_officer war_hero }
-			skill=4
-			attack_skill=4
-			defense_skill=5
+			traits={ harsh_leader infantry_officer media_personality career_officer }
+			skill=3
+			attack_skill=3
+			defense_skill=3
 			planning_skill=2
-			logistics_skill=5
-			legacy_id=-1
+			logistics_skill=2
+			
 		}
 	}
 	RUS_anton_denikin={
-		name="Anton Denikin"
+		name="RUS_anton_denikin"
 		advisor={
 			slot = army_chief
 			idea_token = RUS_anton_denikin
@@ -307,17 +315,17 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={ media_personality cavalry_officer war_hero ranger }
-			skill=5
-			attack_skill=5
-			defense_skill=2
+			traits={ media_personality ranger winter_specialist career_officer }
+			skill=3
+			attack_skill=3
+			defense_skill=3
 			planning_skill=3
 			logistics_skill=3
-			legacy_id=-1
+			
 		}
 	}
 	RUS_alexander_kolchak={
-		name="Alexander Kolchak"
+		name="RUS_alexander_kolchak"
 		advisor={
 			slot = navy_chief
 			idea_token = RUS_alexander_kolchak
@@ -327,7 +335,7 @@ characters={
 			visible  = {
 				not  = {
 					has_country_leader  = {
-						name  = "Alexander Kolchak"
+						character = RUS_alexander_kolchak
 						ruling_only  = yes 
 					}
 				}
@@ -337,17 +345,17 @@ characters={
 			}
 		}
 		navy_leader={
-			traits={ gentlemanly navy_media_personality blockade_runner }
+			traits={ navy_media_personality cuts_corners arctic_water_expert fleet_protector }
 			skill=3
 			attack_skill=3
 			defense_skill=3
-			maneuvering_skill=1
-			coordination_skill=1
+			maneuvering_skill=3
+			coordination_skill=2
 			legacy_id=92224
 			visible  = {
 				not  = {
 					has_country_leader  = {
-						name  = "Alexander Kolchak"
+						character = RUS_alexander_kolchak
 						ruling_only  = yes 
 					}
 				}
@@ -355,16 +363,16 @@ characters={
 		}
 		portraits={
 			civilian={
-				large="gfx/leaders/RUS/RUS_alexander_kolchak.dds"
+				large="gfx/leaders/RUS/RUS_alexander_kolchak.png"
 			}
 			navy={
-				large="gfx/leaders/RUS/RUS_alexander_kolchak_admiral.dds"
+				large="gfx/leaders/RUS/RUS_alexander_kolchak_admiral.png"
 				small="GFX_idea_RUS_alexander_kolchak"
 			}
 		}
 	}
 	RUS_pyotr_krasnov={
-		name="Pyotr Krasnov"
+		name="RUS_pyotr_krasnov"
 		advisor={
 			slot = high_command
 			idea_token = RUS_pyotr_krasnov
@@ -384,35 +392,43 @@ characters={
 				small="GFX_idea_RUS_pyotr_krasnov"
 			}
 			army={
-				large="gfx/leaders/RUS/RUS_pyotr_krasnov.dds"
+				large="gfx/leaders/RUS/RUS_pyotr_krasnov.png"
 			}
 		}
 		corps_commander={
-			traits={ harsh_leader cavalry_officer hidden_sympathies trickster }
-			skill=2
-			attack_skill=3
-			defense_skill=1
-			planning_skill=1
-			logistics_skill=2
+			traits={ harsh_leader cavalry_officer cavalry_leader hidden_sympathies trickster }
+			skill=3
+			attack_skill=5
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=1
 			legacy_id=92218
+			visible = {
+				OR = {
+					original_tag = DON
+					DON = {
+						exists = no
+					}	
+				}			
+			}	
 		}
 	}
 	RUS_mikhail_rodzyanko={
 		name="Mikhail Rodzyanko"
 		portraits={
 			civilian={
-				large="gfx/leaders/RUS/RUS_mikhail_rodzyanko.dds"
+				large="gfx/leaders/RUS/RUS_mikhail_rodzyanko.png"
 			}
 		}
 		country_leader={
 			ideology=conservatism
-			traits={ trait_conservatism }
-			expire="1935.1.1.1"
-			id=-1
+			
+			
+			
 		}
 	}
 	RUS_nikolai_ii={
-		name="Nikolai II"
+		name="RUS_nicholas_II"
 		advisor={
 			slot = army_chief
 			idea_token = RUS_nicholas_II
@@ -443,24 +459,23 @@ characters={
 		portraits={
 			army={
 				small="GFX_idea_RUS_nicholas_II"
-				large="gfx/leaders/RUS/RUS_nicholas_romanov_war.dds"
+				large="gfx/leaders/RUS/RUS_nicholas_romanov_war.png"
 			}
 			civilian={
-				large="gfx/leaders/RUS/RUS_nicholas_romanov.dds"
+				large="gfx/leaders/RUS/RUS_nicholas_romanov.png"
 			}
 		}
 		country_leader={
+			desc = RUS_nicholas_II_desc
 			ideology=autocracy
 			traits={ inept_autocrat }
-			expire="1935.1.1.1"
-			id=76261
 		}
 	}
 	RUS_mikhail_ii={
-		name="Mikhail Aleksandrovich Romanov"
+		name="RUS_mikhail_ii"
 		portraits={
 			civilian={
-				large="gfx/leaders/RUS/RUS_mikhail_romanov.dds"
+				large="gfx/leaders/RUS/RUS_mikhail_romanov.png"
 			}
 		}
 		corps_commander={
@@ -483,7 +498,7 @@ characters={
 		}
 	}
 	RUS_mikhail_alekseyev={
-		name="Mikhail Alekseyev"
+		name="RUS_mikhail_alexeev"
 		advisor={
 			slot = high_command
 			idea_token = RUS_mikhail_alexeev
@@ -503,82 +518,104 @@ characters={
 				small="GFX_idea_RUS_mikhail_alexeev"
 			}
 			civilian={
-				large="gfx/leaders/RUS/RUS_mikhail_alekseyev.dds"
+				large="gfx/leaders/RUS/RUS_mikhail_alekseyev.png"
 			}
 		}
 		field_marshal={
-			traits={ brilliant_strategist career_officer politically_connected war_hero }
-			skill=4
-			attack_skill=4
-			defense_skill=3
+			traits={ career_officer infantry_leader organizer }
+			skill=3
+			attack_skill=2
+			defense_skill=2
 			planning_skill=4
-			logistics_skill=4
-			legacy_id=-1
+			logistics_skill=3
+			
 		}
 		country_leader={
 			ideology=stratocracy
-			traits={ trait_stratocracy }
-			expire="1935.1.1.1"
-			id=-1
 		}
 	}
 	RUS_pyotr_stolypin={
-		name="Pyotr Stolypin"
+		name="RUS_pyotr_stolypin"
 		portraits={
 			civilian={
-				large="gfx/leaders/RUS/RUS_pyotr_stolypin.dds"
+				large="gfx/leaders/RUS/RUS_pyotr_stolypin.png"
+				small="gfx/interface/ideas/RUS/idea_RUS_pyotr_stolypin.dds"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = RUS_pyotr_stolypin
+			removal_cost = -1
+			available  = {
+				has_country_leader_ideology = autocracy
+				NOT = {
+					has_completed_focus = RUS_provisional_committee
+					has_completed_focus = RUS_revolutionaries_in_duma
+					has_completed_focus = RUS_union_of_russian_people
+				}	
+				
+			}
+			visible = {
+				NOT = { has_global_flag = stolypin_is_dead }
+			}	
+			traits  = {
+				rus_great_reformer 
+			}
+			cost  = 0.000
+			ai_will_do  = {
+				factor  = 100
 			}
 		}
 	}
 	RUS_georgiy_lvov={
-		name="Georgiy Lvov"
+		name="RUS_georgiy_lvov"
 		portraits={
 			civilian={
-				large="gfx/leaders/RUS/RUS_georgy_lvov.dds"
+				large="gfx/leaders/RUS/RUS_georgy_lvov.png"
 			}
 		}
 	}
-	RUS_the_provisional_government={
-		name="The Provisional Government"
+	RUS_provisional_government={
+		name=RUS_provisional_government_name
 		portraits={
 			civilian={
-				large="gfx/leaders/RUS/RUS_provisional_government.dds"
+				large="gfx/leaders/RUS/RUS_provisional_government.png"
 			}
 		}
 	}
 	RUS_provisional_allrussian_government={
-		name="Provisional All-Russian Government"
+		name="RUS_provisional_allrussian_government"
 		portraits={
 			civilian={
-				large="gfx/leaders/RUS/RUS_provisional_government.dds"
+				large="gfx/leaders/RUS/RUS_provisional_government.png"
 			}
 		}
 	}
 	RUS_allrussian_constituent_assembly={
-		name="All-Russian Constituent Assembly"
+		name="RUS_allrussian_constituent_assembly"
 		portraits={
 			civilian={
-				large="gfx/leaders/RUS/RUS_provisional_government.dds"
+				large="gfx/leaders/RUS/RUS_provisional_government.png"
 			}
 		}
 	}
 	RUS_nikolai_ruzsky={
-		name="Nikolai Ruzsky"
+		name="RUS_nikolai_ruzsky"
 		portraits={
 			army={
 				small="GFX_idea_generic_army_chief_off"
 			}
 			army={
-				large="gfx/leaders/RUS/RUS_Nikolai_Ruzsky.dds"
+				large="gfx/leaders/RUS/RUS_Nikolai_Ruzsky.png"
 			}
 		}
 		field_marshal={
-			traits={ career_officer offensive_doctrine }
-			skill=2
+			traits={ career_officer offensive_doctrine old_guard  harsh_leader }
+			skill=3
 			attack_skill=3
 			defense_skill=2
 			planning_skill=3
-			logistics_skill=3
+			logistics_skill=2
 			legacy_id=762566
 			visible = {
 				NOT = {
@@ -608,16 +645,16 @@ characters={
 				small="GFX_idea_RUS_nikolai_nikolaevich"
 			}
 			army={
-				large="gfx/leaders/RUS/RUS_nikolai_nikolaevich.dds"
+				large="gfx/leaders/RUS/RUS_nikolai_nikolaevich.png"
 			}
 		}
 		field_marshal={
-			traits={ media_personality harsh_leader cavalry_officer politically_connected trait_royal organizer skilled_staffer }
-			skill=4
-			attack_skill=5
-			defense_skill=4
-			planning_skill=4
-			logistics_skill=2
+			traits={ old_guard media_personality harsh_leader cavalry_officer politically_connected trait_royal organizer skilled_staffer }
+			skill=2
+			attack_skill=3
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=3
 			legacy_id=76267
 			visible = {
 				is_russia_a_monarchy = yes
@@ -625,73 +662,73 @@ characters={
 		}
 	}
 	RUS_nikolai_ivanov={
-		name="Nikolai Ivanov"
+		name="RUS_nikolai_ivanov"
 		portraits={
 			army={
 				small="GFX_idea_generic_army_chief_def"
 			}
 			army={
-				large="gfx/leaders/RUS/RUS_nikolai_ivanov.dds"
+				large="gfx/leaders/RUS/RUS_nikolai_ivanov.png"
 			}
 		}
 		field_marshal={
-			traits={ artillery_officer old_guard trait_cautious harsh_leader politically_connected artillery_specialist offensive_doctrine }
-			skill=3
-			attack_skill=2
+			traits={ artillery_officer old_guard trait_cautious politically_connected artillery_specialist offensive_doctrine }
+			skill=2
+			attack_skill=3
 			defense_skill=3
-			planning_skill=1
+			planning_skill=2
 			logistics_skill=2
 			legacy_id=76268
 		}
 	}
 	RUS_alexei_kaledin={
-		name="Alexei Kaledin"
+		name="RUS_alexei_kaledin"
 		portraits={
 			army={
 				small="GFX_idea_generic_military_theorist"
 			}
 			army={
-				large="gfx/leaders/RUS/RUS_kaledin.dds"
+				large="gfx/leaders/RUS/RUS_kaledin.png"
 			}
 		}
 		corps_commander={
-			traits={ cavalry_officer trickster }
+			traits={ cavalry_officer cavalry_leader trickster career_officer }
 			skill=3
-			attack_skill=4
+			attack_skill=2
 			defense_skill=2
 			planning_skill=3
-			logistics_skill=2
+			logistics_skill=3
 			legacy_id=762587
 		}
 	}
 	RUS_nikolai_yudenich={
-		name="Nikolai Yudenich"
+		name="RUS_nikolai_yudenich"
 		portraits={
 			army={
 				small="GFX_idea_generic_army_art"
 			}
 			army={
-				large="gfx/leaders/RUS/RUS_nicholas_yudenich.dds"
+				large="gfx/leaders/RUS/RUS_nicholas_yudenich.png"
 			}
 		}
 		corps_commander={
-			traits={ brilliant_strategist war_hero fortress_buster }
+			traits={ war_hero engineer_officer organizer winter_specialist }
 			skill=4
-			attack_skill=5
+			attack_skill=2
 			defense_skill=4
-			planning_skill=2
-			logistics_skill=2
-			legacy_id=-1
+			planning_skill=3
+			logistics_skill=4
+			
 		}
 	}
 	RUS_sergey_markov={
-		name="Sergey Markov"
+		name="RUS_sergey_markov"
 		portraits={
 			army={
 				small="GFX_idea_generic_army_art"
 			}
 			army={
-				large="gfx/leaders/RUS/RUS_sergei_markov.dds"
+				large="gfx/leaders/RUS/RUS_sergei_markov.png"
 			}
 		}
 		corps_commander={
@@ -701,27 +738,27 @@ characters={
 			defense_skill=2
 			planning_skill=2
 			logistics_skill=2
-			legacy_id=-1
+			
 		}
 	}
 	RUS_aleksandr_samsonov={
-		name="Aleksandr Samsonov"
+		name="RUS_aleksandr_samsonov"
 		portraits={
 			civilian={
 				small="GFX_idea_generic_captain_of_industry"
 			}
 			army={
-				large="gfx/leaders/RUS/RUS_alexander_samsonov.dds"
+				large="gfx/leaders/RUS/RUS_alexander_samsonov.png"
 				small="GFX_idea_generic_army_log_eastern_european_2d"
 			}
 		}
 		corps_commander={
-			traits={ old_guard career_officer trait_reckless }
+			traits={ career_officer trait_reckless harsh_leader skilled_staffer }
 			skill=2
 			attack_skill=3
-			defense_skill=1
-			planning_skill=2
-			logistics_skill=2
+			defense_skill=2
+			planning_skill=1
+			logistics_skill=1
 			legacy_id=191408
 		}
 		advisor = {
@@ -742,42 +779,42 @@ characters={
 		}
 	}
 	RUS_abram_dragomirov={
-		name="Abram Dragomirov"
+		name="RUS_abram_dragomirov"
 		portraits={
 			army={
 				small="GFX_idea_generic_army_log"
 			}
 			army={
-				large="gfx/leaders/RUS/RUS_abram_dragomirov.dds"
+				large="gfx/leaders/RUS/RUS_abram_dragomirov.png"
 			}
 		}
 		corps_commander={
 			traits={ trait_cautious cavalry_officer }
-			skill=3
+			skill=1
 			attack_skill=1
-			defense_skill=1
-			planning_skill=3
+			defense_skill=2
+			planning_skill=2
 			logistics_skill=2
-			legacy_id=-1
+			
 		}
 	}
 	RUS_alexei_evert={
-		name="Alexei Evert"
+		name="RUS_alexei_evert"
 		portraits={
 			army={
 				small="GFX_idea_generic_military_theorist"
 			}
 			army={
-				large="gfx/leaders/RUS/RUS_Alexei_Evert.dds"
+				large="gfx/leaders/RUS/RUS_Alexei_Evert.png"
 			}
 		}
 		corps_commander={
-			traits={ old_guard trait_cautious infantry_officer war_hero }
+			traits={ old_guard trait_cautious infantry_officer infantry_leader war_hero inflexible_strategist }
 			skill=3
 			attack_skill=3
 			defense_skill=3
-			planning_skill=2
-			logistics_skill=1
+			planning_skill=3
+			logistics_skill=2
 			legacy_id=762543
 			visible = {
 				NOT = {
@@ -787,17 +824,17 @@ characters={
 		}
 	}
 	RUS_pavel_rennenkampf={
-		name="Pavel Rennenkampf"
+		name="RUS_pavel_rennenkampf"
 		portraits={
 			army={
 				small="GFX_idea_generic_military_theorist"
 			}
 			army={
-				large="gfx/leaders/RUS/RUS_pavel_rennenkampf.dds"
+				large="gfx/leaders/RUS/RUS_pavel_rennenkampf.png"
 			}
 		}
 		corps_commander={
-			traits={ old_guard cavalry_officer }
+			traits={ old_guard cavalry_officer trait_cautious }
 			skill=2
 			attack_skill=2
 			defense_skill=1
@@ -811,61 +848,99 @@ characters={
 			}
 		}
 	}
+	RUS_nikolai_yanushkevich={
+		name=RUS_nikolai_yanushkevich
+		portraits={
+			army={
+				large="gfx/leaders/RUS/RUS_nikolai_yanushkevich.png"
+			}
+		}
+		corps_commander={
+			traits={ politically_connected }
+			skill=1
+			attack_skill=1
+			defense_skill=1
+			planning_skill=2
+			logistics_skill=2
+			visible = {
+				date < 1917.03.31
+				NOT = {
+					has_global_flag = russian_civil_war
+				}
+			}
+		}
+	}
 	RUS_dmitry_shcherbachev={
-		name="Dmitry Shcherbachev"
+		name="RUS_dmitry_shcherbachev"
 		portraits={
 			army={
 				small="GFX_idea_generic_air_chief_all_weather"
 			}
 			army={
-				large="gfx/leaders/RUS/RUS_Dmitry_Shcherbachev.dds"
+				large="gfx/leaders/RUS/RUS_Dmitry_Shcherbachev.png"
 			}
 		}
 		corps_commander={
-			skill=2
-			attack_skill=1
-			defense_skill=2
-			planning_skill=2
-			logistics_skill=1
-			legacy_id=-1
+			traits = { war_hero brilliant_strategist organizer trait_mountaineer }
+			skill=4
+			attack_skill=4
+			defense_skill=3
+			planning_skill=4
+			logistics_skill=4
+			
 		}
 	}
 	RUS_pavel_skoropadsky={
-		name="Pavel Skoropadsky"
+		name="RUS_pavel_skoropadsky"
 		portraits={
 			army={
 				small="GFX_idea_generic_air_chief_all_weather"
 			}
 			army={
-				large="gfx/leaders/RUS/RUS_pavel_skoropadsky.dds"
+				large="gfx/leaders/RUS/RUS_pavel_skoropadsky.png"
 			}
 		}
 		corps_commander={
-			traits={ career_officer harsh_leader cavalry_officer }
+			traits={ career_officer harsh_leader cavalry_officer media_personality }
 			skill=2
 			attack_skill=2
-			defense_skill=1
-			planning_skill=1
+			defense_skill=2
+			planning_skill=4
 			logistics_skill=2
 			legacy_id=76234
+			visible = {
+				NOT = {
+					UKR = {
+						has_country_leader = {
+							character = UKR_pavlo_skoropadskyi
+						}
+					}
+				}
+				OR = {
+					NOT = {
+						country_exists = UKR
+						has_subject = UKR
+					}
+				}	
+			}
 		}
 	}
 	RUS_gustav_karlovich={
-		name="Gustav Karlovich"
+		name="RUS_gustav_karlovich"
 		portraits={
 			army={
 				small="GFX_idea_generic_air_warfare_theorist"
 			}
 			army={
-				large="gfx/leaders/FIN/FIN_carl_mannerheim.dds"
+				large="gfx/leaders/FIN/FIN_carl_mannerheim.png"
 			}
 		}
 		corps_commander={
-			traits={ inflexible_strategist cavalry_officer trickster winter_specialist }
+			traits={ inflexible_strategist career_officer cavalry_officer trickster winter_specialist }
 			skill=3
 			attack_skill=2
-			defense_skill=3
-			planning_skill=3
+			defense_skill=4
+			planning_skill=4
 			logistics_skill=2
 			legacy_id=76235
 			visible = {
@@ -882,27 +957,27 @@ characters={
 				small="GFX_idea_generic_air_warfare_theorist"
 			}
 			army={
-				large="gfx/leaders/RUS/RUS_mikhail_bonch_bruevich.dds"
+				large="gfx/leaders/RUS/RUS_mikhail_bonch_bruevich.png"
 			}
 		}
 		corps_commander={
 			traits={ trait_cautious media_personality hidden_sympathies organizer }
 			skill=2
 			attack_skill=2
-			defense_skill=3
-			planning_skill=2
+			defense_skill=2
+			planning_skill=1
 			logistics_skill=2
 			legacy_id=76236
 		}
 	}
 	RUS_aleksandr_bilderling={
-		name="Aleksandr Bilderling"
+		name="RUS_aleksandr_bilderling"
 		portraits={
 			army={
 				small="GFX_idea_generic_air_air_combat_trainer"
 			}
 			army={
-				large="gfx/leaders/RUS/RUS_alexander_von_bilderling.dds"
+				large="gfx/leaders/RUS/RUS_alexander_von_bilderling.png"
 			}
 		}
 		corps_commander={
@@ -916,24 +991,25 @@ characters={
 		}
 	}
 	RUS_pavel_pleve={
-		name="Pavel Pleve"
+		name="RUS_pavel_pleve"
 		portraits={
 			army={
 				small="GFX_idea_generic_air_air_combat_trainer"
 			}
 			army={
-				large="gfx/leaders/RUS/RUS_paul_von_plehwe.dds"
+				large="gfx/leaders/RUS/RUS_paul_von_plehwe.png"
 			}
 		}
 		corps_commander={
-			traits={ brilliant_strategist trait_reckless cavalry_officer armor_officer }
-			skill=5
+			traits={ brilliant_strategist old_guard trait_reckless cavalry_leader armor_officer }
+			skill=4
 			attack_skill=4
-			defense_skill=4
-			planning_skill=3
+			defense_skill=5
+			planning_skill=4
 			logistics_skill=5
 			legacy_id=76238
 			visible = {
+				date < 1916.4.10
 				NOT = {
 					has_global_flag = russian_civil_war										
 				}
@@ -941,33 +1017,33 @@ characters={
 		}
 	}
 	RUS_aleksandr_ragoza={
-		name="Aleksandr Ragoza"
+		name="RUS_aleksandr_ragoza"
 		portraits={
 			army={
 				small="GFX_idea_generic_army_chief_off"
 			}
 			army={
-				large="gfx/leaders/RUS/RUS_alexander_ragoza.dds"
+				large="gfx/leaders/RUS/RUS_alexander_ragoza.png"
 			}
 		}
 		corps_commander={
-			traits={ inflexible_strategist infantry_officer hill_fighter }
+			traits={ inflexible_strategist infantry_officer hill_fighter old_guard }
 			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=2
-			logistics_skill=2
+			attack_skill=1
+			defense_skill=4
+			planning_skill=3
+			logistics_skill=3
 			legacy_id=76239
 		}
 	}
 	RUS_nikolai_dukhonin={
-		name="Nikolai Dukhonin"
+		name="RUS_nikolai_dukhonin"
 		portraits={
 			army={
 				small="GFX_idea_generic_army_chief_off"
 			}
 			army={
-				large="gfx/leaders/RUS/RUS_nikolai_dukhonin.dds"
+				large="gfx/leaders/RUS/RUS_nikolai_dukhonin.png"
 			}
 		}
 		corps_commander={
@@ -987,20 +1063,20 @@ characters={
 		}
 	}
 	RUS_evgeniy_radkevich={
-		name="Evgeniy Radkevich"
+		name="RUS_evgeniy_radkevich"
 		portraits={
 			army={
 				small="GFX_idea_generic_army_chief_def"
 			}
 			army={
-				large="gfx/leaders/RUS/RUS_evgeny_radkevich.dds"
+				large="gfx/leaders/RUS/RUS_evgeny_radkevich.png"
 			}
 		}
 		corps_commander={
 			traits={ trait_cautious war_hero }
-			skill=3
+			skill=2
 			attack_skill=2
-			defense_skill=3
+			defense_skill=2
 			planning_skill=2
 			logistics_skill=2
 			legacy_id=76242
@@ -1012,13 +1088,13 @@ characters={
 		}
 	}
 	RUS_nikolai_mikhailovich_romanov={
-		name="Nikolai Mikhailovich Romanov"
+		name="RUS_nikolai_mikhailovich_romanov"
 		portraits={
 			army={
 				small="GFX_idea_generic_army_chief_def"
 			}
 			army={
-				large="gfx/leaders/RUS/RUS_nikolai_mikhailovich.dds"
+				large="gfx/leaders/RUS/RUS_nikolai_mikhailovich.png"
 			}
 		}
 		corps_commander={
@@ -1034,23 +1110,67 @@ characters={
 			}	
 		}
 	}
+	RUS_aleksei_polivanov={
+		name=RUS_aleksei_polivanov
+		portraits={
+			army={
+				large="gfx/leaders/RUS/RUS_Alexei_Polivanov.png"
+			}
+		}
+		field_marshal={
+			traits={ old_guard politically_connected }
+			skill=2
+			attack_skill=1
+			defense_skill=1
+			planning_skill=1
+			logistics_skill=4
+			visible = {
+				date < 1916.4.24
+				NOT = {
+					has_global_flag = russian_civil_war
+				}
+			}
+		}
+	}
+	RUS_aleksei_kuropatkin={
+		name=RUS_aleksei_kuropatkin
+		portraits={
+			army={
+				large="gfx/leaders/RUS/RUS_aleksei_kuropatkin.png"
+			}
+		}
+		field_marshal={
+			traits={ old_guard harsh_leader }
+			skill=2
+			attack_skill=2
+			defense_skill=2
+			planning_skill=1
+			logistics_skill=2
+			visible = {
+				date < 1925.1.12
+				NOT = {
+					has_global_flag = russian_civil_war
+				}
+			}
+		}
+	}
 	RUS_yakov_zhilinsky={
-		name="Yakov Zhilinsky"
+		name="RUS_yakov_zhilinsky"
 		portraits={
 			army={
 				small="GFX_idea_generic_army_art"
 			}
 			army={
-				large="gfx/leaders/RUS/RUS_Yakov_Zhilinsky.dds"
+				large="gfx/leaders/RUS/RUS_Yakov_Zhilinsky.png"
 			}
 		}
 		field_marshal={
-			traits={ old_guard cavalry_officer }
-			skill=2
+			traits={ old_guard cavalry_officer trait_cautious politically_connected }
+			skill=1
 			attack_skill=2
 			defense_skill=1
-			planning_skill=2
-			logistics_skill=1
+			planning_skill=1
+			logistics_skill=2
 			legacy_id=76244
 			visible = {
 				date < 1917.9.17
@@ -1061,13 +1181,13 @@ characters={
 		}
 	}
 	RUS_illarion_vorontsovdashkov={
-		name="Illarion Vorontsov-Dashkov"
+		name="RUS_illarion_vorontsovdashkov"
 		portraits={
 			army={
 				small="GFX_idea_generic_army_art"
 			}
 			army={
-				large="gfx/leaders/RUS/RUS_Illarion_Vorontsov_Dashkov.dds"
+				large="gfx/leaders/RUS/RUS_Illarion_Vorontsov_Dashkov.png"
 			}
 		}
 		field_marshal={
@@ -1084,13 +1204,13 @@ characters={
 		}
 	}
 	RUS_eduard_eck={
-		name="Eduard Eck"
+		name="RUS_eduard_eck"
 		portraits={
 			army={
 				small="GFX_idea_generic_army_log"
 			}
 			army={
-				large="gfx/leaders/RUS/RUS_Eduard_Eck.dds"
+				large="gfx/leaders/RUS/RUS_Eduard_Eck.png"
 			}
 		}
 		corps_commander={
@@ -1100,11 +1220,11 @@ characters={
 			defense_skill=2
 			planning_skill=3
 			logistics_skill=2
-			legacy_id=-1
+			
 		}
 	}
 	RUS_aleksandr_lukomsky={
-		name="Aleksandr Lukomsky"
+		name="RUS_aleksandr_lukomsky"
 		advisor={
 			slot = high_command
 			idea_token = RUS_alexander_lukomsky
@@ -1128,17 +1248,17 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={ trait_reckless trait_engineer }
-			skill=3
-			attack_skill=3
-			defense_skill=2
+			traits={ trait_reckless trait_engineer career_officer }
+			skill=2
+			attack_skill=1
+			defense_skill=1
 			planning_skill=3
 			logistics_skill=3
-			legacy_id=-1
+			
 		}
 	}
 	RUS_evgeniy_miller={
-		name="Evgeniy Miller"
+		name="RUS_evgeniy_miller"
 		portraits={
 			army={
 				small="GFX_idea_generic_army_log"
@@ -1148,11 +1268,11 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={ inflexible_strategist organizer trickster }
-			skill=4
+			traits={ inflexible_strategist organizer cavalry_officer winter_specialist trait_cautious media_personality }
+			skill=2
 			attack_skill=3
 			defense_skill=2
-			planning_skill=3
+			planning_skill=1
 			logistics_skill=3
 			legacy_id=76247
 			visible = {
@@ -1163,7 +1283,7 @@ characters={
 		}
 	}
 	RUS_andrei_eberhardt={
-		name="Andrei Eberhardt"
+		name="RUS_andrei_eberhardt"
 		portraits={
 			navy={
 				large="gfx/leaders/RUS/RUS_andrei_eberhardt.png"
@@ -1171,12 +1291,12 @@ characters={
 			}
 		}
 		navy_leader={
-			traits={ battleship_adherent ironside }
+			traits={ old_guard_navy bold blockade_runner }
 			skill=3
 			attack_skill=3
 			defense_skill=3
-			maneuvering_skill=1
-			coordination_skill=1
+			maneuvering_skill=2
+			coordination_skill=2
 			legacy_id=92222
 			visible = {
 				NOT = {
@@ -1192,16 +1312,16 @@ characters={
 				small="GFX_idea_generic_navy_anti_submarine"
 			}
 			army={
-				large="gfx/leaders/RUS/RUS_grand_duke_alexander.dds"
+				large="gfx/leaders/RUS/RUS_grand_duke_alexander.png"
 			}
 		}
 		navy_leader={
-			traits={ gunnery_expert navy_media_personality trait_royal spotter }
-			skill=2
+			traits={ navy_media_personality trait_royal }
+			skill=1
 			attack_skill=1
-			defense_skill=3
+			defense_skill=1
 			maneuvering_skill=1
-			coordination_skill=1
+			coordination_skill=2
 			legacy_id=92219
 			visible = {
 				is_russia_a_monarchy = yes
@@ -1209,13 +1329,13 @@ characters={
 		}
 	}
 	RUS_kirill_vladimirovich_romanov={
-		name="Kirill Vladimirovich Romanov"
+		name="RUS_kirill_vladimirovich_romanov"
 		portraits={
 			army={
 				small="GFX_idea_generic_navy_chief_decisive_bat"
 			}
 			army={
-				large="gfx/leaders/RUS/RUS_grand_duke_kirill.dds"
+				large="gfx/leaders/RUS/RUS_grand_duke_kirill.png"
 			}
 		}
 		navy_leader={
@@ -1224,7 +1344,7 @@ characters={
 			attack_skill=2
 			defense_skill=2
 			maneuvering_skill=1
-			coordination_skill=1
+			coordination_skill=3
 			legacy_id=92221
 			visible = {
 				is_russia_a_monarchy = yes
@@ -1232,7 +1352,7 @@ characters={
 		}	
 	}
 	RUS_aleksandr_rusin={
-		name="Aleksandr Rusin"
+		name="RUS_aleksandr_rusin"
 		advisor={
 			slot = high_command
 			idea_token = RUS_alexander_rusin
@@ -1249,13 +1369,13 @@ characters={
 		}
 		portraits={
 			army={
-				large="gfx/leaders/RUS/RUS_rusin.dds"
+				large="gfx/leaders/RUS/RUS_rusin.png"
 				small="GFX_idea_RUS_alexander_rusin"
 			}
 		}
 		navy_leader={
 			traits={ navy_career_officer }
-			skill=2
+			skill=1
 			attack_skill=1
 			defense_skill=1
 			maneuvering_skill=1
@@ -1269,7 +1389,7 @@ characters={
 		}
 	}
 	RUS_mikhail_sablin={
-		name="Mikhail Sablin"
+		name="RUS_mikhail_sablin"
 		portraits={
 			army={
 				small="GFX_idea_generic_naval_theorist"
@@ -1283,23 +1403,23 @@ characters={
 			skill=2
 			attack_skill=2
 			defense_skill=2
-			maneuvering_skill=1
-			coordination_skill=1
-			legacy_id=-1
+			maneuvering_skill=3
+			coordination_skill=2
+			
 		}
 	}
 	RUS_pyotr_wrangel={
-		name="Pyotr Wrangel"
+		name="RUS_pyotr_wrangel"
 		portraits={
 			army={
 				large="gfx/leaders/RUS/RUS_pyotr_wrangel.png"
 			}
 		}
 		corps_commander={
-			traits={ harsh_leader trickster trait_engineer }
-			skill=2
-			attack_skill=2
-			defense_skill=1
+			traits={ war_hero media_personality harsh_leader trickster trait_engineer }
+			skill=3
+			attack_skill=4
+			defense_skill=2
 			planning_skill=2
 			logistics_skill=2
 			legacy_id=77734
@@ -1312,13 +1432,13 @@ characters={
 		}
 	}
 	RUS_aleksandr_dutov={
-		name="Aleksandr Dutov"
+		name="RUS_aleksandr_dutov"
 		portraits={
 			army={
 				small="GFX_idea_generic_army_log"
 			}
 			army={
-				large="gfx/leaders/RUS/RUS_alexander_dutov.dds"
+				large="gfx/leaders/RUS/RUS_alexander_dutov.png"
 			}
 		}
 		corps_commander={
@@ -1337,13 +1457,13 @@ characters={
 		}
 	}
 	RUS_mikhail_drozdovsky={
-		name="Mikhail Drozdovsky"
+		name="RUS_mikhail_drozdovsky"
 		portraits={
 			army={
 				small="GFX_idea_generic_army_log"
 			}
 			army={
-				large="gfx/leaders/RUS/RUS_mikhail_drozdovskiy.dds"
+				large="gfx/leaders/RUS/RUS_mikhail_drozdovskiy.png"
 			}
 		}
 		corps_commander={
@@ -1362,13 +1482,13 @@ characters={
 		}
 	}
 	RUS_vladimir_kappel={
-		name="Vladimir Kappel"
+		name="RUS_vladimir_kappel"
 		portraits={
 			army={
 				small="GFX_idea_generic_army_art"
 			}
 			army={
-				large="gfx/leaders/RUS/RUS_vladimir_kappel.dds"
+				large="gfx/leaders/RUS/RUS_vladimir_kappel.png"
 			}
 		}
 		corps_commander={
@@ -1387,13 +1507,13 @@ characters={
 		}
 	}
 	RUS_grigory_semyonov={
-		name="Grigory Semyonov"
+		name="RUS_grigory_semyonov"
 		portraits={
 			army={
 				small="GFX_idea_generic_army_art"
 			}
 			army={
-				large="gfx/leaders/RUS/RUS_grigory_semenov.dds"
+				large="gfx/leaders/RUS/RUS_grigory_semenov.png"
 			}
 		}
 		corps_commander={
@@ -1412,13 +1532,13 @@ characters={
 		}
 	}
 	RUS_aleksandr_kutepov={
-		name="Aleksandr Kutepov"
+		name="RUS_aleksandr_kutepov"
 		portraits={
 			army={
 				small="GFX_idea_generic_military_theorist"
 			}
 			army={
-				large="gfx/leaders/RUS/RUS_alexander_kutepov.dds"
+				large="gfx/leaders/RUS/RUS_alexander_kutepov.png"
 			}
 		}
 		corps_commander={
@@ -1436,13 +1556,13 @@ characters={
 		}
 	}
 	RUS_pavel_shatilov={
-		name="Pavel Shatilov"
+		name="RUS_pavel_shatilov"
 		portraits={
 			army={
 				small="GFX_idea_generic_military_theorist"
 			}
 			army={
-				large="gfx/leaders/RUS/RUS_pavel_shatilov.dds"
+				large="gfx/leaders/RUS/RUS_pavel_shatilov.png"
 			}
 		}
 		corps_commander={
@@ -1461,7 +1581,7 @@ characters={
 		}
 	}
 	RUS_alexandr_rodzyanko={
-		name="Alexandr Rodzyanko"
+		name="RUS_alexandr_rodzyanko"
 		portraits={
 			army={
 				small="GFX_idea_generic_air_chief_all_weather"
@@ -1619,6 +1739,7 @@ characters={
 						ruling_only  = yes 
 					}
 					not  = {
+						has_idea = RUS_pyotr_stolypin
 						has_government  = communism 
 					}
 				}
@@ -1627,12 +1748,12 @@ characters={
 						has_country_flag  = rasputin_is_dead 
 					}	
 				}
-				cost  = 75.000
+				cost  = 25
 				modifier  = {
 					stability_factor  = -0.050
 				}
 				traits  = {
-					backroom_backstabber 
+					backroom_backstabber
 				}
 				ai_will_do  = {
 					factor  = 10.000
@@ -1642,7 +1763,7 @@ characters={
 		portraits={
 			civilian={
 				small="GFX_idea_RUS_grigori_rasputin"
-				large="gfx/leaders/RUS/RUS_rararasputin.dds"
+				large="gfx/leaders/RUS/RUS_rararasputin.png"
 			}
 		}
 	}
@@ -1878,7 +1999,7 @@ characters={
 		name="RUS_pyotr_struve"
 		portraits={
 			army={
-				small="GFX_idea_generic_political_advisor_europe_2"
+				small="gfx/interface/ideas/RUS/idea_RUS_pyotr_struve.dds"
 			}
 		}
 	}
@@ -2008,7 +2129,7 @@ characters={
 		name="Vladimir Lenin"
 		portraits={
 			civilian={
-				large="gfx/leaders/SOV/SOV_vladimir_lenin.dds"
+				large="gfx/leaders/SOV/SOV_vladimir_lenin.png"
 			}
 			army={
 				small="GFX_idea_generic_communist_revolutionary_western_european_2d"

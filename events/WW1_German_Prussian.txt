@@ -279,21 +279,21 @@ news_event = {
 					}
 					create_country_leader = {
 						name = "Französische Militärverwaltung"
-						picture = "gfx/leaders/FRA/FRA_provisional_government.dds"
+						picture = "gfx/leaders/FRA/FRA_provisional_government.png"
 						expire = "1935.1.1"
 						ideology = stratocracy
 						traits = {
 							foreign_leader
-							trait_stratocracy
+							
 						}
 					}
 					create_country_leader = {
 						name = "Konrad Adenauer"
-						picture = "gfx/leaders/GER/GER_Konrad_Adenauer.dds"
+						picture = "gfx/leaders/GER/GER_Konrad_Adenauer.png"
 						expire = "1935.1.1"
 						ideology = conservatism
 						traits = {
-							trait_conservatism
+							
 						}
 					}
 					add_ideas = democratic_influence
@@ -342,11 +342,11 @@ news_event = {
 				}
 				create_country_leader = {
 					name = "Friedrich Ebert"
-					picture = "gfx/leaders/GER/GER_friedrich_ebert.dds"
+					picture = "gfx/leaders/GER/GER_friedrich_ebert.png"
 					expire = "1935.1.1"
 					ideology = socialism
 					traits = {
-						trait_socialism
+						
 					}
 				}
 				set_capital = { state = 58	 }			#Hamburg, because it is not Hannover
@@ -429,7 +429,7 @@ news_event = {
 			}
 			BAY = {
 				set_politics = {
-					ruling_party = democratic
+					ruling_party = neutrality
 					elections_allowed = yes
 				}
 				set_popularities = {
@@ -536,7 +536,7 @@ news_event = {
 								character = GER_prinz_maximilian_von_baden
 								country_leader = {
 									ideology = conservatism
-									traits = { trait_conservatism }
+									
 									expire = "1935.1.1.1"
 								}
 							}
@@ -1432,27 +1432,45 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		original_tag = AUS
-		# It is already gone alterative with Prussian Blue, so why not?
 		has_global_flag = prussian_blue
+		has_government = fascism
 		has_country_leader = {
 			character = AUS_engelbert_dollfuss
 			ruling_only = yes
 		}
+		has_cosmetic_tag = AUS_vaterland
+		
 		date > 1932.11.20
+	}
+	mean_time_to_happen = {
+		days = 120
+		modifier = {
+			factor = 0.5
+			is_historical_focus_on = no
+		}
 	}
 	option = {
 		name = prussian.28.a
 		ai_chance = {
 			factor = 100
 		}
-		create_country_leader = {
-			name = "Otto von Habsburg"
-			picture = GFX_Portrait_hungary_otto_von_hapsburg
-			expire = "1935.1.1"
-			ideology = fascism_ideology
-			traits = {
-				trait_fascism
+		hidden_effect = {
+			AUS_otto_von_habsburg = {
+				add_country_leader_role = {
+					country_leader = {
+						ideology = neutrality
+					}
+					country_leader = {
+						ideology = fascism_ideology
+					}
+				}
+				set_character_name = "AUH_otto_von_habsburg"
+				promote_character = neutrality
+				promote_character = fascism_ideology
 			}
+		}
+		effect_tooltip = {
+			promote_character = AUS_otto_von_habsburg
 		}
 	}
 	option = {

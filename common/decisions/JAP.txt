@@ -39,7 +39,7 @@ peace_deals = {
 				has_war_with = KOR
 				hidden_trigger = {
 					NOT = {
-						has_country_flag = JAP_sue_for_peace_KOR_trigger
+						has_global_flag = JAP_sue_for_peace_KOR_trigger
 					}
 				}
 			}
@@ -74,7 +74,7 @@ peace_deals = {
 					}
 				}
 				hidden_trigger = {
-					has_country_flag = JAP_sue_for_peace_KOR_trigger
+					has_global_flag = JAP_sue_for_peace_KOR_trigger
 				}
 			}
 		}
@@ -84,11 +84,12 @@ peace_deals = {
 				has_completed_focus = JAP_ww1_Japan_Korea_Treaty
 				hidden_trigger = {
 					NOT = {
-						has_country_flag = JAP_sue_for_peace_KOR_trigger
+						has_global_flag = JAP_sue_for_peace_KOR_trigger
 					}
 				}
 			}
 		}
+		fire_only_once = yes
 		is_good = no
 		timeout_effect = {
 			if = {
@@ -96,7 +97,7 @@ peace_deals = {
 					tag = JAP
 				}
 				hidden_effect = {
-					set_country_flag = JAP_sue_for_peace_KOR_trigger
+					set_global_flag = JAP_sue_for_peace_KOR_trigger
 				}
 				if = {
 					limit = {
@@ -397,11 +398,11 @@ peace_deals = {
 					add_country_leader_role = {
 						character = CHI_chiang_kaishek
 						country_leader = {
-							expire = "1935.1.1.1"
+							
 							ideology = authoritarian_democracy
 							traits = {
 								generallissimo
-								trait_authoritarian_democracy
+								
 							}
 						}
 					}
@@ -413,11 +414,11 @@ peace_deals = {
 					add_country_leader_role = {
 						character = CHI_zhang_guotao
 						country_leader = {
-							expire = "1935.1.1.1"
+							
 							ideology = vanguardism
 							traits = {
 								cornered_fox
-								trait_vanguardism
+								
 							}
 						}
 					}
@@ -425,10 +426,10 @@ peace_deals = {
 					add_country_leader_role = {
 						character = CHI_wang_jingwei
 						country_leader = {
-							expire = "1935.1.1.1"
+							
 							ideology = fascism_ideology
 							traits = {
-								trait_fascism
+								
 							}
 						}
 					}
@@ -440,10 +441,10 @@ peace_deals = {
 					add_country_leader_role = {
 						character = CHI_weng_wenhao
 						country_leader = {
-							expire = "1935.1.1.1"
+							
 							ideology = socialism
 							traits = {
-								trait_socialism
+								
 							}
 						}
 					}
@@ -776,11 +777,11 @@ peace_deals = {
 						add_country_leader_role = {
 							character = CHI_yan_xishan
 							country_leader = {
-								expire = "1935.1.1.1"
+								
 								ideology = authoritarian_democracy
 								traits = {
 									propaganda_expert
-									trait_authoritarian_democracy
+									
 								}
 							}
 						}
@@ -1324,11 +1325,11 @@ peace_deals = {
 					add_country_leader_role = {
 						character = CHI_chiang_kaishek
 						country_leader = {
-							expire = "1935.1.1.1"
+							
 							ideology = authoritarian_democracy
 							traits = {
 								generallissimo
-								trait_authoritarian_democracy
+								
 							}
 						}
 					}
@@ -1340,11 +1341,11 @@ peace_deals = {
 					add_country_leader_role = {
 						character = CHI_zhang_guotao
 						country_leader = {
-							expire = "1935.1.1.1"
+							
 							ideology = vanguardism
 							traits = {
 								cornered_fox
-								trait_vanguardism
+								
 							}
 						}
 					}
@@ -1352,10 +1353,10 @@ peace_deals = {
 					add_country_leader_role = {
 						character = CHI_wang_jingwei
 						country_leader = {
-							expire = "1935.1.1.1"
+							
 							ideology = fascism_ideology
 							traits = {
-								trait_fascism
+								
 							}
 						}
 					}
@@ -1367,10 +1368,10 @@ peace_deals = {
 					add_country_leader_role = {
 						character = CHI_weng_wenhao
 						country_leader = {
-							expire = "1935.1.1.1"
+							
 							ideology = socialism
 							traits = {
-								trait_socialism
+								
 							}
 						}
 					}
@@ -1703,11 +1704,11 @@ peace_deals = {
 						add_country_leader_role = {
 							character = CHI_yan_xishan
 							country_leader = {
-								expire = "1935.1.1.1"
+								
 								ideology = authoritarian_democracy
 								traits = {
 									propaganda_expert
-									trait_authoritarian_democracy
+									
 								}
 							}
 						}

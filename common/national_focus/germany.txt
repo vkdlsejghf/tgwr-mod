@@ -378,7 +378,7 @@ focus_tree = {
 	}
 	focus = {
 		id = GER_partition_of_persia
-		icon = GFX_goal_generic_military_deal
+		icon = GFX_focus_generic_attack_iran
 		cost = 10
 		prerequisite = {
 			focus = GER_second_bjork_agreement
@@ -802,6 +802,8 @@ focus_tree = {
 				threat = 5
 				name = GER_focus_on_true_enemy
 			}
+			add_state_claim = 863
+			add_state_claim = 864
 			add_state_claim = 17
 			add_state_claim = 8
 			add_political_power = 120
@@ -1557,10 +1559,6 @@ focus_tree = {
 		}
 		completion_reward = {
 			news_event = ww1_germany.28
-			set_politics = {
-				ruling_party = democratic
-				elections_allowed = no
-			}
 			hidden_effect = {
 				set_popularities = {
 					democratic = 37
@@ -1568,18 +1566,19 @@ focus_tree = {
 					fascism = 15
 					communism = 3
 				}
-			}
-			add_country_leader_role = {
-				character = GER_theobald_von_bethmannhollweg
-				country_leader = {
-					ideology = conservatism
-					traits = {
-						trait_conservatism
+				GER_theobald_von_bethmannhollweg = {
+					add_country_leader_role = {
+						country_leader = {
+							ideology = conservatism
+						}
 					}
-					expire = "1935.1.1.1"
+					promote_character = conservatism
 				}
 			}
-			promote_character = GER_theobald_von_bethmanhollweg
+			set_politics = {
+				ruling_party = democratic
+				elections_allowed = no
+			}
 			set_party_name = {
 				ideology = democratic
 				long_name = GER_democratic_party_zentrum_long
@@ -2767,12 +2766,12 @@ focus_tree = {
 						}
 						create_country_leader = {
 							name = "Wilhelm Filchner"
-							picture = "gfx/leaders/GER/GER_wilhelm_filchener.dds"
+							picture = "gfx/leaders/GER/GER_wilhelm_filchener.png"
 							expire = "1935.1.1"
 							ideology = oligarchism
 							traits = {
 								german_agent
-								trait_oligarchism
+								
 							}
 						}
 						set_cosmetic_tag = OST_LGC
@@ -2799,12 +2798,12 @@ focus_tree = {
 							}
 							create_country_leader = {
 								name = "Wilhelm Filchner"
-								picture = "gfx/leaders/GER/GER_wilhelm_filchener.dds"
+								picture = "gfx/leaders/GER/GER_wilhelm_filchener.png"
 								expire = "1935.1.1"
 								ideology = oligarchism
 								traits = {
 									german_agent
-									trait_oligarchism
+									
 								} 
 							}
 						}
@@ -4289,6 +4288,24 @@ focus_tree = {
 						country_event = ww1_england.9
 					}
 				}
+				if = {
+					limit = {
+						has_dlc = "La Resistance"
+						has_war_with = ENG
+						ENG = {
+							OR = {
+								AND = {
+									has_completed_focus = ENG_room_40
+									is_ai = yes
+								}	
+								has_intelligence_agency = yes
+							}
+						}
+					}
+					ENG = {
+						country_event = ww1_england.9
+					}
+				}
 			}
 		}
 		ai_will_do = {
@@ -5093,7 +5110,7 @@ focus_tree = {
 	}
 	focus = {
 		id = GER_bohemia_integration
-		icon = GFX_goal_generic_attack_allies
+		icon = GFX_focus_CZE_AUH_coat_of_arms
 		cost = 10
 		prerequisite = {
 			focus = GER_german_cisleithania
@@ -5187,15 +5204,12 @@ focus_tree = {
 				NOT = {
 					has_country_leader = {
 						character = HUN_franz_joseph_i
-						ruling_only = no
 					}
 					has_country_leader = {
 						character = HUN_franz_ferdinand_i
-						ruling_only = no
 					}
 					has_country_leader = {
 						character = HUN_karl_i
-						ruling_only = no
 					}
 				}
 			}
@@ -5222,7 +5236,7 @@ focus_tree = {
 	}
 	focus = {
 		id = GER_pressure_on_scandinavia
-		icon = GFX_goal_generic_political_pressure
+		icon = GFX_focus_generic_attack_sweden
 		cost = 10
 		prerequisite = {
 			focus = GER_scandinavian_focus
@@ -5263,7 +5277,7 @@ focus_tree = {
 	}
 	focus = {
 		id = GER_invansion_in_finland
-		icon = GFX_goal_generic_major_war
+		icon = GFX_focus_generic_attack_finland
 		cost = 10
 		prerequisite = {
 			focus = GER_pressure_on_scandinavia
@@ -5549,8 +5563,8 @@ focus_tree = {
 				character = GER_adolf_hitler
 				country_leader = {
 					ideology = nazism
-					traits = { dictator trait_nazism }
-					expire = "1935.1.1.1"
+					traits = { dictator  }
+					
 				}
 			}
 			promote_character = GER_adolf_hitler
@@ -5869,7 +5883,7 @@ focus_tree = {
 	}
 	focus = {
 		id = GER_abolish_dictatorships
-		icon = GFX_focus_eng_move_to_secure_the_dominions
+		icon =  GFX_focus_generic_military_dictatorship
 		cost = 10
 		prerequisite = {
 			focus = GER_reichstag_crisis
@@ -5879,49 +5893,51 @@ focus_tree = {
 		}
 		x = 8
 		y = 11
-		bypass = {
-			NOT = {
-				has_idea = GER_idea_OHL1
-			}
-			hidden_trigger = {
-				NOT = {
-					has_idea = GER_idea_OHL2
-					has_idea = GER_idea_OHL3
-					has_idea = GER_idea_OHL_dictatorship
-					has_country_leader = {
-						character = GER_erich_ludendorff
-						ruling_only = yes
-					}
-					has_government = fascism
-				}
-			}
-		}
 		completion_reward = {
 			if = {
 				limit = {
-					has_country_leader = {
-						character = GER_erich_ludendorff
-						ruling_only = yes
-					}
+					has_global_flag = ludendorff_in_power
 					has_government = fascism
 				}
 				set_politics = {
 					ruling_party = neutrality
 					elections_allowed = no
 				}
-			}
-			remove_ideas = GER_idea_OHL
-			hidden_effect = {
-				remove_ideas = {
-					GER_idea_OHL1
-					GER_idea_OHL2
-					GER_idea_OHL3
-					GER_idea_OHL_dictatorship
+				add_popularity = {
+					ideology = fascism
+					popularity = -0.2
 				}
+				promote_character = GER_wilhelm_ii
 			}
-			add_popularity = {
-				ideology = fascism
-				popularity = -0.2
+			if = {
+				limit = {
+					has_idea = GER_idea_OHL
+				}
+				remove_ideas = GER_idea_OHL
+			}
+			if = {
+				limit = {
+					has_idea = GER_idea_OHL1
+				}
+				remove_ideas = GER_idea_OHL1
+			}
+			if = {
+				limit = {
+					has_idea = GER_idea_OHL2
+				}
+				remove_ideas = GER_idea_OHL2
+			}
+			if = {
+				limit = {
+					has_idea = GER_idea_OHL3
+				}
+				remove_ideas = GER_idea_OHL3
+			}
+			if = {
+				limit = {
+					has_idea = GER_idea_OHL_dictatorship
+				}
+				remove_ideas = GER_idea_OHL_dictatorship
 			}
 			add_ideas = GER_quenched_militarism
 		}
@@ -6098,7 +6114,7 @@ focus_tree = {
 	}
 	focus = {
 		id = GER_establish_finnish_monarchy
-		icon = GFX_focus_invite_finland
+		icon = GFX_focus_generic_monarchy_2
 		cost = 10
 		prerequisite = {
 			focus = GER_invansion_in_finland
@@ -6107,7 +6123,7 @@ focus_tree = {
 		y = 7
 		available = {
 			FIN = {
-				is_subject_of = PREV
+				is_subject_of = ROOT
 			}
 		}
 		bypass = {
@@ -6122,12 +6138,12 @@ focus_tree = {
 			FIN = {
 				create_country_leader = {
 					name = "Fredrik Kaarle I"
-					picture = "gfx/leaders/FIN/FIN_fredrik_kaarle.dds"
+					picture = "gfx/leaders/FIN/FIN_fredrik_kaarle.png"
 					expire = "1935.1.1"
 					ideology = autocracy
 					traits = {
 						german_agent
-						trait_autocracy
+						
 					}
 				}
 				set_party_name = {
@@ -6251,17 +6267,20 @@ focus_tree = {
 		available = {
 			is_subject = no
 		}
+		will_lead_to_war_with = FRA
 		completion_reward = {
 			add_named_threat = {
 				threat = 20
 				name = GER_restore_burgundy
 			}
+			add_state_claim = 863
+			add_state_claim = 864
 			add_state_claim = 17
 			add_state_claim = 735
 			add_state_claim = 834
 			add_state_claim = 762
 			add_state_claim = 21
-			create_wargoal = {
+			declare_war_on = {
 				type = puppet_wargoal_focus
 				target = FRA
 			}
@@ -7006,29 +7025,37 @@ focus_tree = {
 		y = 10
 		available = {
 			is_subject = no
+			ITA = {
+				owns_state = 2
+			}
 		}
+		bypass = {
+			OR = {
+				has_war_with = ITA
+				owns_state = 2
+				has_subject = PAP
+			}
+		}
+		will_lead_to_war_with = ITA
 		completion_reward = {
+			add_state_claim = 2
+			add_state_claim = 162
+			add_state_claim = 161
+			add_state_claim = 158
+			add_state_claim = 159
+			add_state_claim = 160
+			add_state_claim = 114
+			create_wargoal = {
+				type = take_claimed_state
+				target = ITA
+			}
 			ITA = {
 				leave_faction = yes
-				add_ai_strategy = {
-					type = alliance
-					id = ROOT
-					value = -500
-				}
-			}
-			ROOT = {
-				add_state_claim = 2
-				add_state_claim = 162
-				add_state_claim = 161
-				add_state_claim = 158
-				add_state_claim = 159
-				add_state_claim = 160
-				add_state_claim = 114
-				create_wargoal = {
-					type = take_state_focus
-					target = ITA
-					generator = {
-						2
+				hidden_effect = {
+					add_ai_strategy = {
+						type = alliance
+						id = ROOT
+						value = -500
 					}
 				}
 			}
@@ -7073,24 +7100,20 @@ focus_tree = {
 			has_government = communism
 			is_subject = no
 			OR = {
-				AUS = {
-					exists = yes
-				}
-				AUH = {
-					exists = yes
-				}
+				country_exists = AUH
+				country_exists = AUS
 			}
 		}
+		will_lead_to_war_with = AUH
+		will_lead_to_war_with = AUS
 		completion_reward = {
 			if = {
 				limit = {
 					country_exists = AUH
 				}
-				ROOT = {
-					create_wargoal = {
-						type = puppet_wargoal_focus
-						target = AUH
-					}
+				create_wargoal = {
+					type = puppet_wargoal_focus
+					target = AUH
 				}
 			}
 			if = {
@@ -7121,11 +7144,9 @@ focus_tree = {
 						}
 					}
 				}
-				ROOT = {
-					create_wargoal = {
-						type = puppet_wargoal_focus
-						target = AUS
-					}
+				create_wargoal = {
+					type = puppet_wargoal_focus
+					target = AUS
 				}
 			}
 		}
@@ -7173,6 +7194,7 @@ focus_tree = {
 				has_government = communism
 			}
 		}
+		will_lead_to_war_with = POL
 		completion_reward = {
 			create_wargoal = {
 				type = puppet_wargoal_focus
@@ -7250,6 +7272,7 @@ focus_tree = {
 				exists = yes
 			}
 		}
+		will_lead_to_war_with = CZE
 		completion_reward = {
 			if = {
 				limit = {
@@ -7265,11 +7288,9 @@ focus_tree = {
 					}
 				}
 				else = {
-					ROOT = {
-						create_wargoal = {
-							type = puppet_wargoal_focus
-							target = CZE
-						}
+					create_wargoal = {
+						type = puppet_wargoal_focus
+						target = CZE
 					}
 				}
 			}
@@ -7305,6 +7326,7 @@ focus_tree = {
 				has_government = communism
 			}
 		}
+		will_lead_to_war_with = FRA
 		completion_reward = {
 			create_wargoal = {
 				type = puppet_wargoal_focus
@@ -7502,7 +7524,7 @@ focus_tree = {
 	}
 	focus = {
 		id = GER_danish_throne
-		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		icon = GFX_focus_generic_attack_denmark
 		cost = 10
 		prerequisite = {
 			focus = GER_restore_burgundy
@@ -7522,6 +7544,7 @@ focus_tree = {
 		available = {
 			is_subject = no
 		}
+		will_lead_to_war_with = DEN
 		completion_reward = {
 			if = {
 				limit = {
@@ -7537,11 +7560,9 @@ focus_tree = {
 					}
 				}
 				else = {
-					ROOT = {
-						create_wargoal = {
-							type = puppet_wargoal_focus
-							target = DEN
-						}
+					create_wargoal = {
+						type = puppet_wargoal_focus
+						target = DEN
 					}
 				}
 			}
@@ -7572,6 +7593,7 @@ focus_tree = {
 		available = {
 			is_subject = no
 		}
+		will_lead_to_war_with = SWE
 		completion_reward = {
 			if = {
 				limit = {
@@ -7587,11 +7609,9 @@ focus_tree = {
 					}
 				}
 				else = {
-					ROOT = {
-						create_wargoal = {
-							type = puppet_wargoal_focus
-							target = SWE
-						}
+					create_wargoal = {
+						type = puppet_wargoal_focus
+						target = SWE
 					}
 				}
 			}
@@ -7635,6 +7655,9 @@ focus_tree = {
 		available = {
 			is_subject = no
 		}
+		will_lead_to_war_with = HOL
+		will_lead_to_war_with = BEL
+		will_lead_to_war_with = LUX
 		completion_reward = {
 			add_named_threat = {
 				threat = 10
@@ -7668,11 +7691,9 @@ focus_tree = {
 						}
 					}
 				}
-				ROOT = {
-					create_wargoal = {
-						type = puppet_wargoal_focus
-						target = HOL
-					}
+				create_wargoal = {
+					type = puppet_wargoal_focus
+					target = HOL
 				}
 			}
 			if = {
@@ -7703,11 +7724,9 @@ focus_tree = {
 						}
 					}
 				}
-				ROOT = {
-					create_wargoal = {
-						type = puppet_wargoal_focus
-						target = BEL
-					}
+				create_wargoal = {
+					type = puppet_wargoal_focus
+					target = BEL
 				}
 			}
 			if = {
@@ -7738,11 +7757,9 @@ focus_tree = {
 						}
 					}
 				}
-				ROOT = {
-					create_wargoal = {
-						type = puppet_wargoal_focus
-						target = LUX
-					}
+				create_wargoal = {
+					type = puppet_wargoal_focus
+					target = LUX
 				}
 			}
 		}

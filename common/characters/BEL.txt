@@ -3,35 +3,35 @@ characters={
 		name="BEL_edward_anseele"
 		portraits={
 			civilian={
-				large="gfx/leaders/BEL/BEL_edward_anseele.dds"
+				large="gfx/leaders/BEL/BEL_edward_anseele.png"
 			}
 		}
 		country_leader={
 			ideology=reformist_socialism
-			traits={ trait_reformist_socialism }
-			expire="1935.1.1.1"
-			id=-1
+			
+			
+			
 		}
 	}
 	BEL_frans_schollaert={
 		name="BEL_frans_schollaert"
 		portraits={
 			civilian={
-				large="gfx/leaders/BEL/BEL_frans_schollaert.dds"
+				large="gfx/leaders/BEL/BEL_frans_schollaert.png"
 			}
 		}
 		country_leader={
 			ideology=conservatism
-			traits={ trait_conservatism }
-			expire="1935.1.1.1"
-			id=-1
+			
+			
+			
 		}
 	}
 	BEL_albert_i={
 		name="BEL_albert_i"
 		portraits={
 			civilian={
-				large="gfx/leaders/BEL/BEL_albert.dds"
+				large="gfx/leaders/BEL/BEL_albert.png"
 			}
 		}
 		field_marshal={
@@ -55,30 +55,30 @@ characters={
 		}
 		country_leader={
 			ideology=autocracy
-			traits={ trait_autocracy }
-			expire="1935.1.1.1"
-			id=-1
+			
+			
+			
 		}
 	}
 	BEL_august_borms={
 		name="BEL_august_borms"
 		portraits={
 			civilian={
-				large="gfx/leaders/BEL/BEL_august_borms.dds"
+				large="gfx/leaders/BEL/BEL_august_borms.png"
 			}
 		}
 		country_leader={
 			ideology=nazism
-			traits={ german_agent trait_nazism }
-			expire="1935.1.1.1"
-			id=-1
+			traits={ german_agent  }
+			
+			
 		}
 	}
 	BEL_laurent_vandersmissen={
 		name="BEL_laurent_vandersmissen"
 		portraits={
 			civilian={
-				large="gfx/leaders/BEL/BEL_laurent_vandersmissen.dds"
+				large="gfx/leaders/BEL/BEL_laurent_vandersmissen.png"
 			}
 		}
 	}
@@ -86,21 +86,21 @@ characters={
 		name="BEL_charles_de_broqueville"
 		portraits={
 			civilian={
-				large="gfx/leaders/BEL/BEL_charles_de_broqueville.dds"
+				large="gfx/leaders/BEL/BEL_charles_de_broqueville.png"
 			}
 		}
 		country_leader={
 			ideology=conservatism
-			traits={ trait_conservatism }
-			expire="1935.1.1.1"
-			id=-1
+			
+			
+			
 		}
 	}
 	BEL_paul_hymans={
 		name="BEL_paul_hymans"
 		portraits={
 			civilian={
-				large="gfx/leaders/BEL/BEL_paul_hymans.dds"
+				large="gfx/leaders/BEL/BEL_paul_hymans.png"
 			}
 		}
 	}
@@ -108,14 +108,14 @@ characters={
 		name="BEL_felix_fuchs"
 		portraits={
 			civilian={
-				large="gfx/leaders/BEL/BEL_felix_fuchs.dds"
+				large="gfx/leaders/BEL/BEL_felix_fuchs.png"
 			}
 		}
 		country_leader={
 			ideology=classical_liberalism
-			traits={ trait_classical_liberalism }
-			expire="1935.1.1.1"
-			id=-1
+			
+			
+			
 		}
 	}
 	BEL_gerard_leman={
@@ -135,7 +135,7 @@ characters={
 				small="GFX_idea_generic_air_europe_2"
 			}
 			army={
-				large="gfx/leaders/BEL/BEL_gerard_leman.dds"
+				large="gfx/leaders/BEL/BEL_gerard_leman.png"
 			}
 		}
 		corps_commander={
@@ -155,7 +155,7 @@ characters={
 				small="gfx/interface/ideas/idea_europe_generic_land_1.dds"
 			}
 			army={
-				large="gfx/leaders/BEL/BEL_leon_de_witte.dds"
+				large="gfx/leaders/BEL/BEL_leon_de_witte.png"
 			}
 		}
 		corps_commander={
@@ -175,7 +175,7 @@ characters={
 				small="gfx/interface/ideas/idea_europe_generic_land_2.dds"
 			}
 			army={
-				large="gfx/leaders/BEL/BEL_Charles_Tombeur.dds"
+				large="gfx/leaders/BEL/BEL_Charles_Tombeur.png"
 			}
 		}
 		corps_commander={
@@ -195,7 +195,7 @@ characters={
 				small="gfx/interface/ideas/idea_europe_generic_land_3.dds"
 			}
 			army={
-				large="gfx/leaders/BEL/BEL_albert_van_rode.dds"
+				large="gfx/leaders/BEL/BEL_albert_van_rode.png"
 			}
 		}
 		corps_commander={

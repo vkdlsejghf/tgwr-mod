@@ -29,6 +29,70 @@ debug_decisions = {
 	}
 }
 
+GER_great_war = {
+	TUR_declare_jihad = {
+		icon = GFX_decision_generic_nationalism
+		allowed = {
+			original_tag = TUR
+		}
+		available = {
+			has_global_flag = kis_war
+			has_war = yes
+		}
+		visible = {
+			NOT = {
+				has_completed_focus = TUR_istirak_mukavemet
+				has_country_flag = TUR_abolished_caliph
+			}
+		}
+		cost = 50
+		fire_only_once = yes
+		complete_effect = {
+			add_war_support = 0.05
+			every_owned_state = {
+				limit = {
+					OR = {
+						is_core_of = SAU
+						is_core_of = JBS
+						is_core_of = IRQ
+						is_core_of = SYR
+						is_core_of = LEB
+						is_core_of = PAL
+						is_core_of = KUW
+						is_core_of = QAT
+						is_core_of = ALB
+						is_core_of = PER
+						is_core_of = HJZ
+						is_core_of = ASR
+						is_core_of = YEM
+						is_core_of = EGY
+						is_core_of = LBA
+					}
+					NOT = {
+						is_core_of = TUR
+					}
+				}
+				add_compliance = 10
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						DAR = {
+							is_subject_of = ENG
+						}
+					}
+					DAR = {
+						country_event = ww1_ottoman.70
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+	}
+}	
+
 TUR_minority_decision = {
 	TUR_armenian_uprising = {
 		icon = generic_nationalism
@@ -3282,7 +3346,7 @@ crisis = {
 		}
 		visible = {
 		}
-		days_mission_timeout = 220
+		days_mission_timeout = 360
 		fire_only_once = yes
 		is_good = no
 		timeout_effect = {
@@ -3396,67 +3460,6 @@ political_actions = {
 			}
 		}
 	}
-	TUR_declare_jihad = {
-		icon = GFX_decision_generic_nationalism
-		allowed = {
-			original_tag = TUR
-		}
-		available = {
-			has_global_flag = kis_war
-			has_war = yes
-		}
-		visible = {
-			NOT = {
-				has_completed_focus = TUR_istirak_mukavemet
-				has_country_flag = TUR_abolished_caliph
-			}
-		}
-		cost = 50
-		fire_only_once = yes
-		complete_effect = {
-			add_war_support = 0.05
-			every_owned_state = {
-				limit = {
-					OR = {
-						is_core_of = SAU
-						is_core_of = JBS
-						is_core_of = IRQ
-						is_core_of = SYR
-						is_core_of = LEB
-						is_core_of = PAL
-						is_core_of = KUW
-						is_core_of = QAT
-						is_core_of = ALB
-						is_core_of = PER
-						is_core_of = HJZ
-						is_core_of = ASR
-						is_core_of = YEM
-						is_core_of = EGY
-						is_core_of = LBA
-					}
-					NOT = {
-						is_core_of = TUR
-					}
-				}
-				add_compliance = 10
-			}
-			hidden_effect = {
-				if = {
-					limit = {
-						DAR = {
-							is_subject_of = ENG
-						}
-					}
-					DAR = {
-						country_event = ww1_ottoman.70
-					}
-				}
-			}
-		}
-		ai_will_do = {
-			factor = 1000
-		}
-	}
 	#	TUR_dissolve_meclis_saviour_officers = {
 	#		allowed = {
 	#			original_tag = TUR
@@ -3518,13 +3521,10 @@ political_actions = {
 				has_idea = TUR_officers_struggle_depoliticize
 				has_idea = TUR_officers_struggle_depoliticize_1_org
 				has_idea = TUR_officers_struggle_depoliticize_2_org
-				has_idea = TUR_officers_struggle_depoliticize_3_org
 				has_idea = TUR_officers_struggle_depoliticize_1_org_2
 				has_idea = TUR_officers_struggle_depoliticize_2_org_2
-				has_idea = TUR_officers_struggle_depoliticize_3_org_2
 				has_idea = TUR_officers_struggle_depoliticize_1_org_3
 				has_idea = TUR_officers_struggle_depoliticize_2_org_3
-				has_idea = TUR_officers_struggle_depoliticize_3_org_3
 				has_idea = TUR_officers_struggle_depoliticize_1_org_final
 				has_idea = TUR_officers_struggle_depoliticize_2_org_final
 			}
@@ -3557,7 +3557,7 @@ political_actions = {
 		days_remove = 30
 		days_re_enable = 30
 		visible = {
-			has_completed_focus = TUR_depoliticize_the_army
+			has_completed_focus = TUR_adabimerkeziyet
 			OR = {
 				has_idea = TUR_officers_struggle_depoliticize
 				has_idea = TUR_officers_struggle_depoliticize_1_org
@@ -5897,7 +5897,7 @@ TUR_economy_decision = {
 				}
 			}
 		}
-		days_remove = 30
+		days_remove = 50
 		remove_effect = {
 			if = {
 				limit = {
@@ -5967,27 +5967,49 @@ TUR_economy_decision = {
 			}
 		}
 		days_remove = 60
+		complete_effect = {
+			random_owned_controlled_state = {
+				limit = {
+					industrial_complex > 0
+					is_core_of = TUR
+				}
+				remove_building = {
+					type = industrial_complex
+					level = 1
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					industrial_complex > 0
+					is_core_of = TUR
+				}
+				remove_building = {
+					type = industrial_complex
+					level = 1
+				}
+			}
+		}
 		remove_effect = {
 			if = {
 				limit = {
 					has_variable = opda_lira
-					check_variable = { opda_lira > 1.474 }
+					check_variable = { opda_lira > 0.884 }
 				}
-				custom_effect_tooltip = TUR_remove_debt_1475
+				custom_effect_tooltip = TUR_remove_debt_0885
 				add_to_variable = {
 					opda_lira = -1.475
 				}
 				add_to_variable = {
-					opda_consumer_goods = -0.05
+					opda_consumer_goods = -0.03
 				}
 				add_to_variable = {
-					opda_resources_to_market = -0.025
+					opda_resources_to_market = -0.015
 				}
 			}
 			if = {
 				limit = {
 					has_variable = opda_lira
-					check_variable = { opda_lira < 1.475 }
+					check_variable = { opda_lira < 0.885 }
 				}
 				custom_effect_tooltip = TUR_remove_debt_existing_amount
 				multiply_variable = {
@@ -5998,16 +6020,6 @@ TUR_economy_decision = {
 				}
 				multiply_variable = {
 					opda_resources_to_market = 0
-				}
-			}
-			random_owned_controlled_state = {
-				limit = {
-					industrial_complex > 1
-					is_core_of = TUR
-				}
-				remove_building = {
-					type = industrial_complex
-					level = 1
 				}
 			}
 		}
@@ -7026,16 +7038,20 @@ TUR_economy_decision = {
 			}
 		}
 		complete_effect = {
-			GER = {
-				add_offsite_building = {
-					type = industrial_complex
-					level = 2
-				}
-			}
 			set_country_flag = {
 				flag = has_active_purchase_contract
 				days = 60
 				value = 1
+			}
+			custom_effect_tooltip = TUR_add_debt_0885
+			add_to_variable = {
+				opda_lira = 0.885
+			}
+			add_to_variable = {
+				opda_consumer_goods = 0.03
+			}
+			add_to_variable = {
+				opda_resources_to_market = 0.015
 			}
 		}
 		remove_effect = {
@@ -7043,22 +7059,6 @@ TUR_economy_decision = {
 				type = infantry_equipment_0
 				amount = 7000
 				producer = GER
-			}
-			GER = {
-				add_offsite_building = {
-					type = industrial_complex
-					level = -2
-				}
-			}
-			custom_effect_tooltip = TUR_add_debt_0295
-			add_to_variable = {
-				opda_lira = 0.295
-			}
-			add_to_variable = {
-				opda_consumer_goods = 0.01
-			}
-			add_to_variable = {
-				opda_resources_to_market = 0.005
 			}
 		}
 		ai_will_do = {
@@ -7139,16 +7139,20 @@ TUR_economy_decision = {
 			}
 		}
 		complete_effect = {
-			ENG = {
-				add_offsite_building = {
-					type = industrial_complex
-					level = 1
-				}
-			}
 			set_country_flag = {
 				flag = has_active_purchase_contract
 				days = 60
 				value = 1
+			}
+			custom_effect_tooltip = TUR_add_debt_0885
+			add_to_variable = {
+				opda_lira = 0.885
+			}
+			add_to_variable = {
+				opda_consumer_goods = 0.03
+			}
+			add_to_variable = {
+				opda_resources_to_market = 0.015
 			}
 		}
 		remove_effect = {
@@ -7156,22 +7160,6 @@ TUR_economy_decision = {
 				type = infantry_equipment_1
 				amount = 5550
 				producer = ENG
-			}
-			ENG = {
-				add_offsite_building = {
-					type = industrial_complex
-					level = -1
-				}
-			}
-			custom_effect_tooltip = TUR_add_debt_0295
-			add_to_variable = {
-				opda_lira = 0.295
-			}
-			add_to_variable = {
-				opda_consumer_goods = 0.01
-			}
-			add_to_variable = {
-				opda_resources_to_market = 0.005
 			}
 		}
 		ai_will_do = {
@@ -7253,16 +7241,20 @@ TUR_economy_decision = {
 			}
 		}
 		complete_effect = {
-			FRA = {
-				add_offsite_building = {
-					type = industrial_complex
-					level = 1
-				}
-			}
 			set_country_flag = {
 				flag = has_active_purchase_contract
 				days = 60
 				value = 1
+			}
+			custom_effect_tooltip = TUR_add_debt_0885
+			add_to_variable = {
+				opda_lira = 0.885
+			}
+			add_to_variable = {
+				opda_consumer_goods = 0.03
+			}
+			add_to_variable = {
+				opda_resources_to_market = 0.015
 			}
 		}
 		remove_effect = {
@@ -7270,22 +7262,6 @@ TUR_economy_decision = {
 				type = infantry_equipment_0
 				amount = 3000
 				producer = FRA
-			}
-			FRA = {
-				add_offsite_building = {
-					type = industrial_complex
-					level = -1
-				}
-			}
-			custom_effect_tooltip = TUR_add_debt_0295
-			add_to_variable = {
-				opda_lira = 0.295
-			}
-			add_to_variable = {
-				opda_consumer_goods = 0.01
-			}
-			add_to_variable = {
-				opda_resources_to_market = 0.005
 			}
 		}
 		ai_will_do = {
@@ -7356,39 +7332,27 @@ TUR_economy_decision = {
 			has_variable = opda_lira
 		}
 		complete_effect = {
-			GER = {
-				add_offsite_building = {
-					type = industrial_complex
-					level = 1
-				}
-			}
 			set_country_flag = {
 				flag = has_active_purchase_contract
 				days = 60
 				value = 1
 			}
+			custom_effect_tooltip = TUR_add_debt_0590
+			add_to_variable = {
+				opda_lira = 0.590
+			}
+			add_to_variable = {
+				opda_consumer_goods = 0.02
+			}
+			add_to_variable = {
+				opda_resources_to_market = 0.01
+			}
 		}
 		remove_effect = {
 			add_equipment_to_stockpile = {
 				type = support_equipment
-				amount = 135
+				amount = 75
 				producer = GER
-			}
-			GER = {
-				add_offsite_building = {
-					type = industrial_complex
-					level = -1
-				}
-			}
-			custom_effect_tooltip = TUR_add_debt_0295
-			add_to_variable = {
-				opda_lira = 0.295
-			}
-			add_to_variable = {
-				opda_consumer_goods = 0.01
-			}
-			add_to_variable = {
-				opda_resources_to_market = 0.005
 			}
 		}
 		ai_will_do = {
@@ -7458,16 +7422,20 @@ TUR_economy_decision = {
 			has_variable = opda_lira
 		}
 		complete_effect = {
-			ENG = {
-				add_offsite_building = {
-					type = industrial_complex
-					level = 1
-				}
-			}
 			set_country_flag = {
 				flag = has_active_purchase_contract
 				days = 60
 				value = 1
+			}
+			custom_effect_tooltip = TUR_add_debt_0590
+			add_to_variable = {
+				opda_lira = 0.590
+			}
+			add_to_variable = {
+				opda_consumer_goods = 0.02
+			}
+			add_to_variable = {
+				opda_resources_to_market = 0.01
 			}
 		}
 		remove_effect = {
@@ -7475,22 +7443,6 @@ TUR_economy_decision = {
 				type = support_equipment
 				amount = 75
 				producer = ENG
-			}
-			ENG = {
-				add_offsite_building = {
-					type = industrial_complex
-					level = -1
-				}
-			}
-			custom_effect_tooltip = TUR_add_debt_0295
-			add_to_variable = {
-				opda_lira = 0.295
-			}
-			add_to_variable = {
-				opda_consumer_goods = 0.01
-			}
-			add_to_variable = {
-				opda_resources_to_market = 0.005
 			}
 		}
 		ai_will_do = {
@@ -7560,16 +7512,20 @@ TUR_economy_decision = {
 			has_variable = opda_lira
 		}
 		complete_effect = {
-			GER = {
-				add_offsite_building = {
-					type = industrial_complex
-					level = 1
-				}
-			}
 			set_country_flag = {
 				flag = has_active_purchase_contract
 				days = 60
 				value = 1
+			}
+			custom_effect_tooltip = TUR_add_debt_0885
+			add_to_variable = {
+				opda_lira = 0.885
+			}
+			add_to_variable = {
+				opda_consumer_goods = 0.03
+			}
+			add_to_variable = {
+				opda_resources_to_market = 0.015
 			}
 		}
 		remove_effect = {
@@ -7582,22 +7538,6 @@ TUR_economy_decision = {
 				type = airship_bomber_equipment
 				amount = 10
 				producer = GER
-			}
-			GER = {
-				add_offsite_building = {
-					type = industrial_complex
-					level = -1
-				}
-			}
-			custom_effect_tooltip = TUR_add_debt_0295
-			add_to_variable = {
-				opda_lira = 0.295
-			}
-			add_to_variable = {
-				opda_consumer_goods = 0.01
-			}
-			add_to_variable = {
-				opda_resources_to_market = 0.005
 			}
 		}
 		ai_will_do = {
@@ -7667,16 +7607,20 @@ TUR_economy_decision = {
 			has_variable = opda_lira
 		}
 		complete_effect = {
-			FRA = {
-				add_offsite_building = {
-					type = industrial_complex
-					level = 1
-				}
-			}
 			set_country_flag = {
 				flag = has_active_purchase_contract
 				days = 60
 				value = 1
+			}
+			custom_effect_tooltip = TUR_add_debt_0885
+			add_to_variable = {
+				opda_lira = 0.885
+			}
+			add_to_variable = {
+				opda_consumer_goods = 0.03
+			}
+			add_to_variable = {
+				opda_resources_to_market = 0.015
 			}
 		}
 		remove_effect = {
@@ -7694,22 +7638,6 @@ TUR_economy_decision = {
 				type = airship_bomber_equipment
 				amount = 4
 				producer = FRA
-			}
-			FRA = {
-				add_offsite_building = {
-					type = industrial_complex
-					level = -1
-				}
-			}
-			custom_effect_tooltip = TUR_add_debt_0295
-			add_to_variable = {
-				opda_lira = 0.295
-			}
-			add_to_variable = {
-				opda_consumer_goods = 0.01
-			}
-			add_to_variable = {
-				opda_resources_to_market = 0.005
 			}
 		}
 		ai_will_do = {
@@ -7783,16 +7711,20 @@ TUR_economy_decision = {
 			}
 		}
 		complete_effect = {
-			FRA = {
-				add_offsite_building = {
-					type = industrial_complex
-					level = 1
-				}
-			}
 			set_country_flag = {
 				flag = has_active_purchase_contract
 				days = 60
 				value = 1
+			}
+			custom_effect_tooltip = TUR_add_debt_0885
+			add_to_variable = {
+				opda_lira = 0.885
+			}
+			add_to_variable = {
+				opda_consumer_goods = 0.03
+			}
+			add_to_variable = {
+				opda_resources_to_market = 0.015
 			}
 		}
 		remove_effect = {
@@ -7800,22 +7732,6 @@ TUR_economy_decision = {
 				type = howitzer_equipment
 				amount = 47
 				producer = FRA
-			}
-			FRA = {
-				add_offsite_building = {
-					type = industrial_complex
-					level = -1
-				}
-			}
-			custom_effect_tooltip = TUR_add_debt_0590
-			add_to_variable = {
-				opda_lira = 0.59
-			}
-			add_to_variable = {
-				opda_consumer_goods = 0.02
-			}
-			add_to_variable = {
-				opda_resources_to_market = 0.01
 			}
 		}
 		ai_will_do = {
@@ -7874,16 +7790,20 @@ TUR_economy_decision = {
 			}
 		}
 		complete_effect = {
-			GER = {
-				add_offsite_building = {
-					type = industrial_complex
-					level = 1
-				}
-			}
 			set_country_flag = {
 				flag = has_active_purchase_contract
 				days = 60
 				value = 1
+			}
+			custom_effect_tooltip = TUR_add_debt_0885
+			add_to_variable = {
+				opda_lira = 0.885
+			}
+			add_to_variable = {
+				opda_consumer_goods = 0.03
+			}
+			add_to_variable = {
+				opda_resources_to_market = 0.015
 			}
 		}
 		remove_effect = {
@@ -7891,22 +7811,6 @@ TUR_economy_decision = {
 				type = howitzer_equipment
 				amount = 76
 				producer = GER
-			}
-			GER = {
-				add_offsite_building = {
-					type = industrial_complex
-					level = -1
-				}
-			}
-			custom_effect_tooltip = TUR_add_debt_0590
-			add_to_variable = {
-				opda_lira = 0.59
-			}
-			add_to_variable = {
-				opda_consumer_goods = 0.02
-			}
-			add_to_variable = {
-				opda_resources_to_market = 0.01
 			}
 		}
 		ai_will_do = {
@@ -7966,16 +7870,20 @@ TUR_economy_decision = {
 			}
 		}
 		complete_effect = {
-			ENG = {
-				add_offsite_building = {
-					type = industrial_complex
-					level = 1
-				}
-			}
 			set_country_flag = {
 				flag = has_active_purchase_contract
 				days = 60
 				value = 1
+			}
+			custom_effect_tooltip = TUR_add_debt_0885
+			add_to_variable = {
+				opda_lira = 0.885
+			}
+			add_to_variable = {
+				opda_consumer_goods = 0.03
+			}
+			add_to_variable = {
+				opda_resources_to_market = 0.015
 			}
 		}
 		remove_effect = {
@@ -7983,22 +7891,6 @@ TUR_economy_decision = {
 				type = artillery_equipment
 				amount = 128
 				producer = ENG
-			}
-			ENG = {
-				add_offsite_building = {
-					type = industrial_complex
-					level = -1
-				}
-			}
-			custom_effect_tooltip = TUR_add_debt_0590
-			add_to_variable = {
-				opda_lira = 0.59
-			}
-			add_to_variable = {
-				opda_consumer_goods = 0.02
-			}
-			add_to_variable = {
-				opda_resources_to_market = 0.01
 			}
 		}
 		ai_will_do = {
@@ -8068,16 +7960,20 @@ TUR_economy_decision = {
 			has_variable = opda_lira
 		}
 		complete_effect = {
-			FRA = {
-				add_offsite_building = {
-					type = industrial_complex
-					level = 1
-				}
-			}
 			set_country_flag = {
 				flag = has_active_purchase_contract
 				days = 60
 				value = 1
+			}
+			custom_effect_tooltip = TUR_add_debt_0885
+			add_to_variable = {
+				opda_lira = 0.885
+			}
+			add_to_variable = {
+				opda_consumer_goods = 0.03
+			}
+			add_to_variable = {
+				opda_resources_to_market = 0.015
 			}
 		}
 		remove_effect = {
@@ -8085,22 +7981,6 @@ TUR_economy_decision = {
 				type = artillery_equipment
 				amount = 86
 				producer = FRA
-			}
-			FRA = {
-				add_offsite_building = {
-					type = industrial_complex
-					level = -1
-				}
-			}
-			custom_effect_tooltip = TUR_add_debt_0590
-			add_to_variable = {
-				opda_lira = 0.59
-			}
-			add_to_variable = {
-				opda_consumer_goods = 0.02
-			}
-			add_to_variable = {
-				opda_resources_to_market = 0.01
 			}
 		}
 		ai_will_do = {
@@ -8170,16 +8050,20 @@ TUR_economy_decision = {
 			has_variable = opda_lira
 		}
 		complete_effect = {
-			GER = {
-				add_offsite_building = {
-					type = industrial_complex
-					level = 2
-				}
-			}
 			set_country_flag = {
 				flag = has_active_purchase_contract
 				days = 60
 				value = 1
+			}
+			custom_effect_tooltip = TUR_add_debt_0885
+			add_to_variable = {
+				opda_lira = 0.885
+			}
+			add_to_variable = {
+				opda_consumer_goods = 0.03
+			}
+			add_to_variable = {
+				opda_resources_to_market = 0.015
 			}
 		}
 		remove_effect = {
@@ -8187,22 +8071,6 @@ TUR_economy_decision = {
 				type = artillery_equipment
 				amount = 285
 				producer = GER
-			}
-			GER = {
-				add_offsite_building = {
-					type = industrial_complex
-					level = -2
-				}
-			}
-			custom_effect_tooltip = TUR_add_debt_0590
-			add_to_variable = {
-				opda_lira = 0.59
-			}
-			add_to_variable = {
-				opda_consumer_goods = 0.02
-			}
-			add_to_variable = {
-				opda_resources_to_market = 0.01
 			}
 		}
 		ai_will_do = {
@@ -8278,16 +8146,20 @@ TUR_economy_decision = {
 			has_variable = opda_lira
 		}
 		complete_effect = {
-			FROM = {
-				add_offsite_building = {
-					type = industrial_complex
-					level = 1
-				}
-			}
 			set_country_flag = {
 				flag = has_active_purchase_contract
 				days = 60
 				value = 1
+			}
+			custom_effect_tooltip = TUR_add_debt_0885
+			add_to_variable = {
+				opda_lira = 0.885
+			}
+			add_to_variable = {
+				opda_consumer_goods = 0.03
+			}
+			add_to_variable = {
+				opda_resources_to_market = 0.015
 			}
 		}
 		remove_effect = {
@@ -8295,22 +8167,6 @@ TUR_economy_decision = {
 				type = motorized_equipment
 				amount = 150
 				producer = FROM
-			}
-			FROM = {
-				add_offsite_building = {
-					type = industrial_complex
-					level = -1
-				}
-			}
-			custom_effect_tooltip = TUR_add_debt_0590
-			add_to_variable = {
-				opda_lira = 0.59
-			}
-			add_to_variable = {
-				opda_consumer_goods = 0.02
-			}
-			add_to_variable = {
-				opda_resources_to_market = 0.01
 			}
 		}
 		ai_will_do = {
@@ -8381,16 +8237,20 @@ TUR_economy_decision = {
 			has_variable = opda_lira
 		}
 		complete_effect = {
-			FRA = {
-				add_offsite_building = {
-					type = industrial_complex
-					level = 1
-				}
-			}
 			set_country_flag = {
 				flag = has_active_purchase_contract
 				days = 60
 				value = 1
+			}
+			custom_effect_tooltip = TUR_add_debt_0885
+			add_to_variable = {
+				opda_lira = 0.885
+			}
+			add_to_variable = {
+				opda_consumer_goods = 0.03
+			}
+			add_to_variable = {
+				opda_resources_to_market = 0.015
 			}
 		}
 		remove_effect = {
@@ -8398,22 +8258,6 @@ TUR_economy_decision = {
 				type = motorized_equipment
 				amount = 72
 				producer = FRA
-			}
-			FRA = {
-				add_offsite_building = {
-					type = industrial_complex
-					level = -1
-				}
-			}
-			custom_effect_tooltip = TUR_add_debt_0590
-			add_to_variable = {
-				opda_lira = 0.59
-			}
-			add_to_variable = {
-				opda_consumer_goods = 0.02
-			}
-			add_to_variable = {
-				opda_resources_to_market = 0.01
 			}
 		}
 		ai_will_do = {
@@ -8484,16 +8328,20 @@ TUR_economy_decision = {
 			has_variable = opda_lira
 		}
 		complete_effect = {
-			GER = {
-				add_offsite_building = {
-					type = industrial_complex
-					level = 2
-				}
-			}
 			set_country_flag = {
 				flag = has_active_purchase_contract
 				days = 60
 				value = 1
+			}
+			custom_effect_tooltip = TUR_add_debt_0885
+			add_to_variable = {
+				opda_lira = 0.885
+			}
+			add_to_variable = {
+				opda_consumer_goods = 0.03
+			}
+			add_to_variable = {
+				opda_resources_to_market = 0.015
 			}
 		}
 		remove_effect = {
@@ -8501,22 +8349,6 @@ TUR_economy_decision = {
 				type = motorized_equipment
 				amount = 265
 				producer = GER
-			}
-			GER = {
-				add_offsite_building = {
-					type = industrial_complex
-					level = -2
-				}
-			}
-			custom_effect_tooltip = TUR_add_debt_0590
-			add_to_variable = {
-				opda_lira = 0.59
-			}
-			add_to_variable = {
-				opda_consumer_goods = 0.02
-			}
-			add_to_variable = {
-				opda_resources_to_market = 0.01
 			}
 		}
 		ai_will_do = {
@@ -8579,12 +8411,6 @@ TUR_economy_decision = {
 			has_variable = opda_lira
 		}
 		complete_effect = {
-			ENG = {
-				add_offsite_building = {
-					type = industrial_complex
-					level = 1
-				}
-			}
 			set_country_flag = {
 				flag = has_active_purchase_contract
 				days = 60
@@ -8597,12 +8423,6 @@ TUR_economy_decision = {
 				equipment_variant = "Majestic Class"
 				creator = ENG
 				name = "TCG Reşadiye"
-			}
-			ENG = {
-				add_offsite_building = {
-					type = industrial_complex
-					level = -1
-				}
 			}
 			set_country_flag = TUR_tcg_resadiye
 			custom_effect_tooltip = TUR_add_debt_0885
@@ -8673,12 +8493,6 @@ TUR_economy_decision = {
 			has_variable = opda_lira
 		}
 		complete_effect = {
-			ENG = {
-				add_offsite_building = {
-					type = industrial_complex
-					level = 1
-				}
-			}
 			set_country_flag = {
 				flag = has_active_purchase_contract
 				days = 60
@@ -8691,12 +8505,6 @@ TUR_economy_decision = {
 				equipment_variant = "Majestic Class"
 				creator = ENG
 				name = "TCG Fatih Sultan Mehmed"
-			}
-			ENG = {
-				add_offsite_building = {
-					type = industrial_complex
-					level = -1
-				}
 			}
 			custom_effect_tooltip = TUR_add_debt_0885
 			add_to_variable = {
@@ -8766,12 +8574,6 @@ TUR_economy_decision = {
 			has_variable = opda_lira
 		}
 		complete_effect = {
-			ITA = {
-				add_offsite_building = {
-					type = industrial_complex
-					level = 1
-				}
-			}
 			set_country_flag = {
 				flag = has_active_purchase_contract
 				days = 60
@@ -8784,12 +8586,6 @@ TUR_economy_decision = {
 				equipment_variant = "Ruggiero di Lauria Class"
 				creator = ITA
 				name = "TCG Kuvvet-i Milliye"
-			}
-			ITA = {
-				add_offsite_building = {
-					type = industrial_complex
-					level = -1
-				}
 			}
 			custom_effect_tooltip = TUR_add_debt_0885
 			add_to_variable = {
@@ -9446,15 +9242,15 @@ TUR_economy_decision = {
 				}
 				set_country_flag = TUR_british_already_invested_in_iraq
 			}
-			custom_effect_tooltip = TUR_add_debt_0885
+			custom_effect_tooltip = TUR_add_debt_1475
 			add_to_variable = {
-				opda_lira = 0.885
+				opda_lira = 1.475
 			}
 			add_to_variable = {
-				opda_consumer_goods = 0.03
+				opda_consumer_goods = 0.05
 			}
 			add_to_variable = {
-				opda_resources_to_market = 0.015
+				opda_resources_to_market = 0.025
 			}
 		}
 	}
@@ -9529,15 +9325,15 @@ TUR_economy_decision = {
 					}
 				}
 			}
-			custom_effect_tooltip = TUR_add_debt_0885
+			custom_effect_tooltip = TUR_add_debt_1475
 			add_to_variable = {
 				opda_lira = 0.885
 			}
 			add_to_variable = {
-				opda_consumer_goods = 0.03
+				opda_consumer_goods = 0.05
 			}
 			add_to_variable = {
-				opda_resources_to_market = 0.015
+				opda_resources_to_market = 0.025
 			}
 		}
 	}
@@ -9658,15 +9454,15 @@ TUR_economy_decision = {
 					}
 				}
 			}
-			custom_effect_tooltip = TUR_add_debt_0885
+			custom_effect_tooltip = TUR_add_debt_1475
 			add_to_variable = {
 				opda_lira = 0.885
 			}
 			add_to_variable = {
-				opda_consumer_goods = 0.03
+				opda_consumer_goods = 0.05
 			}
 			add_to_variable = {
-				opda_resources_to_market = 0.015
+				opda_resources_to_market = 0.025
 			}
 		}
 	}
@@ -9743,15 +9539,15 @@ TUR_economy_decision = {
 					}
 				}
 			}
-			custom_effect_tooltip = TUR_add_debt_0885
+			custom_effect_tooltip = TUR_add_debt_1475
 			add_to_variable = {
 				opda_lira = 0.885
 			}
 			add_to_variable = {
-				opda_consumer_goods = 0.03
+				opda_consumer_goods = 0.05
 			}
 			add_to_variable = {
-				opda_resources_to_market = 0.015
+				opda_resources_to_market = 0.025
 			}
 		}
 	}
@@ -9834,12 +9630,12 @@ TUR_war_of_independence_support_OTT = {
 					}
 					create_country_leader = {
 						name = "Mustafa Kemal Paşa"
-						picture = "gfx/leaders/TUR/TUR_mustafa_kemal.dds"
+						picture = "gfx/leaders/TUR/TUR_mustafa_kemal.png"
 						expire = "1935.1.1"
 						ideology = authoritarian_democracy
 						traits = {
 							ataturk
-							trait_authoritarian_democracy
+							
 						}
 					}
 				}
@@ -9851,12 +9647,12 @@ TUR_war_of_independence_support_OTT = {
 					}
 					create_country_leader = {
 						name = "Ismail Enver Paşa"
-						picture = "gfx/leaders/TUR/TUR_enver_pasha.dds"
+						picture = "gfx/leaders/TUR/TUR_enver_pasha.png"
 						expire = "1935.1.1"
 						ideology = despotism
 						traits = {
 							tur_national_hero
-							trait_despotism
+							
 						}
 					}
 				}

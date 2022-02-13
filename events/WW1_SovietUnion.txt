@@ -32,8 +32,20 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		tag = SOV
-		VLN = { exists = yes }
-		has_global_flag = ukrainian_civil_war
+		VLN = { 
+			exists = yes 
+			is_subject = no
+			has_war_with = UKR
+			has_government = SOV
+			NOT = {
+				has_war_with = SOV
+				is_in_faction_with = SOV
+			}
+		}
+		OR = {
+			has_global_flag = ukrainian_civil_war
+			has_war_with = UKR
+		}
 	}
 	
 	mean_time_to_happen = { days = 25 }
@@ -41,16 +53,15 @@ country_event = {
 	option = {
 		name = ww1_soviet.3.a
 		SOV = { add_to_faction = VLN }
-		add_popularity = {
-			ideology = neutrality
-			popularity = 0.05
-		}
 		ai_chance = { factor = 100 }
 	}
 	option = {
 		name = ww1_soviet.3.b
 		add_stability = -0.05
-		declare_war_on = { target = VLN type = annex_everything }
+		declare_war_on = {
+			target = VLN
+			type = annex_everything
+		}
 		ai_chance = { factor = 0 }
 	}
 }
@@ -193,7 +204,7 @@ country_event = {
 			}
 			create_country_leader = {
 				name = "Nikolai II"
-				picture = "gfx/leaders/RUS_nicholas_romanov_dictator.dds"
+				picture = "gfx/leaders/RUS_nicholas_romanov_dictator.png"
 				expire = "1935.1.1"
 				ideology = autocracy
 				traits = {
@@ -416,11 +427,11 @@ country_event = {
 				}
 				create_country_leader = {
 					name = "People's Council"
-					picture = "gfx/leaders/SOV/SOV_provisional_goverment.tga"
+					picture = "gfx/leaders/RUS/RUS_Anarchy.png"
 					expire = "1935.1.1"
 					ideology = authoritarian_democracy
 					traits = {
-						trait_authoritarian_democracy
+						
 					}
 				}
 				add_ideas = SOV_idea_kronstadt
@@ -537,13 +548,14 @@ country_event = {
 			ruling_party = communism
 			elections_allowed = no
 		}
-		retire_ideology_leader = communism
-		create_country_leader = {
-			name = "Felix Dzerzhinsky"
-			picture = "gfx/leaders/POL/POL_felix_dzerzhinsky.dds" 
-			expire = "1935.1.1" 
-			ideology = vanguardism
-			traits = { prince_of_terror trait_vanguardism } 
+		POL_felix_dzerzhinsky = {
+			add_country_leader_role = {
+				country_leader = {
+					ideology = vanguardism
+					traits = { prince_of_terror }
+				}
+			}
+			promote_character = vanguardism
 		}
 		set_party_name = { ideology = communism name = POL_polrewkom_party long_name = POL_polrewkom_party_long }
 		set_cosmetic_tag = POL_SOVIET
@@ -649,8 +661,29 @@ country_event = {
 			}
 		}
 		add_ideas = POL_idea_polish_reclamation
+		add_ideas = idea_soviet_westward_offensive
 		SOV = { 
 			country_event = { id = ww1_soviet.16 } 
+		}
+		FRA = {
+			if = {
+				limit = {
+					has_country_flag = great_war_winner
+					NOT = {
+						has_government = communism
+					}
+				}
+			}
+			hidden_effect = {
+				set_rule = {
+					can_send_volunteers = yes
+				}
+				add_ai_strategy = {
+					id = PREV
+					type = send_volunteers_desire
+					value = 100
+				}
+			}
 		}
 		hidden_effect = {
 			news_event = { id = ww1_soviet.17 } 
@@ -795,6 +828,16 @@ country_event = {
 			}
 			white_peace = POL
 		}
+		every_country = {
+			limit = {
+				OR = {
+					tag = EST
+					tag = LAT
+				}
+				has_war_with = SOV
+			}
+			white_peace = SOV
+		}
 		SOV = { white_peace = POL }
 		POL = {
 			every_state = {
@@ -811,7 +854,7 @@ country_event = {
 						state = 562
 						state = 73
 					}	
-				    OR = {
+					OR = {
 						is_owned_by = UKR
 						is_owned_by = BLR
 						is_owned_by = SOV
@@ -825,9 +868,20 @@ country_event = {
 			}
 		}	
 		if = {
-			limit = { POL = { is_in_faction = yes } is_faction_leader = no}
+			limit = { POL = { is_in_faction = yes } is_faction_leader = no }
 			POL = { leave_faction = yes }
-		}	
+		}
+		FRA = {
+			if = {
+				limit = {
+					has_country_flag = great_war_winner
+					NOT = {
+						has_government = communism
+					}
+				}
+			}
+			give_guarantee = PREV
+		}
 		ai_chance = { factor = 100 }
 	}
 	option = {
@@ -870,7 +924,7 @@ country_event = {
 			picture = "gfx/leaders/SOV/Portrait_Leon_Trotsky.dds"
 			expire = "1935.1.1"
 			ideology = vanguardism
-			traits = { permanent_revolutionary trait_vanguardism}
+			traits = { permanent_revolutionary }
 		}
 		add_popularity = {
 			ideology = communism
@@ -882,10 +936,10 @@ country_event = {
 		name = ww1_soviet.22.b #Reform communist party
 		create_country_leader = {
 			name = "Nikolai Bukharin"
-			picture = "gfx/leaders/SOV/SOV_nikolai_bukharin.dds"
+			picture = "gfx/leaders/SOV/SOV_nikolai_bukharin.png"
 			expire = "1935.1.1"
 			ideology = market_socialism
-			traits = { socialite_connections trait_market_socialism }
+			traits = { socialite_connections  }
 		}
 		add_stability = 0.05
 		ai_chance = { factor = 50 }
@@ -918,11 +972,11 @@ country_event = {
 		}
 		create_country_leader = {
 			name = "People's Council"
-			picture = "gfx/leaders/SOV/SOV_provisional_goverment.tga"
+			picture = "gfx/leaders/RUS/RUS_Anarchy.png"
 			expire = "1935.1.1"
 			ideology = authoritarian_democracy
 			traits = {
-				trait_authoritarian_democracy
+				
 			}
 		}
 		if = {
@@ -1013,11 +1067,11 @@ country_event = {
 				}
 				create_country_leader = {
 					name = "People's Council"
-					picture = "gfx/leaders/SOV/SOV_provisional_goverment.tga"
+					picture = "gfx/leaders/RUS/RUS_Anarchy.png"
 					expire = "1935.1.1"
 					ideology = authoritarian_democracy
 					traits = {
-						trait_authoritarian_democracy
+						
 					}
 				}
 				add_ideas = SOV_idea_kronstadt
@@ -1058,12 +1112,28 @@ country_event = {
 	option = {
 		name = ww1_soviet.27.b
 		ai_chance = {
-			base = 0
+			factor = 100
 			modifier = {
-				add = 100
+				factor = 0
 				has_army_manpower = {
-					size > 500000
+					size < 500000
 				}
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					original_tag = FER
+					original_tag = MOU
+					original_tag = AZR
+					original_tag = ARM
+					original_tag = GEO
+					original_tag = CRI
+					original_tag = FER
+					original_tag = KHI
+					original_tag = BUK
+					original_tag = VLN
+				}
+				is_historical_focus_on = yes
 			}
 		}
 	}
@@ -1162,7 +1232,7 @@ country_event = {
 				expire = "1936.1.1"
 				ideology = vanguardism
 				traits = {
-					trait_vanguardism
+					
 				}
 			}
 		}
@@ -1175,7 +1245,7 @@ country_event = {
 				picture = "gfx/leaders/SOV/Portrait_Leon_Trotsky.dds"
 				expire = "1936.1.1"
 				ideology = vanguardism
-				traits = { triumphant_revolutionary trait_vanguardism }
+				traits = { permanent_revolutionary  }
 			}
 		}
 		if = {
@@ -1184,10 +1254,10 @@ country_event = {
 			}
 			create_country_leader = {
 				name = "Nikolai Bukharin"
-				picture = "gfx/leaders/SOV/SOV_nikolai_bukharin.dds"
+				picture = "gfx/leaders/SOV/SOV_nikolai_bukharin.png"
 				expire = "1935.1.1"
 				ideology = market_socialism
-				traits = { socialite_connections trait_market_socialism }
+				traits = { socialite_connections  }
 			}
 		}
 		ai_chance = {
@@ -1288,6 +1358,137 @@ country_event = {
 		ai_chance = {
 			factor = 100
 		}
+	}
+}
+
+# FREE TERRITORY SURVIVES
+############################
+country_event = {
+	id = ww1_soviet.33
+	title = ww1_soviet.33.t
+	desc = ww1_soviet.33.d
+	is_triggered_only = yes
+	option = {
+		every_country = {
+			limit = {
+				has_war_with = VLN
+				OR = {
+					tag = SOV
+					is_subject_of = SOV
+					is_in_faction_with = SOV
+				}
+			}
+			white_peace = VLN
+		}	
+		every_other_country = {
+			limit = {
+				OR = {
+					tag = SOV
+					is_subject_of = SOV
+					is_in_faction_with = SOV
+				}
+			}
+			every_owned_state = {
+				limit = {
+					is_fully_controlled_by = VLN
+					OR = {
+						is_core_of = RUS
+						is_core_of = UKR
+					}
+				}
+				VLN = {
+					transfer_state = PREV
+				}
+			}
+		}
+	}
+}
+
+# INVADE ESTONIA
+###################
+country_event = {
+	id = ww1_soviet.34
+	title = ww1_soviet.34.t
+	desc = ww1_soviet.34.d
+	trigger = {
+		tag = SOV
+		EST = {
+			exists = yes
+			is_subject = no
+			is_in_faction = no
+			is_neighbor_of = PREV
+			NOT = {
+				has_government = communism
+			}
+		}
+	}
+	mean_time_to_happen = { days = 30 }
+	option = {
+		name = ww1_soviet.34.a
+		declare_war_on = {
+			target = EST
+			type = annex_everything
+		}
+		hidden_effect = {
+			EST = {
+				add_ideas = idea_soviet_westward_offensive
+				add_ideas = idea_soviet_liberation_war
+			}
+		}
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 0
+				surrender_progress > 0.3
+			}
+		}
+	}
+	option = {
+		name = ww1_soviet.34.b
+	}
+}
+
+# INVADE LATVIA
+##################
+country_event = {
+	id = ww1_soviet.35
+	title = ww1_soviet.35.t
+	desc = ww1_soviet.35.d
+	trigger = {
+		tag = SOV
+		LAT = {
+			exists = yes
+			is_subject = no
+			is_in_faction = no
+			is_neighbor_of = PREV
+			NOT = {
+				has_government = communism
+			}
+		}
+	}
+	mean_time_to_happen = { days = 30 }
+	option = {
+		name = ww1_soviet.34.a
+		declare_war_on = {
+			target = LAT
+			type = annex_everything
+		}
+		hidden_effect = {
+			LAT = {
+				add_ideas = idea_soviet_westward_offensive
+				add_ideas = idea_soviet_liberation_war
+			}
+		}
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 0
+				surrender_progress > 0.3
+			}
+		}
+	}
+	option = {
+		name = ww1_soviet.34.b
 	}
 }
 

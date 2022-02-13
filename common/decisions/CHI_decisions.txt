@@ -919,11 +919,11 @@ CHI_warlord_era = {
 				}
 				create_country_leader = {
 					name = "Yang Hucheng"
-					picture = "gfx/leaders/CHI/CHI_yang_hucheng.dds"
+					picture = "gfx/leaders/CHI/CHI_yang_hucheng.png"
 					expire = 1935.1.1
 					ideology = despotism
 					traits = {
-						trait_despotism
+						
 					}
 				}
 				every_unit_leader = {
@@ -1037,7 +1037,7 @@ CHI_warlord_era = {
 					expire = "1965.1.1"
 					ideology = authoritarian_democracy 
 					traits = {
-						trait_authoritarian_democracy
+						
 					}
 				}
 				create_corps_commander = {
@@ -1171,7 +1171,7 @@ CHI_warlord_era = {
 					}
 				}
 				FNG = {
-					create_faction = national_protection_army # Anguojun
+					create_faction = national_pacification_army # Anguojun
 				}
 				declare_war_on = {
 					target = FNG
@@ -4210,7 +4210,7 @@ CHI_chinese_warlords = {
 }
 
 political_actions = {
-	CHI_yuan_keding = {
+	CHI_yuan_keding_rule = {
 		allowed = {
 			original_tag = CHI
 		}
@@ -4235,9 +4235,9 @@ political_actions = {
 					ideology = fascism_ideology
 					traits = {
 						divisive_emperor
-						trait_proto_fascism
+						
 					}
-					expire = "1935.1.1.1"
+					
 				}
 			}
 			CHI_yuan_keding = {
@@ -4270,7 +4270,7 @@ GER_great_war = {
 			OR = {
 				AND = {
 					has_country_leader = {
-						name = "Duan Qirui"
+						character = CHI_duan_qirui
 						ruling_only = yes
 					}
 					hidden_trigger = {
@@ -4299,13 +4299,20 @@ GER_great_war = {
 			if = {
 				limit = {
 					has_country_leader = {
-						name = "Duan Qirui"
+						character = CHI_duan_qirui
 						ruling_only = yes
 					}
 				}
 				has_global_flag = constitutional_protection_war
 				NOT = {
 					country_exists = GXC
+				}
+			}
+			else = {
+				any_country = {
+					has_war_with = PREV
+					is_major = yes
+					is_in_faction_with = GER
 				}
 			}
 			NOT = {
@@ -4356,7 +4363,7 @@ GER_great_war = {
 			modifier = {
 				add = 10
 				has_country_leader = {
-					name = "Duan Qirui"
+					character = CHI_duan_qirui
 					ruling_only = yes
 				}
 			}
@@ -4399,8 +4406,17 @@ GER_great_war = {
 				}
 				AND = {
 					tag = CHI
-					has_government = fascism
-					has_global_flag = national_protection_war
+					OR = {
+						AND = {
+							has_government = fascism
+							has_global_flag = national_protection_war
+						}
+						any_country = {
+							has_war_with = PREV
+							is_major = yes
+							is_in_faction_with = FRA
+						}
+					}
 				}
 			}
 		}
@@ -4409,7 +4425,7 @@ GER_great_war = {
 			if = {
 				limit = {
 					has_country_leader = {
-						name = "Duan Qirui"
+						character = CHI_duan_qirui
 						ruling_only = yes
 					}
 				}
@@ -4497,7 +4513,7 @@ GER_great_war = {
 				has_war_with = FRA
 			}
 			has_country_leader = {
-				name = "Duan Qirui"
+				character = CHI_duan_qirui
 				ruling_only = yes
 			}
 			is_subject = no
@@ -4518,7 +4534,7 @@ GER_great_war = {
 				is_in_faction_with = GER
 				NOT = {
 					has_country_leader = {
-						name = "Duan Qirui"
+						character = CHI_duan_qirui
 						ruling_only = yes
 					}
 				}

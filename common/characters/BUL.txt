@@ -3,38 +3,38 @@ characters={
 		name="BUL_boris_iii"
 		portraits={
 			civilian={
-				large="gfx/leaders/BUL/BUL_Young_Boris_III.dds"
+				large="gfx/leaders/BUL/BUL_Young_Boris_III.png"
 			}
 		}
 		country_leader={
 			ideology=autocracy
-			traits={ popular_figurehead trait_autocracy }
+			traits={ popular_figurehead  }
 			expire="1945.1.1.1"
-			id=-1
+			
 		}
 	}
 	BUL_ferdinand_i={
 		name="BUL_ferdinand_i"
 		portraits={
 			civilian={
-				large="gfx/leaders/BUL/BUL_ferdinand_i.dds"
+				large="gfx/leaders/BUL/BUL_ferdinand_i.png"
 			}
 			army={
-				large="gfx/leaders/BUL/BUL_ferdinand_i_army.dds"
+				large="gfx/leaders/BUL/BUL_ferdinand_i_army.png"
 			}
 		}
 		country_leader={
 			ideology=autocracy
-			traits={ trait_autocracy }
-			expire="1935.1.1.1"
-			id=-1
+			
+			
+			
 		}
 	}
 	BUL_nikola_mushanov={
 		name="BUL_nikola_mushanov"
 		portraits={
 			civilian={
-				large="gfx/leaders/BUL/BUL_nikola_mushanov.dds"
+				large="gfx/leaders/BUL/BUL_nikola_mushanov.png"
 			}
 		}
 	}
@@ -42,14 +42,14 @@ characters={
 		name="BUL_aleksandar_tsankov"
 		portraits={
 			civilian={
-				large="gfx/leaders/BUL/BUL_Aleksandar_Tsankov.dds"
+				large="gfx/leaders/BUL/BUL_Aleksandar_Tsankov.png"
 			}
 		}
 		country_leader={
 			ideology=fascism_ideology
-			traits={ anti_communist trait_proto_fascism }
+			traits={ anti_communist  }
 			expire="1950.1.1.1"
-			id=-1
+			
 		}
 	}
 	BUL_nikola_zhekov={
@@ -73,7 +73,7 @@ characters={
 				small="GFX_idea_BUL_nikola_zhekov"
 			}
 			army={
-				large="gfx/leaders/BUL/BUL_Nikola_Zhekov.dds"
+				large="gfx/leaders/BUL/BUL_Nikola_Zhekov.png"
 			}
 		}
 		corps_commander={
@@ -83,14 +83,14 @@ characters={
 			defense_skill=2
 			planning_skill=3
 			logistics_skill=3
-			legacy_id=-1
+			
 		}
 	}
 	BUL_kimon_georgiev={
 		name="BUL_kimon_georgiev"
 		portraits={
 			civilian={
-				large="gfx/leaders/BUL/BUL_Kimon_Georgiev.dds"
+				large="gfx/leaders/BUL/BUL_Kimon_Georgiev.png"
 			}
 		}
 	}
@@ -114,7 +114,7 @@ characters={
 				small="GFX_idea_BUL_ivan_lukov"
 			}
 			army={
-				large="gfx/leaders/BUL/BUL_Ivan_Lukov.dds"
+				large="gfx/leaders/BUL/BUL_Ivan_Lukov.png"
 			}
 		}
 		corps_commander={
@@ -124,7 +124,7 @@ characters={
 			defense_skill=2
 			planning_skill=1
 			logistics_skill=1
-			legacy_id=-1
+			
 		}
 	}
 	BUL_ivan_fichev={
@@ -147,7 +147,7 @@ characters={
 				small="GFX_idea_BUL_ivan_fichev"
 			}
 			army={
-				large="gfx/leaders/BUL/BUL_fichev.dds"
+				large="gfx/leaders/BUL/BUL_fichev.png"
 			}
 		}
 		field_marshal={
@@ -157,7 +157,7 @@ characters={
 			defense_skill=2
 			planning_skill=3
 			logistics_skill=1
-			legacy_id=-1
+			
 		}
 	}
 	BUL_radko_dimitriev={
@@ -174,11 +174,6 @@ characters={
 				ai_will_do  = {
 					factor  = 1.000
 				}
-				available  = {
-					hidden_trigger  = {
-						has_unit_leader  = 12032.000
-					}
-				}
 				visible  = {
 					has_unit_leader  = 12032.000
 				}
@@ -188,16 +183,16 @@ characters={
 				small="GFX_idea_BUL_radko_dimitriev"
 			}
 			army={
-				large="gfx/leaders/BUL/BUL_Radko_Dimitriev.dds"
+				large="gfx/leaders/BUL/BUL_Radko_Dimitriev.png"
 			}
 		}
 		corps_commander={
-			traits={ trait_cautious hidden_sympathies infantry_leader }
+			traits={ trait_cautious hidden_sympathies infantry_leader harsh_leader media_personality }
 			skill=3
 			attack_skill=2
 			defense_skill=3
 			planning_skill=2
-			logistics_skill=3
+			logistics_skill=1
 			legacy_id=12032
 			visible = {
 				NOT = {
@@ -226,7 +221,7 @@ characters={
 		}
 		portraits={
 			army={
-				large="gfx/leaders/BUL/BUL_dmitry_dobrev.dds"
+				large="gfx/leaders/BUL/BUL_dmitry_dobrev.png"
 				small="GFX_idea_BUL_dmitry_dobrev"
 			}
 		}
@@ -237,7 +232,7 @@ characters={
 			defense_skill=2
 			maneuvering_skill=1
 			coordination_skill=1
-			legacy_id=-1
+			
 		}
 	}
 	BUL_ivan_kolev={
@@ -265,7 +260,7 @@ characters={
 				small="GFX_idea_BUL_ivan_kolev"
 			}
 			army={
-				large="gfx/leaders/BUL/BUL_Ivan_Kolev.dds"
+				large="gfx/leaders/BUL/BUL_Ivan_Kolev.png"
 			}
 		}
 	}
@@ -287,7 +282,7 @@ characters={
 		}
 		portraits={
 			army={
-				large="gfx/leaders/BUL/BUL_rashko_serafimov.dds"
+				large="gfx/leaders/BUL/BUL_rashko_serafimov.png"
 				small="GFX_idea_BUL_rashko_serafimov"
 			}
 		}
@@ -297,63 +292,63 @@ characters={
 			defense_skill=1
 			maneuvering_skill=1
 			coordination_skill=1
-			legacy_id=-1
+			
 		}
 	}
 	BUL_dimitar_blagoev={
 		name="BUL_dimitar_blagoev"
 		portraits={
 			civilian={
-				large="gfx/leaders/BUL/BUL_Dimitar_Blagoev.dds"
+				large="gfx/leaders/BUL/BUL_Dimitar_Blagoev.png"
 			}
 		}
 		country_leader={
 			ideology=vanguardism
-			traits={ trait_vanguardism }
-			expire="1935.1.1.1"
-			id=-1
+			
+			
+			
 		}
 	}
 	BUL_grand_national_assembly={
 		name="BUL_grand_national_assembly"
 		portraits={
 			civilian={
-				large="gfx/leaders/BUL/BUL_National_Assembly.dds"
+				large="gfx/leaders/BUL/BUL_National_Assembly.png"
 			}
 		}
 		country_leader={
 			ideology=conservatism
-			traits={ trait_conservatism }
-			expire="1935.1.1.1"
-			id=-1
+			
+			
+			
 		}
 	}
 	BUL_vasil_radoslavov={
 		name="BUL_vasil_radoslavov"
 		portraits={
 			civilian={
-				large="gfx/leaders/BUL/BUL_Vasil_Radoslavov.dds"
+				large="gfx/leaders/BUL/BUL_Vasil_Radoslavov.png"
 			}
 		}
 		country_leader={
 			ideology=classical_liberalism
-			traits={ dislikes_russia trait_classical_liberalism }
+			traits={ dislikes_russia  }
 			expire="1930.1.1.1"
-			id=-1
+			
 		}
 	}
 	BUL_aleksandar_stamboliyski={
 		name="BUL_aleksandar_stamboliyski"
 		portraits={
 			civilian={
-				large="gfx/leaders/BUL/BUL_Aleksandar_Stamboliyski.dds"
+				large="gfx/leaders/BUL/BUL_Aleksandar_Stamboliyski.png"
 			}
 		}
 		country_leader={
 			ideology=agrarianism
-			traits={ dislikes_germany trait_agrarianism }
+			traits={ dislikes_germany  }
 			expire="1945.1.1.1"
-			id=-1
+			
 		}
 	}
 	BUL_vladimir_vazov={
@@ -363,7 +358,7 @@ characters={
 				small="gfx/interface/ideas/idea_europe_generic_land_1.dds"
 			}
 			army={
-				large="gfx/leaders/BUL/BUL_Vladimir_Vazov.dds"
+				large="gfx/leaders/BUL/BUL_Vladimir_Vazov.png"
 			}
 		}
 		corps_commander={
@@ -373,7 +368,7 @@ characters={
 			defense_skill=1
 			planning_skill=2
 			logistics_skill=1
-			legacy_id=-1
+			
 		}
 	}
 	BUL_todor_kantardzhiev={
@@ -383,7 +378,7 @@ characters={
 				small="gfx/interface/ideas/idea_europe_generic_land_2.dds"
 			}
 			army={
-				large="gfx/leaders/BUL/BUL_Todor_Kantardzhiev.dds"
+				large="gfx/leaders/BUL/BUL_Todor_Kantardzhiev.png"
 			}
 		}
 		corps_commander={
@@ -392,7 +387,7 @@ characters={
 			defense_skill=1
 			planning_skill=1
 			logistics_skill=1
-			legacy_id=-1
+			
 		}
 	}
 	BUL_panteley_kiselov={
@@ -402,7 +397,7 @@ characters={
 				small="gfx/interface/ideas/idea_europe_generic_land_3.dds"
 			}
 			army={
-				large="gfx/leaders/BUL/BUL_Panteley_Kiselov.dds"
+				large="gfx/leaders/BUL/BUL_Panteley_Kiselov.png"
 			}
 		}
 		corps_commander={
@@ -412,7 +407,7 @@ characters={
 			defense_skill=1
 			planning_skill=1
 			logistics_skill=3
-			legacy_id=-1
+			
 		}
 	}
 	BUL_kliment_boyadzhiev={
@@ -422,7 +417,7 @@ characters={
 				small="gfx/interface/ideas/idea_europe_generic_land_5.dds"
 			}
 			army={
-				large="gfx/leaders/BUL/BUL_Kliment_Boyadzhiev.dds"
+				large="gfx/leaders/BUL/BUL_Kliment_Boyadzhiev.png"
 			}
 		}
 		corps_commander={
@@ -432,7 +427,7 @@ characters={
 			defense_skill=1
 			planning_skill=2
 			logistics_skill=3
-			legacy_id=-1
+			
 		}
 	}
 	BUL_vasil_kutinchev={
@@ -442,7 +437,7 @@ characters={
 				small="gfx/interface/ideas/idea_europe_generic_land_3.dds"
 			}
 			army={
-				large="gfx/leaders/BUL/BUL_Vasil_Kutinchev.dds"
+				large="gfx/leaders/BUL/BUL_Vasil_Kutinchev.png"
 			}
 		}
 		field_marshal={
@@ -452,7 +447,7 @@ characters={
 			defense_skill=3
 			planning_skill=2
 			logistics_skill=3
-			legacy_id=-1
+			
 		}
 	}
 	BUL_ivan_vazov={

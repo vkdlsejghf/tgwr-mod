@@ -27,14 +27,14 @@ characters={
 				small="GFX_idea_generic_political_advisor_europe_1"
 			}
 			civilian={
-				large="gfx/leaders/NOR/NOR_gunnar_knudsen.dds"
+				large="gfx/leaders/NOR/NOR_gunnar_knudsen.png"
 			}
 		}
 		country_leader={
 			ideology=social_liberalism
-			traits={ trait_social_liberalism }
+			
 			expire="1920.6.30.1"
-			id=-1
+			
 		}
 	}
 	NOR_jens_bratlie={
@@ -57,14 +57,14 @@ characters={
 				small="GFX_idea_generic_army_europe_4"
 			}
 			civilian={
-				large="gfx/leaders/NOR/NOR_jens_bratlie.dds"
+				large="gfx/leaders/NOR/NOR_jens_bratlie.png"
 			}
 		}
 		country_leader={
 			ideology=conservatism
-			traits={ trait_conservatism }
-			expire="1935.1.1.1"
-			id=-1
+			
+			
+			
 		}
 	}
 	NOR_karl_friedrich_griffin_dawes={
@@ -95,14 +95,14 @@ characters={
 			defense_skill=1
 			maneuvering_skill=1
 			coordination_skill=1
-			legacy_id=-1
+			
 		}
 	}
 	NOR_haakon_vii={
 		name="Haakon VII"
 		portraits={
 			civilian={
-				large="gfx/leaders/NOR/NOR_haakon_vii.dds"
+				large="gfx/leaders/NOR/NOR_haakon_vii.png"
 			}
 		}
 		field_marshal={
@@ -116,9 +116,9 @@ characters={
 		}
 		country_leader={
 			ideology=autocracy
-			traits={ trait_autocracy }
-			expire="1935.1.1.1"
-			id=-1
+			
+			
+			
 		}
 	}
 	NOR_wilhelm_olssøn={
@@ -138,7 +138,7 @@ characters={
 			defense_skill=2
 			planning_skill=3
 			logistics_skill=1
-			legacy_id=-1
+			
 		}
 	}
 	NOR_ole_hansen={
@@ -158,7 +158,7 @@ characters={
 			defense_skill=2
 			planning_skill=1
 			logistics_skill=2
-			legacy_id=-1
+			
 		}
 	}
 	NOR_henrik_angell={
@@ -178,7 +178,7 @@ characters={
 			defense_skill=2
 			planning_skill=1
 			logistics_skill=2
-			legacy_id=-1
+			
 		}
 	}
 	NOR_birger_fredrik_sindinglarsen={
@@ -198,7 +198,7 @@ characters={
 			defense_skill=1
 			planning_skill=2
 			logistics_skill=1
-			legacy_id=-1
+			
 		}
 	}
 	NOR_johan_christopher_ræder={
@@ -232,7 +232,7 @@ characters={
 			defense_skill=2
 			planning_skill=1
 			logistics_skill=2
-			legacy_id=-1
+			
 		}
 	}
 	NOR_alfred_berglund={
@@ -252,7 +252,7 @@ characters={
 			defense_skill=3
 			maneuvering_skill=1
 			coordination_skill=1
-			legacy_id=-1
+			
 		}
 	}
 	NOR_christian_sparre={
@@ -272,7 +272,7 @@ characters={
 			defense_skill=2
 			maneuvering_skill=1
 			coordination_skill=1
-			legacy_id=-1
+			
 		}
 	}
 	NOR_einar_sem_jacobsen={

@@ -149,7 +149,8 @@
 			set_country_flag = TUR_balkan_war_experience_select
 		}
 		completion_reward = {
-			custom_effect_tooltip = TUR_balkan_war_experience_reward
+			custom_effect_tooltip = immediate_effect_upon_focus_start_tt
+			unlock_decision_category_tooltip = TUR_balkanwar_decision
 			set_technology = {
 				fortification1 = 1
 			}
@@ -180,11 +181,12 @@
 			set_country_flag = TUR_libyan_war_experience_select
 		}
 		completion_reward = {
-			custom_effect_tooltip = TUR_libyan_war_experience_reward
+			custom_effect_tooltip = immediate_effect_upon_focus_start_tt
+			unlock_decision_category_tooltip = TUR_libyanwar_decision
 			create_corps_commander = {
 				name = "Osman Fuad"
 				id = 90518
-				portrait_path = "gfx/leaders/TUR/TUR_osman_fuad.dds"
+				portrait_path = "gfx/leaders/TUR/TUR_osman_fuad.png"
 				traits = {
 					cavalry_leader
 					desert_fox
@@ -458,7 +460,7 @@
 			create_corps_commander = {
 				name = "Ömer Faruk"
 				id = 90537
-				portrait_path = "gfx/leaders/TUR/TUR_omer_faruk.dds"
+				portrait_path = "gfx/leaders/TUR/TUR_omer_faruk.png"
 				traits = {
 					trait_royal
 					politically_connected
@@ -1654,12 +1656,12 @@
 			add_political_power = -75
 			create_country_leader = {
 				name = "Abdülhamid II"
-				picture = "gfx/leaders/TUR/TUR_abdulhamid_ii.dds"
+				picture = "gfx/leaders/TUR/TUR_abdulhamid_ii.png"
 				expire = "1935.1.1"
 				ideology = autocracy
 				traits = {
 					abdulhamid
-					trait_autocracy
+					
 				}
 			}
 			if = {
@@ -1740,15 +1742,6 @@
 			trigger = {
 				has_completed_focus = TUR_depoliticize_the_army
 			}
-		}
-		bypass = {
-			NOT = {
-				has_country_flag = itilaf_formed
-			}
-		}
-		available = {
-			has_government = neutrality
-			has_country_flag = itilaf_formed
 		}
 		completion_reward = {
 			country_event = {
@@ -1891,7 +1884,7 @@
 					    has_idea = TUR_officers_struggle_depoliticize_3_org_final
 				    }
 				}
-				custom_effect_tooltip = TUR_adabimerkeziyet_reward
+				unlock_decision_tooltip = TUR_reorganize_officers_depoliticize_officers
 			}
 			if = {
 				limit = {
@@ -2028,6 +2021,9 @@
 		cost = 10
 		prerequisite = {
 			focus = TUR_stabilization_in_faith
+		}
+		search_filters = {
+			FOCUS_FILTER_STABILITY
 		}
 		x = 1
 		y = 1
@@ -3394,11 +3390,6 @@
 				}
 			}
 			# Not gonna piss of Brits without condition
-			OR = {
-				has_global_flag = kis_firstbalkanwar_victory
-				is_in_faction_with = GER
-				has_war_with = ENG
-			}
 		}
 		bypass = {
 			has_war_with = GER
@@ -3489,12 +3480,12 @@
 			retire_country_leader = yes
 			create_country_leader = {
 				name = "Yıldız Teşkilatı Council"
-				picture = "gfx/leaders/TUR/TUR_yildiz_teskilati_council.dds"
+				picture = "gfx/leaders/TUR/TUR_yildiz_teskilati_council.png"
 				expire = "1935.1.1"
 				ideology = despotism
 				traits = {
 					tur_military_junta
-					trait_despotism
+					
 				}
 			}
 			set_party_name = {
@@ -3825,13 +3816,13 @@
 			}
 			create_country_leader = {
 				name = "Ahmed Muhtar Paşa"
-				picture = "gfx/leaders/TUR/TUR_Ahmed_Muhtar_Pasha.dds"
+				picture = "gfx/leaders/TUR/TUR_Ahmed_Muhtar_Pasha.png"
 				expire = "1935.1.1"
 				ideology = authoritarian_democracy
 				traits = {
 					grand_vizier
 					muhtar
-					trait_authoritarian_democracy
+					
 				}
 			}
 			country_event = ww1_ottoman.24
@@ -3871,11 +3862,11 @@
 				name = "Mehmed Kamil Paşa"
 				ideology = classical_liberalism
 				expire = "1935.1.1"
-				picture = "gfx/leaders/TUR/TUR_kamil_pasha.dds"
+				picture = "gfx/leaders/TUR/TUR_kamil_pasha.png"
 				traits = {
 					kamil
 					grand_vizier
-					trait_classical_liberalism
+					
 				}
 			}
 			activate_mission = TUR_CUP_prepares_coup_mission
@@ -3888,13 +3879,13 @@
 			# hidden_effect = {
 			# 	create_country_leader = {
 			# 		name = "Mahmud Şevket Paşa"
-			# 		picture = "gfx/leaders/TUR/TUR_Mahmud_Shevket_Pasha.dds"
+			# 		picture = "gfx/leaders/TUR/TUR_Mahmud_Shevket_Pasha.png"
 			# 		expire = "1935.1.1"
 			# 		ideology = authoritarian_democracy
 			# 		traits = {
 			# 			sevket
 			# 			grand_vizier
-			# 			trait_authoritarian_democracy
+			# 			
 			# 		}
 			# 	}
 			# }
@@ -3968,13 +3959,13 @@
 		completion_reward = {
 			create_country_leader = {
 				name = "Mahmud Şevket Paşa"
-				picture = "gfx/leaders/TUR/TUR_Mahmud_Shevket_Pasha.dds"
+				picture = "gfx/leaders/TUR/TUR_Mahmud_Shevket_Pasha.png"
 				expire = "1935.1.1"
 				ideology = classical_liberalism
 				traits = {
 					sevket
 					grand_vizier
-					trait_classical_liberalism
+					
 				}
 			}
 		}
@@ -4005,11 +3996,11 @@
 				name = "Mehmed Kamil Paşa"
 				ideology = classical_liberalism
 				expire = "1935.1.1"
-				picture = "gfx/leaders/TUR/TUR_kamil_pasha.dds"
+				picture = "gfx/leaders/TUR/TUR_kamil_pasha.png"
 				traits = {
 					kamil
 					grand_vizier
-					trait_classical_liberalism
+					
 				}
 			}
 		}
@@ -4255,13 +4246,13 @@
 			}
 			create_country_leader = {
 				name = "Mahmud Şevket Paşa"
-				picture = "gfx/leaders/TUR/TUR_Mahmud_Shevket_Pasha.dds"
+				picture = "gfx/leaders/TUR/TUR_Mahmud_Shevket_Pasha.png"
 				expire = "1935.1.1"
 				ideology = authoritarian_democracy
 				traits = {
 					sevket
 					grand_vizier
-					trait_authoritarian_democracy
+					
 				}
 			}
 			remove_ideas = TUR_government_without_majority
@@ -5024,12 +5015,12 @@
 		select_effect = {
 			create_country_leader = {
 				name = "Meclis-i Mebusan"
-				picture = "gfx/leaders/TUR/TUR_meclis_mebusan.dds"
+				picture = "gfx/leaders/TUR/TUR_meclis_mebusan.png"
 				expire = "1935.1.1"
 				ideology = oligarchism
 				traits = {
 					meclis_mebusan
-					trait_oligarchism
+					
 				}
 			}
 		}
@@ -5052,7 +5043,7 @@
 				ideology = fundamentalism
 				traits = {
 					islamist_leader
-					trait_fundamentalism
+					
 				}
 			}
 			leave_faction = yes
@@ -6255,17 +6246,11 @@
 						ruling_only = yes
 					}
 				}
-                                remove_country_leader_trait = inexperienced_imperialist
-                                add_country_leader_trait = autocratic_imperialist
-                                hidden_effect = {
-                                        add_country_leader_trait = trait_autocracy
-                                }
+                 remove_country_leader_trait = inexperienced_imperialist
+                add_country_leader_trait = autocratic_imperialist
 			}
 			else = {
-                                add_country_leader_trait = gentle_scholar
-                                hidden_effect = {
-                                        add_country_leader_trait = trait_autocracy
-                                }
+                add_country_leader_trait = gentle_scholar
 			}
 			remove_ideas = TUR_ittihadist_plot
 		}
@@ -6587,13 +6572,13 @@
 				}
 				create_country_leader = {
 					name = "Mahmud Şevket Paşa"
-					picture = "gfx/leaders/TUR/TUR_Mahmud_Shevket_Pasha.dds"
+					picture = "gfx/leaders/TUR/TUR_Mahmud_Shevket_Pasha.png"
 					expire = "1935.1.1"
 					ideology = classical_liberalism
 					traits = {
 						sevket
 						grand_vizier
-						trait_classical_liberalism
+						
 					}
 				}
 				set_party_name = {
@@ -6610,13 +6595,13 @@
 				}
 				create_country_leader = {
 					name = "Ahmed Muhtar Paşa"
-					picture = "gfx/leaders/TUR/TUR_Ahmed_Muhtar_Pasha.dds"
+					picture = "gfx/leaders/TUR/TUR_Ahmed_Muhtar_Pasha.png"
 					expire = "1935.1.1"
 					ideology = classical_liberalism
 					traits = {
 						grand_vizier
 						muhtar
-						trait_classical_liberalism
+						
 					}
 				}
 				set_party_name = {
@@ -7988,12 +7973,12 @@
 			}
 			create_country_leader = {
 				name = "Mehmed Talat Paşa"
-				picture = "gfx/leaders/TUR/TUR_talat_pasha.dds"
+				picture = "gfx/leaders/TUR/TUR_mehmed_talat_pasa.png"
 				expire = "1935.1.1"
 				ideology = fascism_ideology
 				traits = {
 					three_pashas
-					trait_proto_fascism
+					
 				}
 			}
 			add_ideas = TUR_ismail_enver
@@ -8002,12 +7987,12 @@
 				set_cosmetic_tag = TUR_triumvirate
 				create_country_leader = {
 					name = "Mehmed V"
-					picture = "gfx/leaders/TUR/TUR_mehmed_v.dds"
+					picture = "gfx/leaders/TUR/TUR_mehmed_v.png"
 					expire = "1935.1.1"
 					ideology = autocracy
 					traits = {
 						mehmed_v
-						trait_autocracy
+						
 					}
 				}
 			}
@@ -8350,12 +8335,12 @@
 		completion_reward = {
 			create_country_leader = {
 				name = "Mustafa Kemal Paşa"
-				picture = "gfx/leaders/TUR/TUR_mustafa_kemal.dds"
+				picture = "gfx/leaders/TUR/TUR_mustafa_kemal.png"
 				expire = "1935.1.1"
 				ideology = authoritarian_democracy
 				traits = {
 					three_pashas_2
-					trait_authoritarian_democracy
+					
 				}
 			}
 			add_ideas = TUR_ismet_inonu
@@ -8892,12 +8877,12 @@
 		select_effect = {
 			create_country_leader = {
 				name = "Meclis-i Mebusan"
-				picture = "gfx/leaders/TUR/TUR_meclis_mebusan.dds"
+				picture = "gfx/leaders/TUR/TUR_meclis_mebusan.png"
 				expire = "1935.1.1"
 				ideology = oligarchism
 				traits = {
 					meclis_mebusan
-					trait_oligarchism
+					
 				}
 			}
 			if = {
@@ -8928,12 +8913,12 @@
 			hidden_effect = {
 				create_country_leader = {
 					name = "Ismail Enver Paşa"
-					picture = "gfx/leaders/TUR/TUR_enver_pasha.dds"
+					picture = "gfx/leaders/TUR/TUR_enver_pasha.png"
 					expire = "1935.1.1"
 					ideology = fascism_ideology
 					traits = {
 						tur_national_hero
-						trait_proto_fascism
+						
 					}
 				}
 				country_event = generic.27

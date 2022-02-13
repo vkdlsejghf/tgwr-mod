@@ -148,27 +148,27 @@ country_event = {
 					}
 					create_country_leader = {
 						name = "BEL_albert_i"
-						picture = "gfx/leaders/BEL/BEL_albert_general.dds"
+						picture = "gfx/leaders/BEL/BEL_albert_general.png"
 						expire = "1935.1.1"
 						ideology = conservatism
 						traits = {
 							knight_king
-							trait_conservatism
+							
 						}
 					}	
 					create_country_leader = {
 						name = "BEL_albert_i"
-						picture = "gfx/leaders/BEL/BEL_albert_general.dds"
+						picture = "gfx/leaders/BEL/BEL_albert_general.png"
 						expire = "1935.1.1"
 						ideology = autocracy
 						traits = {
 							knight_king
-							trait_autocracy
+							
 						}
 					}
 					create_field_marshal = {
 						name = "BEL_abert_i"
-						portrait_path = "gfx/leaders/BEL/BEL_albert_general.dds"
+						portrait_path = "gfx/leaders/BEL/BEL_albert_general.png"
 						traits = {
 							offensive_doctrine
 							guerilla_fighter
@@ -640,30 +640,30 @@ country_event = {
 				add_ideas = BEL_idea_albert_i
 				create_country_leader = { 
 					name = "BEL_albert_i" 
-					picture = "gfx/leaders/BEL/BEL_albert_general.dds" 
+					picture = "gfx/leaders/BEL/BEL_albert_general.png" 
 					expire = "1935.1.1" 
 					ideology = autocracy
 					traits = { 
 						knight_king
-						trait_autocracy 
+						 
 					}     
 				}
 				create_country_leader = { 
 					name = "BEL_albert_i" 
-					picture = "gfx/leaders/BEL/BEL_albert_general.dds" 
+					picture = "gfx/leaders/BEL/BEL_albert_general.png" 
 					expire = "1935.1.1" 
 					ideology = stratocracy
 					traits = { 
 						knight_king
-						trait_stratocracy
+						
 					}     
 				}
 				create_country_leader = { 
 					name = "BEL_felix_fuchs" 
-					picture = "gfx/leaders/BEL/BEL_felix_fuchs.dds" 
+					picture = "gfx/leaders/BEL/BEL_felix_fuchs.png" 
 					expire = "1935.1.1" 
 					ideology = classical_liberalism
-					traits = { trait_classical_liberalism }     
+					     
 				}	
 				set_party_name = {
 					ideology = democratic
@@ -1289,20 +1289,20 @@ country_event = {
 				set_cosmetic_tag = HOL_BAT
 				create_country_leader = {
 					name = "Pieter Jelles Troelstra"
-					picture = "gfx/leaders/HOL/HOL_pieter_jelles_troelstra.dds"
+					picture = "gfx/leaders/HOL/HOL_pieter_jelles_troelstra.png"
 					expire = "1935.1.1"
 					ideology = socialism
 					traits = {
-						trait_socialism
+						
 					}
 				}
 				create_country_leader = {
 					name = "Pieter Jelles Troelstra"
-					picture = "gfx/leaders/HOL/HOL_pieter_jelles_troelstra.dds"
+					picture = "gfx/leaders/HOL/HOL_pieter_jelles_troelstra.png"
 					expire = "1935.1.1"
 					ideology = reformist_socialism
 					traits = {
-						trait_reformist_socialism
+						
 					}
 				}
 				set_party_name = {
@@ -1515,7 +1515,7 @@ country_event = {
 country_event = {
 	id = ww1_belgium.32
 	title = ww1_belgium.32.t
-	desc = ww1_belgium.32.d
+	desc = ww1_belgium.32.desc
 	picture = GFX_report_event_generic_parliament
 	trigger = {
 		tag = GER
@@ -1536,6 +1536,17 @@ country_event = {
 	}
 	immediate = {
 		hidden_effect = {
+			GER = {
+				if = {
+					limit = {
+						has_dlc = "Together for Victory"
+					}
+					set_autonomy = {
+						target = BEL
+						autonomous_state = autonomy_colony
+					}
+				}
+			}
 			BEL = {
 				set_popularities = {
 					democratic = 10
@@ -1561,7 +1572,7 @@ country_event = {
 							traits = {
 								german_agent
 								foreign_leader
-								trait_despotism
+								
 							}
 						}
 					}
@@ -1587,6 +1598,9 @@ country_event = {
 					name = BEL_fascism_party
 				}
 				retire_character = BEL_albert_i
+				GER_ludwig_von_falkenhausen = {
+					set_nationality = GER
+				}
 			}		
 		}
 	}

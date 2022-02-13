@@ -42,11 +42,11 @@ country_event = {
 		set_war_support = 0.25
 		create_country_leader = {
 			name = "Gouvernement Provisoire"
-			picture = "gfx/leaders/FRA/FRA_provisional_government.dds"
+			picture = "gfx/leaders/FRA/FRA_provisional_government.png"
 			expire = "1935.1.1"
 			ideology = conservatism
 			traits = {
-				trait_conservatism
+				
 			}
 		}
 		hidden_effect = {
@@ -163,11 +163,11 @@ country_event = {
 				set_cosmetic_tag = FRA_socialism
 				create_country_leader = {
 					name = "Louis Frossard"
-					picture = "gfx/leaders/FRA/FRA_louis_frossard.dds"
+					picture = "gfx/leaders/FRA/FRA_louis_frossard.png"
 					expire = "1935.1.1"
 					ideology = marxism
 					traits = {
-						trait_marxism
+						
 					}
 				}
 				reserve_dynamic_country = yes
@@ -190,6 +190,7 @@ country_event = {
 						state = 24
 						state = 27
 						state = 29
+						state = 865
 						state = 30
 						state = 785
 					}
@@ -205,8 +206,14 @@ country_event = {
 					is_owned_by = FRA
 					is_core_of = MOR
 				}
-				MOR = {
-					transfer_state = PREV
+				if = {
+					limit = {
+						is_claimed_by = GER
+					}
+					transfer_state_to = GER
+				}
+				else = {
+					transfer_state_to = MOR
 				}
 			}
 			if = {
@@ -379,11 +386,11 @@ country_event = {
 				set_cosmetic_tag = NFA
 				create_country_leader = {
 					name = "Philippe Pétain"
-					picture = "gfx/leaders/FRA/FRA_philippe_petain.dds"
+					picture = "gfx/leaders/FRA/FRA_philippe_petain.png"
 					expire = "1935.1.1"
 					ideology = stratocracy
 					traits = {
-						trait_stratocracy
+						
 					}
 				}
 				reserve_dynamic_country = yes
@@ -435,8 +442,14 @@ country_event = {
 					is_owned_by = NFA
 					is_core_of = MOR
 				}
-				MOR = {
-					transfer_state = PREV
+				if = {
+					limit = {
+						is_claimed_by = GER
+					}
+					transfer_state_to = GER
+				}
+				else = {
+					transfer_state_to = MOR
 				}
 			}
 			if = {
@@ -526,10 +539,10 @@ country_event = {
 				}
 				create_country_leader = { 
 					name = "Louis Frossard" 
-					picture = "gfx/leaders/FRA/FRA_louis_frossard.dds" 
+					picture = "gfx/leaders/FRA/FRA_louis_frossard.png" 
 					expire = "1935.1.1" 
 					ideology = marxism
-					traits = { trait_marxism }  
+					  
 				}
 				set_popularities = {
 					democratic = 16
@@ -705,12 +718,12 @@ country_event = {
 		name = ww1_france.17.a
 		create_country_leader = {
 			name = "Raymond Poincaré"
-			picture = "gfx/leaders/FRA/FRA_raymond_poincare.dds"
+			picture = "gfx/leaders/FRA/FRA_raymond_poincare.png"
 			expire = "1935.1.1"
 			ideology = classical_liberalism
 			traits = {
 				poincare_la_guerre
-				trait_classical_liberalism
+				
 			}
 		}
 	}
@@ -821,12 +834,12 @@ country_event = {
 		name = ww1_generic.1.a
 		create_country_leader = {
 			name = "Paul Eugène Deschanel"
-			picture = "gfx/leaders/FRA/FRA_paul_deschanel.dds"
+			picture = "gfx/leaders/FRA/FRA_paul_deschanel.png"
 			expire = "1935.1.1"
 			ideology = classical_liberalism
 			traits = {
 				lunatic
-				trait_classical_liberalism
+				
 			}
 		}
 	}
@@ -857,7 +870,7 @@ country_event = {
 			expire = "1935.1.1"
 			ideology = conservatism
 			traits = {
-				trait_conservatism
+				
 			}
 		}
 	}
@@ -2009,7 +2022,7 @@ country_event = {
 				expire = "1935.1.1"
 				ideology = autocracy
 				traits = {
-					trait_autocracy
+					
 				}
 			}
 			set_country_flag = napoleon_v_dead
@@ -2053,7 +2066,7 @@ country_event = {
 				expire = "1935.1.1"
 				ideology = autocracy
 				traits = {
-					trait_autocracy
+					
 				}
 			}
 			set_country_flag = jacques_i_dead
@@ -2086,11 +2099,11 @@ country_event = {
 		}
 		create_country_leader = {
 			name = "Sébastien Faure"
-			picture = "gfx/leaders/FRA/FRA_Sebastien_Faure.dds"
+			picture = "gfx/leaders/FRA/FRA_Sebastien_Faure.png"
 			expire = "1935.1.1"
 			ideology = anarcho_syndicalism
 			traits = {
-				trait_anarcho_syndicalism
+				
 			}
 		}
 		set_party_name = {
@@ -2110,13 +2123,13 @@ country_event = {
 		}
 		create_country_leader = {
 			name = "Léon Blum"
-			picture = GFX_portrait_fra_leon_blum
+			picture = "gfx/leaders/FRA/FRA_Leon_Blum_young.png"
 			expire = "1935.1.1"
 			ideology = reformist_socialism
 			traits = {
 				reluctant_interventionist
 				stout_defender
-				trait_reformist_socialism
+				
 			}
 		}
 		set_party_name = {
@@ -2136,11 +2149,11 @@ country_event = {
 		}
 		create_country_leader = {
 			name = "Louis Frossard"
-			picture = "gfx/leaders/FRA/FRA_louis_frossard.dds"
+			picture = "gfx/leaders/FRA/FRA_louis_frossard.png"
 			expire = "1935.1.1"
 			ideology = vanguardism
 			traits = {
-				trait_vanguardism
+				
 			}
 		}
 		set_party_name = {
@@ -2172,7 +2185,7 @@ country_event = {
 				expire = "1935.1.1"
 				ideology = national_syndicalism
 				traits = {
-					trait_national_syndicalism
+					
 				}
 			}
 		}
@@ -2182,7 +2195,7 @@ country_event = {
 			expire = "1935.1.1"
 			ideology = syndicalism
 			traits = {
-				trait_syndicalism
+				
 			}
 		}
 		set_party_name = {

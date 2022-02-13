@@ -331,6 +331,11 @@ focus_tree = {
 			set_politics = {
 				ruling_party = fascism
 			}
+			set_party_name = {
+				ideology = fascism
+				name = JAP_black_dragon_society
+				long_name = JAP_black_dragon_society
+			}
 		}
 		ai_will_do = {
 			factor = 0
@@ -1595,6 +1600,11 @@ focus_tree = {
 				ruling_party = democratic
 				elections_allowed = yes
 			}
+			set_party_name = {
+				ideology = democratic
+				name = JAP_taisho_democracy_party
+				long_name = JAP_taisho_democracy_party_long
+			}
 			add_ideas = JAP_uncontrollable_military
 		}
 		ai_will_do = {
@@ -1772,6 +1782,11 @@ focus_tree = {
 				transfer_state = 609
 			}
 			hidden_effect = {
+				set_party_name = {
+					ideology = democratic
+					name = JAP_national_unity_government
+					long_name = JAP_national_unity_government
+				}
 				716 = {
 					add_core_of = MAN
 				}
@@ -1822,7 +1837,7 @@ focus_tree = {
 							ideology = autocracy
 							traits = {
 								warrior_code
-								trait_autocracy
+								
 							}
 						}
 						create_country_leader = {
@@ -1832,7 +1847,7 @@ focus_tree = {
 							ideology = fascism_ideology
 							traits = {
 								warrior_code
-								trait_fascism
+								
 							}
 						}
 					}
@@ -1841,20 +1856,20 @@ focus_tree = {
 							set_cosmetic_tag = FNG_government
 							create_country_leader = {
 								name = "Zhang Xueliang"
-								picture = "gfx/leaders/CHI/CHI_Zhang_Xueliang.dds"
+								picture = "gfx/leaders/CHI/CHI_Zhang_Xueliang.png"
 								expire = "1935.1.1"
 								ideology = despotism
 								traits = {
-									trait_despotism
+									
 								}
 							}
 							create_country_leader = {
 								name = "Zhang Xueliang"
-								picture = "gfx/leaders/CHI/CHI_Zhang_Xueliang.dds"
+								picture = "gfx/leaders/CHI/CHI_Zhang_Xueliang.png"
 								expire = "1935.1.1"
 								ideology = stratocracy
 								traits = {
-									trait_stratocracy
+									
 								}
 							}
 						}

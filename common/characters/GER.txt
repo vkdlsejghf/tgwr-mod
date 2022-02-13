@@ -3,7 +3,7 @@ characters={
 		name="GER_adolf_hitler"
 		portraits={
 			civilian={
-				large="gfx/leaders/GER/GER_adolf_hitler.dds"
+				large="gfx/leaders/GER/GER_adolf_hitler.png"
 			}
 		}
 	}
@@ -11,29 +11,29 @@ characters={
 		name="GER_wilhelm_ii"
 		portraits={
 			civilian={
-				large="gfx/leaders/GER/GER_wilhelm_ii.dds"
+				large="gfx/leaders/GER/GER_wilhelm_ii.png"
 			}
 		}
 		country_leader={
 			desc="GER_wilhelm_ii_desc"
 			ideology=autocracy
-			traits={ imperial_connections trait_autocracy }
-			expire="1935.1.1.1"
-			id=-1
+			traits={ imperial_connections  }
+			
+			
 		}
 	}
 	GER_wilhelm_iii={
 		name="GER_wilhelm_iii"
 		portraits={
 			civilian={
-				large="gfx/leaders/GER/GER_wilhelm_iii.dds"
+				large="gfx/leaders/GER/GER_wilhelm_iii.png"
 			}
 		}
 		country_leader={
 			ideology=autocracy
-			traits={ popular_figurehead2 trait_autocracy }
-			expire="1935.1.1.1"
-			id=-1
+			traits={ popular_figurehead2  }
+			
+			
 		}
 	}
 	GER_august_von_mackensen={
@@ -66,7 +66,7 @@ characters={
 				small="GFX_idea_GER_august_von_mackensen"
 			}
 			army={
-				large="gfx/leaders/GER/GER_august_von_mackensen.dds"
+				large="gfx/leaders/GER/GER_august_von_mackensen.png"
 			}
 		}
 		corps_commander={
@@ -105,7 +105,7 @@ characters={
 				small="GFX_idea_GER_karl_von_einem"
 			}
 			army={
-				large="gfx/leaders/GER/GER_karl_einem.dds"
+				large="gfx/leaders/GER/GER_karl_einem.png"
 			}
 		}
 		corps_commander={
@@ -125,10 +125,7 @@ characters={
 			idea_token = GER_erich_ludendorff
 			available  = {
 				NOT  = {
-					has_country_leader = {
-					 	character = GER_erich_ludendorff
-						ruling_only = yes
-					}
+					has_country_flag = great_war_loser
 				}
 				has_completed_focus  = GER_oberster_kriegsherr 
 			}
@@ -144,7 +141,7 @@ characters={
 				small="GFX_idea_GER_erich_ludendorff"
 			}
 			army={
-				large="gfx/leaders/GER/GER_erich_ludendorff.dds"
+				large="gfx/leaders/GER/GER_erich_ludendorff.png"
 			}
 		}
 		corps_commander={
@@ -158,9 +155,9 @@ characters={
 		}
 		country_leader={
 			ideology=stratocracy
-			traits={ trait_stratocracy }
-			expire="1935.1.1.1"
-			id=-1
+			
+			
+			
 		}
 	}
 	GER_franz_von_papen={
@@ -187,7 +184,7 @@ characters={
 		portraits={
 			civilian={
 				small="GFX_idea_GER_franz_von_papen"
-				large="gfx/leaders/GER/GER_Franz_von_Papen.dds"
+				large="gfx/leaders/GER/GER_Franz_von_Papen.png"
 			}
 		}
 	}
@@ -250,7 +247,7 @@ characters={
 				small="GFX_idea_GER_erich_von_falkenhayn"
 			}
 			army={
-				large="gfx/leaders/GER/GER_erich_falkenhayn.dds"
+				large="gfx/leaders/GER/GER_erich_falkenhayn.png"
 			}
 		}
 		corps_commander={
@@ -289,7 +286,7 @@ characters={
 		}
 		portraits={
 			army={
-				large="gfx/leaders/GER/GER_Paul_von_Hindenburg.dds"
+				large="gfx/leaders/GER/GER_paul_von_hindenburg.png"
 				small="GFX_idea_GER_paul_von_hindenburg"
 			}
 		}
@@ -304,8 +301,8 @@ characters={
 		}
 		country_leader={
 			ideology=stratocracy
-			traits={ trait_stratocracy }
-			expire="1935.1.1.1"
+			
+			
 		}
 	}
 	GER_hans_von_seeckt={
@@ -325,8 +322,8 @@ characters={
 		}
 		portraits={
 			army={
-				small="gfx/interface/ideas/GER/GER_hans_von_seeckt.dds"
-				large="gfx/leaders/GER/GER_hans_von_seeckt.dds"
+				small="gfx/interface/ideas/GER/GER_hans_von_seeckt.png"
+				large="gfx/leaders/GER/GER_hans_von_seeckt.png"
 			}
 		}
 		corps_commander={
@@ -345,7 +342,7 @@ characters={
 		name="GER_rüdiger_von_der_goltz"
 		portraits={
 			army={
-				large="gfx/leaders/GER/GER_rudiger_von_der_goltz.dds"
+				large="gfx/leaders/GER/GER_rudiger_von_der_goltz.png"
 			}
 		}
 		corps_commander={
@@ -434,7 +431,7 @@ characters={
 			defense_skill=2
 			maneuvering_skill=1
 			coordination_skill=1
-			legacy_id=-1
+			
 		}
 	}
 	GER_georg_von_muller={
@@ -455,8 +452,8 @@ characters={
 		}
 		portraits={
 			army={
-				large="gfx/leaders/GER/GER_georg_muller.dds"
-				small="GFX_idea_generic_army_europe_4"
+				large="gfx/leaders/GER/GER_georg_muller.png"
+				small="GFX_idea_GER_generic_navy_1"
 			}
 		}
 		navy_leader={
@@ -466,7 +463,7 @@ characters={
 			defense_skill=4
 			maneuvering_skill=1
 			coordination_skill=1
-			legacy_id=-1
+			
 		}
 	}
 	GER_henning_von_holtzendorff={
@@ -487,8 +484,8 @@ characters={
 		}
 		portraits={
 			army={
-				large="gfx/leaders/GER/GER_henning_holtzendorff.dds"
-				small="GFX_idea_generic_navy_europe_1"
+				large="gfx/leaders/GER/GER_henning_holtzendorff.png"
+				small="GFX_idea_GER_generic_navy_2"
 			}
 		}
 		navy_leader={
@@ -498,21 +495,21 @@ characters={
 			defense_skill=2
 			maneuvering_skill=1
 			coordination_skill=1
-			legacy_id=-1
+			
 		}
 	}
 	GER_friedrich_ebert={
 		name="GER_friedrich_ebert"
 		portraits={
 			civilian={
-				large="gfx/leaders/GER/GER_friedrich_ebert.dds"
+				large="gfx/leaders/GER/GER_friedrich_ebert.png"
 			}
 		}
 		country_leader={
 			ideology=socialism
-			traits={ trait_socialism }
-			expire="1935.1.1.1"
-			id=-1
+			
+			
+			
 		}
 	}
 	GER_theobald_von_bethmannhollweg={
@@ -528,7 +525,7 @@ characters={
 				}
 				available  = {
 					has_country_leader  = {
-						name  = "Wilhelm II"
+						character = GER_wilhelm_ii
 						ruling_only  = yes 
 					}
 				}
@@ -541,7 +538,7 @@ characters={
 				small="GFX_idea_GER_theobald_von_bethmann_hollweg"
 			}
 			civilian={
-				large="gfx/leaders/GER/GER_theobald_von_hollweg.dds"
+				large="gfx/leaders/GER/GER_theobald_von_hollweg.png"
 			}
 		}
 	}
@@ -549,7 +546,7 @@ characters={
 		name="Georg Michaelis"
 		portraits={
 			civilian={
-				large="gfx/leaders/GER/GER_Georg_Michaelis.dds"
+				large="gfx/leaders/GER/GER_Georg_Michaelis.png"
 			}
 		}
 	}
@@ -557,7 +554,7 @@ characters={
 		name="GER_georg_von_hertling"
 		portraits={
 			civilian={
-				large="gfx/leaders/GER/GER_Georg_von_Hertling.dds"
+				large="gfx/leaders/GER/GER_Georg_von_Hertling.png"
 			}
 		}
 	}
@@ -565,7 +562,7 @@ characters={
 		name="GER_prinz_maximilian_von_baden"
 		portraits={
 			civilian={
-				large="gfx/leaders/GER/GER_Maximilian_von_Baden.dds"
+				large="gfx/leaders/GER/GER_Maximilian_von_Baden.png"
 			}
 		}
 	}
@@ -573,28 +570,28 @@ characters={
 		name="GER_karl_liebknecht"
 		portraits={
 			civilian={
-				large="gfx/leaders/GER/GER_karl_liebknecht.dds"
+				large="gfx/leaders/GER/GER_karl_liebknecht.png"
 			}
 		}
 		country_leader={
 			ideology=marxism
-			traits={ trait_marxism }
-			expire="1935.1.1.1"
-			id=-1
+			
+			
+			
 		}
 	}
 	GER_ernst_thälmann={
 		name="GER_ernst_thalmann"
 		portraits={
 			civilian={
-				large="gfx/leaders/GER/GER_Ernst_Thalmann.dds"
+				large="gfx/leaders/GER/GER_Ernst_Thalmann.png"
 			}
 		}
 		country_leader={
 			ideology=vanguardism
-			traits={ assassination_survivor trait_vanguardism }
+			traits={ assassination_survivor  }
 			expire="1956.1.1.1"
-			id=-1
+			
 		}
 	}
 	GER_paul_von_lettowvorbeck={
@@ -619,7 +616,7 @@ characters={
 		portraits={
 			army={
 				small="GFX_idea_GER_paul_von_lettow_vorbeck"
-				large="gfx/leaders/GER/GER_paul_lettow_vorbeck.dds"
+				large="gfx/leaders/GER/GER_paul_lettow_vorbeck.png"
 			}
 		}
 		corps_commander={
@@ -636,10 +633,10 @@ characters={
 		name="GER_alfred_von_schlieffen"
 		portraits={
 			army={
-				small="GFX_idea_generic_army_chief_def"
+				small="GFX_idea_GER_generic_land_1"
 			}
 			army={
-				large="gfx/leaders/GER/GER_alfred_von_schlieffen.dds"
+				large="gfx/leaders/GER/GER_alfred_von_schlieffen.png"
 			}
 		}
 		field_marshal={
@@ -656,10 +653,10 @@ characters={
 		name="GER_albrecht_von_wurttemberg"
 		portraits={
 			army={
-				small="GFX_idea_generic_army_chief_off"
+				small="GFX_idea_GER_generic_land_2"
 			}
 			army={
-				large="gfx/leaders/GER/GER_albrecht_von_wurttemberg.dds"
+				large="gfx/leaders/GER/GER_albrecht_von_wurttemberg.png"
 			}
 		}
 		field_marshal={
@@ -679,10 +676,10 @@ characters={
 		name="GER_rupprecht_von_wittelsbach"
 		portraits={
 			army={
-				small="GFX_idea_generic_military_theorist"
+				small="GFX_idea_GER_generic_land_3"
 			}
 			army={
-				large="gfx/leaders/GER/GER_rupprecht_von_wittelsbach.dds"
+				large="gfx/leaders/GER/GER_rupprecht_von_wittelsbach.png"
 			}
 		}
 		field_marshal={
@@ -702,10 +699,10 @@ characters={
 		name="GER_wilhelm_von_preusen"
 		portraits={
 			army={
-				small="GFX_idea_generic_army_chief_off"
+				small="GFX_idea_GER_generic_land_2"
 			}
 			army={
-				large="gfx/leaders/GER/GER_wilhelm_iii.dds"
+				large="gfx/leaders/GER/GER_wilhelm_iii.png"
 			}
 		}
 		field_marshal={
@@ -725,10 +722,10 @@ characters={
 		name="GER_colmar_von_der_goltz"
 		portraits={
 			army={
-				small="GFX_idea_generic_army_chief_def"
+				small="GFX_idea_GER_generic_land_1"
 			}
 			army={
-				large="gfx/leaders/GER/GER_colmar_von_goltz.dds"
+				large="gfx/leaders/GER/GER_colmar_von_goltz.png"
 			}
 		}
 		field_marshal={
@@ -745,10 +742,10 @@ characters={
 		name="GER_lepold_von_bayern"
 		portraits={
 			army={
-				small="GFX_idea_generic_military_theorist"
+				small="GFX_idea_GER_generic_land_3"
 			}
 			army={
-				large="gfx/leaders/GER/GER_leopold_von_bayern.dds"
+				large="gfx/leaders/GER/GER_leopold_von_bayern.png"
 			}
 		}
 		field_marshal={
@@ -768,10 +765,10 @@ characters={
 		name="GER_friedrich_august_iii"
 		portraits={
 			army={
-				small="GFX_idea_generic_army_chief_def"
+				small="GFX_idea_GER_generic_land_1"
 			}
 			army={
-				large="gfx/leaders/SAX/SAX_Frederick_Augustus.dds"
+				large="gfx/leaders/SAX/SAX_Frederick_Augustus.png"
 			}
 		}
 		field_marshal={
@@ -792,7 +789,7 @@ characters={
 		portraits={
 			army={
 				large="gfx/leaders/GER/GER_Gottlieb_Graf_von_Haeseler.png"
-				small="GFX_idea_generic_army_chief_def"
+				small="GFX_idea_GER_generic_land_1"
 			}
 		}
 		field_marshal={
@@ -811,10 +808,10 @@ characters={
 		name="GER_karl_von_bulow"
 		portraits={
 			army={
-				small="GFX_idea_generic_army_art"
+				small="GFX_idea_GER_generic_land_4"
 			}
 			army={
-				large="gfx/leaders/GER/GER_karl_bulow.dds"
+				large="gfx/leaders/GER/GER_karl_bulow.png"
 			}
 		}
 		corps_commander={
@@ -832,7 +829,7 @@ characters={
 		portraits={
 			army={
 				large="gfx/leaders/GER/GER_Ferdinand_von_Quast.png"
-				small="GFX_idea_generic_army_chief_off"
+				small="GFX_idea_GER_generic_land_2"
 			}
 		}
 		corps_commander={
@@ -852,10 +849,10 @@ characters={
 		name="GER_hermann_von_eichhorn"
 		portraits={
 			army={
-				small="GFX_idea_generic_army_art"
+				small="GFX_idea_GER_generic_land_4"
 			}
 			army={
-				large="gfx/leaders/GER/GER_hermann_eichhorn.dds"
+				large="gfx/leaders/GER/GER_hermann_eichhorn.png"
 			}
 		}
 		corps_commander={
@@ -865,7 +862,7 @@ characters={
 			defense_skill=2
 			planning_skill=3
 			logistics_skill=3
-			legacy_id=-1
+			
 		}
 	}
 	GER_remus_von_woyrsch={
@@ -873,7 +870,7 @@ characters={
 		portraits={
 			army={
 				large="gfx/leaders/GER/GER_Remus_von_Woyrsch.png"
-				small="GFX_idea_generic_army_log"
+				small="GFX_idea_GER_generic_land_5"
 			}
 		}
 		corps_commander={
@@ -883,17 +880,17 @@ characters={
 			defense_skill=2
 			planning_skill=3
 			logistics_skill=3
-			legacy_id=-1
+			
 		}
 	}
 	GER_alexander_von_kluck={
 		name="GER_alexander_von_kluck"
 		portraits={
 			army={
-				small="GFX_idea_generic_army_log"
+				small="GFX_idea_GER_generic_land_5"
 			}
 			army={
-				large="gfx/leaders/GER/GER_alexander_kluck.dds"
+				large="gfx/leaders/GER/GER_alexander_kluck.png"
 			}
 		}
 		corps_commander={
@@ -903,17 +900,17 @@ characters={
 			defense_skill=2
 			planning_skill=4
 			logistics_skill=2
-			legacy_id=-1
+			
 		}
 	}
 	GER_oskar_von_hutier={
 		name="GER_oskar_von_hutier"
 		portraits={
 			army={
-				small="GFX_idea_generic_air_close_air_sup"
+				small="GFX_idea_GER_generic_land_1"
 			}
 			army={
-				large="gfx/leaders/GER/GER_oskar_hutier.dds"
+				large="gfx/leaders/GER/GER_oskar_hutier.png"
 			}
 		}
 		corps_commander={
@@ -922,17 +919,17 @@ characters={
 			defense_skill=1
 			planning_skill=4
 			logistics_skill=2
-			legacy_id=-1
+			
 		}
 	}
 	GER_georg_von_der_marwitz={
 		name="GER_georg_von_der_marwitz"
 		portraits={
 			army={
-				small="GFX_idea_generic_air_close_air_sup"
+				small="GFX_idea_GER_generic_land_1"
 			}
 			army={
-				large="gfx/leaders/GER/GER_georg_marwitz.dds"
+				large="gfx/leaders/GER/GER_georg_marwitz.png"
 			}
 		}
 		corps_commander={
@@ -942,17 +939,17 @@ characters={
 			defense_skill=3
 			planning_skill=3
 			logistics_skill=1
-			legacy_id=-1
+			
 		}
 	}
 	GER_otto_von_below={
 		name="GER_otto_von_below"
 		portraits={
 			army={
-				small="GFX_idea_generic_air_warfare_theorist"
+				small="GFX_idea_GER_generic_land_2"
 			}
 			army={
-				large="gfx/leaders/GER/GER_otto_below.dds"
+				large="gfx/leaders/GER/GER_otto_below.png"
 			}
 		}
 		corps_commander={
@@ -962,7 +959,7 @@ characters={
 			defense_skill=3
 			planning_skill=4
 			logistics_skill=3
-			legacy_id=-1
+			
 		}
 	}
 	GER_Fritz_von_Below={
@@ -970,7 +967,7 @@ characters={
 		portraits={
 			army={
 				large="gfx/leaders/GER/GER_Fritz_von_Below.png"
-				small="GFX_idea_generic_air_warfare_theorist"
+				small="GFX_idea_GER_generic_land_2"
 			}
 		}
 		corps_commander={
@@ -989,10 +986,10 @@ characters={
 		name="GER_friedrich_sixt_von_armin"
 		portraits={
 			army={
-				small="GFX_idea_generic_air_warfare_theorist"
+				small="GFX_idea_GER_generic_land_2"
 			}
 			army={
-				large="gfx/leaders/GER/GER_sixt_von_armin.dds"
+				large="gfx/leaders/GER/GER_sixt_von_armin.png"
 			}
 		}
 		corps_commander={
@@ -1001,17 +998,17 @@ characters={
 			defense_skill=4
 			planning_skill=3
 			logistics_skill=2
-			legacy_id=-1
+			
 		}
 	}
 	GER_hermann_von_francois={
 		name="GER_hermann_von_francois"
 		portraits={
 			army={
-				small="GFX_idea_generic_air_air_combat_trainer"
+				small="GFX_idea_GER_generic_land_3"
 			}
 			army={
-				large="gfx/leaders/GER/GER_hermann_francois.dds"
+				large="gfx/leaders/GER/GER_hermann_francois.png"
 			}
 		}
 		corps_commander={
@@ -1029,7 +1026,7 @@ characters={
 		portraits={
 			army={
 				large="gfx/leaders/GER/GER_Felix_von_Bothmer.png"
-				small="GFX_idea_generic_air_air_combat_trainer"
+				small="GFX_idea_GER_generic_land_3"
 			}
 		}
 		corps_commander={
@@ -1049,7 +1046,7 @@ characters={
 		portraits={
 			army={
 				large="gfx/leaders/GER/GER_Gunther_Von_Kirchbach.png"
-				small="GFX_idea_generic_army_log"
+				small="GFX_idea_GER_generic_land_5"
 			}
 		}
 		corps_commander={
@@ -1065,10 +1062,10 @@ characters={
 		name="GER_maximilian_von_prittwitz"
 		portraits={
 			army={
-				small="GFX_idea_generic_military_theorist"
+				small="GFX_idea_GER_generic_land_3"
 			}
 			army={
-				large="gfx/leaders/GER/GER_maximilian_prittwitz.dds"
+				large="gfx/leaders/GER/GER_maximilian_prittwitz.png"
 			}
 		}
 		corps_commander={
@@ -1098,17 +1095,17 @@ characters={
 			defense_skill=2
 			planning_skill=3
 			logistics_skill=3
-			legacy_id=-1
+			
 		}
 	}
 	GER_otto_liman_von_sanders={
 		name="GER_otto_liman_von_sanders"
 		portraits={
 			army={
-				small="GFX_idea_generic_air_air_combat_trainer"
+				small="GFX_idea_GER_generic_land_3"
 			}
 			army={
-				large="gfx/leaders/GER/GER_liman_von_sanders.dds"
+				large="gfx/leaders/GER/GER_liman_von_sanders.png"
 			}
 		}
 		corps_commander={
@@ -1135,16 +1132,26 @@ characters={
 			defense_skill=2
 			planning_skill=1
 			logistics_skill=2
+			visible = {
+				NOT = {
+					AND = {
+						tag = BEL
+						NOT = {
+							has_government = fascism
+						}
+					}
+				}
+			}
 		}
 	}
 	GER_max_von_gallwitz={
 		name="GER_max_von_gallwitz"
 		portraits={
 			army={
-				small="GFX_idea_generic_army_log"
+				small="GFX_idea_GER_generic_land_5"
 			}
 			army={
-				large="gfx/leaders/GER/GER_Max_von_Gallwitz.dds"
+				large="gfx/leaders/GER/GER_Max_von_Gallwitz.png"
 			}
 		}
 		corps_commander={
@@ -1154,17 +1161,17 @@ characters={
 			defense_skill=2
 			planning_skill=4
 			logistics_skill=2
-			legacy_id=-1
+			
 		}
 	}
 	GER_karl_litzmann={
 		name="GER_karl_litzmann"
 		portraits={
 			army={
-				small="GFX_idea_generic_army_log"
+				small="GFX_idea_GER_generic_land_5"
 			}
 			army={
-				large="gfx/leaders/GER/GER_karl_litzmann.dds"
+				large="gfx/leaders/GER/GER_karl_litzmann.png"
 			}
 		}
 		corps_commander={
@@ -1174,7 +1181,7 @@ characters={
 			defense_skill=1
 			planning_skill=2
 			logistics_skill=3
-			legacy_id=-1
+			
 		}
 	}
 	GER_karl_ludwig_delsa={
@@ -1193,17 +1200,17 @@ characters={
 			defense_skill=2
 			planning_skill=2
 			logistics_skill=2
-			legacy_id=-1
+			
 		}
 	}
 	GER_max_hoffmann={
 		name="GER_max_hoffmann"
 		portraits={
 			army={
-				small="GFX_idea_generic_army_art"
+				small="GFX_idea_GER_generic_land_4"
 			}
 			army={
-				large="gfx/leaders/GER/GER_max_hoffman.dds"
+				large="gfx/leaders/GER/GER_max_hoffman.png"
 			}
 		}
 		corps_commander={
@@ -1213,17 +1220,17 @@ characters={
 			defense_skill=2
 			planning_skill=3
 			logistics_skill=2
-			legacy_id=-1
+			
 		}
 	}
 	GER_erich_von_gündell={
 		name="GER_erich_von_gundell"
 		portraits={
 			army={
-				small="GFX_idea_generic_army_art"
+				small="GFX_idea_GER_generic_land_4"
 			}
 			army={
-				large="gfx/leaders/GER/GER_Erich_von_Gundell.dds"
+				large="gfx/leaders/GER/GER_Erich_von_Gundell.png"
 			}
 		}
 		corps_commander={
@@ -1233,17 +1240,17 @@ characters={
 			defense_skill=2
 			planning_skill=3
 			logistics_skill=2
-			legacy_id=-1
+			
 		}
 	}
 	GER_kurt_von_dem_borne={
 		name="GER_kurt_von_dem_borne"
 		portraits={
 			army={
-				small="GFX_idea_generic_air_close_air_sup"
+				small="GFX_idea_GER_generic_land_1"
 			}
 			army={
-				large="gfx/leaders/GER/GER_Kurt_von_dem_Borne.dds"
+				large="gfx/leaders/GER/GER_Kurt_von_dem_Borne.png"
 			}
 		}
 		corps_commander={
@@ -1253,17 +1260,40 @@ characters={
 			defense_skill=1
 			planning_skill=1
 			logistics_skill=1
-			legacy_id=-1
+			
+		}
+	}
+	GER_carl_eduard_von_sachsen_coburg_und_gotha={
+		name="GER_carl_eduard_von_sachsen_coburg_und_gotha"
+		portraits={
+			army={
+				large="gfx/leaders/GER/GER_Carl_Eduard_von_Sachsen_Coburg_und_Gotha.png"
+				small="GFX_idea_GER_generic_land_1"
+			}
+		}
+		corps_commander={
+			traits={ cavalry_officer harsh_leader politically_connected trait_royal trait_cautious }
+			skill=1
+			attack_skill=1
+			defense_skill=1
+			planning_skill=1
+			logistics_skill=2
+			visible = {
+				NOT = {
+					has_government = communism
+					has_war_with = GER
+				}
+			}	
 		}
 	}
 	GER_krafft_von_dellmensingen={
 		name="GER_krafft_von_dellmensingen"
 		portraits={
 			army={
-				small="GFX_idea_generic_air_close_air_sup"
+				small="GFX_idea_GER_generic_land_1"
 			}
 			army={
-				large="gfx/leaders/GER/GER_krafft_von_dellmensingen.dds"
+				large="gfx/leaders/GER/GER_krafft_von_dellmensingen.png"
 			}
 		}
 		corps_commander={
@@ -1273,17 +1303,17 @@ characters={
 			defense_skill=2
 			planning_skill=2
 			logistics_skill=3
-			legacy_id=-1
+			
 		}
 	}
 	GER_arnold_lequis={
 		name="GER_arnold_lequis"
 		portraits={
 			army={
-				small="GFX_idea_generic_army_art"
+				small="GFX_idea_GER_generic_land_4"
 			}
 			army={
-				large="gfx/leaders/GER/GER_Arnold_Lequis.dds"
+				large="gfx/leaders/GER/GER_Arnold_Lequis.png"
 			}
 		}
 		corps_commander={
@@ -1300,10 +1330,10 @@ characters={
 		name="GER_lothar_von_trotha"
 		portraits={
 			army={
-				small="GFX_idea_generic_army_art"
+				small="GFX_idea_GER_generic_land_4"
 			}
 			army={
-				large="gfx/leaders/GER/GER_Lothar_von_Trotha.dds"
+				large="gfx/leaders/GER/GER_Lothar_von_Trotha.png"
 			}
 		}
 		corps_commander={
@@ -1313,17 +1343,17 @@ characters={
 			defense_skill=1
 			planning_skill=2
 			logistics_skill=2
-			legacy_id=-1
+			
 		}
 	}
 	GER_alfred_von_kühne={
 		name="GER_alfred_von_kuhne"
 		portraits={
 			army={
-				small="GFX_idea_generic_army_log"
+				small="GFX_idea_GER_generic_land_5"
 			}
 			army={
-				large="gfx/leaders/GER/GER_Alfred_von_Kuhne.dds"
+				large="gfx/leaders/GER/GER_Alfred_von_Kuhne.png"
 			}
 		}
 		corps_commander={
@@ -1333,7 +1363,7 @@ characters={
 			defense_skill=1
 			planning_skill=1
 			logistics_skill=1
-			legacy_id=-1
+			
 		}
 	}
 	GER_Moritz_von_Bissing={
@@ -1341,7 +1371,7 @@ characters={
 		portraits={
 			army={
 				large="gfx/leaders/GER/GER_Moritz_von_Bissing.png"
-				small="GFX_idea_generic_army_log"
+				small="GFX_idea_GER_generic_land_5"
 			}
 		}
 		corps_commander={
@@ -1361,6 +1391,7 @@ characters={
 		portraits={
 			navy={
 				large="gfx/leaders/GER/GER_Hugo_von_Pohl.png"
+				small=GFX_idea_GER_generic_navy_1
 			}
 		}
 		navy_leader={
@@ -1379,7 +1410,7 @@ characters={
 		name="GER_franz_von_hipper"
 		portraits={
 			army={
-				small="GFX_idea_generic_army_log"
+				small="GFX_idea_GER_generic_navy_2"
 			}
 			army={
 				large="gfx/leaders/GER/GER_franz_von_hipper.png"
@@ -1392,17 +1423,17 @@ characters={
 			defense_skill=2
 			maneuvering_skill=1
 			coordination_skill=1
-			legacy_id=-1
+			
 		}
 	}
 	GER_reinhard_scheer={
 		name="GER_reinhard_scheer"
 		portraits={
 			army={
-				small="GFX_idea_generic_air_warfare_theorist"
+				small="GFX_idea_GER_generic_navy_3"
 			}
 			army={
-				large="gfx/leaders/GER/GER_reinhard_scheer.dds"
+				large="gfx/leaders/GER/GER_reinhard_scheer.png"
 			}
 		}
 		navy_leader={
@@ -1412,17 +1443,17 @@ characters={
 			defense_skill=4
 			maneuvering_skill=1
 			coordination_skill=1
-			legacy_id=-1
+			
 		}
 	}
 	GER_maximilian_von_spee={
 		name="GER_maximilian_von_spee"
 		portraits={
 			army={
-				small="GFX_idea_generic_air_warfare_theorist"
+				small="GFX_idea_GER_generic_navy_1"
 			}
 			army={
-				large="gfx/leaders/GER/GER_maximilian_spee.dds"
+				large="gfx/leaders/GER/GER_maximilian_spee.png"
 			}
 		}
 		navy_leader={
@@ -1439,10 +1470,10 @@ characters={
 		name="GER_albert_wilhelm_heinrich"
 		portraits={
 			army={
-				small="GFX_idea_generic_air_chief_all_weather"
+				small="GFX_idea_GER_generic_navy_2"
 			}
 			army={
-				large="gfx/leaders/GER/GER_Albert_Wilhelm_Heinrich.dds"
+				large="gfx/leaders/GER/GER_Albert_Wilhelm_Heinrich.png"
 			}
 		}
 		navy_leader={
@@ -1462,10 +1493,10 @@ characters={
 		name="GER_friedrich_von_baudissin"
 		portraits={
 			army={
-				small="GFX_idea_generic_air_chief_all_weather"
+				small="GFX_idea_GER_generic_navy_3"
 			}
 			army={
-				large="gfx/leaders/GER/GER_friedrich_baudissin.dds"
+				large="gfx/leaders/GER/GER_friedrich_baudissin.png"
 			}
 		}
 		navy_leader={
@@ -1475,17 +1506,17 @@ characters={
 			defense_skill=4
 			maneuvering_skill=1
 			coordination_skill=1
-			legacy_id=-1
+			
 		}
 	}
 	GER_curt_von_prittwitz={
 		name="GER_curt_von_prittwitz"
 		portraits={
 			army={
-				small="GFX_idea_generic_military_theorist"
+				small="GFX_idea_GER_generic_navy_1"
 			}
 			army={
-				large="gfx/leaders/GER/GER_curt_prittwitz.dds"
+				large="gfx/leaders/GER/GER_curt_prittwitz.png"
 			}
 		}
 		navy_leader={
@@ -1495,17 +1526,17 @@ characters={
 			defense_skill=2
 			maneuvering_skill=1
 			coordination_skill=1
-			legacy_id=-1
+			
 		}
 	}
 	GER_max_von_fischel={
 		name="GER_max_von_fischel"
 		portraits={
 			army={
-				small="GFX_idea_generic_air_chief_all_weather"
+				small="GFX_idea_GER_generic_navy_2"
 			}
 			army={
-				large="gfx/leaders/GER/GER_max_fischel.dds"
+				large="gfx/leaders/GER/GER_max_fischel.png"
 			}
 		}
 		navy_leader={
@@ -1514,14 +1545,14 @@ characters={
 			defense_skill=3
 			maneuvering_skill=1
 			coordination_skill=1
-			legacy_id=-1
+			
 		}
 	}
 	GER_ludwig_von_schröder={
 		name="GER_ludwig_von_schroder"
 		portraits={
 			army={
-				small="gfx/interface/ideas/idea_GER_generic_navy_1.dds"
+				small="GFX_idea_GER_generic_navy_3"
 			}
 			army={
 				large="gfx/leaders/GER/Portrait_Germany_Generic_navy_1.dds"
@@ -1533,14 +1564,14 @@ characters={
 			defense_skill=2
 			maneuvering_skill=1
 			coordination_skill=1
-			legacy_id=-1
+			
 		}
 	}
 	GER_friedrich_von_ingenohl={
 		name="GER_friedrich_von_ingenohl"
 		portraits={
 			army={
-				small="gfx/interface/ideas/idea_GER_generic_navy_3.dds"
+				small="GFX_idea_GER_generic_navy_1"
 			}
 			army={
 				large="gfx/leaders/GER/Portrait_Germany_Generic_navy_3.dds"
@@ -1553,7 +1584,7 @@ characters={
 			defense_skill=2
 			maneuvering_skill=1
 			coordination_skill=1
-			legacy_id=-1
+			
 		}
 	}
 	GER_wilhelm_souchon={
@@ -1561,6 +1592,7 @@ characters={
 		portraits={
 			army={
 				large="gfx/leaders/GER/GER_Wilhelm_Souchon.png"
+				small=GFX_idea_GER_generic_navy_2
 			}
 		}
 		navy_leader={
@@ -1643,7 +1675,7 @@ characters={
 		name="GER_wilhelm_groener"
 		portraits={
 			army={
-				small="GFX_idea_generic_army_europe_5"
+				small="GFX_idea_GER_generic_land_5"
 			}
 		}
 	}
@@ -1695,7 +1727,7 @@ characters={
 		name="GER_august_von_heeringen"
 		portraits={
 			army={
-				small="GFX_idea_generic_navy_europe_3"
+				small="GFX_idea_GER_generic_navy_3"
 			}
 		}
 	}
@@ -1717,7 +1749,7 @@ characters={
 		name="GER_hermann_von_stein"
 		portraits={
 			army={
-				small="GFX_idea_generic_army_europe_2"
+				small="GFX_idea_GER_generic_land_2"
 			}
 		}
 	}
@@ -1765,7 +1797,7 @@ characters={
 		name="GER_paul_behncke"
 		portraits={
 			army={
-				small="GFX_idea_generic_air_europe_1"
+				small="GFX_idea_GER_generic_navy_2"
 			}
 		}
 	}
@@ -1849,7 +1881,7 @@ characters={
 			defense_skill=1
 			planning_skill=4
 			logistics_skill=1
-			legacy_id=-1
+			
 			visible = {
 				date < 1916.6.18			
 			}
@@ -1873,7 +1905,7 @@ characters={
 		name="GER_peter_strasser"
 		portraits={
 			army={
-				small="GFX_idea_generic_navy_europe_2"
+				small="GFX_idea_GER_generic_navy_2"
 			}
 		}
 	}
@@ -1966,7 +1998,7 @@ characters={
 				}
 				available  = {
 					has_country_leader  = {
-						name  = "Wilhelm II"
+						character = GER_wilhelm_ii
 						ruling_only  = yes 
 					}
 				}

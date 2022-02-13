@@ -72,8 +72,8 @@ focus_tree = {
 				character = QIN_yikuang
 				country_leader = {
 					ideology = autocracy
-					traits = { trait_autocracy }
-					expire = "1935.1.1.1"
+					
+					
 				}
 			}
 			promote_character = QIN_yikuang
@@ -223,7 +223,6 @@ focus_tree = {
 		bypass = {
 		}
 		completion_reward = {
-			country_event = ww1_qing.2
 			if = {
 				limit = {
 					has_idea = QIN_idea_low_legitimacy_4
@@ -591,7 +590,20 @@ focus_tree = {
 				ruling_party = fascism
 				elections_allowed = no
 			}
-			promote_character = CHI_hongxian_emperor
+			CHI_yuan_shikai = {
+				add_country_leader_role = {
+					country_leader = {
+						ideology = fascism_ideology
+					}
+				}
+				#set_portraits = {
+				#	civilian = {
+				#		large = "gfx/leaders/CHI/CHI_yuan_shikai_emperor.png"
+				#	}
+				#}
+				set_character_name = "CHI_hongxian_emperor"
+				promote_character = fascism_ideology
+			}
 			hidden_effect = {
 				set_capital = { state = 608 }
 				every_state = {
@@ -859,8 +871,8 @@ focus_tree = {
 				character = QIN_xuantong
 				country_leader = {
 					ideology = autocracy
-					traits = { trait_autocracy }
-					expire = "1935.1.1.1"
+					
+					
 				}
 			}
 			promote_character = QIN_xuantong
@@ -868,8 +880,8 @@ focus_tree = {
 				character = QIN_liang_qichao
 				country_leader = {
 					ideology = conservatism
-					traits = { trait_conservatism }
-					expire = "1935.1.1.1"
+					
+					
 				}
 			}
 			promote_character = QIN_liang_qichao

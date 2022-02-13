@@ -620,8 +620,8 @@ country_event = {
 				promote_leader = yes
 				country_leader={
 					ideology=autocracy
-					traits={ regency_council trait_autocracy }
-					expire="1935.1.1.1"
+					traits={ regency_council  }
+					
 				}
 			}
 		}
@@ -647,8 +647,8 @@ country_event = {
 				promote_leader = yes
 				country_leader={
 					ideology=autocracy
-					traits={ canadian_imperialist trait_autocracy }
-					expire="1935.1.1.1"
+					traits={ canadian_imperialist  }
+					
 				}
 			}
 		}
@@ -1512,11 +1512,11 @@ country_event = {
 			}
 			create_country_leader = {
 				name = "Crown Prince Arthur"
-				#picture = "gfx/leaders/CAN/CAN_crown_prince_arthur.dds"
+				#picture = "gfx/leaders/CAN/CAN_crown_prince_arthur.png"
 				expire = "1935.1.1"
 				ideology = autocracy
 				traits = {
-					trait_autocracy
+					
 				}
 			}
 		}
@@ -1576,11 +1576,11 @@ country_event = {
 			}
 			create_country_leader = {
 				name = "Crown Prince Arthur"
-				#picture = "gfx/leaders/CAN/CAN_crown_prince_arthur.dds"
+				#picture = "gfx/leaders/CAN/CAN_crown_prince_arthur.png"
 				expire = "1935.1.1"
 				ideology = autocracy
 				traits = {
-					trait_autocracy
+					
 				}
 			}
 		}
@@ -1678,11 +1678,11 @@ country_event = {
 		name = canada.57.a
 		create_country_leader = {
 			name = "Agustin I"
-			picture = "gfx/leaders/MEX/MEX_agustin.dds"
+			picture = "gfx/leaders/MEX/MEX_agustin.png"
 			expire = "1935.1.1"
 			ideology = autocracy
 			traits = {
-				trait_autocracy
+				
 			}
 		}
 		hidden_effect = {
@@ -1991,58 +1991,73 @@ country_event = {
 		}	
 		if = {
 			limit = {
-                has_global_flag = king_edward_viii	
+				has_global_flag = ENG_windsor
 			}
-			set_party_name = {
-				ideology = neutrality
-				long_name = ENG_neutrality_party_long
-				name = ENG_neutrality_party
-			}
-			create_country_leader = {
-				name = "Edward VIII"
-				picture = "gfx/leaders/ENG/ENG_edward_viii.dds"
-				expire = "1935.1.1"
-				ideology = autocracy
-				traits = {
-					revolution_trauma
-					trait_autocracy
-				}
-			}
-		}
-		else_if = {
-			limit = {
-				has_global_flag = king_william_v
-			}
-			set_party_name = {
-				ideology = neutrality
-				long_name = GER_neutrality_party
-				name = GER_neutrality_party
-			}
-			create_country_leader = {
-				name = "William V"
-				picture = "gfx/leaders/ENG/ENG_August_Wilhelm.dds"
-				expire = "1935.1.1"
-				ideology = autocracy
-				traits = {
-					auwi
-					trait_autocracy
-				}
-			}
-		}
-		else = {
 			set_party_name = {
 				ideology = neutrality
 				long_name = ENG_windsor_long
 				name = ENG_windsor
 			}
+			else_if = {
+				limit = { has_global_flag = ENG_tudor }
+				set_party_name = {
+					ideology = neutrality
+					long_name = ENG_tudor_long
+					name = ENG_tudor
+				}
+				else_if = {
+					limit = { has_global_flag = ENG_plantagenet }
+					set_party_name = {
+						ideology = neutrality
+						long_name = ENG_plantagenet_long
+						name = ENG_plantagenet
+					}
+				}
+				else = {
+					set_party_name = {
+						ideology = neutrality
+						long_name = ENG_neutrality_party_long
+						name = ENG_neutrality_party
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+                has_global_flag = king_edward_viii	
+			}
 			create_country_leader = {
-				name = "George V"
-				picture = "gfx/leaders/ENG/ENG_george_v.dds"
+				name = "Edward VIII"
+				picture = "gfx/leaders/ENG/ENG_edward_viii.png"
 				expire = "1935.1.1"
 				ideology = autocracy
 				traits = {
-					trait_autocracy
+					revolution_trauma
+					
 				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_global_flag = king_charles_iii
+			}
+			create_country_leader = {
+				name = "Charles III"
+				picture = "gfx/leaders/GER/GER_Carl_Eduard_von_Sachsen_Coburg_und_Gotha.png"
+				expire = "1935.1.1"
+				ideology = autocracy
+				traits = {
+					autocratic_imperialist
+					german_agent
+				}
+			}
+		}
+		else = {
+			create_country_leader = {
+				name = "George V"
+				picture = "gfx/leaders/ENG/ENG_george_v.png"
+				expire = "1935.1.1"
+				ideology = autocracy
 			}
 			add_ideas = george_v
 		}
@@ -2251,11 +2266,11 @@ country_event = {
 		}
 		create_country_leader = {
 			name = "Bonar Law"
-			picture = "gfx/leaders/ENG/ENG_bonar_law.dds"
+			picture = "gfx/leaders/ENG/ENG_bonar_law.png"
 			expire = "1935.1.1"
 			ideology = conservatism
 			traits = {
-				trait_conservatism
+				
 			}
 		}
 		add_ideas = ENG_imperial_refuge
@@ -2404,11 +2419,11 @@ country_event = {
 		}
 		create_country_leader = {
 			name = "George V"
-			picture = "gfx/leaders/ENG/ENG_george_v.dds"
+			picture = "gfx/leaders/ENG/ENG_george_v.png"
 			expire = "1935.1.1"
 			ideology = autocracy
 			traits = {
-				trait_autocracy
+				
 			}
 		}
 		add_ideas = george_v

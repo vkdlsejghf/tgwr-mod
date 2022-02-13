@@ -14,7 +14,7 @@ characters = {
 		name = "KOR_yi_donghwi"
 		portraits = {
 			civilian = {
-				large = "gfx/leaders/KOR/KOR_yi_dong_hwi.dds"
+				large = "gfx/leaders/KOR/KOR_yi_dong_hwi.png"
 			}
 		}
 	}
@@ -22,7 +22,7 @@ characters = {
 		name = "KOR_jipgangso"
 		portraits = {
 			civilian = {
-				large = "gfx/leaders/KOR/KOR_donghak.dds"
+				large = "gfx/leaders/KOR/KOR_donghak.png"
 			}
 		}
 	}
@@ -30,7 +30,7 @@ characters = {
 		name = "KOR_supreme_council"
 		portraits = {
 			civilian = {
-				large="gfx/leaders/KOR/KOR_scnr.dds"
+				large="gfx/leaders/KOR/KOR_scnr.png"
 			}
 		}
 	}
@@ -43,9 +43,9 @@ characters = {
 		}
 		country_leader = {
 			ideology = autocracy
-			traits = { assassination_survivor inexperienced_monarch trait_autocracy }
-			expire = "1935.1.1.1"
-			id=-1
+			traits = { assassination_survivor inexperienced_monarch  }
+			
+			
 		}
 	}
 	KOR_yi_hui = {
@@ -60,21 +60,21 @@ characters = {
 		name="KOR_yi_un"
 		portraits = {
 			civilian = {
-				large = "gfx/leaders/KOR/KOR_yi_un.dds"
+				large = "gfx/leaders/KOR/KOR_yi_un.png"
 			}
 		}
 		country_leader = {
 			ideology = autocracy
-			traits = { inexperienced_monarch trait_autocracy }
-			expire = "1935.1.1.1"
-			id=-1
+			traits = { inexperienced_monarch  }
+			
+			
 		}
 	}
 	KOR_yi_sangsul = {
 		name = "KOR_yi_sangsul"
 		portraits = {
 			civilian = {
-				large = "gfx/leaders/KOR/KOR_yi_sang_sul.dds"
+				large = "gfx/leaders/KOR/KOR_yi_sang_sul.png"
 			}
 		}
 	}
@@ -82,7 +82,7 @@ characters = {
 		name = "KOR_lyuh_woonhyung"
 		portraits = {
 			civilian = {
-				large = "gfx/leaders/KOR/KOR_lyuh_woon_hyung.dds"
+				large = "gfx/leaders/KOR/KOR_lyuh_woon_hyung.png"
 			}
 		}
 	}
@@ -90,7 +90,7 @@ characters = {
 		name = "KOR_shin_palgyun"
 		portraits = {
 			army = {
-				large = "gfx/leaders/KOR/KOR_shin_pal_gyun.dds"
+				large = "gfx/leaders/KOR/KOR_shin_pal_gyun.png"
 			}
 		}
 	}
@@ -123,7 +123,7 @@ characters = {
 				small = "GFX_idea_KOR_hong_beom_do"
 			}
 			civilian = {
-				large = "gfx/leaders/KOR/KOR_hong_beom_do.dds"
+				large = "gfx/leaders/KOR/KOR_hong_beom_do.png"
 			}
 		}
 	}
@@ -134,7 +134,7 @@ characters = {
 				small = "GFX_idea_KOR_yu_dong_yeol"
 			}
 			army = {
-				large = "gfx/leaders/KOR/KOR_yu_dong_yeol.dds"
+				large = "gfx/leaders/KOR/KOR_yu_dong_yeol.png"
 			}
 		}
 	}
@@ -145,7 +145,7 @@ characters = {
 				small = "GFX_idea_KOR_cho_sung_hwan"
 			}
 			army = {
-				large = "gfx/leaders/KOR/KOR_cho_sung_hwan.dds"
+				large = "gfx/leaders/KOR/KOR_cho_sung_hwan.png"
 			}
 		}
 	}
@@ -156,7 +156,7 @@ characters = {
 				small = "GFX_idea_KOR_shin_kyu_sik"
 			}
 			army = {
-				large = "gfx/leaders/KOR/KOR_shin_gyu_sik.dds"
+				large = "gfx/leaders/KOR/KOR_shin_gyu_sik.png"
 			}
 		}
 	}
@@ -186,7 +186,7 @@ characters = {
 				small = "GFX_idea_KOR_shin_sun_seong"
 			}
 			army = {
-				large = "gfx/leaders/KOR/KOR_sin_sun_seong.dds"
+				large = "gfx/leaders/KOR/KOR_sin_sun_seong.png"
 			}
 		}
 	}
@@ -277,7 +277,7 @@ characters = {
 				small = "GFX_idea_KOR_yi_kang"
 			}
 			civilian = {
-				large = "gfx/leaders/KOR/KOR_yi_kang.dds"
+				large = "gfx/leaders/KOR/KOR_yi_kang.png"
 			}
 		}
 	}

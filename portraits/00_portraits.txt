@@ -112,7 +112,7 @@ continent = {
 	}
 	operative = {
 		male = {
-			"gfx/leaders/Europe/portrait_europe_generic_operative_male_10.dds"
+			"gfx/leaders/Europe/portrait_europe_generic_operative_male_26.png"
 		}
 	}
 }
@@ -198,7 +198,7 @@ continent = {
 	}
 	operative = {
 		male = {
-			"gfx/leaders/Europe/portrait_europe_generic_operative_male_10.dds"
+			"gfx/leaders/Europe/portrait_europe_generic_operative_male_26.png"
 		}
 	}
 }
@@ -341,7 +341,7 @@ continent = {
 	}
 	operative = {
 		male = {
-			"gfx/leaders/Europe/portrait_europe_generic_operative_male_10.dds"
+			"gfx/leaders/Europe/portrait_europe_generic_operative_male_26.png"
 		}
 	}
 }
@@ -504,7 +504,9 @@ continent = {
 			}
 		}
 	}	
-
+	female = {
+		"gfx/leaders/Asia/Portrait_Asia_Generic_female_1.dds"
+	}
 }
 
 continent = {
@@ -589,7 +591,7 @@ continent = {
 	}
 	operative = {
 		male = {
-			"gfx/leaders/Arabia/portrait_arabia_generic_operative_male_7.dds"
+			"gfx/leaders/Arabia/portrait_arabia_generic_operative_male_7.png"
 		}
 	}
 }
@@ -663,8 +665,8 @@ GER = {
 AUH = {
 	army = {
 		male = {
-			"gfx/leaders/AUH/portrait_AUH_generic_land_1.dds"
-			"gfx/leaders/AUH/portrait_AUH_generic_land_2.dds"
+			"gfx/leaders/AUH/portrait_AUH_generic_land_1.png"
+			"gfx/leaders/AUH/portrait_AUH_generic_land_2.png"
 			"gfx/leaders/AUH/portrait_AUH_generic_land_3.png"
 			"gfx/leaders/AUH/portrait_AUH_generic_land_4.png"
 			"gfx/leaders/AUH/portrait_AUH_generic_land_5.png"
@@ -698,8 +700,8 @@ AUH = {
 				"gfx/leaders/Europe/portrait_europe_generic_6.dds"	
 				"gfx/leaders/Europe/Portrait_europe_generic_7.dds"
 				"gfx/leaders/GER/Portrait_Germany_Generic_3.dds" 
-				"gfx/leaders/AUH/portrait_AUH_generic_land_1.dds"
-				"gfx/leaders/AUH/portrait_AUH_generic_land_2.dds"	
+				"gfx/leaders/AUH/portrait_AUH_generic_land_1.png"
+				"gfx/leaders/AUH/portrait_AUH_generic_land_2.png"	
 				"gfx/leaders/AUH/portrait_AUH_generic_land_3.png"		
 				"gfx/leaders/AUH/portrait_AUH_generic_land_4.png"
 				"gfx/leaders/AUH/portrait_AUH_generic_land_5.png"				
@@ -713,8 +715,8 @@ AUH = {
 				"gfx/leaders/Europe/portrait_europe_generic_6.dds"	
 				"gfx/leaders/Europe/Portrait_europe_generic_7.dds"
 				"gfx/leaders/GER/Portrait_Germany_Generic_3.dds"
-				"gfx/leaders/AUH/portrait_AUH_generic_land_1.dds"
-				"gfx/leaders/AUH/portrait_AUH_generic_land_2.dds"
+				"gfx/leaders/AUH/portrait_AUH_generic_land_1.png"
+				"gfx/leaders/AUH/portrait_AUH_generic_land_2.png"
 				"gfx/leaders/AUH/portrait_AUH_generic_land_3.png"	
 				"gfx/leaders/AUH/portrait_AUH_generic_land_4.png"
 				"gfx/leaders/AUH/portrait_AUH_generic_land_5.png"				
@@ -726,8 +728,8 @@ AUH = {
 AUS = {
 	army = {
 		male = {
-			"gfx/leaders/AUH/portrait_AUH_generic_land_1.dds"
-			"gfx/leaders/AUH/portrait_AUH_generic_land_2.dds"
+			"gfx/leaders/AUH/portrait_AUH_generic_land_1.png"
+			"gfx/leaders/AUH/portrait_AUH_generic_land_2.png"
 			"gfx/leaders/AUH/portrait_AUH_generic_land_3.png"
 			"gfx/leaders/AUH/portrait_AUH_generic_land_4.png"
 			"gfx/leaders/AUH/portrait_AUH_generic_land_5.png"		
@@ -761,8 +763,8 @@ AUS = {
 				"gfx/leaders/Europe/portrait_europe_generic_6.dds"	
 				"gfx/leaders/Europe/Portrait_europe_generic_7.dds"
 				"gfx/leaders/GER/Portrait_Germany_Generic_3.dds" 
-				"gfx/leaders/AUH/portrait_AUH_generic_land_1.dds"
-				"gfx/leaders/AUH/portrait_AUH_generic_land_2.dds"
+				"gfx/leaders/AUH/portrait_AUH_generic_land_1.png"
+				"gfx/leaders/AUH/portrait_AUH_generic_land_2.png"
 				"gfx/leaders/AUH/portrait_AUH_generic_land_3.png"
 				"gfx/leaders/AUH/portrait_AUH_generic_land_4.png"
 				"gfx/leaders/AUH/portrait_AUH_generic_land_5.png"						
@@ -776,8 +778,8 @@ AUS = {
 				"gfx/leaders/Europe/portrait_europe_generic_6.dds"	
 				"gfx/leaders/Europe/Portrait_europe_generic_7.dds"
 				"gfx/leaders/GER/Portrait_Germany_Generic_3.dds"
-				"gfx/leaders/AUH/portrait_AUH_generic_land_1.dds"
-				"gfx/leaders/AUH/portrait_AUH_generic_land_2.dds"
+				"gfx/leaders/AUH/portrait_AUH_generic_land_1.png"
+				"gfx/leaders/AUH/portrait_AUH_generic_land_2.png"
 				"gfx/leaders/AUH/portrait_AUH_generic_land_3.png"	
 				"gfx/leaders/AUH/portrait_AUH_generic_land_4.png"
 				"gfx/leaders/AUH/portrait_AUH_generic_land_5.png"				
@@ -1518,7 +1520,7 @@ ENG = {
 			"gfx/leaders/ENG/Portrait_Britain_Generic_land_4.dds"
 			"gfx/leaders/ENG/Portrait_Britain_Generic_land_5.dds"
 			"gfx/leaders/ENG/Portrait_Britain_Generic_land_6.dds"
-			"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.dds"
+			"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.png"
 		}
 	}
 	
@@ -1527,7 +1529,7 @@ ENG = {
 			"gfx/leaders/ENG/Portrait_Britain_Generic_navy_1.dds"
 			"gfx/leaders/ENG/Portrait_Britain_Generic_navy_2.dds"
 			"gfx/leaders/ENG/Portrait_Britain_Generic_navy_3.dds"
-			"gfx/leaders/ENG/Portrait_Britain_Generic_navy_4.dds"
+			"gfx/leaders/ENG/Portrait_Britain_Generic_navy_4.png"
 		}
 	}
 	
@@ -1564,7 +1566,7 @@ ENG = {
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_4.dds"
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_5.dds"
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_6.dds"
-				"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.dds"					
+				"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.png"					
 			}
 		}
 		neutrality = {
@@ -1581,7 +1583,7 @@ ENG = {
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_4.dds"
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_5.dds"
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_6.dds"
-				"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.dds"						
+				"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.png"						
 			}
 		}
 	}
@@ -1596,7 +1598,7 @@ AST = {
 			"gfx/leaders/ENG/Portrait_Britain_Generic_land_4.dds"
 			"gfx/leaders/ENG/Portrait_Britain_Generic_land_5.dds"
 			"gfx/leaders/ENG/Portrait_Britain_Generic_land_6.dds"
-			"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.dds"		
+			"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.png"		
 		}
 	}
 	
@@ -1605,7 +1607,7 @@ AST = {
 			"gfx/leaders/ENG/Portrait_Britain_Generic_navy_1.dds"
 			"gfx/leaders/ENG/Portrait_Britain_Generic_navy_2.dds"
 			"gfx/leaders/ENG/Portrait_Britain_Generic_navy_3.dds"
-			"gfx/leaders/ENG/Portrait_Britain_Generic_navy_4.dds"
+			"gfx/leaders/ENG/Portrait_Britain_Generic_navy_4.png"
 		}
 	}
 	
@@ -1642,7 +1644,7 @@ AST = {
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_4.dds"
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_5.dds"
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_6.dds"	
-                "gfx/leaders/ENG/Portrait_Britain_Generic_land_7.dds"						
+                "gfx/leaders/ENG/Portrait_Britain_Generic_land_7.png"						
 			}
 		}
 		neutrality = {
@@ -1659,7 +1661,7 @@ AST = {
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_4.dds"
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_5.dds"
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_6.dds"	
-				"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.dds"		
+				"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.png"		
 			}
 		}
 	}
@@ -1674,7 +1676,7 @@ NZL = {
 			"gfx/leaders/ENG/Portrait_Britain_Generic_land_4.dds"
 			"gfx/leaders/ENG/Portrait_Britain_Generic_land_5.dds"
 			"gfx/leaders/ENG/Portrait_Britain_Generic_land_6.dds"
-			"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.dds"		
+			"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.png"		
 		}
 	}
 	
@@ -1683,7 +1685,7 @@ NZL = {
 			"gfx/leaders/ENG/Portrait_Britain_Generic_navy_1.dds"
 			"gfx/leaders/ENG/Portrait_Britain_Generic_navy_2.dds"
 			"gfx/leaders/ENG/Portrait_Britain_Generic_navy_3.dds"
-			"gfx/leaders/ENG/Portrait_Britain_Generic_navy_4.dds"
+			"gfx/leaders/ENG/Portrait_Britain_Generic_navy_4.png"
 		}
 	}
 	
@@ -1720,7 +1722,7 @@ NZL = {
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_4.dds"
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_5.dds"
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_6.dds"
-				"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.dds"				
+				"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.png"				
 			}
 		}
 		neutrality = {
@@ -1737,7 +1739,7 @@ NZL = {
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_4.dds"
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_5.dds"
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_6.dds"	
-				"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.dds"	
+				"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.png"	
 			}
 		}
 	}
@@ -1752,7 +1754,7 @@ CAN = {
 			"gfx/leaders/ENG/Portrait_Britain_Generic_land_4.dds"
 			"gfx/leaders/ENG/Portrait_Britain_Generic_land_5.dds"
 			"gfx/leaders/ENG/Portrait_Britain_Generic_land_6.dds"
-			"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.dds"	
+			"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.png"	
 		}
 	}
 	
@@ -1761,7 +1763,7 @@ CAN = {
 			"gfx/leaders/ENG/Portrait_Britain_Generic_navy_1.dds"
 			"gfx/leaders/ENG/Portrait_Britain_Generic_navy_2.dds"
 			"gfx/leaders/ENG/Portrait_Britain_Generic_navy_3.dds"
-			"gfx/leaders/ENG/Portrait_Britain_Generic_navy_4.dds"
+			"gfx/leaders/ENG/Portrait_Britain_Generic_navy_4.png"
 		}
 	}
 	
@@ -1798,7 +1800,7 @@ CAN = {
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_4.dds"
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_5.dds"
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_6.dds"
-				"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.dds"	
+				"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.png"	
 			}
 		}
 		neutrality = {
@@ -1815,7 +1817,7 @@ CAN = {
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_4.dds"
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_5.dds"
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_6.dds"	
-				"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.dds"	
+				"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.png"	
 			}
 		}
 	}
@@ -1830,7 +1832,7 @@ NIR = {
 			"gfx/leaders/ENG/Portrait_Britain_Generic_land_4.dds"
 			"gfx/leaders/ENG/Portrait_Britain_Generic_land_5.dds"
 			"gfx/leaders/ENG/Portrait_Britain_Generic_land_6.dds"
-			"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.dds"	
+			"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.png"	
 		}
 	}
 	
@@ -1839,7 +1841,7 @@ NIR = {
 			"gfx/leaders/ENG/Portrait_Britain_Generic_navy_1.dds"
 			"gfx/leaders/ENG/Portrait_Britain_Generic_navy_2.dds"
 			"gfx/leaders/ENG/Portrait_Britain_Generic_navy_3.dds"
-			"gfx/leaders/ENG/Portrait_Britain_Generic_navy_4.dds"
+			"gfx/leaders/ENG/Portrait_Britain_Generic_navy_4.png"
 		}
 	}
 	
@@ -1876,7 +1878,7 @@ NIR = {
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_4.dds"
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_5.dds"
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_6.dds"
-				"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.dds"					
+				"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.png"					
 			}
 		}
 		neutrality = {
@@ -1893,7 +1895,7 @@ NIR = {
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_4.dds"
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_5.dds"
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_6.dds"
-				"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.dds"	
+				"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.png"	
 			}
 		}
 	}
@@ -1908,7 +1910,7 @@ SCO = {
 			"gfx/leaders/ENG/Portrait_Britain_Generic_land_4.dds"
 			"gfx/leaders/ENG/Portrait_Britain_Generic_land_5.dds"
 			"gfx/leaders/ENG/Portrait_Britain_Generic_land_6.dds"
-			"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.dds"	
+			"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.png"	
 		}
 	}
 	
@@ -1917,7 +1919,7 @@ SCO = {
 			"gfx/leaders/ENG/Portrait_Britain_Generic_navy_1.dds"
 			"gfx/leaders/ENG/Portrait_Britain_Generic_navy_2.dds"
 			"gfx/leaders/ENG/Portrait_Britain_Generic_navy_3.dds"
-			"gfx/leaders/ENG/Portrait_Britain_Generic_navy_4.dds"
+			"gfx/leaders/ENG/Portrait_Britain_Generic_navy_4.png"
 		}
 	}
 	
@@ -1954,7 +1956,7 @@ SCO = {
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_4.dds"
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_5.dds"
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_6.dds"	
-				"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.dds"					
+				"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.png"					
 			}
 		}
 		neutrality = {
@@ -1971,7 +1973,7 @@ SCO = {
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_4.dds"
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_5.dds"
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_6.dds"	
-				"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.dds"	
+				"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.png"	
 			}
 		}
 	}
@@ -1986,7 +1988,7 @@ WLS = {
 			"gfx/leaders/ENG/Portrait_Britain_Generic_land_4.dds"
 			"gfx/leaders/ENG/Portrait_Britain_Generic_land_5.dds"
 			"gfx/leaders/ENG/Portrait_Britain_Generic_land_6.dds"
-			"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.dds"	
+			"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.png"	
 		}
 	}
 	
@@ -1995,7 +1997,7 @@ WLS = {
 			"gfx/leaders/ENG/Portrait_Britain_Generic_navy_1.dds"
 			"gfx/leaders/ENG/Portrait_Britain_Generic_navy_2.dds"
 			"gfx/leaders/ENG/Portrait_Britain_Generic_navy_3.dds"
-			"gfx/leaders/ENG/Portrait_Britain_Generic_navy_4.dds"
+			"gfx/leaders/ENG/Portrait_Britain_Generic_navy_4.png"
 		}
 	}
 	
@@ -2032,7 +2034,7 @@ WLS = {
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_4.dds"
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_5.dds"
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_6.dds"	
-				"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.dds"					
+				"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.png"					
 			}
 		}
 		neutrality = {
@@ -2049,7 +2051,7 @@ WLS = {
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_4.dds"
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_5.dds"
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_6.dds"
-				"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.dds"					
+				"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.png"					
 			}
 		}
 	}
@@ -2064,7 +2066,7 @@ SAF = {
 			"gfx/leaders/ENG/Portrait_Britain_Generic_land_4.dds"
 			"gfx/leaders/ENG/Portrait_Britain_Generic_land_5.dds"
 			"gfx/leaders/ENG/Portrait_Britain_Generic_land_6.dds"
-			"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.dds"	
+			"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.png"	
 		}
 	}
 	
@@ -2073,7 +2075,7 @@ SAF = {
 			"gfx/leaders/ENG/Portrait_Britain_Generic_navy_1.dds"
 			"gfx/leaders/ENG/Portrait_Britain_Generic_navy_2.dds"
 			"gfx/leaders/ENG/Portrait_Britain_Generic_navy_3.dds"
-			"gfx/leaders/ENG/Portrait_Britain_Generic_navy_4.dds"
+			"gfx/leaders/ENG/Portrait_Britain_Generic_navy_4.png"
 		}
 	}
 	
@@ -2105,7 +2107,7 @@ SAF = {
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_4.dds"
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_5.dds"
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_6.dds"	
-				"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.dds"					
+				"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.png"					
 			}
 		}
 		neutrality = {
@@ -2117,7 +2119,7 @@ SAF = {
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_4.dds"
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_5.dds"
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_6.dds"
-				"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.dds"				
+				"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.png"				
 			}
 		}
 	}
@@ -2132,7 +2134,7 @@ RAJ_UK = {
 			"gfx/leaders/ENG/Portrait_Britain_Generic_land_4.dds"
 			"gfx/leaders/ENG/Portrait_Britain_Generic_land_5.dds"
 			"gfx/leaders/ENG/Portrait_Britain_Generic_land_6.dds"
-			"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.dds"		
+			"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.png"		
 		}
 	}
 	
@@ -2141,7 +2143,7 @@ RAJ_UK = {
 			"gfx/leaders/ENG/Portrait_Britain_Generic_navy_1.dds"
 			"gfx/leaders/ENG/Portrait_Britain_Generic_navy_2.dds"
 			"gfx/leaders/ENG/Portrait_Britain_Generic_navy_3.dds"
-			"gfx/leaders/ENG/Portrait_Britain_Generic_navy_4.dds"
+			"gfx/leaders/ENG/Portrait_Britain_Generic_navy_4.png"
 		}
 	}
 	
@@ -2173,7 +2175,7 @@ RAJ_UK = {
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_4.dds"
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_5.dds"
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_6.dds"	
-				"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.dds"						
+				"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.png"						
 			}
 		}
 		neutrality = {
@@ -2185,7 +2187,7 @@ RAJ_UK = {
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_4.dds"
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_5.dds"
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_6.dds"	
-				"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.dds"		
+				"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.png"		
 			}
 		}
 	}
@@ -2200,7 +2202,7 @@ MAL_UK = {
 			"gfx/leaders/ENG/Portrait_Britain_Generic_land_4.dds"
 			"gfx/leaders/ENG/Portrait_Britain_Generic_land_5.dds"
 			"gfx/leaders/ENG/Portrait_Britain_Generic_land_6.dds"
-			"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.dds"		
+			"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.png"		
 		}
 	}
 	
@@ -2209,7 +2211,7 @@ MAL_UK = {
 			"gfx/leaders/ENG/Portrait_Britain_Generic_navy_1.dds"
 			"gfx/leaders/ENG/Portrait_Britain_Generic_navy_2.dds"
 			"gfx/leaders/ENG/Portrait_Britain_Generic_navy_3.dds"
-			"gfx/leaders/ENG/Portrait_Britain_Generic_navy_4.dds"
+			"gfx/leaders/ENG/Portrait_Britain_Generic_navy_4.png"
 		}
 	}
 	
@@ -2241,7 +2243,7 @@ MAL_UK = {
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_4.dds"
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_5.dds"
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_6.dds"	
-				"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.dds"						
+				"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.png"						
 			}
 		}
 		neutrality = {
@@ -2253,7 +2255,7 @@ MAL_UK = {
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_4.dds"
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_5.dds"
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_6.dds"	
-				"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.dds"	
+				"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.png"	
 			}
 		}
 	}
@@ -2268,7 +2270,7 @@ JAM_federation = {
 			"gfx/leaders/ENG/Portrait_Britain_Generic_land_4.dds"
 			"gfx/leaders/ENG/Portrait_Britain_Generic_land_5.dds"
 			"gfx/leaders/ENG/Portrait_Britain_Generic_land_6.dds"
-			"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.dds"		
+			"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.png"		
 		}
 	}
 	
@@ -2277,7 +2279,7 @@ JAM_federation = {
 			"gfx/leaders/ENG/Portrait_Britain_Generic_navy_1.dds"
 			"gfx/leaders/ENG/Portrait_Britain_Generic_navy_2.dds"
 			"gfx/leaders/ENG/Portrait_Britain_Generic_navy_3.dds"
-			"gfx/leaders/ENG/Portrait_Britain_Generic_navy_4.dds"
+			"gfx/leaders/ENG/Portrait_Britain_Generic_navy_4.png"
 		}
 	}
 	
@@ -2309,7 +2311,7 @@ JAM_federation = {
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_4.dds"
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_5.dds"
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_6.dds"	
-				"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.dds"						
+				"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.png"						
 			}
 		}
 		neutrality = {
@@ -2321,7 +2323,7 @@ JAM_federation = {
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_4.dds"
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_5.dds"
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_6.dds"	
-				"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.dds"	
+				"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.png"	
 			}
 		}
 	}
@@ -2420,6 +2422,7 @@ FRA = {
 			"gfx/leaders/FRA/Portrait_France_Generic_land_3.dds"
 			"gfx/leaders/FRA/Portrait_France_Generic_land_4.dds"
 			"gfx/leaders/FRA/Portrait_France_Generic_land_5.dds"
+			"gfx/leaders/FRA/Portrait_France_Generic_land_6.dds"
 		}
 	}
 	
@@ -2462,7 +2465,8 @@ FRA = {
 				"gfx/leaders/FRA/Portrait_France_Generic_land_2.dds"
 				"gfx/leaders/FRA/Portrait_France_Generic_land_3.dds"
 				"gfx/leaders/FRA/Portrait_France_Generic_land_4.dds"
-				"gfx/leaders/FRA/Portrait_France_Generic_land_5.dds"		
+				"gfx/leaders/FRA/Portrait_France_Generic_land_5.dds"
+				"gfx/leaders/FRA/Portrait_France_Generic_land_6.dds"				
 			}
 		}
 		neutrality = {
@@ -2478,6 +2482,7 @@ FRA = {
 				"gfx/leaders/FRA/Portrait_France_Generic_land_3.dds"
 				"gfx/leaders/FRA/Portrait_France_Generic_land_4.dds"
 				"gfx/leaders/FRA/Portrait_France_Generic_land_5.dds"	
+				"gfx/leaders/FRA/Portrait_France_Generic_land_6.dds"
 			}
 		}
 	}
@@ -2491,6 +2496,7 @@ VIN_FRA = {
 			"gfx/leaders/FRA/Portrait_France_Generic_land_3.dds"
 			"gfx/leaders/FRA/Portrait_France_Generic_land_4.dds"
 			"gfx/leaders/FRA/Portrait_France_Generic_land_5.dds"
+			"gfx/leaders/FRA/Portrait_France_Generic_land_6.dds"
 		}
 	}
 	
@@ -2528,7 +2534,8 @@ VIN_FRA = {
 				"gfx/leaders/FRA/Portrait_France_Generic_land_2.dds"
 				"gfx/leaders/FRA/Portrait_France_Generic_land_3.dds"
 				"gfx/leaders/FRA/Portrait_France_Generic_land_4.dds"
-				"gfx/leaders/FRA/Portrait_France_Generic_land_5.dds"		
+				"gfx/leaders/FRA/Portrait_France_Generic_land_5.dds"	
+				"gfx/leaders/FRA/Portrait_France_Generic_land_6.dds"
 			}
 		}
 		neutrality = {
@@ -2539,6 +2546,7 @@ VIN_FRA = {
 				"gfx/leaders/FRA/Portrait_France_Generic_land_3.dds"
 				"gfx/leaders/FRA/Portrait_France_Generic_land_4.dds"
 				"gfx/leaders/FRA/Portrait_France_Generic_land_5.dds"	
+				"gfx/leaders/FRA/Portrait_France_Generic_land_6.dds"
 			}
 		}
 	}
@@ -2552,6 +2560,7 @@ QBC = {
 			"gfx/leaders/FRA/Portrait_France_Generic_land_3.dds"
 			"gfx/leaders/FRA/Portrait_France_Generic_land_4.dds"
 			"gfx/leaders/FRA/Portrait_France_Generic_land_5.dds"
+			"gfx/leaders/FRA/Portrait_France_Generic_land_6.dds"
 		}
 	}
 	
@@ -2609,6 +2618,13 @@ QBC = {
 }
 
 BEL = {	
+	army = {
+		male = {
+			"gfx/leaders/BEL/portrait_BEL_generic_land_1.png"
+			"gfx/leaders/BEL/portrait_BEL_generic_land_2.png"
+		}
+	}
+	
 	political = {
 		communism = {
 			male = {
@@ -3196,9 +3212,9 @@ RUS = {
 				"gfx/leaders/Europe/Portrait_europe_generic_7.dds"
 				"gfx/leaders/Europe/Portrait_europe_generic_8.dds"
 				"gfx/leaders/SOV/Portrait_Soviet_Generic_3.dds" 	
-				"gfx/leaders/RUS/portrait_RUS_generic_land_3.dds"
-				"gfx/leaders/RUS/portrait_RUS_generic_land_4.dds"
-				"gfx/leaders/RUS/portrait_RUS_generic_land_5.dds"				
+				"gfx/leaders/RUS/portrait_RUS_generic_land_3.png"
+				"gfx/leaders/RUS/portrait_RUS_generic_land_4.png"
+				"gfx/leaders/RUS/portrait_RUS_generic_land_5.png"				
 			}
 		}
 		neutrality = {
@@ -3210,20 +3226,20 @@ RUS = {
 				"gfx/leaders/Europe/Portrait_europe_generic_7.dds"
 				"gfx/leaders/Europe/Portrait_europe_generic_8.dds"
 				"gfx/leaders/SOV/Portrait_Soviet_Generic_3.dds"
-				"gfx/leaders/RUS/portrait_RUS_generic_land_3.dds"
-				"gfx/leaders/RUS/portrait_RUS_generic_land_4.dds"
-				"gfx/leaders/RUS/portrait_RUS_generic_land_5.dds"
+				"gfx/leaders/RUS/portrait_RUS_generic_land_3.png"
+				"gfx/leaders/RUS/portrait_RUS_generic_land_4.png"
+				"gfx/leaders/RUS/portrait_RUS_generic_land_5.png"
 			}
 		}
 	}
 	army = {
 		male = {
-			"gfx/leaders/RUS/portrait_RUS_generic_land_1.dds"
-			"gfx/leaders/RUS/portrait_RUS_generic_land_2.dds"
-			"gfx/leaders/RUS/portrait_RUS_generic_land_3.dds"
-			"gfx/leaders/RUS/portrait_RUS_generic_land_4.dds"
-			"gfx/leaders/RUS/portrait_RUS_generic_land_5.dds"
-			"gfx/leaders/RUS/portrait_RUS_generic_land_6.dds"
+			"gfx/leaders/RUS/portrait_RUS_generic_land_1.png"
+			"gfx/leaders/RUS/portrait_RUS_generic_land_2.png"
+			"gfx/leaders/RUS/portrait_RUS_generic_land_3.png"
+			"gfx/leaders/RUS/portrait_RUS_generic_land_4.png"
+			"gfx/leaders/RUS/portrait_RUS_generic_land_5.png"
+			"gfx/leaders/RUS/portrait_RUS_generic_land_6.png"
 			"gfx/leaders/SOV/portrait_soviet_pdxcon_magic_winner.dds"
 		}
 	}
@@ -3325,8 +3341,8 @@ UKR = {
 				"gfx/leaders/Europe/Portrait_europe_generic_7.dds"
 				"gfx/leaders/Europe/Portrait_europe_generic_8.dds"
 				"gfx/leaders/SOV/Portrait_Soviet_Generic_3.dds" 	
-				"gfx/leaders/RUS/portrait_RUS_generic_land_3.dds"
-				"gfx/leaders/RUS/portrait_RUS_generic_land_5.dds"				
+				"gfx/leaders/RUS/portrait_RUS_generic_land_3.png"
+				"gfx/leaders/RUS/portrait_RUS_generic_land_5.png"				
 			}
 		}
 		neutrality = {
@@ -3338,18 +3354,18 @@ UKR = {
 				"gfx/leaders/Europe/Portrait_europe_generic_7.dds"
 				"gfx/leaders/Europe/Portrait_europe_generic_8.dds"
 				"gfx/leaders/SOV/Portrait_Soviet_Generic_3.dds"
-				"gfx/leaders/RUS/portrait_RUS_generic_land_3.dds"
-				"gfx/leaders/RUS/portrait_RUS_generic_land_5.dds"
+				"gfx/leaders/RUS/portrait_RUS_generic_land_3.png"
+				"gfx/leaders/RUS/portrait_RUS_generic_land_5.png"
 			}
 		}
 	}
 	army = {
 		male = {
-			"gfx/leaders/RUS/portrait_RUS_generic_land_1.dds"
-			"gfx/leaders/RUS/portrait_RUS_generic_land_2.dds"
-			"gfx/leaders/RUS/portrait_RUS_generic_land_3.dds"
-			"gfx/leaders/RUS/portrait_RUS_generic_land_5.dds"
-			"gfx/leaders/RUS/portrait_RUS_generic_land_6.dds"
+			"gfx/leaders/RUS/portrait_RUS_generic_land_1.png"
+			"gfx/leaders/RUS/portrait_RUS_generic_land_2.png"
+			"gfx/leaders/RUS/portrait_RUS_generic_land_3.png"
+			"gfx/leaders/RUS/portrait_RUS_generic_land_5.png"
+			"gfx/leaders/RUS/portrait_RUS_generic_land_6.png"
 			"gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds"
 			"gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
 			"gfx/leaders/Europe/Portrait_Europe_Generic_land_3.dds"
@@ -3451,8 +3467,8 @@ BLR = {
 				"gfx/leaders/Europe/Portrait_europe_generic_7.dds"
 				"gfx/leaders/Europe/Portrait_europe_generic_8.dds"
 				"gfx/leaders/SOV/Portrait_Soviet_Generic_3.dds" 	
-				"gfx/leaders/RUS/portrait_RUS_generic_land_3.dds"
-				"gfx/leaders/RUS/portrait_RUS_generic_land_5.dds"				
+				"gfx/leaders/RUS/portrait_RUS_generic_land_3.png"
+				"gfx/leaders/RUS/portrait_RUS_generic_land_5.png"				
 			}
 		}
 		neutrality = {
@@ -3464,18 +3480,18 @@ BLR = {
 				"gfx/leaders/Europe/Portrait_europe_generic_7.dds"
 				"gfx/leaders/Europe/Portrait_europe_generic_8.dds"
 				"gfx/leaders/SOV/Portrait_Soviet_Generic_3.dds"
-				"gfx/leaders/RUS/portrait_RUS_generic_land_3.dds"
-				"gfx/leaders/RUS/portrait_RUS_generic_land_5.dds"
+				"gfx/leaders/RUS/portrait_RUS_generic_land_3.png"
+				"gfx/leaders/RUS/portrait_RUS_generic_land_5.png"
 			}
 		}
 	}
 	army = {
 		male = {
-			"gfx/leaders/RUS/portrait_RUS_generic_land_1.dds"
-			"gfx/leaders/RUS/portrait_RUS_generic_land_2.dds"
-			"gfx/leaders/RUS/portrait_RUS_generic_land_3.dds"
-			"gfx/leaders/RUS/portrait_RUS_generic_land_5.dds"
-			"gfx/leaders/RUS/portrait_RUS_generic_land_6.dds"
+			"gfx/leaders/RUS/portrait_RUS_generic_land_1.png"
+			"gfx/leaders/RUS/portrait_RUS_generic_land_2.png"
+			"gfx/leaders/RUS/portrait_RUS_generic_land_3.png"
+			"gfx/leaders/RUS/portrait_RUS_generic_land_5.png"
+			"gfx/leaders/RUS/portrait_RUS_generic_land_6.png"
 			"gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds"
 			"gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
 			"gfx/leaders/Europe/Portrait_Europe_Generic_land_3.dds"
@@ -3530,8 +3546,8 @@ DKB = {
 				"gfx/leaders/Europe/Portrait_europe_generic_7.dds"
 				"gfx/leaders/Europe/Portrait_europe_generic_8.dds"
 				"gfx/leaders/SOV/Portrait_Soviet_Generic_3.dds" 	
-				"gfx/leaders/RUS/portrait_RUS_generic_land_3.dds"
-				"gfx/leaders/RUS/portrait_RUS_generic_land_5.dds"				
+				"gfx/leaders/RUS/portrait_RUS_generic_land_3.png"
+				"gfx/leaders/RUS/portrait_RUS_generic_land_5.png"				
 			}
 		}
 		neutrality = {
@@ -3543,18 +3559,18 @@ DKB = {
 				"gfx/leaders/Europe/Portrait_europe_generic_7.dds"
 				"gfx/leaders/Europe/Portrait_europe_generic_8.dds"
 				"gfx/leaders/SOV/Portrait_Soviet_Generic_3.dds"
-				"gfx/leaders/RUS/portrait_RUS_generic_land_3.dds"
-				"gfx/leaders/RUS/portrait_RUS_generic_land_5.dds"
+				"gfx/leaders/RUS/portrait_RUS_generic_land_3.png"
+				"gfx/leaders/RUS/portrait_RUS_generic_land_5.png"
 			}
 		}
 	}
 	army = {
 		male = {
-			"gfx/leaders/RUS/portrait_RUS_generic_land_1.dds"
-			"gfx/leaders/RUS/portrait_RUS_generic_land_2.dds"
-			"gfx/leaders/RUS/portrait_RUS_generic_land_3.dds"
-			"gfx/leaders/RUS/portrait_RUS_generic_land_5.dds"
-			"gfx/leaders/RUS/portrait_RUS_generic_land_6.dds"
+			"gfx/leaders/RUS/portrait_RUS_generic_land_1.png"
+			"gfx/leaders/RUS/portrait_RUS_generic_land_2.png"
+			"gfx/leaders/RUS/portrait_RUS_generic_land_3.png"
+			"gfx/leaders/RUS/portrait_RUS_generic_land_5.png"
+			"gfx/leaders/RUS/portrait_RUS_generic_land_6.png"
 			"gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds"
 			"gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
 			"gfx/leaders/Europe/Portrait_Europe_Generic_land_3.dds"
@@ -3609,8 +3625,8 @@ KBN = {
 				"gfx/leaders/Europe/Portrait_europe_generic_7.dds"
 				"gfx/leaders/Europe/Portrait_europe_generic_8.dds"
 				"gfx/leaders/SOV/Portrait_Soviet_Generic_3.dds" 	
-				"gfx/leaders/RUS/portrait_RUS_generic_land_3.dds"
-				"gfx/leaders/RUS/portrait_RUS_generic_land_5.dds"		
+				"gfx/leaders/RUS/portrait_RUS_generic_land_3.png"
+				"gfx/leaders/RUS/portrait_RUS_generic_land_5.png"		
 			}
 		}
 		neutrality = {
@@ -3622,18 +3638,18 @@ KBN = {
 				"gfx/leaders/Europe/Portrait_europe_generic_7.dds"
 				"gfx/leaders/Europe/Portrait_europe_generic_8.dds"
 				"gfx/leaders/SOV/Portrait_Soviet_Generic_3.dds"
-				"gfx/leaders/RUS/portrait_RUS_generic_land_3.dds"
-				"gfx/leaders/RUS/portrait_RUS_generic_land_5.dds"
+				"gfx/leaders/RUS/portrait_RUS_generic_land_3.png"
+				"gfx/leaders/RUS/portrait_RUS_generic_land_5.png"
 			}
 		}
 	}
 	army = {
 		male = {
-			"gfx/leaders/RUS/portrait_RUS_generic_land_1.dds"
-			"gfx/leaders/RUS/portrait_RUS_generic_land_2.dds"
-			"gfx/leaders/RUS/portrait_RUS_generic_land_3.dds"
-			"gfx/leaders/RUS/portrait_RUS_generic_land_5.dds"
-			"gfx/leaders/RUS/portrait_RUS_generic_land_6.dds"
+			"gfx/leaders/RUS/portrait_RUS_generic_land_1.png"
+			"gfx/leaders/RUS/portrait_RUS_generic_land_2.png"
+			"gfx/leaders/RUS/portrait_RUS_generic_land_3.png"
+			"gfx/leaders/RUS/portrait_RUS_generic_land_5.png"
+			"gfx/leaders/RUS/portrait_RUS_generic_land_6.png"
 			"gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds"
 			"gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
 			"gfx/leaders/Europe/Portrait_Europe_Generic_land_3.dds"
@@ -3688,8 +3704,8 @@ TRM = {
 				"gfx/leaders/Europe/Portrait_europe_generic_7.dds"
 				"gfx/leaders/Europe/Portrait_europe_generic_8.dds"
 				"gfx/leaders/SOV/Portrait_Soviet_Generic_3.dds" 	
-				"gfx/leaders/RUS/portrait_RUS_generic_land_3.dds"
-				"gfx/leaders/RUS/portrait_RUS_generic_land_5.dds"				
+				"gfx/leaders/RUS/portrait_RUS_generic_land_3.png"
+				"gfx/leaders/RUS/portrait_RUS_generic_land_5.png"				
 			}
 		}
 		neutrality = {
@@ -3701,18 +3717,18 @@ TRM = {
 				"gfx/leaders/Europe/Portrait_europe_generic_7.dds"
 				"gfx/leaders/Europe/Portrait_europe_generic_8.dds"
 				"gfx/leaders/SOV/Portrait_Soviet_Generic_3.dds"
-				"gfx/leaders/RUS/portrait_RUS_generic_land_3.dds"
-				"gfx/leaders/RUS/portrait_RUS_generic_land_5.dds"
+				"gfx/leaders/RUS/portrait_RUS_generic_land_3.png"
+				"gfx/leaders/RUS/portrait_RUS_generic_land_5.png"
 			}
 		}
 	}
 	army = {
 		male = {
-			"gfx/leaders/RUS/portrait_RUS_generic_land_1.dds"
-			"gfx/leaders/RUS/portrait_RUS_generic_land_2.dds"
-			"gfx/leaders/RUS/portrait_RUS_generic_land_3.dds"
-			"gfx/leaders/RUS/portrait_RUS_generic_land_5.dds"
-			"gfx/leaders/RUS/portrait_RUS_generic_land_6.dds"
+			"gfx/leaders/RUS/portrait_RUS_generic_land_1.png"
+			"gfx/leaders/RUS/portrait_RUS_generic_land_2.png"
+			"gfx/leaders/RUS/portrait_RUS_generic_land_3.png"
+			"gfx/leaders/RUS/portrait_RUS_generic_land_5.png"
+			"gfx/leaders/RUS/portrait_RUS_generic_land_6.png"
 			"gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds"
 			"gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
 			"gfx/leaders/Europe/Portrait_Europe_Generic_land_3.dds"
@@ -3767,8 +3783,8 @@ GEO = {
 				"gfx/leaders/Europe/Portrait_europe_generic_7.dds"
 				"gfx/leaders/Europe/Portrait_europe_generic_8.dds"
 				"gfx/leaders/SOV/Portrait_Soviet_Generic_3.dds" 	
-				"gfx/leaders/RUS/portrait_RUS_generic_land_3.dds"
-				"gfx/leaders/RUS/portrait_RUS_generic_land_5.dds"				
+				"gfx/leaders/RUS/portrait_RUS_generic_land_3.png"
+				"gfx/leaders/RUS/portrait_RUS_generic_land_5.png"				
 			}
 		}
 		neutrality = {
@@ -3780,18 +3796,18 @@ GEO = {
 				"gfx/leaders/Europe/Portrait_europe_generic_7.dds"
 				"gfx/leaders/Europe/Portrait_europe_generic_8.dds"
 				"gfx/leaders/SOV/Portrait_Soviet_Generic_3.dds"
-				"gfx/leaders/RUS/portrait_RUS_generic_land_3.dds"
-				"gfx/leaders/RUS/portrait_RUS_generic_land_5.dds"
+				"gfx/leaders/RUS/portrait_RUS_generic_land_3.png"
+				"gfx/leaders/RUS/portrait_RUS_generic_land_5.png"
 			}
 		}
 	}
 	army = {
 		male = {
-			"gfx/leaders/RUS/portrait_RUS_generic_land_1.dds"
-			"gfx/leaders/RUS/portrait_RUS_generic_land_2.dds"
-			"gfx/leaders/RUS/portrait_RUS_generic_land_3.dds"
-			"gfx/leaders/RUS/portrait_RUS_generic_land_5.dds"
-			"gfx/leaders/RUS/portrait_RUS_generic_land_6.dds"
+			"gfx/leaders/RUS/portrait_RUS_generic_land_1.png"
+			"gfx/leaders/RUS/portrait_RUS_generic_land_2.png"
+			"gfx/leaders/RUS/portrait_RUS_generic_land_3.png"
+			"gfx/leaders/RUS/portrait_RUS_generic_land_5.png"
+			"gfx/leaders/RUS/portrait_RUS_generic_land_6.png"
 			"gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds"
 			"gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
 			"gfx/leaders/Europe/Portrait_Europe_Generic_land_3.dds"
@@ -5158,7 +5174,7 @@ HKG = {
 			"gfx/leaders/ENG/Portrait_Britain_Generic_land_4.dds"
 			"gfx/leaders/ENG/Portrait_Britain_Generic_land_5.dds"
 			"gfx/leaders/ENG/Portrait_Britain_Generic_land_6.dds"
-			"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.dds"
+			"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.png"
 		}
 	}
 	
@@ -5167,7 +5183,7 @@ HKG = {
 			"gfx/leaders/ENG/Portrait_Britain_Generic_navy_1.dds"
 			"gfx/leaders/ENG/Portrait_Britain_Generic_navy_2.dds"
 			"gfx/leaders/ENG/Portrait_Britain_Generic_navy_3.dds"
-			"gfx/leaders/ENG/Portrait_Britain_Generic_navy_4.dds"
+			"gfx/leaders/ENG/Portrait_Britain_Generic_navy_4.png"
 		}
 	}
 	
@@ -5204,7 +5220,7 @@ HKG = {
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_4.dds"
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_5.dds"
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_6.dds"
-				"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.dds"					
+				"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.png"					
 			}
 		}
 		neutrality = {
@@ -5221,7 +5237,7 @@ HKG = {
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_4.dds"
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_5.dds"
 				"gfx/leaders/ENG/Portrait_Britain_Generic_land_6.dds"
-				"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.dds"						
+				"gfx/leaders/ENG/Portrait_Britain_Generic_land_7.png"						
 			}
 		}
 	}

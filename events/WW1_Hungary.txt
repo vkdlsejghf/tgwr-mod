@@ -30,6 +30,9 @@ country_event = {
 			}
 		}
 	}
+	mean_time_to_happen = {
+		days = 120
+	}
 	option = {
 		name = ww1_hungary.1.a
 		set_politics = {
@@ -44,11 +47,11 @@ country_event = {
 		}
 		create_country_leader = {
 			name = "Bela Kun"
-			picture = "gfx/leaders/HUN/HUN_bela_kun.dds"
+			picture = "gfx/leaders/HUN/HUN_bela_kun.png"
 			expire = "1935.1.1"
 			ideology = vanguardism
 			traits = {
-				trait_vanguardism
+				
 			}
 		}
 		hidden_effect = {
@@ -200,5 +203,19 @@ country_event = {
 		add_state_core = 147
 		add_state_core = 664
 		add_state_core = 778
+	}
+}
+
+# END OF REGENCY
+###################
+news_event = {
+	id = ww1_hungary.4
+	title = ww1_hungary.4.t
+	desc = ww1_hungary.4.d
+	major = yes
+	is_triggered_only = yes
+	picture = EVENT_hoi4tgw_trialism
+	option = {
+		name = ww1_hungary.4.a
 	}
 }

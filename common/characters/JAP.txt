@@ -6,7 +6,7 @@ characters={
 				small="GFX_idea_generic_army_chief_off"
 			}
 			army={
-				large="gfx/leaders/JAP/JAP_Shunroku_Hata.dds"
+				large="gfx/leaders/JAP/JAP_Shunroku_Hata.png"
 			}
 		}
 		corps_commander={
@@ -16,7 +16,7 @@ characters={
 			defense_skill=1
 			planning_skill=2
 			logistics_skill=1
-			legacy_id=-1
+			
 		}
 	}
 	JAP_fushimi_hiroyasu={
@@ -26,7 +26,7 @@ characters={
 				small="GFX_idea_generic_army_chief_off"
 			}
 			army={
-				large="gfx/leaders/JAP/JAP_Fushimi_Hiroyasu.dds"
+				large="gfx/leaders/JAP/JAP_Fushimi_Hiroyasu.png"
 			}
 		}
 		navy_leader={
@@ -36,7 +36,7 @@ characters={
 			defense_skill=2
 			maneuvering_skill=1
 			coordination_skill=1
-			legacy_id=-1
+			
 		}
 	}
 	JAP_togo_heihachiro={
@@ -56,7 +56,7 @@ characters={
 		}
 		portraits={
 			army={
-				large="gfx/leaders/JAP/JAP_Togo_Heihachiro.dds"
+				large="gfx/leaders/JAP/JAP_Togo_Heihachiro.png"
 				small="GFX_idea_JAP_togo_heihachiro"
 			}
 		}
@@ -67,7 +67,7 @@ characters={
 			defense_skill=3
 			maneuvering_skill=1
 			coordination_skill=1
-			legacy_id=-1
+			
 		}
 	}
 	JAP_hasegawa_yoshimichi={
@@ -91,7 +91,7 @@ characters={
 				small="GFX_idea_JAP_hasegawa_yoshimichi"
 			}
 			army={
-				large="gfx/leaders/JAP/JAP_Hasegawa_Yoshimichi.dds"
+				large="gfx/leaders/JAP/JAP_Hasegawa_Yoshimichi.png"
 			}
 		}
 		field_marshal={
@@ -101,7 +101,7 @@ characters={
 			defense_skill=2
 			planning_skill=2
 			logistics_skill=3
-			legacy_id=-1
+			
 		}
 	}
 	JAP_oku_yasukata={
@@ -125,7 +125,7 @@ characters={
 				small="GFX_idea_JAP_oku_yasukata"
 			}
 			army={
-				large="gfx/leaders/JAP/JAP_Oku_Yasukata.dds"
+				large="gfx/leaders/JAP/JAP_Oku_Yasukata.png"
 			}
 		}
 		corps_commander={
@@ -135,7 +135,7 @@ characters={
 			defense_skill=3
 			planning_skill=1
 			logistics_skill=1
-			legacy_id=-1
+			
 		}
 	}
 	JAP_ijuin_goro={
@@ -156,7 +156,7 @@ characters={
 		}
 		portraits={
 			army={
-				large="gfx/leaders/JAP/JAP_Ijuin_Goro.dds"
+				large="gfx/leaders/JAP/JAP_Ijuin_Goro.png"
 				small="GFX_idea_JAP_ijuin_goro"
 			}
 		}
@@ -167,59 +167,50 @@ characters={
 			defense_skill=3
 			maneuvering_skill=1
 			coordination_skill=1
-			legacy_id=-1
+			
 		}
 	}
 	JAP_mutsuhito={
 		name="Mutsuhito"
 		portraits={
 			civilian={
-				large="gfx/leaders/JAP/JAP_emperor_meiji.dds"
+				large="gfx/leaders/JAP/JAP_emperor_meiji.png"
 			}
 		}
 		country_leader={
 			ideology=conservatism
-			traits={ warrior_code trait_conservatism }
+			traits={ warrior_code  }
 			expire="1912.7.30.1"
-			id=1012
 		}
 		country_leader={
 			ideology=stratocracy
-			traits={ warrior_code emperor_meiji trait_stratocracy }
+			traits={ warrior_code emperor_meiji  }
 			expire="1912.7.30.1"
-			id=1013
 		}
 		country_leader={
 			ideology=autocracy
-			traits={ warrior_code emperor_meiji trait_autocracy }
+			traits={ warrior_code emperor_meiji  }
 			expire="1912.7.30.1"
-			id=1011
 		}
 	}
 	JAP_yoshihito={
 		name="Yoshihito"
 		portraits={
 			civilian={
-				large="gfx/leaders/JAP/JAP_yoshihito.dds"
+				large="gfx/leaders/JAP/JAP_yoshihito.png"
 			}
 		}
 		country_leader={
 			ideology=conservatism
-			traits={ warrior_code trait_conservatism }
-			expire="1935.1.1.1"
-			id=101312
+			traits={ warrior_code  }
 		}
 		country_leader={
 			ideology=stratocracy
-			traits={ warrior_code emperor_taisho trait_stratocracy }
-			expire="1935.1.1.1"
-			id=101313
+			traits={ warrior_code emperor_taisho  }
 		}
 		country_leader={
 			ideology=autocracy
-			traits={ warrior_code emperor_taisho trait_autocracy }
-			expire="1935.1.1.1"
-			id=101311
+			traits={ warrior_code emperor_taisho  }
 		}
 	}
 	JAP_hirohito={
@@ -231,35 +222,29 @@ characters={
 		}
 		country_leader={
 			ideology=conservatism
-			traits={ warrior_code trait_conservatism }
-			expire="1935.1.1.1"
-			id=-1
+			traits={ warrior_code  }
 		}
 		country_leader={
 			ideology=fascism_ideology
-			traits={ warrior_code emperor_showa trait_fascism }
-			expire="1935.1.1.1"
-			id=-1
+			traits={ warrior_code emperor_showa  }
 		}
 		country_leader={
 			ideology=autocracy
-			traits={ warrior_code emperor_showa trait_autocracy }
-			expire="1935.1.1.1"
-			id=-1
+			traits={ warrior_code emperor_showa  }
 		}
 	}
 	JAP_tokugawa_iesato={
 		name="Tokugawa Iesato"
 		portraits={
 			civilian={
-				large="gfx/leaders/JAP/JAP_Tokugawa_Iesato.dds"
+				large="gfx/leaders/JAP/JAP_Tokugawa_Iesato.png"
 			}
 		}
 		country_leader={
 			ideology=stratocracy
-			traits={ generallissimo trait_stratocracy }
-			expire="1935.1.1.1"
-			id=-1
+			traits={ generallissimo  }
+			
+			
 		}
 	}
 	JAP_kōtoku_shūsui={
@@ -271,9 +256,9 @@ characters={
 		}
 		country_leader={
 			ideology=anarchist_communism
-			traits={ trait_anarchist_communism }
-			expire="1935.1.1.1"
-			id=-1
+			
+			
+			
 		}
 	}
 	JAP_fukushima_yasumasa={
@@ -283,7 +268,7 @@ characters={
 				small="GFX_idea_generic_army_chief_def"
 			}
 			army={
-				large="gfx/leaders/JAP/JAP_Fukushima_Yasumasa.dds"
+				large="gfx/leaders/JAP/JAP_Fukushima_Yasumasa.png"
 			}
 		}
 		field_marshal={
@@ -293,7 +278,7 @@ characters={
 			defense_skill=2
 			planning_skill=3
 			logistics_skill=3
-			legacy_id=-1
+			
 		}
 	}
 	JAP_oyama_iwao={
@@ -303,7 +288,7 @@ characters={
 				small="GFX_idea_generic_army_chief_def"
 			}
 			army={
-				large="gfx/leaders/JAP/JAP_Oyama_Iwao.dds"
+				large="gfx/leaders/JAP/JAP_Oyama_Iwao.png"
 			}
 		}
 		field_marshal={
@@ -323,7 +308,7 @@ characters={
 				small="GFX_idea_generic_army_art"
 			}
 			army={
-				large="gfx/leaders/JAP/JAP_Katsura_Taro.dds"
+				large="gfx/leaders/JAP/JAP_Katsura_Taro.png"
 			}
 		}
 		field_marshal={
@@ -333,7 +318,7 @@ characters={
 			defense_skill=2
 			planning_skill=4
 			logistics_skill=3
-			legacy_id=-1
+			
 		}
 	}
 	JAP_kamio_mitsuomi={
@@ -343,7 +328,7 @@ characters={
 				small="GFX_idea_generic_army_art"
 			}
 			army={
-				large="gfx/leaders/JAP/JAP_Kamio_Mitsuomi.dds"
+				large="gfx/leaders/JAP/JAP_Kamio_Mitsuomi.png"
 			}
 		}
 		corps_commander={
@@ -353,7 +338,7 @@ characters={
 			defense_skill=2
 			planning_skill=3
 			logistics_skill=3
-			legacy_id=-1
+			
 		}
 	}
 	JAP_kawamura_kageaki={
@@ -363,7 +348,7 @@ characters={
 				small="GFX_idea_generic_army_log"
 			}
 			army={
-				large="gfx/leaders/JAP/JAP_Kawamura_Kageaki.dds"
+				large="gfx/leaders/JAP/JAP_Kawamura_Kageaki.png"
 			}
 		}
 		corps_commander={
@@ -373,7 +358,7 @@ characters={
 			defense_skill=4
 			planning_skill=3
 			logistics_skill=2
-			legacy_id=-1
+			
 		}
 	}
 	JAP_tamemoto_kuroki={
@@ -383,7 +368,7 @@ characters={
 				small="GFX_idea_generic_army_log"
 			}
 			army={
-				large="gfx/leaders/JAP/JAP_Tamemoto_Kuroki.dds"
+				large="gfx/leaders/JAP/JAP_Tamemoto_Kuroki.png"
 			}
 		}
 		corps_commander={
@@ -393,7 +378,7 @@ characters={
 			defense_skill=3
 			planning_skill=2
 			logistics_skill=2
-			legacy_id=-1
+			
 		}
 	}
 	JAP_haraguchi_kensai={
@@ -403,7 +388,7 @@ characters={
 				small="GFX_idea_generic_military_theorist"
 			}
 			army={
-				large="gfx/leaders/JAP/JAP_Haraguchi_Kensai.dds"
+				large="gfx/leaders/JAP/JAP_Haraguchi_Kensai.png"
 			}
 		}
 		corps_commander={
@@ -413,7 +398,7 @@ characters={
 			defense_skill=4
 			planning_skill=3
 			logistics_skill=2
-			legacy_id=-1
+			
 		}
 	}
 	JAP_ueda_arisawa={
@@ -423,7 +408,7 @@ characters={
 				small="GFX_idea_generic_military_theorist"
 			}
 			army={
-				large="gfx/leaders/JAP/JAP_Ueda_Arisawa.dds"
+				large="gfx/leaders/JAP/JAP_Ueda_Arisawa.png"
 			}
 		}
 		corps_commander={
@@ -433,7 +418,7 @@ characters={
 			defense_skill=2
 			planning_skill=2
 			logistics_skill=3
-			legacy_id=-1
+			
 		}
 	}
 	JAP_nagaoka_gaishi={
@@ -443,7 +428,7 @@ characters={
 				small="GFX_idea_generic_air_warfare_theorist"
 			}
 			army={
-				large="gfx/leaders/JAP/JAP_Nagaoka_Gaishi.dds"
+				large="gfx/leaders/JAP/JAP_Nagaoka_Gaishi.png"
 			}
 		}
 		corps_commander={
@@ -453,7 +438,7 @@ characters={
 			defense_skill=2
 			planning_skill=2
 			logistics_skill=2
-			legacy_id=-1
+			
 		}
 	}
 	JAP_miura_goro={
@@ -463,7 +448,7 @@ characters={
 				small="GFX_idea_generic_air_warfare_theorist"
 			}
 			army={
-				large="gfx/leaders/JAP/JAP_Miura_Goro.dds"
+				large="gfx/leaders/JAP/JAP_Miura_Goro.png"
 			}
 		}
 		corps_commander={
@@ -473,7 +458,7 @@ characters={
 			defense_skill=2
 			planning_skill=3
 			logistics_skill=2
-			legacy_id=-1
+			
 		}
 	}
 	JAP_nobutaka_shioden={
@@ -483,7 +468,7 @@ characters={
 				small="GFX_idea_generic_air_close_air_sup"
 			}
 			army={
-				large="gfx/leaders/JAP/JAP_Nobutaka_Shioden.dds"
+				large="gfx/leaders/JAP/JAP_Nobutaka_Shioden.png"
 			}
 		}
 		corps_commander={
@@ -493,7 +478,7 @@ characters={
 			defense_skill=2
 			planning_skill=1
 			logistics_skill=1
-			legacy_id=-1
+			
 		}
 	}
 	JAP_uehara_yusaku={
@@ -503,7 +488,7 @@ characters={
 				small="GFX_idea_generic_air_close_air_sup"
 			}
 			army={
-				large="gfx/leaders/JAP/JAP_Uehara_Yusaku.dds"
+				large="gfx/leaders/JAP/JAP_Uehara_Yusaku.png"
 			}
 		}
 		corps_commander={
@@ -513,7 +498,7 @@ characters={
 			defense_skill=3
 			planning_skill=2
 			logistics_skill=2
-			legacy_id=-1
+			
 		}
 	}
 	JAP_yamanashi_hanzo={
@@ -523,7 +508,7 @@ characters={
 				small="GFX_idea_generic_air_air_combat_trainer"
 			}
 			army={
-				large="gfx/leaders/JAP/JAP_Yamanashi_Hanzo.dds"
+				large="gfx/leaders/JAP/JAP_Yamanashi_Hanzo.png"
 			}
 		}
 		corps_commander={
@@ -532,7 +517,7 @@ characters={
 			defense_skill=1
 			planning_skill=1
 			logistics_skill=1
-			legacy_id=-1
+			
 		}
 	}
 	JAP_yui_mitsue={
@@ -542,7 +527,7 @@ characters={
 				small="GFX_idea_generic_air_air_combat_trainer"
 			}
 			army={
-				large="gfx/leaders/JAP/JAP_Yui_Mitsue.dds"
+				large="gfx/leaders/JAP/JAP_Yui_Mitsue.png"
 			}
 		}
 		corps_commander={
@@ -552,7 +537,7 @@ characters={
 			defense_skill=1
 			planning_skill=2
 			logistics_skill=1
-			legacy_id=-1
+			
 		}
 	}
 	JAP_otani_kikuzo={
@@ -562,7 +547,7 @@ characters={
 				small="GFX_idea_generic_army_chief_off"
 			}
 			army={
-				large="gfx/leaders/JAP/JAP_Otani_Kikuzo.dds"
+				large="gfx/leaders/JAP/JAP_Otani_Kikuzo.png"
 			}
 		}
 		corps_commander={
@@ -572,7 +557,7 @@ characters={
 			defense_skill=1
 			planning_skill=1
 			logistics_skill=2
-			legacy_id=-1
+			
 		}
 	}
 	JAP_dewa_shigeto={
@@ -582,7 +567,7 @@ characters={
 				small="GFX_idea_generic_navy_chief_decisive_bat"
 			}
 			army={
-				large="gfx/leaders/JAP/JAP_Dewa_Shigeto.dds"
+				large="gfx/leaders/JAP/JAP_Dewa_Shigeto.png"
 			}
 		}
 		navy_leader={
@@ -592,7 +577,7 @@ characters={
 			defense_skill=2
 			maneuvering_skill=1
 			coordination_skill=1
-			legacy_id=-1
+			
 		}
 	}
 	JAP_inoue_yoshika={
@@ -602,7 +587,7 @@ characters={
 				small="GFX_idea_generic_navy_chief_decisive_bat"
 			}
 			army={
-				large="gfx/leaders/JAP/JAP_Inoue_Yoshika.dds"
+				large="gfx/leaders/JAP/JAP_Inoue_Yoshika.png"
 			}
 		}
 		navy_leader={
@@ -612,7 +597,7 @@ characters={
 			defense_skill=2
 			maneuvering_skill=1
 			coordination_skill=1
-			legacy_id=-1
+			
 		}
 	}
 	JAP_kataoka_shichiro={
@@ -622,7 +607,7 @@ characters={
 				small="GFX_idea_generic_navy_anti_submarine"
 			}
 			army={
-				large="gfx/leaders/JAP/JAP_Kataoka_Shichiro.dds"
+				large="gfx/leaders/JAP/JAP_Kataoka_Shichiro.png"
 			}
 		}
 		navy_leader={
@@ -632,7 +617,7 @@ characters={
 			defense_skill=2
 			maneuvering_skill=1
 			coordination_skill=1
-			legacy_id=-1
+			
 		}
 	}
 	JAP_kato_sadakichi={
@@ -642,7 +627,7 @@ characters={
 				small="GFX_idea_generic_navy_anti_submarine"
 			}
 			army={
-				large="gfx/leaders/JAP/JAP_Kato_Sadakichi.dds"
+				large="gfx/leaders/JAP/JAP_Kato_Sadakichi.png"
 			}
 		}
 		navy_leader={
@@ -652,7 +637,7 @@ characters={
 			defense_skill=2
 			maneuvering_skill=1
 			coordination_skill=1
-			legacy_id=-1
+			
 		}
 	}
 	JAP_uryu_sotokichi={
@@ -662,7 +647,7 @@ characters={
 				small="GFX_idea_generic_navy_fleet_log"
 			}
 			army={
-				large="gfx/leaders/JAP/JAP_Uryu_Sotokichi.dds"
+				large="gfx/leaders/JAP/JAP_Uryu_Sotokichi.png"
 			}
 		}
 		navy_leader={
@@ -672,7 +657,7 @@ characters={
 			defense_skill=2
 			maneuvering_skill=1
 			coordination_skill=1
-			legacy_id=-1
+			
 		}
 	}
 	JAP_ichiki_otohiko={

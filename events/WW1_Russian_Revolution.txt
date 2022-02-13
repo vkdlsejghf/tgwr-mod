@@ -78,8 +78,8 @@ country_event = {
 				add_country_leader_role = {
 					Country_leader = {
 						ideology=autocracy
-						traits={ trait_autocracy }
-						expire="1935.1.1.1"
+						
+						
 					}
 				}
 				promote_character = yes	
@@ -114,10 +114,6 @@ country_event = {
 					Promote_leader = yes
 					Country_leader = {
 						ideology = authoritarian_democracy
-						expire = "1935.1.1"
-						traits = {
-							trait_authoritarian_democracy
-						}
 					}
 				}
 				set_party_name = {
@@ -150,12 +146,12 @@ country_event = {
 					}
 				}
 				add_country_leader_role = {
-					Character = RUS_the_provisional_government
+					Character = RUS_provisional_government
 					Promote_leader = yes
 					Country_leader = {
 						ideology=social_liberalism
-						traits={ trait_social_liberalism }
-						expire="1935.1.1.1"
+						
+						
 					}
 				}
 			}
@@ -196,7 +192,7 @@ country_event = {
 		tag = RUS
 		has_global_flag = russian_revolution
 		has_country_leader = {
-			character = RUS_the_provisional_government
+			character = RUS_provisional_government
 			ruling_only = yes
 		}
 	}
@@ -211,8 +207,8 @@ country_event = {
 			Promote_leader = yes
 			Country_leader = {
 				ideology=social_liberalism
-				traits={ trait_social_liberalism }
-				expire="1935.1.1.1"
+				
+				
 			}
 		}
 		set_country_flag = georgy_lvov
@@ -297,8 +293,8 @@ country_event = {
 			Promote_leader = yes
 			Country_leader = {
 				ideology=stratocracy
-				traits={ dictator trait_stratocracy }
-				expire="1935.1.1.1"
+				traits={ dictator  }
+				
 			}
 		}
 		set_politics = {
@@ -361,15 +357,14 @@ country_event = {
 		RUS_alexander_kerensky = {
 			set_portraits = {
 				civilian = {
-					large="gfx/leaders/RUS/RUS_alexander_kerensky_dictator.dds"
+					large="gfx/leaders/RUS/RUS_alexander_kerensky_dictator.png"
 				}
 			}
 			add_country_leader_role = {
 				Promote_leader = yes
 				Country_leader = {
 					ideology=authoritarian_democracy
-					traits={ rus_knight_of_revolution trait_authoritarian_democracy }
-					expire="1935.1.1.1"
+					traits={ rus_knight_of_revolution dictator }	
 				}
 			}
 		}		
@@ -556,7 +551,6 @@ country_event = {
 					target = RUS
 					type = civil_war
 				}
-				add_civil_war_target = RUS
 				every_state = {
 					limit = {
 						is_core_of = RUS
@@ -788,7 +782,7 @@ country_event = {
 				RUS_pyotr_wrangel = {
 					set_portraits = {
 						army = {
-							large="gfx/leaders/RUS/RUS_pyotr_wrangel_civil_war.dds"
+							large="gfx/leaders/RUS/RUS_pyotr_wrangel_civil_war.png"
 						}
 					}
 				}
@@ -1041,7 +1035,7 @@ country_event = {
 					picture = "gfx/leaders/FIN/FIN_kullervo_manner.png" 
 					expire = "1935.1.1" 
 					ideology = marxism
-					traits = { trait_marxism }  
+					  
 				}
 				if = {
 					limit = {
@@ -1076,7 +1070,7 @@ country_event = {
 					picture = "gfx/leaders/FIN/FIN_kullervo_manner.png" 
 					expire = "1935.1.1" 
 					ideology = marxism
-					traits = { trait_marxism }  
+					  
 				}
 			}
 		}

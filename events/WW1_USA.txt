@@ -1886,6 +1886,15 @@ country_event = {
 			}
 			USA = {
 				release = PHI
+				if = {
+					limit = {
+						owns_state = 629
+						NOT = {
+							629 = { is_core_of = USA }
+						}
+					}
+					release = HAW
+				}
 			}
 			every_owned_state = {
 				limit = {
@@ -1966,11 +1975,11 @@ country_event = {
 				set_capital = { state = 378 }
 				create_country_leader = {
 					name = "William H. Taft"
-					picture = "gfx/leaders/USA/USA_william_h_taft.dds"
+					picture = "gfx/leaders/USA/USA_william_h_taft.png"
 					expire = "1935.1.1"
 					ideology = conservatism
 					traits = {
-						trait_conservatism
+						
 					}
 				}
 			}
@@ -2081,6 +2090,15 @@ country_event = {
 			}
 			USA = {
 				release = PHI
+				if = {
+					limit = {
+						owns_state = 629
+						NOT = {
+							629 = { is_core_of = USA }
+						}
+					}
+					release = HAW
+				}
 			}
 			CSA = {
 				inherit_technology = USA
@@ -2194,11 +2212,11 @@ country_event = {
 				set_capital = { state = 362 }
 				create_country_leader = {
 					name = "Woodrow Wilson"
-					picture = "gfx/leaders/USA/USA_woodrow_wilson.dds"
+					picture = "gfx/leaders/USA/USA_woodrow_wilson.png"
 					expire = "1935.1.1"
 					ideology = fascism_ideology
 					traits = {
-						trait_proto_fascism
+						
 					}
 				}
 			}
@@ -2227,11 +2245,11 @@ country_event = {
 				set_capital = { state = 378 }
 				create_country_leader = {
 					name = "William H. Taft"
-					picture = "gfx/leaders/USA/USA_william_h_taft.dds"
+					picture = "gfx/leaders/USA/USA_william_h_taft.png"
 					expire = "1935.1.1"
 					ideology = conservatism
 					traits = {
-						trait_conservatism
+						
 					}
 				}
 				if = {
@@ -2245,12 +2263,12 @@ country_event = {
 					create_country_leader = {
 						name = "Theodore Roosevelt"
 						desc = USA_theodore_roosevelt_DESC
-						picture = "gfx/leaders/USA/USA_theodore_roosevelt.dds"
+						picture = "gfx/leaders/USA/USA_theodore_roosevelt.png"
 						expire = "1935.1.1"
 						ideology = socialism
 						traits = {
 							bull_moose
-							trait_socialism
+							
 						}
 					}
 				}
@@ -2353,7 +2371,7 @@ country_event = {
 					ideology = syndicalism
 					traits = {
 						big_bill
-						trait_syndicalism
+						
 					}
 				}
 				set_party_name = { 
@@ -2419,11 +2437,11 @@ country_event = {
 				set_cosmetic_tag = CSA_deseret
 				create_country_leader = {
 					name = "Heber Wells"
-					picture = "gfx/leaders/USA/USA_heber_wells.dds"
+					picture = "gfx/leaders/USA/USA_heber_wells.png"
 					expire = "1935.1.1"
 					ideology = theocracy
 					traits = {
-						trait_theocracy
+						
 					}
 				}
 				set_party_name = {
@@ -2492,6 +2510,15 @@ country_event = {
 			}
 			USA = {
 				release = PHI
+				if = {
+					limit = {
+						owns_state = 629
+						NOT = {
+							629 = { is_core_of = USA }
+						}
+					}
+					release = HAW
+				}
 			}
 			USB = {
 				inherit_technology = USA
@@ -2585,12 +2612,12 @@ country_event = {
 					}
 					create_country_leader = {
 						name = "Woodrow Wilson"
-						picture = "gfx/leaders/USA/USA_woodrow_wilson.dds"
+						picture = "gfx/leaders/USA/USA_woodrow_wilson.png"
 						expire = "1935.1.1"
 						ideology = conservatism
 						traits = {
 							prohibitionist
-							trait_conservatism
+							
 						}
 					}
 					set_party_name = {
@@ -2618,12 +2645,12 @@ country_event = {
 						}
 						create_country_leader = {
 							name = "Theodore Roosevelt"
-							picture = "gfx/leaders/USA/USA_theodore_roosevelt.dds"
+							picture = "gfx/leaders/USA/USA_theodore_roosevelt.png"
 							expire = "1935.1.1"
 							ideology = socialism
 							traits = {
 								bull_moose
-								trait_socialism
+								
 							}
 						}
 						add_popularity = {
@@ -2639,11 +2666,11 @@ country_event = {
 						else = {
 							create_country_leader = {
 								name = "William H. Taft"
-								picture = "gfx/leaders/USA/USA_william_h_taft.dds"
+								picture = "gfx/leaders/USA/USA_william_h_taft.png"
 								expire = "1935.1.1"
 								ideology = classical_liberalism
 								traits = {
-									trait_classical_liberalism
+									
 								}
 							}
 						}
@@ -2747,6 +2774,15 @@ country_event = {
 			}
 			USA = {
 				release = PHI
+				if = {
+					limit = {
+						owns_state = 629
+						NOT = {
+							629 = { is_core_of = USA }
+						}
+					}
+					release = HAW
+				}
 			}
 			USB = {
 				inherit_technology = USA
@@ -2801,7 +2837,7 @@ country_event = {
 					add_country_leader_role = {
 						country_leader = {
 							ideology = fascism_ideology
-							traits = { prohibitionist trait_proto_fascism }
+							traits = { prohibitionist  }
 						}
 					}
 					promote_character = fascism_ideology
@@ -2838,11 +2874,11 @@ country_event = {
 					}
 					create_country_leader = {
 						name = "William H. Taft"
-						picture = "gfx/leaders/USA/USA_william_h_taft.dds"
+						picture = "gfx/leaders/USA/USA_william_h_taft.png"
 						expire = "1935.1.1"
 						ideology = conservatism
 						traits = {
-							trait_conservatism
+							
 						}
 					}
 					add_popularity = {
@@ -2859,12 +2895,12 @@ country_event = {
 					create_country_leader = {
 						name = "Theodore Roosevelt"
 						desc = USA_theodore_roosevelt_DESC
-						picture = "gfx/leaders/USA/USA_theodore_roosevelt.dds"
+						picture = "gfx/leaders/USA/USA_theodore_roosevelt.png"
 						expire = "1935.1.1"
 						ideology = socialism
 						traits = {
 							bull_moose
-							trait_socialism
+							
 						}
 					}
 				}
@@ -2956,6 +2992,15 @@ country_event = {
 			}
 			USA = {
 				release = PHI
+				if = {
+					limit = {
+						owns_state = 629
+						NOT = {
+							629 = { is_core_of = USA }
+						}
+					}
+					release = HAW
+				}
 			}
 			every_country = {
 				limit = {
@@ -3031,7 +3076,7 @@ country_event = {
 					add_country_leader_role = {
 						country_leader = {
 							ideology = fascism_ideology
-							traits = { prohibitionist trait_proto_fascism }
+							traits = { prohibitionist  }
 						}
 					}
 					promote_character = fascism_ideology
@@ -3068,11 +3113,11 @@ country_event = {
 					}
 					create_country_leader = {
 						name = "William H. Taft"
-						picture = "gfx/leaders/USA/USA_william_h_taft.dds"
+						picture = "gfx/leaders/USA/USA_william_h_taft.png"
 						expire = "1935.1.1"
 						ideology = conservatism
 						traits = {
-							trait_conservatism
+							
 						}
 					}
 				}
@@ -3085,12 +3130,12 @@ country_event = {
 					create_country_leader = {
 						name = "Theodore Roosevelt"
 						desc = USA_theodore_roosevelt_DESC
-						picture = "gfx/leaders/USA/USA_theodore_roosevelt.dds"
+						picture = "gfx/leaders/USA/USA_theodore_roosevelt.png"
 						expire = "1935.1.1"
 						ideology = socialism
 						traits = {
 							bull_moose
-							trait_socialism
+							
 						}
 					}
 					set_party_name = {
@@ -3188,6 +3233,15 @@ country_event = {
 			}
 			USA = {
 				release = PHI
+				if = {
+					limit = {
+						owns_state = 629
+						NOT = {
+							629 = { is_core_of = USA }
+						}
+					}
+					release = HAW
+				}
 			}
 			every_country = {
 				limit = {
@@ -3285,11 +3339,11 @@ country_event = {
 					set_capital = { state = 358 }
 					create_country_leader = {
 						name = "William H. Taft"
-						picture = "gfx/leaders/USA/USA_william_h_taft.dds"
+						picture = "gfx/leaders/USA/USA_william_h_taft.png"
 						expire = "1935.1.1"
 						ideology = conservatism
 						traits = {
-							trait_conservatism
+							
 						}
 					}
 				}
@@ -3303,12 +3357,12 @@ country_event = {
 					create_country_leader = {
 						name = "Theodore Roosevelt"
 						desc = USA_theodore_roosevelt_DESC
-						picture = "gfx/leaders/USA/USA_theodore_roosevelt.dds"
+						picture = "gfx/leaders/USA/USA_theodore_roosevelt.png"
 						expire = "1935.1.1"
 						ideology = socialism
 						traits = {
 							bull_moose
-							trait_socialism
+							
 						}
 					}
 					add_popularity = {
@@ -3406,6 +3460,15 @@ country_event = {
 			}
 			USA = {
 				release = PHI
+				if = {
+					limit = {
+						owns_state = 629
+						NOT = {
+							629 = { is_core_of = USA }
+						}
+					}
+					release = HAW
+				}
 			}
 			every_country = {
 				limit = {
@@ -3496,12 +3559,12 @@ country_event = {
 				}
 				create_country_leader = {
 					name = "Woodrow Wilson"
-					picture = "gfx/leaders/USA/USA_woodrow_wilson.dds"
+					picture = "gfx/leaders/USA/USA_woodrow_wilson.png"
 					expire = "1935.1.1"
 					ideology = conservatism
 					traits = {
 						prohibitionist
-						trait_conservatism
+						
 					}
 				}
 				set_party_name = {
@@ -3572,12 +3635,12 @@ country_event = {
 				set_cosmetic_tag = USA_theocratic
 				create_country_leader = {
 					name = "Woodrow Wilson"
-					picture = "gfx/leaders/USA/USA_woodrow_wilson.dds"
+					picture = "gfx/leaders/USA/USA_woodrow_wilson.png"
 					expire = "1935.1.1"
 					ideology = theocracy
 					traits = {
 						prohibitionist
-						trait_theocracy
+						
 					}
 				}
 			}
@@ -3636,11 +3699,11 @@ country_event = {
 				}
 				create_country_leader = {
 					name = "Oscar Branch Colquitt"
-					picture = "gfx/leaders/USA/USA_oscar_colqiutt.dds"
+					picture = "gfx/leaders/USA/USA_oscar_colqiutt.png"
 					expire = "1935.1.1"
 					ideology = classical_liberalism
 					traits = {
-						trait_classical_liberalism
+						
 					}
 				}
 			}
@@ -3721,7 +3784,7 @@ country_event = {
 					add_country_leader_role = {
 						country_leader = {
 							ideology = libertarianism
-							traits = { trait_libertarianism }
+							
 							expire = "1935.1.1.1"
 						}
 					}
@@ -3816,6 +3879,15 @@ country_event = {
 			}
 			USA = {
 				release = PHI
+				if = {
+					limit = {
+						owns_state = 629
+						NOT = {
+							629 = { is_core_of = USA }
+						}
+					}
+					release = HAW
+				}
 			}
 			every_country = {
 				limit = {
@@ -3929,11 +4001,11 @@ country_event = {
 					set_capital = { state = 358 }
 					create_country_leader = {
 						name = "William H. Taft"
-						picture = "gfx/leaders/USA/USA_william_h_taft.dds"
+						picture = "gfx/leaders/USA/USA_william_h_taft.png"
 						expire = "1935.1.1"
 						ideology = conservatism
 						traits = {
-							trait_conservatism
+							
 						}
 					}
 				}
@@ -3947,12 +4019,12 @@ country_event = {
 					create_country_leader = {
 						name = "Theodore Roosevelt"
 						desc = USA_theodore_roosevelt_DESC
-						picture = "gfx/leaders/USA/USA_theodore_roosevelt.dds"
+						picture = "gfx/leaders/USA/USA_theodore_roosevelt.png"
 						expire = "1935.1.1"
 						ideology = socialism
 						traits = {
 							bull_moose
-							trait_socialism
+							
 						}
 					}
 					add_popularity = {
@@ -4058,6 +4130,15 @@ country_event = {
 			}
 			USA = {
 				release = PHI
+				if = {
+					limit = {
+						owns_state = 629
+						NOT = {
+							629 = { is_core_of = USA }
+						}
+					}
+					release = HAW
+				}
 			}
 			USB = {
 				inherit_technology = USA
@@ -4114,11 +4195,11 @@ country_event = {
 				set_cosmetic_tag = USA_CSA_only_color
 				create_country_leader = {
 					name = "Douglas MacArthur"
-					picture = "gfx/leaders/USA/USA_Douglas_MacArthur.dds"
+					picture = "gfx/leaders/USA/USA_Douglas_MacArthur.png"
 					expire = "1935.1.1"
 					ideology = authoritarian_democracy
 					traits = {
-						trait_authoritarian_democracy
+						
 					}
 				}
 				add_popularity = {
@@ -4166,11 +4247,11 @@ country_event = {
 					set_capital = { state = 358 }
 					create_country_leader = {
 						name = "William H. Taft"
-						picture = "gfx/leaders/USA/USA_william_h_taft.dds"
+						picture = "gfx/leaders/USA/USA_william_h_taft.png"
 						expire = "1935.1.1"
 						ideology = conservatism
 						traits = {
-							trait_conservatism
+							
 						}
 					}
 				}
@@ -4184,12 +4265,12 @@ country_event = {
 					create_country_leader = {
 						name = "Theodore Roosevelt"
 						desc = USA_theodore_roosevelt_DESC
-						picture = "gfx/leaders/USA/USA_theodore_roosevelt.dds"
+						picture = "gfx/leaders/USA/USA_theodore_roosevelt.png"
 						expire = "1935.1.1"
 						ideology = socialism
 						traits = {
 							bull_moose
-							trait_socialism
+							
 						}
 					}
 					add_popularity = {
@@ -4293,11 +4374,11 @@ country_event = {
 				set_cosmetic_tag = USA_1776
 				create_country_leader = {
 					name = "Douglas MacArthur"
-					picture = "gfx/leaders/USA/USA_Douglas_MacArthur.dds"
+					picture = "gfx/leaders/USA/USA_Douglas_MacArthur.png"
 					expire = "1935.1.1"
 					ideology = authoritarian_democracy
 					traits = {
-						trait_authoritarian_democracy
+						
 					}
 				}
 				set_party_name = {
@@ -4377,6 +4458,15 @@ country_event = {
 			}
 			USA = {
 				release = PHI
+				if = {
+					limit = {
+						owns_state = 629
+						NOT = {
+							629 = { is_core_of = USA }
+						}
+					}
+					release = HAW
+				}
 			}
 			USB = {
 				inherit_technology = USA
@@ -4447,11 +4537,11 @@ country_event = {
 				}
 				create_country_leader = {
 					name = "Federal Government"
-					picture = "gfx/leaders/USA/USA_government.dds"
+					picture = "gfx/leaders/USA/USA_government.png"
 					expire = "1935.1.1"
 					ideology = authoritarian_democracy
 					traits = {
-						trait_authoritarian_democracy
+						
 					}
 				}
 				set_party_name = {
@@ -5641,7 +5731,7 @@ country_event = {
 			add_country_leader_role = {
 				country_leader = {
 					ideology = authoritarian_democracy
-					traits = { trait_authoritarian_democracy }
+					
 					expire = "1935.1.1.1"
 				}			
 			}
@@ -7332,6 +7422,159 @@ country_event = {
 		name = ww1_USA.131.a
 		ai_chance = {
 			factor = 100
+		}
+	}
+}
+
+# RESPONSE ON ZIMMERMANN TELEGRAM
+####################################
+country_event = {
+	id = ww1_usa.132
+	title = ww1_usa.132.t
+	desc = ww1_usa.132.d
+	trigger = {
+		tag = USA
+		has_global_flag = zimmermann_telegram_received
+		NOT = {
+			has_war_with = GER
+			has_global_flag = great_war_ends
+		}
+	}
+	fire_only_once = yes
+	mean_time_to_happen = { days = 0 }
+	option = {
+		name = ww1_usa.132.a
+			if = {
+				limit = {
+					FRA = {
+						has_war_with = GER
+						OR = {
+							has_government = USA
+							has_government = neutrality
+						}
+					}
+				}
+				USA = {
+					add_to_war = { 
+						targeted_alliance = FRA 
+						enemy = GER 
+						hostility_reason = topple_government
+					}	
+				}
+				else_if = {
+					limit = {
+						any_country = {
+							is_major = yes
+							has_war_with = GER
+							has_civil_war = no
+							has_capitulated = no
+							NOT = {
+								AND = {
+									original_tag = RUS
+									has_war_with = SOV
+								}
+							}					
+							OR = {
+								has_government = USA
+								has_government = neutrality
+							}
+						}
+					}
+					random_country = {
+						limit = {
+							is_major = yes
+							has_war_with = GER
+							has_civil_war = no
+							has_capitulated = no
+							NOT = {
+								AND = {
+									original_tag = RUS
+									has_war_with = SOV
+								}
+							}
+							OR = {
+								has_government = USA
+								has_government = neutrality
+							}	
+
+						}
+						USA = {
+							add_to_war = { 
+								targeted_alliance = PREV 
+								enemy = GER 
+								hostility_reason = topple_government
+							}	
+						}					
+					}
+					else = {
+						create_wargoal = {
+							type = topple_government
+							target = GER
+						}
+						add_ai_strategy = {
+							type = declare_war
+							id = GER
+							value = 200
+						}
+					}
+				}
+			}			
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 0
+				has_war_with = FRA
+			}
+			modifier = {
+				factor = 0
+				is_in_faction_with = GER
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					has_civil_war = yes
+					has_war_with = USB
+					has_war_with = CSA
+				}
+			}
+			modifier = {
+				factor = 0
+				is_historical_focus_on = no
+				has_opinion = {
+					target = GER
+					value > 70
+				}
+			}
+		}
+	}
+	option = {
+		name = ww1_usa.132.b
+		ai_chance = {
+			base = 0
+			modifier = {
+				add = 1
+				has_war_with = FRA
+			}
+			modifier = {
+				add = 1
+				is_in_faction_with = GER
+			}
+			modifier = {
+				add = 1
+				OR = {
+					has_civil_war = yes
+					has_war_with = USB
+					has_war_with = CSA
+				}
+			}
+			modifier = {
+				add = 1
+				is_historical_focus_on = no
+				has_opinion = {
+					target = GER
+					value > 70
+				}
+			}
 		}
 	}
 }

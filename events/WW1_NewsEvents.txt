@@ -436,10 +436,10 @@ news_event = {
 					kill_ideology_leader = communism
 					create_country_leader = { 
 						name = "Louis Frossard" 
-						picture = "gfx/leaders/FRA/FRA_louis_frossard.dds" 
+						picture = "gfx/leaders/FRA/FRA_louis_frossard.png" 
 						expire = "1935.1.1" 
 						ideology = marxism
-						traits = { trait_marxism }  
+						  
 					}
 				}
 			}

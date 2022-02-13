@@ -3,70 +3,70 @@ characters={
 		name="ARG_hipolito_yrigoyen"
 		portraits={
 			civilian={
-				large="gfx/leaders/ARG/ARG_hipolito_yrigoyen.dds"
+				large="gfx/leaders/ARG/ARG_hipolito_yrigoyen.png"
 			}
 		}
 		country_leader={
 			ideology=socialism
-			traits={ trait_socialism }
-			expire="1935.1.1.1"
-			id=-1
+			
+			
+			
 		}
 	}
 	ARG_jose_figueroa_alcorta={
 		name="ARG_jose_figueroa_alcorta"
 		portraits={
 			civilian={
-				large="gfx/leaders/ARG/ARG_jose_figueroa_alcorta.dds"
+				large="gfx/leaders/ARG/ARG_jose_figueroa_alcorta.png"
 			}
 		}
 		country_leader={
 			ideology=authoritarian_democracy
-			traits={ trait_authoritarian_democracy }
+			
 			expire="1910.10.12.1"
-			id=-1
+			
 		}
 	}
 	ARG_juan_bautista_justo={
 		name="ARG_juan_bautista_justo"
 		portraits={
 			civilian={
-				large="gfx/leaders/ARG/ARG_juan_bautista_justo.dds"
+				large="gfx/leaders/ARG/ARG_juan_bautista_justo.png"
 			}
 		}
 		country_leader={
 			ideology=reformist_socialism
-			traits={ trait_reformist_socialism }
-			expire="1935.1.1.1"
-			id=-1
+			
+			
+			
 		}
 	}
 	ARG_roque_saenz_pena={
 		name="ARG_roque_saenz_pena"
 		portraits={
 			civilian={
-				large="gfx/leaders/ARG/ARG_roque_saenz_pena.dds"
+				large="gfx/leaders/ARG/ARG_roque_saenz_pena.png"
 			}
 		}
 		country_leader={
 			ideology=authoritarian_democracy
-			traits={ democratic_reformer trait_authoritarian_democracy }
+			traits={ democratic_reformer  }
 			expire="1914.8.8.1"
-			id=-1
+			
 		}
 	}
 	ARG_victorino_de_la_plaza={
 		name="ARG_victorino_de_la_plaza"
 		portraits={
 			civilian={
-				large="gfx/leaders/ARG/ARG_victorino_de_la_plaza.dds"
+				large="gfx/leaders/ARG/ARG_victorino_de_la_plaza.png"
 			}
 		}
 		country_leader={
 			ideology=oligarchism
-			traits={ trait_oligarchism }
-			expire="1935.1.1.1"
-			id=-1
+			
+			
+			
 		}
 	}
 	ARG_jose_felix_uriburu={
@@ -86,7 +86,7 @@ characters={
 			defense_skill=2
 			planning_skill=2
 			logistics_skill=1
-			legacy_id=-1
+			
 		}
 	}
 	ARG_agustin_pedro_justo={

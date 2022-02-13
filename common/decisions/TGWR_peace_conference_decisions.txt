@@ -5,14 +5,7 @@ GER_great_war = {
 		icon = GFX_decision_generic_nationalism
 		available = {
 			has_global_flag = kis_war
-			FRA = {
-				OR = {
-					NOT = {
-						controls_state = 16
-					}
-					surrender_progress > 0.5
-				}
-			}
+			surrender_progress > 0.10
 			NOT = {
 				has_global_flag = GER_capitulation
 				has_global_flag = FRA_capitulation
@@ -38,22 +31,35 @@ GER_great_war = {
 			}
 		}
 		ai_will_do = {
-			factor = 400
+			factor = 500
+			# French won't gonna surrender with Paris
 			modifier = {
 				factor = 0
-				has_global_flag = AI_conference_off
+				has_full_control_of_state = 16
 			}
+			# French won't gonna surrender with the United States and major coastlines secured
 			modifier = {
 				factor = 0
 				USA = {
 					is_in_faction_with = FRA
+					has_war_with = GER
+					has_capitulated = no
 				}
-				has_full_control_of_state = 14
-				has_full_control_of_state = 19
+				OR = {
+					AND = {
+						has_full_control_of_state = 14
+						has_full_control_of_state = 19
+					}
+					has_capitulated = no
+				}
 			}
+			# French won't gonna surrender without massive casualties or losing territories
 			modifier = {
 				factor = 0
-				casualties < 250000
+				OR = {
+					casualties < 250000
+					surrender_progress < 0.50
+				}
 			}
 		}
 	}
@@ -185,6 +191,28 @@ GER_great_war = {
 								target = PREV
 								days = 365
 							}
+							# PEACE WITH NON-FACTIONAL ENEMIES
+							# YOU CANNOT CONDUCT WAR ANYMORE SINCE YOU ARE GONNA LOST THE GREAT WAR
+							# BUT THEY ARE NOT GONNA RECOGNISED AS VICTOR OF THE GREAT WAR
+							every_other_country = {
+								limit = {
+									has_defensive_war_with = PREV
+									is_in_faction = no
+									is_subject = no
+									has_civil_war = no
+									NOT = {
+										has_country_flag = member_of_entente
+										has_country_flag = refused_to_surrender
+									}
+								}
+								PREV = {
+									white_peace = PREV
+									set_truce = {
+										target = PREV
+										days = 365
+									}
+								}
+							}
 						}
 					}
 				}
@@ -230,6 +258,28 @@ GER_great_war = {
 							set_truce = {
 								target = PREV
 								days = 365
+							}
+							# PEACE WITH NON-FACTIONAL ENEMIES
+							# YOU CANNOT CONDUCT WAR ANYMORE SINCE YOU ARE GONNA LOST THE GREAT WAR
+							# BUT THEY ARE NOT GONNA RECOGNISED AS VICTOR OF THE GREAT WAR
+							every_other_country = {
+								limit = {
+									has_defensive_war_with = PREV
+									is_in_faction = no
+									is_subject = no
+									has_civil_war = no
+									NOT = {
+										has_country_flag = member_of_entente
+										has_country_flag = refused_to_surrender
+									}
+								}
+								PREV = {
+									white_peace = PREV
+									set_truce = {
+										target = PREV
+										days = 365
+									}
+								}
 							}
 						}
 					}
@@ -301,10 +351,11 @@ GER_great_war = {
 			has_global_flag = kis_war
 			GER = {
 				has_war_with = FRA
-				casualties > 450000
 				OR = {
 					surrender_progress > 0.05
 					has_idea = ger_famine
+					has_war_support < 0.10
+					has_stability < 0.10
 				}
 			}
 			NOT = {
@@ -409,7 +460,6 @@ GER_great_war = {
 						}
 					}
 				}
-				date > 1918.11.01
 				add = 1000
 			}
 			#same as above but with more causalities
@@ -514,12 +564,52 @@ GER_great_war = {
 					surrender_progress < 0.10
 					has_war_with = GER
 				}
-				has_idea = ger_famine
-				has_war_support < 0.05
-				date > 1918.5.5
+				OR = {
+					AND = {
+						has_war_support < 0.05
+						has_stability < 0.10
+						has_idea = ger_famine
+					}
+					AND = {
+						has_war_support < 0.01
+						has_stability < 0.01
+						date > 1918.5.5
+					}
+				}
 				add = 1000
 			}
-
+			#German armistice historical trigger
+			modifier = {
+				date > 1918.11.06
+				GER = {
+					is_historical_focus_on = yes
+					has_idea = GER_famine
+					has_war_support < 0.25
+					has_stability < 0.25
+					casualties > 1000000 # 1 million minimum
+				}
+				#Germany has not invaded UK or USA, or Japan...
+				any_country = {
+					is_major = yes
+					has_war_with = ROOT
+					is_in_faction_with = FRA
+					has_capitulated = no
+					surrender_progress < 0.20
+				}
+				FRA = {
+					surrender_progress < 0.10
+					has_war_with = GER
+				}
+				ENG = {
+					surrender_progress < 0.10
+					has_war_with = GER
+				}
+				USA = {
+					surrender_progress < 0.10
+					has_war_with = GER
+				}
+				add = 1000
+			}
 			# override all factors
 			modifier = {
 				factor = 0
@@ -620,6 +710,28 @@ GER_great_war = {
 						set_truce = {
 							target = PREV
 							days = 365
+						}
+						# PEACE WITH NON-FACTIONAL ENEMIES
+						# YOU CANNOT CONDUCT WAR ANYMORE SINCE YOU ARE GONNA LOST THE GREAT WAR
+						# BUT THEY ARE NOT GONNA RECOGNISED AS VICTOR OF THE GREAT WAR
+						every_other_country = {
+							limit = {
+								has_defensive_war_with = PREV
+								is_in_faction = no
+								is_subject = no
+								has_civil_war = no
+								NOT = {
+									has_country_flag = member_of_entente
+									has_country_flag = refused_to_surrender
+								}
+							}
+							PREV = {
+								white_peace = PREV
+								set_truce = {
+									target = PREV
+									days = 365
+								}
+							}
 						}
 					}
 				}

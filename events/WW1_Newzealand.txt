@@ -25,11 +25,11 @@ country_event = {
 		retire_ideology_leader = neutrality
 		create_country_leader = {
 			name = "John Dickson-Poynder"
-			picture = "gfx/leaders/NZL/NZL_the_lord_islington.dds"
+			picture = "gfx/leaders/NZL/NZL_the_lord_islington.png"
 			expire = "1935.1.1"
 			ideology = autocracy
 			traits = {
-				trait_autocracy
+				
 			}
 		}
 	}
@@ -62,11 +62,11 @@ country_event = {
 		retire_ideology_leader = neutrality
 		create_country_leader = {
 			name = "Arthur Foljambe"
-			picture = "gfx/leaders/NZL/NZL_arthur_foljambe.dds"
+			picture = "gfx/leaders/NZL/NZL_arthur_foljambe.png"
 			expire = "1935.1.1"
 			ideology = autocracy
 			traits = {
-				trait_autocracy
+				
 			}
 		}
 	}
@@ -95,11 +95,11 @@ country_event = {
 		retire_country_leader = yes
 		create_country_leader = {
 			name = "Thomas Mackenzie"
-			picture = "gfx/leaders/NZL/NZL_thomas_mackenzie.dds"
+			picture = "gfx/leaders/NZL/NZL_thomas_mackenzie.png"
 			expire = "1935.1.1"
 			ideology = classical_liberalism
 			traits = {
-				trait_classical_liberalism
+				
 			}
 		}
 	}
@@ -128,11 +128,11 @@ country_event = {
 		retire_country_leader = yes
 		create_country_leader = {
 			name = "William Massey"
-			picture = "gfx/leaders/NZL/NZL_william_massey.dds"
+			picture = "gfx/leaders/NZL/NZL_william_massey.png"
 			expire = "1935.1.1"
 			ideology = conservatism
 			traits = {
-				trait_conservatism
+				
 			}
 		}
 		set_party_name = {

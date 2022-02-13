@@ -65,6 +65,9 @@
  idea_sell_weapons:0 "Sell Weapons"
  idea_naval_treaty_adherent:0 "Naval Treaty Signatory"
  idea_naval_treaty_adherent_desc:0 "We have signed the Naval Treaty and accordingly are restricted in the size of our capital ships."
+ idea_soviet_westward_offensive:0 "Under the Soviet Westward Offensive"
+ idea_soviet_westward_offensive_desc:0 "The Soviet Communists are marching west! Fight to protect the independence and freedom of the our nation!"
+ idea_soviet_liberation_war:0 "Liberation War"
 
  superior_enemy:0 "Superior Enemy"
  superior_enemy_desc:0 "Army experience and equipment of our enemies are far ahead of ours."
@@ -1364,14 +1367,6 @@
  ENG_imperial_refuge_desc:0 "The British Empire collapsed. London fell into the hands of the Communists. Only the royal family, the white army, and their supporters managed to escape to here. The British will be waiting for their time here, sharpening their swords of revenge."
  ENG_imperial_refuge_neutrality:0 "Imperial Refuge"
  ENG_imperial_refuge_neutrality_desc:0 "The British Empire collapsed. London fell into the hands of the Communists. Only the royal family, the white army, and their supporters managed to escape to here. The British will be waiting for their time here, sharpening their swords of revenge."
- ENG_communist_guy:0 "John Maclean"
- ENG_communist_smooth_talking_con_man:0 "Ernest Bax"
- ENG_communist_lieutenant_of_industry:0 "A. A. Watts"
- ENG_communist_war_profiteer:0 "Albert Inkpin"
- ENG_communist_theorist:0 "Lewis Pugh Evans"
- ENG_communist_air_theorist:0 "Oswald Mosley"
- ENG_army_chief_maneuver:0 "William Hickie"
- ENG_communism_army_infantry:0 "Thomas Snow"
  ENG_two_power_standard:0 "The Two-Power Standard"
  ENG_lords_opposition:0 "Lords Opposition"
  ENG_lords_opposition_desc:0 "The House of Lords is being frustratingly opposed to our government. They are continuously blocking bills and acts, and have brought our lawmaking effectively to a halt. Increasingly, it is being believed that radical action is going to have to be taken to rein them in, unless they change their attitude and change it quick."
@@ -1908,3 +1903,7 @@
  LIB_syndicalism_idea:0 "Syndicalism"
  LIB_french_staff:0 "French Drill"
  LIB_german_staff:0 "Prussian Drill"
+ 
+ #Hungary
+ HUN_hungarian_revanchism:0 "Habsburg Revanchism"
+ HUN_hungarian_revanchism_desc:0 "The Austro-Hungarian Empire was heavily dismantled by her trusted brother, Germany. The empire was disbanded and only the Kingdom of Hungary left. We want revenge. We will reclaim the all legacy of the empire that the Germans stole away, and we will shatter the German Empire into dust. It does no matter if you love Austria or not. The Hungarians are scowling at Germany with eyes full of anger."

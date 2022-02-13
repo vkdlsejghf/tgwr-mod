@@ -8,9 +8,9 @@ characters={
 		}
 		country_leader={
 			ideology=autocracy
-			traits={ trait_autocracy }
-			expire="1935.1.1.1"
-			id=-1
+			
+			
+			
 		}
 	}
 	AFG_amanullah_khan={
@@ -43,16 +43,16 @@ characters={
 		}
 		country_leader={
 			ideology=autocracy
-			traits={ trait_autocracy }
-			expire="1935.1.1.1"
-			id=-1
+			
+			
+			
 		}
 	}
 	AFG_habibullah_khan={
 		name="AFG_habibullah_khan"
 		portraits={
 			civilian={
-				large="gfx/leaders/AFG/AFG_habibullah.dds"
+				large="gfx/leaders/AFG/AFG_habibullah.png"
 			}
 		}
 		field_marshal={
@@ -65,9 +65,9 @@ characters={
 		}
 		country_leader={
 			ideology=autocracy
-			traits={ trait_autocracy }
-			expire="1935.1.1.1"
-			id=-1
+			
+			
+			
 		}
 	}
 	AFG_mohammed_nadir_shah={
@@ -87,9 +87,9 @@ characters={
 		}
 		country_leader={
 			ideology=autocracy
-			traits={ trait_autocracy }
-			expire="1935.1.1.1"
-			id=-1
+			
+			
+			
 		}
 	}
 	AFG_muhammad_umar_khan={
@@ -99,7 +99,7 @@ characters={
 				small="gfx/interface/ideas/idea_SAU_generic_land_1.dds"
 			}
 			army={
-				large="gfx/leaders/SAU/Portrait_Arabia_Generic_land_1.dds"
+				large="gfx/leaders/Arabia/Portrait_Arabia_Generic_land_1.dds"
 			}
 		}
 		corps_commander={
@@ -108,7 +108,7 @@ characters={
 			defense_skill=1
 			planning_skill=2
 			logistics_skill=2
-			legacy_id=-1
+			
 		}
 	}
 	AFG_abdul_wakil_nuristani={
@@ -118,7 +118,7 @@ characters={
 				small="gfx/interface/ideas/idea_SAU_generic_land_2.dds"
 			}
 			army={
-				large="gfx/leaders/SAU/Portrait_Arabia_Generic_land_2.dds"
+				large="gfx/leaders/Arabia/Portrait_Arabia_Generic_land_2.dds"
 			}
 		}
 		corps_commander={
@@ -127,7 +127,7 @@ characters={
 			defense_skill=1
 			planning_skill=1
 			logistics_skill=1
-			legacy_id=-1
+			
 		}
 	}
 	AFG_muhammad_sulaiman_khan={

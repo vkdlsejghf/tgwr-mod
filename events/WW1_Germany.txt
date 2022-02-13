@@ -563,6 +563,7 @@ country_event = {
 					original_tag = GER
 					has_government = communism
 				}
+				set_country_flag = great_war_loser
 				set_cosmetic_tag = GER_socialism
 				promote_character = GER_karl_liebknecht
 				division_template = {
@@ -738,6 +739,7 @@ country_event = {
 					original_tag = GER
 					has_government = democratic
 				}
+				set_country_flag = great_war_loser
 				set_cosmetic_tag = GER_civil_war
 				promote_character = GER_friedrich_ebert
 				add_popularity = {
@@ -1245,6 +1247,7 @@ country_event = {
 		name = ww1_germany.22.b
 		add_stability = -0.05
 		add_political_power = -75
+		set_country_flag = ger_kingdom_of_austria
 		AUS = {
 			hidden_effect = {
 				set_cosmetic_tag = AUS_GER
@@ -1276,43 +1279,41 @@ country_event = {
 			}
 			if = {
 				limit = {
-					NOT = { has_global_flag = emperor_franz_dead }
+					NOT = { has_country_flag = emperor_franz_dead }
 				}
-				create_country_leader = { 
-					name = "Franz Joseph I"
-					picture = "gfx/leaders/AUH/AUH_franz_joseph_i.dds" 
-					expire = "1935.1.1" 
-					ideology = autocracy 
-					traits = { oldschool_kaiser trait_autocracy }   
+				AUS_franz_joseph_i = {
+					add_country_leader_role = {
+						promote_leader = yes
+						country_leader = {
+							ideology = autocracy
+							traits = { oldschool_kaiser }
+						}
+					}
 				}
-			}
-			else = {
-				if = {
+				else_if = {
 					limit = {
 						has_global_flag = kis_franzferdinand_murdered
 					}
-					create_country_leader = {
-						name = "Karl von Habsburg"
-						picture = "gfx/leaders/AUH/AUH_karl_i.dds"
-						expire = "1935.1.1"
-						ideology = autocracy
-						traits = {
-							trait_autocracy
+					AUS_karl_i = {
+						add_country_leader_role = {
+							country_leader = {
+								ideology = autocracy
+							}
+						}
+						promote_character = autocracy
+					}
+					else = {
+						AUS_franz_ferdinand_i = {
+							add_country_leader_role = {
+								country_leader = {
+									ideology = autocracy
+								}
+							}
+							promote_character = autocracy
 						}
 					}
 				}
-				else = {
-					create_country_leader = {
-						name = "Franz Ferdinand von Habsburg"
-						picture = "gfx/leaders/AUH/AUH_franz_ferdinand.dds"
-						expire = "1935.1.1"
-						ideology = autocracy
-						traits = {
-							trait_autocracy
-						}
-					}
-				}
-			}
+			}			
 		}
 		ai_chance = {
 			factor = 50
@@ -1460,7 +1461,7 @@ country_event = {
 					}
 					create_corps_commander = {
 						name = "Félix Fuchs"
-						portrait_path="gfx/leaders/BEL/BEL_felix_fuchs.dds" 
+						portrait_path="gfx/leaders/BEL/BEL_felix_fuchs.png" 
 						traits = { old_guard politically_connected jungle_rat } 
 						skill = 2 
 						attack_skill = 1
@@ -3138,23 +3139,23 @@ country_event = {
 			}
 			create_country_leader = {
 				name = "Yakov Sverdlov"
-				picture = "gfx/leaders/SOV/SOV_yakov_sverdlov.dds"
+				picture = "gfx/leaders/SOV/SOV_yakov_sverdlov.png"
 				expire = "1935.1.1"
 				ideology = vanguardism
 				traits = {
 					prince_of_terror
-					trait_vanguardism
+					
 				}
 			}
 			else = {
 				create_country_leader = {
 					name = "Leon Trotsky"
-					picture = "gfx/leaders/SOV/SOV_lev_trotsky_army.dds"
+					picture = "gfx/leaders/SOV/SOV_lev_trotsky_army.png"
 					expire = "1935.1.1"
 					ideology = vanguardism
 					traits = {
 						permanent_revolutionary
-						trait_vanguardism
+						
 					}
 				}
 			}
@@ -3850,7 +3851,8 @@ country_event = {
 	}
 }
 
-# Aftermath of French Civil War Intervention
+# AFTERMATH OF FRENCH CIVIL WAR INTERVENTION
+###############################################
 country_event = {
 	id = ww1_germany.75
 	title = ww1_germany.75.t
@@ -3859,12 +3861,15 @@ country_event = {
 	trigger = {
 		tag = GER
 		has_country_flag = germany_helped_nationalist_france
-		FRC = {
-			exists = no
-		}
 		NFA = {
 			exists = yes
 			is_subject = no
+		}
+		FRC = {
+			OR = {
+				exists = no
+				is_subject_of = PREV
+			}
 		}
 	}
 	mean_time_to_happen = {
@@ -3906,6 +3911,10 @@ news_event = {
 		any_country = {
 			has_country_flag = FRA_nationalist_france_flag
 			has_war_with = GER
+			any_state = {
+				is_owned_by = PREV
+				is_on_continent = europe
+			}
 		}
 	}
 	mean_time_to_happen = {
@@ -4311,7 +4320,7 @@ country_event = {
 			character = GER_hans_von_seeckt
 			country_leader = {
 				ideology = stratocracy
-				traits = { generallissimo trait_stratocracy }
+				traits = { generallissimo  }
 				expire = "1935.1.1.1"
 			}
 		}
@@ -4628,27 +4637,7 @@ country_event = {
 	title = ww1_germany.91.t
 	desc = ww1_germany.91.d
 	picture = GFX_report_event_worker_protests
-	fire_only_once = yes
-	trigger = {
-		tag = GER
-		OR = {
-			has_war_with = USA
-			has_war_with = ENG
-		}
-		NOT = {
-			has_global_flag = great_war_ends
-			USA = {
-				has_capitulated = yes
-			}
-			ENG = {
-				has_capitulated = yes
-			}
-		}
-		date > 1917.10.10
-	}
-	mean_time_to_happen = {
-		days = 20
-	}
+	is_triggered_only = yes
 	option = {
 		name = ww1_germany.91.a
 		add_ideas = ger_famine
@@ -5059,7 +5048,7 @@ country_event = {
 			character = GER_georg_michaelis
 			country_leader = {
 				ideology = conservatism
-				traits = { trait_conservatism }
+				
 				expire = "1935.1.1.1"
 			}
 		}
@@ -5093,7 +5082,7 @@ country_event = {
 			character = GER_georg_von_hertling
 			country_leader = {
 				ideology = conservatism
-				traits = { trait_conservatism }
+				
 				expire = "1935.1.1.1"
 			}
 		}
@@ -5133,7 +5122,7 @@ country_event = {
 			character = GER_prinz_maximilian_von_baden
 			country_leader = {
 				ideology = conservatism
-				traits = { trait_conservatism }
+				
 				expire = "1935.1.1.1"
 			}
 		}
@@ -5168,7 +5157,7 @@ country_event = {
 			character = GER_alfred_von_tirpitz
 			country_leader = {
 				ideology = conservatism
-				traits = { great_war_hero trait_conservatism }
+				traits = { great_war_hero  }
 				expire = "1935.1.1.1"
 			}
 		}
@@ -5234,7 +5223,7 @@ country_event = {
 			country_leader = {
 				ideology = conservatism
 				traits = {
-					great_war_hero trait_conservatism
+					great_war_hero 
 				}
 			}
 		}
@@ -5278,7 +5267,7 @@ country_event = {
 				character = GER_franz_von_papen
 				country_leader = {
 					ideology = conservatism
-					traits = { trait_conservatism }
+					
 					expire = "1935.1.1.1"
 				}
 			}
@@ -5327,7 +5316,7 @@ country_event = {
 				country_leader = {
 					ideology = conservatism
 					traits = {
-						great_war_hero trait_conservatism
+						great_war_hero 
 					}
 				}
 			}
@@ -5434,7 +5423,7 @@ country_event = {
 					ideology = despotism
 					traits = {
 						staunch_monarchist
-						trait_despotism
+						
 					}
 				}
 				create_country_leader = {
@@ -5444,7 +5433,7 @@ country_event = {
 					ideology = stratocracy
 					traits = {
 						fascist_militia_leader
-						trait_stratocracy
+						
 					}
 				}
 				set_capital = { state = 64 }
@@ -5513,7 +5502,7 @@ country_event = {
 				ideology = despotism
 				traits = {
 					staunch_monarchist
-					trait_despotism
+					
 				}
 			}
 			create_country_leader = {
@@ -5523,7 +5512,7 @@ country_event = {
 				ideology = stratocracy
 				traits = {
 					fascist_militia_leader
-					trait_stratocracy
+					
 				}
 			}
 			add_named_threat = {
@@ -5877,5 +5866,262 @@ country_event = {
 				has_war = yes
 			}
 		}
+	}
+}
+
+# DEMAND GERMAN WITHDRAWAL FROM FRANCE
+#########################################
+country_event = {
+	id = ww1_germany.115
+	title = ww1_germany.115.t
+	desc = ww1_germany.115.d
+	trigger = {
+		original_tag = FRA
+		has_country_flag = FRA_nationalist_france
+		is_subject = no
+		has_war = no
+		any_other_country = {
+			original_tag = FRA
+			is_subject_of = GER
+		}
+	}
+	mean_time_to_happen = { days = 30 }
+	fire_only_once = yes
+	option = {
+		name = ww1_germany.115.a
+		GER = {
+			country_event = ww1_germany.116
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+# NATIONALIST FRANCE DEMANDS TO WITHDRAW FROM FRANCE
+#######################################################
+country_event = {
+	id = ww1_germany.116
+	title = ww1_germany.116.t
+	desc = ww1_germany.116.d
+	is_triggered_only = yes
+	# CEDE OCCUPATIONS WITH NO CONDITIONS
+	option = {
+		name = ww1_germany.116.a
+		FROM = { country_event = ww1_germany.117 }
+		ai_chance = {
+			base = 0
+		}
+	}
+	# CEDE OCCUPATIONS WITH CONDITIONS
+	option = {
+		name = ww1_germany.116.b
+		FROM = { country_event = ww1_germany.118 }
+		ai_chance = {
+			base = 30
+		}
+	}
+	# REFUSE
+	option = {
+		name = ww1_germany.116.c
+		FROM = { country_event = ww1_germany.120 }
+		ai_chance = {
+			base = 0
+			modifier = {
+				add = 10
+				any_other_country = {
+					original_tag = FRA
+					is_subject_of = PREV
+					NOT = {
+						is_neighbor_of = NFA
+					}
+				}
+			}
+		}
+	}
+}
+
+# GERMANY CEDES FRENCH OCCUPATIONS WITH NO CONDIIONS
+#######################################################
+country_event = {
+	id = ww1_germany.117
+	title = ww1_germany.117.t
+	desc = ww1_germany.117.d
+	is_triggered_only = yes
+	option = {
+		name = ww1_germany.117.a
+		every_other_country = {
+			limit = {
+				original_tag = FRA
+				is_subject_of = GER
+			}
+			hidden_effect = {
+				every_state = {
+					remove_core_of = PREV
+					remove_claim_by = PREV
+				}
+			}
+			PREV = {
+				annex_country = {
+					target = PREV
+					transfer_troops = no
+				}
+				hidden_effect = {
+					add_opinion_modifier = {
+						target = GER
+						modifier = HOI4TGW_Opinion_improved_diplomatic_relations
+					}
+					every_state = {
+						limit = {
+							is_owned_by = GER
+						}
+						remove_claim_by = PREV
+					}
+					every_state = {
+						limit = {
+							is_owned_by = PREV
+						}
+						remove_claim_by = GER
+					}
+				}
+			}
+		}
+	}
+}
+
+# GERMANY CEDES FRENCH OCCUPATIONS WITH CONDIIONS
+#######################################################
+country_event = {
+	id = ww1_germany.118
+	title = ww1_germany.118.t
+	desc = ww1_germany.118.d
+	is_triggered_only = yes
+	option = {
+		name = ww1_germany.118.a
+		every_other_country = {
+			limit = {
+				original_tag = FRA
+				is_subject_of = GER
+			}
+			hidden_effect = {
+				every_state = {
+					remove_core_of = PREV
+					remove_claim_by = PREV
+				}
+			}
+			PREV = {
+				annex_country = {
+					target = PREV
+					transfer_troops = no
+				}
+				every_owned_state = {
+					limit = {
+						OR = {
+							state = 863
+							state = 864
+							state = 779
+						}
+					}
+					transfer_state_to = GER
+				}
+				if = {
+					limit = {
+						owns_state = 865
+						BEL = { is_subject_of = GER }
+					}
+					BEL = { transfer_state = 865 }
+				}
+				if = {
+					limit = {
+						is_faction_leader = yes
+					}
+					if = {
+						limit = {
+							ENG = {
+								is_in_faction_with = PREV
+								is_subject = no
+							}
+						}
+						ENG = { set_faction_leader = yes }
+					}
+					else_if = {
+						limit = {
+							CAN = {
+								is_in_faction_with = PREV
+								is_subject = no
+								has_country_flag = canada_is_britain
+							}
+						}
+						CAN = { set_faction_leader = yes }
+					}
+					else = {
+						random_other_country = {
+							limit = {
+								is_in_faction_with = PREV
+								is_major = yes
+								is_subject = no
+							}
+							set_faction_leader = yes
+						}	
+					}
+				}
+				GER = { add_to_faction = PREV }
+			}
+		}
+		ai_chance = {
+			base = 10
+		}
+	}
+	option = {
+		name = ww1_germany.118.b
+		every_other_country = {
+			limit = {
+				original_tag = FRA
+				is_subject_of = GER
+			}
+			PREV = {
+				create_wargoal = {
+					target = PREV
+					type = annex_everything
+				}
+			}
+		}
+		GER = { country_event = ww1_germany.119 }
+		ai_chance = {
+			base = 0
+			modifier = {
+				add = 10
+				strength_ratio = {
+					tag = GER
+					ratio > 1
+				}
+			}
+		}
+	}
+}
+
+# NATIONALIST FRANCE REFUSED
+#######################################################
+country_event = {
+	id = ww1_germany.119
+	title = ww1_germany.119.t
+	desc = ww1_germany.119.d
+	is_triggered_only = yes
+	option = {
+		name = ww1_germany.119.a
+		add_war_support = 0.10
+	}
+}
+
+# GERMANY REFUSED
+#######################################################
+country_event = {
+	id = ww1_germany.120
+	title = ww1_germany.120.t
+	desc = ww1_germany.120.d
+	is_triggered_only = yes
+	option = {
+		name = ww1_germany.120.a
+		add_war_support = 0.10
 	}
 }

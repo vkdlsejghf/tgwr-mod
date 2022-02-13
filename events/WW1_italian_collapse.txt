@@ -17,7 +17,7 @@ country_event = {
 			has_global_flag = frankfurt_treaty
 		}
 		has_country_leader = {
-			name = "Vittorio Emanuele III"
+			character = ITA_vittorio_emanuele_iii
 			ruling_only = no
 		}
 		NOT = {
@@ -26,17 +26,8 @@ country_event = {
 	}
 	option = {
 		name = garibaldi.1.a
-		retire_ideology_leader = neutrality
-		create_country_leader = {
-			name = "Umberto II"
-			picture = "gfx/leaders/ITA/ITA_Umberto_II.dds"
-			expire = "1935.1.1"
-			ideology = autocracy
-			traits = {
-				inexperienced_monarch
-				trait_autocracy
-			}
-		}
+		retire_character = ITA_vittorio_emanuele_iii
+		promote_character = ITA_umberto_ii
 		hidden_effect = {
 			if = {
 				limit = {
@@ -64,12 +55,12 @@ country_event = {
 				retire_ideology_leader = neutrality
 				create_country_leader = {
 					name = "Umberto II"
-					picture = "gfx/leaders/ITA/ITA_Umberto_II.dds"
+					picture = "gfx/leaders/ITA/ITA_Umberto_II.png"
 					expire = "1935.1.1"
 					ideology = autocracy
 					traits = {
 						inexperienced_monarch
-						trait_autocracy
+						
 					}
 				}
 			}
@@ -165,11 +156,11 @@ country_event = {
 				set_cosmetic_tag = SRI
 				create_country_leader = {
 					name = "Nicola Bombacci"
-					picture = "gfx/leaders/ITA/ITA_nicola_bombacci.dds"
+					picture = "gfx/leaders/ITA/ITA_nicola_bombacci.png"
 					expire = "1935.1.1"
 					ideology = vanguardism
 					traits = {
-						trait_vanguardism
+						
 					}
 				}
 				set_party_name = {
@@ -179,7 +170,7 @@ country_event = {
 				}
 				create_corps_commander = {
 					name = "Randolfo Pacciardi"
-					portrait_path = "gfx/leaders/ITA/ITA_randolfo_pacciardi.dds"
+					portrait_path = "gfx/leaders/ITA/ITA_randolfo_pacciardi.png"
 					traits = {
 						politically_connected
 						trickster
@@ -193,7 +184,7 @@ country_event = {
 				}
 				create_corps_commander = {
 					name = "Edmondo Rossoni"
-					portrait_path = "gfx/leaders/ITA/ITA_edmondo_rossoni.dds"
+					portrait_path = "gfx/leaders/ITA/ITA_edmondo_rossoni.png"
 					traits = {
 						career_officer
 						organizer
@@ -206,7 +197,7 @@ country_event = {
 				}
 				create_corps_commander = {
 					name = "Arnaldo Azzi"
-					portrait_path = "gfx/leaders/ITA/ITA_arnaldo_azzi.dds"
+					portrait_path = "gfx/leaders/ITA/ITA_arnaldo_azzi.png"
 					traits = {
 					}
 					skill = 1
@@ -256,7 +247,7 @@ country_event = {
 				add_ideas = extensive_conscription
 				division_template = {
 					name = "Guardie Rosse"
-					division_names_group = ITA_GAR_02
+					division_names_group = ITA_GAR_01
 					regiments = {
 						infantry = {
 							x = 0
@@ -432,14 +423,15 @@ country_event = {
 				fascism = 9
 				communism = 28
 			}
-			create_country_leader = {
-				name = "Francesco Saverio Nitti"
-				picture = "gfx/leaders/ITA/ITA_francesco_saverio_nitti.dds"
-				expire = "1935.1.1"
-				ideology = socialism
-				traits = {
-					trait_socialism
+			ITA_francesco_saverio_nitti = {
+				add_country_leader_role = {
+					country_leader={
+						ideology=socialism
+						
+						
+					}
 				}
+				promote_character = socialism
 			}
 			set_party_name = {
 				ideology = neutrality
@@ -523,11 +515,11 @@ country_event = {
 				set_cosmetic_tag = ITS
 				create_country_leader = {
 					name = "Provisional Government of Naples"
-					picture = "gfx/leaders/ITA/ITA_Provisional_Government_of_Naples.dds"
+					picture = "gfx/leaders/ITA/ITA_Provisional_Government_of_Naples.png"
 					expire = "1935.1.1"
 					ideology = oligarchism
 					traits = {
-						trait_oligarchism
+						
 					}
 				}
 				load_focus_tree = {
@@ -927,11 +919,11 @@ country_event = {
 			# Ferdinant III of Bourbon-Two Sicilies
 			create_country_leader = {
 				name = "Ferdinando III"
-				picture = "gfx/leaders/ITA/ITA_Ferdinant_III.dds"
+				picture = "gfx/leaders/ITA/ITA_Ferdinant_III.png"
 				expire = "1935.1.1"
 				ideology = despotism
 				traits = {
-					trait_despotism
+					
 				}
 			}
 			set_party_name = {
@@ -1290,12 +1282,12 @@ news_event = {
 					kill_ideology_leader = neutrality
 					create_country_leader = {
 						name = "Pius XI"
-						picture = "gfx/leaders/ITA/PAP_Pius_XI.dds"
+						picture = "gfx/leaders/PAP/PAP_Pius_XI.png"
 						expire = "1935.1.1"
 						ideology = theocracy
 						traits = {
 							pope
-							trait_theocracy
+							
 						}
 					}
 					set_country_flag = pope_death_benedict_xv
@@ -1317,12 +1309,12 @@ news_event = {
 					kill_ideology_leader = neutrality
 					create_country_leader = {
 						name = "Pius XII"
-						picture = "gfx/leaders/ITA/PAP_Pius_XII.dds"
+						picture = "gfx/leaders/PAP/PAP_Pius_XII.png"
 						expire = "1935.1.1"
 						ideology = theocracy
 						traits = {
 							pope
-							trait_theocracy
+							
 						}
 					}
 					set_country_flag = pope_death_pius_xi
@@ -2909,12 +2901,12 @@ news_event = {
 				kill_ideology_leader = neutrality
 				create_country_leader = {
 					name = "Pius XI"
-					picture = "gfx/leaders/ITA/PAP_Pius_XI.dds"
+					picture = "gfx/leaders/PAP/PAP_Pius_XI.png"
 					expire = "1935.1.1"
 					ideology = theocracy
 					traits = {
 						pope
-						trait_theocracy
+						
 					}
 				}
 			}
