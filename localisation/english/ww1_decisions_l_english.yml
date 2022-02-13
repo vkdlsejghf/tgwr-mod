@@ -1160,6 +1160,8 @@
  LIB_nigeria_rise_up:0 "[NGA.GetFlag] Nigeria Revolt"
  LIB_wadai_rise_up:0 "[CHA.GetFlag] Return of Wadai"
 
- SPR_foreign_trade_category:0 "Foreign Trade
- SPR_trade_with_france:0 "Placeholder"
- SPR_trade_with_france_desc:0 "Placeholder"
+ SPR_trade_abroad_category:0 "Foreign Trade"
+ SPR_trade_with_germans:0 "Trade With The German Empire"
+ SPR_trade_with_germans_desc:0 "Placeholder"
+ SPR_trade_with_french:0 "Trade With The French Republic"
+ SPR_trade_with_french_desc:0 "Placeholder"

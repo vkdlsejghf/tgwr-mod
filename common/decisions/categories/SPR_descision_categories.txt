@@ -1,5 +1,7 @@
-SPR_foreign_trade_category = {
-    icon = decision_category_tur_minorities
+##############################
+#SPANISH DESCISION CATEGORIES#
+##############################
+SPR_trade_abroad_category = {
     priority = 100
     allowed = {
         original_tag = SPR
