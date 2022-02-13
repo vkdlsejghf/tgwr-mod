@@ -1165,3 +1165,7 @@
  SPR_trade_with_germans_desc:0 "Placeholder"
  SPR_trade_with_french:0 "Trade With The French Republic"
  SPR_trade_with_french_desc:0 "Placeholder"
+ SPR_trade_with_austrians:0 "Trade With Austria-Hungary"
+ SPR_trade_with_austrians_desc:0 "Placeholder"
+ SPR_trade_with_british:0 "Trade With The United Kingdom"
+ SPR_trade_with_british_desc:0 "Placeholder"

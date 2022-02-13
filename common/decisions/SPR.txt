@@ -8,6 +8,7 @@ SPR_trade_abroad_category = {
         }
         visible = {
         }
+        priority = 100
         complete_effect = {
             add_political_power = 100
         }
@@ -23,6 +24,37 @@ SPR_trade_abroad_category = {
         }
         visible = {
         }
+        priority = 98
+        complete_effect = {
+            add_political_power = 100
+        }
+    }
+}
+SPR_trade_abroad_category = {
+    SPR_trade_with_austrians = {
+        allowed = {
+            original_tag = SPR
+        }
+        available = {
+            has_political_power > 1
+        }
+        visible = {
+        }
+        priority = 99
+        complete_effect = {
+            add_political_power = 100
+        }
+    }
+}
+SPR_trade_abroad_category = {
+    SPR_trade_with_british = {
+        allowed = {
+            original_tag = SPR
+        }
+        available = {
+            has_political_power > 1
+        }
+        priority = 97
         complete_effect = {
             add_political_power = 100
         }
