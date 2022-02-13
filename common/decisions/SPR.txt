@@ -1,3 +1,6 @@
+####################
+#SPANISH DESCISIONS#
+####################
 SPR_trade_abroad_category = {
     SPR_trade_with_germans = {
         allowed = {
