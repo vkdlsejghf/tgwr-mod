@@ -982,7 +982,7 @@ spriteTypes = {
 		texturefile = "gfx/event_pictures/ww1_spain/spain_troops_dep_two.dds"
 	}
 	spriteType = {
-		name = "GFX_report_event_spain_coal_mines"
-		texturefile = "gfx/event_pictures/ww1_spain/report_event_spr_coal_mines.dds"
+		name = "GFX_report_event_spainish_coal_shipment"
+		texturefile = "gfx/event_pictures/ww1_spain/report_event_spr_coal_mines.png"
 	}
 }
