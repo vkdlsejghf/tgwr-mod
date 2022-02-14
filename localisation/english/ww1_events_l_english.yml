@@ -4370,6 +4370,10 @@
  ww1_england.212.t:0 "General Knox departs"
  ww1_england.212.d:0 "Following the government's souring of relations with [ENG.GetNameDef], General Alfred Knox has departed the British attache."
  ww1_england.212.a:0 "Good Riddance!"
+ ww1_england.213.t:0 "Spain Offeres To Supply Us With Tungsten"
+ ww1_england.213.d:0 "We have received an offer from the Spanish Government offering to supply our nation with tungsten in return for assistance in developing their industrial facilities. Should we accept this offer or not accept it?"
+ ww1_england.213.a:0 "We Accept."
+ ww1_england.213.b:0 "We Refuse."
  #The following events relate to Egypt and the British Collapse, and don't all directly relate to Britain.
  ww1_england.52.t:0 "Egypt breaks from our rule!"
  ww1_england.52.d:0 "the Sultanate of Egypt, long under our protectorate, has broken away from us and declared total independence!"

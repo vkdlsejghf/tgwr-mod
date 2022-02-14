@@ -769,4 +769,8 @@ spriteTypes = {
 		name = "GFX_report_event_spainish_coal_shipment"
 		texturefile = "gfx/event_pictures/ww1_spain/report_event_spr_coal_mines.png"
 	}
+	spriteType = {
+		name = "GFX_report_event_spanish_tungsten_mines"
+		texturefile = "gfx/event_pictures/ww1_spain/report_event_spain_tungsten_mines.png"
+	}
 }
