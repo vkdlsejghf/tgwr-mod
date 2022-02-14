@@ -3,6 +3,8 @@
 ####################
 SPR_trade_abroad_category = {
     SPR_trade_with_germans = {
+        cost = 10
+        days_re_enable = 5
         allowed = {
             original_tag = SPR
         }
@@ -19,6 +21,8 @@ SPR_trade_abroad_category = {
 }
 SPR_trade_abroad_category = {
     SPR_trade_with_french = {
+        cost = 10
+        days_re_enable = 5
         allowed = {
             original_tag = SPR
         }
@@ -40,6 +44,8 @@ SPR_trade_abroad_category = {
 }
 SPR_trade_abroad_category = {
     SPR_trade_with_austrians = {
+        cost = 10
+        days_re_enable = 5
         allowed = {
             original_tag = SPR
         }
@@ -56,6 +62,8 @@ SPR_trade_abroad_category = {
 }
 SPR_trade_abroad_category = {
     SPR_trade_with_british = {
+        cost = 10
+        days_re_enable = 5
         allowed = {
             original_tag = SPR
         }
