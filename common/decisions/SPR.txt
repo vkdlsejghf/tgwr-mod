@@ -64,7 +64,12 @@ SPR_trade_abroad_category = {
         }
         priority = 97
         complete_effect = {
-            add_political_power = 100
+            ENG = {
+                country_event = {
+                    id = ww1_england.213
+                    days = 1
+                }
+            }
         }
     }
 }
