@@ -9579,11 +9579,19 @@ country_event = {
 		ai_chance = {
 			factor = 75
 		}
+		country_event = {
+			id = ww1_spain.16
+			days = 2
+		}
 	}
 	option = {
 		name = ww1_england.213.b
 		ai_chance = {
 			factor = 25
+		}
+		country_event = {
+			id = ww1_spain.17
+			days = 2
 		}
 	}
 }

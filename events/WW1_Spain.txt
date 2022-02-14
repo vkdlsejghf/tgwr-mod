@@ -264,3 +264,31 @@ country_event = {
 		}
 	}
 }
+
+#Shipping tungsten to uk events
+country_event = {
+	id = ww1_spain.16
+	title = ww1_spain.16.t
+	desc = ww1_spain.16.d
+	picture = GFX_report_event_spanish_tungsten_mines
+	is_triggered_only = yes
+	option = {
+		name = ww1_spain.16.a
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = {
+	id = ww1_spain.17
+	title = ww1_spain.17.t
+	desc = ww1_spain.17.d
+	picture = GFX_report_event_spanish_tungsten_mines
+	is_triggered_only = yes
+	option = {
+		name = ww1_spain.17.a
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
