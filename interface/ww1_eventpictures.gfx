@@ -773,4 +773,8 @@ spriteTypes = {
 		name = "GFX_report_event_spanish_tungsten_mines"
 		texturefile = "gfx/event_pictures/ww1_spain/report_event_spain_tungsten_mines.png"
 	}
+	spriteType = {
+		name = "GFX_report_event_spain_textiles"
+		texturefile = "gfx/event_pictures/ww1_spain/report_event_spain_auh_textiles.png"
+	}
 }
