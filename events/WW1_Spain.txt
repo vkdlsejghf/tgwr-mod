@@ -236,3 +236,31 @@ news_event = {
 		set_country_flag = socialist_revolt
 	}
 }
+
+#Shipping coal to france events
+country_event = {
+	id = ww1_spain.14
+	title = ww1_spain.14.t
+	desc = ww1_spain.14.d
+	picture = GFX_report_event_spainish_coal_shipment
+	is_triggered_only = yes
+	option = {
+		name = ww1_spain.14.a
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = {
+	id = ww1_spain.15
+	title = ww1_spain.15.t
+	desc = ww1_spain.15.d
+	picture = GFX_report_event_spainish_coal_shipment
+	is_triggered_only = yes
+	option = {
+		name = ww1_spain.15.a
+		ai_chance = {
+			factor = 100
+		}
+	}
+}

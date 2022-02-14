@@ -5838,6 +5838,12 @@
  ww1_spain.13.t:0 "Socialist Revolution In Spain!"
  ww1_spain.13.d:0 "Placeholder"
  ww1_spain.13.a:0 "For The Revolution"
+ ww1_spain.14.t:0 "France Accepts Our Offer To Sell Them Coal"
+ ww1_spain.14.d:0 "Placeholder"
+ ww1_spain.14.a:0 "We Will Ship It To You Shortly."
+ ww1_spain.15.t:0 "France Refuses Our Offer To Sell Them Coal"
+ ww1_spain.15.d:0 "Placeholder"
+ ww1_spain.15.a:0 "Oh, Ok."
 
  #Developer Notes
  ww1_developer_note.1.t:0 "Note from the British Dev"
