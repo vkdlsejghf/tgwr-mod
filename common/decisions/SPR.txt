@@ -5,11 +5,15 @@ SPR_trade_abroad_category = {
     SPR_trade_with_germans = {
         cost = 10
         days_re_enable = 5
+        days_remove = 1
         allowed = {
             original_tag = SPR
         }
         available = {
-            has_political_power > 1
+            has_political_power > 10
+            has_global_flag = {
+                flag = kis_war
+            }
         }
         visible = {
         }
@@ -23,11 +27,15 @@ SPR_trade_abroad_category = {
     SPR_trade_with_french = {
         cost = 10
         days_re_enable = 5
+        days_remove = 1
         allowed = {
             original_tag = SPR
         }
         available = {
-            has_political_power > 1
+            has_political_power > 10
+            has_global_flag = {
+                flag = kis_war
+            }
         }
         visible = {
         }
@@ -46,11 +54,15 @@ SPR_trade_abroad_category = {
     SPR_trade_with_austrians = {
         cost = 10
         days_re_enable = 5
+        days_remove = 1
         allowed = {
             original_tag = SPR
         }
         available = {
-            has_political_power > 1
+            has_political_power > 10
+            has_global_flag = {
+                flag = kis_war
+            }
         }
         visible = {
         }
@@ -64,11 +76,15 @@ SPR_trade_abroad_category = {
     SPR_trade_with_british = {
         cost = 10
         days_re_enable = 5
+        days_remove = 1
         allowed = {
             original_tag = SPR
         }
         available = {
-            has_political_power > 1
+            has_political_power > 10
+            has_global_flag = {
+                flag = kis_war
+            }
         }
         priority = 97
         complete_effect = {
