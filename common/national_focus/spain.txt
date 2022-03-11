@@ -974,8 +974,11 @@ focus_tree = {
         id = SPR_the_general_strike
         icon = GFX_focus_communist_urbanization
         x = 80
-        y = 1
+        y = 3
         cost = 1
+        prerequisite = {
+            focus = SPR_the_republican_option
+        }
         mutually_exclusive = {
             focus = SPR_non_commie_republic
         }
@@ -1001,7 +1004,7 @@ focus_tree = {
         id = SPR_strike_supressed
         icon = GFX_focus_generic_suppress_socdems
         x = 80
-        y = 2
+        y = 4
         cost = 1
         prerequisite = {
             focus = SPR_the_general_strike
@@ -1028,7 +1031,7 @@ focus_tree = {
         id = SPR_boost_communism_support
         icon = GFX_focus_worker_culture
         x = 77
-        y = 3
+        y = 5
         cost = 1
         prerequisite = {
             focus = SPR_strike_supressed
@@ -1051,7 +1054,7 @@ focus_tree = {
         id = SPR_raid_weapons_store
         icon = GFX_focus_communist_heavy_industry
         x = 80
-        y = 3
+        y = 5
         cost = 1
         prerequisite = {
             focus = SPR_strike_supressed
@@ -1073,7 +1076,7 @@ focus_tree = {
         id = SPR_prewar_sabotage
         icon = GFX_focus_ottoman_comie_flag
         x = 83
-        y = 3
+        y = 5
         cost = 1
         prerequisite = {
             focus = SPR_strike_supressed
@@ -1096,7 +1099,7 @@ focus_tree = {
         id = SPR_final_preperations_com
         icon = GFX_focus_soviet_congress
         x = 80
-        y = 5
+        y = 7
         cost = 1
         prerequisite = {
             focus = SPR_boost_communism_support
@@ -1123,7 +1126,7 @@ focus_tree = {
         id = SPR_com_revolution_begin
         icon = GFX_focus_red_star_soldier
         x = 80
-        y = 6
+        y = 8
         cost = 1
         prerequisite = {
             focus = SPR_final_preperations_com
@@ -1163,11 +1166,31 @@ focus_tree = {
         id = SPR_non_commie_republic
         icon = GFX_focus_spr_maintain_the_republic
         x = 90
-        y = 1
+        y = 3
         cost = 1
-
+        prerequisite = {
+            focus = SPR_the_republican_option
+        }
         mutually_exclusive = {
             focus = SPR_the_general_strike
+        }
+        available = {
+            has_country_flag = nineteen_thirteen_general_strike
+        }
+        completion_reward = {
+            #this is a Placeholder
+            add_political_power = 100
+        }
+    }
+    focus = {
+        id = SPR_the_republican_option
+        icon = GFX_focus_royal_question
+        x = 85
+        y = 1
+        cost = 1
+        completion_reward = {
+            #placeholder reward
+            add_political_power = 100
         }
     }
 }
