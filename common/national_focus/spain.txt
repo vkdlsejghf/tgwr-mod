@@ -775,6 +775,72 @@ focus_tree = {
         }
     }
     focus = {
+        id = SPR_railway_improve_three
+        icon = GFX_focus_train_railroads
+        x = 58
+        y = 6
+        cost = 1
+        prerequisite = {
+            focus = SPR_railway_improve_two
+        }
+        select_effect = {
+            add_timed_idea = {
+                idea = spain_finance_rail_build
+                days = 7
+            }
+        }
+        available = {
+            NOT = {
+                has_idea = spain_unable_to_build_rails
+            }
+        }
+        search_filters = {
+            FOCUS_FILER_CONSTRUCTION
+            FOCUS_FILTER_INDUSTRIAL
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            build_railway = {
+                level = 1
+                build_only_on_allied = no
+                controller_priority = {
+                    base = 1
+
+                    modifier = {
+                        tag = SPR
+                        add = 2
+                    }
+                }
+                fallback = yes
+                path = { 875 1178 7183 }
+                start_province = 169
+                target_province = 169
+            }
+            build_railway = {
+                level = 1
+                build_only_on_allied = no
+                controller_priority = {
+                    base = 1
+
+                    modifier = {
+                        tag = SPR
+                        add = 2
+                    }
+                }
+                fallback = yes
+                path = { 7183 1048 }
+                start_province = 169
+                target_province = 169
+            }
+            add_timed_idea = {
+                idea = spain_unable_to_build_rails
+                days = 20
+            }
+        }
+    }
+    focus = {
         id = SPR_improve_colonial_roads
         icon = GFX_SPR_road_construction
         x = 39
@@ -1190,6 +1256,25 @@ focus_tree = {
         completion_reward = {
             #placeholder reward
             add_political_power = 100
+        }
+    }
+    focus = {
+        id = SPR_build_andalusia_factory
+        icon = GFX_focus_industry_steel
+        x = 61
+        y = 4
+        cost = 1
+        prerequisite = {
+            focus = SPR_spanish_industry_and_infrastructure
+        }
+        completion_reward = {
+            169 = {
+                add_building_construction = {
+                    type = industrial_complex
+                    level = 1
+                    instant_build = yes
+                }
+            }
         }
     }
 }
