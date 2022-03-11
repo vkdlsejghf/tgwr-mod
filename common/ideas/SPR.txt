@@ -377,7 +377,7 @@ ideas = {
 	}
 	country = {
 		spain_alfonso_xiii = {
-			picture = generic_army_europe_6
+			picture = SPR_alfonso_xiii
 			allowed = {
 				tag = SPR
 			}

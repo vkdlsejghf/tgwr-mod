@@ -1478,4 +1478,8 @@ spriteType = { name = "GFX_idea_nevsky_zavod" texturefile = "gfx/interface/ideas
 		name = "GFX_idea_SPR_road_construct_spirit"
 		texturefile = "gfx/interface/ideas/SPR/idea_SPR_road_construct_spirit.png"
 	}
+	spriteType = {
+		name = "GFX_idea_SPR_alfonso_xiii"
+		texturefile = "gfx/interface/ideas/SPR/idea_SPR_alfonso_xii.png"
+	}
 }
