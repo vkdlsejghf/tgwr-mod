@@ -1480,6 +1480,6 @@ spriteType = { name = "GFX_idea_nevsky_zavod" texturefile = "gfx/interface/ideas
 	}
 	spriteType = {
 		name = "GFX_idea_SPR_alfonso_xiii"
-		texturefile = "gfx/interface/ideas/SPR/idea_SPR_alfonso_xii.png"
+		texturefile = "gfx/interface/ideas/spr/idea_SPR_alfonso_xiii.png"
 	}
 }
