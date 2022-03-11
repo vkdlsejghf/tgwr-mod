@@ -434,4 +434,15 @@ ideas = {
 			}
 		}
 	}
+	country = {
+		spain_democratic_republican_groups = {
+			picture = generic_democratic_drift_bonus
+			allowed = {
+				tag = SPR
+			}
+			modifier = {
+				democratic_drift = 0.05
+			}
+		}
+	}
 }
