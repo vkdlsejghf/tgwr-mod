@@ -976,6 +976,9 @@ focus_tree = {
         x = 80
         y = 1
         cost = 1
+        mutually_exclusive = {
+            focus = SPR_non_commie_republic
+        }
         available = {
             has_country_flag = nineteen_thirteen_general_strike
         }
@@ -1154,6 +1157,17 @@ focus_tree = {
             country_event = {
                 id = ww1_spain.13
             }
+        }
+    }
+    focus = {
+        id = SPR_non_commie_republic
+        icon = GFX_focus_spr_maintain_the_republic
+        x = 90
+        y = 1
+        cost = 1
+
+        mutually_exclusive = {
+            focus = SPR_the_general_strike
         }
     }
 }
