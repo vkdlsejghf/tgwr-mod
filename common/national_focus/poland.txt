@@ -161,6 +161,7 @@ focus_tree = {
 			has_war = no
 			NOT = {
 				has_cosmetic_tag = POL_republic
+				has_cosmetic_tag = POL_RUS
 			}
 		}
 		completion_reward = {
@@ -1192,7 +1193,7 @@ focus_tree = {
 				}
 			}
 		}
-		ai_chance = {
+		ai_will_do = {
 			factor = 1
 			modifier = {
 				factor = 0
