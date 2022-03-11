@@ -5864,8 +5864,17 @@
  ww1_spain.3.a:0 "Placeholder"
  ww1_spain.3.b:0 "Placeholder"
  ww1_spain.4.t:0 "Formation Of The Spanish Naval Recovery Committee"
- ww1_spain.4.d:0 "Upon the command of our king Alfonso XIII and his government a committee has been formed to oversee the recovery of the Spanish navy"
+ ww1_spain.4.d:0 "Upon the command of our king Alfonso XIII and his government the ministry of the navy will form a committee to oversee the recovery of the Spanish navy."
  ww1_spain.4.a:0 "Ok."
+ ww1_spain.5.t:0 "Formation Of The Spanish Army Revovery Committee"
+ ww1_spain.5.d:0 "Upon the command of our King Alfonso XIII and his government the ministry of the army will form a committee to oversee the recovery of the Spanish army."
+ ww1_spain.5.a:0 "Ok."
+ ww1_spain.6.t:0 "Formation Of The Spanish Airforce"
+ ww1_spain.6.d:0 "Today the Spanish airforce has been founded in a ceremony attended by king Alfonso and senior military officials."
+ ww1_spain.6.a:0 "Per aspera ad astra"
+ ww1_spain.8.t:0 "Assassination Of José Canalejas y Méndez"
+ ww1_spain.8.d:0 "Today prime minister José Canalejas y Méndez was assassinated while window-shopping at a bookstore in central Madrid by anarchist Manuel Pardiñas. After fatally shooting the prime minister Pardiñas turned his gun on himself and commited suicide."
+ ww1_spain.8.a:0 "R.I.P"
  
  #Developer Notes
  ww1_developer_note.1.t:0 "Note from the British Dev"
