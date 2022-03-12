@@ -6042,7 +6042,7 @@ GER_deutsche_arbeiterpartei:0 "Deutsche Arbeiterpartei"
  SPR_non_commie_republic:0 "A Democratic Republic"
  SPR_non_commie_republic_desc:0 "Placeholder."
  SPR_build_andalusia_factory:0 "Build Industry In Andalusia"
- SPR_build_andalusia_factory_desc:0 "Placeholder"
+ SPR_build_andalusia_factory_desc:0 "The industry in Andalusia is outdated to non-existent. We must construct some semi-modern industry in the area to allow us to further industrialise it."
  
  LIB_rapid_industrialisation:0 "Rapid Industrialisation"
  LIB_rapid_industrialisation_desc:0 "In order to compete with modern nations and create a true country out of our colony, we must rapidly industrialise this land. By force, if necessary."
