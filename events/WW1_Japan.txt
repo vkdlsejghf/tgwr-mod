@@ -323,7 +323,7 @@ country_event = {
 			create_country_leader = {
 				name = "Yoshihito"
 				picture = "gfx/leaders/JAP/JAP_yoshihito.png"
-				expire = "1935.1.1"
+				
 				ideology = autocracy
 				traits = {
 					warrior_code
@@ -379,12 +379,7 @@ country_event = {
 	mean_time_to_happen = { days = 80 }
 	option = {
 		name = ww1_japan.7.a
-		retire_character = JAP_kōtoku_shūsui
-		set_party_name = {
-			name = communism
-			long_name = communism
-			ideology = communism
-		}
+		retire_character = JAP_kotoku_shusui
 		ai_chance = {
 			factor = 100
 		}
@@ -561,7 +556,7 @@ country_event = {
 			create_country_leader = {
 				name = "Hirohito"
 				picture = "gfx/leaders/JAP/JAP_Hirohito.png"
-				expire = "1935.1.1"
+				
 				ideology = fascism_ideology
 				traits = {
 					warrior_code
@@ -787,7 +782,7 @@ country_event = {
 					picture = "gfx/leaders/KOR/KOR_JAP_governor_general.png"
 					ideology = stratocracy
 					
-					expire = "1935.1.1"
+					
 				}
 				add_popularity = {
 					ideology = fascism
@@ -828,7 +823,7 @@ country_event = {
 					picture = "gfx/leaders/KOR/KOR_JAP_governor_general.png"
 					ideology = stratocracy
 					
-					expire = "1935.1.1"
+					
 				}
 				add_popularity = {
 					ideology = fascism
@@ -836,55 +831,6 @@ country_event = {
 				}
 				change_tag_from = JAP
 			}
-		}
-	}
-}
-
-country_event = {
-	id = ww1_japan.702
-	hidden = yes
-	fire_only_once = yes
-	trigger = {
-		original_tag = JAP
-		has_country_leader = {
-			name = "Tokugawa Iesato"
-			ruling_only = yes
-		}
-		has_civil_war = no
-	}
-	immediate = {
-		hidden_effect = {
-			if = {
-				limit = {
-					OR = {
-						date > 1912.7.1
-						has_country_flag = king_death_meiji
-					}
-					NOT = {
-						has_country_flag = king_death_taisho
-						date > 1926.12.1
-					}
-				}
-				promote_character = JAP_yoshihito
-			}
-			else_if = {
-				limit = {
-					OR = {
-						has_country_flag = king_death_taisho
-						date > 1926.12.1
-					}
-				}
-				promote_character = JAP_hirohito
-			}
-			else = {
-				promote_character = JAP_mutsuhito
-			}
-			set_party_name = {
-				ideology = fascism
-				name = JAP_neutrality_party
-				long_name = JAP_neutrality_party_long
-			}
-			set_capital = { state = 282 }
 		}
 	}
 }

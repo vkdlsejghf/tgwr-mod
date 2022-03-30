@@ -577,21 +577,8 @@ TUR_minority_decision = {
 				limit = {
 					has_completed_focus = TUR_solvetheidentityproblem
 				}
-				FROM = {
-					hidden_effect = {
-						remove_dynamic_modifier = {
-							modifier = TUR_armenia_minority
-						}
-					}
-					add_dynamic_modifier = {
-						modifier = TUR_minority_industry
-					}
-					hidden_effect = {
-						add_dynamic_modifier = {
-							modifier = TUR_armenia_minority
-						}
-					}
-				}
+				custom_effect_tooltip = TUR_socialist_economy_production_speed_buildings_factor_-005
+				add_to_variable = { TUR_socialist_production_speed_buildings_factor = -0.05 }
 				hidden_effect = {
 					add_political_power = -15
 				}
@@ -630,11 +617,8 @@ TUR_minority_decision = {
 				limit = {
 					has_completed_focus = TUR_solvetheidentityproblem
 				}
-				FROM = {
-					remove_dynamic_modifier = {
-						modifier = TUR_minority_industry
-					}
-				}
+				custom_effect_tooltip = TUR_socialist_economy_production_speed_buildings_factor_005
+				add_to_variable = { TUR_socialist_production_speed_buildings_factor = 0.05 }
 			}
 			if = {
 				limit = {
@@ -893,21 +877,8 @@ TUR_minority_decision = {
 				limit = {
 					has_completed_focus = TUR_solvetheidentityproblem
 				}
-				FROM = {
-					hidden_effect = {
-						remove_dynamic_modifier = {
-							modifier = TUR_kurd_minority
-						}
-					}
-					add_dynamic_modifier = {
-						modifier = TUR_minority_industry
-					}
-					hidden_effect = {
-						add_dynamic_modifier = {
-							modifier = TUR_armenia_minority
-						}
-					}
-				}
+				custom_effect_tooltip = TUR_socialist_economy_production_speed_buildings_factor_-005
+				add_to_variable = { TUR_socialist_production_speed_buildings_factor = -0.05 }
 				hidden_effect = {
 					add_political_power = -15
 				}
@@ -939,16 +910,6 @@ TUR_minority_decision = {
 				clr_state_flag = TUR_kurd_state
 				remove_dynamic_modifier = {
 					modifier = TUR_kurd_minority
-				}
-			}
-			if = {
-				limit = {
-					has_completed_focus = TUR_solvetheidentityproblem
-				}
-				FROM = {
-					remove_dynamic_modifier = {
-						modifier = TUR_minority_industry
-					}
 				}
 			}
 			if = {
@@ -1247,21 +1208,8 @@ TUR_minority_decision = {
 				limit = {
 					has_completed_focus = TUR_solvetheidentityproblem
 				}
-				FROM = {
-					hidden_effect = {
-						remove_dynamic_modifier = {
-							modifier = TUR_arab_minority
-						}
-					}
-					add_dynamic_modifier = {
-						modifier = TUR_minority_industry
-					}
-					hidden_effect = {
-						add_dynamic_modifier = {
-							modifier = TUR_arab_minority
-						}
-					}
-				}
+				custom_effect_tooltip = TUR_socialist_economy_production_speed_buildings_factor_-005
+				add_to_variable = { TUR_socialist_production_speed_buildings_factor = -0.05 }
 				hidden_effect = {
 					add_political_power = -15
 				}
@@ -1293,16 +1241,6 @@ TUR_minority_decision = {
 				clr_state_flag = TUR_arab_state
 				remove_dynamic_modifier = {
 					modifier = TUR_arab_minority
-				}
-			}
-			if = {
-				limit = {
-					has_completed_focus = TUR_solvetheidentityproblem
-				}
-				FROM = {
-					remove_dynamic_modifier = {
-						modifier = TUR_minority_industry
-					}
 				}
 			}
 			if = {
@@ -1454,6 +1392,7 @@ TUR_minority_decision = {
 			44
 			848
 			847
+			803
 		}
 		on_map_mode = map_only
 		days_remove = 30
@@ -1553,21 +1492,8 @@ TUR_minority_decision = {
 				limit = {
 					has_completed_focus = TUR_solvetheidentityproblem
 				}
-				FROM = {
-					hidden_effect = {
-						remove_dynamic_modifier = {
-							modifier = TUR_albanian_minority
-						}
-					}
-					add_dynamic_modifier = {
-						modifier = TUR_minority_industry
-					}
-					hidden_effect = {
-						add_dynamic_modifier = {
-							modifier = TUR_albanian_minority
-						}
-					}
-				}
+				custom_effect_tooltip = TUR_socialist_economy_production_speed_buildings_factor_-005
+				add_to_variable = { TUR_socialist_production_speed_buildings_factor = -0.05 }
 				hidden_effect = {
 					add_political_power = -15
 				}
@@ -1599,16 +1525,6 @@ TUR_minority_decision = {
 				clr_state_flag = TUR_albanian_state
 				remove_dynamic_modifier = {
 					modifier = TUR_albanian_minority
-				}
-			}
-			if = {
-				limit = {
-					has_completed_focus = TUR_solvetheidentityproblem
-				}
-				FROM = {
-					remove_dynamic_modifier = {
-						modifier = TUR_minority_industry
-					}
 				}
 			}
 			if = {
@@ -1762,7 +1678,6 @@ TUR_minority_decision = {
 			756
 			860
 			861
-			803
 		}
 		on_map_mode = map_only
 		days_remove = 30
@@ -1862,21 +1777,8 @@ TUR_minority_decision = {
 				limit = {
 					has_completed_focus = TUR_solvetheidentityproblem
 				}
-				FROM = {
-					hidden_effect = {
-						remove_dynamic_modifier = {
-							modifier = TUR_greek_minority
-						}
-					}
-					add_dynamic_modifier = {
-						modifier = TUR_minority_industry
-					}
-					hidden_effect = {
-						add_dynamic_modifier = {
-							modifier = TUR_greek_minority
-						}
-					}
-				}
+				custom_effect_tooltip = TUR_socialist_economy_production_speed_buildings_factor_-005
+				add_to_variable = { TUR_socialist_production_speed_buildings_factor = -0.05 }
 				hidden_effect = {
 					add_political_power = -15
 				}
@@ -1927,16 +1829,6 @@ TUR_minority_decision = {
 				clr_state_flag = TUR_greek_state
 				remove_dynamic_modifier = {
 					modifier = TUR_greek_minority
-				}
-			}
-			if = {
-				limit = {
-					has_completed_focus = TUR_solvetheidentityproblem
-				}
-				FROM = {
-					remove_dynamic_modifier = {
-						modifier = TUR_minority_industry
-					}
 				}
 			}
 			if = {
@@ -2246,21 +2138,8 @@ TUR_minority_decision = {
 				limit = {
 					has_completed_focus = TUR_solvetheidentityproblem
 				}
-				FROM = {
-					hidden_effect = {
-						remove_dynamic_modifier = {
-							modifier = TUR_southslav_minority
-						}
-					}
-					add_dynamic_modifier = {
-						modifier = TUR_minority_industry
-					}
-					hidden_effect = {
-						add_dynamic_modifier = {
-							modifier = TUR_southslav_minority
-						}
-					}
-				}
+				custom_effect_tooltip = TUR_socialist_economy_production_speed_buildings_factor_-005
+				add_to_variable = { TUR_socialist_production_speed_buildings_factor = -0.05 }
 				hidden_effect = {
 					add_political_power = -15
 				}
@@ -2292,16 +2171,6 @@ TUR_minority_decision = {
 				clr_state_flag = TUR_southslav_state
 				remove_dynamic_modifier = {
 					modifier = TUR_southslav_minority
-				}
-			}
-			if = {
-				limit = {
-					has_completed_focus = TUR_solvetheidentityproblem
-				}
-				FROM = {
-					remove_dynamic_modifier = {
-						modifier = TUR_minority_industry
-					}
 				}
 			}
 			if = {
@@ -3378,6 +3247,28 @@ crisis = {
 }
 
 political_actions = {
+	TUR_recall_refik_nevzat_bey = {
+		icon = GFX_ha
+		allowed = {
+			original_tag = TUR
+		}
+		visible = {
+			TUR_refik_nevzat_bey = { is_country_leader = yes }
+			TUR_refik_nevzat_bey = { has_trait = refiknevzat }
+		}
+		days_remove = 15
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = TUR_refik_nevzat_bey_in_france
+				TUR_refik_nevzat_bey = { has_trait = refiknevzat }
+			}
+		}
+		remove_effect = {
+			remove_country_leader_trait = refiknevzat
+			add_country_leader_trait = refiknevzat2
+		}
+		cost = 30
+	}
 	TUR_ratify_the_treaty_of_daan = {
 		icon = GFX_decision_infiltrate_state
 		allowed = {
@@ -5934,7 +5825,6 @@ TUR_economy_decision = {
 			tag = TUR
 		}
 		cost = 30
-		days_re_enable = 35
 		visible = {
 			NOT = {
 				OR = {
@@ -5958,7 +5848,7 @@ TUR_economy_decision = {
 				}
 			}
 		}
-		days_remove = 60
+		days_remove = 45
 		complete_effect = {
 			random_owned_controlled_state = {
 				limit = {
@@ -7036,14 +6926,15 @@ TUR_economy_decision = {
 				value = 1
 			}
 			custom_effect_tooltip = TUR_add_debt_0885
+			custom_effect_tooltip = TUR_add_debt_0590
 			add_to_variable = {
-				opda_lira = 0.885
+				opda_lira = 0.590
 			}
 			add_to_variable = {
-				opda_consumer_goods = 0.03
+				opda_consumer_goods = 0.02
 			}
 			add_to_variable = {
-				opda_resources_to_market = 0.015
+				opda_resources_to_market = 0.01
 			}
 		}
 		remove_effect = {
@@ -7137,14 +7028,15 @@ TUR_economy_decision = {
 				value = 1
 			}
 			custom_effect_tooltip = TUR_add_debt_0885
+			custom_effect_tooltip = TUR_add_debt_0590
 			add_to_variable = {
-				opda_lira = 0.885
+				opda_lira = 0.590
 			}
 			add_to_variable = {
-				opda_consumer_goods = 0.03
+				opda_consumer_goods = 0.02
 			}
 			add_to_variable = {
-				opda_resources_to_market = 0.015
+				opda_resources_to_market = 0.01
 			}
 		}
 		remove_effect = {
@@ -7239,14 +7131,15 @@ TUR_economy_decision = {
 				value = 1
 			}
 			custom_effect_tooltip = TUR_add_debt_0885
+			custom_effect_tooltip = TUR_add_debt_0590
 			add_to_variable = {
-				opda_lira = 0.885
+				opda_lira = 0.590
 			}
 			add_to_variable = {
-				opda_consumer_goods = 0.03
+				opda_consumer_goods = 0.02
 			}
 			add_to_variable = {
-				opda_resources_to_market = 0.015
+				opda_resources_to_market = 0.01
 			}
 		}
 		remove_effect = {
@@ -7708,15 +7601,15 @@ TUR_economy_decision = {
 				days = 60
 				value = 1
 			}
-			custom_effect_tooltip = TUR_add_debt_0885
+			custom_effect_tooltip = TUR_add_debt_0590
 			add_to_variable = {
-				opda_lira = 0.885
+				opda_lira = 0.590
 			}
 			add_to_variable = {
-				opda_consumer_goods = 0.03
+				opda_consumer_goods = 0.02
 			}
 			add_to_variable = {
-				opda_resources_to_market = 0.015
+				opda_resources_to_market = 0.01
 			}
 		}
 		remove_effect = {
@@ -7787,15 +7680,15 @@ TUR_economy_decision = {
 				days = 60
 				value = 1
 			}
-			custom_effect_tooltip = TUR_add_debt_0885
+			custom_effect_tooltip = TUR_add_debt_0590
 			add_to_variable = {
-				opda_lira = 0.885
+				opda_lira = 0.590
 			}
 			add_to_variable = {
-				opda_consumer_goods = 0.03
+				opda_consumer_goods = 0.02
 			}
 			add_to_variable = {
-				opda_resources_to_market = 0.015
+				opda_resources_to_market = 0.01
 			}
 		}
 		remove_effect = {
@@ -7867,15 +7760,15 @@ TUR_economy_decision = {
 				days = 60
 				value = 1
 			}
-			custom_effect_tooltip = TUR_add_debt_0885
+			custom_effect_tooltip = TUR_add_debt_0590
 			add_to_variable = {
-				opda_lira = 0.885
+				opda_lira = 0.590
 			}
 			add_to_variable = {
-				opda_consumer_goods = 0.03
+				opda_consumer_goods = 0.02
 			}
 			add_to_variable = {
-				opda_resources_to_market = 0.015
+				opda_resources_to_market = 0.01
 			}
 		}
 		remove_effect = {
@@ -7957,15 +7850,15 @@ TUR_economy_decision = {
 				days = 60
 				value = 1
 			}
-			custom_effect_tooltip = TUR_add_debt_0885
+			custom_effect_tooltip = TUR_add_debt_0590
 			add_to_variable = {
-				opda_lira = 0.885
+				opda_lira = 0.590
 			}
 			add_to_variable = {
-				opda_consumer_goods = 0.03
+				opda_consumer_goods = 0.02
 			}
 			add_to_variable = {
-				opda_resources_to_market = 0.015
+				opda_resources_to_market = 0.01
 			}
 		}
 		remove_effect = {
@@ -8047,15 +7940,15 @@ TUR_economy_decision = {
 				days = 60
 				value = 1
 			}
-			custom_effect_tooltip = TUR_add_debt_0885
+			custom_effect_tooltip = TUR_add_debt_0590
 			add_to_variable = {
-				opda_lira = 0.885
+				opda_lira = 0.590
 			}
 			add_to_variable = {
-				opda_consumer_goods = 0.03
+				opda_consumer_goods = 0.02
 			}
 			add_to_variable = {
-				opda_resources_to_market = 0.015
+				opda_resources_to_market = 0.01
 			}
 		}
 		remove_effect = {
@@ -9623,7 +9516,7 @@ TUR_war_of_independence_support_OTT = {
 					create_country_leader = {
 						name = "Mustafa Kemal Paşa"
 						picture = "gfx/leaders/TUR/TUR_mustafa_kemal.png"
-						expire = "1935.1.1"
+						
 						ideology = authoritarian_democracy
 						traits = {
 							ataturk
@@ -9640,7 +9533,7 @@ TUR_war_of_independence_support_OTT = {
 					create_country_leader = {
 						name = "Ismail Enver Paşa"
 						picture = "gfx/leaders/TUR/TUR_enver_pasha.png"
-						expire = "1935.1.1"
+						
 						ideology = despotism
 						traits = {
 							tur_national_hero

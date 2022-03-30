@@ -181,14 +181,6 @@ armistice_effect = {
 				white_peace = PREV
 			}
 		}
-		every_state = {
-			limit = {
-				is_core_of = ROM
-				is_owned_by = GER
-			}
-			transfer_state_to = ROM
-		}
-		GER = { remove_resource_rights = 46 }
 	}	
 	if = {
 		limit = {
@@ -371,7 +363,7 @@ armistice_effect = {
 					has_country_flag = great_war_winner
 					is_subject = no
 					OR = {
-						has_completed_focus = FRA_ww1_anti_ottoman
+						#has_completed_focus = FRA_ww1_anti_ottoman
 						ENG = {
 							has_completed_focus = ENG_Sykes_Picot
 						}	
@@ -397,96 +389,107 @@ armistice_effect = {
 		}
 	}
 	##### Germany #####
-	if = {
-		limit = {
-			GER = {
+	GER = {
+		if = {
+			limit = {
 				has_country_flag = great_war_loser
-				has_subject = GEO
+				exists = yes
 			}
+			every_owned_state = {
+				limit = {
+					is_core_of = ROM
+				}
+				transfer_state_to = ROM
+			}
+			remove_resource_rights = 46
+			if = {
+				limit = {
+					has_subject = GEO
+				}
+				end_puppet = GEO
+				GEO = {
+					clr_country_flag = protectorate
+				}
+			}
+			
 		}
-		GER = {
-			end_puppet = GEO
-		}
-		GEO = {
-			clr_country_flag = protectorate
-		}
-	}
-	if = {
-		limit = {
-			GER = {
+		if = {
+			limit = {
 				has_country_flag = great_war_winner
+				exists = yes
 				is_subject = no
 				NOT = {
 					has_government = communism
 				}
-			}
-		}			
-		if = {
-			limit = {
+			}			
+			if = {
+				limit = {
+					BEL = {
+						has_country_flag = great_war_loser
+						exists = yes
+					}					
+				}
+				GER = {
+					if = {
+						limit = {
+							has_dlc = "Together for Victory"
+						}
+						set_autonomy = {
+							target = BEL
+							autonomous_state = autonomy_integrated_puppet
+						}
+						else = {
+							puppet = BEL
+						}
+					}
+					GER_ludwig_von_falkenhausen = {
+						set_nationality = BEL
+					}
+				}
 				BEL = {
-					has_country_flag = great_war_loser
-				}
-				exists = yes
-			}
-			GER = {
-				if = {
-					limit = {
-						has_dlc = "Together for Victory"
+					set_popularities = {
+						democratic = 10
+						neutrality = 40
+						fascism = 40
+						communism = 10
 					}
-					set_autonomy = {
-						target = BEL
-						autonomous_state = autonomy_integrated_puppet
+					set_war_support = 0.05
+					set_stability = 0.15
+					set_politics = {
+						ruling_party = fascism
+						elections_allowed = no
 					}
-					else = {
-						puppet = BEL
+					set_party_name = {
+						ideology = fascism
+						long_name = BEL_occupation_party_long
+						name = BEL_occupation_party
 					}
-				}
-				GER_ludwig_von_falkenhausen = {
-					set_nationality = BEL
+					set_cosmetic_tag = BEL_GER
+					create_country_leader = {
+						name = "GER_ludwig_von_falkenhausen"
+						picture = "gfx/leaders/GER/GER_Ludwig_von_Falkenhausen.png"
+						
+						ideology = stratocracy
+						traits = {					
+							foreign_leader
+							german_agent			
+						}
+					}				
+					add_ideas = BEL_belgian_resistance
+					set_country_flag = dont_trigger_political_event					
 				}
 			}
-			BEL = {
-				set_popularities = {
-					democratic = 10
-					neutrality = 40
-					fascism = 40
-					communism = 10
+			if = {
+				limit = {
+					LUX = {
+						has_country_flag = great_war_loser
+						exists = yes
+					}				
 				}
-				set_war_support = 0.05
-				set_stability = 0.15
-				set_politics = {
-					ruling_party = fascism
-					elections_allowed = no
-				}
-				set_party_name = {
-					ideology = fascism
-					long_name = BEL_occupation_party_long
-					name = BEL_occupation_party
-				}
-				set_cosmetic_tag = BEL_GER
-				create_country_leader = {
-					name = "GER_ludwig_von_falkenhausen"
-					picture = "gfx/leaders/GER/GER_Ludwig_von_Falkenhausen.png"
-					expire = "1935.1.1"
-					ideology = stratocracy
-					traits = {					
-						foreign_leader
-						german_agent			
+				GER = {
+					annex_country = {
+						target = LUX
 					}
-				}				
-				add_ideas = BEL_belgian_resistance
-			}
-		}
-		if = {
-			limit = {
-				LUX = {
-					has_country_flag = great_war_loser
-				}
-				exists = yes
-			}
-			GER = {
-				annex_country = {
-					target = LUX
 				}
 			}
 		}
@@ -834,6 +837,56 @@ conference_effect = {
 				}
 				POL = { transfer_state = PREV add_state_core = PREV }
 				GER = { remove_state_core = PREV }
+			}
+		}
+		GER = {
+			every_owned_state = {
+				limit = {
+					OR = {
+						state = 42
+						state = 51
+						state = 343
+					}
+				}
+				transfer_state_to = FRA
+			}
+		}
+		if = {
+			limit = {
+				any_country = {
+					owns_state = 189
+					has_country_flag = great_war_loser
+				}
+			}
+			every_country = {
+				limit = {
+					has_country_flag = great_war_loser
+				}
+				every_owned_state = {
+					limit = {
+						state = 188
+					}
+					transfer_state_to = FRA
+				}
+			}
+		}
+		else = {
+			every_country = {
+				limit = {
+					has_country_flag = great_war_loser
+				}
+				every_other_country = {
+					limit = {
+						owns_state = 189
+					}
+					transfer_state = 188
+				}
+			}
+		}
+		FRA = {
+			country_event = {
+				id = ww1_germany.81
+				days = 20
 			}
 		}
 		every_state = {
@@ -1331,30 +1384,6 @@ conference_effect = {
 			}				
 		}	
 	}
-	if = {
-		limit = {
-			GER = {
-				has_country_flag = great_war_loser
-			}
-		}
-		GER = {
-			if = {
-				limit = {
-					has_global_flag = spartakist_in_bavaria
-					owns_state = 188
-					NOT = {
-						owns_state = 763
-					}
-				}
-			}
-			every_other_country = {
-				limit = {
-					owns_state = 11
-				}
-				transfer_state = 188
-			}
-		}
-	}
 	### OTTOMANS ###
 	if = {
 		limit = {
@@ -1595,7 +1624,7 @@ conference_effect = {
 			retire_ideology_leader = neutrality
 			create_country_leader = {
 				name = "Đorđe Obrenović"
-				expire = "1935.1.1"
+				
 				ideology = autocracy
 				picture = "gfx/leaders/SER/SER_djordje_obrenovic.png"
 				traits = {
@@ -1610,7 +1639,7 @@ conference_effect = {
 			create_country_leader = {
 				name = "Čedomilj Mijatović"
 				ideology = conservatism
-				expire = "1935.1.1"
+				
 				picture = "gfx/leaders/SER/SER_ceda_mijatovic.png"
 				traits = {
 					the_banker
@@ -1680,6 +1709,356 @@ conference_effect = {
 			}
 			else = {
 				puppet = BUL			
+			}
+		}
+	}
+	if = {
+		limit = {
+			AUH = { has_country_flag = great_war_winner }
+		}
+		if = {
+			limit = {
+				GER = { has_country_flag = great_war_loser }
+				NOT = { RUS = { has_country_flag = great_war_winner } }
+			}
+			GER = {
+				every_owned_state ={
+					limit = {
+						OR = {
+							is_core_of = BAY
+							is_core_of = WUR
+						}
+					}
+					add_core_of = AUH
+					transfer_state_to = AUH
+				}
+				create_country_leader = {
+					name = "GER_frankfurt_parliament"
+					picture = "gfx/leaders/GER/GER_Frankfurt_Parliament.png"
+					
+					ideology = oligarchism
+					traits = { }
+				}
+				set_party_name = { 
+					ideology = neutrality
+					long_name = GER_frankfurt_parliament
+					name = GER_frankfurt_parliament
+				}
+				set_capital = { state = 55 }
+				set_cosmetic_tag = GER_norddeutscher_bund
+			}
+            AUH = {
+                set_cosmetic_tag = GER_suddeutscher_bund
+                create_faction = danube_adriabund
+                if = {
+                    limit = {
+                        has_dlc = "Together for Victory"
+                    }
+                    set_autonomy = {
+                        target = GER
+                        autonomous_state = autonomy_dominion
+                    }
+                }
+                else = {
+                    puppet = GER
+                }
+                add_ai_strategy = {
+                    type = protect
+                    id = "GER"
+                    value = 200
+                }
+            }
+            if = {
+                limit = {
+                    RUS = { has_country_flag = great_war_loser }
+                }
+                AUH = {
+                    if = {
+                        limit = {
+                            NOT = {
+                                country_exists = POL
+                            }
+                        }
+                        every_state = {
+                            limit = {
+                                OR = {
+                                    is_owned_by = RUS
+                                    is_owned_by = SOV
+                                    AND = {
+                                        is_owned_by = AUH
+                                        NOT = {
+                                            is_core_of = AUH
+                                        }
+                                    }
+                                }
+                                OR = {
+                                    state = 10
+                                    state = 87
+                                    state = 90
+                                    state = 92
+                                    state = 98
+                                    state = 766
+                                    AND = {
+                                        is_core_of = POL
+                                        NOT = {
+                                            is_core_of = UKR
+                                            is_core_of = BLR
+                                            state = 97
+                                        }
+                                    }
+                                }
+                            }
+                            transfer_state_to = POL
+                        }
+                        puppet = POL
+                        hidden_effect = {
+                            POL = {
+                                #set_country_flag = released_by_germany
+                                drop_cosmetic_tag = yes
+                                inherit_technology = AUH
+                                load_oob = "POL_divisions"
+                                if = {
+                                    limit = {
+                                        AUH = {
+                                            has_government = neutrality
+                                        }
+                                    }
+                                    set_politics = {
+                                        ruling_party = neutrality
+                                        elections_allowed = no
+                                    }
+                                    set_popularities = {
+                                        democratic = 13
+                                        fascism = 5
+                                        communism = 21
+                                        neutrality = 61
+                                    }
+                                    promote_character = POL_regency_council
+                                    promote_character = POL_gabriel_narutowicz
+                                }		
+                            }
+                        }		
+                    }
+                    else_if = {
+                        limit = {
+                            POL = {
+                                is_subject_of = RUS
+                            }
+                        }	
+                        every_state = {
+                            limit = {
+                                OR = {
+                                    is_owned_by = RUS
+                                    is_owned_by = SOV
+                                }
+                                OR = {
+                                    state = 10
+                                    state = 87
+                                    state = 90
+                                    state = 92
+                                    state = 98
+                                    state = 766
+                                    AND = {
+                                        is_core_of = POL
+                                        NOT = {
+                                            is_core_of = UKR
+                                            is_core_of = BLR
+                                            state = 97
+                                        }
+                                    }
+                                }
+                            }
+                            transfer_state_to = POL
+                        }
+                        every_state = {
+                            limit = {
+                                is_owned_by = POL
+                                OR = {
+                                    is_core_of = AUH
+                                    is_claimed_by = AUH
+                                }
+                            }
+                            transfer_state_to = AUH
+                        }
+                        puppet = POL
+                        hidden_effect = {
+                            POL = {
+                                drop_cosmetic_tag = yes
+                                if = {
+                                    limit = {
+                                        AUH = {
+                                            has_government = neutrality
+                                        }
+                                    }	
+                                    set_politics = {
+                                        ruling_party = neutrality
+                                        elections_allowed = no
+                                    }
+                                    set_popularities = {
+                                        democratic = 13
+                                        fascism = 5
+                                        communism = 21
+                                        neutrality = 61
+                                    }
+                                }		
+                                if = {
+                                    limit = {
+                                        has_country_leader = {
+                                            character = POL_roman_dmowski
+                                            ruling_only = yes
+                                        }
+                                    }
+                                    promote_character = POL_regency_council
+                                    promote_character = POL_gabriel_narutowicz
+                                }
+                            }		
+                        }	
+                    }
+                    else_if = {
+                        every_state = {
+                            limit = {
+                                NOT = {
+                                    is_core_of = AUH
+                                    is_claimed_by = AUH
+                                }
+                                OR = {
+                                    is_owned_by = RUS
+                                    is_owned_by = SOV
+                                }			
+                                OR = {
+                                    state = 10
+                                    state = 87
+                                    state = 90
+                                    state = 92
+                                    state = 98
+                                    state = 766
+                                    AND = {
+                                        is_core_of = POL
+                                        NOT = {
+                                            is_core_of = UKR
+                                            is_core_of = BLR
+                                            state = 97
+                                        }
+                                    }
+                                }
+                            }
+                            transfer_state_to = POL
+                        }
+                    }
+                    hidden_effect = {
+                        set_global_flag = poland_released
+                        every_state = {
+                            limit = {
+                                is_core_of = POL
+                            }
+                            remove_core_of = RUS
+                            remove_core_of = SOV
+                        }
+                    }
+                }
+            }
+            if = {
+                limit = {
+                    ROM = {
+                        has_country_flag = great_war_loser
+                    }
+                }
+                if = {
+                    limit = {
+                        has_dlc = "Together for Victory"
+                    }
+                    set_autonomy = {
+                        target = ROM
+                        autonomy_state = autonomy_dominion
+                    }
+                }
+                else = {
+                    puppet = ROM			
+                }
+            }
+        }
+        if = {
+            limit = {
+                BOS = { has_country_flag = great_war_loser }
+            }
+            if = {
+                limit = {
+                    CRO = {
+                        is_subject_of = AUH
+                    }
+                }
+                CRO = {
+                    annex_country = {
+                        target = BOS
+                        transfer_troops = no
+                    }
+                }
+            }
+            else = {
+                AUH = {
+                    annex_country = {
+                        target = BOS
+                        transfer_troops = no
+                    }
+                }
+            }
+        }
+    }
+	if = {
+		limit = {
+			AUH = {
+				has_country_flag = great_war_loser
+			}
+		}
+		if = {
+			limit = {
+				GER = {
+					NOT = { has_country_flag = great_war_winner }
+				}
+			}
+			if = {
+				limit = {
+					AUH = {
+						any_owned_state = {
+							is_core_of = BAY
+						}
+					}
+				}
+				AUH = {
+					every_owned_state = {
+						limit = {
+							is_core_of = BAY
+						}
+						transfer_state_to = BAY
+					}
+				}
+			}
+			if = {
+				limit = {
+					AUH = {
+						any_owned_state = {
+							is_core_of = WUR
+						}
+					}
+				}
+				AUH = {
+					every_owned_state = {
+						limit = {
+							is_core_of = WUR
+						}
+						transfer_state_to = WUR
+					}
+				}
+			}
+			if = {
+				limit = {
+					AUH = {
+						has_cosmetic_tag = GER_suddeutscher_bund
+					}
+				}
+				AUH = {
+					drop_cosmetic_tag = yes
+				}
 			}
 		}
 	}
@@ -2173,7 +2552,7 @@ conference_effect = {
 			create_country_leader = {
 				name = "Vilhelm I"
 				picture = "gfx/leaders/ALB/ALB_Vilhelm_I.png"
-				expire = "1935.1.1"
+				
 				ideology = autocracy
 				traits = {
 					foreign_leader
@@ -2267,16 +2646,126 @@ conference_effect = {
 			}
 		}
 	}
+	### SWEDEN ###
+	if = {
+		limit = {
+			SWE = {
+				has_country_flag = great_war_winner
+			}
+		}
+		if = {
+			limit = {
+				NOR = { has_country_flag = great_war_loser }
+			}
+			SWE = {
+				NOR = {
+					every_owned_state = {
+						limit = {
+							OR = {
+								is_core_of = PREV.PREV
+								is_claimed_by = PREV.PREV
+							}
+						}
+						transfer_state_to = PREV.PREV
+					}
+					PREV = {
+						if = {
+							limit = {
+								has_dlc = "Together for Victory"
+							}
+							set_autonomy = {
+								target = PREV
+								autonomous_state = autonomy_dominion
+							}
+							else = {
+								puppet = PREV
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	if = {
+		limit = {
+			SWE = { has_country_flag = great_war_loser }
+		}
+		if = {
+			limit = {
+				NOR = {
+					has_country_flag = great_war_winner
+				}
+			}
+			NOR = {
+				SWE = {
+					every_owned_state = {
+						limit = {
+							OR = {
+								is_core_of = PREV.PREV
+								is_claimed_by = PREV.PREV
+							}
+						}
+						transfer_state_to = PREV.PREV
+					}
+					PREV = {
+						if = {
+							limit = {
+								has_dlc = "Together for Victory"
+							}
+							set_autonomy = {
+								target = PREV
+								autonomous_state = autonomy_dominion
+							}
+							else = {
+								puppet = PREV
+							}
+						}
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				RUS = {
+					has_country_flag = great_war_winner
+				}
+			}
+			if = {
+				limit = {
+					RUS = {
+						owns_state = 111
+					}
+					FIN = {
+						exists = no
+					}
+				}
+				SWE = {
+					every_owned_state = {
+						limit = {
+							OR = {
+								is_core_of = RUS
+								is_claimed_by = RUS
+								is_core_of = FIN
+								is_claimed_by = FIN
+							}
+						}
+						transfer_state_to = RUS
+					}
+				}
+			}
+		}
+	}
 	every_country = {
 		limit = {
 			has_country_flag = great_war_loser
 		}
 		#free puppets from loser
 		if = {
-			limit = {				
+			limit = {
 				is_subject = no
 				NOT = {
 					tag = ENG
+					tag = FRA
 				}
 			}
 			every_country = {

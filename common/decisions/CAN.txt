@@ -144,7 +144,7 @@ political_actions = {
 						is_owned_by = CAN
 						is_core_of = ENG
 					}
-					ENG = { transfer_state = PREV }
+					transfer_state_to = ENG
 				}
 				CAN = {
 					end_puppet = ENG
@@ -156,7 +156,7 @@ political_actions = {
 						is_owned_by = CAN
 						is_core_of = ENG
 					}
-					ENG = { transfer_state = PREV }
+					transfer_state_to = ENG
 				}
 			}
 			every_state = {
@@ -206,7 +206,7 @@ political_actions = {
 					create_country_leader = {
 						name = "George V"
 						picture = "gfx/leaders/ENG/ENG_george_v.png"
-						expire = "1935.1.1"
+						
 						ideology = autocracy
 						traits = {
 							
@@ -235,7 +235,7 @@ political_actions = {
 					create_country_leader = {
 						name = "Edward VIII"
 						picture = "gfx/leaders/ENG/ENG_edward_viii.png"
-						expire = "1935.1.1"
+						
 						ideology = autocracy
 						traits = {
 							revolution_trauma
@@ -260,7 +260,7 @@ political_actions = {
 					create_country_leader = {
 						name = "Charles III"
 						picture = "gfx/leaders/GER/GER_Carl_Eduard_von_Sachsen_Coburg_und_Gotha.png"
-						expire = "1935.1.1"
+						
 						ideology = autocracy
 						traits = {
 							autocratic_imperialist
@@ -503,7 +503,14 @@ foreign_politics = {
 				is_in_faction_with = FROM
 			}	
 			is_subject = no
+			is_in_faction = no
 			has_war = no
+			NFA = {
+				is_subject = no
+				is_in_faction = no
+				has_war = no
+				has_civil_war = no
+			}			
 		}
 		visible = {
 			is_faction_leader = no
