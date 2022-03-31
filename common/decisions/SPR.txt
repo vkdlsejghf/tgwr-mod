@@ -114,9 +114,9 @@ SPR_1914_naval_plan_category = {
                 is_coastal = yes
             }
         }
-        #visible = {
-        #    has_completed_focus = SPR_naval_plan_1914
-        #}
+        visible = {
+            has_completed_focus = SPR_naval_plan_1914
+        }
         priority = 100
         fire_only_once = yes
         complete_effect = {
@@ -161,9 +161,9 @@ SPR_1914_naval_plan_category = {
                 is_coastal = yes
             }
         }
-        #visible = {
-        #    has_completed_focus = SPR_naval_plan_1914
-        #}
+        visible = {
+            has_completed_focus = SPR_naval_plan_1914
+        }
         priority = 99
         fire_only_once = yes
         complete_effect = {
