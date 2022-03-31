@@ -102,3 +102,22 @@ SPR_trade_abroad_category = {
         }
     }
 }
+SPR_1914_naval_plan_category = {
+    SPR_1914_ship_one = {
+        cost = 10
+        allowed = {
+            original_tag = SPR
+        }
+        available = {
+            #placeholder
+            has_political_power > 1
+        }
+        visible = {
+            has_completed_focus = SPR_naval_plan_1914
+        }
+        priority = 100
+        complete_effect = {
+            add_political_power = 10
+        }
+    }
+}

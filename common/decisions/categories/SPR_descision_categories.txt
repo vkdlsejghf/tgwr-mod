@@ -13,3 +13,13 @@ SPR_trade_abroad_category = {
         }
     }
 }
+SPR_1914_naval_plan_category = {
+    priority = 99
+    icon = GFX_decision_category_generic_industry #this is a placeholder
+    allowed = {
+        original_tag = SPR
+    }
+    visible = {
+        
+    }
+}
