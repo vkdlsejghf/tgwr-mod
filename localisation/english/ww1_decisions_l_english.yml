@@ -1301,5 +1301,6 @@
  SPR_trade_with_british:0 "Trade With The United Kingdom"
  SPR_trade_with_british_desc:0 "Placeholder"
  SPR_1914_naval_plan_category:0 "The 1914 Naval Plan"
- SPR_1914_ship_one:0 "Placeholder"
- SPR_1914_ship_one_desc:0 "Placeholder"
+ SPR_1914_ship_one:0 "Build Battleships"
+ SPR_1914_ship_one_desc:0 "The naval plan we have come up with requires us to build 2 battleships, let us build these 2 battleships."
+ building_battleships_1914:0 "Battleships Under Construction"

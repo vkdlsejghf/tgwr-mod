@@ -104,13 +104,15 @@ SPR_trade_abroad_category = {
 }
 SPR_1914_naval_plan_category = {
     SPR_1914_ship_one = {
-        cost = 10
+        icon = generic_naval
+        cost = 20
         allowed = {
             original_tag = SPR
         }
         available = {
-            #placeholder
-            has_political_power > 1
+            any_owned_state = {
+                is_coastal = yes
+            }
         }
         visible = {
             has_completed_focus = SPR_naval_plan_1914
@@ -118,6 +120,33 @@ SPR_1914_naval_plan_category = {
         priority = 100
         complete_effect = {
             add_political_power = 10
+        }
+        fire_only_once = yes
+        complete_effect = {
+            activate_mission = building_battleships_1914
+        }
+    }
+}
+SPR_1914_naval_plan_category = {
+    building_battleships_1914 = {
+        allowed = { original_tag = SPR }
+        available = {
+            has_country_flag = spain_mission_always_false
+        }
+        activation = {
+            has_decision = SPR_1914_ship_one
+        }
+        is_good = yes
+        days_mission_timeout = 485
+        timeout_effect = {
+            #placeholder
+            add_political_power = 100
+            #create_ship = {
+			#	type = 
+			#	equipment_variant = ""
+			#	creator = SPR
+			#	name = ""
+			#}
         }
     }
 }
