@@ -114,9 +114,9 @@ SPR_1914_naval_plan_category = {
                 is_coastal = yes
             }
         }
-        visible = {
-            has_completed_focus = SPR_naval_plan_1914
-        }
+        #visible = {
+        #    has_completed_focus = SPR_naval_plan_1914
+        #}
         priority = 100
         fire_only_once = yes
         complete_effect = {
@@ -147,6 +147,53 @@ SPR_1914_naval_plan_category = {
                 equipment_variant = "España Class"
                 creator = SPR
                 name = "ARE Alfonso XIII"
+            }
+        }
+    }
+}
+SPR_1914_naval_plan_category = {
+    SPR_1914_ship_two = {
+        icon = generic_naval
+        cost = 20
+        allowed = { original_tag = SPR }
+        available = {
+            any_owned_state = {
+                is_coastal = yes
+            }
+        }
+        #visible = {
+        #    has_completed_focus = SPR_naval_plan_1914
+        #}
+        priority = 99
+        fire_only_once = yes
+        complete_effect = {
+            activate_mission = building_crusiers_1914
+        }
+    }
+}
+SPR_1914_naval_plan_category = {
+    building_crusiers_1914 = {
+        allowed = { original_tag = SPR }
+        available = {
+            has_country_flag = spain_mission_always_false
+        }
+        activation = {
+            has_decision = SPR_1914_ship_two
+        }
+        is_good = yes
+        days_mission_timeout = 275
+        timeout_effect = {
+            create_ship = {
+                type = ship_hull_cruiser_1
+                equipment_variant = "Emperador Carlos V Class"
+                creator = SPR
+                name = "ARE Baleares"
+            }
+            create_ship = {
+                type = ship_hull_cruiser_1
+                equipment_variant = "Emperador Carlos V Class"
+                creator = SPR
+                name = "ARE Canarias"
             }
         }
     }

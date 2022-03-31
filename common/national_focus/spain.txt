@@ -66,9 +66,8 @@ focus_tree = {
             factor = 1
         }
         completion_reward = {
-            #placeholder
-            add_political_power = 10
             unlock_decision_tooltip = SPR_1914_ship_one
+            unlock_decision_tooltip = SPR_1914_ship_two
         }
     }
     focus = {
