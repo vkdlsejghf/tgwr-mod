@@ -118,9 +118,6 @@ SPR_1914_naval_plan_category = {
             has_completed_focus = SPR_naval_plan_1914
         }
         priority = 100
-        complete_effect = {
-            add_political_power = 10
-        }
         fire_only_once = yes
         complete_effect = {
             activate_mission = building_battleships_1914
@@ -139,14 +136,18 @@ SPR_1914_naval_plan_category = {
         is_good = yes
         days_mission_timeout = 485
         timeout_effect = {
-            #placeholder
-            add_political_power = 100
-            #create_ship = {
-			#	type = 
-			#	equipment_variant = ""
-			#	creator = SPR
-			#	name = ""
-			#}
+            create_ship = {
+				type = ship_hull_heavy_1
+				equipment_variant = "España Class"
+				creator = SPR
+				name = "ARE España"
+			}
+            create_ship = {
+                type = ship_hull_heavy_1
+                equipment_variant = "España Class"
+                creator = SPR
+                name = "ARE Alfonso XIII"
+            }
         }
     }
 }
