@@ -270,8 +270,29 @@ SPR_1915_naval_plan_category = {
         priority = 100
         fire_only_once = yes
         complete_effect = {
-            #placeholder
-            add_political_power = 100
+            activate_mission = building_rve_cl_1915
+        }
+    }
+}
+SPR_1915_naval_plan_category = {
+    building_rve_cl_1915 = {
+        allowed = { original_tag = SPR }
+        available = {
+            has_country_flag = spain_mission_always_false
+        }
+        activation = {
+            has_decision = SPR_1915_ship_one
+        }
+        is_good = yes
+        days_mission_timeout = 260
+        timeout_effect = {
+            create_ship = {
+                type = ship_hull_cruiser_1
+                equipment_variant = "Reina Regente Class"
+                creator = SPR
+                name = "ARE Reina Victoria Eugenia"
+            }
+            set_country_flag = t1915_rve_cl_built
         }
     }
 }
