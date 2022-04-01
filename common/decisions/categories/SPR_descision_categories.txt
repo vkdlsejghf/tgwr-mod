@@ -20,15 +20,7 @@ SPR_1914_naval_plan_category = {
         original_tag = SPR
     }
     visible = {
-        NOT = {
-            has_country_flag = t1914_bb_built
-        }
-        NOT = {
-            has_country_flag = t1914_ca_built
-        }
-        NOT = {
-                has_country_flag = t1914_sb_built
-            }
+
     }
 }
 SPR_1915_naval_plan_category = {
@@ -38,8 +30,6 @@ SPR_1915_naval_plan_category = {
         original_tag = SPR
     }
     visible = {
-        NOT = {
-            has_country_flag = t1915_rve_cl_built
-        }
+        
     }
 }
