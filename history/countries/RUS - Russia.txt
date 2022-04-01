@@ -233,12 +233,10 @@ recruit_character = RUS_vladimir_lenin
 	add_ideas = {
 		export_focus 
 		limited_conscription
-		RUS_idea_orthodox_church
-		RUS_idea_tsushima_humiliation
-		RUS_idea_agrarian_empire
-		RUS_threat_of_revolution
-		RUS_idea_strike_movement
-		RUS_idea_outdated_railways
+		RUS_backward_agriculture_0
+		RUS_crippled_army_0
+		RUS_stolypin_neckties
+
 		RUS_pyotr_stolypin
 	}
 		
