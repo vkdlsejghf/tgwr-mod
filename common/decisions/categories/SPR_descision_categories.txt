@@ -31,3 +31,13 @@ SPR_1914_naval_plan_category = {
             }
     }
 }
+SPR_1915_naval_plan_category = {
+    priority = 98
+    icon = GFX_decision_category_generic_industry #placeholder
+    allowed = {
+        original_tag = SPR
+    }
+    visible = {
+        
+    }
+}

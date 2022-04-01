@@ -1310,3 +1310,6 @@
  SPR_1914_ship_three:0 "Build Submarines"
  SPR_1914_ship_three_desc:0 "The naval plan we have come up with requires us to build 5 submarines, let us build these 5 submarines."
  building_submarines_1914:0 "Submarines Under Construction"
+ SPR_1915_naval_plan_category:0 "The 1915 Naval Plan"
+ SPR_1915_ship_one:0 "Build The Reina Victoria Eugenia"
+ SPR_1915_ship_one_desc:0 "The ARE Reina Victoria Eugenia will be the first ship we build under the 1915 naval plan."
