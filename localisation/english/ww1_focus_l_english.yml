@@ -6045,6 +6045,8 @@ GER_deutsche_arbeiterpartei:0 "Deutsche Arbeiterpartei"
  SPR_build_andalusia_factory_desc:0 "The industry in Andalusia is outdated to non-existent. We must construct some semi-modern industry in the area to allow us to further industrialise it."
  SPR_naval_plan_1914:0 "The 1914 Naval Plan"
  SPR_naval_plan_1914_desc:0 "To strengthen our navy after its losses in 1898 we must commence a series of naval plans."
+ SPR_naval_plan_1915:0 "The 1915 Naval Plan"
+ SPR_naval_plan_1915_desc:0 "The 1914 naval plan was a success, we must commence with another naval plan."
 
  LIB_rapid_industrialisation:0 "Rapid Industrialisation"
  LIB_rapid_industrialisation_desc:0 "In order to compete with modern nations and create a true country out of our colony, we must rapidly industrialise this land. By force, if necessary."

@@ -1973,6 +1973,9 @@ FRA_privatized_banks:0 "Privatized Banks"
  spain_democratic_republican_groups:0 "Democratic Republican Societies"
  spain_democratic_republican_groups_desc:0 "A number of societies operating in our country have begun calling for a democratic republic to be created."
  spain_mission_always_false:0 "Always False"
+ t1914_bb_built:0 "Built Battleships For 1914 Naval Plan"
+ t1914_ca_built:0 "Built Cruisers For 1914 Naval Plan"
+ t1914_sb_built:0 "Built Submarines For 1914 Naval Plan"
 
  #Poland
  POL_idea_polish_reclamation:0 "Polish Reclamation"

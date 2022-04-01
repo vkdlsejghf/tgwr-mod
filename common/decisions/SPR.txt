@@ -148,6 +148,7 @@ SPR_1914_naval_plan_category = {
                 creator = SPR
                 name = "ARE Alfonso XIII"
             }
+            set_country_flag = t1914_bb_built
         }
     }
 }
@@ -195,6 +196,73 @@ SPR_1914_naval_plan_category = {
                 creator = SPR
                 name = "ARE Canarias"
             }
+            set_country_flag = t1914_ca_built
+        }
+    }
+}
+SPR_1914_naval_plan_category = {
+    SPR_1914_ship_three = {
+        icon = generic_naval
+        cost = 20
+        allowed = { original_tag = SPR }
+        available = {
+            any_owned_state = {
+                is_coastal = yes
+            }
+        }
+        visible = {
+            has_completed_focus = SPR_naval_plan_1914
+        }
+        priority = 98
+        fire_only_once = yes
+        complete_effect = {
+            activate_mission = building_submarines_1914
+        }
+    }
+}
+SPR_1914_naval_plan_category = {
+    building_submarines_1914 = {
+        allowed = { original_tag = SPR }
+        available = {
+            has_country_flag = spain_mission_always_false
+        }
+        activation = {
+            has_decision = SPR_1914_ship_three
+        }
+        is_good = yes
+        days_mission_timeout = 160
+        timeout_effect = {
+            create_ship = {
+                type = ship_hull_submarine_1
+                equipment_variant = "Type-A Class"
+                creator = SPR
+                name = "ARE A-001"
+            }
+            create_ship = {
+                type = ship_hull_submarine_1
+                equipment_variant = "Type-A Class"
+                creator = SPR
+                name = "ARE A-002"
+            }
+            create_ship = {
+                type = ship_hull_submarine_1
+                equipment_variant = "Type-A Class"
+                creator = SPR
+                name = "ARE A-003"
+            }
+            create_ship = {
+                type = ship_hull_submarine_1
+                equipment_variant = "Type-A Class"
+                creator = SPR
+                name = "ARE A-004"
+            }
+            create_ship = {
+                type = ship_hull_submarine_1
+                equipment_variant = "Type-A Class"
+                creator = SPR
+                name = "ARE A-005"
+            }
+            set_country_flag = t1914_sb_built
         }
     }
 }

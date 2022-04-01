@@ -68,6 +68,36 @@ focus_tree = {
         completion_reward = {
             unlock_decision_tooltip = SPR_1914_ship_one
             unlock_decision_tooltip = SPR_1914_ship_two
+            unlock_decision_tooltip = SPR_1914_ship_three
+        }
+    }
+    focus = {
+        id = SPR_naval_plan_1915
+        icon = GFX_focus_generic_destroyer
+        x = 7
+        y = 5
+        cost = 1
+        prerequisite = {
+            focus = SPR_naval_plan_1914
+        }
+        available = {
+            date > 1915.1.1
+            AND = {
+                has_country_flag = t1914_bb_built
+            }
+            AND = {
+                has_country_flag = t1914_ca_built
+            }
+            AND = {
+                has_country_flag = t1914_sb_built
+            }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            #placeholder
+            add_political_power = 100
         }
     }
     focus = {
