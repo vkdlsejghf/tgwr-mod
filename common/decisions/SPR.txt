@@ -250,18 +250,6 @@ SPR_1914_naval_plan_category = {
                 creator = SPR
                 name = "ARE A-003"
             }
-            create_ship = {
-                type = ship_hull_submarine_1
-                equipment_variant = "Type-A Class"
-                creator = SPR
-                name = "ARE A-004"
-            }
-            create_ship = {
-                type = ship_hull_submarine_1
-                equipment_variant = "Type-A Class"
-                creator = SPR
-                name = "ARE A-005"
-            }
             set_country_flag = t1914_sb_built
         }
     }
