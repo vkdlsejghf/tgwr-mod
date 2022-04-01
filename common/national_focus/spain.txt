@@ -1382,4 +1382,50 @@ focus_tree = {
             }
         }
     }
+    focus = {
+        id = SPR_prep_reform_industry_two
+        icon = GFX_focus_industry_steel
+        x = 47
+        y = 5
+        cost = 1
+        prerequisite = {
+            focus = SPR_construction_reform_one
+        }
+        available = {
+            has_idea = spain_industrial_debuffs_two
+        }
+        completion_reward = {
+            add_timed_idea = {
+                idea = spain_prepare_reform_industry
+                days = 50
+            }
+        }
+    }
+    focus = {
+        id = SPR_construction_reform_two
+        icon = GFX_focus_industry_steel
+        x = 47
+        y = 6
+        cost = 1
+        prerequisite = {
+            focus = SPR_prep_reform_industry_two
+        }
+        available = {
+            has_idea = spain_industrial_debuffs_two
+            NOT = {
+                has_idea = spain_prepare_reform_industry
+            }
+        }
+        bypass = {
+            NOT = {
+                has_idea = spain_industrial_debuffs
+            }
+        }
+        completion_reward = {
+            swap_ideas = {
+                remove_idea = spain_industrial_debuffs_two
+                add_idea = spain_industrial_debuffs_three
+            }
+        }
+    }
 }

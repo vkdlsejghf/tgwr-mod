@@ -342,6 +342,23 @@ ideas = {
 		}
 	}
 	country = {
+		spain_industrial_debuffs_three = {
+			picture = man_five_year_plan_industry
+			allowed = {
+				tag = SPR
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			name = spain_industrial_debuffs
+			modifier = {
+				production_speed_buildings_factor = -0.05
+				production_speed_industrial_complex_factor = -0.05
+				production_speed_arms_factory_factor = -0.0.5
+			}
+		}
+	}
+	country = {
 		spain_production_debuffs_two = {
 			picture = generic_production_bonus
 			allowed = {
@@ -442,6 +459,20 @@ ideas = {
 			}
 			modifier = {
 				democratic_drift = 0.05
+			}
+		}
+	}
+	country = {
+		spain_prepare_reform_industry = {
+			picture = man_five_year_plan_industry
+			allowed = {
+				tag = SPR
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				consumer_goods_factor = 0.025
 			}
 		}
 	}
