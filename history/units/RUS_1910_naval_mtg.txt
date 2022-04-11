@@ -5,7 +5,7 @@ units = {
 		name = "Baltiyskiy Flot"
 		naval_base = 11105  # Helsingfors
 		task_force = {
-			name = "I Eskadra"
+			name = "Baltiyskiy Flot"
 			location = 11105  # Helsingfors
 			# Pre-Dreadnought
 			ship = { 
@@ -539,10 +539,10 @@ units = {
 		}
 	}
 	fleet = {
-		name = "Chernomorsky Flot"
+		name = "Chernomorskiy Flot"
 		naval_base = 3686  # Sevastopol
 		task_force = {
-			name = "I Eskadra"
+			name = "Chernomorskiy Flot"
 			location = 3686  # Sevastopol
 			# Pre-Dreadnought
 			ship = {
@@ -672,9 +672,25 @@ units = {
 				equipment = { ship_hull_submarine_1 = { amount = 1 owner = RUS version_name = "Som Class" } } 
 			}
 		}
+		task_force = {
+			name = "Kaspiyskaya Flotiliya"
+			location = 7661
+			ship = {
+				name = "Kars" 
+				definition = destroyer
+				start_experience_factor = 0.2
+				equipment = { ship_hull_light_1 = { amount = 1 owner = RUS version_name = "Kars Class" } }
+			}
+			ship = {
+				name = "Ardagan" 
+				definition = destroyer
+				start_experience_factor = 0.2
+				equipment = { ship_hull_light_1 = { amount = 1 owner = RUS version_name = "Kars Class" } }
+			}
+		}
 	}
 	fleet = {
-		name = "Sibirskoj Flotilii"
+		name = "Sibirskaya Flotiliya"
 		naval_base = 957  # Vladivostok
 		task_force = {
 			name = "I Eskadra"
