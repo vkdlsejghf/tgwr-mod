@@ -513,7 +513,6 @@
  elizalde_and_co:0 "Elizalde & Co."
  manila_electric_company:0 "Manila Electric Company"
  manila_railway_company:0 "Manila Railway Company"
- centralny_okreg_przemyslowy:0 "Centralny Okreg Przemyslowy"
  caminhos_de_ferro_portugueses:0 "Caminhos de Ferro Portugueses"
  companhia_uniao_fabril:0 "Companhia União Fabril"
  empresa_industria_portugesa:0 "Empresa Industria Portugesa"
@@ -721,13 +720,12 @@
  loyal_vilayet:0 "Loyal Vilayet"
  autonomy_vilayet:0 "Autonomous Vilayet"
  placated_vilayet:0 "Placated Vilayet"
- per_russian_sphere:0 "Russian Sphere"
- per_british_sphere:0 "British Sphere"
+ per_russian_sphere:0 "@RUS Russian Sphere"
+ per_british_sphere:0 "@ENG British Sphere"
  per_paramilitary_gendarmerie:0 "Gendarmerie Insurgency"
  
  turkish_invest:0 "Beginning the investments"
  turkish_invest2:0 "National Industry"
- TUR_said_halim:0 "Said Halim Pasha"
  
  idea_turkey_balkan_separatism:0 "Minorities Issue"
  idea_turkey_minor_separatism:0 "Minorities Issue"
@@ -796,8 +794,6 @@
  meclis_islam:0 "Meclis-i İslam-ı Muhammed-i"
  TUR_monarch:0 "Supreme Power of Ottoman Family"
  idea_turkey_harbiyeli_army:0 "Harbiyeliler"
- ottoman_family:0 "Ottoman Royal Family"
- TUR_ahmed_nihad:0 "Sultan Ahmed Nihad"
  GER_support:0 "Gained German Support"
  ottoman_frontline_comissars:0 "Frontline Comissars"
  idea_stormtroop_light:0 "Ottoman Stormtroopers"
@@ -867,11 +863,14 @@
  TUR_legitimacy_medium:0 "Medium Legitimacy"
  TUR_legitimacy_low:0 "Low Legitimacy"
  TUR_legitimacy_terrible:0 "Terrible Legitimacy"
+ TUR_idea_german_blank_cheque:0 "German Blank Cheque"
+ TUR_idea_german_blank_cheque_desc:0 "In return for providing Germany with oil, they gave and guaranteed British Egypt at our disposal."
+ TUR_idea_mosul_oil:0 "Mosul Oil"
+ TUR_idea_mosul_oil_desc:0 "Turkish has obligated to sell us some of the oil it produces in Mosul."
+ TUR_idea_san_remo_oil_agreement:0 "San Remo Oil Agreement"
+ TUR_idea_san_remo_oil_agreement_desc:0 "The victors of the Great War monopolize and exploit most of the oil produced in our soils."
 
  #RUSSIA
- nicholas_ii:0 "Nikolai II"
- nicholas_ii_desc:0 "By the Grace of God, We Nicholas, Emperor and Autocrat of All the Russias, of Moscow, Kiev, Vladimir, Novgorod; Tsar of Kazan, Tsar of Astrakhan, Tsar of Poland, Tsar of Siberia, Tsar of Tauric Chersonesus, Tsar of Georgia; Lord of Pskov, and Grand Duke of Smolensk, Lithuania, Volhynia, Podolia, and Finland; Prince of Estonia, Livonia, Courland and Semigalia, Samogitia, Bielostok, Karelia, Tver, Yugor, Perm, Vyatka, Bogar and others; Sovereign and Grand Duke of Nizhni Novgorod, Chernigov, Ryazan, Polotsk, Rostov, Jaroslavl, Beloozero, Udoria, Obdoria, Kondia, Vitebsk, Mstislav, and Ruler of all Northern territories; Sovereign and Lord of Iveria, Kartalinia, the Kabardinian lands and Armenian province: hereditary Sovereign and Ruler of the Circassian and Mountain Princes and of others; Sovereign of Turkestan, Heir of Norway, Duke of Schleswig-Holstein, Stormarn, Ditmarn, and Oldenberg, and so forth, and so forth, and so forth."
- mikhail_ii:0 "Mikhail II"
  RUS_idea_urgent_strengthening_of_airfleet:0 "Urgent Strengthening of Airfleet"
  RUS_idea_berlin_baghdad_railway:0 "Berlin-Vladivostok Railway Construction"
  RUS_idea_berlin_baghdad_railway_desc:0 "[ROOT.GetName] has began the construction of the Berlin-Vladivostok railway and is receiving assistance from German investors."
@@ -1000,7 +999,6 @@
  
  #BELGIUM
  idea_pacifism:0 "Ingrained Pacifism"
- BEL_idea_albert_i:0 "Albert I"
  idea_pacifism_desc:0 "The Catholic Party diligently opposes the attempts of King Albert to disrupt the permanent neutrality of Belgium. More than half a century, the kingdom is in peace with its neighbors, so the government and the population believe only in the power of diplomacy."
  BEL_belgian_resistance:0 "Belgian Resistance"
  BEL_belgian_resistance_desc:0 "The Old King Albert I is leading an underground resistance movement against German rule.\n\nThe 'La Plus Loyale Résistance de Sa Majesté-Zijn Meest Loyale Verzet van Zijne Majesteit' or LPLRSM-ZMLVZM for short is a monarchist big-tent alliance of liberals, conservatives and plain old Belgian Nationalists who dedicate their lives to "liberating" Belgium from what they perceive as a permanent occupation force.\n\nThey have widespread public support, and it will be difficult to entrench our rule here."
@@ -1028,6 +1026,9 @@
  BEL_militia_army:0 "Militia Army"
  BEL_outnumbered_army:0 "Outnumbered Army"
  FRA_extreme_austerity_measures:0 "Extreme austerity measures"
+ BEL_race_to_the_sea:0 "Race to the Sea"
+ BEL_commission_for_relief_in_belgium:0 "Commission For Relief In Belgium"
+ BEL_frontbeweging_support:0 "Frontbeweging"
  
  
  LUX_charlotte:0 "Charlotte"
@@ -1696,7 +1697,9 @@ FRA_privatized_banks:0 "Privatized Banks"
  PER_idea_constitutional_revolution_desc:0 "The 20th century had not been merciful to Persia. From what the constitutionalists perceive, Persia had been a nation stuck in time with its reactionary regime opposing all reform. King Mozaffar ad-Din Shah Qajar, the monarch up to 1906, had signed a constitution shortly before his passing. The succession turned to Mohammed Ali Shah, who then went on to abolish the constitution and bomb the parliament building. Pro-constitutional elements then went on to force his abdictation and reestablish the constitution, but not without its harm to the integrity of the nation. After a destabilising civil war and foreign interventions, Persia now stands at the crossroads of history. Facing political decay and disorder, whoever succeeds is completely up to the sands of time."
  PER_idea_foreign_reliance:0 "Foreign Reliance"
  PER_idea_foreign_reliance_desc:0 "Throughout the long century, the Russian Empire and the British Empire, currently in the middle of the Great Game, looked to Persia as a chess piece. From its geographic location, Persia was seen by both nations as a buffer zone against the other. Persia, if controlled by the British, would expose Russia's underbelly, that is the Caucasus and Central Asia. Were it to be under Russian control, it would cut through the British Empire, exposing Kuwait and Baluchistan. The Persian diplomats, eager to exploit this prospect, wanted to use this cold war to secure Persian independence by playing both sides against each other. This foreign policy strategy, however, failed tremendously, following the softening of relations between the Russian Empire and the British Empire."  
- 
+ PER_idea_nationalised_oil:0 "Anglo-Persian Oil Company"
+ PER_idea_nationalised_oil_desc:0 "Most of the oil produced in our country is being extorted by British imperial colonialists..."
+
  #FINLAND
  FIN_idea_frederick_charles:0 "King Fredrik Kaarle"
  FIN_idea_frederick_charles_desc:0 "Prince of Hesse, brother-in-law of Kaiser Wilhelm II"
@@ -1896,10 +1899,10 @@ FRA_privatized_banks:0 "Privatized Banks"
  JAP_uncontrollable_military_desc:0 "The Japanese Military is willing to cause conflicts and war to gain their own colonies and show off their might. The government is unnable to manage and restrain their military well, and even the military cannot control themselves."
 
  #Chile
- CHL_prussian_army:0 "Prussian tradition"
- CHL_prussian_army_desc:0 "After the Victory Against Bolivia and Peru In The Pacific War, the Chilean officers realized about the urgent modernization of the army, after that in 1895 and with the full support of the German Kaiser Wilhelm II Von Hohenzzollern, Prussian Captain Emil Korner left for Chile, where thanks to him great reforms began, which allowed the modernization of the army and the armed forces of Chile,What Made Chile Feared By All America With Its Nickname "Prussia OF America"
+ CHL_prussian_army:0 "Prussian Tradition"
+ CHL_prussian_army_desc:0 "After the Victory Against Bolivia and Peru In The Pacific War, the Chilean officers realized about the urgent modernization of the army, after that in 1895 and with the full support of the German Kaiser Wilhelm II Von Hohenzzollern, Prussian Captain Emil Korner left for Chile, where thanks to him great reforms began, which allowed the modernization of the army and the armed forces of Chile, what made Chile feared by all America with its nickname "Prussia of America""
 
- CHL_parlamentary_republic:0 "Pseudo-parlamentary Republic"
+ CHL_parlamentary_republic:0 "Pseudo-Parlamentary Republic"
  CHL_parlamentary_republic_desc:0 "Next year will be 20 years since the civil war and the establishment of the parliamentary republic, unfortunately this period is only bringing us problems, corruption, insecurity, poverty etc ..."
 
  CHL_idea_legacy_of_the_pacific_war:0 "Legacy Of The Pacific War"
@@ -1979,6 +1982,12 @@ FRA_privatized_banks:0 "Privatized Banks"
  #Poland
  POL_idea_polish_reclamation:0 "Polish Reclamation"
  POL_idea_polish_reclamation_desc:0 "Poland was once strong in Eastern Europe, but was forcibly divided and destroyed by Germany, Russia and Austria. The Soviets are attacking us now, but we will go beyond defending our independence and reclaim our rightful territories that they have usurped!"
+ POL_cwl:0 "CWL"
+ POL_cwl_desc:0 "Centralne Warsztaty Lotniczne"
+ POL_PKP:0 "PKP"
+ POL_Ursus:0 "Ursus"
+ POL_stocznia_gdansk:0 "Stocznia Gdańsk"
+ POL_stocznia_gdynia:0 "Stocznia Gdynia"
  
  #Liberia
  LIB_liberian_dollar:0 "Liberian Dollar"
@@ -2001,4 +2010,7 @@ FRA_privatized_banks:0 "Privatized Banks"
  NEP_prithvi_bir_bikram_desc:0 "King Prithivi is kept as a glorified prisoner and ceremonial monarch at Narayanhiti Royal Palace."
  NEP_tribhuvana_bir_bikram:0 "Tribhuvan Bir Bikram Shah"
  NEP_tribhuvana_bir_bikram__desc:0 "King Tribhuvan ascended to the throne at the age of five, upon the sudden and suspicious  death of his father."
- 
+
+ #Romania
+ ROM_idea_german_control:0 "German Economic Hegemony"
+ ROM_idea_german_control_desc:0 "According to the Treaty of Bucharest large parts of Romanian industry and resources are under control of German-Austrian corporations. The most important of these is the Oil-lands Leasehold Company Ltd, which operates the Ploiesti oil fields under German ownership. Additionally these corporations own large part of Romanian railway network, effectively dragging down development of Romanian industry.\n\n§RThe Ploiesti Oil fields remain in German control.§!"

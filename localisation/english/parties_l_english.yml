@@ -52,7 +52,7 @@
  fundamentalism:0 "Fundamentalism"
  fundamentalism_desc:0 "Fundamentalism refers to any sect or movement within a religion that emphasizes a rigid adherence to what it conceives of as the fundamental principles of its faith, usually resulting in a denouncement of alternative practices and interpretations."
  national_syndicalism:0 "National Syndicalism"
- national_syndicalism_desc:0 "National syndicalism is a syncretic ideology combining far-left syndicalism with far-right integral nationalist agenda. National syndicalism aims to reshape society to better encourage nationalist rhetoric within social classes and often espouses the return of some traditional values such as the restoration of Catholicism in national laws. National syndicalism has been described as a proto-fascist ideology that opposes liberalism, capitalism, and communism.
+ national_syndicalism_desc:0 "National syndicalism is a syncretic ideology combining far-left syndicalism with far-right integral nationalist agenda. National syndicalism aims to reshape society to better encourage nationalist rhetoric within social classes and often espouses the return of some traditional values such as the restoration of Catholicism in national laws. National syndicalism has been described as a proto-fascist ideology that opposes liberalism, capitalism, and communism."
  #Socialism
  vanguardism:0 "Vanguardism"
  vanguardism_desc:0 "A political ideology based in Marxist thought, Vanguardism seeks to establish a socialist state by a vanguard party leading a revolution overthrowing capitalist society. Once in power, the party rules through a system whereby policies are open for internal debate until a decision has been made."
@@ -142,13 +142,16 @@
  POL_communism_party_long:0 "Polska Partia Socjalistyczna"
  POL_polrewkom_party:0 "Polrewkom"
  POL_polrewkom_party_long:0 "Polish Revolutionary Committee"
- POL_democratic_party:0 "PSL"
- POL_democratic_party_long:0 "Polskie Stronnictwo Ludowe"
- POL_neutrality_party:0 "Rada Regencyjna"
- POL_pilsudski_party:0 "Sejm Ustawodawczy"
- POL_fascism_party:0 "Endecja"
- POL_fascism_party_long:0 "Narodowa Demokracja"
+ POL_democratic_party:0 "SD-N"
+ POL_democratic_party_long:0 "Stronnictwo Demokratyczno-Narodowe"
+ POL_neutrality_party:0 "MKP"
+ POL_neutrality_party_long:0 "Międzypartyjne Koło Polityczne"
+ POL_pilsudski_party:0 "Obóz Belwederski"
+ POL_fascism_party:0 "LN"
+ POL_fascism_party_long:0 "Liga Narodowa"
  POL_czartoryski_party:0 "Czartoryski"
+ POL_democratic_PSL_party:0 "PSL "Piast"
+ POL_democratic_PSL_party_long:0 "Polskie Stronnictwo Ludowe "Piast""
  
  ENG_communism_party:0 "SDF"
  ENG_communism_party_long:0 "Social Democratic Federation"
@@ -262,23 +265,49 @@
  
  ITS_neutrality_party:0 "House of Bourbon"
  ITS_neutrality_party_long:0 "House of Bourbon-Two Sicilies"
-
+    
  EMI_neutrality_party:0 "House of Bourbon"
  EMI_neutrality_party_long:0 "House of Bourbon-Parma"
+ EMI_communism_party:0 "PSI"
+ EMI_communism_party_long:0 "Partito Socialista Italiano"
+ EMI_fascism_party:0 "ANI"
+ EMI_fascism_party_long:0 "Associazione Nazionalista Italiana"
 
+ SIC_fascism_party:0 "ANI"
+ SIC_fascism_party_long:0 "Associazione Nazionalista Italiana"  
+ SIC_communism_party:0 "PSI"
+ SIC_communism_party_long:0 "Partito Socialista Italiano"  
  SIC_democratic_party:0 "LDR"
  SIC_democratic_party_long:0 "Liberali, Democratici e Radicali"
  SIC_neutrality_party:0 "House of Bourbon"
  SIC_neutrality_party_long:0 "House of Bourbon-Two Sicilies"
 
+ SRD_fascism_party:0 "ANI"
+ SRD_fascism_party_long:0 "Associazione Nazionalista Italiana"
+ SRD_communism_party:0 "PSI"
+ SRD_communism_party_long:0 "Partito Socialista Italiano"
  SRD_democratic_party:0 "Partidu Sardu"
  SRD_neutrality_party:0 "House of Savoy"
-
+ 
+ TUS_fascism_party:0 "ANI"
+ TUS_fascism_party_long:0 "Associazione Nazionalista Italiana"
+ TUS_communism_party:0 "PSI"
+ TUS_communism_party_long:0 "Partito Socialista Italiano"
  TUS_neutrality_party:0 "House of Habsburg"
  TUS_neutrality_party_long:0 "House of Habsburg-Lorraine"
  
+ VNC_fascism_party:0 "ANI"
+ VNC_fascism_party_long:0 "Associazione Nazionalista Italiana"
+ VNC_communism_party:0 "PSI"
+ VNC_communism_party_long:0 "Partito Socialista Italiano"
  VNC_neutrality_AUH_party:0 "Vizekönigschaft"
  VNC_neutrality_AUH_party_long:0 "Vizekönigschaft von Lombardo-Venetien"
+ 
+ PAP_communism_party:0 "PSI"
+ PAP_communism_party_long:0 "Partito Socialista Italiano"
+ PAP_neutrality_party:0 "Romana Curia"
+ PAP_neutrality_party_long:0 "Romana Curia ministerium suum implent"
+ PAP_fascism_party:0 "Ultramontanisti"
 
  JAP_democratic_party:0 "Kokumintō"
  JAP_democratic_party_long:0 "Rikken Kokumintō"
@@ -639,8 +668,10 @@
 
  HUN_democratic_party:0 "F48P"
  HUN_democratic_party_long:0 "Függetlenségi és 48-as Párt"
- HUN_communism_party:0 "KMP"
- HUN_communism_party_long:0 "Kommunisták Magyarországi Pártja"
+ HUN_communism_party:0 "MSZP"
+ HUN_communism_party_long:0 "Magyarországi Szociáldemokrata Párt"
+ HUN_communist_party:0 "KMP"
+ HUN_communist_party_long:0 "Kommunisták Magyarországi Pártja"
  HUN_neutrality_party:0 "Regency"
  HUN_fascism_party:0 "MOVE"
  HUN_fascism_party_long:0 "Magyar Országos Véderő Egylet"
@@ -760,6 +791,7 @@
  COL_communism_party_long:0 "Partido Socialista Colombiano"
  COL_democratic_party:0 "Partido Conservador"
  COL_democratic_party_long:0 "Partido Conservador Colombiano"
+ COL_republican_union_party:0  "Unión Republicana"
  COL_neutrality_party:0 "Partido Conservador"
  COL_neutrality_party_long:0 "Partido Conservador Colombiano"
  
@@ -778,7 +810,7 @@
  SLO_democratic_party_long:0 "Slovenská Národná Strana"
  SLO_neutrality_party:0 "Československé Légie"
   
- CHL_fascism_party:0 "Ejercito De Chile"
+ CHL_fascism_party:0 "Unión Nacionalista" should be renamed to Partido Nacionalista in 1914
  CHL_junta_militar_party:0 "Junta Militar"
  CHL_junta_militar_party_long:0 "Junta Militar Provisional Para La Gobernacion De La Republica De Chile"
  CHL_democratic_party:0 "Unión Liberal"
@@ -968,12 +1000,9 @@
  EGY_democratic_party_long:0 "Liberal Constitutional Party"
  EGY_neutrality_party:0 "Alawiyya Dynasty"
  
- PAL_fascism_party:0 "Al-Muqaddas"
- PAL_communism_party:0 "NLL"
- PAL_communism_party_long:0 "National Liberation League"
- PAL_democratic_party:0 "SMC"
- PAL_democratic_party_long:0 "Supreme Muslim Council"
- PAL_neutrality_party:0 "Loyalists"
+ PAL_democratic_party:0 "Muslim-Christian Society"
+ PAL_democratic_party_long:0 "Jerusalem Muslim-Christian Society"
+ PAL_neutrality_party:0 "Palestine Arab Congress"
  
  MNT_democratic_party:0 "Klubaši"
  MNT_democratic_party_long:0 "Narodna Stranka"
@@ -1168,7 +1197,7 @@
  BUK_neutrality_party:0 "Manghud Dynasty"
  BUK_democratic_party:0 "Yosh Buxoroliklar"  
  BUK_communism_party:0 "Yosh Buxoroliklar"  
- BUK_communism_party_long:0 "Yosh Buxoroliklar - Socialist
+ BUK_communism_party_long:0 "Yosh Buxoroliklar - Socialist"
  BUK_communism_bolshevik_party:0 "BKP"
  BUK_communism_bolshevik_party_long:0 "Buxoro Kommunistik Partiyasi"
  BUK_fascism_party:0 "Bosmachilik"
@@ -1190,8 +1219,12 @@
  PHI_neutrality_party:0 "IFI"
  PHI_neutrality_party_long:0 "Iglesia Filipina Independiente"
 
- RHN_french_military:0 "Military Government"
- RHN_french_military_long:0 "French Military Government"
+ RHN_fascism:0 "Militärverwaltung"
+ RHN_fascism_long:0 "Französische Militärverwaltung"
+ RHN_democratic_party:0 "Zentrum"
+ RHN_democratic_party_long:0 "Deutsche Zentrumspartei"
+ RHN_communism_party:0 "Arbeiten Räte"
+ RHN_neutrality_party:0 "Freikorps"
 
  BAY_neutrality_party:0 "House of Wittelsbach"
  BAY_communism_party:0 "Spartakusbund"
@@ -1242,8 +1275,16 @@
  DAR_neutrality_party:0 "Keira Dynasty"
  DAR_fascism_party:0 "Keira"
 
- NMB_neutrality_party:0 "Colonial"
- NMB_democratic_party:0 "Herero People"
+ NMB_neutrality_party:0 "Gouverneursamt"
+ NMB_democratic_party:0 "Herero"
+ 
+ TZN_neutrality_party:0 "Gouverneursamt"
+ 
+ TOG_neutrality_party:0 "Gouverneursamt"
+ 
+ TZN_neutrality_party:0 "Gouverneursamt"
+ 
+ CMR_neutrality_party:0 "Gouverneursamt"
  
  CHA_neutrality_party:0 "Kolak"
  CHA_fascism_party:0 "Kolak"
