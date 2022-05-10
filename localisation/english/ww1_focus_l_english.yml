@@ -6750,3 +6750,16 @@ excavation_tech:0 "Excavation Tech"
  LIB_king_for_our_people_desc:0 "While we could just declare Barclay President-For-Life and assume complete control, another option lies open. By declaring a monarchy, Barclay can become the emperor-behind-the-scenes and we can reap all the benefits."
   lib_industrialisation_bad_tt:0 "§RThe path of rapid industrialisation will greatly destabilise the country!§!"
  lib_civil_war_divisions_tt:0 "§CCivil War is an excellent excuse to raise new militias...§!"
+
+ #Spanish Stuff
+ SPR_the_spanish_armed_forces:0 "The Spanish Armed Forces"
+ SPR_the_spanish_armed_forces_desc:0 "We must focus on improving our armed forces, as they are currently in a terrible state of affairs."
+ SPR_the_spanish_navy:0 "Spanish Naval Recovery Committee"
+ SPR_the_spanish_navy_desc:0 "At the command of the Government of Spain, we will form a committee to oversee the recovery and strengthening of the Spanish Navy so that it may be transformed into a modern navy fit for combat."
+ SPR_navy_reform_one:0 "First Round Of Naval Reforms"
+ SPR_navy_reform_one_desc:0 "We must begin the first round of reforms for our navy. With this round of reforms and later rounds of reforms certain aspects of our navy should be much improved."
+ SPR_prep_naval_exp_two:0 "Finance The Next Round Of Reforms"
+ SPR_prep_naval_exp_two_desc:0 "We must begin allocating the necessary funds to our naval reform programme to allow us to commence with the second round of naval reforms."
+ SPR_navy_reform_two:0 "Second Round Of Naval Reforms"
+ SPR_navy_reform_two_desc:0 "Now that the funds have been allocated we can begin the second round of reforms for our navy."
+ 
