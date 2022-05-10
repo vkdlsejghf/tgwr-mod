@@ -6802,3 +6802,8 @@ excavation_tech:0 "Excavation Tech"
  SPR_prep_army_reform_two_desc:0 "We must begin allocating the necessary funds to our army reform programme to allow us to commence with the second round of army reforms."
  SPR_reform_army_two:0 "Second Round Of Army Reforms"
  SPR_reform_army_two_desc:0 "Now that the funding has been allocated, we can begin the second round of our army reform programme."
+ SPR_first_of_other_industry:0 "Focus On Civil Industry And Infrastructure"
+ SPR_first_of_other_industry_desc:0 "Though our primary objective is to build military industries in our nation, we still need civillian industries to function properly. The current state of our civillian industry is bad, let us fix that."
+ SPR_colonial_industry_and_infrastructure:0 "Develop The Colonies"
+ SPR_colonial_industry_and_infrastructure_desc:0 "Though industrialisation at home should take the greater priority, we should also invest in our overseas colonies as this would also benefit us."
+ 
