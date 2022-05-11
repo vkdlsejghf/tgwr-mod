@@ -1497,7 +1497,7 @@ country_event = {
 				ideology = syndicalism
 				female = yes
 				traits = {
-					eng_civil_war_trait
+					standing_alone
 					
 				}
 			}
@@ -1513,7 +1513,7 @@ country_event = {
 					expire = "1965.1.1"
 					ideology = stratocracy
 					traits = {
-						eng_civil_war_trait
+						standing_alone
 						
 					}
 				}
@@ -1523,7 +1523,7 @@ country_event = {
 					name = ENG_white_army
 				}
 				else = {
-					add_country_leader_trait = eng_civil_war_trait					
+					add_country_leader_trait = standing_alone					
 				}
 			}
 			
@@ -1562,7 +1562,7 @@ country_event = {
 			elections_allowed = no
 		}
 		set_cosmetic_tag = UOB
-		remove_country_leader_trait = eng_civil_war_trait
+		remove_country_leader_trait = standing_alone
 		every_country = {
 			limit = {
 				is_subject_of = ENG
@@ -2086,7 +2086,7 @@ country_event = {
 			}
 			load_focus_tree = uk_3
 			remove_unit_leader = 8801
-			remove_country_leader_trait = eng_civil_war_trait
+			remove_country_leader_trait = standing_alone
 		}
 	}
 	option = {
@@ -2262,7 +2262,7 @@ country_event = {
 	immediate = {
 		hidden_effect = {
 			load_focus_tree = uk_3
-			remove_country_leader_trait = eng_civil_war_trait
+			remove_country_leader_trait = standing_alone
 			set_rule = {
 				can_join_factions = yes
 			}
@@ -3302,22 +3302,17 @@ country_event = {
 				ideology = democratic
 				long_name = ENG_democratic_party_conservative
 				name = ENG_democratic_party_conservative
-			}
-			create_country_leader = {
-				name = "Rotha Lintorn-Orman"
-				picture = "gfx/leaders/ENG/ENG_Rotha_Lintorn_Orman.png"				
-				ideology = fascism_ideology
-				female = yes
-				traits = {
-					dictator
-					hedonist
-					princess_of_terror
-				}
-			}
-			set_party_name = {
-				ideology = fascism
-				long_name = ENG_british_fascists_long
-				name = ENG_british_fascists
+			}			
+		}
+		create_country_leader = {
+			name = "Rotha Lintorn-Orman"
+			picture = "gfx/leaders/ENG/ENG_Rotha_Lintorn_Orman.png"				
+			ideology = fascism_ideology
+			female = yes
+			traits = {
+				dictator
+				hedonist
+				princess_of_terror
 			}
 		}
 		add_popularity = {
@@ -3326,6 +3321,8 @@ country_event = {
 		}
 		set_politics = {
 			ruling_party = fascism
+			long_name = ENG_british_fascists_long
+				name = ENG_british_fascists
 		}
 	}
 	option = {
@@ -3340,11 +3337,6 @@ country_event = {
 				ideology = democratic
 				long_name = ENG_democratic_party_conservative
 				name = ENG_democratic_party_conservative
-			}			
-			set_party_name = {
-				ideology = fascism
-				long_name = ENG_british_fascists_long
-				name = ENG_british_fascists
 			}
 		}
 		add_country_leader_role = {
@@ -3362,6 +3354,8 @@ country_event = {
 		}
 		set_politics = {
 			ruling_party = fascism
+			long_name = ENG_british_fascists_long
+				name = ENG_british_fascists
 		}
 	}
 }
@@ -4367,7 +4361,7 @@ country_event = {
 				}
 			}
 			KEN = {
-				add_country_leader_trait = eng_civil_war_trait
+				add_country_leader_trait = standing_alone
 				add_ideas = ENG_colonist_militia
 				division_template = {
 					name = "Kenya Garrison"
@@ -6941,14 +6935,11 @@ country_event = {
 					german_agent					
 				}
 			}			
-			set_party_name = {
-				ideology = neutrality
-				long_name = BAY_neutrality_party
-				name = BAY_neutrality_party
-			}
 			set_politics = {
 				ruling_party = neutrality
 				elections_allowed = no
+				long_name = BAY_neutrality_party
+				name = BAY_neutrality_party
 			}
 		}
 	}
@@ -8888,11 +8879,6 @@ country_event = {
 		hidden_effect = {
 			release = WLS
 			WLS = {
-				set_party_name = { 
-				    ideology = neutrality 
-				    long_name = WLS_new_royalist_party
-				    name = WLS_new_royalist_party
-				}
 				create_country_leader = {
 					name = "Dafydd II"
 					picture = "gfx/leaders/ENG/ENG_edward_viii.png" 
@@ -8911,6 +8897,8 @@ country_event = {
 				set_politics = {
 					ruling_party = neutrality
 					elections_allowed = no
+					long_name = WLS_new_royalist_party
+				    name = WLS_new_royalist_party
 				}
 			}
 		}
@@ -9032,15 +9020,9 @@ country_event = {
 		hidden_effect = {
 			release = SCO
 			SCO = {
-				set_party_name = { 
-				    ideology = fascism 
-				    long_name = SCO_admiralty_takeover_party
-				    name = SCO_admiralty_takeover_party
-				}
 				create_country_leader = {
 					name = "John Jellicoe"
-					picture = "gfx/leaders/ENG/ENG_john_jellicoe.png" 
-					
+					picture = "gfx/leaders/ENG/ENG_john_jellicoe.png" 					
 					ideology = stratocracy
 					traits = { ENG_the_admiral  }  
 				}
@@ -9055,6 +9037,8 @@ country_event = {
 				set_politics = {
 					ruling_party = fascism
 					elections_allowed = no
+					 long_name = SCO_admiralty_takeover_party
+				    name = SCO_admiralty_takeover_party
 				}
 			}
 			every_unit_leader = {

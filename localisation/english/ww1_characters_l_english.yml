@@ -880,7 +880,6 @@
  FRA_gouvernement_provisoire:0 "Gouvernement Provisoire"
  FRA_victoire:0 "Victoire"
  FRA_charles_lanrezac:0 "Charles Lanrezac"
- FRA_louis_franchet_desperey:0 "Louis Franchet d'Espèrey"
  FRA_emile_fayolle:0 "Émile Fayolle"
  FRA_hubert_lyautey:0 "Hubert Lyautey"
  FRA_michel_maunoury:0 "Michel Maunoury"
@@ -946,7 +945,6 @@
  FRA_joseph_thierry:0 "Joseph Thierry"
  FRA_charles_de_lasteyrie:0 "Charles de Lasteyrie"
  FRA_alfred_rosmer:0 "Alfred Rosmer"
- FRA_charles_mangin:0 "Charles Mangin"
  FRA_eugene_etienne:0 "Eugène Étienne"
  FRA_jean_jaures:0 "Jean Jaurès"
  FRA_theodore_steeg:0 "Théodore Steeg"
@@ -1077,6 +1075,7 @@
  GER_wilhelm_filchner:0 "Wilhelm Filchner"
  GER_workers_councils:0 "Zentralrat"
  GER_friedrich_von_bernhardi:0 "Friedrich von Bernhardi"
+ GER_danzig_volkstag:0 "Volkstag"
 
  # GREECE
  GRE_panagiotis_danglis:0 "Panagiotis Danglis"
@@ -2727,7 +2726,7 @@
 
  # UNITED STATES OF AMERICA
  USA_eugene_v_debs:0 "Eugene V. Debs"
- USA_william_h_taft:0 "William H. Taft"
+ USA_william_h_taft:0 "William Howard Taft"
  USA_theodore_roosevelt:0 "Theodore Roosevelt"
  USA_bill_haywood:0 "Bill Haywood"
  USA_federal_congress:0 "Federal Congress"
@@ -2769,7 +2768,7 @@
  USA_mason_patrick:0 "Mason Patrick"
  USA_charles_menoher:0 "Charles T. Menoher"
  USA_samuel_young:0 "Samuel Young"
- USA_adna_r_chaffee:0 "Adna Chaffee Jr."
+ USA_adna_r_chaffee:0 "Adna R. Chaffee Jr."
  USA_john_c_bates:0 "John C. Bates"
  USA_j_franklin_bell:0 "J. Franklin Bell"
  USA_william_w_wotherspoon:0 "William W. Wotherspoon"
