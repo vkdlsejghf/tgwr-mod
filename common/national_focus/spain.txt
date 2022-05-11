@@ -13,7 +13,7 @@ focus_tree = {
         icon  = GFX_focus_marmara_artillery
         x = 11
         y = 1
-        cost = 1
+        cost = 10
         search_filters = {
             FOCUS_FILTER_MILLITARY
         }
@@ -32,7 +32,7 @@ focus_tree = {
         icon = GFX_focus_generic_destroyer
         x = 3
         y = 3
-        cost = 1
+        cost = 10
         prerequisite = {
             focus = SPR_the_spanish_armed_forces
         }
@@ -55,7 +55,7 @@ focus_tree = {
         icon = GFX_focus_generic_destroyer
         x = 7
         y = 4
-        cost = 1
+        cost = 10
         prerequisite = {
             focus = SPR_the_spanish_navy
         }
@@ -76,7 +76,7 @@ focus_tree = {
         icon = GFX_focus_generic_destroyer
         x = 7
         y = 5
-        cost = 1
+        cost = 10
         prerequisite = {
             focus = SPR_naval_plan_1914
         }
@@ -104,7 +104,7 @@ focus_tree = {
         icon = GFX_focus_chi_army_reform
         x = 18
         y = 3
-        cost = 1
+        cost = 10
         prerequisite = {
             focus = SPR_the_spanish_armed_forces
         }
@@ -126,7 +126,7 @@ focus_tree = {
         icon = GFX_focus_generic_aircraft_production
         x = 11
         y = 3
-        cost = 1
+        cost = 10
         prerequisite = {
             focus = SPR_the_spanish_armed_forces
         }
@@ -152,7 +152,7 @@ focus_tree = {
         icon = GFX_focus_chi_army_reform
         x = 20
         y = 4
-        cost = 1
+        cost = 10
         prerequisite = {
             focus = SPR_the_spanish_army
         }
@@ -179,7 +179,7 @@ focus_tree = {
         icon = GFX_focus_bombard_sevastopol
         x = 1
         y = 4
-        cost = 1
+        cost = 10
         prerequisite = {
             focus = SPR_the_spanish_navy
         }
@@ -205,7 +205,7 @@ focus_tree = {
         icon = GFX_goal_generic_construct_naval_dockyard
         x = 3
         y = 4
-        cost = 1
+        cost = 10
         prerequisite = {
             focus = SPR_the_spanish_navy
         }
@@ -233,7 +233,7 @@ focus_tree = {
         icon = GFX_focus_generic_africa_naval
         x = 5
         y = 4
-        cost = 1
+        cost = 10
         prerequisite = {
             focus = SPR_the_spanish_navy
         }
@@ -267,7 +267,7 @@ focus_tree = {
         icon = GFX_goal_generic_construct_mil_factory
         x = 18
         y = 4
-        cost = 1
+        cost = 10
         prerequisite = {
             focus = SPR_the_spanish_army
         }
@@ -294,7 +294,7 @@ focus_tree = {
         icon = GFX_focus_bombard_sevastopol
         x = 1
         y = 5
-        cost = 1
+        cost = 10
         prerequisite = {
             focus = SPR_navy_reform_one
         }
@@ -320,7 +320,7 @@ focus_tree = {
         icon = GFX_focus_bombard_sevastopol
         x = 1
         y = 6
-        cost = 1
+        cost = 10
         prerequisite = {
             focus = SPR_prep_naval_exp_two
         }
@@ -349,7 +349,7 @@ focus_tree = {
         icon = GFX_goal_generic_construct_mil_factory
         x = 11
         y = 4
-        cost = 1
+        cost = 10
         prerequisite = {
             focus = SPR_the_spanish_airforce
         }
@@ -382,7 +382,7 @@ focus_tree = {
         icon = GFX_focus_generic_aircraft_production
         x = 13
         y = 4
-        cost = 1
+        cost = 10
         prerequisite = {
            focus = SPR_the_spanish_airforce
         }
@@ -409,7 +409,7 @@ focus_tree = {
         icon = GFX_focus_generic_manpower
         x = 16
         y = 4
-        cost = 1
+        cost = 10
         prerequisite = {
             focus = SPR_the_spanish_army
         }
@@ -432,7 +432,7 @@ focus_tree = {
         icon = GFX_focus_generic_economic_profit
         x = 50
         y = 1
-        cost = 1
+        cost = 10
         search_filters = {
             FOCUS_FILER_CONSTRUCTION
             FOCUS_FILTER_INDUSTRIAL
@@ -453,7 +453,7 @@ focus_tree = {
         icon = GFX_focus_generic_aircraft_production
         x = 9
         y = 4
-        cost = 1
+        cost = 10
         prerequisite = {
             focus = SPR_the_spanish_airforce 
         }
@@ -480,7 +480,7 @@ focus_tree = {
         icon = GFX_focus_industry_steel
         x = 42
         y = 3
-        cost = 1
+        cost = 10
         prerequisite = {
             focus = SPR_first_of_other_industry
         }
@@ -503,7 +503,7 @@ focus_tree = {
         icon = GFX_focus_industry_steel
         x = 58
         y = 3
-        cost = 1
+        cost = 10
         prerequisite = {
             focus = SPR_first_of_other_industry
         }
@@ -526,7 +526,7 @@ focus_tree = {
         icon = GFX_focus_chi_army_reform
         x = 20
         y = 5
-        cost = 1
+        cost = 10
         prerequisite = {
             focus = SPR_army_reform_one
         }
@@ -552,7 +552,7 @@ focus_tree = {
         icon = GFX_focus_chi_army_reform
         x = 20
         y = 6
-        cost = 1
+        cost = 10
         prerequisite = {
             focus = SPR_prep_army_reform_two
         }
@@ -581,7 +581,7 @@ focus_tree = {
         icon = GFX_focus_generic_navy_battleship2
         x = 5
         y = 5
-        cost = 1
+        cost = 10
         prerequisite = {
            focus =  SPR_port_build_one
         }
@@ -609,7 +609,7 @@ focus_tree = {
         icon = GFX_goal_generic_construct_naval_dockyard
         x = 3
         y = 5
-        cost = 1
+        cost = 10
         prerequisite = {
             focus = SPR_navy_factory_one
         }
@@ -637,7 +637,7 @@ focus_tree = {
         icon = GFX_focus_red_sky
         x = 11
         y = 5
-        cost = 1
+        cost = 10
         prerequisite = {
             focus = SPR_plane_factory_one
         }
@@ -663,7 +663,7 @@ focus_tree = {
         icon = GFX_goal_generic_air_fighter2
         x = 11
         y = 6
-        cost = 1
+        cost = 10
         prerequisite = {
             focus = SPR_airbase_build_one
         }
@@ -696,7 +696,7 @@ focus_tree = {
         icon = GFX_focus_train_railroads
         x = 58
         y = 4
-        cost = 1
+        cost = 10
         prerequisite = {
             focus = SPR_first_of_other_industry
         }
@@ -762,7 +762,7 @@ focus_tree = {
         icon = GFX_focus_train_railroads
         x = 58
         y = 5
-        cost = 1
+        cost = 10
         prerequisite = {
             focus = SPR_railway_improve_one
         }
@@ -828,7 +828,7 @@ focus_tree = {
         icon = GFX_focus_train_railroads
         x = 58
         y = 6
-        cost = 1
+        cost = 10
         prerequisite = {
             focus = SPR_railway_improve_two
         }
@@ -894,7 +894,7 @@ focus_tree = {
         icon = GFX_SPR_road_construction
         x = 39
         y = 4
-        cost = 1
+        cost = 10
         prerequisite = {
             focus = SPR_colonial_industry_and_infrastructure
         }
@@ -922,7 +922,7 @@ focus_tree = {
         icon = GFX_focus_train_railroads
         x = 42
         y = 4
-        cost = 1
+        cost = 10
         prerequisite = {
             focus = SPR_colonial_industry_and_infrastructure
         }
@@ -968,7 +968,7 @@ focus_tree = {
         icon = GFX_focus_industry_steel
         x = 45
         y = 4
-        cost = 1
+        cost = 10
         prerequisite = {
             focus = SPR_colonial_industry_and_infrastructure
         }
@@ -992,7 +992,7 @@ focus_tree = {
         icon = GFX_SPR_road_construction
         x = 55
         y = 4
-        cost = 1
+        cost = 10
         prerequisite = {
             focus = SPR_spanish_industry_and_infrastructure
         }
@@ -1014,7 +1014,7 @@ focus_tree = {
         icon = GFX_focus_industry_steel
         x = 50
         y = 3
-        cost = 1
+        cost = 10
         prerequisite = {
             focus = SPR_first_of_other_industry
         }
@@ -1035,7 +1035,7 @@ focus_tree = {
         icon = GFX_focus_industry_steel
         x = 47
         y = 4
-        cost = 1
+        cost = 10
         prerequisite = {
             focus = SPR_begin_fixing_industry
         }
@@ -1062,7 +1062,7 @@ focus_tree = {
         icon = GFX_goal_generic_production
         x = 53
         y = 4
-        cost = 1
+        cost = 10
         prerequisite = {
             focus = SPR_begin_fixing_industry
         }
@@ -1090,7 +1090,7 @@ focus_tree = {
         icon = GFX_focus_communist_urbanization
         x = 80
         y = 3
-        cost = 1
+        cost = 10
         prerequisite = {
             focus = SPR_the_republican_option
         }
@@ -1120,7 +1120,7 @@ focus_tree = {
         icon = GFX_focus_generic_suppress_socdems
         x = 80
         y = 4
-        cost = 1
+        cost = 10
         prerequisite = {
             focus = SPR_the_general_strike
         }
@@ -1147,7 +1147,7 @@ focus_tree = {
         icon = GFX_focus_worker_culture
         x = 77
         y = 5
-        cost = 1
+        cost = 10
         prerequisite = {
             focus = SPR_strike_supressed
         }
@@ -1170,7 +1170,7 @@ focus_tree = {
         icon = GFX_focus_communist_heavy_industry
         x = 80
         y = 5
-        cost = 1
+        cost = 10
         prerequisite = {
             focus = SPR_strike_supressed
         }
@@ -1192,7 +1192,7 @@ focus_tree = {
         icon = GFX_focus_ottoman_comie_flag
         x = 83
         y = 5
-        cost = 1
+        cost = 10
         prerequisite = {
             focus = SPR_strike_supressed
         }
@@ -1215,7 +1215,7 @@ focus_tree = {
         icon = GFX_focus_soviet_congress
         x = 80
         y = 7
-        cost = 1
+        cost = 10
         prerequisite = {
             focus = SPR_boost_communism_support
         }
@@ -1242,7 +1242,7 @@ focus_tree = {
         icon = GFX_focus_red_star_soldier
         x = 80
         y = 8
-        cost = 1
+        cost = 10
         prerequisite = {
             focus = SPR_final_preperations_com
         }
@@ -1282,7 +1282,7 @@ focus_tree = {
         icon = GFX_focus_spr_maintain_the_republic
         x = 90
         y = 3
-        cost = 1
+        cost = 10
         prerequisite = {
             focus = SPR_the_republican_option
         }
@@ -1312,7 +1312,7 @@ focus_tree = {
         icon = GFX_focus_industry_steel
         x = 61
         y = 4
-        cost = 1
+        cost = 10
         prerequisite = {
             focus = SPR_spanish_industry_and_infrastructure
         }
@@ -1331,7 +1331,7 @@ focus_tree = {
         icon = GFX_focus_marmara_artillery
         x = 16
         y = 5
-        cost = 1
+        cost = 10
         prerequisite = {
             focus = SPR_rifle_research_bonus
         }
@@ -1348,7 +1348,7 @@ focus_tree = {
         icon = GFX_focus_generic_africa_naval
         x = 5
         y = 6
-        cost = 1
+        cost = 10
         prerequisite = {
             focus = SPR_port_build_two
         }
@@ -1368,7 +1368,7 @@ focus_tree = {
         icon = GFX_SPR_road_construction
         x = 39
         y = 5
-        cost = 1
+        cost = 10
         prerequisite = {
             focus = SPR_improve_colonial_roads
         }
@@ -1387,7 +1387,7 @@ focus_tree = {
         icon = GFX_focus_industry_steel
         x = 47
         y = 5
-        cost = 1
+        cost = 10
         prerequisite = {
             focus = SPR_construction_reform_one
         }
@@ -1406,7 +1406,7 @@ focus_tree = {
         icon = GFX_focus_industry_steel
         x = 47
         y = 6
-        cost = 1
+        cost = 10
         prerequisite = {
             focus = SPR_prep_reform_industry_two
         }
@@ -1425,6 +1425,104 @@ focus_tree = {
             swap_ideas = {
                 remove_idea = spain_industrial_debuffs_two
                 add_idea = spain_industrial_debuffs_three
+            }
+        }
+    }
+    focus = {
+        id = SPR_prep_naval_ref_three
+        icon = GFX_focus_bombard_sevastopol
+        x = 1
+        y = 7
+        cost = 10
+        prerequisite = {
+            focus = SPR_navy_reform_two
+        }
+        available = {
+            has_idea = spanish_navy_debuffs_three
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            add_timed_idea = {
+                idea = preparing_to_reform_navy_two
+                days = 70
+            }
+        }
+    }
+    focus = {
+        id = SPR_navy_reform_three
+        icon = GFX_focus_bombard_sevastopol
+        x = 1
+        y = 8
+        cost = 10
+        prerequisite = {
+            focus = SPR_prep_naval_ref_three
+        }
+        available = {
+            has_idea = spanish_navy_debuffs_three
+            NOT = {
+                has_idea = preparing_to_reform_navy_two
+            }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            #Placeholder until i make the idea to swap out
+            add_political_power = 100
+        }
+    }
+    focus = {
+        id = SPR_research_new_planes
+        icon = GFX_focus_generic_aircraft_production
+        x = 9
+        y = 5
+        cost = 10
+        prerequisite = {
+            focus = SPR_research_plane_technology
+        }
+        available = {
+            date > 1914.1.1
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            add_tech_bonus = {
+                bonus = 1
+                uses = 1
+                category = light_fighter
+            }
+        }
+    }
+    focus = {
+        id = SPR_airbase_build_two
+        icon = GFX_focus_red_sky
+        x = 11
+        y = 7
+        cost = 10
+        prerequisite = {
+            focus = SPR_navarre_airbase_factory
+        }
+        available = {
+            controls_state = 699
+        }
+        cancel = {
+            NOT = {
+                controls_state = 699
+            }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            699 = {
+                add_building_construction = {
+                    type = air_base
+                    level = 1
+                    instant_build = yes
+                }
             }
         }
     }
