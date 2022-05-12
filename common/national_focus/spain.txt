@@ -1806,4 +1806,27 @@ focus_tree = {
             }
         }
     }
+    focus = {
+        id = SPR_production_reform_two
+        icon = GFX_goal_generic_production
+        x = 49
+        y = 6
+        cost = 10
+        prerequisite = {
+            focus = SPR_prepare_production_reform_two
+        }
+        available = {
+            has_idea = spain_production_debuffs_two
+            NOT = {
+                has_idea = spain_prepare_reform_production
+            }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            #placeholder for now
+            add_political_power = 100
+        }
+    }
 }
