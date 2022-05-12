@@ -1653,4 +1653,43 @@ focus_tree = {
             }            
         }
     }
+    focus = {
+        id = SPR_homeland_road_two
+        icon = GFX_SPR_road_construction
+        x = 51
+        y = 5
+        cost = 10
+        prerequisite = {
+            focus = SPR_improve_madrid_roads
+        }
+        available = {
+            controls_state = 175
+            controls_state = 168
+        }
+        cancel = {
+            NOT = {
+                controls_state = 175
+                controls_state = 168
+            }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            175 = {
+                add_building_construction = {
+                    type = infrastructure
+                    level = 1
+                    instant_build = yes
+                }
+            }
+            168 = {
+                add_building_construction = {
+                    type = infrastructure
+                    level = 1
+                    instant_build = yes
+                }
+            }
+        }
+    }
 }
