@@ -1696,4 +1696,92 @@ focus_tree = {
             }
         }
     }
+    focus = {
+        id = SPR_prep_army_reform_four
+        icon = GFX_focus_chi_army_reform
+        x = 20
+        y = 9
+        cost = 10
+        prerequisite = {
+            focus = SPR_reform_army_three
+        }
+        available = {
+            has_idea = spanish_army_debuffs_four
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            add_timed_idea = {
+                idea = prep_reform_army_one
+                days = 70
+            }
+        }
+    }
+    focus = {
+        id = SPR_reform_army_final
+        icon = GFX_focus_chi_army_reform
+        x = 20
+        y = 10
+        cost = 10
+        prerequisite = {
+            focus = SPR_prep_army_reform_four
+        }
+        available = {
+            has_idea = spanish_army_debuffs_four
+            NOT = {
+                has_idea = prep_reform_army_one
+            }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            remove_ideas = spanish_army_debuffs_four
+        }
+    }
+    focus = {
+        id = SPR_prep_naval_ref_four
+        icon = GFX_focus_bombard_sevastopol
+        x = 1
+        y = 9
+        cost = 10
+        prerequisite = {
+            focus = SPR_navy_reform_three
+        }
+        available = {
+            has_idea = spanish_navy_debuffs_four
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            add_timed_idea = {
+                idea = preparing_to_reform_navy_two
+                days = 70
+            }
+        }
+    }
+    focus = {
+        id = SPR_navy_reform_final
+        icon = GFX_focus_bombard_sevastopol
+        x = 1
+        y = 10
+        cost = 10
+        prerequisite = {
+            focus = SPR_prep_naval_ref_four
+        }
+        available = {
+            has_idea = spanish_navy_debuffs_four
+            NOT = {
+                has_idea = preparing_to_reform_navy_two
+            }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            remove_ideas = spanish_navy_debuffs_four
+        }
+    }
 }
