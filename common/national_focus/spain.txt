@@ -1469,8 +1469,10 @@ focus_tree = {
             factor = 1
         }
         completion_reward = {
-            #Placeholder until i make the idea to swap out
-            add_political_power = 100
+            swap_ideas = {
+                remove_idea = spanish_navy_debuffs_three
+                add_idea = spanish_navy_debuffs_four
+            }
         }
     }
     focus = {
@@ -1629,8 +1631,10 @@ focus_tree = {
             factor = 1
         }
         completion_reward = {
-            #placeholder unti i make the idea to swap out
-            add_political_power = 100
+            swap_ideas = {
+                remove_idea = spanish_army_debuffs_three
+                add_idea = spanish_army_debuffs_four
+            }            
         }
     }
     focus = {
