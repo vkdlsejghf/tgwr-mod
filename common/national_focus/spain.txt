@@ -1784,4 +1784,26 @@ focus_tree = {
             remove_ideas = spanish_navy_debuffs_four
         }
     }
+    focus = {
+        id = SPR_prepare_production_reform_two
+        icon = GFX_goal_generic_production
+        x = 49
+        y = 5
+        cost = 10
+        prerequisite = {
+            focus = SPR_production_reform_one
+        }
+        available = {
+            has_idea = spain_production_debuffs_two
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            add_timed_idea = {
+                idea = spain_prepare_reform_production
+                days = 70
+            }
+        }
+    }
 }

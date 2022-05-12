@@ -521,4 +521,18 @@ ideas = {
 			}
 		}
 	}
+	country = {
+		spain_prepare_reform_production = {
+			picture = man_five_year_plan_industry
+			allowed = {
+				tag = SPR
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				consumer_goods_factor = 0.025
+			}
+		}
+	}
 }
