@@ -1944,4 +1944,73 @@ focus_tree = {
             }
         }
     }
+    focus = {
+        id = SPR_production_reform_three
+        icon = GFX_goal_generic_production
+        x = 13
+        y = 22
+        cost = 10
+        prerequisite = {
+            focus = SPR_prepare_production_reform_three
+        }
+        available = {
+            has_idea = spain_production_debuffs_three
+            NOT = {
+                has_idea = spain_prepare_reform_production
+            }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            swap_ideas = {
+                remove_idea = spain_production_debuffs_three
+                add_idea = spain_production_debuffs_four
+            }
+        }
+    }
+    focus = {
+        id = SPR_prep_production_reform_final
+        icon = GFX_goal_generic_production
+        x = 13
+        y = 23
+        cost = 10
+        prerequisite = {
+            focus = SPR_production_reform_three
+        }
+        available = {
+            has_idea = spain_production_debuffs_four
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            add_timed_idea = {
+                idea = spain_prepare_reform_production
+                days = 70
+            }
+        }
+    }
+    focus = {
+        id = SPR_production_reform_final
+        icon = GFX_goal_generic_production
+        x = 13
+        y = 24
+        cost = 10
+        prerequisite = {
+            focus = SPR_prep_production_reform_final
+        }
+        available = {
+            has_idea = spain_production_debuffs_four
+            NOT = {
+                has_idea = spain_prepare_reform_production
+            }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            remove_ideas = spain_production_debuffs_four
+        }
+    }
 }

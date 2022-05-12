@@ -444,6 +444,26 @@ ideas = {
 		}
 	}
 	country = {
+		spain_production_debuffs_four = {
+			picture = generic_production_bonus
+			allowed = {
+				tag = SPR
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			name = spain_production_debuffs
+			modifier = {
+				production_factory_efficiency_gain_factor = -0.0625
+				line_change_production_efficiency_factor = -0.05
+				production_factory_start_efficiency_factor = -0.05
+				industrial_capacity_factory = -0.05
+				industrial_capacity_dockyard = -0.05
+				equipment_conversion_speed = -0.05
+			}
+		}
+	}
+	country = {
 		spain_budget_for_industrial_reform = {
 			picture = interwar_recovery
 			allowed = {
