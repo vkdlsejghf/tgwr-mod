@@ -2047,6 +2047,10 @@ focus_tree = {
                 start_province = 3938
                 target_province = 832
             }
+            add_timed_idea = {
+                idea = spain_unable_to_build_rails
+                days = 20
+            }
         }
     }
     focus = {
@@ -2272,6 +2276,150 @@ focus_tree = {
                     level = 1
                     instant_build = yes
                 }
+            }
+        }
+    }
+    focus = {
+        id = SPR_railway_improve_five
+        icon = GFX_focus_train_railroads
+        x = 18
+        y = 22
+        cost = 10
+        prerequisite = {
+            focus = SPR_railway_improve_four
+        }
+        available = {
+            NOT = {
+                has_idea = spain_unable_to_build_rails
+            }
+            controls_state = 168
+            controls_state = 167
+        }
+        cancel = {
+            NOT = {
+                controls_state = 168
+                controls_state = 167
+            }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            build_railway = {
+                level = 1
+                build_only_on_allied = no
+                controller_priority = {
+                    base = 1
+
+                    modifier = {
+                        tag = SPR
+                        add = 2
+                    }
+                }
+                fallback = yes
+                path = { 10024 4098 9889 6959 6906 }
+                start_province = 10024
+                target_province = 6906
+            }
+            add_timed_idea = {
+                idea = spain_unable_to_build_rails
+                days = 20
+            }
+        }
+    }
+    focus = {
+        id = SPR_railway_improve_six
+        icon = GFX_focus_train_railroads
+        x = 18
+        y = 23
+        cost = 10
+        prerequisite = {
+            focus = SPR_railway_improve_five
+        }
+        available = {
+            NOT = {
+                has_idea = spain_unable_to_build_rails
+            }
+            controls_state = 165
+            controls_state = 166
+        }
+        cancel = {
+            NOT = {
+                controls_state = 165
+                controls_state = 166
+            }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            build_railway = {
+                level = 1
+                build_only_on_allied = no
+                controller_priority = {
+                    base = 1
+
+                    modifier = {
+                        tag = SPR
+                        add = 2
+                    }
+                }
+                fallback = yes
+                path = { 9764 9797 6836 790 3816 }
+                start_province = 9764
+                target_province = 3816
+            }
+            add_timed_idea = {
+                idea = spain_unable_to_build_rails
+                days = 20
+            }
+        }
+    }
+    focus = {
+        id = SPR_railway_improve_seven
+        icon = GFX_focus_train_railroads
+        x = 18
+        y = 24
+        cost = 10
+        prerequisite = {
+            focus = SPR_railway_improve_six
+        }
+        available = {
+            NOT = {
+                has_idea = spain_unable_to_build_rails
+            }
+            controls_state = 176
+            controls_state = 166
+        }
+        cancel = {
+            NOT = {
+                controls_state = 176
+                controls_state = 166
+            }
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            build_railway = {
+                level = 1
+                build_only_on_allied = yes
+                controller_priority = {
+                    base = 1
+
+                    modifier = {
+                        tag = SPR
+                        add = 2
+                    }
+                }
+                fallback = yes
+                path = { 885 884 3887 6878 3816 }
+                start_province = 885
+                target_province = 3816
+            }
+            add_timed_idea = {
+                idea = spain_unable_to_build_rails
+                days = 20
             }
         }
     }
