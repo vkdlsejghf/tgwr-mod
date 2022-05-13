@@ -12,13 +12,194 @@ focus_tree = {
 
     continuous_focus_position = { x = 1 y = 1000 }
 
+    #start of tree
     focus = {
-        id = SPR_test
-        x = 1
+        id = SPR_naval_focus
+        icon = GFX_focus_battlefleet
+        x = 5
         y = 0
-        cost = 1
+        cost = 10
+        ai_will_do = {
+            factor = 1
+        }
         completion_reward = {
+            navy_experience = 30
+        }
+    }
+    focus = {
+        id = SPR_dreadnought_navy
+        icon = GFX_focus_bombard_sevastopol
+        x = 0
+        y = 1
+        cost = 10
+        prerequisite = {
+            focus = SPR_naval_focus
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        mutually_exclusive = {
+            focus = SPR_lightship_navy
+        }
+        completion_reward = {
+            #placeholder
             add_political_power = 100
+        }
+    }
+    focus = {
+        id = SPR_lightship_navy
+        icon = GFX_focus_generic_cruiser2
+        x = 3
+        y = 1
+        cost = 10
+        prerequisite = {
+            focus = SPR_naval_focus
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        mutually_exclusive = {
+            focus = SPR_dreadnought_navy
+        }
+        completion_reward = {
+            #placeholder
+            add_political_power = 100
+        }
+    }
+    focus = {
+        id = SPR_streamline_ship_production
+        icon = GFX_focus_generic_navy_battleship2
+        x = 7
+        y = 1
+        cost = 10
+        prerequisite = {
+            focus = SPR_naval_focus
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            add_ideas = spain_streamline_ship_production
+        }
+    }
+    focus = {
+        id = SPR_expand_ferrol_docks
+        icon = GFX_goal_generic_construct_naval_dockyard
+        x = 10
+        y = 1
+        cost = 10
+        prerequisite = {
+            focus = SPR_naval_focus
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            171 = {
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = dockyard
+                    level = 2
+                    instant_build = yes
+                }
+            }
+        }
+    }
+    focus = {
+        id = SPR_expand_malaga_base
+        icon = GFX_goal_generic_construct_naval_dockyard
+        x = 10
+        y = 2
+        cost = 10
+        prerequisite = {
+            focus = SPR_expand_ferrol_docks
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            173 = {
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = dockyard
+                    level = 2
+                    instant_build = yes
+                }
+            }
+        }
+    }
+    focus = {
+        id = SPR_dreadnought_equipment
+        icon = GFX_focus_bombard_sevastopol
+        x = 0
+        y = 2
+        cost = 10
+        prerequisite = {
+            focus = SPR_dreadnought_navy
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            #placeholder
+            add_political_power = 100
+        }
+    }
+    focus = {
+        id = SPR_lightship_equipment
+        icon = GFX_focus_generic_cruiser2
+        x = 3
+        y = 2
+        cost = 10
+        prerequisite = {
+            focus = SPR_lightship_navy
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            #placeholder
+            add_political_power = 100
+        }
+    }
+    focus = {
+        id = SPR_sonar_development
+        icon = GFX_focus_generic_navy_battleship2
+        x = 7
+        y = 2
+        cost = 10
+        prerequisite = {
+            focus = SPR_streamline_ship_production
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            #placeholder
+            add_political_power = 100
+        }
+    }
+    focus = {
+        id = SPR_regenerate_navy
+        icon = GFX_focus_battlefleet
+        x = 5
+        y = 4
+        cost = 10
+        prerequisite = {
+            focus = SPR_dreadnought_equipment
+            focus = SPR_lightship_equipment
+        }
+        prerequisite = {
+            focus = SPR_sonar_development
+        }
+        prerequisite = {
+            focus = SPR_expand_malaga_base
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            remove_ideas = spanish_american_naval_defeats
         }
     }
 }

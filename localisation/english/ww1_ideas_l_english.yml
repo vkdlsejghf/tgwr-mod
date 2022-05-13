@@ -1976,10 +1976,7 @@ FRA_privatized_banks:0 "Privatized Banks"
  spain_democratic_republican_groups:0 "Democratic Republican Societies"
  spain_democratic_republican_groups_desc:0 "A number of societies operating in our country have begun calling for a democratic republic to be created."
  spain_mission_always_false:0 "Always False"
- spain_prepare_reform_industry:0 "Preparing To Reform Construction Industry"
- spain_prepare_reform_industry_desc:0 "We must begin preperations to reform our construction industry."
- spain_prepare_reform_production:0 "Preparing To Reform Arms Production"
- spain_prepare_reform_production_desc:0 "We must begin preperations to reform our arms production."
+ spain_streamline_ship_production:0 "Streamline Ship Production"
 
  #Poland
  POL_idea_polish_reclamation:0 "Polish Reclamation"

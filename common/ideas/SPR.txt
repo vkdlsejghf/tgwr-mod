@@ -548,34 +548,6 @@ ideas = {
 		}
 	}
 	country = {
-		spain_prepare_reform_industry = {
-			picture = man_five_year_plan_industry
-			allowed = {
-				tag = SPR
-			}
-			allowed_civil_war = {
-				always = yes
-			}
-			modifier = {
-				consumer_goods_factor = 0.025
-			}
-		}
-	}
-	country = {
-		spain_prepare_reform_production = {
-			picture = man_five_year_plan_industry
-			allowed = {
-				tag = SPR
-			}
-			allowed_civil_war = {
-				always = yes
-			}
-			modifier = {
-				consumer_goods_factor = 0.025
-			}
-		}
-	}
-	country = {
 		spain_industrial_debuffs_four = {
 			picture = man_five_year_plan_industry
 			allowed = {
@@ -589,6 +561,31 @@ ideas = {
 				production_speed_buildings_factor = -0.025
 				production_speed_industrial_complex_factor = -0.025
 				production_speed_arms_factory_factor = -0.025
+			}
+		}
+	}
+	country = {
+		spain_streamline_ship_production = {
+			picture = generic_coastal_defense_ships
+			allowed = {
+				original_tag = SPR
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			equipment_bonus = {
+				ship_hull_heavy = {
+					build_cost_ic = -0.1 instant = yes
+				}
+				ship_hull_cruiser = {
+					build_cost_ic = -0.1 instant = yes
+				}
+				ship_hull_light = {
+					build_cost_ic = -0.1 instant = yes
+				}
+				ship_hull_submarine = {
+					build_cost_ic = -0.1 instant = yes
+				}
 			}
 		}
 	}
