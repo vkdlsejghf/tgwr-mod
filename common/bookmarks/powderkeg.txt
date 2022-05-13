@@ -211,8 +211,6 @@ bookmarks = {
 				spanish_american_naval_defeats
 			}
 			focuses = {
-				SPR_the_spanish_armed_forces
-				SPR_the_spanish_navy
 			}
 		}
 
