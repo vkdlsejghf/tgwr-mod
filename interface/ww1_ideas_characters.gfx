@@ -60,7 +60,14 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_idea_arabia_generic_navy_3"
 		texturefile = "gfx/interface/ideas/idea_SAU_generic_navy_3.dds"
-	}
+	}	
+	
+	### POR
+	
+	spriteType = {
+		name = "GFX_POR_teofilo_braga"
+		texturefile = "gfx/interface/ideas/POR_teofilo_braga.dds"
+	}	
 	
 	### ENG
 	

@@ -5,6 +5,9 @@ on_actions = {
 				# You can put this in the country's history file alternatively too.
 				parliament_gui_initial = yes
 			}
+			POR = {
+				country_event = { id = ww1_portugal.2 days = 1 }
+			}
 		}
 	}
 }
