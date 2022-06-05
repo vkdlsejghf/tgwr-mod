@@ -3,4 +3,9 @@ spriteTypes = {
 		name = "GFX_focus_POR_Partido_Republicano"
 		texturefile = "gfx/interface/goals/POR/focus_POR_Partido_Republicano.png"
 	}
+	SpriteType = {
+		name = "GFX_focus_POR_Luanda"
+		texturefile = "gfx/interface/goals/POR/focus_POR_Luanda.png"
+	}
 }
+ 

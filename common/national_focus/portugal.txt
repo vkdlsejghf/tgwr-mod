@@ -1,0 +1,406 @@
+focus_tree = {
+	id = portugal_base_focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = POR
+		}
+	}
+	continuous_focus_position = { x = 2070 y = 1000 }
+	default = no
+	
+	focus = { 
+		id = POR_Looming_Revolution
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		cost = 2
+		desc = POR_Looming_Revolution_desc
+		
+		x = 11
+		y = 0
+		completion_reward = {
+			add_political_power = 100
+		}
+		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_POLITICAL }
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	
+		
+	focus = {  
+		id = POR_Partido_Republicano
+		icon = GFX_focus_POR_Partido_Republicano
+		cost = 2
+		desc = POR_Partido_Republicano_desc
+		
+		allow_branch = {
+			NOT = { has_country_flag = Monarchist_Portugal }
+		}
+		
+		prerequisite = {
+			focus = POR_Looming_Revolution
+		}
+		
+		x = 12
+		y = 1	
+		completion_reward = {
+			add_political_power = 100
+		}
+		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_POLITICAL }
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	
+	
+	focus = { 
+		id = POR_Lisbon_Port_Of_The_Atlantic
+		icon = GFX_goal_generic_amphibious_assault
+		cost = 10
+		desc = POR_Lisbon_Port_Of_The_Atlantic_desc
+		
+		x = 20
+		y = 0
+		completion_reward = {
+			112 = { 
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+		}
+		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_INDUSTRY }
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	
+	focus = { 
+		id = POR_New_Crown_Jewel
+		icon = GFX_focus_generic_africa_factory
+		cost = 10
+		desc = POR_New_Crown_Jewel_desc
+		
+		prerequisite = {
+		focus = POR_Lisbon_Port_Of_The_Atlantic
+		}
+		
+		x = 20
+		y = 2
+		completion_reward = {
+			540 = { 
+				add_compliance = 20
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	
+	focus = { 
+		id = POR_Looking_Inwards
+		icon = GFX_goal_generic_construct_civilian
+		cost = 10
+		desc = POR_Looking_Inwards_desc
+		
+		prerequisite = {
+		focus = POR_Lisbon_Port_Of_The_Atlantic
+		}
+		
+		mutually_exclusive = {
+			focus = POR_Looking_Outwards
+		}
+		
+		x = 19
+		y = 1
+		completion_reward = {
+			180 = { 
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			179 = { 
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			add_timed_idea = { idea = POR_Looking_Inwards days = 365 }
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	
+	focus = { 
+		id = POR_Looking_Outwards
+		icon = GFX_goal_generic_amphibious_assault
+		cost = 10
+		desc = POR_Looking_Outwards_desc
+		
+		prerequisite = {
+		focus = POR_Lisbon_Port_Of_The_Atlantic
+		}
+		
+				
+		mutually_exclusive = {
+			focus = POR_Looking_Inwards
+		}
+		
+		x = 21
+		y = 1
+		completion_reward = {
+			180 = { 
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			179 = { 
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			add_timed_idea = { idea = POR_Looking_Outwards days = 365 }
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	
+		
+	focus = { 
+		id = POR_Africa_Nossa
+		icon = GFX_focus_generic_africa_infrastructure
+		cost = 10
+		desc = POR_Africa_Nossa_desc
+		
+		prerequisite = {
+		focus = POR_Looking_Outwards
+		}
+		
+		x = 22
+		y = 2
+		completion_reward = {
+			540 = {
+				add_building_construction = {
+					type = Infrastructure
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 1
+					instant_build = yes
+					province = 12985
+				}
+				add_extra_state_shared_building_slots = 1	
+			}
+			544 = {
+				add_building_construction = {
+					type = Infrastructure
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1				
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		ai_will_do = {
+			factor = 10
+		}
+	}	
+	
+	focus = { 
+		id = POR_Luanda_Second_Capital
+		icon = GFX_GFX_focus_POR_Luanda
+		cost = 10
+		desc = POR_Luanda_Second_Capital_desc
+		 
+		prerequisite = {
+		focus = POR_Africa_Nossa
+		}
+		
+		prerequisite = {
+		focus = POR_New_Crown_Jewel
+		}
+		
+		x = 21
+		y = 3 
+		completion_reward = {
+			add_victory_points = {
+				province = 8248
+				value = 20
+			}	
+			add_building_construction = {
+				type = naval_base
+				level = 1
+				instant_build = yes
+				province = 8248
+			}					
+			build_railway = {
+			  level = 3
+			  build_only_on_allied = no
+			  controller_priority = {
+				base = 1
+			  }
+			  fallback = yes
+			  #path = { 8248 12958 12985 }
+			  start_province = 8248
+			  target_province = 12985
+			}			
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	
+	focus = { 
+		id = POR_Rota_da_India
+		icon = GFX_focus_usa_focus_on_asia
+		cost = 10
+		desc = POR_Asian_Theather_desc
+		 
+		prerequisite = { 
+		focus = POR_Looking_Outwards
+		}
+		 
+		x = 2	
+		y = 2
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.25
+				uses = 2
+				category = naval_doctrine
+			}
+			add_tech_bonus = {
+				bonus = 0.4
+				uses = 3
+				category = naval_equipment
+			}			
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	
+	focus = { 
+		id = POR_MACAU
+		icon = GFX_focus_usa_focus_on_asia
+		cost = 10
+		desc = POR_MACAU_desc
+		 
+		prerequisite = { 
+		focus = POR_Rota_da_India
+		}
+		 
+		x = 24
+		y = 3
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.25
+				uses = 2
+				category = naval_doctrine
+			}
+			add_tech_bonus = {
+				bonus = 0.4
+				uses = 3
+				category = naval_equipment
+			}			
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	
+	focus = { 
+		id = POR_GOA
+		icon = GFX_focus_usa_focus_on_asia
+		cost = 10
+		desc = POR_MACAU_desc
+		 
+		prerequisite = { 
+		focus = POR_Rota_da_India
+		}
+		 
+		x = 26
+		y = 3
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.25
+				uses = 2
+				category = naval_doctrine
+			}
+			add_tech_bonus = {
+				bonus = 0.4
+				uses = 3
+				category = naval_equipment
+			}			
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		ai_will_do = {
+			factor = 10
+		}
+	}	
+	
+	focus = { 
+		id = POR_TIMOR
+		icon = GFX_focus_usa_focus_on_asia
+		cost = 10
+		desc = POR_MACAU_desc
+		 
+		prerequisite = { 
+		focus = POR_Rota_da_India
+		}
+		 
+		x = 28
+		y = 3
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.25
+				uses = 2
+				category = naval_doctrine
+			}
+			add_tech_bonus = {
+				bonus = 0.4
+				uses = 3
+				category = naval_equipment
+			}			
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	
+}
