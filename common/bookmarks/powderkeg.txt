@@ -310,6 +310,19 @@ bookmarks = {
 				LIB_engineer_crisis
 				LIB_try_the_whig_party
 			}
+		}		
+		
+		"POR"={
+			minor = yes
+			history = "POR_POWDERKEG_DESC"
+			ideology = neutrality
+			ideas = {
+				POR_Royal_Spending
+				POR_British_Dog
+				POR_very_influencial_republican_party
+			}
+			focuses = {
+			}
 		}
 
 		# "CHL" = {

@@ -67,6 +67,11 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_POR_teofilo_braga"
 		texturefile = "gfx/interface/ideas/POR_teofilo_braga.dds"
+	}		
+	
+	spriteType = {
+		name = "GFX_POR_royal_spendings"
+		texturefile = "gfx/interface/ideas/idea_rom_carol_ii_hedonist.dds"
 	}	
 	
 	### ENG

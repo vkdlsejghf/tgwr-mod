@@ -95,6 +95,9 @@ recruit_character = POR_vitor_hugo_de_azevedo_coutinho
 	}
 	add_ideas = {
 		POR_unstable_monarchy
+		POR_Royal_Spending
+		POR_British_Dog
+		POR_very_influencial_republican_party
 		limited_conscription
 	}
 }

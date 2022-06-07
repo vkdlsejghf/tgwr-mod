@@ -1,6 +1,6 @@
 ideas={
 	country = {
-		POR_idea_military_plot = {	
+		POR_idea_military_plot = {	 
 			allowed = { original_tag = POR }
 			picture = generic_purge
 			allowed_civil_war = { always = no }			
@@ -13,8 +13,40 @@ ideas={
 				neutrality_drift = 0.2
 			}
 		}
-		POR_unstable_monarchy = {
-			picture = por_unstable_monarchy
+		POR_strongest_influencial_republican_party = {
+			picture = POR_strong_republican_party 
+			allowed = {
+				original_tag = POR
+			}
+			allowed_civil_war = {
+				original_tag = POR
+			}
+			removal_cost = -1
+			 
+			modifier = {
+				democratic_drift = 0.10
+				custom_modifier_tooltip = army_reduction_supp_15
+			}
+		}		
+		
+		POR_very_influencial_republican_party = {
+			picture = POR_strong_republican_party 
+			allowed = {
+				original_tag = POR
+			}
+			allowed_civil_war = {
+				original_tag = POR
+			}
+			removal_cost = -1
+			 
+			modifier = {
+				democratic_drift = 0.05
+				custom_modifier_tooltip = army_reduction_supp_10
+			}
+		}
+		
+		POR_influencial_republican_party = {
+			picture = POR_strong_republican_party 
 			allowed = {
 				original_tag = POR
 			}
@@ -24,9 +56,11 @@ ideas={
 			removal_cost = -1
 			
 			modifier = {
-			
+				democratic_drift = 0.03
+				custom_modifier_tooltip = army_reduction_supp_5
 			}
 		}
+		
 		POR_unstable_republic = {
 			picture = por_unstable_republic
 			allowed = {
@@ -76,6 +110,59 @@ ideas={
 				production_speed_industrial_complex_factor = 0.2 
 				consumer_goods_factor = 0.05				
 			}
+		}		
+		
+		POR_Royal_Spending = {
+			picture = ROM_king_carol_ii_hedonist
+			allowed = { 
+				original_tag = POR
+			}
+
+			allowed_civil_war = {
+				original_tag = POR
+			}
+			removal_cost = -1
+			
+			modifier = {
+				stability_factor = -0.10
+				consumer_goods_factor = 0.15		
+				custom_modifier_tooltip = army_reduction_supp_10				
+			}
+		}		 
+		
+		POR_British_Dog = {
+			picture = POR_british_dog
+			allowed = {  
+				original_tag = POR  
+			} 
+
+			allowed_civil_war = {
+				original_tag = POR
+			}
+			removal_cost = -1
+			
+			modifier = {	
+				stability_factor = -0.05
+				democratic_drift = 0.02				
+				custom_modifier_tooltip = army_reduction_supp_10
+				custom_modifier_tooltip = british_ultimatum_tooltip
+			}
+		}		
+		
+		POR_Chinese_Refugees = {
+			picture = GFX_focus_prc_infiltration
+			allowed = {  
+				original_tag = POR 
+			} 
+
+			allowed_civil_war = {
+				always = no
+			}
+			removal_cost = -1
+			
+			modifier = {	
+				monthly_population = 0.4
+			}
 		}
 	}
 	naval_manufacturer={
@@ -87,7 +174,7 @@ ideas={
 			oficinas_gerais_de_material_aeronautico={ allowed={ original_tag=POR } research_bonus={ air_equipment=0.10 } traits={ light_aircraft_manufacturer } picture=generic_air_manufacturer_2 }
 			ogma={ allowed={ original_tag=POR } research_bonus={ air_equipment=0.10 } traits={ light_aircraft_manufacturer } }
 			}
-	materiel_manufacturer={
+	materiel_manufacturer={ 
 			designer = yes 
 			fabrica_militar_de_santa_clara={ allowed={ original_tag=POR } research_bonus={ artillery=0.10 } traits={ artillery_manufacturer } picture=generic_artillery_manufacturer_2 }
 			fabrica_material_guerra={ allowed={ original_tag=POR } research_bonus={ infantry_weapons=0.10 } traits={ infantry_equipment_manufacturer } picture=generic_tank_manufacturer_3 }

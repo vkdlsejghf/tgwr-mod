@@ -37,21 +37,20 @@ characters={
 			}
 			army={
 				# small="GFX_POR_teofilo_braga" 
-				small="GFX_idea_POR_joao_de_sousa_barbosa"
+				small="GFX_POR_teofilo_braga"
 			}
 		}
-		country_leader={
+		country_leader={ 
 			ideology = social_liberalism
 		}
 		advisor={
 			slot = political_advisor
-			small =
 			idea_token = POR_teofilo_braga_idea
 			allowed  = {
-				always = yes
+				has_idea = POR_Partido_Republicano
 			}
 			traits  = {
-				fortification_engineer  #just for testing
+				democratic_reformer  #just for testing
 			}
 			ai_will_do  = {
 				factor  = 1.000

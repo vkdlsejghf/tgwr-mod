@@ -6,6 +6,37 @@ spriteTypes = {
 	SpriteType = {
 		name = "GFX_focus_POR_Luanda"
 		texturefile = "gfx/interface/goals/POR/focus_POR_Luanda.png"
+	}	
+	SpriteType = {
+		name = "GFX_focus_POR_Goa"
+		texturefile = "gfx/interface/goals/POR/focus_POR_Goa.png"
+	}	
+	
+	SpriteType = {
+		name = "GFX_focus_POR_Macau"
+		texturefile = "gfx/interface/goals/POR/focus_POR_Macau_v2.png"
 	}
+	
+	SpriteType = {
+		name = "GFX_focus_POR_Timor"
+		texturefile = "gfx/interface/goals/POR/focus_POR_Timor.png"
+	}
+	SpriteType = {
+		name = "GFX_idea_POR_british_dog"
+		texturefile = "gfx/interface/ideas/POR/idea_english_dog_POR.dds"
+	}
+	SpriteType = {
+		name = "GFX_idea_POR_strong_republican_party"
+		texturefile = "gfx/interface/ideas/POR/idea_strong_republican_party_POR.png"
+	}		
+	SpriteType = {
+		name = "GFX_focus_POR_Panasqueira_Mines"
+		texturefile = "gfx/interface/goals/POR/focus_POR_Panasqueira_Mines.png"
+	}			
+	
+	SpriteType = {
+		name = "GFX_focus_POR_Jacobin_Spirit"
+		texturefile = "gfx/interface/goals/POR/focus_POR_Jacobin_Spirit.png"
+	}	
 }
  

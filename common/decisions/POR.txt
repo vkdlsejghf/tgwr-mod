@@ -1,10 +1,11 @@
 republican_revolution_por_gui = {
 	POR_Revolution_Timer = {	
+		priority = 10
 		allowed = {
 			original_tag = POR
 		}
 		available = {
-			always = yes
+			always = no
 		}
 		visible = {
 			NOT = { has_country_flag = por_revolution_ended }
@@ -18,8 +19,68 @@ republican_revolution_por_gui = {
 		ai_will_do = {
 			factor = 100
 		}
+		remove_effect = {
+			set_country_flag = revolution_happened
+			if = {
+				limit = { check_var = { var = POR_army_support_republic value = 0.75 } }
+				set_politics = {
+					ruling_party = democratic
+					elections_allowed = no
+				}
+				news_event = { id = ww1_portugal.3 }
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						 check_var = { var = POR_army_support_republic value = 0.75 } 
+						 check_var = { var = POR_army_support_monarch value = 0.75 } 
+					}
+				}
+				start_civil_war = {
+					ruling_party = democratic
+					ideology = democracy
+					size = 0.5
+					only_own_territory = no
+					capital = 112
+					states = { 
+						112 179
+					}
+					keep_political_leader = yes
+					keep_political_party_members = yes
+				}
+			}
+			else_if = {
+				limit = { check_var = { var = POR_army_support_monarch value = 75 } }
+			}
+		}
+	} 
+	 
+	POR_Personally_Visit_The_Esquadras = {	
+		priority = 2
+		allowed = {
+			original_tag = POR
+		}
+		available = {
+			has_decision = POR_Revolution_Timer
+			Not = { has_decision = POR_Personally_Visit_The_Esquadras }
+		}
+		visible = {
+			has_decision = POR_Revolution_Timer
+		}
+		
+		days_remove = 157
+		
+		cost = 0
+		
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 100
+		}
 		complete_effect = {
-			
+			add_to_variable = {
+				var = 
+				value = 5
+			}
 		}
 	} 
 } 
