@@ -38,5 +38,15 @@ spriteTypes = {
 		name = "GFX_focus_POR_Jacobin_Spirit"
 		texturefile = "gfx/interface/goals/POR/focus_POR_Jacobin_Spirit.png"
 	}	
+	
+	SpriteType = {
+		name = "GFX_focus_POR_Deal_With_Britain"
+		texturefile = "gfx/interface/goals/POR/focus_POR_Deal_With_Britain.png"
+	}	
+	
+	SpriteType = {
+		name = "GFX_focus_POR_Alianca_Luso_Inglesa"
+		texturefile = "gfx/interface/goals/POR/focus_POR_Alianca_Luso_Inglesa.png"
+	}	
 }
  

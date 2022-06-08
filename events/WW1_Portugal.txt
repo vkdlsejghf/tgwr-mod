@@ -45,7 +45,7 @@ news_event = {
 	id = ww1_portugal.3
 	title = ww1_portugal.3.t
 	desc = ww1_portugal.3.d
-	picture = GFX_report_event_gathering_protest
+	picture = EVENT_por_revolution_republican
 	
 	major = yes
 
@@ -54,5 +54,46 @@ news_event = {
 
 	option = {
 		name = ww1_portugal.3.a
+	}
+}
+
+#Portugal Claims Pink Map
+country_event = { 
+	id = ww1_portugal.4
+	title = ww1_portugal.4.t
+	desc = ww1_portugal.4.d
+	picture = report_event_usa_destroyers
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_portugal.4.a
+		add_opinion_modifier = {
+			target = POR
+			modifier = faction_traitor
+		} 
+		POR = {
+			add_opinion_modifier = {
+				target = ENG
+				modifier = faction_traitor
+			}
+		}		
+		remove_opinion_modifier = {
+			target = POR
+			modifier = POR_anglo_portuguese_alliance
+		}
+		POR = {
+			remove_opinion_modifier = {
+				target = ENG
+				modifier = POR_anglo_portuguese_alliance
+			}
+		}
+	}
+	
+	option = {
+		name = ww1_portugal.4.b
+		add_political_power = -50
+		add_stability = -0.10
 	}
 }

@@ -16,7 +16,7 @@ focus_tree = {
 		cost = 2
 		desc = POR_Looming_Revolution_desc
 		
-		x = 11
+		x = 9
 		y = 0
 		completion_reward = {
 			add_political_power = 100
@@ -106,6 +106,105 @@ focus_tree = {
 			factor = 10
 		}
 	}
+		
+	focus = { 
+		id = POR_The_Issue_Of_Britain
+		icon = GFX_focus_POR_Deal_With_Britain
+		cost = 2
+		desc = POR_reajust_relations_with_britain_desc
+		
+		prerequisite = {
+			focus = POR_Looming_Revolution
+		}
+		
+		mutually_exclusive = {
+			focus = POR_reclaim_the_pink_map
+		}
+		
+		x = 9
+		y = 2
+		completion_reward = {
+			add_political_power = 10
+			add_stability = 0.10
+		}
+		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_POLITICAL }
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	
+	focus = { 
+		id = POR_Alianca_Luso_Inglesa
+		icon = GFX_focus_POR_Alianca_Luso_Inglesa
+		cost = 8
+		desc = POR_reajust_relations_with_britain_desc
+		
+		prerequisite = {
+			focus = POR_The_Issue_Of_Britain
+		}
+		
+		mutually_exclusive = {
+			focus = POR_reclaim_the_pink_map
+		}
+		
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = revolution_has_begun_tooltip
+				has_country_flag = revolution_happened
+			}
+			has_war = no
+		}
+		
+		x = 8
+		y = 3
+		completion_reward = {
+			add_stability = 0.05
+			remove_ideas = POR_British_Dog
+		}
+		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_POLITICAL }
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = { 
+		id = POR_reclaim_the_pink_map
+		icon = GFX_focus_por_the_pink_map 
+		cost = 8
+		desc = POR_reajust_relations_with_britain_desc
+		
+		prerequisite = {
+			focus = POR_The_Issue_Of_Britain
+		}
+		
+		mutually_exclusive = {
+			focus = POR_Alianca_Luso_Inglesa
+		}
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = revolution_has_begun_tooltip
+				has_country_flag = revolution_happened
+			}
+			has_war = no
+		}
+		
+		x = 10
+		y = 3
+		completion_reward = {
+			remove_ideas = POR_British_Dog
+			custom_effect_tooltip = POR_increase_army_influence_5_mon
+			add_to_variable = { var = POR_army_support_republic value = -0.05 }
+			add_to_variable = { var = POR_army_support_monarch value = 0.05 }
+			add_state_claim = 771
+			add_state_claim = 545
+			add_state_claim = 770
+		}
+		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_POLITICAL }
+		ai_will_do = {
+			factor = 10
+		}
+	}	
 		
 	
 	focus = { 
@@ -572,7 +671,7 @@ focus_tree = {
 
 	focus = { 
 		id = POR_Develop_the_Alentejo 
-		icon = GFX_goal_generic_construct_civ_factory
+		icon = GFX_goal_generic_construct_infrastructure
 		cost = 10
 		desc = POR_Develop_the_Alentejo_desc
 		 
@@ -773,6 +872,39 @@ focus_tree = {
 					instant_build = yes
 				}				
 				add_extra_state_shared_building_slots = 1
+			}
+		}
+		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_ARMY_XP }
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	
+		
+	focus = { 
+		id = POR_industrial_zone
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 10
+		desc = POR_industrial_zone_desc
+		 
+		available = {		
+			has_tech = early_fighter
+		}
+		 
+		prerequisite = { 
+		focus = POR_Develop_the_Alentejo
+		}
+		 
+		x = 17
+		y = 4
+		completion_reward = {
+			112 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}		
+				add_extra_state_shared_building_slots = 2
 			}
 		}
 		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_ARMY_XP }

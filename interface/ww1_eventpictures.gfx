@@ -16,6 +16,10 @@ spriteTypes = {
 		texturefile = "gfx/event_pictures/hoi4tgw/hoi4tgw_portugal_republic.png"
 	}
 	spriteType = {
+		name = "EVENT_por_revolution_republican"
+		texturefile = "gfx/event_pictures/news_por_event_001.png"
+	}
+	spriteType = {
 		name = "EVENT_hoi4tgw_mona_lisa"
 		texturefile = "gfx/event_pictures/hoi4tgw/hoi4tgw_mona_lisa.png"
 	}

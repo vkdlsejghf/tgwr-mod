@@ -79,7 +79,7 @@ ideas={
 			}
 		}
 		POR_Looking_Outwards = {
-			picture = GFX_goal_generic_amphibious_assault
+			picture = goal_generic_amphibious_assault
 			allowed = {
 				original_tag = POR
 			}
@@ -96,7 +96,7 @@ ideas={
 		}		
 		
 		POR_Looking_Inwards = {
-			picture = GFX_goal_generic_construct_civilian
+			picture = goal_generic_construct_civilian
 			allowed = {
 				original_tag = POR
 			}
