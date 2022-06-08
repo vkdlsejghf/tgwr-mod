@@ -1793,6 +1793,7 @@ FRA_privatized_banks:0 "Privatized Banks"
  POR_increase_army_influence_5:0 "Increases §RRepublican's Army Influence§! by 5."
  POR_Jacobin_Spirit:0 "Jacobin Spirit"
  revolution_has_begun_tooltip:0 "Republican Revolution has begun."
+ POR_artillery_production:0 "Artillery Production"
 
  
  #NORWAY

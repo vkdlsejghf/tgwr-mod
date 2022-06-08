@@ -47,6 +47,11 @@ spriteTypes = {
 	SpriteType = {
 		name = "GFX_focus_POR_Alianca_Luso_Inglesa"
 		texturefile = "gfx/interface/goals/POR/focus_POR_Alianca_Luso_Inglesa.png"
+	}		
+	
+	SpriteType = {
+		name = "GFX_focus_POR_CAPI_train"
+		texturefile = "gfx/interface/goals/POR/focus_POR_CAPI_train.png"
 	}	
 }
  

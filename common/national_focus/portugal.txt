@@ -106,6 +106,42 @@ focus_tree = {
 			factor = 10
 		}
 	}
+	
+		
+	focus = {  
+		id = POR_Pardon_Monarchist_Sympathisers
+		icon = GFX_focus_generic_monarchy_1
+		cost = 10 
+		desc = POR_Jacobin_Spirit_desc
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = revolution_has_begun_tooltip
+				has_country_flag = revolution_happened
+			}
+		}
+		
+		allow_branch = {
+			NOT = { has_country_flag = Monarchist_Portugal }
+		}
+		
+		prerequisite = {
+			focus = POR_Looming_Revolution
+		}
+		
+		x = 12
+		y = 4
+		completion_reward = { 
+			add_to_variable = {
+				counter_revolution_monarchy_support = 0.1
+			}
+			custom_effect_tooltip = Por_Decrease_Monarchist_Counter_Support
+		}
+		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_POLITICAL }
+		ai_will_do = {
+			factor = 10
+		}
+	}
 		
 	focus = { 
 		id = POR_The_Issue_Of_Britain
@@ -166,6 +202,100 @@ focus_tree = {
 			factor = 10
 		}
 	}
+	
+		
+	focus = { 
+		id = POR_Officially_Join_The_Entente 
+		icon = GFX_focus_consolidate_entente
+		cost = 10
+		desc = POR_reajust_relations_with_britain_desc
+		
+		prerequisite = {
+			focus = POR_reclaim_the_pink_map
+			focus = POR_Alianca_Luso_Inglesa
+		}
+		
+		mutually_exclusive = {
+			focus = POR_a_potential_new_ally
+		}
+		
+		available = { 
+			has_opinion_modifier = POR_anglo_portuguese_alliance 
+			has_global_flag = kis_war
+			NOT = {
+				has_war_with = ENG
+				has_war_with = FRA
+			}
+			is_subject = no
+			or = {
+				ENG = {
+					exists = yes
+					is_faction_leader = yes
+					NOT = {
+						has_government = communism
+						has_country_flag = great_war_loser
+					}
+				}
+				FRA = {
+					exists = yes
+					is_faction_leader = yes
+					NOT = {
+						has_government = communism
+						has_country_flag = great_war_loser
+					}
+				}
+			}
+			threat > 0.30
+		}
+		
+		x = 8
+		y = 4
+		completion_reward = {
+			add_stability = 0.05
+			remove_ideas = POR_British_Dog
+		}
+		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_POLITICAL }
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	
+	focus = { 
+		id = POR_Demand_Spoils_Of_War
+		icon = GFX_focus_attack_germany
+		cost = 10
+		desc = POR_reajust_relations_with_britain_desc
+		
+		prerequisite = {
+			focus = POR_Officially_Join_The_Entente
+		}
+
+		available = { 
+			is_in_faction_with = ENG
+			has_war_with = GER
+			ENG = {  
+				has_war_with = GER
+			}
+			controls_state = 541
+			controls_state = 546
+		}
+		
+		cancel = {
+			NOT = { controls_state = 541 }
+			NOT = { controls_state = 546 }
+		}		
+		
+		x = 8
+		y = 5
+		completion_reward = {
+			add_state_claim = 541
+			add_state_claim = 546
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		ai_will_do = {
+			factor = 10
+		}
+	}
 
 	focus = { 
 		id = POR_reclaim_the_pink_map
@@ -199,13 +329,97 @@ focus_tree = {
 			add_state_claim = 771
 			add_state_claim = 545
 			add_state_claim = 770
+			custom_effect_tooltip = POR_may_lead_to_alliance_break
 		}
 		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_POLITICAL }
 		ai_will_do = {
 			factor = 10
 		}
 	}	
+	 
+	focus = { 
+		id = POR_a_potential_new_ally
+		icon = GFX_focus_align_germany
+		cost = 5
+		desc = POR_a_potential_new_ally_desc
 		
+		prerequisite = {
+			focus = POR_reclaim_the_pink_map
+		}
+		
+		bypass = {
+			NOT = {
+				has_opinion_modifier = POR_anglo_portuguese_alliance 
+			}
+		}
+		
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = revolution_has_begun_tooltip
+				has_country_flag = revolution_happened
+			}
+			has_war = no
+		}
+		
+		x = 10
+		y = 4
+		completion_reward = {
+			custom_effect_tooltip = POR_garanteed_end_of_alliance
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	focus = { 
+		id = POR_join_the_central_powers
+		icon = GFX_focus_central_powers
+		cost = 5
+		desc = POR_a_potential_new_ally_desc
+		
+		prerequisite = {
+			focus = POR_a_potential_new_ally
+		}
+		
+		x = 10
+		y = 5
+		available = {
+			has_global_flag = kis_war
+			NOT = {
+				has_war_with = GER
+			}
+			is_subject = no
+			GER = {
+				exists = yes
+				is_faction_leader = yes
+				NOT = {
+					has_government = communism
+					has_country_flag = great_war_loser
+				}
+			}
+		}
+		bypass = {
+			is_in_faction_with = GER
+		}
+		completion_reward = {
+			GER = {
+				add_ai_strategy = {
+					type = alliance
+					id = "BRA"
+					value = 200
+				}
+				country_event = {
+					id = generic.2
+					days = 2
+				}
+			}
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		ai_will_do = {
+			factor = 10
+		}
+	}	
 	
 	focus = { 
 		id = POR_Lisbon_Port_Of_The_Atlantic
@@ -784,6 +998,11 @@ focus_tree = {
 				uses = 1
 				category = artillery
 			}
+			add_tech_bonus = {
+				bonus = 0.4
+				uses = 1
+				technology = railway_gun
+			}
 			capital_scope = { 
 				create_unit = {
 					division = "name = \"CAPI Divisions\" division_template = \"CAPI Divisions\" start_experience_factor = 0.5 start_equipment_factor = 1.0 start_manpower_factor = 1.0"
@@ -792,7 +1011,7 @@ focus_tree = {
 				create_unit = {
 					division = "name = \"CAPI Divisions\" division_template = \"CAPI Divisions\" start_experience_factor = 0.5 start_equipment_factor = 1.0 start_manpower_factor = 1.0"
 					owner = POR
-				}			
+				}
 			}			
 		}
 		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_ARMY_XP }
@@ -801,6 +1020,37 @@ focus_tree = {
 		}
 	}
 	
+	focus = { 
+		id = POR_Artillery_Development
+		icon = GFX_focus_marmara_artillery
+		cost = 10
+		desc = POR_Corpo_De_Artilharia_Pesada_Independente_desc
+		  
+		available = {		
+			has_tech = gw_artillery
+			has_tech = tech_engineers
+		}
+		 
+		prerequisite = { 
+			focus = POR_Corpo_De_Artilharia_Pesada_Independente
+		}		
+		prerequisite = {
+			focus = POR_industrial_zone
+		}
+	
+		 
+		x = 16
+		y = 5
+		completion_reward = { 
+			army_experience = 2
+			add_ideas = POR_artillery_production
+		}
+		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_ARMY_XP }
+		ai_will_do = {
+			factor = 10
+		}
+	}
+		
 	focus = { 
 		id = POR_Madeiras_e_Acores
 		icon = GFX_focus_generic_aircraft_production
@@ -846,12 +1096,8 @@ focus_tree = {
 		cost = 10
 		desc = POR_Carmo_Barracks_desc
 		 
-		available = {		
-			has_tech = early_fighter
-		}
-		 
 		prerequisite = { 
-		focus = POR_Develop_the_Alentejo
+			focus = POR_Develop_the_Alentejo
 		}
 		 
 		x = 17
@@ -887,12 +1133,8 @@ focus_tree = {
 		cost = 10
 		desc = POR_industrial_zone_desc
 		 
-		available = {		
-			has_tech = early_fighter
-		}
-		 
 		prerequisite = { 
-		focus = POR_Develop_the_Alentejo
+			focus = POR_Develop_the_Alentejo
 		}
 		 
 		x = 17
@@ -911,7 +1153,38 @@ focus_tree = {
 		ai_will_do = {
 			factor = 10
 		}
+	}	
+	
+
+	focus = { 
+		id = POR_CAPI_Ferroviario
+		icon = GFX_focus_POR_CAPI_train
+		cost = 10
+		desc = POR_CAPI_Ferroviario_desc
+		 
+		available = {		
+			has_tech = gw_artillery 
+			has_tech = tech_engineers
+		}
+		  
+		prerequisite = { 
+		focus = POR_Corpo_De_Artilharia_Pesada_Independente
+		}		
+		 
+		x = 14
+		y = 5
+		completion_reward = { 
+			army_experience = 5
+			 create_railway_gun = {
+				equipment = railway_gun_equipment_1
+				name = POR_Canhao_ferroviario_CAPI
+				location = 11805
+			}			
+		}
+		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_ARMY_XP }
+		ai_will_do = {
+			factor = 10
+		}
 	}
-	
-	
+		
 }
