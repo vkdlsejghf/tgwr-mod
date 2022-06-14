@@ -65,7 +65,7 @@ characters={
 				small="GFX_idea_generic_army_europe_1"
 			}
 			army={
-				large="gfx/leaders/Europe/portrait_europe_generic_land_7.dds"
+				large="gfx/leaders/SPR/SPR_fernando_primo_de_rivera.png"
 			}
 		}
 		field_marshal={
