@@ -35,6 +35,7 @@ characters={
 			}
 			army={
 				large="gfx/leaders/BEL/BEL_albert_general.png"
+				small=GFX_idea_BEL_idea_albert_i_war
 			}
 		}
 		field_marshal={
@@ -169,7 +170,7 @@ characters={
 		portraits={
 			army={
 				large="gfx/leaders/BEL/BEL_Cyriaque_Gillain.png"
-				small="GFX_idea_generic_air_europe_1"
+				small="gfx/interface/ideas/BEL/idea_BEL_Cyriaque_Gillain.png"
 			}
 		}
 		advisor={
@@ -202,10 +203,8 @@ characters={
 		}
 		portraits={
 			army={
-				small="GFX_idea_generic_air_europe_2"
-			}
-			army={
 				large="gfx/leaders/BEL/BEL_gerard_leman.png"
+				small="gfx/interface/ideas/BEL/idea_BEL_gerard_leman.png"
 			}
 		}
 		corps_commander={
@@ -222,7 +221,7 @@ characters={
 		name="BEL_leon_de_witte"
 		portraits={
 			army={
-				small="gfx/interface/ideas/idea_europe_generic_land_1.dds"
+				small=GFX_Portrait_Europe_Generic_land_1_small
 			}
 			army={
 				large="gfx/leaders/BEL/BEL_leon_de_witte.png"
@@ -243,6 +242,7 @@ characters={
 		portraits={
 			army={
 				large="gfx/leaders/BEL/BEL_Jules_Jacques_de_Dixmude.png"
+				small="gfx/interface/ideas/BEL/idea_BEL_Jules_Jacques_de_Dixmude.png"
 			}
 		}
 		advisor={
@@ -266,7 +266,7 @@ characters={
 		name="BEL_charles_tombeur"
 		portraits={
 			army={
-				small="gfx/interface/ideas/idea_europe_generic_land_2.dds"
+				small=GFX_Portrait_Europe_Generic_land_2_small
 			}
 			army={
 				large="gfx/leaders/BEL/BEL_Charles_Tombeur.png"
@@ -286,7 +286,7 @@ characters={
 		name="BEL_albert_lantonnois_van_rode"
 		portraits={
 			army={
-				small="gfx/interface/ideas/idea_europe_generic_land_3.dds"
+				small=GFX_Portrait_Europe_Generic_land_3_small
 			}
 			army={
 				large="gfx/leaders/BEL/BEL_albert_van_rode.png"

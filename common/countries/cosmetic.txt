@@ -170,6 +170,10 @@ TUR_CUP = {
 	color = rgb { 134 9 2 }
 	color_ui = rgb { 134 9 2 }
 }
+TUR_revolter = {
+	color = rgb { 134 9 2 }
+	color_ui = rgb { 134 9 2 }
+}
 GRE_TUR = {
 	color = rgb { 90 115 108 }
 	color_ui = rgb { 90 115 108 }
@@ -195,10 +199,15 @@ TUR_SOC = {
 	color_ui = rgb { 163 59 83 }
 }
 
+SOV_not_communist = {
+    color = rgb { 72 143 68 }
+    color_ui = rgb { 72 143 68 }
+}
 SOV_federation = {
     color = rgb { 72 143 68 }
     color_ui = rgb { 72 143 68 }
 }
+
 SOV_puppet = {
 	color = rgb { 140 31 44 }
 	color_ui = rgb { 140 31 44 }
@@ -795,4 +804,8 @@ GER_kapp = {
 GER_ruhr_revolt = {
 	color = rgb { 140 9 21 }
 	color_ui = rgb { 140 9 21 }
+}
+SIA_republic = {
+	color = rgb { 198 177 152 }
+	color_ui = rgb { 198 177 152 }
 }

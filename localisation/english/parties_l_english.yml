@@ -105,6 +105,7 @@
  GER_reichstag:0 "Reichstag"
  GER_reichstag_long:0 "Deutscher Reichstag"
  GER_freikorps_party:0 "Freikorps"
+ GER_bundesrat:0 "Bundesrat"
  
  AUH_neutrality_party:0 "House of Habsburg"
  AUH_neutrality_party_long:0 "House of Habsburg-Lorraine"
@@ -201,9 +202,9 @@
  ENG_anti_martian_league_party_long:0 "British Defence Coalition Against Martian Invaders"
 
  SCO_neutrality_party:0 "Jacobites"
- SCO_democratic_party:0 "SNL"
- SCO_democratic_party_long:0 "Scots National League"
- SCO_communism_party:0 "Socialist Federation"
+ SCO_democratic_party:0 "SLP"
+ SCO_democratic_party_long:0 "Scottish Labour Party"
+ SCO_communism_party:0 "SSF"
  SCO_communism_party_long:0 "Scottish Socialist Federation"
  SCO_admiralty_takeover_party:0 "The Admiralty"
  
@@ -380,21 +381,19 @@
  NFA_fascism_party_long:0 "Gouvernement Militaire Provisoire"
  NFA_petain_party:0 "Petain's Government"
 
- SOV_communism_party:0 "Bolsheviks"
+ SOV_communism_party:0 "Bolsheviky"
  SOV_communism_party_long:0 "Rossiyskaya Sotsial-demokraticheskaya Rabochaya Partiya (Bol'shevikov)"
  SOV_democratic_party:0 "Esery"
  SOV_democratic_party_long:0 "Partiya Sotsialistov-Revolyutsionerov"
- SOV_fascism_party:0 "Chernosotentsy"
+ SOV_fascism_party:0 "SZRiS"
+ SOV_fascism_party_long:0 "Soyuz zashchity Rodiny i Svobody"
  SOV_neutrality_party:0 "Zelenoarmeytsy"
  SOV_communism_party_postwar:0 "VCP(b)"
  SOV_communism_party_postwar_long:0 "Vsesoyuznaya Kommunisticheskaya Partiya (Bol'shevikov)"
- SOV_democratic_party_postwar:0 "Trudoviks"
- SOV_fascism_party_postwar:0 "RFP"
- SOV_neutrality_party_postwar:0 "Provisional Government"
- SOV_fascism_party_postwar_long:0 "Russian Fascist Party"
- SOV_neutrality_party_postwar_long:0 "Provisional Government"
- SOV_neutrality_party_antibolshevik:0 "RAPP"
- SOV_neutrality_party_antibolshevik_long:0 "Russian All-People Party"
+ SOV_fascism_party_postwar:0 "RFO"
+ SOV_fascism_party_postwar_long:0 "Russkaya Fashistskaya Organizatsiya"
+ SOV_neutrality_party_postwar:0 "BRP"
+ SOV_neutrality_party_postwar_long:0 "Bratstvo Russkoy Pravdy"
  SOV_communism_party_dictatorship:0 "RKP(b)"
  SOV_communism_party_dictatorship_long:0 "Rossiyskaya Kommunisticheskaya Partiya (Bbol'shevikov)"
 
@@ -540,6 +539,8 @@
  SWE_neutrality_party:0 "House of Bernadotte"
  SWE_fascism_party:0 "Ultrakonservativa"
  SWE_fascism_party_long:0 "Ultrakonservativ Borggårdsregering"
+ SWE_national_socialist_farmers_party:0 "SNSBAP"
+ SWE_national_socialist_farmers_party_long:0 "Svenska Nationalsocialistiska Bonde-och Arbetarpartiet"
  
  FIN_royal_house:0 "House of Hesse"
  FIN_regency:0 "State Regency"
@@ -565,10 +566,10 @@
  CAN_fascism_party:0 "McCarthyites"
  CAN_communism_party:0 "Socialist Party"
  CAN_communism_party_long:0 "Socialist Party of Canada"
- CAN_neutrality_party:0 "Monarchist League"
- CAN_neutrality_party_long:0 "Monarchist League of Canada"
+ CAN_neutrality_party:0 "General Governorship"
+ CAN_monarchist_party:0 "Monarchist League"
+ CAN_monarchist_party_long:0 "Monarchist League of Canada"
  CAN_neutrality_party_royal:0 "House of Ottawa"
- CAN_neutrality_party_royal_long:0 "House of Ottawa"
  
  AST_neutrality_party:0 "General Governorship"
  AST_democratic_party:0 "Labor"
@@ -749,10 +750,12 @@
  HOL_fascism_party:0 "SGP"
  HOL_fascism_party_long:0 "Staatkundig Gereformeerde Partij"
  
- BEL_communism_party:0 "POB"
- BEL_communism_party_long:0 "Parti Ouvrier Belge"
- BEL_democratic_party:0 "Parti Catholique"
- BEL_liberal_party:0 "Parti libéral"
+ BEL_communism_party:0 "BWP/POB"
+ BEL_communism_party_long:0 "Belgische Werkliedenpartij/Parti Ouvrier Belge"
+ BEL_democratic_party:0 "KP/PC"
+ BEL_democratic_party_long:0 "Katholieke Partij/Parti Catholique"
+ BEL_liberal_party:0 "LP/PL"
+ BEL_liberal_party_long:0 "Liberale Partij/Parti Libéral"
  BEL_neutrality_party:0 "House of Saxe-Coburg"
  BEL_neutrality_party_long:0 "House of Saxe-Coburg and Gotha"
  BEL_fascism_party:0 "Frontpartij"
@@ -760,6 +763,7 @@
  BEL_resistance_long:0 "La Plus Loyale Résistance de Sa Majesté-Zijn Meest Loyale Verzet van Zijne Majesteit"
  BEL_occupation_party:0 "KDGvB"
  BEL_occupation_party_long:0 "Kaiserlich Deutsches Generalgouvernement von Belgien"
+ BEL_army_party:0 "Composante terre"
  
  SWI_fascism_party:0 "SVV"
  SWI_fascism_party_long:0 "Schweizerischer Vaterländischer Verband"
@@ -810,7 +814,7 @@
  SLO_democratic_party_long:0 "Slovenská Národná Strana"
  SLO_neutrality_party:0 "Československé Légie"
   
- CHL_fascism_party:0 "Unión Nacionalista" should be renamed to Partido Nacionalista in 1914
+ CHL_fascism_party:0 "Unión Nacionalista" #should be renamed to Partido Nacionalista in 1914
  CHL_junta_militar_party:0 "Junta Militar"
  CHL_junta_militar_party_long:0 "Junta Militar Provisional Para La Gobernacion De La Republica De Chile"
  CHL_democratic_party:0 "Unión Liberal"
@@ -832,7 +836,16 @@
  ALB_neutrality_party_long:0 "Qeveria e Esat pashë Toptanit"
  ALB_neutrality_prince_party:0 "House of Wied-Neuwied"
  ALB_neutrality_sultan_party:0 "Qeveria Osmane"
+ ALB_neutrality_durres_party:0 "Qeveria e Durrësit"
+ ALB_neutrality_regency_party:0 "Këshilli i Lartë i Regjencës"
+ ALB_neutrality_zogu_party:0 "Qeveria e Ahmet Zogut"
+ ALB_house_of_zogu_party:0 "House of Zogu"
  ALB_democratic_party:0 "Kuvendi i Vlorës"
+ ALB_peoples_party:0 "Partia e Popullit"
+ ALB_revolutionary_party:0 "Qeveria Revolucionare"
+ ALB_KONARE_party:0 "KONARE"
+ ALB_KONARE_party_long:0 "Komiteti Nacional Revolucionar"
+ ALB_unity_party:0 "Partia e Bashkimi"
  
  BOL_democratic_party:0 "Partido Republicano"
  BOL_neutrality_party:0 "Partido Liberal"
@@ -868,10 +881,13 @@
  VEN_communism_party:0 "PRV"
  VEN_communism_party_long:0 "Partido Revolucionario Venezolano"
  
+ PRU_fascism_party:0 "Junta Militar"
  PRU_communism_party:0 "PSP"
  PRU_communism_party_long:0 "Partido Socialista del Perú"
  PRU_democratic_party:0 "Partido Demócrata"
  PRU_neutrality_party:0 "Partido Civil"
+ PRU_democratic_reformist_party:0 "PDR"
+ PRU_democratic_reformist_party_long:0 "Partido Democrático Reformista"
  
  IRE_democratic_party:0 "BPÉ"
  IRE_democratic_party_long:0 "Bráithreachas Phoblacht na hÉireann"
@@ -1089,6 +1105,10 @@
  VIN_democratic_party_long:0 "Viet Nam Quang Phuc Hoi" 
  VIN_neutrality_party:0 "Duy Tân's Loyalist"
  
+ CAM_neutrality_party:0 "House of Sisowath"
+ 
+ LAO_neutrality_party:0 "Khun Lo"
+ 
  MOU_democratic_party:0 "Soyuz Gortsev"
  MOU_democratic_party_long:0 "Soyuz Gortsev Severnogo Kavkaza i Dagestana"
  MOU_communism_party:0 "Bolsheviks"
@@ -1219,15 +1239,19 @@
  PHI_neutrality_party:0 "IFI"
  PHI_neutrality_party_long:0 "Iglesia Filipina Independiente"
 
- RHN_fascism:0 "Militärverwaltung"
- RHN_fascism_long:0 "Französische Militärverwaltung"
+ RHN_fascism_party:0 "Militärverwaltung"
+ RHN_fascism_party_long:0 "Französische Militärverwaltung"
  RHN_democratic_party:0 "Zentrum"
  RHN_democratic_party_long:0 "Deutsche Zentrumspartei"
  RHN_communism_party:0 "Arbeiten Räte"
  RHN_neutrality_party:0 "Freikorps"
 
  BAY_neutrality_party:0 "House of Wittelsbach"
- BAY_communism_party:0 "Spartakusbund"
+ BAY_democratic_party:0 "SPD"
+ BAY_democratic_party_long:0 "Sozialdemokratische Partei Deutschlands"
+ BAY_communism_party:0 "USPD"
+ BAY_communism_party_long:0 "Unabhängige Sozialdemokratische Partei Deutschlands"
+ BAY_fascism_party:0 "Freikorps"
 
  SAX_neutrality_party:0 "House of Wettin"
 
@@ -1311,7 +1335,7 @@
  CAT_communism_party_long:0 "Confederación Nacional del Trabajo"
 
  SIA_neutrality_party:0 "House of Chakri"
- SIA_democratic_party:0 "Khana Ratsadon"
+ SIA_peoples_party:0 "Khana Ratsadon"
  
  HAW_neutrality_party:0 "House of Kalākaua"
  HAW_democratic_party:0 "Republican Party"
@@ -1323,8 +1347,8 @@
 
  DNZ_democratic_party:0 "SPD"
  DNZ_democratic_party_long:0 "Sozialdemokratische Partei der Freien Stadt Danzig"
- DNZ_fascism_party:0 "DNVP - N"
- DNZ_fascism_party_long:0 "Deutschnationale Volkspartei - Nationalist-wing"
+ DNZ_fascism_party:0 "DSP"
+ DNZ_fascism_party_long:0 "Deutschsoziale Partei"
  DNZ_communism_party:0 "USPD"
  DNZ_communism_party_long:0 "Unabhängige Sozialdemokratische Partei Deutschlands"
  DNZ_neutrality_party:0 "DNVP"

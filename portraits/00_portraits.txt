@@ -121,6 +121,7 @@ continent = {
 	operative = {
 		male = {
 			"gfx/leaders/Europe/portrait_europe_generic_operative_male_26.png"
+			"gfx/leaders/Europe/portrait_europe_generic_operative_male_27.png"
 		}
 	}
 }
@@ -216,6 +217,7 @@ continent = {
 	operative = {
 		male = {
 			"gfx/leaders/Europe/portrait_europe_generic_operative_male_26.png"
+			"gfx/leaders/Europe/portrait_europe_generic_operative_male_27.png"
 		}
 	}
 }
@@ -368,6 +370,7 @@ continent = {
 	operative = {
 		male = {
 			"gfx/leaders/Europe/portrait_europe_generic_operative_male_26.png"
+			"gfx/leaders/Europe/portrait_europe_generic_operative_male_27.png"
 		}
 	}
 }
@@ -438,17 +441,17 @@ continent = {
 	name = asia
 	army = {
 		male = {
-			#"gfx/leaders/Asia/Portrait_Asia_Generic_land_1.dds"
+			"gfx/leaders/Asia/Portrait_Asia_Generic_land_1.dds"
 			"gfx/leaders/Asia/Portrait_Asia_Generic_land_2.dds"
 			"gfx/leaders/Asia/Portrait_Asia_Generic_land_3.dds"
 			"gfx/leaders/Asia/Portrait_Asia_Generic_land_4.dds"
 			"gfx/leaders/Asia/Portrait_Asia_Generic_land_5.dds"
-			"gfx/leaders/Asia/portrait_asia_generic_land_6.dds"
+			#"gfx/leaders/Asia/portrait_asia_generic_land_6.dds"
 			"gfx/leaders/Asia/portrait_asia_generic_land_7.dds"
 			#"gfx/leaders/Asia/portrait_asia_generic_land_8.dds"
 			#"gfx/leaders/Asia/portrait_asia_generic_land_9.dds"
-			"gfx/leaders/Asia/portrait_asia_generic_land_10.dds"
-			"gfx/leaders/Asia/portrait_asia_generic_land_11.dds"
+			#"gfx/leaders/Asia/portrait_asia_generic_land_10.dds"
+			#"gfx/leaders/Asia/portrait_asia_generic_land_11.dds"
 			"gfx/leaders/Asia/portrait_asia_generic_land_12.dds"
 			"gfx/leaders/Asia/portrait_asia_generic_land_13.dds"
 			"gfx/leaders/Asia/portrait_asia_generic_land_14.dds"
@@ -461,11 +464,11 @@ continent = {
 			"gfx/leaders/Asia/Portrait_Asia_Generic_navy_1.dds"
 			"gfx/leaders/Asia/Portrait_Asia_Generic_navy_2.dds"
 			"gfx/leaders/Asia/Portrait_Asia_Generic_navy_3.dds"
-			"gfx/leaders/Asia/portrait_asia_generic_navy_4.dds"
+			#"gfx/leaders/Asia/portrait_asia_generic_navy_4.dds"
 			"gfx/leaders/Asia/portrait_asia_generic_navy_6.dds"
 			"gfx/leaders/Asia/portrait_asia_generic_navy_7.dds"
 			"gfx/leaders/Asia/portrait_asia_generic_navy_8.dds"
-			"gfx/leaders/Asia/portrait_asia_generic_navy_9.dds"
+			#"gfx/leaders/Asia/portrait_asia_generic_navy_9.dds"
 			#"gfx/leaders/Asia/portrait_asia_generic_navy_10.dds"
 		}
 	}
@@ -473,33 +476,36 @@ continent = {
 	political = {
 		communism = {
 				male = { 
-					#"gfx/leaders/Asia/Portrait_Asia_Generic_1.dds"
-					"gfx/leaders/Asia/portrait_asia_generic_4.dds" 
+					"gfx/leaders/Asia/Portrait_Asia_Generic_1.dds"
+					"gfx/leaders/Asia/Portrait_Asia_Generic_communism.dds"
+					#"gfx/leaders/Asia/portrait_asia_generic_4.dds" 
 					"gfx/leaders/JAP/Portrait_Japan_Generic_1.dds" 
 			}
 		}
 		democratic = {
-				male = { 
+				male = {
 					"gfx/leaders/Asia/Portrait_Asia_Generic_2.dds" 
-					"gfx/leaders/Asia/portrait_asia_generic_4.dds"
+					"gfx/leaders/Asia/Portrait_Asia_Generic_democracy.dds" 
+					#"gfx/leaders/Asia/portrait_asia_generic_4.dds" 
                     "gfx/leaders/JAP/Portrait_Japan_Generic_2.dds" 					
 			}
 		}
 		fascism = {
 				male = { 
 					"gfx/leaders/Asia/Portrait_Asia_Generic_3.dds" 
-					"gfx/leaders/Asia/portrait_asia_generic_4.dds"
-					#"gfx/leaders/Asia/Portrait_Asia_Generic_land_1.dds"
+					"gfx/leaders/Asia/Portrait_Asia_Generic_fascism.dds" 
+					#"gfx/leaders/Asia/portrait_asia_generic_4.dds" 
+					"gfx/leaders/Asia/Portrait_Asia_Generic_land_1.dds"
 					"gfx/leaders/Asia/Portrait_Asia_Generic_land_2.dds"
 					"gfx/leaders/Asia/Portrait_Asia_Generic_land_3.dds"
 					"gfx/leaders/Asia/Portrait_Asia_Generic_land_4.dds"
 					"gfx/leaders/Asia/Portrait_Asia_Generic_land_5.dds"
-					"gfx/leaders/Asia/portrait_asia_generic_land_6.dds"
+					#"gfx/leaders/Asia/portrait_asia_generic_land_6.dds"
 					"gfx/leaders/Asia/portrait_asia_generic_land_7.dds"
 					#"gfx/leaders/Asia/portrait_asia_generic_land_8.dds"
 					#"gfx/leaders/Asia/portrait_asia_generic_land_9.dds"
-					"gfx/leaders/Asia/portrait_asia_generic_land_10.dds"
-					"gfx/leaders/Asia/portrait_asia_generic_land_11.dds"
+					#"gfx/leaders/Asia/portrait_asia_generic_land_10.dds"
+					#"gfx/leaders/Asia/portrait_asia_generic_land_11.dds"
 					"gfx/leaders/Asia/portrait_asia_generic_land_12.dds"
 					"gfx/leaders/Asia/portrait_asia_generic_land_13.dds"
 					"gfx/leaders/Asia/portrait_asia_generic_land_14.dds"
@@ -510,18 +516,19 @@ continent = {
 		neutrality = {
 				male = { 
 					"gfx/leaders/Asia/Portrait_Asia_Generic_3.dds" 
-					"gfx/leaders/Asia/portrait_asia_generic_4.dds" 
-					#"gfx/leaders/Asia/Portrait_Asia_Generic_land_1.dds"
+					"gfx/leaders/Asia/Portrait_Asia_Generic_fascism.dds" 
+					#"gfx/leaders/Asia/portrait_asia_generic_4.dds" 
+					"gfx/leaders/Asia/Portrait_Asia_Generic_land_1.dds"
 					"gfx/leaders/Asia/Portrait_Asia_Generic_land_2.dds"
 					"gfx/leaders/Asia/Portrait_Asia_Generic_land_3.dds"
 					"gfx/leaders/Asia/Portrait_Asia_Generic_land_4.dds"
 					"gfx/leaders/Asia/Portrait_Asia_Generic_land_5.dds"
-					"gfx/leaders/Asia/portrait_asia_generic_land_6.dds"
+					#"gfx/leaders/Asia/portrait_asia_generic_land_6.dds"
 					"gfx/leaders/Asia/portrait_asia_generic_land_7.dds"
 					#"gfx/leaders/Asia/portrait_asia_generic_land_8.dds"
 					#"gfx/leaders/Asia/portrait_asia_generic_land_9.dds"
-					"gfx/leaders/Asia/portrait_asia_generic_land_10.dds"
-					"gfx/leaders/Asia/portrait_asia_generic_land_11.dds"
+					#"gfx/leaders/Asia/portrait_asia_generic_land_10.dds"
+					#"gfx/leaders/Asia/portrait_asia_generic_land_11.dds"
 					"gfx/leaders/Asia/portrait_asia_generic_land_12.dds"
 					"gfx/leaders/Asia/portrait_asia_generic_land_13.dds"
 					"gfx/leaders/Asia/portrait_asia_generic_land_14.dds"
@@ -2414,7 +2421,8 @@ RAJ = {
 		male = {
 			"gfx/leaders/RAJ/Portrait_The_Raj_Army_Generic.dds"
 			"gfx/leaders/RAJ/Portrait_The_Raj_Army_Generic_2.dds"
-			
+			"gfx/leaders/India/portrait_india_generic_land_3.dds"
+			"gfx/leaders/India/portrait_india_generic_land_4.dds"		
 		}
 	}
 	
@@ -2422,30 +2430,42 @@ RAJ = {
 		male = {
 			"gfx/leaders/RAJ/Portrait_The_Raj_Generic_navy_1.dds"
 			"gfx/leaders/RAJ/Portrait_The_Raj_Generic_navy_2.dds"
+			"gfx/leaders/India/portrait_india_generic_navy_17.dds"
+			"gfx/leaders/India/portrait_india_generic_navy_18.dds"
 		}
 	}
 	
 	political = {
 		communism = {
-				male = { 
-					"gfx/leaders/RAJ/Portrait_The_Raj_Political_Leader_Generic.dds"
+			male = {
+				"gfx/leaders/RAJ/Portrait_The_Raj_Political_Leader_Generic.dds"
+				"gfx/leaders/RAJ/Portrait_The_Raj_Political_Leader_Generic_2.dds"
 			}
 		}
 		democratic = {
-				male = { 
-				    "gfx/leaders/RAJ/Portrait_The_Raj_Political_Leader_Generic.dds"
-					"gfx/leaders/RAJ/Portrait_The_Raj_Political_Leader_Generic_2.dds"
+			male = { 
+				"gfx/leaders/RAJ/Portrait_The_Raj_Political_Leader_Generic.dds"
+				"gfx/leaders/RAJ/Portrait_The_Raj_Political_Leader_Generic_2.dds"
 			}
 		}
 		fascism = {
-				male = { 
-					"gfx/leaders/RAJ/Portrait_The_Raj_Army_Generic.dds"
+			male = { 
+				"gfx/leaders/RAJ/Portrait_The_Raj_Political_Leader_Generic.dds"
+				"gfx/leaders/RAJ/Portrait_The_Raj_Political_Leader_Generic_2.dds"
+				"gfx/leaders/RAJ/Portrait_The_Raj_Army_Generic.dds"
+				"gfx/leaders/RAJ/Portrait_The_Raj_Army_Generic_2.dds"
+				"gfx/leaders/India/portrait_india_generic_land_3.dds"
+				"gfx/leaders/India/portrait_india_generic_land_4.dds"	
 			}
 		}
 		neutrality = {
-				male = { 
-				    "gfx/leaders/RAJ/Portrait_The_Raj_Political_Leader_Generic.dds"
-					"gfx/leaders/RAJ/Portrait_The_Raj_Political_Leader_Generic_2.dds"
+			male = { 
+				"gfx/leaders/RAJ/Portrait_The_Raj_Political_Leader_Generic.dds"
+				"gfx/leaders/RAJ/Portrait_The_Raj_Political_Leader_Generic_2.dds"
+				"gfx/leaders/RAJ/Portrait_The_Raj_Army_Generic.dds"
+				"gfx/leaders/RAJ/Portrait_The_Raj_Army_Generic_2.dds"
+				"gfx/leaders/India/portrait_india_generic_land_3.dds"
+				"gfx/leaders/India/portrait_india_generic_land_4.dds"	
 			}
 		}
 	}
@@ -2456,7 +2476,8 @@ PAK = {
 		male = {
 			"gfx/leaders/RAJ/Portrait_The_Raj_Army_Generic.dds"
 			"gfx/leaders/RAJ/Portrait_The_Raj_Army_Generic_2.dds"
-			
+			"gfx/leaders/India/portrait_india_generic_land_3.dds"
+			"gfx/leaders/India/portrait_india_generic_land_4.dds"		
 		}
 	}
 	
@@ -2464,30 +2485,42 @@ PAK = {
 		male = {
 			"gfx/leaders/RAJ/Portrait_The_Raj_Generic_navy_1.dds"
 			"gfx/leaders/RAJ/Portrait_The_Raj_Generic_navy_2.dds"
+			"gfx/leaders/India/portrait_india_generic_navy_17.dds"
+			"gfx/leaders/India/portrait_india_generic_navy_18.dds"
 		}
 	}
 	
 	political = {
 		communism = {
-				male = { 
-					"gfx/leaders/RAJ/Portrait_The_Raj_Political_Leader_Generic.dds"
+			male = { 
+				"gfx/leaders/RAJ/Portrait_The_Raj_Political_Leader_Generic.dds"
+				"gfx/leaders/RAJ/Portrait_The_Raj_Political_Leader_Generic_2.dds"
 			}
 		}
 		democratic = {
-				male = { 
-				    "gfx/leaders/RAJ/Portrait_The_Raj_Political_Leader_Generic.dds"
-					"gfx/leaders/RAJ/Portrait_The_Raj_Political_Leader_Generic_2.dds"
+			male = { 
+				"gfx/leaders/RAJ/Portrait_The_Raj_Political_Leader_Generic.dds"
+				"gfx/leaders/RAJ/Portrait_The_Raj_Political_Leader_Generic_2.dds"
 			}
 		}
 		fascism = {
-				male = { 
-					"gfx/leaders/RAJ/Portrait_The_Raj_Army_Generic.dds"
+			male = { 
+				"gfx/leaders/RAJ/Portrait_The_Raj_Political_Leader_Generic.dds"
+				"gfx/leaders/RAJ/Portrait_The_Raj_Political_Leader_Generic_2.dds"
+				"gfx/leaders/RAJ/Portrait_The_Raj_Army_Generic.dds"
+				"gfx/leaders/RAJ/Portrait_The_Raj_Army_Generic_2.dds"
+				"gfx/leaders/India/portrait_india_generic_land_3.dds"
+				"gfx/leaders/India/portrait_india_generic_land_4.dds"	
 			}
 		}
 		neutrality = {
-				male = { 
-				    "gfx/leaders/RAJ/Portrait_The_Raj_Political_Leader_Generic.dds"
-					"gfx/leaders/RAJ/Portrait_The_Raj_Political_Leader_Generic_2.dds"
+			male = { 
+				"gfx/leaders/RAJ/Portrait_The_Raj_Political_Leader_Generic.dds"
+				"gfx/leaders/RAJ/Portrait_The_Raj_Political_Leader_Generic_2.dds"
+				"gfx/leaders/RAJ/Portrait_The_Raj_Army_Generic.dds"
+				"gfx/leaders/RAJ/Portrait_The_Raj_Army_Generic_2.dds"
+				"gfx/leaders/India/portrait_india_generic_land_3.dds"
+				"gfx/leaders/India/portrait_india_generic_land_4.dds"	
 			}
 		}
 	}
@@ -2498,7 +2531,8 @@ NEP = {
 		male = {
 			"gfx/leaders/RAJ/Portrait_The_Raj_Army_Generic.dds"
 			"gfx/leaders/RAJ/Portrait_The_Raj_Army_Generic_2.dds"
-			
+			"gfx/leaders/India/portrait_india_generic_land_3.dds"
+			"gfx/leaders/India/portrait_india_generic_land_4.dds"		
 		}
 	}
 	
@@ -2506,30 +2540,42 @@ NEP = {
 		male = {
 			"gfx/leaders/RAJ/Portrait_The_Raj_Generic_navy_1.dds"
 			"gfx/leaders/RAJ/Portrait_The_Raj_Generic_navy_2.dds"
+			"gfx/leaders/India/portrait_india_generic_navy_17.dds"
+			"gfx/leaders/India/portrait_india_generic_navy_18.dds"
 		}
 	}
 	
 	political = {
 		communism = {
-				male = { 
-					"gfx/leaders/RAJ/Portrait_The_Raj_Political_Leader_Generic.dds"
+			male = { 
+				"gfx/leaders/RAJ/Portrait_The_Raj_Political_Leader_Generic.dds"
+				"gfx/leaders/RAJ/Portrait_The_Raj_Political_Leader_Generic_2.dds"
 			}
 		}
 		democratic = {
-				male = { 
-				    "gfx/leaders/RAJ/Portrait_The_Raj_Political_Leader_Generic.dds"
-					"gfx/leaders/RAJ/Portrait_The_Raj_Political_Leader_Generic_2.dds"
+			male = { 
+				"gfx/leaders/RAJ/Portrait_The_Raj_Political_Leader_Generic.dds"
+				"gfx/leaders/RAJ/Portrait_The_Raj_Political_Leader_Generic_2.dds"
 			}
 		}
 		fascism = {
-				male = { 
-					"gfx/leaders/RAJ/Portrait_The_Raj_Army_Generic.dds"
+			male = { 
+				"gfx/leaders/RAJ/Portrait_The_Raj_Political_Leader_Generic.dds"
+				"gfx/leaders/RAJ/Portrait_The_Raj_Political_Leader_Generic_2.dds"
+				"gfx/leaders/RAJ/Portrait_The_Raj_Army_Generic.dds"
+				"gfx/leaders/RAJ/Portrait_The_Raj_Army_Generic_2.dds"
+				"gfx/leaders/India/portrait_india_generic_land_3.dds"
+				"gfx/leaders/India/portrait_india_generic_land_4.dds"	
 			}
 		}
 		neutrality = {
-				male = { 
-				    "gfx/leaders/RAJ/Portrait_The_Raj_Political_Leader_Generic.dds"
-					"gfx/leaders/RAJ/Portrait_The_Raj_Political_Leader_Generic_2.dds"
+			male = { 
+				"gfx/leaders/RAJ/Portrait_The_Raj_Political_Leader_Generic.dds"
+				"gfx/leaders/RAJ/Portrait_The_Raj_Political_Leader_Generic_2.dds"
+				"gfx/leaders/RAJ/Portrait_The_Raj_Army_Generic.dds"
+				"gfx/leaders/RAJ/Portrait_The_Raj_Army_Generic_2.dds"
+				"gfx/leaders/India/portrait_india_generic_land_3.dds"
+				"gfx/leaders/India/portrait_india_generic_land_4.dds"	
 			}
 		}
 	}
@@ -3311,6 +3357,35 @@ JAP = {
 			"gfx/leaders/JAP/Portrait_Japan_Generic_navy_3.dds"
 		}
 	}
+	
+	political = {
+		fascism = {
+			male = { 
+				"gfx/leaders/Asia/Portrait_Asia_Generic_3.dds" 
+				"gfx/leaders/Asia/Portrait_Asia_Generic_fascism.dds" 
+				#"gfx/leaders/Asia/portrait_asia_generic_4.dds" 
+				"gfx/leaders/JAP/Portrait_Japan_Generic_3.dds" 
+				"gfx/leaders/JAP/Portrait_Japan_Generic_land_1.dds"
+				"gfx/leaders/JAP/Portrait_Japan_Generic_land_2.dds"
+				"gfx/leaders/JAP/Portrait_Japan_Generic_land_3.dds"
+				"gfx/leaders/JAP/Portrait_Japan_Generic_land_4.dds"
+				"gfx/leaders/JAP/Portrait_Japan_Generic_land_5.dds"
+			}
+		}
+		neutrality = {
+			male = { 
+				"gfx/leaders/Asia/Portrait_Asia_Generic_3.dds" 
+				"gfx/leaders/Asia/Portrait_Asia_Generic_fascism.dds" 
+				#"gfx/leaders/Asia/portrait_asia_generic_4.dds" 
+				"gfx/leaders/JAP/Portrait_Japan_Generic_3.dds"
+				"gfx/leaders/JAP/Portrait_Japan_Generic_land_1.dds"
+				"gfx/leaders/JAP/Portrait_Japan_Generic_land_2.dds"
+				"gfx/leaders/JAP/Portrait_Japan_Generic_land_3.dds"
+				"gfx/leaders/JAP/Portrait_Japan_Generic_land_4.dds"
+				"gfx/leaders/JAP/Portrait_Japan_Generic_land_5.dds"
+			}
+		}
+	}
 }
 
 RUS = {
@@ -3353,7 +3428,6 @@ RUS = {
 				"gfx/leaders/RUS/portrait_RUS_generic_land_4.png"
 				"gfx/leaders/RUS/portrait_RUS_generic_land_5.png"	
 				"gfx/leaders/RUS/portrait_RUS_generic_land_7.png"
-				"gfx/leaders/RUS/portrait_RUS_generic_land_8.png"
 			}
 		}
 		neutrality = {
@@ -3371,7 +3445,6 @@ RUS = {
 				"gfx/leaders/RUS/portrait_RUS_generic_land_4.png"
 				"gfx/leaders/RUS/portrait_RUS_generic_land_5.png"
 				"gfx/leaders/RUS/portrait_RUS_generic_land_7.png"
-				"gfx/leaders/RUS/portrait_RUS_generic_land_8.png"
 			}
 		}
 	}
@@ -3384,7 +3457,6 @@ RUS = {
 			"gfx/leaders/RUS/portrait_RUS_generic_land_5.png"
 			"gfx/leaders/RUS/portrait_RUS_generic_land_6.png"
 			"gfx/leaders/RUS/portrait_RUS_generic_land_7.png"
-			"gfx/leaders/RUS/portrait_RUS_generic_land_8.png"
 			"gfx/leaders/SOV/portrait_soviet_pdxcon_magic_winner.dds"
 		}
 	}
@@ -3460,6 +3532,57 @@ SOV = {
 	}
 }
 
+SOV_puppet = {
+	army = {
+		male = {
+			"gfx/leaders/SOV/Portrait_Soviet_Generic_land_1.dds"
+			"gfx/leaders/SOV/Portrait_Soviet_Generic_land_2.dds"
+			"gfx/leaders/SOV/Portrait_Soviet_Generic_land_3.dds"
+			"gfx/leaders/SOV/Portrait_Soviet_Generic_land_4.dds"
+			"gfx/leaders/SOV/Portrait_Soviet_Generic_land_5.dds"
+			"gfx/leaders/SOV/portrait_soviet_pdxcon_magic_winner.dds"
+		}
+	}
+	
+	navy = {
+		male = {
+			"gfx/leaders/SOV/Portrait_Soviet_Generic_navy_1.dds"
+			"gfx/leaders/SOV/Portrait_Soviet_Generic_navy_2.dds"
+			"gfx/leaders/SOV/Portrait_Soviet_Generic_navy_3.dds"
+		}
+	}
+}
+
+SOV_not_communist = {
+	army = {
+		male = {
+			"gfx/leaders/RUS/portrait_RUS_generic_land_1.png"
+			"gfx/leaders/RUS/portrait_RUS_generic_land_2.png"
+			"gfx/leaders/RUS/portrait_RUS_generic_land_3.png"
+			"gfx/leaders/RUS/portrait_RUS_generic_land_4.png"
+			"gfx/leaders/RUS/portrait_RUS_generic_land_5.png"
+			"gfx/leaders/RUS/portrait_RUS_generic_land_6.png"
+			"gfx/leaders/RUS/portrait_RUS_generic_land_7.png"
+			"gfx/leaders/SOV/portrait_soviet_pdxcon_magic_winner.dds"
+		}
+	}
+}
+
+SOV_federation = {
+	army = {
+		male = {
+			"gfx/leaders/RUS/portrait_RUS_generic_land_1.png"
+			"gfx/leaders/RUS/portrait_RUS_generic_land_2.png"
+			"gfx/leaders/RUS/portrait_RUS_generic_land_3.png"
+			"gfx/leaders/RUS/portrait_RUS_generic_land_4.png"
+			"gfx/leaders/RUS/portrait_RUS_generic_land_5.png"
+			"gfx/leaders/RUS/portrait_RUS_generic_land_6.png"
+			"gfx/leaders/RUS/portrait_RUS_generic_land_7.png"
+			"gfx/leaders/SOV/portrait_soviet_pdxcon_magic_winner.dds"
+		}
+	}
+}
+
 UKR = {
     political = {
 		communism = {
@@ -3499,7 +3622,6 @@ UKR = {
 				"gfx/leaders/RUS/portrait_RUS_generic_land_3.png"
 				"gfx/leaders/RUS/portrait_RUS_generic_land_5.png"	
 				"gfx/leaders/RUS/portrait_RUS_generic_land_7.png"
-				"gfx/leaders/RUS/portrait_RUS_generic_land_8.png"	
 			}
 		}
 		neutrality = {
@@ -3516,7 +3638,6 @@ UKR = {
 				"gfx/leaders/RUS/portrait_RUS_generic_land_3.png"
 				"gfx/leaders/RUS/portrait_RUS_generic_land_5.png"
 				"gfx/leaders/RUS/portrait_RUS_generic_land_7.png"
-				"gfx/leaders/RUS/portrait_RUS_generic_land_8.png"
 			}
 		}
 	}
@@ -3528,7 +3649,6 @@ UKR = {
 			"gfx/leaders/RUS/portrait_RUS_generic_land_5.png"
 			"gfx/leaders/RUS/portrait_RUS_generic_land_6.png"
 			"gfx/leaders/RUS/portrait_RUS_generic_land_7.png"
-			"gfx/leaders/RUS/portrait_RUS_generic_land_8.png"
 			"gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds"
 			"gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
 			"gfx/leaders/Europe/Portrait_Europe_Generic_land_3.dds"
@@ -3548,6 +3668,48 @@ UKR = {
 			#"gfx/leaders/Europe/portrait_europe_generic_land_17.dds"
 			"gfx/leaders/Europe/portrait_europe_generic_land_18.dds"
 			"gfx/leaders/Europe/portrait_europe_generic_land_19.dds"
+		}
+	}
+}
+
+UKR_SOV_provisional = {
+	army = {
+		male = {
+			"gfx/leaders/SOV/Portrait_Soviet_Generic_land_1.dds"
+			"gfx/leaders/SOV/Portrait_Soviet_Generic_land_2.dds"
+			"gfx/leaders/SOV/Portrait_Soviet_Generic_land_3.dds"
+			"gfx/leaders/SOV/Portrait_Soviet_Generic_land_4.dds"
+			"gfx/leaders/SOV/Portrait_Soviet_Generic_land_5.dds"
+			"gfx/leaders/SOV/portrait_soviet_pdxcon_magic_winner.dds"
+		}
+	}
+	
+	navy = {
+		male = {
+			"gfx/leaders/SOV/Portrait_Soviet_Generic_navy_1.dds"
+			"gfx/leaders/SOV/Portrait_Soviet_Generic_navy_2.dds"
+			"gfx/leaders/SOV/Portrait_Soviet_Generic_navy_3.dds"
+		}
+	}
+}
+
+UKR_SOV = {
+	army = {
+		male = {
+			"gfx/leaders/SOV/Portrait_Soviet_Generic_land_1.dds"
+			"gfx/leaders/SOV/Portrait_Soviet_Generic_land_2.dds"
+			"gfx/leaders/SOV/Portrait_Soviet_Generic_land_3.dds"
+			"gfx/leaders/SOV/Portrait_Soviet_Generic_land_4.dds"
+			"gfx/leaders/SOV/Portrait_Soviet_Generic_land_5.dds"
+			"gfx/leaders/SOV/portrait_soviet_pdxcon_magic_winner.dds"
+		}
+	}
+	
+	navy = {
+		male = {
+			"gfx/leaders/SOV/Portrait_Soviet_Generic_navy_1.dds"
+			"gfx/leaders/SOV/Portrait_Soviet_Generic_navy_2.dds"
+			"gfx/leaders/SOV/Portrait_Soviet_Generic_navy_3.dds"
 		}
 	}
 }
@@ -3590,7 +3752,7 @@ WUK = {
 			}
 		}
 		neutrality = {
-			male = { 
+			male = {
 				"gfx/leaders/Europe/Portrait_Europe_Generic_3.dds"
 				"gfx/leaders/Europe/portrait_europe_generic_4.dds"	
 				"gfx/leaders/Europe/portrait_europe_generic_5.dds"	
@@ -3643,7 +3805,6 @@ BLR = {
 				"gfx/leaders/RUS/portrait_RUS_generic_land_3.png"
 				"gfx/leaders/RUS/portrait_RUS_generic_land_5.png"	
 				"gfx/leaders/RUS/portrait_RUS_generic_land_7.png"
-				"gfx/leaders/RUS/portrait_RUS_generic_land_8.png"
 			}
 		}
 		neutrality = {
@@ -3660,7 +3821,6 @@ BLR = {
 				"gfx/leaders/RUS/portrait_RUS_generic_land_3.png"
 				"gfx/leaders/RUS/portrait_RUS_generic_land_5.png"
 				"gfx/leaders/RUS/portrait_RUS_generic_land_7.png"
-				"gfx/leaders/RUS/portrait_RUS_generic_land_8.png"
 			}
 		}
 	}
@@ -3672,7 +3832,6 @@ BLR = {
 			"gfx/leaders/RUS/portrait_RUS_generic_land_5.png"
 			"gfx/leaders/RUS/portrait_RUS_generic_land_6.png"
 			"gfx/leaders/RUS/portrait_RUS_generic_land_7.png"
-			"gfx/leaders/RUS/portrait_RUS_generic_land_8.png"
 			"gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds"
 			"gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
 			"gfx/leaders/Europe/Portrait_Europe_Generic_land_3.dds"
@@ -3735,7 +3894,6 @@ DKB = {
 				"gfx/leaders/RUS/portrait_RUS_generic_land_3.png"
 				"gfx/leaders/RUS/portrait_RUS_generic_land_5.png"	
 				"gfx/leaders/RUS/portrait_RUS_generic_land_7.png"
-				"gfx/leaders/RUS/portrait_RUS_generic_land_8.png"
 			}
 		}
 		neutrality = {
@@ -3752,7 +3910,6 @@ DKB = {
 				"gfx/leaders/RUS/portrait_RUS_generic_land_3.png"
 				"gfx/leaders/RUS/portrait_RUS_generic_land_5.png"
 				"gfx/leaders/RUS/portrait_RUS_generic_land_7.png"
-				"gfx/leaders/RUS/portrait_RUS_generic_land_8.png"
 			}
 		}
 	}
@@ -3764,7 +3921,6 @@ DKB = {
 			"gfx/leaders/RUS/portrait_RUS_generic_land_5.png"
 			"gfx/leaders/RUS/portrait_RUS_generic_land_6.png"
 			"gfx/leaders/RUS/portrait_RUS_generic_land_7.png"
-			"gfx/leaders/RUS/portrait_RUS_generic_land_8.png"
 			"gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds"
 			"gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
 			"gfx/leaders/Europe/Portrait_Europe_Generic_land_3.dds"
@@ -3827,7 +3983,6 @@ KBN = {
 				"gfx/leaders/RUS/portrait_RUS_generic_land_3.png"
 				"gfx/leaders/RUS/portrait_RUS_generic_land_5.png"		
 				"gfx/leaders/RUS/portrait_RUS_generic_land_7.png"
-				"gfx/leaders/RUS/portrait_RUS_generic_land_8.png"
 			}
 		}
 		neutrality = {
@@ -3844,7 +3999,6 @@ KBN = {
 				"gfx/leaders/RUS/portrait_RUS_generic_land_3.png"
 				"gfx/leaders/RUS/portrait_RUS_generic_land_5.png"
 				"gfx/leaders/RUS/portrait_RUS_generic_land_7.png"
-				"gfx/leaders/RUS/portrait_RUS_generic_land_8.png"
 			}
 		}
 	}
@@ -3856,7 +4010,6 @@ KBN = {
 			"gfx/leaders/RUS/portrait_RUS_generic_land_5.png"
 			"gfx/leaders/RUS/portrait_RUS_generic_land_6.png"
 			"gfx/leaders/RUS/portrait_RUS_generic_land_7.png"
-			"gfx/leaders/RUS/portrait_RUS_generic_land_8.png"
 			"gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds"
 			"gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
 			"gfx/leaders/Europe/Portrait_Europe_Generic_land_3.dds"
@@ -3918,8 +4071,7 @@ TRM = {
 				"gfx/leaders/RUS/portrait_RUS_generic_land_2.png"
 				"gfx/leaders/RUS/portrait_RUS_generic_land_3.png"
 				"gfx/leaders/RUS/portrait_RUS_generic_land_5.png"	
-				"gfx/leaders/RUS/portrait_RUS_generic_land_7.png"
-				"gfx/leaders/RUS/portrait_RUS_generic_land_8.png"				
+				"gfx/leaders/RUS/portrait_RUS_generic_land_7.png"			
 			}
 		}
 		neutrality = {
@@ -3936,7 +4088,6 @@ TRM = {
 				"gfx/leaders/RUS/portrait_RUS_generic_land_3.png"
 				"gfx/leaders/RUS/portrait_RUS_generic_land_5.png"
 				"gfx/leaders/RUS/portrait_RUS_generic_land_7.png"
-				"gfx/leaders/RUS/portrait_RUS_generic_land_8.png"
 			}
 		}
 	}
@@ -3948,7 +4099,6 @@ TRM = {
 			"gfx/leaders/RUS/portrait_RUS_generic_land_5.png"
 			"gfx/leaders/RUS/portrait_RUS_generic_land_6.png"
 			"gfx/leaders/RUS/portrait_RUS_generic_land_7.png"
-			"gfx/leaders/RUS/portrait_RUS_generic_land_8.png"
 			"gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds"
 			"gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
 			"gfx/leaders/Europe/Portrait_Europe_Generic_land_3.dds"
@@ -4010,8 +4160,7 @@ GEO = {
 				"gfx/leaders/RUS/portrait_RUS_generic_land_2.png"
 				"gfx/leaders/RUS/portrait_RUS_generic_land_3.png"
 				"gfx/leaders/RUS/portrait_RUS_generic_land_5.png"	
-				"gfx/leaders/RUS/portrait_RUS_generic_land_7.png"
-				"gfx/leaders/RUS/portrait_RUS_generic_land_8.png"				
+				"gfx/leaders/RUS/portrait_RUS_generic_land_7.png"			
 			}
 		}
 		neutrality = {
@@ -4028,7 +4177,6 @@ GEO = {
 				"gfx/leaders/RUS/portrait_RUS_generic_land_3.png"
 				"gfx/leaders/RUS/portrait_RUS_generic_land_5.png"
 				"gfx/leaders/RUS/portrait_RUS_generic_land_7.png"
-				"gfx/leaders/RUS/portrait_RUS_generic_land_8.png"
 			}
 		}
 	}
@@ -4040,7 +4188,6 @@ GEO = {
 			"gfx/leaders/RUS/portrait_RUS_generic_land_5.png"
 			"gfx/leaders/RUS/portrait_RUS_generic_land_6.png"
 			"gfx/leaders/RUS/portrait_RUS_generic_land_7.png"
-			"gfx/leaders/RUS/portrait_RUS_generic_land_8.png"
 			"gfx/leaders/Europe/Portrait_Europe_Generic_land_1.dds"
 			"gfx/leaders/Europe/Portrait_Europe_Generic_land_2.dds"
 			"gfx/leaders/Europe/Portrait_Europe_Generic_land_3.dds"

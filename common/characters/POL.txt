@@ -28,6 +28,9 @@ characters={
 		}
 		country_leader={
 			ideology=authoritarian_democracy
+			traits = {
+				regency_council
+			}	
 		}
 	}
 	POL_jozef_pilsudski={
@@ -592,6 +595,7 @@ characters={
 		portraits = {
 			civilian = {
 				large = "gfx/leaders/POL/POL_felix_dzerzhinsky.png"
+				small="GFX_idea_SOV_felix_dzerzhinsky"
 			}
 		}
 	}

@@ -344,6 +344,7 @@ characters={
 	}
 	FRA_victoire={
 		name="FRA_victoire"
+		gender = female
 		portraits={
 			civilian={
 				large="gfx/leaders/GER/GER_Victoria_Louise.png"
@@ -485,6 +486,14 @@ characters={
 			traits  = {
 				great_military_theorist 
 			}
+			visible = {
+				NOT = {
+					AND = {
+						has_country_flag = fra_unit_leader_protests_socialism
+						has_government = communism
+					}	
+				}
+			}
 			cost = 150
 			ai_will_do  = {
 				factor  = 1.000
@@ -525,6 +534,14 @@ characters={
 			traits  = {
 				army_chief_organizational_2 
 			}
+			visible = {
+				NOT = {
+					AND = {
+						has_country_flag = fra_unit_leader_protests_socialism
+						has_government = communism
+					}	
+				}
+			}	
 			ai_will_do  = {
 				factor  = 2
 			}
@@ -1142,6 +1159,30 @@ characters={
 			legacy_id=32005	
 		}
 	}
+	FRA_jacques_sadoul = {
+		name = FRA_jacques_sadoul
+		portraits = {
+			army = {
+				large = "gfx/leaders/FRA/FRA_Jacques_Sadoul.png"
+			}
+		}
+		corps_commander = {
+			traits = {
+				trickster
+				politically_connected
+				organizer
+			}
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id=32008
+			visible = {
+				has_country_flag = FRA_socialist_france_flag
+			}
+		}
+	}
 	FRA_auguste_boue_de_lapeyrere={
 		name="FRA_auguste_boue_de_lapeyrere"
 		portraits={
@@ -1420,6 +1461,11 @@ characters={
 				}
 		}
 		name="FRA_gaston_calmette"
+		portraits={
+			civilian={
+				small="GFX_idea_generic_army_europe_5"
+			}
+		}
 	}
 
 	FRA_paul_deroulede={
