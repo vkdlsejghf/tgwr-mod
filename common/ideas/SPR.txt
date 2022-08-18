@@ -25,6 +25,18 @@ ideas = {
 			traits = { artillery_manufacturer } 
 			picture = generic_artillery_manufacturer_2 
 		}
+		star_bonifacio_echeverria = {
+			allowed = { original_tag = SPR }
+			research_bonus = { infantry_weapons = 0.10 }
+			traits = { infantry_equipment_manufacturer }
+			picture = generic_artillery_manufacturer_2
+		}
+		elizalde = {
+			allowed = { original_tag = SPR }
+			research_bonus = { motorized_equipment = 0.10 }
+			traits = { motorized_equipment_manufacturer }
+			picture = generic_motorized_equipment_manufacturer_1
+		}
 	}
 	industrial_concern = {
 		designer = yes 
@@ -43,7 +55,7 @@ ideas = {
 	}
 
 	country = {
-		spanish_american_naval_defeats = {
+		SPR_american_naval_defeats = {
 			picture = generic_coastal_defense_ships
 
 			allowed = {
@@ -67,7 +79,7 @@ ideas = {
 	}
 	
 	country = {
-		spanish_army_debuffs = {
+		SPR_army_debuffs = {
 			picture = generic_army_problems
 
 			allowed = {
@@ -92,26 +104,9 @@ ideas = {
 			}
 		}
 	}
-	country = {
-		spain_purchases_planes = {
-			picture = generic_air_bonus
-
-			allowed = {
-				tag = SPR
-			}
-
-			allowed_civil_war = {
-				always = yes
-			}
-
-			modifier = {
-				consumer_goods_factor = 0.05
-			}
-		}
-	}
 
 	country = {
-		spain_industrial_debuffs = {
+		SPR_industrial_debuffs = {
 			picture = man_five_year_plan_industry
 			allowed = {
 				tag = SPR
@@ -123,19 +118,6 @@ ideas = {
 				production_speed_buildings_factor = -0.1
 				production_speed_industrial_complex_factor = -0.1
 				production_speed_arms_factory_factor = -0.1
-			}
-		}
-	}
-	country = {
-		spain_production_debuffs = {
-			picture = generic_production_bonus
-			allowed = {
-				tag = SPR
-			}
-			allowed_civil_war = {
-				always = yes
-			}
-			modifier = {
 				production_factory_efficiency_gain_factor = -0.25
 				line_change_production_efficiency_factor = -0.2
 				production_factory_start_efficiency_factor = -0.2
@@ -146,7 +128,7 @@ ideas = {
 		}
 	}
 	country = {
-		spain_alfonso_xiii = {
+		alfonso_xiii = {
 			picture = SPR_alfonso_xiii
 			allowed = {
 				tag = SPR
@@ -177,7 +159,7 @@ ideas = {
 		}
 	}
 	country = {
-		spain_streamline_ship_production = {
+		SPR_streamline_ship_production = {
 			picture = generic_coastal_defense_ships
 			allowed = {
 				original_tag = SPR
@@ -196,6 +178,40 @@ ideas = {
 					build_cost_ic = -0.1 instant = yes
 				}
 				ship_hull_submarine = {
+					build_cost_ic = -0.1 instant = yes
+				}
+			}
+		}
+	}
+	country = {
+		SPR_boost_dreadnought_production = {
+			picture = generic_coastal_defense_ships
+			allowed = {
+				original_tag = SPR
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			equipment_bonus = {
+				ship_hull_heavy = {
+					build_cost_ic = -0.1 instant = yes
+				}
+			}
+		}
+	}
+	country = {
+		SPR_boost_lightship_production = {
+			allowed = {
+				original_tag = SPR
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			equipment_bonus = {
+				ship_hull_cruiser = {
+					build_cost_ic = -0.1 instant = yes
+				}
+				ship_hull_light = {
 					build_cost_ic = -0.1 instant = yes
 				}
 			}

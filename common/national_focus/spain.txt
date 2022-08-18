@@ -17,7 +17,7 @@ focus_tree = {
         id = SPR_naval_focus
         icon = GFX_focus_battlefleet
         x = 5
-        y = 0
+        y = 2
         cost = 10
         ai_will_do = {
             factor = 1
@@ -30,7 +30,7 @@ focus_tree = {
         id = SPR_dreadnought_navy
         icon = GFX_focus_bombard_sevastopol
         x = 0
-        y = 1
+        y = 3
         cost = 10
         prerequisite = {
             focus = SPR_naval_focus
@@ -42,15 +42,14 @@ focus_tree = {
             focus = SPR_lightship_navy
         }
         completion_reward = {
-            #placeholder
-            add_political_power = 100
+            add_ideas = SPR_boost_dreadnought_production
         }
     }
     focus = {
         id = SPR_lightship_navy
         icon = GFX_focus_generic_cruiser2
         x = 3
-        y = 1
+        y = 3
         cost = 10
         prerequisite = {
             focus = SPR_naval_focus
@@ -62,15 +61,14 @@ focus_tree = {
             focus = SPR_dreadnought_navy
         }
         completion_reward = {
-            #placeholder
-            add_political_power = 100
+            add_ideas = SPR_boost_lightship_production
         }
     }
     focus = {
         id = SPR_streamline_ship_production
         icon = GFX_focus_generic_navy_battleship2
         x = 7
-        y = 1
+        y = 3
         cost = 10
         prerequisite = {
             focus = SPR_naval_focus
@@ -79,14 +77,14 @@ focus_tree = {
             factor = 1
         }
         completion_reward = {
-            add_ideas = spain_streamline_ship_production
+            add_ideas = SPR_streamline_ship_production
         }
     }
     focus = {
         id = SPR_expand_ferrol_docks
         icon = GFX_goal_generic_construct_naval_dockyard
         x = 10
-        y = 1
+        y = 3
         cost = 10
         prerequisite = {
             focus = SPR_naval_focus
@@ -109,7 +107,7 @@ focus_tree = {
         id = SPR_expand_malaga_base
         icon = GFX_goal_generic_construct_naval_dockyard
         x = 10
-        y = 2
+        y = 4
         cost = 10
         prerequisite = {
             focus = SPR_expand_ferrol_docks
@@ -132,7 +130,7 @@ focus_tree = {
         id = SPR_dreadnought_equipment
         icon = GFX_focus_bombard_sevastopol
         x = 0
-        y = 2
+        y = 4
         cost = 10
         prerequisite = {
             focus = SPR_dreadnought_navy
@@ -141,15 +139,18 @@ focus_tree = {
             factor = 1
         }
         completion_reward = {
-            #placeholder
-            add_political_power = 100
+            add_tech_bonus = {
+                bonus = 2
+                uses = 1
+                category = bb_tech
+            }
         }
     }
     focus = {
         id = SPR_lightship_equipment
         icon = GFX_focus_generic_cruiser2
         x = 3
-        y = 2
+        y = 4
         cost = 10
         prerequisite = {
             focus = SPR_lightship_navy
@@ -158,15 +159,23 @@ focus_tree = {
             factor = 1
         }
         completion_reward = {
-            #placeholder
-            add_political_power = 100
+            add_tech_bonus = {
+                bonus = 1
+                uses = 1
+                category = cl_tech
+            }
+            add_tech_bonus = {
+                bonus = 1
+                uses = 1
+                category = dd_tech
+            }
         }
     }
     focus = {
         id = SPR_sonar_development
         icon = GFX_focus_generic_navy_battleship2
         x = 7
-        y = 2
+        y = 4
         cost = 10
         prerequisite = {
             focus = SPR_streamline_ship_production
@@ -186,7 +195,7 @@ focus_tree = {
         id = SPR_regenerate_navy
         icon = GFX_focus_battlefleet
         x = 5
-        y = 4
+        y = 6
         cost = 10
         prerequisite = {
             focus = SPR_dreadnought_equipment
@@ -202,7 +211,109 @@ focus_tree = {
             factor = 1
         }
         completion_reward = {
-            remove_ideas = spanish_american_naval_defeats
+            remove_ideas = SPR_american_naval_defeats
+        }
+    }
+    focus = {
+        id = SPR_found_the_airforce
+        icon = GFX_goal_generic_build_airforce
+        relative_position_id = SPR_naval_focus
+        x = 9
+        y = 0
+        cost = 10
+        available = {
+            has_country_flag = spanish_airforce_founded
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            air_experience = 30
+        }
+    }
+    focus = {
+        id = SPR_develop_planes
+        icon = GFX_goal_generic_air_fighter
+        relative_position_id = SPR_found_the_airforce
+        x = -1
+        y = 1
+        cost = 10
+        prerequisite = {
+            focus = SPR_found_the_airforce
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            add_tech_bonus = {
+                bonus = 1
+                uses = 2
+                category = light_fighter
+            }
+        }
+    }
+    focus = {
+        id = SPR_build_some_airbases
+        icon = GFX_goal_generic_air_fighter #placeholder until i can find proper icon
+        relative_position_id = SPR_develop_planes
+        x = 2
+        y = 0
+        cost = 10
+        prerequisite = {
+            focus = SPR_found_the_airforce
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            41 = {
+                add_building_construction = {
+                    type = air_base
+                    level = 2
+                    instant_build = yes
+                }
+            }
+            165 = {
+                add_building_construction = {
+                    type = air_base
+                    level = 2
+                    instant_build = yes
+                }
+            }
+            169 = {
+                add_building_construction = {
+                    type = air_base
+                    level = 2
+                    instant_build = yes
+                }
+            }
+        }
+    }
+    focus = {
+        id = SPR_build_a_plane_factory
+        icon = GFX_focus_generic_aircraft_production
+        relative_position_id = SPR_found_the_airforce
+        x = 0
+        y = 2
+        cost = 10
+        prerequisite = {
+            focus = SPR_develop_planes
+        }
+        prerequisite = {
+            focus = SPR_build_some_airbases
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            176 = {
+                add_extra_state_shared_building_slots = 1
+                add_building_construction = {
+                    type = arms_factory
+                    level = 1
+                    instant_build = yes
+                }
+            }
         }
     }
 }

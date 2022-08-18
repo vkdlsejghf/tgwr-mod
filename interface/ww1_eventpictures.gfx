@@ -879,6 +879,12 @@ spriteTypes = {
 		texturefile = "gfx/event_pictures/news_event_halifax_explosion.png"
 	}
 
+	#Spain
+	spriteType = {
+		name = "GFX_news_event_spain_pm_assassinated"
+		texturefile = "gfx/event_pictures/ww1_spain/spain_pm_death.png"
+	}
+
 	#GENERIC
 	spriteType = {
 		name = "GFX_report_event_spanish_flu"

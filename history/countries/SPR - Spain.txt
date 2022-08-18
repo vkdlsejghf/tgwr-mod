@@ -86,14 +86,13 @@ recruit_character = SPR_lucas_puente
 	}
 
 	add_ideas = {
-		spain_alfonso_xiii
+		alfonso_xiii
 		neutrality_idea
 		ww1_Scramble_for_Africa
 		limited_conscription
-		spanish_american_naval_defeats
-		spanish_army_debuffs
-		spain_industrial_debuffs
-		spain_production_debuffs
+		SPR_american_naval_defeats
+		SPR_army_debuffs
+		SPR_industrial_debuffs
 	}
 
 }

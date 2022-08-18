@@ -1,121 +1,25 @@
 ﻿add_namespace = ww1_spain
 
-#SPANISH REPUBLIC
+#SPR_1910_General_Election
 country_event = {
 	id = ww1_spain.1
 	title = ww1_spain.1.t
 	desc = ww1_spain.1.d
-	picture = GFX_report_event_german_reichstag_gathering	
-	fire_only_once = yes
-	mean_time_to_happen = {	days = 30 }
-	trigger = {
-		original_tag = SPR
-		has_government = neutrality
-		NOT = { has_global_flag = spanish_republic }
-		OR = {
-			has_country_flag = great_war_loser
-			has_stability < 0.1
-			democratic > 0.4
-			date > 1931.4.1
-		}
-	}	
-	option = {
-		name = ww1_spain.1.a
-		set_global_flag = spanish_republic
-		set_cosmetic_tag = SPR_REP
-		set_politics = {
-			ruling_party = democratic 
-			last_election = "1918.11.11"
-			election_frequency = 60 
-			elections_allowed = yes
-		}
-		hidden_effect = {
-			set_popularities = {
-				democratic = 43
-				neutrality = 39
-				fascism = 10
-				communism = 8
-			}
-		}
-		ai_chance = { factor = 10 }
-	}
-}
-
-#SPR_1910_General_Election
-country_event = {
-	id = ww1_spain.2
-	title = ww1_spain.2.t
-	desc = ww1_spain.2.d
 	picture = GFX_report_event_election_vote
 	fire_only_once = yes
 	is_triggered_only = yes
 	option = {
-		name = ww1_spain.2.a
+		name = ww1_spain.1.a
 		ai_chance = { factor = 100 }
 		add_political_power = -10
 		set_country_flag = ninteen_ten_election
 	}
 }
-
-#Crime Of Cuenca
-country_event = {
-	id = ww1_spain.3
-	title = ww1_spain.3.t
-	desc = ww1_spain.3.d
-	picture = GFX_report_event_election_vote
-
-	trigger = {
-		original_tag = SPR
-		date > 1910.8.1
-	}
-	mean_time_to_happen = { days = 20 }
-	option = {
-		name = ww1_spain.3.a
-		ai_chance = { factor = 50 }
-		add_stability = -0.05
-	}
-	option = {
-		name = ww1_spain.3.b
-		ai_chance = { factor = 50 }
-		add_stability = -0.05
-	}
-}
-
-#Spanish Naval Recovery Committee
-country_event = {
-	id = ww1_spain.4
-	title = ww1_spain.4.t
-	desc = ww1_spain.4.d
-	picture = GFX_report_event_usa_heavy_cruiser
-
-	is_triggered_only = yes
-	fire_only_once = yes
-	option = {
-		name = ww1_spain.4.a
-		ai_chance = { factor = 100 }
-	}
-}
-
-#Spanish Army Recovery Committee
-country_event = {
-	id = ww1_spain.5
-	title = ww1_spain.5.t
-	desc = ww1_spain.5.d
-	picture = GFX_report_event_soldiers_marching
-
-	is_triggered_only = yes
-	fire_only_once = yes
-	option = {
-		name = ww1_spain.5.a
-		ai_chance = { factor = 100 }
-	}
-}
-
 #Foundation Of Spanish Airforce
 country_event = {
-	id = ww1_spain.6
-	title = ww1_spain.6.t
-	desc = ww1_spain.6.d
+	id = ww1_spain.2
+	title = ww1_spain.2.t
+	desc = ww1_spain.2.d
 	picture = GFX_report_event_generic_bombers
 
 	trigger = {
@@ -124,18 +28,17 @@ country_event = {
 	mean_time_to_happen = { days = 20 }
 	fire_only_once = yes
 	option = {
-		name = ww1_spain.6.a
+		name = ww1_spain.2.a
 		ai_chance = { factor = 100 }
 		set_country_flag = spanish_airforce_founded
 	}
 }
-
 #Assassination Of José Canalejas y Méndez
 news_event = {
-	title = ww1_spain.8.t
-	desc = ww1_spain.8.d
-	id = ww1_spain.8
-	picture = GFX_news_event_spain_pm_death
+	title = ww1_spain.3.t
+	desc = ww1_spain.3.d
+	id = ww1_spain.3
+	picture = GFX_news_event_spain_pm_assassinated
 
 	trigger = {
 		tag = SPR
@@ -144,7 +47,7 @@ news_event = {
 	mean_time_to_happen = { days = 12 }
 	fire_only_once = yes
 	option = {
-		name = ww1_spain.8.a
+		name = ww1_spain.3.a
 		ai_chance = { factor = 100 }
 		set_country_flag = jose_canalejas_dead
 		retire_character = SPR_jose_canalejas
@@ -152,143 +55,71 @@ news_event = {
 	}
 }
 
-#Mid-1913 General Strike (For Going Republican)
+#Mothballed until further notice
 country_event = {
-	id = ww1_spain.9
-	title = ww1_spain.9.t
-	desc = ww1_spain.9.d
-	picture = GFX_report_event_spain_general_strike
-
+	id = ww1_spain.mothballed1
+	title = "Mothballed"
+	desc = "Mothballed"
+	picture = GFX_report_event_spainish_coal_shipment
+	is_triggered_only = yes
+	option = {
+		name = "Mothballed"
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = {
+	id = ww1_spain.mothballed2
+	title = "Mothballed"
+	desc = "Mothballed"
+	picture = GFX_report_event_spainish_coal_shipment
+	is_triggered_only = yes
+	option = {
+		name = "Mothballed"
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = {
+	id = ww1_spain.mothballed3
+	title = "Mothballed"
+	desc = "Mothballed"
+	picture = GFX_report_event_spanish_tungsten_mines
+	is_triggered_only = yes
+	option = {
+		name = "Mothballed"
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = {
+	id = ww1_spain.mothballed4
+	title = "Mothballed"
+	desc = "Mothballed"
+	picture = GFX_report_event_spanish_tungsten_mines
+	is_triggered_only = yes
+	option = {
+		name = "Mothballed"
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = {
+	id = ww1_spain.mothballed5
+	title = "Mothballed Event"
+	desc = "I mothballed this because i dont need it to function anymore"
+	picture = GFX_report_event_german_reichstag_gathering	
+	fire_only_once = yes
+	mean_time_to_happen = {	days = 30 }
 	trigger = {
-		tag = SPR
-		date > 1913.5.1
-	}
-	mean_time_to_happen = { days = 10 }
-	fire_only_once = yes
+		original_tag = SPR
+		date > 2000.1.1
+	}	
 	option = {
-		name = ww1_spain.9.a
-		ai_chance = { factor = 100 }
-		add_ideas = spain_general_strike
-		country_event = { id = ww1_spain.10 days = 5 }
-		set_country_flag = nineteen_thirteen_general_strike
-	}
-}
-
-country_event = {
-	id = ww1_spain.10
-	title = ww1_spain.10.t
-	desc = ww1_spain.10.d
-	picture = GFX_report_event_spain_troops_deployed
-
-	is_triggered_only = yes
-	fire_only_once = yes
-	option = {
-		name = ww1_spain.10.a
-		ai_chance = { factor = 100 }
-		news_event = { id = ww1_spain.11 days = 30 }
-		set_country_flag = troops_deployed_strike
-	}
-}
-
-news_event = {
-	id = ww1_spain.11
-	title = ww1_spain.11.t
-	desc = ww1_spain.11.d
-	picture = GFX_news_event_spain_troops_dep_two
-
-	is_triggered_only = yes
-	fire_only_once = yes
-	option = {
-		name = ww1_spain.11.a
-		ai_chance = { factor = 100 }
-		remove_ideas = spain_general_strike
-		set_country_flag = strike_supressed
-	}
-}
-
-news_event = {
-	id = ww1_spain.12
-	title = ww1_spain.12.t
-	desc = ww1_spain.12.d
-	picture = GFX_news_event_spain_arsenal_heist
-
-	is_triggered_only = yes
-	fire_only_once = yes
-	option = {
-		name = ww1_spain.12.a
-		ai_chance = { factor = 100 }
-		set_country_flag = barcelona_armoury_heist
-	}
-}
-
-news_event = {
-	id = ww1_spain.13
-	title = ww1_spain.13.t
-	desc = ww1_spain.13.d
-	picture = GFX_news_event_spain_com_rev
-
-	is_triggered_only = yes
-	fire_only_once = yes
-	major = yes
-	option = {
-		name = ww1_spain.13.a
-		ai_chance = { factor = 100 }
-		set_country_flag = socialist_revolt
-	}
-}
-
-#Shipping coal to france events
-country_event = {
-	id = ww1_spain.14
-	title = ww1_spain.14.t
-	desc = ww1_spain.14.d
-	picture = GFX_report_event_spainish_coal_shipment
-	is_triggered_only = yes
-	option = {
-		name = ww1_spain.14.a
-		ai_chance = {
-			factor = 100
-		}
-	}
-}
-country_event = {
-	id = ww1_spain.15
-	title = ww1_spain.15.t
-	desc = ww1_spain.15.d
-	picture = GFX_report_event_spainish_coal_shipment
-	is_triggered_only = yes
-	option = {
-		name = ww1_spain.15.a
-		ai_chance = {
-			factor = 100
-		}
-	}
-}
-
-#Shipping tungsten to uk events
-country_event = {
-	id = ww1_spain.16
-	title = ww1_spain.16.t
-	desc = ww1_spain.16.d
-	picture = GFX_report_event_spanish_tungsten_mines
-	is_triggered_only = yes
-	option = {
-		name = ww1_spain.16.a
-		ai_chance = {
-			factor = 100
-		}
-	}
-}
-country_event = {
-	id = ww1_spain.17
-	title = ww1_spain.17.t
-	desc = ww1_spain.17.d
-	picture = GFX_report_event_spanish_tungsten_mines
-	is_triggered_only = yes
-	option = {
-		name = ww1_spain.17.a
-		ai_chance = {
-			factor = 100
-		}
+		name = "Mothballed Event"
 	}
 }

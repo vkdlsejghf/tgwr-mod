@@ -148,11 +148,14 @@ characters={
 			id=-1
 		}
 	}
-	SPR_alvaro_de_figueroa{
+	SPR_alvaro_de_figueroa={
 		name="Álvaro de Figueroa y Torres-Sotomayor"
 		portraits={
 			civilian={
 				large="gfx/leaders/SPR/SPR_alvaro_de_figueroa.dds"
+			}
+			army={
+				small="GFX_idea_generic_political_advisor_south_america_2"
 			}
 		}
 		country_leader={
@@ -160,6 +163,16 @@ characters={
 			traits={ trait_authoritarian_democracy }
 			expire="1935.1.1"
 			id=-1
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SPR_alvaro_de_figueroa
+			allowed = {
+				original_tag = SPR
+			}
+			traits = {
+				ideological_crusader
+			}
 		}
 	}
 	SPR_juan_olazábal={
@@ -490,24 +503,6 @@ characters={
 		portraits={
 			army={
 				small="GFX_idea_generic_army_europe_2"
-			}
-		}
-	}
-	SPR_alvaro_de_figueroa={
-		advisor={
-			slot = political_advisor
-			idea_token = SPR_alvaro_de_figueroa
-			allowed  = {
-					original_tag  = SPR
-				}
-				traits  = {
-					ideological_crusader 
-				}
-		}
-		name="SPR_alvaro_de_figueroa"
-		portraits={
-			army={
-				small="GFX_idea_generic_political_advisor_south_america_2"
 			}
 		}
 	}
