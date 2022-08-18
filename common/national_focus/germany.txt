@@ -929,7 +929,7 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = GER_war_with_france
+		id = GER_war_with_france_ww1
 		icon = GFX_focus_attack_france
 		cost = 10
 		prerequisite = {
@@ -964,7 +964,7 @@ focus_tree = {
 		completion_reward = {
 			add_named_threat = {
 				threat = 20
-				name = GER_war_with_france
+				name = GER_war_with_france_ww1
 			}
 			create_wargoal = {
 				type = take_state_focus
@@ -1277,6 +1277,7 @@ focus_tree = {
 				has_war_with = BUL
 			}
 			BUL = {
+				exists = yes
 				is_subject = no
 				is_in_faction = no
 			}
@@ -4996,6 +4997,19 @@ focus_tree = {
 			add_ideas = {
 				GER_victors_of_wwi
 			}
+			hidden_effect = {
+				if = {
+					limit = {
+						has_country_leader = {
+							character = GER_erich_ludendorff
+							ruling_only = no
+						}
+					}
+					GER_erich_ludendorff = {
+						add_country_leader_trait = great_war_hero
+					}
+				}
+			}
 		}
 		ai_will_do = {
 			factor = 5
@@ -5372,6 +5386,9 @@ focus_tree = {
 		x = 8
 		y = 8
 		completion_reward = {
+			effect_tooltip = {
+				set_cosmetic_tag = GER_kaiserreich_flag
+			}
 			add_ideas = {
 				GER_victors_of_wwi
 			}
@@ -5395,6 +5412,17 @@ focus_tree = {
 				}
 				else = {
 					set_cosmetic_tag = GER_kaiserreich_flag
+				}
+				if = {
+					limit = {
+						has_country_leader = {
+							character = GER_erich_ludendorff
+							ruling_only = no
+						}
+					}
+					GER_erich_ludendorff = {
+						add_country_leader_trait = great_war_hero
+					}
 				}
 			}
 		}
@@ -5981,11 +6009,18 @@ focus_tree = {
 				limit = {
 					NOT = {
 						has_war_with = AUH
+						is_in_faction_with = AUH
 					}
 				}
-				give_guarantee = AUH
+				diplomatic_relation = {
+					country = AUH
+					relation = non_aggression_pact
+				}
 				AUH = {
-					give_guarantee = ROOT
+					diplomatic_relation = {
+						country = ROOT
+						relation = non_aggression_pact
+					}
 				}
 			}
 		}
@@ -6338,7 +6373,7 @@ focus_tree = {
 		completion_reward = {
 			add_named_threat = {
 				threat = 10
-				name = GER_war_with_france
+				name = GER_war_with_france_ww1
 			}
 			create_wargoal = {
 				type = take_state_focus

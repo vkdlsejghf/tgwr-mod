@@ -397,8 +397,6 @@ country_event = {
 			else = {
 				puppet = EGY
 			}
-		}
-		hidden_effect = {
 			EGY = {
 				set_politics = {
 					ruling_party = neutrality
@@ -407,6 +405,26 @@ country_event = {
 				set_popularities = {
 					democratic = 34
 					neutrality = 65
+				}
+				every_owned_state = {
+					limit = {
+						is_core_of = TUR
+					}
+					transfer_state_to = TUR
+				}
+				if = {
+					limit = {
+						NOT = {
+							any_owned_state = {
+								is_core_of = EGY
+							}
+						}
+					}
+					TUR = {
+						annex_country = {
+							target = EGY
+						}
+					}
 				}
 			}
 		}
@@ -2080,24 +2098,34 @@ country_event = {
 		army_experience = 50
 		if = {
 			limit = {
-				GER_colmar_von_der_goltz = { is_unit_leader = yes }
+				has_character = GER_colmar_von_der_goltz
 			}
 			GER_colmar_von_der_goltz = {
-				set_character_name = "TUR_colmar_von_der_goltz"
+				set_character_name = "TUR_colmar_von_der_goltz"				
 				set_nationality = TUR
 			}
 		}
 		if = {
 			limit = {
-				GER_otto_liman_von_sanders = { is_unit_leader = yes }
+				has_character = GER_otto_liman_von_sanders
 			}
 			GER_otto_liman_von_sanders = {
+				promote_leader = yes				
 				set_nationality = TUR
 			}
 		}
 		if = {
 			limit = {
-				GER_kress_von_kressenstein = { is_unit_leader = yes }
+				has_character = GER_fritz_bronsart_von_schellendorf
+			}
+			GER_fritz_bronsart_von_schellendorf = {
+				promote_leader = yes				
+				set_nationality = TUR
+			}
+		}
+		if = {
+			limit = {
+				has_character = GER_kress_von_kressenstein
 			}
 			GER_kress_von_kressenstein = {
 				set_nationality = TUR
@@ -2105,11 +2133,84 @@ country_event = {
 		}
 		if = {
 			limit = {
-				GER_wilhelm_souchon = { is_unit_leader = yes }
+				has_character = GER_wilhelm_souchon
 			}
 			GER_wilhelm_souchon = {
 				set_nationality = TUR
 			}
+		}
+		hidden_effect = {
+			TUR = {
+				add_advisor_role = {
+					character = GER_colmar_von_der_goltz
+					advisor = {
+						slot = army_chief
+						idea_token = TUR_colmar_von_der_goltz
+						allowed  = {
+							original_tag = TUR
+						}
+						available = {
+							NOT = {
+								has_war_with = GER
+							}
+						}	
+						traits  = {
+							army_chief_drill_3
+							army_chief_old_guard				
+						}
+						ai_will_do  = {
+							factor  = 2
+						}
+					}
+				}
+				add_advisor_role = {
+					character = GER_otto_liman_von_sanders
+					advisor = {
+						slot = army_chief
+						idea_token = TUR_otto_liman_von_sanders
+						allowed  = {
+							original_tag = TUR
+						}	
+						available = {
+							NOT = {
+								has_war_with = GER
+							}
+						}	
+						traits  = {
+							army_chief_reform_3 
+						}
+						cost = 20
+						ai_will_do = {
+							factor = 5
+						}
+					}
+				}
+				add_advisor_role = {
+					character = GER_fritz_bronsart_von_schellendorf
+					advisor = {
+						slot = army_chief
+						idea_token = TUR_fritz_bronsart_von_schellendorf
+						allowed  = {
+							original_tag = TUR
+						}
+						visible = {
+							original_tag = TUR
+						}
+						available = {
+							NOT = {
+								has_war_with = GER
+							}
+						}	
+						traits  = {
+							army_chief_organizational_2 
+						}
+						cost = 20
+						ai_will_do  = {
+							factor  = 10
+						}
+					}
+				}
+			}		
 		}
 		ai_chance = {
 			factor = 1
@@ -4047,19 +4148,29 @@ news_event = {
 	is_triggered_only = yes
 	major = yes
 	immediate = {
-		if = {
-			limit = {
-				tag = GER
-			}
-			transfer_ship = {
-				prefer_name = "SMS Goeben"
-				type = battle_cruiser
-				target = FROM
-			}
-			transfer_ship = {
-				prefer_name = "SMS Breslau"
-				type = light_cruiser
-				target = FROM
+		hidden_effect = {
+			if = {
+				limit = {
+					tag = GER
+				}
+				transfer_ship = {
+					prefer_name = "SMS Goeben"
+					type = battle_cruiser
+					target = TUR
+				}
+				transfer_ship = {
+					prefer_name = "SMS Breslau"
+					type = light_cruiser
+					target = TUR
+				}
+				if = {
+					limit = {
+						has_character = GER_wilhelm_souchon
+					}
+					GER_wilhelm_souchon = {
+						set_nationality = TUR
+					}
+				}
 			}
 		}
 	}
@@ -4102,6 +4213,31 @@ country_event = {
 		name = ww1_ottoman.110.a
 		ai_chance = {
 			factor = 80
+		}
+		effect_tooltip = {
+			transfer_ship = {
+				prefer_name = "SMS Goeben"
+				type = battle_cruiser
+				target = FROM
+			}
+			transfer_ship = {
+				prefer_name = "SMS Breslau"
+				type = light_cruiser
+				target = FROM
+			}
+			if = {
+				limit = {
+					has_character = GER_wilhelm_souchon
+				}
+				GER_wilhelm_souchon = {
+					set_nationality = TUR
+				}
+			}
+		}
+		add_ai_strategy = {
+			type = alliance
+			id = FROM
+			value = 100
 		}
 		news_event = ww1_ottoman.109
 	}
@@ -4604,72 +4740,72 @@ country_event = {
 				}
 				promote_leader = yes
 			}
-				add_advisor_role = {
-								advisor={
-										slot = political_advisor
-										idea_token = TUR_ismail_enver_triumvirate
-										removal_cost = -1
-										cost = 0
-										traits = {
-												tur_national_hero 
-										}
-										visible = {
-												has_country_flag = talat_enver_cemal 
-												has_country_leader = {
-														character = TUR_mehmed_talat
-														ruling_only = yes 
-												}
-										}
-										available = {
-												custom_trigger_tooltip = {
-														tooltip = TUR_three_pasha_locked_tt
-														has_country_flag = talat_enver_cemal 
-														has_country_leader = {
-																character = TUR_mehmed_talat
-																ruling_only = yes 
-														}
-												}				
-										}
-										ai_will_do = {
-												factor = 100
-										}
-								}
-								activate = yes
+			add_advisor_role = {
+				advisor={
+					slot = political_advisor
+					idea_token = TUR_ismail_enver_triumvirate
+					removal_cost = -1
+					cost = 0
+					traits = {
+						tur_national_hero 
+					}
+					visible = {
+						has_country_flag = talat_enver_cemal 
+						has_country_leader = {
+							character = TUR_mehmed_talat
+							ruling_only = yes 
 						}
+					}
+					available = {
+						custom_trigger_tooltip = {
+							tooltip = TUR_three_pasha_locked_tt
+							has_country_flag = talat_enver_cemal 
+							has_country_leader = {
+								character = TUR_mehmed_talat
+								ruling_only = yes 
+							}
+						}
+					}
+					ai_will_do = {
+						factor = 100
+					}
+				}
+				activate = yes
+			}
 		}
 		TUR_ahmed_cemal = {
 			add_advisor_role = {
-								advisor={
-										slot = political_advisor
-										idea_token = TUR_ahmed_cemal_triumvirate
-										removal_cost = -1
-										cost = 0
-										traits = {
-												prince_of_terror 
-										}
-										visible = {
-												has_country_flag = talat_enver_cemal 
-												has_country_leader = {
-														character = TUR_mehmed_talat
-														ruling_only = yes 
-												}
-										}
-										available = {
-												custom_trigger_tooltip = {
-														tooltip = TUR_three_pasha_locked_tt
-														has_country_flag = talat_enver_cemal 
-														has_country_leader = {
-																character = TUR_mehmed_talat
-																ruling_only = yes 
-														}
-												}				
-										}
-										ai_will_do = {
-												factor = 100
-										}
-								}
-								activate = yes
+				advisor={
+					slot = political_advisor
+					idea_token = TUR_ahmed_cemal_triumvirate
+					removal_cost = -1
+					cost = 0
+					traits = {
+						prince_of_terror 
+					}
+					visible = {
+						has_country_flag = talat_enver_cemal 
+						has_country_leader = {
+							character = TUR_mehmed_talat
+							ruling_only = yes 
 						}
+					}
+					available = {
+						custom_trigger_tooltip = {
+							tooltip = TUR_three_pasha_locked_tt
+							has_country_flag = talat_enver_cemal 
+							has_country_leader = {
+								character = TUR_mehmed_talat
+								ruling_only = yes 
+							}
+						}
+					}
+					ai_will_do = {
+							factor = 100
+					}
+				}
+				activate = yes
+			}
 		}
 		ai_chance = {
 			base = 1

@@ -464,19 +464,16 @@ focus_tree = {
 			GER = {
 				country_event = ww1_ottoman.50
 			}
-			create_corps_commander = {
-				name = "Ömer Faruk"
-				id = 90537
-				portrait_path = "gfx/leaders/TUR/TUR_omer_faruk.png"
-				traits = {
-					trait_royal
-					politically_connected
+			effect_tooltip = {
+				add_corps_commander_role = {
+					character = TUR_omer_faruk
+					traits = { trait_royal politically_connected }
+					skill = 1
+					attack_skill = 2
+					defense_skill = 1
+					planning_skill = 3
+					logistics_skill = 1
 				}
-				skill = 1
-				attack_skill = 2
-				defense_skill = 1
-				planning_skill = 3
-				logistics_skill = 1
 			}
 		}
 		search_filters = {
@@ -3364,6 +3361,12 @@ focus_tree = {
 			unlock_decision_tooltip = TUR_sell_mosul_oil
 			unlock_decision_tooltip = TUR_sell_kerkuk_oil
 			unlock_decision_tooltip = TUR_sell_baghdad_oil
+			if = {
+				limit = {
+					owns_state = 656
+				}
+				unlock_decision_tooltip = TUR_sell_kuwait_oil
+			}
 			ENG = {
 				country_event = {
 					id = ww1_ottoman.38
@@ -3597,7 +3600,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TUR_reshape_the_army
-		icon = GFX_focus_army_purge
+		icon = GFX_focus_TUR_army_purge
 		cost = 9
 		prerequisite = {
 			focus = TUR_yildiz_teskilati
@@ -4290,7 +4293,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TUR_empower_nazir_i_harbiye
-		icon = GFX_focus_destroy_parliament
+		icon = GFX_focus_TUR_Enver_Pasha
 		cost = 10
 		prerequisite = {
 			focus = TUR_raid_on_the_sublime_porte
@@ -7777,15 +7780,8 @@ focus_tree = {
 			country_event = ww1_ottoman.110
 			add_ai_strategy = {
 				type = alliance
-				id = "GER"
+				id = GER
 				value = 100
-			}
-			GER = {
-				add_ai_strategy = {
-					type = alliance
-					id = "TUR"
-					value = 100
-				}
 			}
 		}
 		x = 1
@@ -8193,7 +8189,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TUR_istanbul_pact
-		icon = GFX_focus_generic_befriend_turkey
+		icon = GFX_focus_TUR_Constantinople_Accord
 		cost = 10
 		prerequisite = {
 			focus = TUR_enternal_revanchism
@@ -8344,7 +8340,7 @@ focus_tree = {
 	}
 	focus = {
 		id = TUR_anti_imperialism
-		icon = GFX_focus_tur_anti_imperialist_triumvirate
+		icon = GFX_focus_TUR_Kemal_Pasha
 		cost = 5
 		prerequisite = {
 			focus = TUR_invoke_revanchism

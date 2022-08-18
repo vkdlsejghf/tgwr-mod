@@ -397,7 +397,6 @@ leader_traits = {
 			factor = 1
 		}
 	}
-
 	
 	indomitable_perseverance = { # Ground units get 4 more Morale 
 		random = no
@@ -408,11 +407,11 @@ leader_traits = {
 			factor = 1
 		}
 	}
-
+	
 	generallissimo = {
-		random = no
-		defensive_war_stability_factor = 0.05
-	}
+ 		random = no
+ 		defensive_war_stability_factor = 0.05
+ 	}
 
 	great_architect = {
 		random = no
@@ -1197,12 +1196,10 @@ leader_traits = {
 
 	militant_socialist = {
 		random = no
+		sprite = 12
 		war_support_factor = 0.05
-		targeted_modifier = {
-			tag = SOV
-			attack_bonus_against = 0.1
-			defense_bonus_against = 0.1
-		}
+		army_core_attack_factor = 0.05
+		army_core_defence_factor = 0.05
 	}
 
 	constitutional_monarch_minor = { #Dom Duarte Nuno, King of Portugal

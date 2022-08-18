@@ -61,10 +61,18 @@ armistice_effect = {
 				target = PREV
 				modifier = great_war_enemy
 			}
+			remove_wargoal = {
+				target = PREV
+				type = all
+			}
 			PREV = {
 				add_opinion_modifier = {
 					target = PREV
 					modifier = great_war_enemy
+				}
+				remove_wargoal = {
+					target = PREV
+					type = all
 				}
 			}
 		}
@@ -694,9 +702,7 @@ conference_effect = {
 			limit = {
 				is_claimed_by = PREV
 			}
-			PREV.PREV = {
-				remove_state_claim = PREV
-			}
+			remove_claim_by = PREV
 		}
 		every_other_country = {
 			diplomatic_relation = {
@@ -955,6 +961,7 @@ conference_effect = {
 				GER = { remove_state_core = PREV }
 			}
 		}
+		# Rhineland
 		GER = {
 			every_owned_state = {
 				limit = {
@@ -968,37 +975,17 @@ conference_effect = {
 				transfer_state_to = FRA
 			}
 		}
+		# Memelland
 		if = {
 			limit = {
 				any_country = {
-					owns_state = 189
+					owns_state = 188
 					has_country_flag = great_war_loser
 				}
 			}
-			every_country = {
-				limit = {
-					has_country_flag = great_war_loser
-				}
-				every_owned_state = {
-					limit = {
-						state = 188
-					}
-					add_dynamic_modifier = { modifier = international_city }
-					transfer_state_to = FRA
-				}
-			}
-		}
-		else = {
-			every_country = {
-				limit = {
-					has_country_flag = great_war_loser
-				}
-				every_other_country = {
-					limit = {
-						owns_state = 189
-					}
-					transfer_state = 188
-				}
+			188 = {
+				add_dynamic_modifier = { modifier = international_city }
+				transfer_state_to = FRA
 			}
 		}
 		FRA = {
@@ -1306,12 +1293,12 @@ conference_effect = {
 							}
 							BLR_genrikh = {
 								add_country_leader_role = {
-									promote_leader = yes
 									country_leader = {
 										ideology = autocracy
-										traits = { german_agent foreign_leader }							
+										traits = { foreign_leader german_agent }
 									}
 								}
+								promote_character = autocracy
 							}
 							GER = {
 								GER_albert_wilhelm_heinrich = {
@@ -1323,11 +1310,11 @@ conference_effect = {
 						else = {
 							BLR_uladzimir = {
 								add_country_leader_role = {
-									promote_leader = yes
 									country_leader = {
-										ideology = autocracy							
+										ideology = autocracy
 									}
 								}
+								promote_character = autocracy
 							}
 							GER = {
 								retire_character = GER_albert_wilhelm_heinrich
@@ -1677,34 +1664,57 @@ conference_effect = {
 	TUR = {
 		if = {
 			limit = {
-				GER_colmar_von_der_goltz = { is_unit_leader = yes }
+				has_character = GER_colmar_von_der_goltz
 			}
 			GER_colmar_von_der_goltz = {
 				set_character_name = GER_colmar_von_der_goltz
+				remove_advisor_role = {
+					slot = army_chief
+				}
 				set_nationality = GER
 			}
 		}
 		if = {
 			limit = {
-				GER_otto_liman_von_sanders = { is_unit_leader = yes }
+				has_character = GER_otto_liman_von_sanders
 			}
 			GER_otto_liman_von_sanders = {
+				demote_leader = yes
+				remove_unit_leader_trait = recently_promoted
+				remove_advisor_role = {
+					slot = army_chief
+				}
 				set_nationality = GER
 			}
 		}
 		if = {
 			limit = {
-				GER_kress_von_kressenstein = { is_unit_leader = yes }
+				has_character = GER_kress_von_kressenstein
 			}
 			GER_kress_von_kressenstein = {
+				demote_leader = yes
+				remove_unit_leader_trait = recently_promoted
 				set_nationality = GER
 			}
 		}
 		if = {
 			limit = {
-				GER_wilhelm_souchon = { is_unit_leader = yes }
+				has_character = GER_wilhelm_souchon
 			}
 			GER_wilhelm_souchon = {
+				set_nationality = GER
+			}
+		}
+		if = {
+			limit = {
+				has_character = GER_fritz_bronsart_von_schellendorf
+			}
+			GER_fritz_bronsart_von_schellendorf = {
+				demote_leader = yes
+				remove_unit_leader_trait = recently_promoted
+				remove_advisor_role = {
+					slot = army_chief
+				}
 				set_nationality = GER
 			}
 		}
@@ -2364,6 +2374,10 @@ conference_effect = {
 						state = 227
 						state = 808
 						state = 766
+						state = 237
+						state = 562
+						state = 91
+						state = 89
 					}
 					is_owned_by = RUS
 				}

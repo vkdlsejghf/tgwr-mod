@@ -1,270 +1,39 @@
-####################
-#SPANISH DESCISIONS#
-####################
-SPR_trade_abroad_category = {
-    SPR_trade_with_germans = {
-        cost = 10
-        days_re_enable = 5
-        days_remove = 1
-        allowed = {
-            original_tag = SPR
-        }
-        available = {
-            has_political_power > 10
-            has_global_flag = {
-                flag = kis_war
-            }
-        }
-        visible = {
-        }
-        priority = 100
-        complete_effect = {
-            add_political_power = 100
-        }
-    }
-}
-SPR_trade_abroad_category = {
-    SPR_trade_with_french = {
-        cost = 10
-        days_re_enable = 5
-        days_remove = 1
-        allowed = {
-            original_tag = SPR
-        }
-        available = {
-            has_political_power > 10
-            has_global_flag = {
-                flag = kis_war
-            }
-        }
-        visible = {
-        }
-        priority = 98
-        complete_effect = {
-            FRA = {
-                country_event = {
-                    id = ww1_france.34
-                    days = 1
-                }
-            }
-        }
-    }
-}
-SPR_trade_abroad_category = {
-    SPR_trade_with_austrians = {
-        cost = 10
-        days_re_enable = 5
-        days_remove = 1
-        allowed = {
-            original_tag = SPR
-        }
-        available = {
-            has_political_power > 10
-            has_global_flag = {
-                flag = kis_war
-            }
-        }
-        visible = {
-        }
-        priority = 99
-        complete_effect = {
-            AUH = {
-                country_event = {
-                    id = ww1_auh.39
-                    days = 1
-                }
-            }
-        }
-    }
-}
-SPR_trade_abroad_category = {
-    SPR_trade_with_british = {
-        cost = 10
-        days_re_enable = 5
-        days_remove = 1
-        allowed = {
-            original_tag = SPR
-        }
-        available = {
-            has_political_power > 10
-            has_global_flag = {
-                flag = kis_war
-            }
-        }
-        priority = 97
-        complete_effect = {
-            ENG = {
-                country_event = {
-                    id = ww1_england.213
-                    days = 1
-                }
-            }
-        }
-    }
-}
-SPR_1914_naval_plan_category = {
-    SPR_1914_ship_one = {
-        icon = generic_naval
-        cost = 20
-        allowed = {
-            original_tag = SPR
-        }
-        available = {
-            any_owned_state = {
-                is_coastal = yes
-            }
-        }
-        visible = {
-            has_completed_focus = SPR_naval_plan_1914
-        }
-        priority = 100
-        fire_only_once = yes
-        complete_effect = {
-            add_equipment_production = {
-                equipment = {
-                    type = ship_hull_heavy_1
-                    creator = "SPR"
-                    version_name = "España Class"
-                }
-                name = "ARE España"
-                requested_factories = 5
-                progress = 0
-                amount = 1
-            }
-            add_equipment_production = {
-                equipment = {
-                    type = ship_hull_heavy_1
-                    creator = "SPR"
-                    version_name = "España Class"
-                }
-                name = "ARE Alfonso XIII"
-                requested_factories = 5
-                progress = 0
-                amount = 1
-            }
-        }
-    }
-}
-SPR_1914_naval_plan_category = {
-    SPR_1914_ship_two = {
-        icon = generic_naval
-        cost = 20
-        allowed = { original_tag = SPR }
-        available = {
-            any_owned_state = {
-                is_coastal = yes
-            }
-        }
-        visible = {
-            has_completed_focus = SPR_naval_plan_1914
-        }
-        priority = 99
-        fire_only_once = yes
-        complete_effect = {
-            add_equipment_production = {
-                equipment = {
-                    type = ship_hull_cruiser_1
-                    creator = "SPR"
-                    version_name = "Emperador Carlos V Class"
-                }
-                name = "ARE Canarias"
-                requested_factories = 5
-                progress = 0
-                amount = 1
-            }
-            add_equipment_production = {
-                equipment = {
-                    type = ship_hull_cruiser_1
-                    creator = "SPR"
-                    version_name = "Emperador Carlos V Class"
-                }
-                name = "ARE Baleares"
-                requested_factories = 5
-                progress = 0
-                amount = 1
-            }
-        }
-    }
-}
-SPR_1914_naval_plan_category = {
-    SPR_1914_ship_three = {
-        icon = generic_naval
-        cost = 20
-        allowed = { original_tag = SPR }
-        available = {
-            any_owned_state = {
-                is_coastal = yes
-            }
-        }
-        visible = {
-            has_completed_focus = SPR_naval_plan_1914
-        }
-        priority = 98
-        fire_only_once = yes
-        complete_effect = {
-            add_equipment_production = {
-                equipment = {
-                    type = ship_hull_submarine_1
-                    creator = "SPR"
-                    version_name = "Type-A Class"
-                }
-                name = "A-001"
-                requested_factories = 5
-                progress = 0
-                amount = 1
-            }
-            add_equipment_production = {
-                equipment = {
-                    type = ship_hull_submarine_1
-                    creator = "SPR"
-                    version_name = "Type-A Class"
-                }
-                name = "A-002"
-                requested_factories = 5
-                progress = 0
-                amount = 1
-            }
-            add_equipment_production = {
-                equipment = {
-                    type = ship_hull_submarine_1
-                    creator = "SPR"
-                    version_name = "Type-A Class"
-                }
-                name = "A-003"
-                requested_factories = 5
-                progress = 0
-                amount = 1
-            }
-        }
-    }
-}
-SPR_1915_naval_plan_category = {
-    SPR_1915_ship_one = {
-        icon = generic_naval
-        cost = 20
-        allowed = { original_tag = SPR }
-        available = {
-            any_owned_state = {
-                is_coastal = yes
-            }
-        }
-        visible = {
-            has_completed_focus = SPR_naval_plan_1915
-        }
-        priority = 100
-        fire_only_once = yes
-        complete_effect = {
-            add_equipment_production = {
-                equipment = {
-                    type = ship_hull_cruiser_1
-                    creator = "SPR"
-                    version_name = "Reina Regente Class"
-                }
-                name = "ARE Reina Victoria Eugenia"
-                requested_factories = 5
-                progress = 0
-                amount = 1
-            }
-        }
-    }
+peace_deals = {
+	SPR_sue_for_peace_RIF = {
+		allowed = {
+			original_tag = SPR
+		}
+		available = {
+			NOT = { controls_state = 290 }
+		}
+		visible = {
+			has_war_with = RIF
+		}
+		cost = 0
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+				FRA = {
+					has_war_with = RIF
+					has_capitulated = no
+				}
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					controls_province = 9945
+					controls_province = 10113
+					controls_province = 12100
+					controls_province = 12082
+				}
+			}
+		}
+		complete_effect = {
+			add_war_support = -0.20
+			add_stability = -0.15
+			RIF = { country_event = ww1_rif.5 }
+		}
+	}
 }

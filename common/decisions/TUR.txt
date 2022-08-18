@@ -113,7 +113,7 @@ TUR_minority_decision = {
 	TUR_armenian_solution = {
 		icon = GFX_decision_TUR_minority_armenia
 		allowed = {
-			tag = TUR
+			original_tag = TUR
 		}
 		custom_cost_text = TUR_decision_cost_minority
 		custom_cost_trigger = {
@@ -305,6 +305,8 @@ TUR_minority_decision = {
 				remove_dynamic_modifier = {
 					modifier = TUR_armenia_minority
 				}
+			}
+			ROOT = {
 				add_to_variable = { var = TUR_minorities_stability value = 0.005 }
 			    add_to_variable = { var = TUR_minorities_war_support value = 0.0025 }
 			}
@@ -419,7 +421,7 @@ TUR_minority_decision = {
 	TUR_kurdish_solution = {
 		icon = GFX_decision_TUR_minority_kurdistan
 		allowed = {
-			tag = TUR
+			original_tag = TUR
 		}
 		custom_cost_text = TUR_decision_cost_minority
 		custom_cost_trigger = {
@@ -606,6 +608,8 @@ TUR_minority_decision = {
 				remove_dynamic_modifier = {
 					modifier = TUR_kurd_minority
 				}
+			}
+			ROOT = {
 				add_to_variable = { var = TUR_minorities_stability value = 0.005 }
 			    add_to_variable = { var = TUR_minorities_war_support value = 0.0025 }
 			}
@@ -701,7 +705,7 @@ TUR_minority_decision = {
 	TUR_arab_solution = {
 		icon = GFX_decision_TUR_minority_arab
 		allowed = {
-			tag = TUR
+			original_tag = TUR
 		}
 		custom_cost_text = TUR_decision_cost_minority
 		custom_cost_trigger = {
@@ -946,6 +950,8 @@ TUR_minority_decision = {
 				remove_dynamic_modifier = {
 					modifier = TUR_arab_minority
 				}
+			}
+			ROOT = {
 				add_to_variable = { var = TUR_minorities_stability value = 0.005 }
 			    add_to_variable = { var = TUR_minorities_war_support value = 0.0025 }
 			}
@@ -993,6 +999,7 @@ TUR_minority_decision = {
 									state = 293
 									state = 656
 									state = 804
+									state = 856
 									state = 765
 									state = 658
 									state = 453
@@ -1056,7 +1063,7 @@ TUR_minority_decision = {
 	TUR_albanian_solution = {
 		icon = GFX_decision_TUR_minority_albania
 		allowed = {
-			tag = TUR
+			original_tag = TUR
 		}
 		custom_cost_text = TUR_decision_cost_minority
 		custom_cost_trigger = {
@@ -1241,6 +1248,8 @@ TUR_minority_decision = {
 				remove_dynamic_modifier = {
 					modifier = TUR_albanian_minority
 				}
+			}
+			ROOT = {
 				add_to_variable = { var = TUR_minorities_stability value = 0.005 }
 			    add_to_variable = { var = TUR_minorities_war_support value = 0.0025 }
 			}
@@ -1332,7 +1341,7 @@ TUR_minority_decision = {
 	TUR_greek_solution = {
 		icon = GFX_decision_TUR_minority_greece
 		allowed = {
-			tag = TUR
+			original_tag = TUR
 		}
 		custom_cost_text = TUR_decision_cost_minority
 		custom_cost_trigger = {
@@ -1557,6 +1566,8 @@ TUR_minority_decision = {
 				remove_dynamic_modifier = {
 					modifier = TUR_greek_minority
 				}
+			}
+			ROOT = {
 				add_to_variable = { var = TUR_minorities_stability value = 0.005 }
 			    add_to_variable = { var = TUR_minorities_war_support value = 0.0025 }
 			}
@@ -1690,7 +1701,7 @@ TUR_minority_decision = {
 	TUR_solution_southslav = {
 		icon = GFX_decision_TUR_minority_southslav
 		allowed = {
-			tag = TUR
+			original_tag = TUR
 		}
 		custom_cost_text = TUR_decision_cost_minority
 		custom_cost_trigger = {
@@ -1908,6 +1919,8 @@ TUR_minority_decision = {
 				remove_dynamic_modifier = {
 					modifier = TUR_southslav_minority
 				}
+			}
+			ROOT = {
 				add_to_variable = { var = TUR_minorities_stability value = 0.005 }
 			    add_to_variable = { var = TUR_minorities_war_support value = 0.0025 }
 			}
@@ -9629,6 +9642,33 @@ TUR_war_of_independence_support_OTT = {
 						}
 					}
 				}
+				division_template = {
+					name = "Takviyeli Piyade Tümeni"
+					division_names_group = TUR_INF_01
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 0 y = 3 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+						infantry = { x = 1 y = 3 }
+						infantry = { x = 2 y = 0 }
+						infantry = { x = 2 y = 1 }
+						infantry = { x = 2 y = 2 }
+						infantry = { x = 2 y = 3 }
+						infantry = { x = 3 y = 0 }
+						infantry = { x = 3 y = 1 }
+						infantry = { x = 3 y = 2 }
+						infantry = { x = 3 y = 3 }
+						artillery_brigade = { x = 3 y = 4 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+					}
+					priority = 2
+				}
 				country_event = {
 					id = ww1_turkey.15
 					days = 7
@@ -9868,9 +9908,7 @@ TUR_war_of_independence_support_TRR = {
 			always = no
 		}
 		available = {
-			NOT = {
-				has_decision = TUR_end_soviet_support
-			}
+			has_decision = TUR_end_soviet_support
 		}
 		timeout_effect = {
 			add_equipment_to_stockpile = {

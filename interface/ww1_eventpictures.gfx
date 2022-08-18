@@ -213,6 +213,10 @@ spriteTypes = {
 		texturefile = "gfx/event_pictures/ww1_austria/ww1_austria_1.png"
 	}
 	spriteType = {
+		name = "GFX_news_event_austrian_soldiers"
+		texturefile = "gfx/event_pictures/news_event_austrian_soldiers.png"
+	}
+	spriteType = {
 		name = "ww1_brazil_1"
 		texturefile = "gfx/event_pictures/ww1_brazil/ww1_brazil_1.png"
 	}
@@ -377,6 +381,10 @@ spriteTypes = {
 		texturefile = "gfx/event_pictures/news_event_japan_britain.png"
 	}
 	spriteType = {
+		name = "GFX_news_event_great_kanto_earthquake"
+		texturefile = "gfx/event_pictures/news_event_great_kanto_earthquake.png"
+	}
+	spriteType = {
 		name = "ww1_news_2"
 		texturefile = "gfx/event_pictures/ww1_news/ww1_news_2.png"
 	}
@@ -395,6 +403,18 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_news_event_german_troops_marching_in_brussels"
 		texturefile = "gfx/event_pictures/news_event_german_troops_marching_in_brussels.png"
+	}
+	spriteType = {
+		name = "GFX_news_event_kapp_putsch"
+		texturefile = "gfx/event_pictures/news_event_kapp_putsch.png"
+	}
+	spriteType = {
+		name = "GFX_news_event_ruhr_uprising"
+		texturefile = "gfx/event_pictures/news_event_ruhr_uprising.png"
+	}
+	spriteType = {
+		name = "GFX_news_event_occupation_of_the_ruhr"
+		texturefile = "gfx/event_pictures/news_event_occupation_of_the_ruhr.png"
 	}
 	spriteType = {
 		name = "ww1_portugal_1"
@@ -507,6 +527,10 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_news_event_peace_of_riga"
 		texturefile = "gfx/event_pictures/news_event_peace_of_riga.png"
+	}
+	spriteType = {
+		name = "GFX_news_event_suwalki_agreement"
+		texturefile = "gfx/event_pictures/news_event_suwalki_agreement.png"
 	}
 	spriteType = {
 		name = "ww1_korea_16"
@@ -759,7 +783,7 @@ spriteTypes = {
 
 	#China
 	spriteType = {
-		name = "ww1_china_56"
+		name = "GFX_news_event_chinese_warlord_era"
 		texturefile = "gfx/event_pictures/news_event_warlord_era.png"
 	}
 	spriteType = {
@@ -778,7 +802,15 @@ spriteTypes = {
 		name = "GFX_news_event_chinese_nra"
 		texturefile = "gfx/event_pictures/news_event_chinese_nra.png"
 	}
-
+	spriteType = {
+		name = "GFX_news_event_huanggutun_incident"
+		texturefile = "gfx/event_pictures/news_event_huanggutun_incident.png"
+	}
+	spriteType = {
+		name = "GFX_news_event_chinese_communists"
+		texturefile = "gfx/event_pictures/news_event_chinese_communists.png"
+	}
+	
 	#Ottoman/Turkey
 	spriteType = {
 		name = "ww1_ottoman_109"
@@ -814,6 +846,7 @@ spriteTypes = {
 		name = "GFX_news_event_troelstra"
 		texturefile = "gfx/event_pictures/ww1_netherlands/news_event_troelstra.png"
 	}
+
 	#Belgium
 	spriteType = {
 		name = "GFX_news_event_rape_of_belgium"
@@ -839,6 +872,13 @@ spriteTypes = {
 		name = "GFX_report_event_picture_force_publique"
 		texturefile = "gfx/event_pictures/ww1_belgium/report_event_picture_force_publique.png"
 	}
+
+	#Canada
+	spriteType = {
+		name = "GFX_news_event_halifax_explosion"
+		texturefile = "gfx/event_pictures/news_event_halifax_explosion.png"
+	}
+
 	#GENERIC
 	spriteType = {
 		name = "GFX_report_event_spanish_flu"
@@ -861,47 +901,7 @@ spriteTypes = {
 		texturefile = "gfx/event_pictures/news_event_tank_warfare.png"
 	}
 	spriteType = {
-		name = "GFX_news_event_spain_pm_death"
-		texturefile = "gfx/event_pictures/ww1_spain/spain_pm_death.dds"
-	}
-	spriteType = {
-		name = "GFX_report_event_spain_general_strike"
-		texturefile = "gfx/event_pictures/ww1_spain/spain_general_strike.dds"
-	}
-	spriteType = {
-		name = "GFX_news_event_spain_troops_deployed"
-		texturefile = "gfx/event_pictures/ww1_spain/spain_troops_deployed.dds"
-	}
-	spriteType = {
-		name = "GFX_news_event_spain_com_rev"
-		texturefile = "gfx/event_pictures/ww1_spain/spain_com_rev.dds"
-	}
-	spriteType = {
-		name = "GFX_report_event_spain_com_rev"
-		texturefile = "gfx/event_pictures/ww1_spain/report_event_spain_com_rev.dds"
-	}
-	spriteType = {
-		name = "GFX_report_event_spain_troops_deployed"
-		texturefile = "gfx/event_pictures/ww1_spain/report_event_spain_troops_dep.dds"
-	}
-	spriteType = {
-		name = "GFX_news_event_spain_arsenal_heist"
-		texturefile = "gfx/event_pictures/ww1_spain/spain_arsenal_heist.dds"
-	}
-	spriteType = {
-		name = "GFX_news_event_spain_troops_dep_two"
-		texturefile = "gfx/event_pictures/ww1_spain/spain_troops_dep_two.dds"
-	}
-	spriteType = {
-		name = "GFX_report_event_spainish_coal_shipment"
-		texturefile = "gfx/event_pictures/ww1_spain/report_event_spr_coal_mines.png"
-	}
-	spriteType = {
-		name = "GFX_report_event_spanish_tungsten_mines"
-		texturefile = "gfx/event_pictures/ww1_spain/report_event_spain_tungsten_mines.png"
-	}
-	spriteType = {
-		name = "GFX_report_event_spain_textiles"
-		texturefile = "gfx/event_pictures/ww1_spain/report_event_spain_auh_textiles.png"
+		name = "GFX_news_event_saudi_arabia.png"
+		texturefile = "gfx/event_pictures/news_event_saudi_arabia.png"
 	}
 }

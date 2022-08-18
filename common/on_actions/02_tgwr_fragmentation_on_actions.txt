@@ -85,22 +85,37 @@ on_actions = {
 					transfer_units_fraction= {
 						target = SIC
 						size = 0.35
+						keep_unit_leaders_trigger = {
+							has_trait = trait_royal
+						}	
 				    }
 					transfer_units_fraction= {
 						target = TUS
 						size = 0.13
+						keep_unit_leaders_trigger = {
+							has_trait = trait_royal
+						}
 				    }
 					transfer_units_fraction= {
 						target = EMI
 						size = 0.05
+						keep_unit_leaders_trigger = {
+							has_trait = trait_royal
+						}
 				    }
 					transfer_units_fraction= {
 						target = VNC
 						size = 0.2
+						keep_unit_leaders_trigger = {
+							has_trait = trait_royal
+						}
 				    }
 					transfer_units_fraction= {
 						target = PAP
 						size = 0.28
+						keep_unit_leaders_trigger = {
+							has_trait = trait_royal
+						}
 				    }
 					change_tag_from = ITA
 					every_state = {
@@ -177,6 +192,9 @@ on_actions = {
 					ITA_luigi_amedeo= {
 						set_nationality = SRD					
 					}
+					ITA_antonio_salandra= {
+						set_nationality = SIC					
+					}
 					set_capital = { state = 159 }
 					delete_unit_template_and_units = {
 				        division_template = "Ascari"
@@ -248,8 +266,10 @@ on_actions = {
 					}
 				}
 				SIC = {
+					promote_character = ITA_antonio_salandra
 					give_guarantee = PAP
 					give_military_access = PAP
+					remove_ideas = ITA_questione_meridionale
 					add_timed_idea = {
 						idea = ITA_messina_earthquake_aftershock
 						days = 600
@@ -381,10 +401,16 @@ on_actions = {
 					ITA_anna_kuliscioff = {
 						set_nationality = SRI
 					}
-					ITA_filippo_corridoni= {
+					ITA_anna_kuliscioff = {
+						set_nationality = SRI
+					}
+					ITA_costantino_lazzari= {
 						set_nationality = SRI
 					}
 					ITA_ivanoe_bonomi= {
+						set_nationality = SRI
+					}
+					ITA_alceste_de_ambris= {
 						set_nationality = SRI
 					}
 					transfer_units_fraction= {
@@ -424,6 +450,9 @@ on_actions = {
 						promote_character = yes
 					}
 					ITA_nicola_bombacci = {
+						promote_character = yes
+					}
+					ITA_costantino_lazzari = {
 						promote_character = yes
 					}
 					ITA_filippo_corridoni = {

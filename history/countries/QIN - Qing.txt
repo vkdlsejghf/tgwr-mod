@@ -17,6 +17,7 @@ recruit_character = QIN_sun_yatsen
 recruit_character = QIN_kang_youwei
 
 recruit_character = QIN_yikuang
+recruit_character = QIN_pujun
 recruit_character = QIN_liang_qichao
 recruit_character = QIN_sa_zhenbing
 recruit_character = QIN_xuantong
@@ -53,6 +54,7 @@ recruit_character = QIN_yulang
 recruit_character = QIN_su_xidi
 recruit_character = QIN_li_shenghe
 recruit_character = QIN_zaitao
+recruit_character = QIN_tang_jiyao
 
 1910.1.1 = {
 	oob = "QIN_1910"

@@ -1096,6 +1096,7 @@ country_event = {
 					amount = 1000
 					producer = ENG
 				}
+				set_country_flag = great_war_loser
 			}
 		}
 		end_puppet = NEP
@@ -1142,7 +1143,7 @@ country_event = {
 			ideology = democratic
 			size = 0.8
 			keep_unit_leaders_trigger = {
-				has_trait = ENG_royalist
+				has_trait = trait_royalist
 			}
 		}
 		hidden_effect = {
@@ -1173,7 +1174,7 @@ country_event = {
 				RAJ = {
 					every_unit_leader = {
 						limit = {
-							has_trait = ENG_royalist
+							has_trait = trait_royalist
 						}
 						set_nationality = PREV.PREV
 					}
