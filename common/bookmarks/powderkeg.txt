@@ -206,7 +206,7 @@ bookmarks = {
 			history = "SPR_POWDERKEG_DESC"
 			ideology = neutrality
 			ideas = {
-				spain_alfonso_xiii
+				alfonso_xiii
 				ww1_Scramble_for_Africa
 				SPR_american_naval_defeats
 			}
