@@ -415,4 +415,195 @@ focus_tree = {
             }
         }
     }
+    focus = {
+        id = SPR_focus_on_the_army
+        icon = GFX_focus_chi_army_reform
+        relative_position_id = SPR_found_the_airforce
+        x = 6
+        y = 0
+        cost = 10
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            army_experience = 30
+        }
+    }
+    focus = {
+        id = SPR_modernise_rifles
+        icon = GFX_goal_generic_military_sphere
+        relative_position_id = SPR_focus_on_the_army
+        x = -1
+        y = 1
+        cost = 10
+        prerequisite = {
+            focus = SPR_focus_on_the_army
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            add_tech_bonus = {
+                bonus = 1
+                uses = 1
+                category = infantry_weapons
+            }
+        }
+    }
+    focus = {
+        id = SPR_modernise_artillery
+        icon = GFX_goal_generic_army_artillery2
+        relative_position_id = SPR_focus_on_the_army
+        x = 1
+        y = 1
+        cost = 10
+        prerequisite = {
+            focus = SPR_focus_on_the_army
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            add_tech_bonus = {
+                bonus = 1
+                uses = 1
+                category = artillery
+            }
+            add_tech_bonus = {
+                bonus = 1
+                uses = 1
+				technology = howitzer3
+				technology = howitzer2
+            }
+        }
+    }
+    focus = {
+        id = SPR_develop_doctrines
+        icon = GFX_goal_generic_air_doctrine
+        relative_position_id = SPR_modernise_artillery
+        x = 1
+        y = 1
+        cost = 10
+        prerequisite = {
+            focus = SPR_modernise_artillery
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            add_doctrine_cost_reduction = {
+                cost_reduction = 0.5
+                uses = 2
+                category = land_doctrine
+            }
+        }
+    }
+    focus = {
+        id = SPR_improve_support_units
+        icon = GFX_goal_generic_military_sphere
+        relative_position_id = SPR_modernise_rifles
+        x = -1
+        y = 1
+        cost = 10
+        prerequisite = {
+            focus = SPR_modernise_rifles
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = support_tech
+			}
+        }
+    }
+    focus = {
+        id = SPR_construct_trucks
+        icon = GFX_goal_generic_army_motorized
+        relative_position_id = SPR_modernise_artillery
+        x = -1
+        y = 1
+        cost = 10
+        prerequisite = {
+            focus = SPR_modernise_rifles
+            focus = SPR_modernise_artillery
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            add_tech_bonus = {
+                bonus = 0.75
+                uses = 1
+                category = motorized_equipment
+            }
+        }
+    }
+    focus = {
+        id = SPR_improve_officers
+        icon = GFX_focus_generic_military_academy
+        relative_position_id = SPR_develop_doctrines
+        x = -1
+        y = 1
+        cost = 10
+        prerequisite = {
+            focus = SPR_develop_doctrines
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            add_doctrine_cost_reduction = {
+                cost_reduction = 0.5
+                uses = 1
+                category = land_doctrine
+            }
+        }
+    }
+    focus = {
+        id = SPR_develop_tanks
+        icon = GFX_focus_early_tank
+        relative_position_id = SPR_improve_support_units
+        x = 1
+        y = 1
+        cost = 10
+        prerequisite = {
+            focus = SPR_construct_trucks
+        }
+        available = {
+            has_tech = tank_design
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            add_tech_bonus = {
+                bonus = 1.5
+                uses = 1
+                category = armor
+            }
+        }
+    }
+    focus = {
+        id = SPR_fix_the_army
+        icon = GFX_focus_chi_army_reform
+        relative_position_id = SPR_develop_tanks
+        x = 1
+        y = 2
+        cost = 10
+        prerequisite = {
+            focus = SPR_develop_tanks
+        }
+        prerequisite = {
+            focus = SPR_improve_officers
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            remove_ideas = SPR_army_debuffs
+        }
+    }
 }
