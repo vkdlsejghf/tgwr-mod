@@ -10,7 +10,7 @@ focus_tree = {
         }
     }
 
-    continuous_focus_position = { x = 1 y = 1500 }
+    continuous_focus_position = { x = 1 y = 2500 }
 
     #start of tree
     focus = {
@@ -604,6 +604,269 @@ focus_tree = {
         }
         completion_reward = {
             remove_ideas = SPR_army_debuffs
+        }
+    }
+    focus = {
+        id = SPR_commence_industrialization
+        icon = GFX_focus_seven_year_plan
+        x = 5
+        y = 9
+        cost = 10
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            add_tech_bonus = {
+                bonus = 1
+                uses = 2
+                category = industry
+            }
+        }
+    }
+    focus = {
+        id = SPR_improve_construction_methods
+        icon = GFX_goal_generic_production2
+        relative_position_id = SPR_commence_industrialization
+        x = 0
+        y = 1
+        cost = 10
+        prerequisite = {
+            focus = SPR_commence_industrialization
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            add_ideas = SPR_improve_construction
+        }
+    }
+    focus = {
+        id = SPR_catalan_arms_plant
+        icon = GFX_goal_generic_construct_mil_factory
+        relative_position_id = SPR_improve_construction_methods
+        x = 5
+        y = 1
+        cost = 10
+        prerequisite = {
+            focus = SPR_improve_construction_methods
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            165 = {
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = arms_factory
+                    level = 2
+                    instant_build = yes
+                }
+            }
+        }
+    }
+    focus = {
+        id = SPR_andalusia_arms_plant
+        icon = GFX_goal_generic_construct_mil_factory
+        relative_position_id = SPR_catalan_arms_plant
+        x = 0
+        y = 1
+        cost = 10
+        prerequisite = {
+            focus = SPR_catalan_arms_plant
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            170 = {
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = arms_factory
+                    level = 2
+                    instant_build = yes
+                }
+            }
+        }
+    }
+    focus = {
+        id = SPR_madrid_arms_plant
+        icon = GFX_goal_generic_construct_mil_factory
+        relative_position_id = SPR_andalusia_arms_plant
+        x = 0
+        y = 1
+        cost = 10
+        prerequisite = {
+            focus = SPR_andalusia_arms_plant
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            41 = {
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = arms_factory
+                    level = 2
+                    instant_build = yes
+                }
+            }
+        }
+    }
+    focus = {
+        id = SPR_galicia_dockyard
+        icon = GFX_goal_generic_construct_naval_dockyard
+        relative_position_id = SPR_madrid_arms_plant
+        x = 0
+        y = 1
+        cost = 10
+        prerequisite = {
+            focus = SPR_madrid_arms_plant
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            171 = {
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = dockyard
+                    level = 2
+                    instant_build = yes
+                }
+            }
+        }
+    }
+    focus = {
+        id = SPR_improve_production_lines
+        icon = GFX_focus_industry_steel
+        relative_position_id = SPR_improve_construction_methods
+        x = -2
+        y = 1
+        cost = 10
+        prerequisite = {
+            focus = SPR_improve_construction_methods
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            add_tech_bonus = {
+                bonus = 1
+                uses = 1
+                category = industry
+            }
+        }
+    }
+    focus = {
+        id = SPR_industrial_infrastructure
+        icon = GFX_focus_train_railroads
+        relative_position_id = SPR_improve_construction_methods
+        x = 0
+        y = 1
+        cost = 10
+        prerequisite = {
+            focus = SPR_improve_construction_methods
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            build_railway = {
+                level = 1
+                build_only_on_allied = no
+                controller_priority = {
+                    base = 1
+
+                    modifier = {
+                        tag = SPR
+                        add = 2
+                    }
+                }
+                fallback = yes
+                path = { 875 1178 7183 1048 }
+                start_province = 875
+                target_province = 1048
+            }
+            build_railway = {
+                level = 1
+                build_only_on_allied = no
+                controller_priority = {
+                    base = 1
+
+                    modifier = {
+                        tag = SPR
+                        add = 2
+                    }
+                }
+                fallback = yes
+                path = { 3938 6914 9757 942 832 }
+                start_province = 3938
+                target_province = 832
+            }
+            build_railway = {
+                level = 1
+                build_only_on_allied = no
+                controller_priority = {
+                    base = 1
+
+                    modifier = {
+                        tag = SPR
+                        add = 2
+                    }
+                }
+                fallback = yes
+                path = { 6914 9852 6879 3945 }
+                start_province = 6914
+                target_province = 3945
+            }
+            41 = {
+                add_building_construction = {
+                    type = infrastructure
+                    level = 2
+                    instant_build = yes
+                }
+            }
+            175 = {
+                add_building_construction = {
+                    type = infrastructure
+                    level = 2
+                    instant_build = yes
+                }
+            }
+            170 = {
+                add_building_construction = {
+                    type = infrastructure
+                    level = 2
+                    instant_build = yes
+                }
+            }
+            176 = {
+                add_building_construction = {
+                    type = infrastructure
+                    level = 2
+                    instant_build = yes
+                }
+            }
+        }
+    }
+    focus = {
+        id = SPR_fix_some_industrial_issues
+        icon = GFX_focus_industry_steel
+        relative_position_id = SPR_improve_construction_methods
+        x = 2
+        y = 1
+        cost = 10
+        prerequisite = {
+            focus = SPR_improve_construction_methods
+        }
+        ai_will_do = {
+            factor = 1
+        }
+        completion_reward = {
+            swap_ideas = {
+                remove_idea = SPR_industrial_debuffs
+                add_idea = SPR_industrial_debuffs_two
+            }
         }
     }
 }
