@@ -1419,3 +1419,6 @@
  CRO_Illyria_neutrality_DEF:0 "The Kingdom of Illyria"
  CRO_Illyria_democratic:0 "Constitutional Kingdom of Illyria"
  CRO_Illyria_democratic_DEF:0 "The Constitutional Kingdom of Illyria"
+ LIB_german_protectorate:0 "Reichsprotektorat Westafrika"
+ LIB_german_protectorate_DEF:0 "the Protectorate of West Africa"
+ LIB_german_protectorate_ADJ:0 "Westafrikan" 
