@@ -339,6 +339,7 @@ DIPLOMACY_RELEASE_NATION_ENABLE_TRIGGER = {
 					original_tag = YEM
 					original_tag = LEB
 					original_tag = ASR
+					original_tag = ASY
 				} 
 			}
 		}
@@ -434,6 +435,8 @@ DIPLOMACY_RELEASE_NATION_ENABLE_TRIGGER = {
 				OR = {
 					original_tag = TIB
 					original_tag = MON
+					original_tag = TAN
+					original_tag = KUM
 					is_china_or_warlord = yes
 				}
 			}

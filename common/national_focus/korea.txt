@@ -495,7 +495,7 @@ focus_tree = {
 	#Focus for Warplanes
 	focus = {
 		id = KOR_warplanes
-		icon = GFX_goal_continuous_air_production
+		icon = GFX_goal_generic_air_fighter
 		x = 31
 		y = 5
 		cost = 10
@@ -671,6 +671,7 @@ focus_tree = {
 		prerequisite = {
 			focus = KOR_god_help_our_emperor
 			focus = KOR_constitutional_monarchy
+			focus = KOR_military_government #wildcard :)
 		}
 		mutually_exclusive = {
 			focus = KOR_join_the_soviet_union
@@ -2087,9 +2088,18 @@ focus_tree = {
 					OR = {
 						original_tag = QIN
 						has_cosmetic_tag = QIN_government
-						has_country_leader = {
-							character = CHI_hongxian_emperor
-							ruling_only = yes
+						AND = {
+							OR = {
+								has_country_leader = {
+									character = CHI_yuan_shikai
+									ruling_only = yes
+								}
+								has_country_leader = {
+									character = CHI_yuan_keding
+									ruling_only = yes
+								}
+							}
+							has_government = fascism
 						}
 					}
 				}
@@ -2209,14 +2219,18 @@ focus_tree = {
 		}
 		completion_reward = {
 			set_cosmetic_tag = KOR_monarchist
-			set_politics = {
-				ruling_party = democratic
-				elections_allowed = yes
-			}
-			set_party_name = {
-				ideology = democratic
-				long_name = KOR_revolutionary_party_long
-				name = KOR_revolutionary_party
+			meta_effect = {
+				text = {
+					set_politics = {
+						ruling_party = democratic
+						long_name = KOR_revolutionary_party_long
+						name = KOR_revolutionary_party
+						last_election = "[CURRENT_DATE]"
+						election_frequency = 48
+						elections_allowed = no #elections wip
+					}
+				}
+				CURRENT_DATE = "[?global.date.GetDateStringNoHour]"
 			}
 			if = {
 				limit = {
@@ -2342,6 +2356,19 @@ focus_tree = {
 			is_subject = no
 		}
 		completion_reward = {
+			meta_effect = {
+				text = {
+					set_politics = {
+						ruling_party = communism
+						long_name = KOR_communism_party_long
+						name = KOR_communism_party
+						last_election = "[CURRENT_DATE]"
+						election_frequency = 60
+						elections_allowed = no #term not started yet
+					}
+				}
+				CURRENT_DATE = "[?global.date.GetDateStringNoHour]"
+			}
 			add_timed_idea = {
 				idea = communist_influence
 				days = 365
@@ -2424,6 +2451,19 @@ focus_tree = {
 			is_subject = no
 		}
 		completion_reward = {
+			meta_effect = {
+				text = {
+					set_politics = {
+						ruling_party = democratic
+						long_name = KOR_provisional_government_long
+						name = KOR_provisional_government
+						last_election = "[CURRENT_DATE]"
+						election_frequency = 60
+						elections_allowed = no #term not started yet
+					}
+				}
+				CURRENT_DATE = "[?global.date.GetDateStringNoHour]"
+			}
 			add_timed_idea = {
 				idea = democratic_influence
 				days = 365
@@ -2489,7 +2529,7 @@ focus_tree = {
 	#Focus for The Light Returned
 	focus = {
 		id = KOR_the_light_returned
-		icon = GFX_goal_continuous_boost_freedom
+		icon = GFX_focus_generic_support_the_left_right
 		x = 25
 		y = 0
 		cost = 5
@@ -2522,7 +2562,7 @@ focus_tree = {
 	#Focus for Compromise and Obedience
 	focus = {
 		id = KOR_compromise_and_obedience
-		icon = GFX_goal_continuous_restrict_freedom
+		icon = GFX_focus_CZE_german_puppet
 		x = 15
 		y = 1
 		cost = 10
@@ -2580,13 +2620,23 @@ focus_tree = {
 						has_idea = GER_idea_wilhelm_ii
 						has_idea = nicholas_ii
 						has_idea = QIN_idea_xuantong
+						has_idea = QIN_idea_xuantong_young
 						has_idea = george_v
 						has_idea = edward_vii
 						has_idea = ENG_All_The_Kings_Men
 						has_idea = george_v_2
-						has_country_leader = {
-							character = CHI_hongxian_emperor
-							ruling_only = yes
+						AND = {
+							OR = {
+								has_country_leader = {
+									character = CHI_yuan_shikai
+									ruling_only = yes
+								}
+								has_country_leader = {
+									character = CHI_yuan_keding
+									ruling_only = yes
+								}
+							}
+							has_government = fascism
 						}
 					}
 				}
@@ -3301,6 +3351,7 @@ focus_tree = {
 		prerequisite = {
 			focus = KOR_democratic_republic
 			focus = KOR_constitutional_monarchy
+			focus = KOR_military_government #wildcard :)
 		}
 		mutually_exclusive = {
 			focus = KOR_join_the_soviet_union
@@ -3349,7 +3400,7 @@ focus_tree = {
 			FOCUS_FILTER_WAR_SUPPORT
 		}
 		available = {
-			has_tech = paratroopers
+			has_tech = tech_mountaineers
 			800 = {
 				is_owned_by = KOR
 				is_controlled_by = KOR
@@ -3359,21 +3410,21 @@ focus_tree = {
 			custom_effect_tooltip = KOR_special_force_tt
 			hidden_effect = {
 				division_template = {
-					name = "Special Brigade"
+					name = "Sanaksadan"
 					regiments = {
-						paratrooper = {
+						mountaineers = {
 							x = 0
 							y = 0
 						}
-						paratrooper = {
+						mountaineers = {
 							x = 0
 							y = 1
 						}
-						paratrooper = {
+						mountaineers = {
 							x = 1
 							y = 0
 						}
-						paratrooper = {
+						mountaineers = {
 							x = 1
 							y = 1
 						}
@@ -3381,23 +3432,23 @@ focus_tree = {
 				}
 				800 = {
 					create_unit = {
-						division = "name = \"1. Korean Liberation Army\" division_template = \"Special Brigade\" start_experience_factor = 1"
+						division = "name = \"1. Korean Liberation Army\" division_template = \"Sanaksadan\" start_experience_factor = 1"
 						owner = KOR
 					}
 					create_unit = {
-						division = "name = \"2. Korean Liberation Army\" division_template = \"Special Brigade\" start_experience_factor = 1"
+						division = "name = \"2. Korean Liberation Army\" division_template = \"Sanaksadan\" start_experience_factor = 1"
 						owner = KOR
 					}
 					create_unit = {
-						division = "name = \"3. Korean Liberation Army\" division_template = \"Special Brigade\" start_experience_factor = 1"
+						division = "name = \"3. Korean Liberation Army\" division_template = \"Sanaksadan\" start_experience_factor = 1"
 						owner = KOR
 					}
 					create_unit = {
-						division = "name = \"4. Korean Liberation Army\" division_template = \"Special Brigade\" start_experience_factor = 1"
+						division = "name = \"4. Korean Liberation Army\" division_template = \"Sanaksadan\" start_experience_factor = 1"
 						owner = KOR
 					}
 					create_unit = {
-						division = "name = \"5. Korean Liberation Army\" division_template = \"Special Brigade\" start_experience_factor = 1"
+						division = "name = \"5. Korean Liberation Army\" division_template = \"Sanaksadan\" start_experience_factor = 1"
 						owner = KOR
 					}
 				}
