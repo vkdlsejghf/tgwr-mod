@@ -1,0 +1,29 @@
+@cost = 30
+
+unit_medals = {
+
+    ### SPR
+
+    testing_medal_spr = {
+
+        available = { tag = SPR }
+        frame = 1
+        icon = "GFX_medal_icon_ger"
+
+        cost = @cost
+
+		unit_modifiers = {
+			army_org_factor = 0.1
+		}
+		
+		#leader_modifier = {
+		# transport_capacity = whatever
+		#}
+		
+		one_time_effect = {
+			add_divisional_commander_xp = 100
+		}
+		#
+
+    }
+}
