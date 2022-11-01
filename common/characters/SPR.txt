@@ -120,6 +120,28 @@ characters={
 			
 		}
 	}
+	SPR_jose_canalejas={
+		name="SPR_jose_canalejas"
+		portraits={
+			civilian={
+				large="GFX_SPR_jose_canalejas"
+			}
+		}
+		country_leader={
+			ideology=authoritarian_democracy
+		}
+	}
+	SPR_manuel_prieto={
+		name="SPR_manuel_prieto"
+		portraits={
+			civilian={
+				large="GFX_SPR_manuel_prieto"
+			}
+		}
+		country_leader={
+			ideology=authoritarian_democracy
+		}
+	}
 	SPR_juan_olazabal={
 		name="SPR_juan_olazabal"
 		portraits={
@@ -462,10 +484,16 @@ characters={
 					ideological_crusader 
 				}
 		}
+		country_leader = {
+			ideology = authoritarian_democracy
+		}
 		name="SPR_alvaro_de_figueroa"
 		portraits={
 			army={
 				small="GFX_idea_generic_political_advisor_south_america_2"
+			}
+			civilian={
+				large="GFX_SPR_alvaro_de_figueroa"
 			}
 		}
 	}

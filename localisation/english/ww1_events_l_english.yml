@@ -7019,6 +7019,9 @@
  ww1_spain.4.t:0 "Primo de Rivera Resigns"
  ww1_spain.4.d:0 "The economic struggles of [GetYear] and the dictatorship's failure to stabilise the value of the peseta were large hits to its reputation. Primo de Rivera failed to establish political legitimacy for his rule. The 1876 constitution was suspended when he came to power, and the new constitution created by the National Assembly was rejected by the monarchists, liberals, and republicans. The army also had grievances with Primo de Rivera and his dictatorship. These complaints mainly came from members of Spain's artillery corps, whom Primo de Rivera suspended. As the king saw Primo de Rivera lose support among the army, he could no longer support Primo de Rivera's dictatorship, and Primo de Rivera resigned today ending his dictatorship."
  ww1_spain.4.a:0 "The king may also have to 'resign'."
+ ww1_spain.5.t:0 "Prime Minister Assassinated"
+ ww1_spain.5.d:0 "Earlier today while window-shopping literary novelties from a bookstore in Madrid our prime minster was fatally shot by anarchist Manuel Pardiñas. Until a new prime minster is chosen King Alfonso has appointed Manuel García Prieto as acting prime minister."
+ ww1_spain.5.a:0 "Rest In Peace."
  
  #Developer Notes
  ww1_developer_note.1.t:0 "Note from the British Dev"

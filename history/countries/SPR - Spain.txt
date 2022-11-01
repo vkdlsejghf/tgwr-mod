@@ -6,7 +6,10 @@ set_convoys = 150
 
 set_country_flag = Scramble_for_Africa
 
+recruit_character = SPR_jose_canalejas
+recruit_character = SPR_manuel_prieto
 recruit_character = SPR_alfonso_xiii
+recruit_character = SPR_alvaro_de_figueroa
 recruit_character = SPR_niceto_alcalazamora
 recruit_character = SPR_pablo_iglesias
 recruit_character = SPR_juan_olazabal
@@ -30,7 +33,6 @@ recruit_character = SPR_angel_aznar
 recruit_character = SPR_alberto_bayo
 recruit_character = SPR_joaquin_ruiz
 recruit_character = SPR_manuel_de_florez
-recruit_character = SPR_alvaro_de_figueroa
 recruit_character = SPR_luis_aizpuru
 recruit_character = SPR_mariano_ordonez
 recruit_character = SPR_santiago_alba
@@ -69,9 +71,9 @@ recruit_character = SPR_lucas_puente
 
 	set_politics = {
 		ruling_party = neutrality
-		last_election = "1910.1.1"
+		last_election = "1906.5.8"
 		election_frequency = 48
-		elections_allowed = no
+		elections_allowed = yes
 	}
 	set_popularities = {
 		democratic = 24
@@ -81,6 +83,7 @@ recruit_character = SPR_lucas_puente
 	}
 
 	add_ideas = {
+		SPR_alfonso_xiii
 		neutrality_idea
 		limited_conscription
 	}

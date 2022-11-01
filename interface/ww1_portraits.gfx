@@ -48,5 +48,17 @@ spriteTypes = {
 		name = "GFX_ITA_Luisa_Zeni"
 		texturefile = "gfx/leaders/ITA/ITA_Luisa_Zeni.png"
 	}
+	SpriteType = {
+		name = "GFX_SPR_jose_canalejas"
+		texturefile = "gfx/leaders/SPR/SPR_jose_canalejas.png"
+	}
+	SpriteType = {
+		name = "GFX_SPR_alvaro_de_figueroa"
+		texturefile = "gfx/leaders/SPR/SPR_alvaro_de_figueroa.png"
+	}
+	SpriteType = {
+		name = "GFX_SPR_manuel_prieto"
+		texturefile = "gfx/leaders/SPR/SPR_manuel_prieto.png"
+	}
 }
 
