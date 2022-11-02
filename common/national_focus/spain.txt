@@ -1,0 +1,93 @@
+focus_tree = {
+    id = spain_focus
+    country = {
+        factor = 0
+        modifier = {
+            add = 10
+            tag = SPR
+        }
+    }
+    default = no
+    
+    focus = {
+        id = SPR_the_future_of_spain
+        icon = GFX_goal_generic_neutrality_focus
+        x = 9
+        y = 0
+        cost = 1
+
+        available = {
+            tag = SPR
+            has_country_flag = nineteenten_election_happened
+        }
+        cancel = {
+            NOT = {
+                has_country_flag = nineteenten_election_happened
+            }
+        }
+        
+        ai_will_do = {
+            base = 1
+        }
+
+        completion_reward = {
+            add_political_power = 100
+        }
+    }
+
+    #Republican Branch
+    focus = {
+        id = SPR_strengthen_crs
+        icon = GFX_focus_spr_maintain_the_republic
+        relative_position_id = SPR_the_future_of_spain
+        x = 0
+        y = 2
+        cost = 1
+        
+        prerequisite = { focus = SPR_the_future_of_spain }
+
+        completion_reward = {
+            #possibly a temp reward
+            add_popularity = {
+                ideology = democratic
+                popularity = 0.05
+            }
+            add_popularity = {
+                ideology = communism
+                popularity = 0.05
+            }
+        }
+    }
+
+    focus = {
+        id = SPR_republican_rallies
+        icon = GFX_focus_intervention_spain_republic
+        relative_position_id = SPR_strengthen_crs
+        x = -1
+        y = 1
+        cost = 1
+
+        prerequisite = { focus = SPR_strengthen_crs }
+
+        completion_reward = {
+            #placeholder for now until i code the decisions
+            add_political_power = 100
+        }
+    }
+    
+    focus = {
+        id = SPR_attack_the_system
+        icon = GFX_focus_spr_masters_of_our_own_fate
+        relative_position_id = SPR_strengthen_crs
+        x = 1
+        y = 1
+        cost = 1
+
+        prerequisite = { focus = SPR_strengthen_crs }
+
+        completion_reward = {
+            #same as nextdoor focus this is placeholder
+            add_political_power = 100
+        }
+    }
+}

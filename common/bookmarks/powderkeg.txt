@@ -201,6 +201,18 @@ bookmarks = {
 			}
 		}
 
+		"SPR"={
+			minor = yes
+			history = "SPR_POWDERKEG_DESC"
+			ideology = neutrality
+			ideas = {
+				SPR_alfonso_xiii
+				neutrality_idea
+			}
+			focuses = {
+			}
+		}
+
 		"CAN"={
 			minor = yes
 			history = "CAN_POWDERKEG_DESC"

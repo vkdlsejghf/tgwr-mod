@@ -46,6 +46,8 @@
 
  LIB_POWDERKEG_DESC:0 "Liberia, land of liberty! Well, not really. The True Whig Party rules practically unopposed, an aristocratic dictatorship that resembles more the oligarchic Confederacy of the American Civil War than the bastion of democracy that is the United States. The ruling Afro-American class has deep conflicts with the native population, and struggles to pacify the deeper hinterlands, being forced to collaborate with the British and French imperialists.\n75% of the economy is entirely reliant on the German Empire, and given the current situation in Europe, this doesn't bode well for the future..."
 
+ SPR_POWDERKEG_DESC:0 "Placeholder"
+
  OTHER_POWDERKEG_DESC:0 "Other countries of the period."
 
 
@@ -95,4 +97,6 @@
  
  LIB_SCHLIEFFEN_DESC:0 "Liberia, land of liberty! Well, not really. The True Whig Party rules practically unopposed, an aristocratic dictatorship that resembles more the oligarchic Confederacy of the American Civil War than the bastion of democracy that is the United States. The ruling Afro-American class has deep conflicts with the native population, and struggles to pacify the deeper hinterlands, being forced to collaborate with the British and French imperialists.\n75% of the economy is entirely reliant on the German Empire, and given the current situation in Europe, this doesn't bode well for the future..."
  
+ SPR_SCHLIEFFEN_DESC:0 "Placeholder"
+
  OTHER_SCHLIEFFEN_DESC:0 "Other countries of the period."

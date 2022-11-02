@@ -889,6 +889,12 @@ on_actions = {
 				country_event = ww1_ottoman.127
 			}
 
+			### Spain ###
+			if = {
+				limit = { tag = SPR }
+				country_event = ww1_spain.7
+			}
+
 			### China ###
 			if = {
 				limit = { tag = CHI }

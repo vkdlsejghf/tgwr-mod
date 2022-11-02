@@ -7022,6 +7022,12 @@
  ww1_spain.5.t:0 "Prime Minister Assassinated"
  ww1_spain.5.d:0 "Earlier today while window-shopping literary novelties from a bookstore in Madrid our prime minster was fatally shot by anarchist Manuel Pardiñas. Until a new prime minster is chosen King Alfonso has appointed Manuel García Prieto as acting prime minister."
  ww1_spain.5.a:0 "Rest In Peace."
+ ww1_spain.6.t:0 "Álvaro de Figueroa Appointed Prime Minister"
+ ww1_spain.6.d:0 "Today King Alfonso has appointed Álvaro de Figueroa as the new Spanish Prime Minister, he will take over the job from Manuel Prieto who was the interim Prime Minister after the assassination of José Canalejas."
+ ww1_spain.6.a:0 "Ok."
+ ww1_spain.7.t:0 "1910 Spanish General Election"
+ ww1_spain.7.d:0 "Today the Spanish people head to the polls to elect their government. The votes have now been counted and it is clear the Partido Liberal has won a majority of seats in parliament."
+ ww1_spain.7.a:0 "Congratulations to the winners!"
  
  #Developer Notes
  ww1_developer_note.1.t:0 "Note from the British Dev"

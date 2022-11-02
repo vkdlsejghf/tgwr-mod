@@ -202,6 +202,18 @@ bookmarks = {
 			}
 		}
 
+		"SPR"={
+			minor = yes
+			history = "SPR_SCHLIEFFEN_DESC"
+			ideology = neutrality
+			ideas = {
+				SPR_alfonso_xiii
+				neutrality_idea
+			}
+			focuses = {
+			}
+		}
+
 		"CAN"={
 			minor = yes
 			history = "CAN_SCHLIEFFEN_DESC"
