@@ -7028,6 +7028,18 @@
  ww1_spain.7.t:0 "1910 Spanish General Election"
  ww1_spain.7.d:0 "Today the Spanish people head to the polls to elect their government. The votes have now been counted and it is clear the Partido Liberal has won a majority of seats in parliament."
  ww1_spain.7.a:0 "Congratulations to the winners!"
+ ww1_spain.8.t:0 "Resignation Of Benito Pérez Galdós"
+ ww1_spain.8.d:0 "Earlier today Benito Pérez Galdós announced his resignation as leader of the Conjuncíón Republicano-Socialista coalition due to his declining health. He will be replaced as coaltion leader by Pablo Iglesias the leader of the PSOE."
+ ww1_spain.8.a:0 "Ok."
+ ww1_spain.9.t:0 "Peaceful Rally In [SPR_rep_rally_state.GetName]"
+ ww1_spain.9.d:0 "Our supporters rally in [SPR_rep_rally_state.GetName] was a huge success; counter-protests from anti-republican groups were minimal and our supporters kept violence amongst their ranks to a minimum, maintaining our good image."
+ ww1_spain.9.a:0 "The People Are Behind Us!"
+ ww1_spain.10.t:0 "Semi-Violent Rally In [SPR_rep_rally_state.GetName]"
+ ww1_spain.10.d:0 "Our rally in [SPR_rep_rally_state.GetName] was met by some counter-protests and minor clashes between our supporters and anti-republican elements. Despite this it was a mostly successful event and our supporters largely upheld our image."
+ ww1_spain.10.a:0 "The Will Of The People Cannot Be Denied."
+ ww1_spain.11.t:0 "Violent Rally In [SPR_rep_rally_state.GetName]"
+ ww1_spain.11.d:0 "Our rally in [SPR_rep_rally_state.GetName] was met by extreme violence from anti-republican elements, the clashes between our supporters and anti-republicans resulted in multiple deaths on both sides. Eventually our supporters managed to beat back the anti-republican counter-protesters after a short but tense fight and continued the rally."
+ ww1_spain.11.a:0 "Oh well, a few deaths are a small price to pay for liberating the people."
  
  #Developer Notes
  ww1_developer_note.1.t:0 "Note from the British Dev"

@@ -37,3 +37,164 @@ peace_deals = {
 		}
 	}
 }
+
+SPR_republican_rallies_category = {
+	SPR_restrain_supporters = {
+		icon = eng_propaganda_campaigns
+
+		available = {
+			NOT = { has_country_flag = SPR_march_timer_flag }
+			has_completed_focus = SPR_republican_rallies
+		}
+
+		cost = 25
+
+		fire_only_once = no
+
+		visible = {
+			always = yes
+		}
+
+		complete_effect = {
+			add_popularity = { ideology = democratic popularity = -0.01 }
+			add_popularity = { ideology = communism popularity = -0.01 }
+			set_country_flag = SPR_restrained_march_flag
+		}
+	}
+	SPR_rally_in_madrid = {
+		icon = eng_blackshirt_march
+
+		on_map_mode = map_only
+
+		available = {
+			NOT = { has_country_flag = SPR_march_timer_flag }
+			has_full_control_of_state = 41
+		}
+
+		highlight_states = {
+			highlight_state_targets = { state = 41 }
+		}
+
+		cost = 26
+
+		fire_only_once = yes
+
+		visible = {
+			NOT = { has_government = democratic }
+			OR = {
+				NOT = { has_government = communism }
+			}
+		}
+
+		cancel_if_not_visible = yes
+
+		complete_effect = {
+			41 = { save_event_target_as = SPR_rep_rally_state }
+			random_list = {
+				25 = {
+					country_event = { id = ww1_spain.10 days = 1 }
+					effect_tooltip = {
+						add_stability = -0.041
+						add_popularity = { ideology = communism popularity = 0.017 }
+						add_popularity = { ideology = democratic popularity = 0.017 }
+					}
+				}
+				50 = {
+					country_event = { id = ww1_spain.9 days = 1 }
+					effect_tooltip = {
+						add_stability = -0.024
+						add_popularity = { ideology = communism popularity = 0.017 }
+						add_popularity = { ideology = democratic popularity = 0.017 }
+					}
+				}
+				25 = {
+					country_event = { id = ww1_spain.11 days = 1 }
+					effect_tooltip = {
+						add_stability = -0.081
+						add_popularity = { ideology = communism popularity = 0.017 }
+						add_popularity = { ideology = democratic popularity = 0.017 }
+					}
+				}
+			}
+			custom_effect_tooltip = SPR_republican_march_tt
+			set_country_flag = SPR_march_temp_madrid
+			set_country_flag = SPR_march_timer_flag
+		}
+
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				has_stability < 0.581
+			}
+		}
+	}
+	SPR_rally_in_castille = {
+		icon = eng_blackshirt_march
+
+		on_map_mode = map_only
+
+		available = {
+			NOT = { has_country_flag = SPR_march_timer_flag }
+			has_full_control_of_state = 176
+		}
+
+		highlight_states = {
+			highlight_state_targets = { state = 176 }
+		}
+
+		cost = 26
+
+		fire_only_once = yes
+
+		visible = {
+			NOT = { has_government = democratic }
+			OR = {
+				NOT = { has_government = communism }
+			}
+		}
+
+		cancel_if_not_visible = yes
+
+		complete_effect = {
+			176 = { save_event_target_as = SPR_rep_rally_state }
+			random_list = {
+				25 = {
+					country_event = { id = ww1_spain.10 days = 1 }
+					effect_tooltip = {
+						add_stability = -0.041
+						add_popularity = { ideology = communism popularity = 0.017 }
+						add_popularity = { ideology = democratic popularity = 0.017 }
+					}
+				}
+				50 = {
+					country_event = { id = ww1_spain.9 days = 1 }
+					effect_tooltip = {
+						add_stability = -0.024
+						add_popularity = { ideology = communism popularity = 0.017 }
+						add_popularity = { ideology = democratic popularity = 0.017 }
+					}
+				}
+				25 = {
+					country_event = { id = ww1_spain.11 days = 1 }
+					effect_tooltip = {
+						add_stability = -0.081
+						add_popularity = { ideology = communism popularity = 0.017 }
+						add_popularity = { ideology = democratic popularity = 0.017 }
+					}
+				}
+			}
+			custom_effect_tooltip = SPR_republican_march_tt
+			set_country_flag = SPR_march_temp_castille
+			set_country_flag = SPR_march_timer_flag
+		}
+
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				has_stability < 0.581
+			}
+		}
+	}
+}

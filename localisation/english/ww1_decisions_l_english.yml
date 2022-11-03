@@ -1395,5 +1395,11 @@
 
  SPR_sue_for_peace_RIF:0 "Offer Surrender Terms to the Rif"
  SPR_sue_for_peace_RIF_desc:0 "Forget about the Rif and Morocco. We are leaving."
+ SPR_restrain_supporters:0 "Urge Our Supporters To Be Restrained"
+ SPR_restrain_supporters_desc:0 "Placeholder"
+ SPR_republican_rallies_category:0 "Hold Republican Rallies"
+ SPR_states_to_rally_in:0 "Hold Republican Rallies"
+ SPR_rally_in_madrid:0 "Hold A Rally In Madrid"
+ SPR_rally_in_castille:0 "Hold A Rally In Castille"
  
  POR_restore_monarchy:0 "Restore the Monarchy"

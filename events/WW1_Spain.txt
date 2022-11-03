@@ -268,3 +268,122 @@ country_event = {
 		set_country_flag = nineteenten_election_happened
 	}
 }
+
+#Resignation of Galdos
+country_event = {
+	id = ww1_spain.8
+	title = ww1_spain.8.t
+	desc = ww1_spain.8.d
+	picture = GFX_report_event_generic_parliament
+	fire_only_once = yes
+	trigger = {
+		date > 1912.8.10
+		has_country_leader = {
+			character = SPR_benito_galdos
+			ruling_only = no
+		}
+	}
+	option = {
+		name = ww1_spain.8.a
+		retire_character = SPR_benito_galdos
+		promote_character = SPR_roberto_sanz
+	}
+}
+
+#########################
+#Republican March Events#
+#########################
+#marches in madrid
+country_event = {
+	id = ww1_spain.9
+	title = ww1_spain.9.t
+	desc = ww1_spain.9.d
+	#will add picture at a later date
+	picture = 
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_spain.9.a
+		add_political_power = 25
+		if = {
+			limit = {
+				has_country_flag = SPR_march_temp_madrid
+			}
+			add_stability = -0.009
+			41 = { set_state_flag = SPR_has_rep_support }
+		}
+		if = {
+			limit = {
+				has_country_flag = SPR_march_temp_castille
+			}
+			add_stability = -0.009
+			176 = { set_state_flag = SPR_has_rep_support }
+		}
+		clr_country_flag = SPR_march_timer_flag
+		clr_country_flag = SPR_restrained_march_flag
+		clr_country_flag = SPR_march_temp_madrid
+	}
+}
+country_event = {
+	id = ww1_spain.10
+	title = ww1_spain.10.t
+	desc = ww1_spain.10.d
+	#again will add picture later
+	picture = 
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_spain.10.a
+		add_political_power = 25
+		if = {
+			limit = {
+				has_country_flag = SPR_march_temp_madrid
+			}
+			add_stability = -0.009
+			41 = { set_state_flag = SPR_has_rep_support }
+		}
+		if = {
+			limit = {
+				has_country_flag = SPR_march_temp_castille
+			}
+			add_stability = -0.009
+			176 = { set_state_flag = SPR_has_rep_support }
+		}
+		clr_country_flag = SPR_march_timer_flag
+		clr_country_flag = SPR_restrained_march_flag
+		clr_country_flag = SPR_march_temp_madrid
+	}
+}
+country_event = {
+	id = ww1_spain.11
+	title = ww1_spain.11.t
+	desc = ww1_spain.11.d
+	#picture later
+	picture = 
+
+	is_triggered_only = yes
+
+	option = {
+		name = ww1_spain.11.a
+		add_political_power = 25
+		if = {
+			limit = {
+				has_country_flag = SPR_march_temp_madrid
+			}
+			add_stability = -0.009
+			41 = { set_state_flag = SPR_has_rep_support }
+		}
+		if = {
+			limit = {
+				has_country_flag = SPR_march_temp_castille
+			}
+			add_stability = -0.009
+			176 = { set_state_flag = SPR_has_rep_support }
+		}
+		clr_country_flag = SPR_march_timer_flag
+		clr_country_flag = SPR_restrained_march_flag
+		clr_country_flag = SPR_march_temp_madrid
+	}
+}

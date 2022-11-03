@@ -1,9 +1,24 @@
-SPR_republican_boosting_category = {
-    picture = GFX_decision_category_generic_communism
+SPR_republican_rallies_category = {
+    icon = GFX_decision_category_eng_organize_the_blackshirts
+    
     allowed = {
-        original_tag = SPR
+        tag = SPR
     }
     visible = {
-        has_completed_focus = SPR_strengthen_crs
+        has_completed_focus = SPR_republican_rallies
+    }
+
+    on_map_area = {
+        state = 41
+        name = SPR_states_to_rally_in
+        zoom = 100
+    }
+
+    priority = {
+        base = 0
+        modifier = {
+            add = 10
+            has_completed_focus = SPR_republican_rallies
+        }
     }
 }

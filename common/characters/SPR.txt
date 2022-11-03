@@ -78,6 +78,28 @@ characters={
 			legacy_id=86029
 		}
 	}
+	SPR_benito_galdos={
+		name="SPR_benito_galdos"
+		portraits={
+			civilian={
+				large="gfx/leaders/SPR/SPR_bentio_perez_galdos.png"
+			}
+		}
+		country_leader={
+			ideology=social_liberalism
+		}
+	}
+	SPR_roberto_sanz={
+		name="SPR_roberto_sanz"
+		portraits={
+			civilian={
+				large="gfx/leaders/SPR/SPR_roberto_castrovido_sanz.png"
+			}
+		}
+		country_leader={
+			ideology=social_liberalism
+		}
+	}
 	SPR_niceto_alcalazamora={
 		name="SPR_niceto_alcalazamora"
 		portraits={
