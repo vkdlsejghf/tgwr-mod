@@ -301,6 +301,13 @@ country_event = {
 	picture = GFX_report_event_tur_turkish_soldiers
 	trigger = {
 		tag = TUR
+		any_other_country = {
+			has_war_with = PREV
+			OR = {
+				owns_state = 446
+				owns_state = 447
+			}
+		}
 		controls_state = 446
 		controls_state = 447
 		has_global_flag = kis_war
@@ -324,7 +331,10 @@ country_event = {
 	trigger = {
 		tag = TUR
 		has_country_flag = great_war_winner
-		has_country_flag = ottomans_hold_cairo_and_alexandria
+		OR = {
+			has_country_flag = ottomans_hold_cairo_and_alexandria
+			has_subject = EGY
+		}
 		NOT = {
 			has_war_with = EGY
 		}
@@ -349,7 +359,12 @@ country_event = {
 				}
 			}
 			ENG = {
-				end_puppet = EGY
+				if = {
+					limit = {
+						has_subject = EGY
+					}
+					end_puppet = EGY
+				}
 			}
 			EGY = {
 				country_lock_all_division_template = no
@@ -389,45 +404,52 @@ country_event = {
 		}
 		if = {
 			limit = {
-				has_dlc = "Together for Victory"
+				NOT = { EGY = { is_subject_of = TUR } }
 			}
-			TUR = {
-				set_autonomy = {
-					target = EGY
-					autonomous_state = autonomy_dominion
-					freedom_level = 0.8
+			if = {
+				limit = {
+					has_dlc = "Together for Victory"
 				}
-			}
-			else = {
-				puppet = EGY
-			}
-			EGY = {
-				set_politics = {
-					ruling_party = neutrality
-					elections_allowed = no
-				}
-				set_popularities = {
-					democratic = 34
-					neutrality = 65
-				}
-				every_owned_state = {
-					limit = {
-						is_core_of = TUR
+				TUR = {
+					set_autonomy = {
+						target = EGY
+						autonomous_state = autonomy_dominion
+						freedom_level = 0.8
 					}
-					transfer_state_to = TUR
 				}
-				if = {
-					limit = {
-						NOT = {
-							any_owned_state = {
-								is_core_of = EGY
-							}
+				else = {
+					puppet = EGY
+				}
+				EGY = {
+					set_politics = {
+						ruling_party = neutrality
+						elections_allowed = no
+					}
+					set_popularities = {
+						democratic = 34
+						neutrality = 65
+					}
+				}
+			}
+		}
+		EGY = {
+			every_owned_state = {
+				limit = {
+					is_core_of = TUR
+				}
+				transfer_state_to = TUR
+			}
+			if = {
+				limit = {
+					NOT = {
+						any_owned_state = {
+							is_core_of = EGY
 						}
 					}
-					TUR = {
-						annex_country = {
-							target = EGY
-						}
+				}
+				TUR = {
+					annex_country = {
+						target = EGY
 					}
 				}
 			}
@@ -1876,7 +1898,7 @@ country_event = {
 }
 
 # Arabian Revolt - Deal with Faisal
-###################
+######################################
 country_event = {
 	id = ww1_ottoman.46
 	title = ww1_ottoman.46.t
@@ -1909,10 +1931,15 @@ country_event = {
 		name = ww1_ottoman.46.a		#Independence for Syria
 		every_owned_state = {
 			limit = {
-				is_core_of = SYR
+				OR = {
+					is_core_of = SYR
+					is_claimed_by = SYR
+				}
 				NOT = {
 					state = 680
 					state = 829
+					state = 857
+					state = 859
 				}
 			}
 			SYR = {
@@ -1933,35 +1960,55 @@ country_event = {
 		every_country = {
 			limit = {
 				OR = {
-					original_tag = TUR
-					is_subject_of = TUR
-					is_in_faction_with = TUR
+					tag = ROOT
+					is_subject_of = ROOT
+					is_in_faction_with = ROOT
 				}
-				has_war = yes
+				has_war_with = HJZ
 			}
 			effect_tooltip = {
 				white_peace = HJZ
 			}
 			hidden_effect = {
 				HJZ = {
-					white_peace = PREV
 					if = {
 						limit = {
 							is_faction_leader = yes
 						}
 						dismantle_faction = yes
 					}
-					if = {
+					else_if = {
 						limit = {
 							is_in_faction = yes
 						}
 						leave_faction = yes
 					}
+					white_peace = PREV
+					set_truce = {
+						target = PREV
+						days = 365
+					}
 				}
 			}
 		}
+		SYR = {
+			give_military_access = HJZ
+			give_guarantee = HJZ
+		}
+		HJZ = {
+			give_military_access = SYR
+			give_guarantee = SYR
+		}
 		ai_chance = {
 			base = 5
+			modifier = {
+				add = -20
+				surrender_progress < 0.05
+			}
+			modifier = {
+				add = -20
+				HJZ = { has_capitulated = yes }
+			}
 			modifier = {
 				factor = 0
 				is_historical_focus_on = yes
@@ -1981,9 +2028,7 @@ country_event = {
 					}
 				}
 			}
-			TUR = {
-				remove_state_core = PREV
-			}
+			remove_core_of = TUR
 		}
 		ai_chance = {
 			base = 25
@@ -4370,10 +4415,7 @@ country_event = {
 			}
 			if = {
 				limit = {
-					OR = {
-						has_dlc = "Together for Victory"
-						has_dlc = "Waking the Tiger"
-					}
+					has_subject_autonomy_feature = yes
 				}
 				set_autonomy = {
 					target = AZR
@@ -4517,10 +4559,7 @@ country_event = {
 		name = ww1_ottoman.113.a
 		if = {
 			limit = {
-				OR = {
-					has_dlc = "Together for Victory"
-					has_dlc = "Waking the Tiger"
-				}
+				has_subject_autonomy_feature = yes
 			}
 			set_autonomy = {
 				target = GEO
@@ -4532,7 +4571,7 @@ country_event = {
 			}
 			else = {
 				puppet = GEO
-				add_ideas = protectorate
+				GEO = { add_ideas = protectorate }
 			}
 		}
 		hidden_effect = {
@@ -4777,6 +4816,9 @@ country_event = {
 				}
 				promote_leader = yes
 			}
+			remove_advisor_role = {
+				slot = political_advisor
+			}
 			add_advisor_role = {
 				advisor={
 					slot = political_advisor
@@ -4790,7 +4832,6 @@ country_event = {
 						has_country_flag = talat_enver_cemal 
 						has_country_leader = {
 							character = TUR_mehmed_talat
-							ruling_only = yes 
 						}
 					}
 					available = {
@@ -4799,7 +4840,6 @@ country_event = {
 							has_country_flag = talat_enver_cemal 
 							has_country_leader = {
 								character = TUR_mehmed_talat
-								ruling_only = yes 
 							}
 						}
 					}
@@ -4811,6 +4851,9 @@ country_event = {
 			}
 		}
 		TUR_ahmed_cemal = {
+			remove_advisor_role = {
+				slot = political_advisor
+			}
 			add_advisor_role = {
 				advisor={
 					slot = political_advisor
@@ -4824,7 +4867,6 @@ country_event = {
 						has_country_flag = talat_enver_cemal 
 						has_country_leader = {
 							character = TUR_mehmed_talat
-							ruling_only = yes 
 						}
 					}
 					available = {
@@ -4833,7 +4875,6 @@ country_event = {
 							has_country_flag = talat_enver_cemal 
 							has_country_leader = {
 								character = TUR_mehmed_talat
-								ruling_only = yes 
 							}
 						}
 					}
@@ -5265,11 +5306,12 @@ country_event = {
 	id = ww1_ottoman.143
 	title = ww1_ottoman.143.t
 	desc = ww1_ottoman.143.d
+	picture = GFX_report_event_tur_turkish_soldiers
 	is_triggered_only = yes
 	option = {
 		name = ww1_ottoman.143.a
-		TUR = {
-			transfer_state = 104
+		FROM = {
+			effect_tooltip = { transfer_state = 104 }
 			country_event = {
 				id = ww1_ottoman.144
 				days = 1
@@ -5305,11 +5347,27 @@ country_event = {
 					ratio < 0.4
 				}
 			}
+			modifier = {
+				add = -15
+				has_opinion = {
+					target = FROM
+					value < 0
+				}
+			}
+			modifier = {
+				factor = 0
+				FROM = {
+					has_war_with = PREV
+				}
+			}
 		}
 	}
 	option = {
 		name = ww1_ottoman.143.b
-		TUR = {
+		trigger = {
+			NOT = { is_subject_of = FROM }
+		}
+		FROM = {
 			country_event = {
 				id = ww1_ottoman.145
 				days = 1
@@ -5321,34 +5379,42 @@ country_event = {
 	}
 }
 
+# Austria agreed to transfer Bosnia
 country_event = {
 	id = ww1_ottoman.144
 	title = ww1_ottoman.144.t
 	desc = ww1_ottoman.144.d
+	picture = GFX_report_event_generic_sign_treaty1
 	is_triggered_only = yes
 	option = {
 		name = ww1_ottoman.144.a
-		effect_tooltip = {
-			transfer_state = 104
-		}
-		ai_chance = {
-			factor = 5
-		}
+		transfer_state = 104
 	}
 }
 
+# Austria refused to transfer Bosnia
 country_event = {
 	id = ww1_ottoman.145
 	title = ww1_ottoman.145.t
 	desc = ww1_ottoman.145.d
+	picture = GFX_report_event_generic_sign_treaty1
 	is_triggered_only = yes
 	option = {
 		name = ww1_ottoman.145.a
-		effect_tooltip = {
-			transfer_state = 104
-		}
-		ai_chance = {
-			factor = 5
+		add_state_claim = 104
+		if = {
+			limit = {
+				NOT = {
+					is_in_faction_with = FROM
+					has_war_with = FROM
+					has_wargoal_against = FROM
+				}
+			}
+			create_wargoal = {
+				target = FROM
+				type = take_claimed_state
+				generator = { 104 }
+			}
 		}
 	}
 }
@@ -5358,6 +5424,7 @@ country_event = {
 	id = ww1_ottoman.124
 	title = ww1_ottoman.124.t
 	desc = ww1_ottoman.124.d
+	picture = GFX_report_event_tur_politician_march
 	is_triggered_only = yes
 	trigger = {
 		original_tag = TUR
@@ -5383,6 +5450,7 @@ country_event = {
 	id = ww1_ottoman.125
 	title = ww1_ottoman.125.t
 	desc = ww1_ottoman.125.d
+	picture = GFX_report_event_election_vote
 	fire_only_once = yes
 	trigger = {
 		tag = TUR
@@ -5418,6 +5486,7 @@ country_event = {
 	id = ww1_ottoman.126
 	title = ww1_ottoman.126.t
 	desc = ww1_ottoman.126.d
+	picture = GFX_report_event_tur_politician_march
 	is_triggered_only = yes
 	option = {
 		name = ww1_ottoman.126.a
@@ -5449,6 +5518,7 @@ country_event = {
 	id = ww1_ottoman.127
 	title = ww1_ottoman.127.t
 	desc = ww1_ottoman.127.d
+	picture = GFX_report_event_election_vote
 	trigger = {
 		original_tag = TUR
 		date > 1912.6.1
@@ -5481,6 +5551,7 @@ country_event = {
 	id = ww1_ottoman.128
 	title = ww1_ottoman.128.t
 	desc = ww1_ottoman.128.d
+	picture = GFX_report_event_generic_read_write
 	is_triggered_only = yes
 	option = {
 		name = ww1_ottoman.128.a
@@ -5505,6 +5576,7 @@ country_event = {
 	id = ww1_ottoman.129
 	title = ww1_ottoman.129.t
 	desc = ww1_ottoman.129.d
+	picture = GFX_report_event_military_planning
 	fire_only_once = yes
 	trigger = {
 		original_tag = TUR
@@ -5598,6 +5670,7 @@ country_event = {
 	id = ww1_ottoman.131
 	title = ww1_ottoman.131.t
 	desc = ww1_ottoman.131.d
+	picture = GFX_report_event_generic_sign_treaty2
 	trigger = {
 		has_country_leader = {
 						character = TUR_abdulhamid_ii
@@ -5687,6 +5760,247 @@ news_event = {
 				original_tag = ARM
 				original_tag = GEO
 				original_tag = TUR
+			}
+		}
+	}
+}
+
+# Jerusalem has been lost
+country_event = {
+	id = ww1_ottoman.133
+	hidden = yes
+	trigger = {
+		tag = TUR
+		has_war = yes
+		owns_state = 454
+		owns_state = 856
+		has_global_flag = kis_war
+		NOT = {
+			has_global_flag = great_war_ends
+			has_country_flag = ottomans_hold_cairo_and_alexandria
+			has_subject = EGY
+			controls_state = 454
+			controls_state = 856
+			owns_state = 446
+		}
+	}
+	fire_only_once = yes
+	mean_time_to_happen = {
+		days = 0
+	}
+	immediate = {
+		set_country_flag = ottomans_lost_jerusalem
+	}
+}
+
+# International Suez
+country_event = {
+	id = ww1_ottoman.134
+	title = ww1_ottoman.134.t
+	desc = ww1_ottoman.134.d
+	picture = GFX_report_event_tur_politician_march
+	trigger = {
+		tag = TUR
+		has_war = no
+		OR = {
+			has_global_flag = frankfurt_treaty
+			has_global_flag = versallies_treaty
+		}
+		owns_state = 454
+		owns_state = 856
+		has_country_flag = great_war_winner
+		has_country_flag = ottomans_lost_jerusalem
+		447 = {
+			OR = {
+				is_owned_by = PREV
+				EGY = {
+					is_subject = no
+					owns_state = PREV
+				}
+				any_other_country = {
+					has_country_flag = great_war_loser
+					owns_state = PREV
+				}
+			}
+		}
+		NOT = {
+			has_country_flag = ottomans_hold_cairo_and_alexandria
+			has_subject = EGY
+			country_exists = PAL
+			owns_state = 446
+			has_border_war_with = EGY
+		}
+	}
+	fire_only_once = yes
+	mean_time_to_happen = {
+		days = 140
+	}
+	option = {
+		name = ww1_ottoman.134.a
+		hidden_effect = {
+			PAL = {
+				set_cosmetic_tag = PAL_international
+				add_ideas = PAL_moj
+				add_ideas = PAL_sectarian_divide
+			}
+			every_other_country = {
+				limit = {
+					OR = {
+						has_country_flag = great_war_loser
+						AND = {
+							original_tag = EGY
+							is_subject = no
+						}
+						is_subject_of = PREV
+					}
+					OR = {
+						owns_state = 447
+						owns_state = 453
+						owns_state = 454
+						owns_state = 856
+						owns_state = 858
+					}
+				}
+				country_event = {
+					id = ww1_ottoman.135
+					days = 1
+				}
+			}
+		}
+		every_state = {
+			limit = {
+				OR = {
+					state = 447
+					state = 453
+					state = 454
+					state = 856
+					state = 858
+				}
+			}
+			add_core_of = PAL
+			if = {
+				limit = {
+					is_owned_by = PREV
+				}
+				transfer_state_to = PAL
+			}
+		}
+		if = {
+			limit = {
+				has_subject_autonomy_feature = yes
+			}
+			set_autonomy = {
+				target = PAL
+				autonomy_state = autonomy_tgwr_protectorate
+			}
+			PAL = { set_country_flag = protectorate }
+			else = {
+				puppet = PAL
+				PAL = { add_ideas = protectorate }
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					is_major = yes
+					NOT = {
+						has_war_with = PAL
+						has_war_with = TUR
+						has_war_with = GER
+						has_war_with = FRA
+					}
+				}
+				set_truce = {
+					target = PAL
+					days = 365
+				}
+				give_guarantee = PAL
+				PAL = {
+					give_military_access = PREV
+				}
+			}
+			PAL = {
+				set_capital = { state = 454 }
+				set_politics = {
+					ruling_party = neutrality
+					elections_allowed = no
+				}
+				set_popularities = {
+					democratic = 34
+					neutrality = 65
+				}
+				country_lock_all_division_template = yes
+			}
+			news_event = {
+				id = ww1_ottoman.136
+				days = 3
+			}
+		}
+	}
+}
+
+# International Palestine and Suez
+country_event = {
+	id = ww1_ottoman.135
+	title = ww1_ottoman.134.t
+	desc = ww1_ottoman.134.d
+	picture = GFX_report_event_tur_politician_march
+	is_triggered_only = yes
+	option = {
+		name = ww1_ottoman.135.a
+		every_owned_state = {
+			limit = {
+				is_core_of = PAL
+			}
+			if = {
+				limit = {
+					NOT = {
+						is_claimed_by = PREV
+						is_core_of = PREV
+					}
+				}
+				add_claim_by = PREV
+			}
+			transfer_state_to = PAL
+		}
+	}
+}
+
+# International Palestine and Suez news
+news_event = {
+	id = ww1_ottoman.136
+	title = ww1_ottoman.136.t
+	desc = ww1_ottoman.136.desc
+	picture = GFX_news_event_ottomans_germany
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = ww1_ottoman.136.a
+		trigger = {
+			has_country_flag = great_war_winner
+			NOT = { has_subject = PAL }
+		}
+	}
+	option = {
+		name = ww1_ottoman.136.b
+		trigger = {
+			has_country_flag = great_war_loser
+			NOT = { has_subject = PAL }
+		}
+	}
+	option = {
+		name = ww1_ottoman.136.c
+		trigger = {
+			has_subject = PAL
+		}
+	}
+	option = {
+		name = ww1_ottoman.136.d
+		trigger = {
+			NOT = {
+				has_country_flag = great_war_winner
+				has_country_flag = great_war_loser
+				has_subject = PAL
 			}
 		}
 	}

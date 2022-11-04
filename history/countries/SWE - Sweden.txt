@@ -157,7 +157,6 @@ if = {
 		basic_battery = 1
 		basic_light_battery = 1
 		basic_medium_battery = 1
-		improved_medium_battery = 1
 		basic_heavy_battery = 1
 		basic_secondary_battery = 1
 		basic_cruiser_armor_scheme = 1
@@ -562,7 +561,6 @@ if = {
 			fixed_ship_engine_slot = sub_ship_engine_2
 			rear_1_custom_slot = empty
 		}
-		obsolete = no
 	}
 	create_equipment_variant = {
 		name = "Hvalen Class"	
