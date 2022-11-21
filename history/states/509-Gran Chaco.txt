@@ -9,7 +9,22 @@ state={
 
 	history={
 		victory_points = {
-			7500 1 
+			7500 2 
+		}
+		victory_points = {
+			12942 1 
+		}
+		victory_points = {
+			5163 1 
+		}
+		victory_points = {
+			5143 1 
+		}
+		victory_points = {
+			2106 1 
+		}
+		victory_points = {
+			12922 1 
 		}
 		owner = ARG
 		add_core_of = ARG
@@ -22,10 +37,10 @@ state={
 	}
 
 	provinces={
-		2106 2172 2208 5143 5163 5213 7500 8169 8255 10944 10965 10975 10985 10986 12922 12943 13000 
+		2106 2172 2208 5143 5163 5184 5213 7500 8169 8208 8255 10975 10985 10986 12922 12942 12943 13000 
 	}
 	manpower=704241
 	buildings_max_level_factor=1.000
 	state_category=town
-	local_supplies=6.0 
+	local_supplies=6.000
 }
